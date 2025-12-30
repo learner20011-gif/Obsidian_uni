@@ -1,52 +1,37 @@
 {
   "main": {
-    "id": "4cee703518e39269",
+    "id": "d3c4fc27ca7b0df8",
     "type": "split",
     "children": [
       {
-        "id": "fbd3654fbfaafcac",
+        "id": "2977da242129ec7c",
         "type": "tabs",
         "children": [
           {
-            "id": "bb1615fab1b0aff9",
+            "id": "51707ba4c5752e52",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Test.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "7680802c413ae5f9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
+              "title": "Test"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "5e126dce7f937992",
+    "id": "b37d0046ba283c57",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "393e6a7af46502b2",
+        "id": "6dd3ff7deea29343",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -59,7 +44,7 @@
         }
       },
       {
-        "id": "07fa4421cde9b830",
+        "id": "18101c88f11ff145",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -76,7 +61,7 @@
         }
       },
       {
-        "id": "7fa7f78d93bd2520",
+        "id": "5a73b26299b98565",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -91,7 +76,7 @@
         }
       },
       {
-        "id": "2cdede59c1510ead",
+        "id": "ca2238fc7585b9f7",
         "type": "leaf",
         "state": {
           "type": "all-properties",
@@ -105,7 +90,7 @@
         }
       },
       {
-        "id": "5abb8e2b2c42bfdf",
+        "id": "ad9f9474a24a9321",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
@@ -118,15 +103,16 @@
     "currentTab": 0
   },
   "right": {
-    "id": "30b3f8bbbae8ff22",
+    "id": "d1afdfdfcd6994f6",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "c18d8fbad0e3cfab",
+        "id": "784417fe7a910a14",
         "type": "leaf",
         "state": {
           "type": "backlink",
           "state": {
+            "file": "Test.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -140,11 +126,12 @@
         }
       },
       {
-        "id": "e7d790c6d1e6a614",
+        "id": "7120ff2f133f9610",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "Untitled.base",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -153,11 +140,12 @@
         }
       },
       {
-        "id": "fdc0033043be196d",
+        "id": "d01c94a20c33f412",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
+            "file": "Untitled.base",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -165,19 +153,9 @@
           "icon": "lucide-list",
           "title": "Outline"
         }
-      },
-      {
-        "id": "1befa2a754712b61",
-        "type": "leaf",
-        "state": {
-          "type": "git-view",
-          "state": {},
-          "icon": "git-pull-request",
-          "title": "Source Control"
-        }
       }
     ],
-    "currentTab": 3
+    "currentTab": 0
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -191,9 +169,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7680802c413ae5f9",
+  "active": "51707ba4c5752e52",
   "lastOpenFiles": [
+    "unsorted link.md",
+    "clip 1.md",
+    "25-o.jpg",
     "Test.md",
-    "README.md"
+    "clip 1",
+    "clip.md",
+    "clip",
+    "Untitled.md",
+    "README.md",
+    "Untitled.base",
+    "Untitled 1.base",
+    "Untitled.canvas"
   ]
 }
