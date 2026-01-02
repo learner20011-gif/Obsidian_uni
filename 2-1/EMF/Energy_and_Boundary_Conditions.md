@@ -6,18 +6,18 @@ This document provides a complete, detailed explanation of the topics "Energy an
 
 ## 1. Energy and Potential
 
-This chapter establishes the relationship between the electric field intensity (\mathbf{E}) and the scalar electric potential (V). It moves from the concept of work to defining potential difference and absolute potential.
+This chapter establishes the relationship between the electric field intensity ($\mathbf{E}$) and the scalar electric potential ($V$). It moves from the concept of work to defining potential difference and absolute potential.
 
 ### A. Work Done in Moving a Charge
 **Concept**: To move a charge in an electric field, force must be applied. If you move a charge against the field, you do work on the charge, storing energy.
 
-*   **The Force**: The force exerted *by* the electric field on a charge Q is \mathbf{F}_E = Q\mathbf{E}.
+*   **The Force**: The force exerted *by* the electric field on a charge Q is $\mathbf{F}_E = Q\mathbf{E}$.
 *   **The Applied Force**: To move the charge *against* this field (or keep it in equilibrium while moving), an external agent must apply an equal and opposite force:
     $$\mathbf{F}_{applied} = -\mathbf{F}_E = -Q\mathbf{E}$$
 *   **Differential Work ($dW$)**: Work is defined as force dot distance ($dW = \mathbf{F} \cdot d\mathbf{L}$). 
     $$dW = \mathbf{F}_{applied} \cdot d\mathbf{L} = -Q\mathbf{E} \cdot d\mathbf{L}$$ 
     *   **Context**: The dot product handles the vector nature. Only the component of force parallel to the movement does work.
-    *   **$d\mathbf{L}$**: Vector representing an infinitesimal displacement ($dx\mathbf{a}_x + dy\mathbf{a}_y + dz\mathbf{a}_z$ in Cartesian).
+    *   **$d\mathbf{L}$**: Vector representing an infinitesimal displacement ($dx\mathbf{a}_x + dy\mathbf{a}_y + dz\mathbf{a}_z$) in Cartesian.
 
 **Total Work Integral**:
 To find the total work moving a charge from an initial point to a final point, we integrate the differential work along the path:
