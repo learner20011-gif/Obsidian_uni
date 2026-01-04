@@ -340,4 +340,4 @@ This page quantifies the error parameters and introduces current-related errors.
 *   **Typical Values:**
     *   **Standard 741C:** Maximum $200\text{ nA}$.
     *   **Precision Op-Amp:** Maximum $6\text{ nA}$.
-*   *Significance:* Input offset current flows through external feedback resistors, c[[]]reating unintended voltage drops that add to the output error.
+*   *Significance:* Input offset current flows through external feedback resistors, creating unintended voltage drops that add to the output error.
