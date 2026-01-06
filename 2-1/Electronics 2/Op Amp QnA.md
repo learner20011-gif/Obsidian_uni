@@ -208,7 +208,7 @@ $$SR \approx 36.1 \text{ V}/\mu s$$
 **Solution:**
 
 **Definition of Slew Rate:**
-Slew rate (SR) is the maximum rate at which the output voltage of an operational amplifier can change. It is usually expressed in units of Volts per microsecond ($V/\mu s$). It is caused by the limited charging and discharging current of the internal compensation capacitor.
+Slew rate (SR) is the ==maximum== rate at which the output voltage of an operational amplifier can change. It is usually expressed in units of Volts per microsecond ($V/\mu s$). It is caused by the limited charging and discharging current of the internal compensation capacitor.
 $$SR = \left( \frac{dV_o}{dt} \right)_{max}$$
 
 **Derivation:**
