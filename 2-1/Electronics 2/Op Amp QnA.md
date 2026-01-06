@@ -234,45 +234,7 @@ To obtain a distortionless output for a sinusoidal signal, the rate of change of
     $$f \leq \frac{SR}{2\pi K}$$
 
 **(Q.E.D. - Shown)**
-
----
-
-### **Question 3: CMRR Definition and Calculation**
-
-**(b) What is CMRR? Calculate the CMRR (in dB) for the circuit measurements of $v_d = 1\text{ mV}$, $v_o = 120\text{ mV}$ and $v_c = 1\text{ mV}$, $v_o = 20\mu \text{V}$.**
-
-**Solution:**
-
-**Definition of CMRR:**
-CMRR stands for **Common-Mode Rejection Ratio**. It is the ratio of the Differential Voltage Gain ($A_d$) to the Common-Mode Voltage Gain ($A_c$). It indicates the ability of the Op-amp to amplify the difference signal while rejecting noise (common-mode signals) present on both inputs.
-
-**Calculation:**
-
-1.  **Calculate Differential Gain ($A_d$):**
-    Given: Differential input $v_d = 1\text{ mV}$, Output $v_o = 120\text{ mV}$.
-    $$A_d = \frac{v_o}{v_d} = \frac{120\text{ mV}}{1\text{ mV}} = 120$$
-
-2.  **Calculate Common-Mode Gain ($A_c$):**
-    Given: Common-mode input $v_c = 1\text{ mV}$, Output $v_o = 20\mu\text{V}$.
-    *Convert units to match:* $20\mu\text{ V} = 0.02\text{ mV}$.
-    $$A_c = \frac{v_o}{v_c} = \frac{0.02\text{ mV}}{1\text{ mV}} = 0.02$$
-
-3.  **Calculate CMRR (Linear Ratio):**
-    $$CMRR = \frac{A_d}{A_c} = \frac{120}{0.02} = 6000$$
-
-4.  **Calculate CMRR in Decibels (dB):**
-    The formula for CMRR in dB is:
-    $$CMRR(dB) = 20 \log_{10}(CMRR)$$
-    $$CMRR(dB) = 20 \log_{10}(6000)$$
-    $$CMRR(dB) = 20 \times 3.778$$
-    $$CMRR(dB) = 75.56 \text{ dB}$$
-
-**Answer:** The CMRR is **75.56 dB**.
-
-Here are the detailed solutions and explanations based on the provided questions and the reference slides.
-
----
-
+  
 ### **Question 1: Design and Draw Circuit Diagrams**
 
 **(c) Design and draw the circuit diagram to fulfill the following operations:**
