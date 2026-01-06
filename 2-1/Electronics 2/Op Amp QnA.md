@@ -600,6 +600,7 @@ Here are the detailed solutions for the questions based on the provided presenta
 *   Maximum Input Offset Current ($I_{io}$) $\approx 50\,\text{nA}$
 
 **4. Select the Formula:**
+ ==**The offset voltage is always amplified by the Non-Inverting Gain.**==
 From **Slide 24** (Compensated Circuit):
 $$V_{ooT} = \left( 1 + \frac{R_f}{R_1} \right) V_{io} + (R_f) I_{io}$$
 
@@ -637,6 +638,10 @@ $$V_{ooT} = \left( 1 + \frac{R_f}{R_1} \right) V_{io} + (R_f) I_{io}$$
     *   Since the non-inverting terminal is grounded, the inverting terminal is at Virtual Ground ($0\text{V}$).
     *   Since one side of $R_1$ is grounded (input source is zero) and the other is virtual ground, no current flows through $R_1$.
     *   Therefore, the entire current $I_{B2}$ must flow through the feedback resistor $R_f$.
+    * ![[Pasted image 20260107044952.png|885]]
+    * The equation $V_2 = I_{B2} (R_1 \parallel R_f)$ is correct, but it represents a specific scenario:
+    - It calculates the voltage that **must exist** at node $V_2$ if we force the Output Voltage ($V_{out}$) to be **Zero**.
+    - This is used to answer the question: _"What voltage do we need at the positive terminal to keep the output clean (0V)?"_
 3.  **Equation Derivation:**
     The output voltage is the voltage drop across $R_f$.
     $$V_o = V_{(-)} + I_{B2} R_f$$
@@ -681,17 +686,17 @@ Compensation is required because "Practical" op-amps differ from "Ideal" op-amps
 To cancel the error caused by Bias Currents ($I_B$), we must equalize the resistance seen by both input terminals looking back into the source.
 *   **Design Rule:** Connect a resistor $R_{OM}$ (Offset Minimizing Resistor) to the non-inverting terminal.
 *   **Calculation:**
-    $$R_{OM} = R_1 || R_f = \frac{R_1 R_f}{R_1 + R_f}$$
+    $$R_{OM} = R_1 || R_f = \frac{R_1 R_f}{R_1 + R_f}$$             ![[Pasted image 20260107045301.png|433]]
 
 **2. Input Offset Voltage Compensation Design (Voltage Injection):**
 *(Refer to Slide 10 & 11)*
 To cancel $V_{io}$, we inject a small counter-voltage using a potentiometer network connected to the power supplies.
 *   **Components:** Potentiometer $R_a$, Resistors $R_b, R_c$.
-*   **Design Equation:** We assume $R_b$ is large to minimize loading. The relationship to nullify $V_{io}$ is:
+*   **Design Equation:** We assume $R_b$ is large to minimize loading. The relationship to nullify $V_{io}$ is:![[Pasted image 20260107051222.png|445]]
     $$V_{io} = \frac{R_c}{R_b} V_{max}$$
     Therefore, select resistors such that:
     $$\frac{R_c}{R_b} = \frac{V_{io(max)}}{V_{supply}}$$
-
+![[Pasted image 20260107051819.png|629]]
 ---
 
 ### **Question 4: Explain the operation of a low-voltage DC voltmeter with 1V to 13V full-scale range using a 741 op-amp.**
