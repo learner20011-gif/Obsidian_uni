@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "af10198f8aa3f618",
+        "id": "42cb224732c854fa",
         "type": "tabs",
         "children": [
           {
-            "id": "072c3ccdea39dcd7",
+            "id": "1ad0925e467c463a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -153,9 +153,19 @@
           "icon": "lucide-list",
           "title": "Outline"
         }
+      },
+      {
+        "id": "e02bc37d6c4a010a",
+        "type": "leaf",
+        "state": {
+          "type": "git-view",
+          "state": {},
+          "icon": "git-pull-request",
+          "title": "Source Control"
+        }
       }
     ],
-    "currentTab": 0
+    "currentTab": 3
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,8 +180,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "072c3ccdea39dcd7",
+  "active": "1ad0925e467c463a",
   "lastOpenFiles": [
+    "2-1/Electronics 2/Untitled.base",
+    "Untitled.canvas",
+    "2-1/Electronics 2/Op Amp.md",
+    "2-1/Electronics 2/Op Amp QnA.md",
     "2-1/Electronics 2/attachments/Pasted image 20260106160637.png",
     "2-1/Electronics 2/attachments/Pasted image 20260106160338.png",
     "2-1/Electronics 2/attachments/Pasted image 20260106160329.png",
@@ -182,12 +196,9 @@
     "2-1/Electronics 2/attachments/Pasted image 20260106150948.png",
     "/2-1/Electronics 2/attachments/Pasted image 20260106160637.png",
     "/2-1/Electronics 2/attachments/Pasted image 20260106160338.png",
-    "/2-1/Electronics 2/attachments/Pasted image 20260106160329.png",
     "capture_temp.md",
-    "2-1/Electronics 2/Op Amp QnA.md",
     "capture_temp",
     "Untitled.md",
-    "2-1/Electronics 2/Op Amp.md",
     "/2-1/Electronics 2/Op Amp.md",
     "/2-1/Electronics 2/Op Amp QnA.md",
     "2-1/Electronics 2/attachments",
@@ -216,8 +227,6 @@
     "Unsorted/unsorted link.md",
     "/Unsorted/Untitled.md",
     "/Unsorted/unsorted link.md",
-    "Unsorted",
-    "unsorted link.md",
-    "Untitled.canvas"
+    "unsorted link.md"
   ]
 }
