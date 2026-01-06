@@ -76,7 +76,11 @@ The ability of an Op-Amp to reject signals that appear simultaneously on both in
 * **Equation (4-37):** $$A_{cm} = \frac{v_{ocm}}{v_{cm}}$$* Where $v_{ocm}$ is the unwanted output voltage. 
 * Where $v_{cm}$ is the common input voltage. 
 * **Note:** Generally, $A_{cm}$ is much smaller than 1. This means the Op-Amp attenuates (shrinks) the noise.
-
+**CMRR expressed via Input Offset ($V_{io}$)**
+*   The text suggests that the error caused by common-mode signals can be modeled as a change in the Input Offset Voltage.
+*   **Equation (4-39):**
+    $$\text{CMRR} = \frac{V_{io}}{v_{cm}}$$
+    *   This equation tells us that a large common-mode input ($v_{cm}$) effectively creates a small error voltage ($V_{io}$) at the input, determined by the quality (CMRR) of the chip.
 *   **Formula:**
     $$CMRR = \frac{A_d}{A_c}$$
 *   **Logarithmic (dB):**
