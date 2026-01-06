@@ -54,7 +54,7 @@ An ideal Op-Amp is a theoretical model with perfect parameters to simplify circu
 **Answer:**
 A concept used in analyzing Inverting Amplifiers where the Inverting Terminal ($-$) is effectively at Ground potential ($0\text{V}$), even though it is not physically connected to the ground.
 
-*   **Logic:** Since $A_{OL} \to \infty$ and $V_{out}$ is finite, the differential input $V_d \approx 0$.
+*   **Logic:** Since $A_{OL} \to \infty$ and $V_{out}$ is finite, the differential input $V_d \approx 0$.  
 *   **Condition:** If Non-Inverting ($+$) is grounded, then Inverting ($-$) must also be at $0\text{V}$.
 *   **Result:** Current flows *through* the feedback resistor, not *into* the Op-Amp.
 ![[Pasted image 20260106111744.jpg]]
