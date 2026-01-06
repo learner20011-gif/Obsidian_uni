@@ -57,7 +57,7 @@ A concept used in analyzing Inverting Amplifiers where the Inverting Terminal ($
 *   **Logic:** Since $A_{OL} \to \infty$ and $V_{out}$ is finite, the differential input $V_d \approx 0$.
 *   **Condition:** If Non-Inverting ($+$) is grounded, then Inverting ($-$) must also be at $0\text{V}$.
 *   **Result:** Current flows *through* the feedback resistor, not *into* the Op-Amp.
-
+![[Pasted image 20260106111744.jpg]]
 > **Slide Reference:** Page 39 & 40
 
 ---

@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "561138e0d49786e9",
+        "id": "af10198f8aa3f618",
         "type": "tabs",
         "children": [
           {
-            "id": "4794b51c06f25a5b",
+            "id": "072c3ccdea39dcd7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
+                "file": "2-1/Electronics 2/Op Amp QnA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Op Amp QnA"
             }
           }
         ]
@@ -170,11 +170,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6dd3ff7deea29343",
+  "active": "072c3ccdea39dcd7",
   "lastOpenFiles": [
+    "Pasted image 20260106111744.jpg",
+    "capture_temp.md",
+    "2-1/Electronics 2/Op Amp QnA.md",
+    "capture_temp",
+    "2-1/Electronics 2/attachments/Pasted image 20260106101309.png",
+    "/2-1/Electronics 2/attachments/Pasted image 20260106101309.png",
+    "Untitled.md",
     "2-1/Electronics 2/attachments/Pasted image 20260106094754.png",
     "2-1/Electronics 2/Op Amp.md",
-    "2-1/Electronics 2/Op Amp QnA.md",
     "/2-1/Electronics 2/attachments/Pasted image 20260106094754.png",
     "/2-1/Electronics 2/Op Amp.md",
     "/2-1/Electronics 2/Op Amp QnA.md",
@@ -185,7 +191,6 @@
     "/2-1",
     "/2-1/EMF",
     "2-1/EMF/EMF_Explanation_Full.md",
-    "Untitled.md",
     "2-1/EMF/EMF_Explanation_1_2.md",
     "2-1/EMF/Untitled.md",
     "2-1/EMF/Energy_and_Boundary_Conditions.md",
@@ -206,9 +211,7 @@
     "/Unsorted/Untitled.md",
     "/Unsorted/unsorted link.md",
     "Unsorted",
-    "/Unsorted",
     "unsorted link.md",
-    "clip 1.md",
     "25-o.jpg",
     "Untitled.canvas"
   ]
