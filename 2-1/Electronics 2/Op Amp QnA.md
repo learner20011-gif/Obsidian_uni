@@ -340,9 +340,6 @@ A Unity Follower (or Voltage Buffer) is a special configuration of the Non-Inver
 3.  **Active Filters:** Used to isolate stages in filter designs.
 
 > **Related Slide Topic:** Buffer Amplifier (Page 31, 54).
-
-Here are the detailed solutions and explanations for the questions provided.
-
 ### **Question 1: Op-Amp Integrator and Low Pass Filter Proof**
 
 **(a) Draw and explain the operation of an integrator using op-amp. Prove that an integrator can be used as a low pass filter.**
