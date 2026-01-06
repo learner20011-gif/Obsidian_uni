@@ -576,3 +576,28 @@ $$V_{out} = \left( 1 + \frac{2R}{R_{gain}} \right) \left( \frac{R_f}{R_1} \right
 *   Where the first term is the gain of the input buffer stage, and the second term is the gain of the difference stage.
 
 > **Related Slide Topic:** Differential Amplifier with Two Op-Amps (Page 61, 62). The Instrumentation Amp is the logical "Three Op-Amp" evolution of the circuit shown on Page 61.
+
+
+```mermaid
+flowchart LR
+  SIN[Input sine]
+  SUM[Summer]
+  INT1[Integrator 1]
+  INT2[Integrator 2]
+  OUT[Output Vo]
+
+  IC1[IC dVo]
+  IC2[IC Vo]
+
+  SIN --> SUM
+  SUM --> INT1
+  INT1 --> INT2
+  INT2 --> OUT
+
+  INT1 --> SUM
+  INT2 --> SUM
+
+  IC1 --> INT1
+  IC2 --> INT2
+
+```
