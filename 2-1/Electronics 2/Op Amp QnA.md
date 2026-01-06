@@ -79,7 +79,7 @@ The ability of an Op-Amp to reject signals that appear simultaneously on both in
 **CMRR expressed via Input Offset ($V_{io}$)**
 *   The text suggests that the error caused by common-mode signals can be modeled as a change in the Input Offset Voltage.
 *   **Equation (4-39):**
-    $$\text{CMRR} = \frac{V_{io}}{v_{cm}}$$
+    $$\text{CMRR} = \frac{V_{cm}}{v_{io}}$$
     *   This equation tells us that a large common-mode input ($v_{cm}$) effectively creates a small error voltage ($V_{io}$) at the input, determined by the quality (CMRR) of the chip.
 *   **Formula:**
     $$CMRR = \frac{A_d}{A_c}$$
@@ -295,6 +295,7 @@ This requires a Differentiator circuit and an Integrator circuit combined.
     *   Connect $V_A$ to the Non-Inverting input side.
     *   Connect $V_B$ to the Inverting input side.
     *   Calculation Check: $V_A - V_B = (-3\text{diff}) - (-6\text{int}) = -3\text{diff} + 6\text{int}$.
+    * ![[Pasted image 20260106203321.png]]
 
 > **Related Slide Topic:** Differentiator (Page 52), Integrator (Page 53), Difference Amplifier (Page 34, 59).
 
