@@ -476,8 +476,6 @@ Let's simplify using a **Summing Integrator** as the first block.
 
 > **Related Slide:** Page 53
 
-Here are the detailed solutions and explanations based on your request.
-
 ---
 
 ### **Question 1: Three-Stage Op-Amp Design**
