@@ -574,3 +574,158 @@ $$V_{out} = \left( 1 + \frac{2R}{R_{gain}} \right) \left( \frac{R_f}{R_1} \right
 *   Where the first term is the gain of the input buffer stage, and the second term is the gain of the difference stage.
 
 > **Related Slide Topic:** Differential Amplifier with Two Op-Amps (Page 61, 62). The Instrumentation Amp is the logical "Three Op-Amp" evolution of the circuit shown on Page 61.
+Here are the detailed solutions for the questions based on the provided presentation slides and standard operational amplifier theory.
+
+---
+
+### **Question 1: Calculate the maximum possible output offset voltage $V_{ooT}$ for the given LM307 amplifier circuit.**
+
+**Reference Slide:** Pages 24 (Equation for Compensated Circuit) and Page 4 (for typical parameter understanding).
+![[Pasted image 20260107015603.png]]
+**Solution:**
+
+**1. Analyze the Circuit Configuration:**
+*   The circuit is an **Inverting Amplifier** ($V_{in}$ connects to the inverting terminal via $1\text{k}\Omega$).
+*   It includes a variable resistor on the non-inverting ($+$) terminal. This indicates the circuit is **compensated for Input Bias Current**. Ideally, this resistor is tuned to $R_{OM} = R_1 || R_f$.
+*   Because the circuit is compensated for bias current, the output error is determined by the **Input Offset Voltage ($V_{io}$)** and the **Input Offset Current ($I_{io}$)**, not the full Bias Current ($I_b$).
+
+**2. Identify Component Values:**
+*   Input Resistor ($R_1$) = $1\,\text{k}\Omega$
+*   Feedback Resistor ($R_f$) = $10\,\text{k}\Omega$
+*   Supply Voltage = $\pm 15\text{V}$
+
+**3. Identify Op-Amp Parameters (LM307):**
+*(Note: Since the datasheet values are not explicitly in the slides, we use standard maximum worst-case specifications for the LM307, which is very similar to the LM741).*
+*   Maximum Input Offset Voltage ($V_{io}$) $\approx 7.5\,\text{mV}$
+*   Maximum Input Offset Current ($I_{io}$) $\approx 50\,\text{nA}$
+
+**4. Select the Formula:**
+From **Slide 24** (Compensated Circuit):
+$$V_{ooT} = \left( 1 + \frac{R_f}{R_1} \right) V_{io} + (R_f) I_{io}$$
+
+**5. Calculation:**
+
+*   **Step A: Calculate Gain Multiplier**
+    $$1 + \frac{R_f}{R_1} = 1 + \frac{10\,\text{k}\Omega}{1\,\text{k}\Omega} = 1 + 10 = 11$$
+
+*   **Step B: Calculate Error due to Voltage ($V_{io}$)**
+    $$V_{error(V)} = 11 \times 7.5\,\text{mV} = 82.5\,\text{mV}$$
+
+*   **Step C: Calculate Error due to Current ($I_{io}$)**
+    $$V_{error(I)} = 10\,\text{k}\Omega \times 50\,\text{nA}$$
+    $$(10 \times 10^3) \times (50 \times 10^{-9}) = 500 \times 10^{-6}\text{ V} = 0.5\,\text{mV}$$
+
+*   **Step D: Total Output Offset Voltage**
+    $$V_{ooT} = 82.5\,\text{mV} + 0.5\,\text{mV} = 83\,\text{mV}$$
+
+**Answer:** The maximum possible output offset voltage is **$83\,\text{mV}$**.
+
+---
+
+### **Question 2: Derive equations for output offset voltages due to Input Bias Current and Input Offset Current.**
+
+**Reference Slide:** Pages 17, 18, 22, 23.
+
+**Solution:**
+
+#### **Part A: Output Offset Voltage due to Input Bias Current ($I_B$)**
+*(Refer to Slide 17 & 18)*
+
+1.  **Assumptions:** Assume Input Offset Voltage $V_{io} = 0$ and no input signal ($V_{in} = 0$).
+2.  **Analysis at Inverting Terminal:**
+    *   The bias current $I_{B2}$ flows into the inverting (-) terminal.
+    *   Since the non-inverting terminal is grounded, the inverting terminal is at Virtual Ground ($0\text{V}$).
+    *   Since one side of $R_1$ is grounded (input source is zero) and the other is virtual ground, no current flows through $R_1$.
+    *   Therefore, the entire current $I_{B2}$ must flow through the feedback resistor $R_f$.
+3.  **Equation Derivation:**
+    The output voltage is the voltage drop across $R_f$.
+    $$V_o = V_{(-)} + I_{B2} R_f$$
+    $$V_o = 0 + I_{B2} R_f$$
+    $$V_{oI_B} = I_{B2} R_f$$
+
+#### **Part B: Output Offset Voltage due to Input Offset Current ($I_{io}$)**
+*(Refer to Slide 22 & 23)*
+
+1.  **Assumptions:** A compensation resistor $R_{OM}$ is placed at the non-inverting terminal, where $R_{OM} = R_1 || R_f$.
+2.  **Superposition Analysis:**
+    *   **Effect of Inverting Current ($I_{B2}$):** As derived above, this produces an output of $-I_{B2} R_f$.
+    *   **Effect of Non-Inverting Current ($I_{B1}$):** $I_{B1}$ flows through $R_{OM}$, creating a voltage $V_{(+)} = -I_{B1} R_{OM}$.
+    *   This voltage $V_{(+)}$ is amplified by the non-inverting gain $(1 + R_f/R_1)$.
+3.  **Combination:**
+    Since $R_{OM} = \frac{R_1 R_f}{R_1 + R_f}$, the term $-I_{B1} R_{OM} (1 + R_f/R_1)$ simplifies algebraically to $I_{B1} R_f$.
+4.  **Final Equation:**
+    The total output is the difference between the two effects:
+    $$V_{o} = I_{B1} R_f - I_{B2} R_f$$
+    $$V_{o} = R_f (I_{B1} - I_{B2})$$
+    Since $I_{io} = |I_{B1} - I_{B2}|$ (Slide 21):
+    $$V_{o(I_{io})} = R_f I_{io}$$
+
+---
+
+### **Question 3: Explain the need for compensation in op-amp operation and Design op-amp compensating networks.**
+
+**Reference Slide:** Pages 6, 8, 10, 11, 19.
+
+**Solution:**
+
+#### **Part A: Need for Compensation**
+Compensation is required because "Practical" op-amps differ from "Ideal" op-amps (Slide 2 vs Slide 4).
+1.  **Component Mismatch:** The internal transistors (Slide 8) are not perfectly identical. This causes intrinsic voltage imbalances ($V_{io}$) and current differences ($I_{io}$).
+2.  **DC Error Amplification:** Op-amps have extremely high gain ($10^5$). A tiny internal error of $1\text{mV}$ can result in an output error of $1\text{mV} \times 10^5 = 100\text{V}$ (Saturation).
+3.  **Accuracy:** Without compensation, the output will not be zero when the input is zero, introducing significant errors in precision measurements.
+
+#### **Part B: Designing Compensating Networks**
+
+**1. Input Bias Compensation Design (Resistor Method):**
+*(Refer to Slide 19)*
+To cancel the error caused by Bias Currents ($I_B$), we must equalize the resistance seen by both input terminals looking back into the source.
+*   **Design Rule:** Connect a resistor $R_{OM}$ (Offset Minimizing Resistor) to the non-inverting terminal.
+*   **Calculation:**
+    $$R_{OM} = R_1 || R_f = \frac{R_1 R_f}{R_1 + R_f}$$
+
+**2. Input Offset Voltage Compensation Design (Voltage Injection):**
+*(Refer to Slide 10 & 11)*
+To cancel $V_{io}$, we inject a small counter-voltage using a potentiometer network connected to the power supplies.
+*   **Components:** Potentiometer $R_a$, Resistors $R_b, R_c$.
+*   **Design Equation:** We assume $R_b$ is large to minimize loading. The relationship to nullify $V_{io}$ is:
+    $$V_{io} = \frac{R_c}{R_b} V_{max}$$
+    Therefore, select resistors such that:
+    $$\frac{R_c}{R_b} = \frac{V_{io(max)}}{V_{supply}}$$
+
+---
+
+### **Question 4: Explain the operation of a low-voltage DC voltmeter with 1V to 13V full-scale range using a 741 op-amp.**
+
+**Reference:** Standard Op-Amp Applications (Context from "Practical Operational Amplifier" theory, Gayakwad Chapter 7).
+
+**Solution:**
+
+**1. Basic Principle:**
+A standard DC voltmeter has finite impedance and can load the circuit. An Op-Amp voltmeter uses the high input impedance of the Op-Amp (Slide 4) to measure voltage without drawing current from the source, and then converts that voltage into a current to drive a PMMC (Permanent Magnet Moving Coil) galvanometer.
+
+**2. Circuit Configuration:**
+We use a **Non-Inverting Amplifier** configuration because it offers very high input impedance ($Z_{in} \geq 2\text{M}\Omega$ for 741). The meter is placed in the feedback loop.
+
+**3. Design for Multi-Range (1V to 13V):**
+*   **Circuit:** Input $V_{in}$ to Pin 3 (+). Pin 2 (-) is connected to ground through a resistor $R_1$. The feedback path from Output (Pin 6) to Pin 2 (-) contains the PMMC meter.
+*   **Operation:** The Op-Amp maintains the voltage at the inverting terminal equal to $V_{in}$ (Virtual Short).
+    $$V_{(-)} = V_{in}$$
+*   **Current Equation:**
+    The current flowing through the meter ($I_m$) is determined entirely by $V_{in}$ and the resistor $R_1$:
+    $$I_m = \frac{V_{in}}{R_1}$$
+    *(Note: The feedback forces this current regardless of the meter's internal resistance).*
+
+**4. Scale Calculation:**
+Assume a standard PMMC meter with full-scale deflection current ($I_{fsd}$) of **$1\text{mA}$**.
+
+*   **For 1V Range:**
+    To get full deflection ($1\text{mA}$) at $1\text{V}$:
+    $$R_{1A} = \frac{1\text{V}}{1\text{mA}} = 1\,\text{k}\Omega$$
+    When $1\text{V}$ is applied, $1\text{mA}$ flows through the meter.
+
+*   **For 13V Range:**
+    To get full deflection ($1\text{mA}$) at $13\text{V}$:
+    $$R_{1B} = \frac{13\text{V}}{1\text{mA}} = 13\,\text{k}\Omega$$
+
+**5. Implementation:**
+Use a rotary switch to select between a $1\,\text{k}\Omega$ resistor (for 1V range) and a $13\,\text{k}\Omega$ resistor (for 13V range) connected between the inverting input and ground. This creates a high-impedance, linear DC voltmeter.
