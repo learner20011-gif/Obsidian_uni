@@ -373,3 +373,242 @@ A Unity Follower (or Voltage Buffer) is a special configuration of the Non-Inver
 3.  **Active Filters:** Used to isolate stages in filter designs.
 
 > **Related Slide Topic:** Buffer Amplifier (Page 31, 54).
+
+Here are the detailed solutions and explanations for the questions provided.
+
+### **Question 1: Op-Amp Integrator and Low Pass Filter Proof**
+
+**(a) Draw and explain the operation of an integrator using op-amp. Prove that an integrator can be used as a low pass filter.**
+
+**1. Circuit Diagram:**
+*   **Configuration:** An inverting amplifier where the feedback resistor $R_f$ is replaced by a Capacitor $C$, and the input component is a Resistor $R$.
+*   **Terminals:** The Non-Inverting terminal ($+$) is grounded. The Input ($V_{in}$) connects to the Inverting terminal ($-$) via $R$.
+
+**(Note: Refer to Slide 53, Fig. 10.38)**
+
+**2. Explanation of Operation:**
+*   **Virtual Ground:** Since the non-inverting terminal is grounded, the inverting terminal is at Virtual Ground ($0\text{V}$).
+*   **Current Flow:** The current flowing from the input is $I = \frac{V_{in}}{R}$.
+*   **Capacitor Charging:** Since no current enters the op-amp input impedance, the entire current $I$ flows through the feedback capacitor $C$.
+*   **Output Voltage:** The voltage across the capacitor is defined by $V_c = \frac{1}{C} \int I dt$. Since the "left" side of the capacitor is at $0\text{V}$ and the "right" side is at $V_{out}$, then $V_{out} = -V_c$.
+    $$V_{out} = -\frac{1}{C} \int I dt = -\frac{1}{C} \int \frac{V_{in}}{R} dt$$
+    $$V_{out} = -\frac{1}{RC} \int V_{in} dt$$
+    The output is the integral of the input multiplied by a gain constant $-\frac{1}{RC}$.
+
+**3. Proof: Integrator as a Low Pass Filter:**
+To prove this, we analyze the circuit in the frequency domain using reactance ($X_c$).
+*   **Feedback Impedance ($Z_f$):** Impedance of the capacitor is $Z_f = \frac{1}{j\omega C}$.
+*   **Input Impedance ($Z_{in}$):** Impedance of the resistor is $Z_{in} = R$.
+*   **Gain Formula:** For an inverting amplifier, $A = -\frac{Z_f}{Z_{in}}$.
+    $$A = -\frac{1/j\omega C}{R} = -\frac{1}{j\omega RC}$$
+*   **Magnitude of Gain:**
+    $$|A| = \frac{1}{\omega RC} = \frac{1}{2\pi f RC}$$
+*   **Analysis:**
+    *   **At Low Frequency ($f \to 0$):** The denominator approaches 0, so the Gain $|A| \to \infty$ (Maximum Gain).
+    *   **At High Frequency ($f \to \infty$):** The denominator becomes very large, so the Gain $|A| \to 0$ (Minimum Gain).
+*   **Conclusion:** Since the circuit provides high gain for low frequencies and attenuates (blocks) high frequencies, it behaves as a **Low Pass Filter**.
+
+> **Related Slide:** Page 53
+
+---
+
+### **Question 2: Analog Computer Design**
+
+**(a) Design an analog computer circuit to simulate the following differential equation:**
+$$\frac{d^2V_o}{dt^2} + 2\frac{dV_o}{dt} - V_o = 10\sin 2t, \quad t>0$$
+**Subject to $V_o(0)=4$ and $V'_o(0)=2$.**
+
+**1. Rearrange the Equation:**
+Solve for the highest derivative term:
+$$\frac{d^2V_o}{dt^2} = -2\frac{dV_o}{dt} + V_o + 10\sin 2t$$
+
+**2. Design Strategy:**
+We will use a chain of summing amplifiers and integrators.
+*   **Assume** a signal representing $\frac{d^2V_o}{dt^2}$ is available at the input of the first stage.
+*   **Integrate** once to get $-\frac{dV_o}{dt}$.
+*   **Integrate** again to get $V_o$.
+*   **Feedback** the outputs ($-\frac{dV_o}{dt}$ and $V_o$) back to the start to satisfy the equation.
+
+**3. Circuit Stages:**
+
+*   **Stage 1: Summing Amplifier (The Adder)**
+    *   This stage creates the equation $\frac{d^2V_o}{dt^2}$.
+    *   Output of Summer: $-\frac{d^2V_o}{dt^2}$ (Inverting Summer).
+    *   Required Inputs to satisfy equation:
+        1.  $-2\frac{dV_o}{dt}$ (This term needs to be inverted relative to the equation sign due to summer inversion).
+        2.  $+V_o$.
+        3.  $+10\sin 2t$.
+
+*   **Stage 2: Integrator 1**
+    *   **Input:** $-\frac{d^2V_o}{dt^2}$ (From Summer).
+    *   **Operation:** $V_{out} = -\int (-\frac{d^2V_o}{dt^2}) dt$.
+    *   **Output:** $\frac{dV_o}{dt}$.
+    *   *Initial Condition:* A DC voltage is applied to the capacitor to set $V'_o(0)=2$.
+
+*   **Stage 3: Integrator 2**
+    *   **Input:** $\frac{dV_o}{dt}$ (From Stage 2).
+    *   **Output:** $-\int (\frac{dV_o}{dt}) dt = -V_o$.
+    *   *Initial Condition:* A DC voltage is applied to set $V_o(0)=4$.
+
+*   **Stage 4: Inverter (Unity Gain)**
+    *   **Input:** $-V_o$ (From Stage 3).
+    *   **Output:** $+V_o$.
+
+**4. Feedback Connections (Closing the Loop):**
+To make the circuit solve the equation: $\frac{d^2V_o}{dt^2} = -(2\frac{dV_o}{dt} - V_o - 10\sin 2t)$. Wait, looking at the rearranged equation: $\frac{d^2V_o}{dt^2} = -2\frac{dV_o}{dt} + V_o + 10\sin 2t$.
+Let's simplify using a **Summing Integrator** as the first block.
+*   **Node A (Output of First Summing Integrator):** Generates $-\frac{dV_o}{dt}$.
+    *   Equation: $\frac{dV_o}{dt} = \int (\frac{d^2V_o}{dt^2}) dt$.
+*   **Node B (Output of Second Integrator):** Generates $V_o$.
+    *   Input: $-\frac{dV_o}{dt}$. Output: $-\int -\frac{dV_o}{dt} = V_o$.
+
+**Final Circuit Layout:**
+1.  **Block 1 (Summing Amplifier):**
+    *   **Inputs:**
+        1.  $10\sin 2t$ (via $R=10\text{k}$).
+        2.  $-\frac{dV_o}{dt}$ (from Block 2 output) with Gain 2 ($R_{in}=R/2$).
+        3.  $V_o$ (from Block 3 output) with Gain 1 ($R_{in}=R$, but inverted to $-V_o$ first).
+    *   **Output:** $-\frac{d^2V_o}{dt^2}$.
+
+2.  **Block 2 (Integrator):** Input $-\frac{d^2V_o}{dt^2} \rightarrow$ Output $\frac{dV_o}{dt}$.
+3.  **Block 3 (Integrator):** Input $\frac{dV_o}{dt} \rightarrow$ Output $-V_o$.
+4.  **Block 4 (Inverter):** Input $-V_o \rightarrow$ Output $V_o$.
+
+> **Related Concepts:** Summing Amp (Page 47), Integrator (Page 53).
+
+---
+
+### **Question 3: Ideal Limitations & Differentiator vs Integrator**
+
+**(a) Limitations of ideal integrator and how practical integrator fixes them?**
+
+**Limitations of Ideal Integrator:**
+1.  **DC Gain / Saturation:** At DC ($f=0$), the capacitor acts as an open circuit ($X_c = \infty$). The gain becomes infinite (Open Loop Gain). Any tiny Input Offset Voltage or Bias Current is amplified infinitely, causing the output to drift until it hits the power supply rails (**Saturation**).
+2.  **Bandwidth:** It is inherently unstable at very low frequencies.
+
+**Practical Fix:**
+*   **Solution:** Connect a feedback resistor ($R_f$) in parallel with the capacitor ($C$).
+*   **Result:** At low frequencies (DC), the capacitor is open, but the resistor $R_f$ closes the loop. The gain is limited to $-\frac{R_f}{R_1}$ instead of infinity. This stabilizes the circuit and prevents saturation due to offset voltages.
+
+**(b) How Op-amp can be used as Differentiator and as an integrator?**
+
+**1. Op-Amp as Differentiator:**
+*   **Configuration:** The Capacitor ($C$) is placed at the **Input**, and a Resistor ($R$) is in the **Feedback** loop.
+*   **Logic:**
+    *   Input current through capacitor: $I = C \frac{dV_{in}}{dt}$.
+    *   Output voltage across feedback resistor: $V_{out} = -I R$.
+    *   Combined: $V_{out} = -RC \frac{dV_{in}}{dt}$.
+*   **Function:** It produces an output proportional to the rate of change (derivative) of the input.
+
+> **Related Slide:** Page 52
+
+**2. Op-Amp as Integrator:**
+*   **Configuration:** The Resistor ($R$) is placed at the **Input**, and a Capacitor ($C$) is in the **Feedback** loop.
+*   **Logic:**
+    *   Input current through resistor: $I = \frac{V_{in}}{R}$.
+    *   Output voltage across feedback capacitor: $V_{out} = -\frac{1}{C} \int I dt$.
+    *   Combined: $V_{out} = -\frac{1}{RC} \int V_{in} dt$.
+*   **Function:** It produces an output proportional to the accumulated area under the curve (integral) of the input.
+
+> **Related Slide:** Page 53
+
+Here are the detailed solutions and explanations based on your request.
+
+---
+
+### **Question 1: Three-Stage Op-Amp Design**
+
+**(c) Design a connection of three op-amp stages using an LM348 IC to provide outputs that are 10, 20, and 50 times larger than the input. Use a feedback resistor of $R_f = 500\text{ k}\Omega$ in all stages.**
+
+**Analysis:**
+The LM348 is a Quad Op-Amp IC (contains four op-amps in one package). We need to design three separate stages. The question asks for outputs that are "larger" than the input, implying amplification. It does not specify polarity (inverting vs. non-inverting), but Inverting Amplifiers are the standard choice for simple gain blocks where phase is not restricted.
+
+*   **Fixed Parameter:** Feedback Resistor $R_f = 500\text{ k}\Omega$ for all stages.
+*   **Formula (Inverting Amplifier):** Gain ($A_v$) = $| -R_f / R_1 |$. Therefore, $R_1 = R_f / \text{Gain}$.
+
+**Design Calculations:**
+
+1.  **Stage 1 (Gain of 10):**
+    *   Required Gain: $10$.
+    *   $R_f = 500\text{ k}\Omega$.
+    *   $R_1 = 500\text{ k}\Omega / 10 = 50\text{ k}\Omega$.
+    *   **Connection:** Input signal connects to Op-Amp 1 Inverting Input via $50\text{ k}\Omega$.
+
+2.  **Stage 2 (Gain of 20):**
+    *   Required Gain: $20$.
+    *   $R_f = 500\text{ k}\Omega$.
+    *   $R_2 = 500\text{ k}\Omega / 20 = 25\text{ k}\Omega$.
+    *   **Connection:** This stage can be independent (parallel) or cascaded depending on interpretation. Usually, "outputs that are... times larger than the input" implies three separate amplifiers fed by the same source, OR a multistage where the *total* gain grows. However, given the wording "outputs that are 10, 20... times larger", it suggests three separate outputs.
+    *   *Interpretation A (Parallel Inputs):* Input signal connects to Op-Amp 2 Inverting Input via $25\text{ k}\Omega$.
+
+3.  **Stage 3 (Gain of 50):**
+    *   Required Gain: $50$.
+    *   $R_f = 500\text{ k}\Omega$.
+    *   $R_3 = 500\text{ k}\Omega / 50 = 10\text{ k}\Omega$.
+    *   **Connection:** Input signal connects to Op-Amp 3 Inverting Input via $10\text{ k}\Omega$.
+
+**Circuit Diagram Description:**
+*   **Power:** Connect $+V_{CC}$ to Pin 4 and $-V_{EE}$ to Pin 11 of the LM348.
+*   **Inputs:** Connect the signal source $V_{in}$ to three resistors: $R_1 (50\text{k})$, $R_2 (25\text{k})$, and $R_3 (10\text{k})$.
+*   **Op-Amps:** Connect the other ends of these resistors to the Inverting Inputs (Pins 2, 6, 9) of three separate op-amps inside the IC.
+*   **Ground:** Ground all Non-Inverting Inputs (Pins 3, 5, 10).
+*   **Feedback:** Connect a $500\text{ k}\Omega$ resistor from the Output to the Inverting Input for each respective Op-Amp.
+*   **Outputs:** Take $V_{out1}$ (Gain 10), $V_{out2}$ (Gain 20), and $V_{out3}$ (Gain 50) from the respective output pins.
+
+> **Related Slide Topic:** Inverting Amplifier (Page 37, 38) & Multistage (Page 32).
+
+---
+
+### **Question 2: Op-Amp as Controlled Sources**
+
+**Show Op-Amp as VCVS, VCCS, CCCS.**
+
+**1. VCVS (Voltage-Controlled Voltage Source):**
+*   **Configuration:** **Non-Inverting Amplifier**.
+*   **Why:** The Output Voltage is controlled linearly by the Input Voltage.
+*   **Formula:** $V_{out} = A V_{in}$ (where $A = 1 + R_f/R_1$).
+*   **Ideal Characteristics:** High Input Impedance ($R_{in} \to \infty$), Low Output Impedance ($R_{out} \to 0$).
+
+**2. VCCS (Voltage-Controlled Current Source):**
+*   **Configuration:** **Transconductance Amplifier** (or V-to-I Converter).
+*   **Circuit:** Input voltage applied to Non-Inverting terminal. Load is in the feedback loop (floating load) or grounded load variations.
+*   **Standard Circuit (Floating Load):** Load resistor ($R_L$) is placed in the feedback loop of an inverting amp or input resistor grounded.
+*   **Simple Version:** Non-inverting input takes $V_{in}$. Inverting input connects to ground via resistor $R$. Feedback connects Output to Inverting input.
+*   **Formula:** $I_{load} = V_{in} / R$. The current depends *only* on the input voltage and a fixed resistor, not the load resistance.
+
+**3. CCCS (Current-Controlled Current Source):**
+*   **Configuration:** **Current Amplifier**.
+*   **Circuit:** Input Current ($I_{in}$) flows into a node.
+*   **Implementation:** Use a Current-to-Voltage converter (Transresistance amp) followed by a Voltage-to-Current converter (Transconductance amp).
+*   **Simple Version:** Op-amp with load in feedback. Input current flows directly into the inverting node.
+*   **Formula:** $I_{out} = A_i I_{in}$.
+
+> **Related Slide Topic:** While not explicitly diagrammed as "Sources" in the provided slides, this relates to the fundamental behavior of Op-Amps as Voltage Amplifiers (Page 42) and V-to-I concepts.
+
+---
+
+### **Question 3: Instrumentation Amplifier**
+
+**Describe circuit using three Op-Amps.**
+
+**Definition:**
+An Instrumentation Amplifier is a precision differential amplifier with very high input impedance, low drift, and high Common-Mode Rejection Ratio (CMRR). It is typically built using **three** Op-Amps.
+
+**Structure (The 3-Op-Amp Topology):**
+
+1.  **Input Stage (Buffer Stage):**
+    *   Consists of **two Op-Amps** (A1 and A2) configured as Non-Inverting amplifiers.
+    *   **Inputs:** High impedance inputs $V_1$ and $V_2$ are applied directly to the non-inverting terminals of A1 and A2.
+    *   **Gain Setting:** A single resistor ($R_{gain}$) connects the inverting terminals of A1 and A2. Feedback resistors connect the outputs of A1/A2 back to their inverting inputs.
+    *   **Function:** Increases the differential gain while passing common-mode signals at unity gain (improving CMRR). It provides infinite input impedance.
+
+2.  **Output Stage (Difference Stage):**
+    *   Consists of **one Op-Amp** (A3) configured as a standard **Difference Amplifier** (Subtractor).
+    *   **Function:** Takes the outputs from A1 and A2 and subtracts them. This stage rejects the common-mode voltage effectively.
+
+**Equation:**
+$$V_{out} = \left( 1 + \frac{2R}{R_{gain}} \right) \left( \frac{R_f}{R_1} \right) (V_2 - V_1)$$
+
+*   Where the first term is the gain of the input buffer stage, and the second term is the gain of the difference stage.
+
+> **Related Slide Topic:** Differential Amplifier with Two Op-Amps (Page 61, 62). The Instrumentation Amp is the logical "Three Op-Amp" evolution of the circuit shown on Page 61.
