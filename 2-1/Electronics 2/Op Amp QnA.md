@@ -268,3 +268,108 @@ CMRR stands for **Common-Mode Rejection Ratio**. It is the ratio of the Differen
     $$CMRR(dB) = 75.56 \text{ dB}$$
 
 **Answer:** The CMRR is **75.56 dB**.
+
+Here are the detailed solutions and explanations based on the provided questions and the reference slides.
+
+---
+
+### **Question 1: Design and Draw Circuit Diagrams**
+
+**(c) Design and draw the circuit diagram to fulfill the following operations:**
+
+#### **(i) Design for: $v_o = 5V_1 - 4V_2 + 6V_3 - 2V_4$**
+
+**Analysis:**
+The equation contains positive terms ($5V_1, 6V_3$) and negative terms ($-4V_2, -2V_4$). This is best solved using a two-stage **Summing Amplifier** configuration.
+1.  **Stage 1 (Inverting Summer):** Sum and invert the positive inputs ($V_1, V_3$).
+2.  **Stage 2 (Final Inverting Summer):** Sum the output of Stage 1 with the negative inputs ($V_2, V_4$).
+
+**Design Calculation:**
+*   Let Feedback Resistor $R_f = 100 \text{ k}\Omega$ for both stages.
+*   **Stage 1 (Handling $V_1, V_3$):**
+    *   Target Output: $-(5V_1 + 6V_3)$.
+    *   Input $V_1$: Gain 5 $\rightarrow R_{1} = R_f / 5 = 100\text{k} / 5 = 20 \text{ k}\Omega$.
+    *   Input $V_3$: Gain 6 $\rightarrow R_{3} = R_f / 6 = 100\text{k} / 6 = 16.67 \text{ k}\Omega$.
+*   **Stage 2 (Handling Output of Stage 1 + $V_2, V_4$):**
+    *   Input (Stage 1 Output): Gain 1 (to invert back to positive) $\rightarrow R_{s1} = 100 \text{ k}\Omega$.
+    *   Input $V_2$: Gain 4 $\rightarrow R_{2} = R_f / 4 = 100\text{k} / 4 = 25 \text{ k}\Omega$.
+    *   Input $V_4$: Gain 2 $\rightarrow R_{4} = R_f / 2 = 100\text{k} / 2 = 50 \text{ k}\Omega$.
+
+**Circuit Description:**
+1.  **Op-Amp 1:** Connect $V_1$ through $20\text{k}\Omega$ and $V_3$ through $16.67\text{k}\Omega$ to the Inverting Input. Feedback is $100\text{k}\Omega$. Output is $V_x$.
+2.  **Op-Amp 2:** Connect $V_x$ through $100\text{k}\Omega$, $V_2$ through $25\text{k}\Omega$, and $V_4$ through $50\text{k}\Omega$ to the Inverting Input. Feedback is $100\text{k}\Omega$.
+3.  **Final Output:** $v_o$.
+
+> **Related Slide Topic:** Summing Amplifier (Page 47, 48) & Multistage Amplifier (Page 33).
+
+---
+
+#### **(ii) Design for: $v_o = -3 \frac{dV_1}{dt} + 6 \int V_2 dt$**
+
+**Analysis:**
+This requires a Differentiator circuit and an Integrator circuit combined.
+*   Term 1: $-3 \frac{dV_1}{dt}$ (Standard Inverting Differentiator).
+*   Term 2: $+6 \int V_2 dt$ (Standard Integrator is inverting, so we get $-6\int$).
+*   Combination: We need to subtract the Integrator output from the Differentiator output: $(-3\text{diff}) - (-6\text{int}) = -3\text{diff} + 6\text{int}$.
+
+**Design Calculation:**
+*   **Part A: Differentiator ($V_A$)**
+    *   Formula: $V_{out} = -R_f C_{in} \frac{dV_{in}}{dt}$.
+    *   Target Gain: $3$. Let $C_{in} = 1 \mu \text{F}$.
+    *   $R_f \times 1 \mu \text{F} = 3 \rightarrow R_f = 3 \text{ M}\Omega$.
+    *   Output $V_A = -3 \frac{dV_1}{dt}$.
+*   **Part B: Integrator ($V_B$)**
+    *   Formula: $V_{out} = -\frac{1}{R_{in} C_f} \int V_{in} dt$.
+    *   Target Gain: $6$. Let $C_f = 1 \mu \text{F}$.
+    *   $\frac{1}{R_{in} \times 1 \mu \text{F}} = 6 \rightarrow R_{in} = 166.7 \text{ k}\Omega$.
+    *   Output $V_B = -6 \int V_2 dt$.
+*   **Part C: Subtractor (Difference Amplifier)**
+    *   We need $V_o = V_A - V_B$.
+    *   Use a Difference Amp with unity gain (all resistors $10 \text{ k}\Omega$).
+    *   Connect $V_A$ to the Non-Inverting input side.
+    *   Connect $V_B$ to the Inverting input side.
+    *   Calculation Check: $V_A - V_B = (-3\text{diff}) - (-6\text{int}) = -3\text{diff} + 6\text{int}$.
+
+> **Related Slide Topic:** Differentiator (Page 52), Integrator (Page 53), Difference Amplifier (Page 34, 59).
+
+---
+
+### **Question 2: Inverting vs. Non-Inverting Operation**
+
+**Explain operations of Inverting and Non-Inverting Amplifiers.**
+
+**1. Inverting Amplifier:**
+*   **Configuration:** The input signal ($V_{in}$) is applied to the **Inverting Terminal (-)** through a resistor ($R_1$). The Non-Inverting Terminal (+) is grounded. A feedback resistor ($R_f$) connects the output to the input.
+*   **Operation:** Due to the "Virtual Ground" concept, the inverting terminal stays at $0\text{V}$. The current flowing through $R_1$ is forced to flow through $R_f$.
+*   **Output:** The output voltage is an amplified, inverted version of the input.
+    $$V_o = - \left( \frac{R_f}{R_1} \right) V_{in}$$
+*   **Phase:** $180^\circ$ phase shift.
+
+> **Related Slide Topic:** Pages 37, 38, 40.
+
+**2. Non-Inverting Amplifier:**
+*   **Configuration:** The input signal ($V_{in}$) is applied directly to the **Non-Inverting Terminal (+)**. The feedback loop is a voltage divider ($R_f$ and $R_1$) connected to the Inverting Terminal (-).
+*   **Operation:** Due to the "Virtual Short" concept, the voltage at the inverting terminal follows the input voltage ($V_- = V_{in}$). The Op-amp maintains this by adjusting the output.
+*   **Output:** The output voltage is an amplified version of the input (always $\ge 1$).
+    $$V_o = \left( 1 + \frac{R_f}{R_1} \right) V_{in}$$
+*   **Phase:** $0^\circ$ phase shift (In-phase).
+
+> **Related Slide Topic:** Pages 42, 43, 44, 45.
+
+---
+
+### **Question 3: Unity Follower / Voltage Buffer**
+
+**What is unity follower circuit/voltage buffer? Where is it used?**
+
+**Definition:**
+A Unity Follower (or Voltage Buffer) is a special configuration of the Non-Inverting Amplifier where the feedback resistor is zero ($R_f = 0$, short wire) and the input resistor is infinite ($R_1 = \infty$, open circuit).
+*   **Gain:** Unity ($1$).
+*   **Equation:** $V_{out} = V_{in}$.
+
+**Where is it used (Applications)?**
+1.  **Impedance Matching:** It has extremely **High Input Impedance** (does not draw current from the source) and extremely **Low Output Impedance** (can drive heavy loads).
+2.  **Signal Isolation:** It isolates a sensitive signal source (like a sensor) from the load circuit to prevent "loading effects" (voltage drop/distortion).
+3.  **Active Filters:** Used to isolate stages in filter designs.
+
+> **Related Slide Topic:** Buffer Amplifier (Page 31, 54).
