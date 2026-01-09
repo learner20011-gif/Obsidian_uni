@@ -1,0 +1,228 @@
+Below is a deeper, actionable checklist broken into topics → subtopics → granular items. Use it as a study / debug roadmap.
+
+- Project & Architecture
+  - Microservice boundaries
+    - Frontend (Next.js) responsibilities
+    - ML API (FastAPI) responsibilities
+    - Database (Supabase/Postgres) responsibilities
+  - Data flow
+    - UI → API call flow (where calls are issued)
+    - API → model → response flow
+    - DB read/write paths and who has access
+  - Deployment wiring
+    - docker-compose service names and ports
+    - inter-container networking and DNS
+    - env file mapping for each service
+
+- Frontend (Next.js + React + TypeScript)
+  - App Router & routing
+    - app/ folder routing and nested layouts
+    - layout.tsx and global providers (AuthProvider, AnalyticsProvider)
+    - dynamic routes (e.g., profile/[id])
+  - Server vs Client components
+    - identifying "use client" components
+    - when state/hooks run in browser vs server
+  - Data fetching & rendering
+    - server-side fetch vs client fetch
+    - caching strategies and revalidation (fetch cache settings)
+    - form handling and controlled components
+  - Component architecture
+    - components/ folder purpose and reuse patterns
+    - composition of DecisionZone, Chatbot, SARReportGenerator
+  - State management
+    - local state (useState/useReducer)
+    - global/state library usage (Zustand if present)
+  - Types & interfaces
+    - TransactionInput, PredictionResult, SHAPExplanation, LLMExplanation
+    - typing API responses and using types safely
+  - Styling & assets
+    - Tailwind utility classes
+    - global CSS and font registration (react-pdf font usage)
+  - Build & run
+    - env.local variables naming (NEXT_PUBLIC_*)
+    - npm install, npm run dev, production build steps
+  - Debug points
+    - where to add console.debug/logging (lib/ml-api.ts, components)
+    - inspect Network tab and React DevTools
+
+- Frontend API client (frontend/lib/ml-api.ts)
+  - Base URL configuration and verifyMLAPIConfig
+  - Client methods to know
+    - predict / score endpoint shapes
+    - chat endpoints (LLM)
+    - generate-sar-narrative
+  - Error handling patterns and getErrorMessage
+  - Request/response validation before sending/after receiving
+  - Logging locations to add (before POST, after response, in catch)
+
+- Backend ML API (FastAPI / Python)
+  - Application structure
+    - main app entry file and routers
+    - dependency injection and middleware
+  - Endpoint types and payloads
+    - /predict, /explain, /generate-sar-narrative, /chat (exact names in code)
+    - Pydantic models for request/response
+  - Model lifecycle
+    - model artifact path and load-on-start
+    - hot-reload vs stable load (uvicorn --reload)
+    - memory and concurrency considerations
+  - Feature engineering
+    - where features are constructed from TransactionInput
+    - feature order and consistent preprocessing between training & inference
+  - Decision mapping
+    - fraud_probability → decision thresholds (pass/warn/block)
+    - confidence calculation and risk_level mapping
+  - Explainability
+    - SHAP computation: background set, explainer type, performance cost
+    - LLM narrative: prompt templates, GROQ/GPT key usage, fallback behavior
+  - Logging & errors
+    - structured logs for requests and prediction results (no PII)
+    - exception handling and HTTP status codes
+  - Local dev
+    - venv, pip install -r requirements.txt, uvicorn main:app --reload
+  - Health checks & readiness endpoints
+
+- Database (Postgres / Supabase)
+  - Schema
+    - migrations/001_initial_schema.sql table definitions
+    - datatype choices and indexes relevant to queries
+  - Row Level Security (RLS)
+    - policies for anon vs authenticated users
+    - server-side queries using service_role key
+  - Auth
+    - Supabase auth flows used by frontend (session handling)
+    - token refresh and expiration handling
+  - Seeds & test data
+    - migrations/003_seed_data.sql
+    - verification scripts (scripts/verify_setup.sql)
+  - Common DB failure modes
+    - empty query results due to RLS
+    - permission errors vs missing data
+  - DB access for debugging
+    - Supabase dashboard queries, psql, or docker exec psql
+
+- Containers & Orchestration (Docker)
+  - docker-compose anatomy
+    - services, images, build context, ports, depends_on
+    - environment variables and .env files
+  - Volumes & persistent storage
+    - model artifact mounts, DB volumes
+  - Networking
+    - service name DNS, exposed ports, internal vs external mapping
+  - Healthchecks
+    - configure and interpret service health status
+  - Common commands
+    - docker-compose up --build, logs -f, exec -it, ps, down
+  - Debugging containers
+    - container file inspection, log tailing, restarting single service
+
+- Networking & Configuration
+  - Env variables
+    - NEXT_PUBLIC_ML_API_URL (client accessible)
+    - ML_API envs for server side, SUPABASE_*
+  - CORS
+    - FastAPI CORSMiddleware settings and allowed origins
+    - diagnosing blocked requests in browser
+  - Ports & hostnames
+    - localhost vs container hostnames when using docker-compose
+  - TLS / reverse proxy (if present)
+    - proxy settings, forwarded headers
+
+- ML Inference & Explainability
+  - Model artifact formats
+    - XGBoost model file (.json/.bin), pickle, or joblib
+  - Determinism & versioning
+    - model version tag and reproducible inference
+  - Feature engineering parity
+    - same preprocessing in training and ml-api inference
+  - SHAP specifics
+    - explainer type (TreeExplainer), background dataset, computational cost
+  - LLM narrative generation
+    - prompt templates, rate limits, fallback when LLM key absent
+  - Metrics & thresholds
+    - fraud_probability thresholds for pass/warn/block
+    - performance (ms per request) and optimization
+
+- Debugging & Observability
+  - Browser tools
+    - Console logs, Network tab request/response, React DevTools
+  - API debugging
+    - curl, httpie, Postman examples for each endpoint
+  - Server logs
+    - uvicorn / container logs, stack traces
+  - Instrumentation
+    - where to add temporary prints or structured logging
+  - Repro steps capture
+    - minimal payload, timestamp, environment vars for reproduction
+  - Error types to recognize
+    - 4xx: client/validation issues; 5xx: server crash or unhandled exceptions
+    - CORS errors (client-side blocked)
+    - RLS/permission errors (DB-level)
+  - Automated testing (if present)
+    - unit tests for model helpers, integration tests for endpoints
+
+- Testing & Local Dev Workflow
+  - Frontend
+    - npm install, npm run dev, building for production
+    - hot-reload and clearing cache
+  - ML API
+    - venv setup, pip install, uvicorn run
+    - running model inference locally with sample payloads
+  - Full stack
+    - docker-compose up -d --build
+    - verifying inter-service connectivity
+  - Test payload examples
+    - minimal TransactionInput JSON for predict and SAR generation
+  - Mocking external services
+    - LLM or external APIs stubs to run offline
+
+- Source Control & Safe Edits
+  - Branching
+    - feature/<desc>, fix/<desc>, hotfix/<desc>
+  - Commits
+    - small, atomic commits with clear messages
+  - PRs
+    - description, testing steps, CI checks
+  - Rollback strategy
+    - revert commit or create patch to undo
+  - Migration strategy
+    - add new migration file, avoid editing applied migrations
+
+- Security & Privacy
+  - Secrets management
+    - env.template usage, .env ignored by git, rotate keys if leaked
+  - Least privilege
+    - use anon key for client reads, service_role server-only
+  - Logging policy
+    - avoid PII in logs, masking sensitive fields
+  - RLS enforcement
+    - verify policies do not overexpose data
+  - Container security
+    - avoid running as root, minimal base images
+
+- Performance & Scaling (basic)
+  - Latency hotspots
+    - model inference time, SHAP computation, frontend rendering
+  - Caching opportunities
+    - cache repeated model outputs, precompute SHAP for frequent cases
+  - Load testing basics
+    - simple scripts to simulate concurrent inference calls
+  - Resource tuning
+    - model worker processes, uvicorn workers, container resource limits
+
+- Maintenance & Documentation
+  - README and QUICK_START verification
+  - Keeping env.template and migrations up-to-date
+  - Where to document decisions (01_Project_Overview.md etc.)
+  - Model & data version tracking (notebook exports → ml-api)
+
+- Quick lookup items (files to check quickly)
+  - frontend/app/layout.tsx
+  - frontend/lib/ml-api.ts
+  - frontend/components/Chatbot.tsx, DecisionZone.tsx, SARReportGenerator.tsx
+  - ml-api/ main router, model loader
+  - supabase/migrations/*.sql
+  - docker-compose.yml (root or deploy repo)
+  - README.md and supabase/QUICK_START.md
+
+Use this checklist to plan learning and targeted edits; tackle top sections first (Frontend, ML API, DB, Docker) and then expand into explainability, observability, and security.
