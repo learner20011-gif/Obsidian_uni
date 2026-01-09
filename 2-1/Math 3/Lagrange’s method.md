@@ -118,13 +118,8 @@ To solve a linear PDE of the form $Pp + Qq = R$:
     $$ f(u, v) = 0 \quad \text{or} \quad u = \phi(v) $$
     where $f$ or $\phi$ is an arbitrary function.
 
-### Question: Example 1 (Page 8)
-
-**Solve the following partial differential equation:**
-$$ yq - xp = z $$
+### Problem: Solve the following PDE: $yq - xp = z$
 *Note: Standard notation is $p = \frac{\partial z}{\partial x}$ and $q = \frac{\partial z}{\partial y}$.*
-
-### Solution: Example 1 (Page 8)
 
 **Step 1: Identify Standard Form**
 Rearrange the equation to match $Pp + Qq = R$:
@@ -140,8 +135,6 @@ Substituting the values:
 $$ \frac{dx}{-x} = \frac{dy}{y} = \frac{dz}{z} $$
 
 ---
-
-### Solution: Example 1 Continued (Page 9)
 
 **Step 3: Solve Auxiliary Equations**
 
@@ -169,12 +162,7 @@ $$ f\left(xy, \frac{y}{z}\right) = 0 $$
 
 ---
 
-### Question: Example 2 (Page 9)
-
-**Solve the partial differential equation:**
-$$ y^2p - xyq = x(z - 2y) $$
-
-### Solution: Example 2 (Page 9)
+### Problem: Solve the PDE: $y^2p - xyq = x(z - 2y)$
 
 **Step 1: Identify Standard Form**
 The equation is already in the form $Pp + Qq = R$:
@@ -192,10 +180,6 @@ $$ \frac{dx}{y^2} = \frac{dy}{-xy} = \frac{dz}{x(z - 2y)} \quad ......(1) $$
 *(Note: The solution for Example 2 continues on the subsequent pages).*
 
 Here is the detailed explanation of pages 10 through 15 from the provided document.
-
-### Solution: Example 2 Continued (Page 10)
-
-This page continues the solution for the equation $y^2p - xyq = x(z - 2y)$ started on Page 9.
 
 **Step 3: Solving the First Integral**
 We take the first two members of the auxiliary equations derived on the previous page:
@@ -235,12 +219,7 @@ $$ x^2 + y^2 = f(y^2 - yz) $$
 
 ---
 
-### Question: Example 1 (Page 11)
-
-**Solve:**
-$$ xzp + yzq = xy $$
-
-### Solution: Example 1 (Page 11)
+### Problem: Solve $xzp + yzq = xy$
 
 **Step 1: Identify Standard Form**
 The equation is $xzp + yzq = xy$.
@@ -265,8 +244,6 @@ $$ \frac{x}{y} = c_1 \quad \text{..........(1.44)} $$
 From this, we can also write $x = c_1 y$.
 
 ---
-
-### Solution: Example 1 Continued (Page 12)
 
 **Step 4: Second Integral**
 Taking the second and third fractions of equation (1.42):
@@ -293,16 +270,11 @@ where $\phi$ is an arbitrary function.
 
 ---
 
-### Question: Example 2 (Page 13)
-
-**Solve:**
-$$ z(z^2 + xy)p - z(z^2 + xy)q = x^4 $$
+### Problem: Solve $z(z^2 + xy)p - z(z^2 + xy)q = x^4$
 *(Note: The slide title has a typo "Solve $z(z^2 + xy)(px - qy) = x^4$", but the solution steps indicate the equation is treated as $xz(z^2 + xy)p - yz(z^2 + xy)q = x^4$. Let's follow the solution provided in the slide.)*
 
 **Corrected Standard Form based on Solution:**
 $$ P = xz(z^2 + xy), \quad Q = -yz(z^2 + xy), \quad R = x^4 $$
-
-### Solution: Example 2 (Page 13)
 
 **Step 1: Form Auxiliary Equations**
 $$ \frac{dx}{xz(z^2 + xy)} = \frac{dy}{-yz(z^2 + xy)} = \frac{dz}{x^4} \quad \text{...(2)} $$
@@ -359,12 +331,7 @@ Here, $l, m, n$ can be constants or functions of $x, y, z$.
 
 ---
 
-### Question: Example with Multipliers (Page 15)
-
-**Solve:**
-$$ (y + zx)p - (x + yz)q = x^2 - y^2 $$
-
-### Solution (Page 15)
+### Problem: Solve $(y + zx)p - (x + yz)q = x^2 - y^2$
 
 **Step 1: Identify Standard Form**
 $$ P = y + zx $$
@@ -396,10 +363,6 @@ $$ x dx + y dy - z dz = 0 $$
 
 Here is the detailed explanation of pages 16 through 21 from the provided document.
 
-### Solution: Example with Multipliers Continued (Page 16)
-
-This page continues the solution for the equation $(y + zx)p - (x + yz)q = x^2 - y^2$ initiated on Page 15.
-
 **Step 5: Solving the First Integral**
 From the first set of multipliers ($y, x, 1$), we found that the numerator must be zero:
 $$ y dx + x dy + dz = 0 $$
@@ -425,12 +388,7 @@ where $\phi$ is an arbitrary function.
 
 ---
 
-### Question: Problem 2 (Page 17)
-
-**Solve:**
-$$ x(y^2 - z^2)p + y(z^2 - x^2)q = z(x^2 - y^2) $$
-
-### Solution: Problem 2 (Page 17)
+### Problem: Solve $x(y^2 - z^2)p + y(z^2 - x^2)q = z(x^2 - y^2)$
 
 **Step 1: Form Auxiliary Equations**
 $$ \frac{dx}{x(y^2 - z^2)} = \frac{dy}{y(z^2 - x^2)} = \frac{dz}{z(x^2 - y^2)} $$
@@ -464,12 +422,7 @@ $$ \phi(x^2 + y^2 + z^2, \ xyz) = 0 $$
 
 ---
 
-### Question: Example (Page 18)
-
-**Find the general solution of:**
-$$ (x^2 - y^2 - z^2)p + 2xyq = 2xz $$
-
-### Solution (Page 18)
+### Problem: Find the general solution of $(x^2 - y^2 - z^2)p + 2xyq = 2xz$
 
 **Step 1: Form Auxiliary Equations**
 $$ \frac{dx}{x^2 - y^2 - z^2} = \frac{dy}{2xy} = \frac{dz}{2xz} $$
@@ -487,8 +440,6 @@ $$ \frac{y}{z} = c_1 \quad \text{[By integrating]} $$
 *(Note: The solution requires a second independent integral, which is solved on the next page using multipliers).*
 
 ---
-
-### Solution: Example Continued (Page 19)
 
 **Step 3: Finding Second Integral (Using Multipliers)**
 We need to combine fractions to find a term that relates to the original ratios.
@@ -524,12 +475,7 @@ where $\phi$ is an arbitrary function.
 
 ---
 
-### Question: Example 1 (Page 20)
-
-**Solve:**
-$$ (y + z)p + (z + x)q = x + y $$
-
-### Solution: Example 1 (Page 20)
+### Problem: Solve $(y + z)p + (z + x)q = x + y$
 
 **Step 1: Auxiliary Equations**
 $$ \frac{dx}{y + z} = \frac{dy}{z + x} = \frac{dz}{x + y} \quad \text{...(1)} $$
@@ -564,8 +510,6 @@ $$ \ln(x - y) - \ln(y - z) = \ln c_1 $$
 
 ---
 
-### Solution: Example 1 Continued (Page 21)
-
 **Step 5 Continued:**
 From the logarithmic relation:
 $$ \frac{x - y}{y - z} = c_1 \quad \text{...(6)} $$
@@ -588,12 +532,7 @@ where $\phi$ is an arbitrary function.
 
 Here is the detailed explanation of pages 22 through 27 from the provided document.
 
-### Question: Example 2 (Page 22)
-
-**Solve the partial differential equation:**
-$$ y^2(x - y)p + x^2(y - x)q = z(x^2 + y^2) $$
-
-### Solution (Page 22)
+### Problem: Solve the PDE: $y^2(x - y)p + x^2(y - x)q = z(x^2 + y^2)$
 
 **Step 1: Form Auxiliary Equations**
 Here $P = y^2(x - y)$, $Q = -x^2(x - y)$ (factoring out minus to match terms), and $R = z(x^2 + y^2)$.
@@ -636,12 +575,7 @@ where $\phi$ is an arbitrary function.
 
 ---
 
-### Question: Problem (Page 23)
-
-**Solve:**
-$$ (x^2 - yz)p + (y^2 - zx)q = (z^2 - xy) $$
-
-### Solution (Page 23)
+### Problem: Solve $(x^2 - yz)p + (y^2 - zx)q = (z^2 - xy)$
 
 **Step 1: Auxiliary Equations**
 $$ \frac{dx}{x^2 - yz} = \frac{dy}{y^2 - zx} = \frac{dz}{z^2 - xy} $$
@@ -677,11 +611,7 @@ $$ \phi\left( \frac{x - y}{y - z}, \frac{y - z}{z - x} \right) = 0 $$
 
 ---
 
-### Question: Problem 8 (Page 24)
-
-**Find the equation of surfaces satisfying $4yzp + q + 2y = 0$ and passing through the curves $y^2 + z^2 = 1$ and $x + z = 2$.**
-
-### Solution (Page 24)
+### Problem: Find the equation of surfaces satisfying $4yzp + q + 2y = 0$ and passing through the curves $y^2 + z^2 = 1$ and $x + z = 2$.
 
 **Step 1: Identify Standard Form**
 Rewrite as $4yzp + 1q = -2y$.
@@ -702,8 +632,6 @@ $$ x + z^2 = a \quad \text{[By integrating]} \quad \text{...(2)} $$
 *(Solution continues on next page)*
 
 ---
-
-### Solution: Problem 8 Continued (Page 25)
 
 **Step 4: Finding Second Integral**
 Take the 2nd and 3rd terms from the auxiliary equations:
@@ -733,13 +661,8 @@ This is the required integral surface.
 
 ---
 
-### Question: Problem (Page 25)
-
-**Find the integral surface of the linear partial differential equation:**
-$$ x(y^2 + z)p - y(x^2 + z)q = (x^2 - y^2)z $$
+### Problem: Find the integral surface of the PDE: $x(y^2 + z)p - y(x^2 + z)q = (x^2 - y^2)z$
 **which contains the line $x + y = 0, z = 1$.**
-
-### Solution (Page 26)
 
 **Step 1: Auxiliary Equations**
 $$ \frac{dx}{x(y^2 + z)} = \frac{dy}{-y(x^2 + z)} = \frac{dz}{(x^2 - y^2)z} $$
@@ -760,8 +683,6 @@ $$ x^2 + y^2 - 2z = c_1 \quad \text{..........(i) [By integrating]} $$
 *(Solution continues on next page)*
 
 ---
-
-### Solution: Problem Continued (Page 27)
 
 **Step 3: Finding Second Integral**
 Choose multipliers $\frac{1}{x}, \frac{1}{y}, \frac{1}{z}$.
@@ -801,14 +722,8 @@ This is the required integral surface.
 
 Here is the detailed explanation of the remaining pages (28 through 31) from the provided document.
 
-### Problem: Integral Surface passing through a Curve (Page 28)
-
-**Question:**
-Find the integral surface of the linear partial differential equation:
-$$ (x - y)y^2p + (y - x)x^2q = (x^2 + y^2)z $$
+### Problem: Find the integral surface of the PDE: $(x - y)y^2p + (y - x)x^2q = (x^2 + y^2)z$
 which passes through the curve defined by $xz = a^3$ and $y = 0$.
-
-**Solution (Part 1):**
 
 **Step 1: Form Auxiliary Equations**
 Identify the coefficients $P, Q, R$:
@@ -833,8 +748,6 @@ Multiply by 3:
 $$ x^3 + y^3 = c_1 \quad \text{..........(i) [By integrating]} $$
 
 ---
-
-### Solution Continued (Page 29)
 
 **Step 3: Finding Second Integral**
 We need to combine fractions to match the denominator of the 3rd ratio $(x^2 + y^2)z$.
@@ -875,8 +788,6 @@ $$ c_2x^2 = a^3 \implies \frac{a^3}{x^2} = c_2 $$
 
 ---
 
-### Solution Conclusion (Page 30)
-
 **Step 5: Eliminate the Parameter $x$**
 We have two relations involving the parameter $x$:
 1.  $c_1 = x^3 \implies c_1^2 = x^6$
@@ -900,30 +811,27 @@ This is the required integral surface.
 
 ---
 
-### Homework Examples (Page 31)
+## Homework Examples (Page 31)
 
 This page lists practice problems. The general method for all is Lagrange's method ($dx/P = dy/Q = dz/R$).
 
-**H.W. Example:** Find the general solution of the partial differential equation:
+### Problem: $y^2zp - x^2zq = x^2y$
+*   **Hints:** Take 1st and 2nd ratio; then take 2nd and 3rd ratio.
+*   **Ans:** $\phi(x^3 + y^3, y^2 + z^2) = 0$
 
-1.  **Problem:** $y^2zp - x^2zq = x^2y$
-    *   **Hints:** Take 1st and 2nd ratio; then take 2nd and 3rd ratio.
-    *   **Ans:** $\phi(x^3 + y^3, y^2 + z^2) = 0$
+### Problem: $(x^2 - yz)p + (y^2 - zx)q = z^2 - xy$
+*   *(No answer listed on this specific line, but this is a standard symmetric cyclic problem typically solved with multipliers 1,-1,0 etc., yielding ratios like $(x-y)/(y-z)$ and sum multipliers).*
 
-2.  **Problem:** $(x^2 - yz)p + (y^2 - zx)q = z^2 - xy$
-    *   *(No answer listed on this specific line, but this is a standard symmetric cyclic problem typically solved with multipliers 1,-1,0 etc., yielding ratios like $(x-y)/(y-z)$ and sum multipliers).*
+### Problem: $(y - z)p + (x - y)q = z - x$
+*   **Hints:** Use multipliers $1, 1, 1$ (sum is 0) and $x, z, y$ (sum is 0).
+*   **Ans:** $\phi(x + y + z, x^2 + 2yz) = 0$
 
-3.  **Problem:** $(y - z)p + (x - y)q = z - x$
-    *   **Hints:** Use multipliers $1, 1, 1$ (sum is 0) and $x, z, y$ (sum is 0).
-    *   **Ans:** $\phi(x + y + z, x^2 + 2yz) = 0$
-    *   *(Note: Checking the multiplier hint $x, z, y$: $x(y-z) + z(x-y) + y(z-x) = xy - xz + zx - zy + yz - yx = 0$. This implies $x dx + z dy + y dz = 0 \implies d(x^2/2 + yz) = 0$.)*
+### Problem: $x(2y^4 - z^4)p + y(z^4 - 2x^4)q = z(x^4 - y^4)$
+*   **Hints:** Use $x^3, y^3, z^3$ as multipliers and $x, y, z/2$ as dividers (likely meaning modifying the denominators to find integrable combinations).
+*   **Ans:** $\phi(x^4 + y^4 + z^4, xyz^2) = 0$
 
-4.  **Problem:** $x(2y^4 - z^4)p + y(z^4 - 2x^4)q = z(x^4 - y^4)$
-    *   **Hints:** Use $x^3, y^3, z^3$ as multipliers and $x, y, z/2$ as dividers (likely meaning modifying the denominators to find integrable combinations).
-    *   **Ans:** $\phi(x^4 + y^4 + z^4, xyz^2) = 0$
-
-5.  **Problem:** $x(z^2 - y^2)p + y(x^2 - z^2)q = z(y^2 - x^2)$
-    *   **Hints:** Use $x, y, z$ as multipliers and $x, y, z$ as dividers (to manipulate ratios).
-    *   **Ans:** $\phi(x^2 + y^2 + z^2, xyz) = 0$
+### Problem: $x(z^2 - y^2)p + y(x^2 - z^2)q = z(y^2 - x^2)$
+*   **Hints:** Use $x, y, z$ as multipliers and $x, y, z$ as dividers (to manipulate ratios).
+*   **Ans:** $\phi(x^2 + y^2 + z^2, xyz) = 0$
 
 **N.B.:** For more, follow **Ordinary and Partial Differential Equations** book (**M.D. Raisinghania**).

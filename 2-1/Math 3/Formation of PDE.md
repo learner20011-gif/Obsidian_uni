@@ -160,8 +160,7 @@ $$ yp - xq = 0 $$
 
 ---
 
-### Problem: Construct the partial differential equation by eliminating the arbitrary constants $a$ and $b$ from the equation:
-$$ z = (x^2 + a^2)(y^2 + b^2) $$
+### Problem: Construct the partial differential equation by eliminating the arbitrary constants $a$ and $b$ from the equation: $z = (x^2 + a^2)(y^2 + b^2)$
 
 **Solution:**
 **Step 1: Given Equation**
