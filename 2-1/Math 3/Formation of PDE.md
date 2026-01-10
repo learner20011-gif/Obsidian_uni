@@ -137,11 +137,6 @@ $$ (z - c) = -\frac{x}{p} $$
 
 *(Note: The solution continues on the subsequent page by substituting this value into equation (3) to find the final relationship between $x, y, p,$ and $q$.)*
 
-Here is the detailed explanation of pages 9 through 13 of the provided document.
-
-### Problem: Eliminate the arbitrary constants from the system derived from $x^2 + y^2 + (z - c)^2 = a^2$.
-
-**Solution:**
 From the previous page, we established two derivatives:
 1.  From differentiating with respect to $x$: $$ (z - c) = -\frac{x}{p} \quad \text{..........(2)} $$
 2.  From differentiating with respect to $y$: $$ y + (z - c)q = 0 \quad \text{..........(3)} $$
