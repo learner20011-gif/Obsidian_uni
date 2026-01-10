@@ -190,7 +190,7 @@ This is the required Partial Differential Equation.
 
 ---
 
-### Problem: Find the partial differential equation of the family of spheres of radius one whose center lies on the $xy$-plane.
+### Problem: Find the partial differential equation of the family of spheres of radius one whose center lies on the $xy$-plane. 🔴
 
 **Solution:**
 **Step 1: Formulate the Geometric Equation**
@@ -375,7 +375,7 @@ $$ xyp + q(x^2 + z) = 2yz $$
 
 ---
 
-### Problem: Find the partial differential equation arising from $\phi(x + y + z, x^2 + y^2 - z^2) = 0$.
+### Problem: Find the partial differential equation arising from $\phi(x + y + z, x^2 + y^2 - z^2) = 0$. 🔴
 
 **Solution:**
 **Step 1: Define variables**
@@ -476,7 +476,7 @@ $$ yp + xq = 0 $$
 
 Here is the detailed explanation of pages 19 through 21 of the provided document. Note that the document ends at page 21, so this covers the remaining content.
 
-### Problem: Eliminate the arbitrary functions from the relation $u = f(x + at) + g(x - at)$.
+### Problem: Eliminate the arbitrary functions from the relation $u = f(x + at) + g(x - at)$. 🔴
 
 **Solution:**
 **Step 1: State the Given Equation**

@@ -72,6 +72,8 @@ From the first two terms, we get:
 $$ dp = 0 \implies p = a \quad (\text{constant}) $$
 $$ dq = 0 \implies q = b \quad (\text{constant}) $$
 
+Same ans. if input value here with integration const. ab  .   $dz = p dx + q dy$.
+
 ---
 
 
@@ -182,12 +184,6 @@ Integrating:
 $$ \ln p = \ln q + \ln c $$
 $$ p = qc \quad \text{..........(ii)} $$
 
-*(Note: The solution continues on the next page of the document using this relation to find the complete integral).* 
-
-Here is the detailed explanation of pages 10 through 15 from the provided document.
-
-
-This section continues the solution for $z^2(p^2z^2 + q^2) = 1$ from Page 9.
 
 **Step 5: Solve for p and q**
 We established the relation $p = qc$. Substitute this into the rearranged original equation $p^2 z^4 + q^2 z^2 - 1 = 0$:
@@ -221,7 +217,7 @@ This is the required complete solution.
 
 ---
 
-### Question: Find the complete integral of the given partial differential equation by Charpit’s method: $$ p^2 - y^2q = y^2 - x^2 $$
+### Question: Find the complete ==integral== of the given partial differential equation by Charpit’s method: $$ p^2 - y^2q = y^2 - x^2 $$
 
 **Find the complete integral of the given partial differential equation by Charpit’s method:**
 $$ p^2 - y^2q = y^2 - x^2 $$
@@ -273,21 +269,21 @@ $$ dz = \sqrt{c_1 - x^2} dx + \left(\frac{c_1}{y^2} - 1\right) dy $$
 Integrate both sides:
 $$ \int dz = \int \sqrt{c_1 - x^2} dx + \int \left(c_1 y^{-2} - 1\right) dy $$
 
-*   The $x$-integral is a standard form $\int \sqrt{a^2 - x^2} dx = \frac{x}{2}\sqrt{a^2-x^2} + \frac{a^2}{2}\sin^{-1}(\frac{x}{a})$. Here $a^2 = c_1$.
+*   ==The $x$-integral== is a standard form $\int \sqrt{a^2 - x^2} dx = \frac{x}{2}\sqrt{a^2-x^2} + \frac{a^2}{2}\sin^{-1}(\frac{x}{a})$. Here $a^2 = c_1$.
     $$ \int \sqrt{c_1 - x^2} dx = \frac{x}{2}\sqrt{c_1 - x^2} + \frac{c_1}{2}\sin^{-1}\left(\frac{x}{\sqrt{c_1}}\right) $$
 *   The $y$-integral:
     $$ \int (c_1 y^{-2} - 1) dy = -\frac{c_1}{y} - y $$
 
 Combine results:
 $$ z = \frac{\sqrt{c_1 - x^2}}{2c_1} + \frac{c_1}{2}\sin^{-1}\left(\frac{x}{\sqrt{c_1}}\right) - \frac{c_1}{y} - y + k $$
-*(Note: There appears to be a typo in the slide's final line fraction $ \frac{\sqrt{c_1-x^2}}{2c_1}$, it should likely be $ \frac{x\sqrt{c_1-x^2}}{2} $ based on standard integration formulas).*
+*(Note: There appears to be a typo in the slide's final line fraction $ \frac{ \sqrt{c_1-x^2}}{2c_1}$, it should likely be $ \frac{x \sqrt{c_1-x^2}}{2} $ based on standard integration formulas).*
 
 **Result:**
 This is the required complete integral.
 
 ---
 
-### Question: Using Charpit’s method solve: $$ 2xz - px^2 - 2qxy + pq = 0 $$
+### Question: Using Charpit’s method solve: $$ 2xz - px^2 - 2qxy + pq = 0 $$ 🔴
 
 **Using Charpit’s method solve:**
 $$ 2xz - px^2 - 2qxy + pq = 0 $$
@@ -329,7 +325,7 @@ $$ p = \frac{2x(z - ay)}{x^2 - a} $$
 **Step 6: Integrate for Complete Integral**
 $$ dz = p dx + q dy $$
 $$ dz = \frac{2x(z - ay)}{x^2 - a} dx + a dy $$
-Rearrange to group $z$ and $y$:
+Rearrange to ==group $z$ and $y$:==
 $$ dz - a dy = \frac{2x(z - ay)}{x^2 - a} dx $$
 Let $U = z - ay$, then $dU = dz - a dy$.
 $$ dU = \frac{2x}{x^2 - a} U dx $$

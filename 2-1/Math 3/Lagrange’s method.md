@@ -177,10 +177,6 @@ $$ \frac{dx}{P} = \frac{dy}{Q} = \frac{dz}{R} $$
 Substituting the values:
 $$ \frac{dx}{y^2} = \frac{dy}{-xy} = \frac{dz}{x(z - 2y)} \quad ......(1) $$
 
-*(Note: The solution for Example 2 continues on the subsequent pages).*
-
-Here is the detailed explanation of pages 10 through 15 from the provided document.
-
 **Step 3: Solving the First Integral**
 We take the first two members of the auxiliary equations derived on the previous page:
 $$ \frac{dx}{y^2} = \frac{dy}{-xy} $$
@@ -199,7 +195,7 @@ We take the last two members of the auxiliary equations:
 $$ \frac{dy}{-xy} = \frac{dz}{x(z - 2y)} $$
 Canceling $x$ from the denominators:
 $$ \frac{dy}{-y} = \frac{dz}{z - 2y} $$
-Rearranging to separate differentials:
+Rearranging to ==separate differentials==:
 $$ (z - 2y) dy = -y dz $$
 $$ z dy - 2y dy = -y dz $$
 Rearranging terms to group differentials of products:
@@ -248,7 +244,7 @@ From this, we can also write $x = c_1 y$.
 **Step 4: Second Integral**
 Taking the second and third fractions of equation (1.42):
 $$ \frac{dy}{yz} = \frac{dz}{xy} $$
-Substitute $x = c_1 y$ (from equation 1.44) into the term $xy$:
+==Substitute== $x = c_1 y$ (from equation 1.44) into the term $xy$:
 $$ \frac{dy}{yz} = \frac{dz}{(c_1 y)y} $$
 $$ \frac{dy}{yz} = \frac{dz}{c_1 y^2} $$
 Canceling one $y$ from the denominators:
@@ -291,7 +287,7 @@ $$ xy = c_1 \quad \text{...(4)} $$
 **Step 3: Second Integral**
 Take the first and third fractions from equation (2):
 $$ \frac{dx}{xz(z^2 + xy)} = \frac{dz}{x^4} $$
-Substitute $xy = c_1$ into the denominator term $(z^2 + xy)$:
+==Substitute== $xy = c_1$ into the denominator term $(z^2 + xy)$:
 $$ \frac{dx}{xz(z^2 + c_1)} = \frac{dz}{x^4} $$
 Rearranging to separate variables $x$ and $z$:
 $$ \frac{x^4}{x} dx = z(z^2 + c_1) dz $$
@@ -331,7 +327,7 @@ Here, $l, m, n$ can be constants or functions of $x, y, z$.
 
 ---
 
-### Problem: Solve $(y + zx)p - (x + yz)q = x^2 - y^2$
+### Problem: Solve $(y + zx)p - (x + yz)q = x^2 - y^2$ 🔴
 
 **Step 1: Identify Standard Form**
 $$ P = y + zx $$
@@ -359,10 +355,6 @@ $$ = 0 $$
 Since the denominator is zero, the numerator is zero:
 $$ x dx + y dy - z dz = 0 $$
 
-*(Note: The integration of these results is continued on the next page).*
-
-Here is the detailed explanation of pages 16 through 21 from the provided document.
-
 **Step 5: Solving the First Integral**
 From the first set of multipliers ($y, x, 1$), we found that the numerator must be zero:
 $$ y dx + x dy + dz = 0 $$
@@ -388,7 +380,7 @@ where $\phi$ is an arbitrary function.
 
 ---
 
-### Problem: Solve $x(y^2 - z^2)p + y(z^2 - x^2)q = z(x^2 - y^2)$
+### Problem: Solve $x(y^2 - z^2)p + y(z^2 - x^2)q = z(x^2 - y^2)$ 🔴
 
 **Step 1: Form Auxiliary Equations**
 $$ \frac{dx}{x(y^2 - z^2)} = \frac{dy}{y(z^2 - x^2)} = \frac{dz}{z(x^2 - y^2)} $$
@@ -575,7 +567,7 @@ where $\phi$ is an arbitrary function.
 
 ---
 
-### Problem: Solve $(x^2 - yz)p + (y^2 - zx)q = (z^2 - xy)$
+### Problem: Solve $(x^2 - yz)p + (y^2 - zx)q = (z^2 - xy)$ 🔴
 
 **Step 1: Auxiliary Equations**
 $$ \frac{dx}{x^2 - yz} = \frac{dy}{y^2 - zx} = \frac{dz}{z^2 - xy} $$
@@ -611,7 +603,7 @@ $$ \phi\left( \frac{x - y}{y - z}, \frac{y - z}{z - x} \right) = 0 $$
 
 ---
 
-### Problem: Find the equation of surfaces satisfying $4yzp + q + 2y = 0$ and passing through the curves $y^2 + z^2 = 1$ and $x + z = 2$.
+### Problem: Find the equation of surfaces satisfying $4yzp + q + 2y = 0$ and passing through the curves $y^2 + z^2 = 1$ and $x + z = 2$. 🔴
 
 **Step 1: Identify Standard Form**
 Rewrite as $4yzp + 1q = -2y$.
@@ -722,7 +714,7 @@ This is the required integral surface.
 
 Here is the detailed explanation of the remaining pages (28 through 31) from the provided document.
 
-### Problem: Find the integral surface of the PDE: $(x - y)y^2p + (y - x)x^2q = (x^2 + y^2)z$
+### Problem: Find the integral surface of the PDE: $(x - y)y^2p + (y - x)x^2q = (x^2 + y^2)z$ 🔴
 which passes through the curve defined by $xz = a^3$ and $y = 0$.
 
 **Step 1: Form Auxiliary Equations**
@@ -830,8 +822,38 @@ This page lists practice problems. The general method for all is Lagrange's meth
 *   **Hints:** Use $x^3, y^3, z^3$ as multipliers and $x, y, z/2$ as dividers (likely meaning modifying the denominators to find integrable combinations).
 *   **Ans:** $\phi(x^4 + y^4 + z^4, xyz^2) = 0$
 
-### Problem: $x(z^2 - y^2)p + y(x^2 - z^2)q = z(y^2 - x^2)$
-*   **Hints:** Use $x, y, z$ as multipliers and $x, y, z$ as dividers (to manipulate ratios).
-*   **Ans:** $\phi(x^2 + y^2 + z^2, xyz) = 0$
+### Problem: Solve $x(z^2 - y^2)p + y(x^2 - z^2)q = z(y^2 - x^2)$ 🔴
+
+**Step 1: Form Auxiliary Equations**
+Here $P = x(z^2 - y^2)$, $Q = y(x^2 - z^2)$, $R = z(y^2 - x^2)$.
+$$ \frac{dx}{x(z^2 - y^2)} = \frac{dy}{y(x^2 - z^2)} = \frac{dz}{z(y^2 - x^2)} $$
+
+**Step 2: First Set of Multipliers**
+Choose multipliers $x, y, z$.
+*   **Numerator:** $x dx + y dy + z dz$
+*   **Denominator:**
+    $$ x[x(z^2 - y^2)] + y[y(x^2 - z^2)] + z[z(y^2 - x^2)] $$
+    $$ = x^2z^2 - x^2y^2 + y^2x^2 - y^2z^2 + z^2y^2 - z^2x^2 = 0 $$
+*   **Integration:** Since the denominator is zero, the numerator is zero.
+    $$ x dx + y dy + z dz = 0 $$
+    $$ \frac{x^2}{2} + \frac{y^2}{2} + \frac{z^2}{2} = \text{const} $$
+    $$ x^2 + y^2 + z^2 = c_1 \quad \text{..........(i)} $$
+
+**Step 3: Second Set of Multipliers**
+Choose multipliers $\frac{1}{x}, \frac{1}{y}, \frac{1}{z}$.
+*   **Numerator:** $\frac{dx}{x} + \frac{dy}{y} + \frac{dz}{z}$
+*   **Denominator:**
+    $$ \frac{1}{x}[x(z^2 - y^2)] + \frac{1}{y}[y(x^2 - z^2)] + \frac{1}{z}[z(y^2 - x^2)] $$
+    $$ = (z^2 - y^2) + (x^2 - z^2) + (y^2 - x^2) = 0 $$
+*   **Integration:** Since the denominator is zero, the numerator is zero.
+    $$ \frac{dx}{x} + \frac{dy}{y} + \frac{dz}{z} = 0 $$
+    $$ \ln x + \ln y + \ln z = \ln c_2 $$
+    $$ \ln(xyz) = \ln c_2 $$
+    $$ xyz = c_2 \quad \text{..........(ii)} $$
+
+**Step 4: General Solution**
+Using (i) and (ii):
+$$ \phi(x^2 + y^2 + z^2, xyz) = 0 $$
+where $\phi$ is an arbitrary function.
 
 **N.B.:** For more, follow **Ordinary and Partial Differential Equations** book (**M.D. Raisinghania**).
