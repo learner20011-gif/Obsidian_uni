@@ -41,6 +41,10 @@ To eliminate the arbitrary function $\phi$, we differentiate equation (i) partia
 2.  **Differentiating with respect to $y$:**
     $$ \frac{\partial \phi}{\partial u} \left( \frac{\partial u}{\partial y} + \frac{\partial u}{\partial z}\frac{\partial z}{\partial y} \right) + \frac{\partial \phi}{\partial v} \left( \frac{\partial v}{\partial y} + \frac{\partial v}{\partial z}\frac{\partial z}{\partial y} \right) = 0 \quad ......(iii) $$
 
+---
+
+### Theory: Proof of Lagrange's Method Continued (Page 6)
+
 **Proof - Part 2: Elimination of Arbitrary Function**
 We now eliminate the partial derivatives of the arbitrary function, $\frac{\partial \phi}{\partial u}$ and $\frac{\partial \phi}{\partial v}$, from equations (ii) and (iii). This forms a system of homogeneous linear equations. For a non-trivial solution to exist, the determinant of the coefficients must be zero.
 
@@ -68,6 +72,10 @@ $$ \left(\frac{\partial u}{\partial x} + \frac{\partial u}{\partial z}p\right) \
 **Rearrangement:**
 Expanding the products and grouping the terms by $p$, $q$, and the remaining terms:
 $$ p \left( \frac{\partial u}{\partial z}\frac{\partial v}{\partial y} - \frac{\partial u}{\partial y}\frac{\partial v}{\partial z} \right) + q \left( \frac{\partial u}{\partial x}\frac{\partial v}{\partial z} - \frac{\partial u}{\partial z}\frac{\partial v}{\partial x} \right) = \left( \frac{\partial u}{\partial y}\frac{\partial v}{\partial x} - \frac{\partial u}{\partial x}\frac{\partial v}{\partial y} \right) \quad ......(iv) $$ 
+
+---
+
+### Theory: Conclusion of Lagrange's Theorem Proof (Page 7)
 
 **Proof - Part 3: Defining Coefficients and Auxiliary Equations**
 To simplify equation (iv), we define $P, Q,$ and $R$ using Jacobian-style notation (or simply as coefficients):
@@ -406,7 +414,7 @@ $$ \phi(x^2 + y^2 + z^2, \ xyz) = 0 $$
 
 ---
 
-### ==Problem==: Find the general solution of $(x^2 - y^2 - z^2)p + 2xyq = 2xz$
+### Problem: Find the general solution of $(x^2 - y^2 - z^2)p + 2xyq = 2xz$
 
 **Step 1: Form Auxiliary Equations**
 $$ \frac{dx}{x^2 - y^2 - z^2} = \frac{dy}{2xy} = \frac{dz}{2xz} $$ 
@@ -419,7 +427,11 @@ $$ \frac{dy}{y} = \frac{dz}{z} $$
 Integrating:
 $$ \ln y = \ln z + \ln c_1 $$ 
 $$ \ln y - \ln z = \ln c_1 $$ 
-$$ \frac{y}{z} = c_1 \quad \text{[By integrating]} $$
+$$ \frac{y}{z} = c_1 \quad \text{[By integrating]} $$ 
+
+*(Note: The solution requires a second independent integral, which is solved on the next page using multipliers).*
+
+---
 
 **Step 3: Finding Second Integral (Using Multipliers)**
 We need to combine fractions to find a term that relates to the original ratios.
@@ -473,13 +485,10 @@ Choose multipliers $0, 1, -1$.
 $$ \text{Ratio 2: } \frac{d(y - z)}{-(y - z)} \quad \text{...(3)} $$ 
 
 **Step 4: Addition Method (Third Ratio)**
-Choose multipliers $1, 1, 1$.      
+Choose multipliers $1, 1, 1$.
 *   Numerator: $dx + dy + dz$
 *   Denominator: $(y + z) + (z + x) + (x + y) = 2x + 2y + 2z = 2(x + y + z)$
 $$ \text{Ratio 3: } \frac{d(x + y + z)}{2(x + y + z)} \quad \text{...(4)} $$ 
-
-
-       What if $1,0,-1$
 
 **Step 5: Solving First Integral**
 Equate Ratio 1 and Ratio 2 (from Eq 2 and 3):
@@ -870,18 +879,18 @@ one of two things happens:
 
 Hre is a quick reference table of the problems discussed in this document and the specific multipliers or techniques used to solve them.
 
-| Problem Equation                                   | Multipliers / Technique Used                                                      |     |
-| :------------------------------------------------- | :-------------------------------------------------------------------------------- | --- |
-| **$yq - xp = z$**                                  | **Grouping:** $(1, 2)$ & $(2, 3)$. No complex multipliers.                        |     |
-| **$y^2p - xyq = x(z - 2y)$**                       | **Grouping:** $(1, 2)$ & $(2, 3)$.                                                |     |
-| **$xzp + yzq = xy$**                               | **Grouping:** $(1, 2)$ & $(2, 3)$ (with subst).                                   |     |
-| **$z(z^2 + xy)(px - qy) = x^4$**                   | **Grouping:** $(1, 2)$ & $(1, 3)$ (with subst).                                   |     |
-| **$(y + zx)p - (x + yz)q = x^2 - y^2$**            | **==Set 1==:** $(y, x, 1)$ <br> **Set 2:** $(x, y, -z)$                           |     |
-| **$x(y^2 - z^2)p + y(z^2 - x^2)q = z(x^2 - y^2)$** | **Set 1:** $(x, y, z)$ <br> **Set 2:** $(1/x, 1/y, 1/z)$                          |     |
-| **$(x^2 - y^2 - z^2)p + 2xyq = 2xz$**              | **Set 1:** Grouping $(2, 3)$ <br> **Set 2:** $(x, y, z)$ combined with ratio 3.   |     |
-| **$(y + z)p + (z + x)q = x + y$**                  | **Set 1:** $(1, -1, 0)$ <br> **Set 2:** $(0, 1, -1)$ <br> **Set 3:** $(1, 1, 1)$  |     |
-| **$y^2(x - y)p + x^2(y - x)q = z(x^2 + y^2)$**     | **Set 1:** Grouping $(1, 2)$ <br> **Set 2:** $(1, -1, 0)$ combined with ratio 3.  |     |
-| **$(x^2 - yz)p + (y^2 - zx)q = z^2 - xy$**         | **Set 1:** $(1, -1, 0)$ <br> **Set 2:** $(0, 1, -1)$ <br> **Set 3:** $(1, 0, -1)$ |     |
-| **$4yzp + q = -2y$**                               | **Grouping:** $(1, 3)$ & $(2, 3)$.                                                |     |
-| **$x(y^2 + z)p - y(x^2 + z)q = (x^2 - y^2)z$**     | **==Set 1:==** $(x, y, -1)$ <br> **Set 2:** $(1/x, 1/y, 1/z)$                     |     |
-| **$(x - y)y^2p + (y - x)x^2q = (x^2 + y^2)z$**     | **Set 1:** Grouping $(1, 2)$ <br> **Set 2:** $(1, -1, 0)$ combined with ratio 3.  |     |
+| Problem Equation | Multipliers / Technique Used |
+| :--- | :--- |
+| **$yq - xp = z$** | **Grouping:** $(1, 2)$ & $(2, 3)$. No complex multipliers. |
+| **$y^2p - xyq = x(z - 2y)$** | **Grouping:** $(1, 2)$ & $(2, 3)$. |
+| **$xzp + yzq = xy$** | **Grouping:** $(1, 2)$ & $(2, 3)$ (with subst). |
+| **$z(z^2 + xy)(px - qy) = x^4$** | **Grouping:** $(1, 2)$ & $(1, 3)$ (with subst). |
+| **$(y + zx)p - (x + yz)q = x^2 - y^2$** | **Set 1:** $(y, x, 1)$ <br> **Set 2:** $(x, y, -z)$ |
+| **$x(y^2 - z^2)p + y(z^2 - x^2)q = z(x^2 - y^2)$** | **Set 1:** $(x, y, z)$ <br> **Set 2:** $(1/x, 1/y, 1/z)$ |
+| **$(x^2 - y^2 - z^2)p + 2xyq = 2xz$** | **Set 1:** Grouping $(2, 3)$ <br> **Set 2:** $(x, y, z)$ combined with ratio 3. |
+| **$(y + z)p + (z + x)q = x + y$** | **Set 1:** $(1, -1, 0)$ <br> **Set 2:** $(0, 1, -1)$ <br> **Set 3:** $(1, 1, 1)$ |
+| **$y^2(x - y)p + x^2(y - x)q = z(x^2 + y^2)$** | **Set 1:** Grouping $(1, 2)$ <br> **Set 2:** $(1, -1, 0)$ combined with ratio 3. |
+| **$(x^2 - yz)p + (y^2 - zx)q = z^2 - xy$** | **Set 1:** $(1, -1, 0)$ <br> **Set 2:** $(0, 1, -1)$ <br> **Set 3:** $(1, 0, -1)$ |
+| **$4yzp + q = -2y$** | **Grouping:** $(1, 3)$ & $(2, 3)$. |
+| **$x(y^2 + z)p - y(x^2 + z)q = (x^2 - y^2)z$** | **Set 1:** $(x, y, -1)$ <br> **Set 2:** $(1/x, 1/y, 1/z)$ |
+| **$(x - y)y^2p + (y - x)x^2q = (x^2 + y^2)z$** | **Set 1:** Grouping $(1, 2)$ <br> **Set 2:** $(1, -1, 0)$ combined with ratio 3. |
