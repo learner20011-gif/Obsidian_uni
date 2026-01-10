@@ -49,8 +49,7 @@
               "title": "Formation of PDE"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -209,7 +208,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "cc9b6c051de5377b",
+  "active": "d6694a750b164316",
   "lastOpenFiles": [
     "2-1/Math 3/Lagrange’s method.md",
     "2-1/Math 3/Formation of PDE.md",
