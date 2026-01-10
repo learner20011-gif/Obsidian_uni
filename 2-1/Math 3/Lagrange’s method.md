@@ -414,7 +414,7 @@ $$ \phi(x^2 + y^2 + z^2, \ xyz) = 0 $$
 
 ---
 
-### Problem: Find the general solution of $(x^2 - y^2 - z^2)p + 2xyq = 2xz$
+### ==Problem==: Find the general solution of $(x^2 - y^2 - z^2)p + 2xyq = 2xz$
 
 **Step 1: Form Auxiliary Equations**
 $$ \frac{dx}{x^2 - y^2 - z^2} = \frac{dy}{2xy} = \frac{dz}{2xz} $$ 
@@ -427,11 +427,7 @@ $$ \frac{dy}{y} = \frac{dz}{z} $$
 Integrating:
 $$ \ln y = \ln z + \ln c_1 $$ 
 $$ \ln y - \ln z = \ln c_1 $$ 
-$$ \frac{y}{z} = c_1 \quad \text{[By integrating]} $$ 
-
-*(Note: The solution requires a second independent integral, which is solved on the next page using multipliers).*
-
----
+$$ \frac{y}{z} = c_1 \quad \text{[By integrating]} $$
 
 **Step 3: Finding Second Integral (Using Multipliers)**
 We need to combine fractions to find a term that relates to the original ratios.
@@ -485,10 +481,13 @@ Choose multipliers $0, 1, -1$.
 $$ \text{Ratio 2: } \frac{d(y - z)}{-(y - z)} \quad \text{...(3)} $$ 
 
 **Step 4: Addition Method (Third Ratio)**
-Choose multipliers $1, 1, 1$.
+Choose multipliers $1, 1, 1$.      
 *   Numerator: $dx + dy + dz$
 *   Denominator: $(y + z) + (z + x) + (x + y) = 2x + 2y + 2z = 2(x + y + z)$
 $$ \text{Ratio 3: } \frac{d(x + y + z)}{2(x + y + z)} \quad \text{...(4)} $$ 
+
+
+       What if $1,0,-1$
 
 **Step 5: Solving First Integral**
 Equate Ratio 1 and Ratio 2 (from Eq 2 and 3):
