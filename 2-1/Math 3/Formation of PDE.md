@@ -398,11 +398,6 @@ Calculating partials:
 Substituting:
 $$ \frac{\partial \phi}{\partial u}(1 + 1 \cdot q) + \frac{\partial \phi}{\partial v}(2y - 2z \cdot q) = 0 \quad \text{.........(iv)} $$
 
----
-
-### Problem: Elimination of Arbitrary Function (Continued) (Implicit Form)
-
-**Solution (Continued):**
 **Step 4: Eliminate $\phi$ terms**
 We eliminate $\frac{\partial \phi}{\partial u}$ and $\frac{\partial \phi}{\partial v}$ from equations (iii) and (iv) using a determinant:
 
@@ -469,7 +464,6 @@ $$ py + qx = 0 $$
 **Answer:**
 $$ yp + xq = 0 $$
 
-Here is the detailed explanation of pages 19 through 21 of the provided document. Note that the document ends at page 21, so this covers the remaining content.
 
 ### Problem: Eliminate the arbitrary functions from the relation $u = f(x + at) + g(x - at)$. 🔴
 
