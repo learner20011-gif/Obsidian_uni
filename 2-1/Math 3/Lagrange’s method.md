@@ -41,10 +41,6 @@ To eliminate the arbitrary function $\phi$, we differentiate equation (i) partia
 2.  **Differentiating with respect to $y$:**
     $$ \frac{\partial \phi}{\partial u} \left( \frac{\partial u}{\partial y} + \frac{\partial u}{\partial z}\frac{\partial z}{\partial y} \right) + \frac{\partial \phi}{\partial v} \left( \frac{\partial v}{\partial y} + \frac{\partial v}{\partial z}\frac{\partial z}{\partial y} \right) = 0 \quad ......(iii) $$
 
----
-
-### Theory: Proof of Lagrange's Method Continued (Page 6)
-
 **Proof - Part 2: Elimination of Arbitrary Function**
 We now eliminate the partial derivatives of the arbitrary function, $\frac{\partial \phi}{\partial u}$ and $\frac{\partial \phi}{\partial v}$, from equations (ii) and (iii). This forms a system of homogeneous linear equations. For a non-trivial solution to exist, the determinant of the coefficients must be zero.
 
@@ -72,10 +68,6 @@ $$ \left(\frac{\partial u}{\partial x} + \frac{\partial u}{\partial z}p\right) \
 **Rearrangement:**
 Expanding the products and grouping the terms by $p$, $q$, and the remaining terms:
 $$ p \left( \frac{\partial u}{\partial z}\frac{\partial v}{\partial y} - \frac{\partial u}{\partial y}\frac{\partial v}{\partial z} \right) + q \left( \frac{\partial u}{\partial x}\frac{\partial v}{\partial z} - \frac{\partial u}{\partial z}\frac{\partial v}{\partial x} \right) = \left( \frac{\partial u}{\partial y}\frac{\partial v}{\partial x} - \frac{\partial u}{\partial x}\frac{\partial v}{\partial y} \right) \quad ......(iv) $$ 
-
----
-
-### Theory: Conclusion of Lagrange's Theorem Proof (Page 7)
 
 **Proof - Part 3: Defining Coefficients and Auxiliary Equations**
 To simplify equation (iv), we define $P, Q,$ and $R$ using Jacobian-style notation (or simply as coefficients):
