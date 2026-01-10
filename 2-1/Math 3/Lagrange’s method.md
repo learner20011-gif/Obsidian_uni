@@ -870,18 +870,18 @@ one of two things happens:
 
 Hre is a quick reference table of the problems discussed in this document and the specific multipliers or techniques used to solve them.
 
-| Problem Equation | Multipliers / Technique Used |
-| :--- | :--- |
-| **$yq - xp = z$** | **Grouping:** $(1, 2)$ & $(2, 3)$. No complex multipliers. |
-| **$y^2p - xyq = x(z - 2y)$** | **Grouping:** $(1, 2)$ & $(2, 3)$. |
-| **$xzp + yzq = xy$** | **Grouping:** $(1, 2)$ & $(2, 3)$ (with subst). |
-| **$z(z^2 + xy)(px - qy) = x^4$** | **Grouping:** $(1, 2)$ & $(1, 3)$ (with subst). |
-| **$(y + zx)p - (x + yz)q = x^2 - y^2$** | **Set 1:** $(y, x, 1)$ <br> **Set 2:** $(x, y, -z)$ |
-| **$x(y^2 - z^2)p + y(z^2 - x^2)q = z(x^2 - y^2)$** | **Set 1:** $(x, y, z)$ <br> **Set 2:** $(1/x, 1/y, 1/z)$ |
-| **$(x^2 - y^2 - z^2)p + 2xyq = 2xz$** | **Set 1:** Grouping $(2, 3)$ <br> **Set 2:** $(x, y, z)$ combined with ratio 3. |
-| **$(y + z)p + (z + x)q = x + y$** | **Set 1:** $(1, -1, 0)$ <br> **Set 2:** $(0, 1, -1)$ <br> **Set 3:** $(1, 1, 1)$ |
-| **$y^2(x - y)p + x^2(y - x)q = z(x^2 + y^2)$** | **Set 1:** Grouping $(1, 2)$ <br> **Set 2:** $(1, -1, 0)$ combined with ratio 3. |
-| **$(x^2 - yz)p + (y^2 - zx)q = z^2 - xy$** | **Set 1:** $(1, -1, 0)$ <br> **Set 2:** $(0, 1, -1)$ <br> **Set 3:** $(1, 0, -1)$ |
-| **$4yzp + q = -2y$** | **Grouping:** $(1, 3)$ & $(2, 3)$. |
-| **$x(y^2 + z)p - y(x^2 + z)q = (x^2 - y^2)z$** | **Set 1:** $(x, y, -1)$ <br> **Set 2:** $(1/x, 1/y, 1/z)$ |
-| **$(x - y)y^2p + (y - x)x^2q = (x^2 + y^2)z$** | **Set 1:** Grouping $(1, 2)$ <br> **Set 2:** $(1, -1, 0)$ combined with ratio 3. |
+| Problem Equation                                   | Multipliers / Technique Used                                                      |     |
+| :------------------------------------------------- | :-------------------------------------------------------------------------------- | --- |
+| **$yq - xp = z$**                                  | **Grouping:** $(1, 2)$ & $(2, 3)$. No complex multipliers.                        |     |
+| **$y^2p - xyq = x(z - 2y)$**                       | **Grouping:** $(1, 2)$ & $(2, 3)$.                                                |     |
+| **$xzp + yzq = xy$**                               | **Grouping:** $(1, 2)$ & $(2, 3)$ (with subst).                                   |     |
+| **$z(z^2 + xy)(px - qy) = x^4$**                   | **Grouping:** $(1, 2)$ & $(1, 3)$ (with subst).                                   |     |
+| **$(y + zx)p - (x + yz)q = x^2 - y^2$**            | **==Set 1==:** $(y, x, 1)$ <br> **Set 2:** $(x, y, -z)$                           |     |
+| **$x(y^2 - z^2)p + y(z^2 - x^2)q = z(x^2 - y^2)$** | **Set 1:** $(x, y, z)$ <br> **Set 2:** $(1/x, 1/y, 1/z)$                          |     |
+| **$(x^2 - y^2 - z^2)p + 2xyq = 2xz$**              | **Set 1:** Grouping $(2, 3)$ <br> **Set 2:** $(x, y, z)$ combined with ratio 3.   |     |
+| **$(y + z)p + (z + x)q = x + y$**                  | **Set 1:** $(1, -1, 0)$ <br> **Set 2:** $(0, 1, -1)$ <br> **Set 3:** $(1, 1, 1)$  |     |
+| **$y^2(x - y)p + x^2(y - x)q = z(x^2 + y^2)$**     | **Set 1:** Grouping $(1, 2)$ <br> **Set 2:** $(1, -1, 0)$ combined with ratio 3.  |     |
+| **$(x^2 - yz)p + (y^2 - zx)q = z^2 - xy$**         | **Set 1:** $(1, -1, 0)$ <br> **Set 2:** $(0, 1, -1)$ <br> **Set 3:** $(1, 0, -1)$ |     |
+| **$4yzp + q = -2y$**                               | **Grouping:** $(1, 3)$ & $(2, 3)$.                                                |     |
+| **$x(y^2 + z)p - y(x^2 + z)q = (x^2 - y^2)z$**     | **==Set 1:==** $(x, y, -1)$ <br> **Set 2:** $(1/x, 1/y, 1/z)$                     |     |
+| **$(x - y)y^2p + (y - x)x^2q = (x^2 + y^2)z$**     | **Set 1:** Grouping $(1, 2)$ <br> **Set 2:** $(1, -1, 0)$ combined with ratio 3.  |     |

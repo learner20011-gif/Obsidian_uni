@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "2-1/Math 3/Lagrange’s method.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -210,8 +210,8 @@
   },
   "active": "d6694a750b164316",
   "lastOpenFiles": [
-    "2-1/Math 3/Lagrange’s method.md",
     "2-1/Math 3/Formation of PDE.md",
+    "2-1/Math 3/Lagrange’s method.md",
     "2-1/Math 3/Charpit method.md",
     "temp/Math Q.md",
     "temp",
