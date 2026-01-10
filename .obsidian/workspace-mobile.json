@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "89e7409abfac2a1c",
+        "id": "b39493913167fa1e",
         "type": "tabs",
         "children": [
           {
-            "id": "a077d377321e9edf",
+            "id": "d6694a750b164316",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -180,12 +180,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a077d377321e9edf",
+  "active": "d6694a750b164316",
   "lastOpenFiles": [
-    "2-1/Electronics 2/Op Amp QnA.md",
-    "2-1/Math 3/Charpit method.md",
-    "Checklist/Learning list clovershield.md",
     "2-1/Math 3/Lagrange’s method.md",
+    "2-1/Math 3/Charpit method.md",
+    "2-1/Electronics 2/Op Amp QnA.md",
+    "Checklist/Learning list clovershield.md",
     "2-1/Math 3/Formation of PDE.md",
     "/Checklist/Learning list clovershield.md",
     "/2-1/Math 3/Lagrange’s method.md",

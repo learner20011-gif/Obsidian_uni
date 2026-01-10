@@ -270,8 +270,8 @@ where $\phi$ is an arbitrary function.
 
 ---
 
-### Problem: Solve $z(z^2 + xy)p - z(z^2 + xy)q = x^4$
-*(Note: The slide title has a typo "Solve $z(z^2 + xy)(px - qy) = x^4$", but the solution steps indicate the equation is treated as $xz(z^2 + xy)p - yz(z^2 + xy)q = x^4$. Let's follow the solution provided in the slide.)*
+### Problem: Solve $z(z^2 + xy)(px - qy) = x^4$
+"Solve $z(z^2 + xy)(px - qy) = x^4$", but the solution steps indicate the equation is treated as $xz(z^2 + xy)p - yz(z^2 + xy)q = x^4$. 
 
 **Corrected Standard Form based on Solution:**
 $$ P = xz(z^2 + xy), \quad Q = -yz(z^2 + xy), \quad R = x^4 $$
