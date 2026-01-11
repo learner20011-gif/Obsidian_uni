@@ -78,10 +78,10 @@ The **Cochran Boiler** is a fire tube, multi-tube, internal fired, and vertical 
 
 **Answer:**
 
-| Boiler Mountings | Boiler Accessories |
-| :--- | :--- |
-| **Definition** | Components mounted on the body of the boiler for **safety** and **controlling** the steam generation processes. | Devices used in a boiler to increase its **efficiency** and **quality** of steam. |
-| **Examples** | Safety valve, Water level indicator, Pressure gauge, Fusible Plug, Steam stop valve, Feed check valve, Blow-off cock, Man and Mudhole. | Economizer, Air preheater, Superheater, Steam trap, Steam separator, Injector. |
+|                | Boiler Accessories                                                                | Boiler Mountings                                                                                                                       |
+| :------------- | --------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **Definition** | Devices used in a boiler to increase its **efficiency** and **quality** of steam. | Components mounted on the body of the boiler for **safety** and **controlling** the steam generation processes.                        |
+| **Examples**   | Economizer, Air preheater, Superheater, Steam trap, Steam separator, Injector.    | Safety valve, Water level indicator, Pressure gauge, Fusible Plug, Steam stop valve, Feed check valve, Blow-off cock, Man and Mudhole. |
 
 **Similar Slide References:**
 *   **Slide 34:** Boiler Mountings definition.
