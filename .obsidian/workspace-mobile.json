@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "0b5ceff2f53946c7",
+        "id": "aaef5d2b51966821",
         "type": "tabs",
         "children": [
           {
-            "id": "379076ea007d170b",
+            "id": "af8eb3e0dea3d942",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "temp/Math Q.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Math Q"
+              "title": "New tab"
             }
           }
         ]
@@ -180,25 +176,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "379076ea007d170b",
+  "active": "af8eb3e0dea3d942",
   "lastOpenFiles": [
-    "2-1/Math 3/Charpit method.md",
-    "2-1/Math 3/Lagrange’s method.md",
-    "2-1/Math 3/Formation of PDE.md",
+    "2-1/Mecha/Steam_Generation_Boilers_Questions.md",
+    "/2-1/Mecha/Steam_Generation_Boilers_Questions.md",
+    "/2-1/Math 3/Lagrange’s method.md",
+    "/2-1/Math 3/Formation of PDE.md",
+    "/2-1/Math 3",
+    "/2-1/Mecha",
+    "2-1/Mecha",
+    "/2-1",
     "temp/Math Q.md",
+    "2-1/Math 3/Charpit method.md",
+    "2-1/Math 3/Formation of PDE.md",
+    "2-1/Math 3/Lagrange’s method.md",
     "temp",
     "2-1/Electronics 2/Op Amp QnA.md",
     "Checklist/Learning list clovershield.md",
     "/Checklist/Learning list clovershield.md",
-    "/2-1/Math 3/Lagrange’s method.md",
-    "/2-1/Math 3/Formation of PDE.md",
     "/2-1/Math 3/Charpit method.md",
     "Checklist",
     "2-1/Math 3",
     "/Checklist",
-    "/2-1/Math 3",
     "/2-1/Electronics 2",
-    "/2-1",
     "2-1/Electronics 2/Op Amp.md",
     "2-1/Electronics 2/Test.md",
     "/2-1/Electronics 2/Test.md",
@@ -214,11 +214,9 @@
     "2-1/Electronics 2/attachments/Pasted image 20260107015603.png",
     "/2-1/Electronics 2/attachments",
     "/2-1/Electronics 2/Op Amp QnA.md",
-    "2-1/Electronics 2/attachments/capture_temp",
     "Untitled.md",
     "README.md",
     "Untitled.canvas",
-    "2-1/Electronics 2/Untitled.base",
     "capture_temp.md",
     "/2-1/Electronics 2/Op Amp.md",
     "2-1/EMF/EMF_Explanation_Full.md",
@@ -226,8 +224,6 @@
     "2-1/EMF/Untitled.md",
     "2-1/EMF/Energy_and_Boundary_Conditions.md",
     "/2-1/EMF/Energy_and_Boundary_Conditions.md",
-    "Academic Prompt.md",
-    "Untitled 3.md",
-    "Untitled 1.md"
+    "Academic Prompt.md"
   ]
 }
