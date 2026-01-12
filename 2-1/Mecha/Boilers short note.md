@@ -79,7 +79,7 @@
 *   **Type:** Vertical, Fire Tube, Multi-tubular.
 *   **Firing:** Internal.
 *   **Shape:** Cylindrical shell + **Hemispherical Dome** (Max strength).
-*   **Process:** Furnace $\rightarrow$ Comb Chamber $\rightarrow$ Horizontal Fire Tubes $\rightarrow$ Smoke Box $\rightarrow$ Chimney.
+*   **Process:** Furnace $\rightarrow$ Combustion Chamber $\rightarrow$ Horizontal Fire Tubes $\rightarrow$ Smoke Box $\rightarrow$ Chimney.
 
 #### **B. Babcock & Wilcox (B&W)**
 *   **Type:** Horizontal, Water Tube.
@@ -110,7 +110,6 @@
 #### **E. Cornish Boiler**
 *   **Design:** Same as Lancashire.
 *   **Difference:** **One** internal flue only.
-
 ### **1. Boiler Performance Metrics**
 
 **A. Evaporative Capacity**
