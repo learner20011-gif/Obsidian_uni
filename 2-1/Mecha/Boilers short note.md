@@ -110,7 +110,6 @@
 #### **E. Cornish Boiler**
 *   **Design:** Same as Lancashire.
 *   **Difference:** **One** internal flue only.
-Here are concise study notes for **Boiler Performance, Mountings & Accessories (Pages 29–60)**.
 
 ### **1. Boiler Performance Metrics**
 
