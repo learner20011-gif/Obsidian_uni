@@ -1,4 +1,4 @@
-Here are concise study notes for **Steam and Steam Generators (Pages 1–28)**.
+
 
 ### **1. Fundamentals of Steam**
 *   **Definition:** Gaseous phase of water.
@@ -150,7 +150,7 @@ Here are concise study notes for **Steam and Steam Generators (Pages 1–28)**.
 **A. Safety Valve**
 *   **Function:** Release steam if $P > P_{working}$.
 *   **Mechanism (Spring Loaded):**
-    *   Spring Force $\downarrow$ vs Steam Force $\uparrow$.
+    *   Spring Force $\downarrow$ dowward vs Steam Force $\uparrow$ upwards .
     *   If Steam Force $>$ Spring Force $\rightarrow$ Valve lifts.
 
 **B. Water Level Indicator**
@@ -160,6 +160,7 @@ Here are concise study notes for **Steam and Steam Generators (Pages 1–28)**.
 
 **C. Pressure Gauge (Bourdon Tube)**
 *   **Principle:** Oval tube straightens when pressurized.
+* ![[instrumentationtools.com_pressure-gauge-animation.gif]]
 *   **Mechanism:** Tube moves Link $\rightarrow$ Quadrant Gear $\rightarrow$ Pinion $\rightarrow$ Pointer.
 *   **Protection:** **U-Tube Siphon** holds water condensate to protect gauge internals from live steam heat.
 
@@ -178,7 +179,7 @@ Here are concise study notes for **Steam and Steam Generators (Pages 1–28)**.
 *   **Type:** Plug valve (Rotary).
 
 **G. Fusible Plug**
-*   **Location:** Furnace Crown (Firebox).
+*   **Location:** Furnace Crown (Firebox).![[Pasted image 20260112094538.png]]
 *   **Material:** Low melting point alloy (Lead/Tin).
 *   **Logic:**
     *   Submerged (Water) $\rightarrow$ Cool.
