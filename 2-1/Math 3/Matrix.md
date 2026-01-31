@@ -1,83 +1,83 @@
-# Lecture 11-17: Matrix Algebra and Properties
+# Matrix Algebra: Theory and Solved Problems
 
-## 1. Fundamental Concepts of Matrices (Page 1)
+## Theory: Matrix Fundamentals and Types
 
 A matrix is a fundamental object in linear algebra used to represent data, linear transformations, and systems of equations.
 
-### **Definition and Notation**
+**Definition and Notation**
 *   **Matrix:** A rectangular array of numbers enclosed by brackets (either square $[ ]$ or round $( )$). It is subject to specific rules of operation.
 *   **Dimension:** An $m \times n$ matrix has $m$ rows and $n$ columns.
 
-👁️ **Example:**
+✅ 👁️ **Example:**
 $$ A = \begin{bmatrix} 2 & 3 & 5 \\ 1 & -1 & 4 \end{bmatrix} $$
 This is a matrix with 2 rows and 3 columns ($2 \times 3$).
 
 ---
 
-### **Types of Matrices**
+**Types of Matrices**
 
-#### **A. Dimensions Based**
+**Dimensions Based**
 1.  **Square Matrix:** A matrix where the number of rows equals the number of columns ($m=n$).
-    *   👁️ **Example:** $A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ is a $2 \times 2$ square matrix.
+    *   ✅ 👁️ **Example:** $A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ is a $2 \times 2$ square matrix.
 
-#### **B. Diagonal Properties**
+**Diagonal Properties**
 2.  **Diagonal Matrix:** A square matrix where all non-diagonal elements are zero ($a_{ij} = 0$ for $i \neq j$).
-    *   👁️ **Example:** $A = \begin{bmatrix} 3 & 0 \\ 0 & 4 \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $A = \begin{bmatrix} 3 & 0 \\ 0 & 4 \end{bmatrix}$.
 3.  **Scalar Matrix:** A diagonal matrix where all the diagonal elements are **equal**.
-    *   👁️ **Example:** $A = \begin{bmatrix} 3 & 0 \\ 0 & 3 \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $A = \begin{bmatrix} 3 & 0 \\ 0 & 3 \end{bmatrix}$.
 4.  **Unit / Identity Matrix ($I$):** A scalar matrix where all diagonal elements are unity ($1$) and non-diagonal elements are zero.
-    *   👁️ **Example:** $I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$.
 
-#### **C. Element Value Based**
+**Element Value Based**
 5.  **Zero / Null Matrix:** A matrix where **all** elements are zero.
-    *   👁️ **Example:** $A = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $A = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$.
 
-#### **D. Relationship Between Two Matrices**
+**Relationship Between Two Matrices**
 6.  **Commutative Matrices:** Two square matrices $A$ and $B$ are commutative if their product order does not matter.
     *   **Condition:** $AB = BA$.
-    *   👁️ **Example:** $A=\begin{bmatrix} 1 & -2 \\ -1 & 3 \end{bmatrix}, B = \begin{bmatrix} 3 & 2 \\ 1 & 1 \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $A=\begin{bmatrix} 1 & -2 \\ -1 & 3 \end{bmatrix}, B = \begin{bmatrix} 3 & 2 \\ 1 & 1 \end{bmatrix}$.
 7.  **Anti-commutative Matrices:** Two matrices where reversing the order negates the result.
     *   **Condition:** $AB = -BA$.
 
-#### **E. Triangular Matrices**
+**Triangular Matrices**
 8.  **Upper Triangular Matrix:** A square matrix where all elements **below** the main diagonal are zero ($a_{ij} = 0$ if $i > j$).
-    *   👁️ **Example:** $A = \begin{bmatrix} a_{11} & a_{12} & a_{13} \\ 0 & a_{22} & a_{23} \\ 0 & 0 & a_{33} \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $A = \begin{bmatrix} a_{11} & a_{12} & a_{13} \\ 0 & a_{22} & a_{23} \\ 0 & 0 & a_{33} \end{bmatrix}$.
 9.  **Lower Triangular Matrix:** A square matrix where all elements **above** the main diagonal are zero ($a_{ij} = 0$ if $i < j$).
-    *   👁️ **Example:** $A = \begin{bmatrix} a_{11} & 0 & 0 \\ a_{21} & a_{22} & 0 \\ a_{31} & a_{32} & a_{33} \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $A = \begin{bmatrix} a_{11} & 0 & 0 \\ a_{21} & a_{22} & 0 \\ a_{31} & a_{32} & a_{33} \end{bmatrix}$.
 
-#### **F. Power Properties**
+**Power Properties**
 10. **Idempotent Matrix:** A square matrix that remains unchanged when squared.
     *   **Condition:** $A^2 = A$.
-    *   👁️ **Example:** $A = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $A = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$.
 11. **Involuntary Matrix:** A square matrix which, when squared, results in the Identity matrix.
     *   **Condition:** $A^2 = I$.
-    *   👁️ **Example:** $A = \begin{bmatrix} 1 & 2 \\ 0 & -1 \end{bmatrix}$ (Note: The provided text example $A = \begin{bmatrix} 1 & 2 \\ 0 & -1 \end{bmatrix}$ actually yields $A^2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I$).
+    *   ✅ 👁️ **Example:** $A = \begin{bmatrix} 1 & 2 \\ 0 & -1 \end{bmatrix}$ (Note: The provided text example $A = \begin{bmatrix} 1 & 2 \\ 0 & -1 \end{bmatrix}$ actually yields $A^2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I$).
 
-#### **G. Transpose**
+**Transpose**
 12. **Transpose of a Matrix ($A'$ or $A^T$):** Obtained by interchanging rows and columns. If $A$ is $m \times n$, then $A'$ is $n \times m$.
-    *   👁️ **Example:** If $A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}$, then $A' = \begin{bmatrix} 1 & 4 & 7 \\ 2 & 5 & 8 \\ 3 & 6 & 9 \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** If $A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}$, then $A' = \begin{bmatrix} 1 & 4 & 7 \\ 2 & 5 & 8 \\ 3 & 6 & 9 \end{bmatrix}$.
 
 ---
 
-## 2. Advanced Matrix Types & Operations (Page 2)
+## Theory: Advanced Matrix Properties and Theorems
 
-### **Real Matrix Properties**
+**Real Matrix Properties**
 1.  **Symmetric Matrix:** A square matrix equal to its transpose.
     *   **Condition:** $A' = A$ (or $a_{ij} = a_{ji}$).
-    *   👁️ **Example:** $\begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 3 & 6 & 9 \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $\begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 3 & 6 & 9 \end{bmatrix}$.
 2.  **Skew-Symmetric Matrix:** A square matrix equal to the negative of its transpose.
     *   **Condition:** $A' = -A$ (or $a_{ij} = -a_{ji}$).
     *   **Note:** The diagonal elements must be zero (proven in Theorem 3).
-    *   👁️ **Example:** $\begin{bmatrix} 0 & -2 & 3 \\ 2 & 0 & 4 \\ -3 & -4 & 0 \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $\begin{bmatrix} 0 & -2 & 3 \\ 2 & 0 & 4 \\ -3 & -4 & 0 \end{bmatrix}$.
 3.  **Orthogonal Matrix:** A square matrix whose transpose is its inverse.
     *   **Condition:** $A'A = I$ (or $A' = A^{-1}$).
-    *   👁️ **Example:** $A = \begin{bmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** $A = \begin{bmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{bmatrix}$.
 
-### **Complex Matrix Properties**
+**Complex Matrix Properties**
 When matrices contain complex numbers ($z = a + ib$), we introduce the concept of conjugation.
 
 4.  **Conjugate of a Matrix ($\bar{A}$):** Obtained by replacing every element $a_{ij}$ with its complex conjugate $\bar{a}_{ij}$ (changing the sign of the imaginary part).
-    *   👁️ **Example:** If $A = \begin{bmatrix} 1+2i & 3i \\ 3i & 2-3i \end{bmatrix}$, then $\bar{A} = \begin{bmatrix} 1-2i & -3i \\ -3i & 2+3i \end{bmatrix}$.
+    *   ✅ 👁️ **Example:** If $A = \begin{bmatrix} 1+2i & 3i \\ 3i & 2-3i \end{bmatrix}$, then $\bar{A} = \begin{bmatrix} 1-2i & -3i \\ -3i & 2+3i \end{bmatrix}$.
 5.  **Hermitian Matrix:** A square matrix equal to the transpose of its conjugate (Tranjugate).
     *   **Condition:** $(\bar{A})' = A$. (Also denoted as $A^{\dagger} = A$).
     *   **Property:** Diagonal elements must be real.
@@ -87,15 +87,15 @@ When matrices contain complex numbers ($z = a + ib$), we introduce the concept o
 7.  **Unitary Matrix:** The complex equivalent of an orthogonal matrix.
     *   **Condition:** $(\bar{A})' A = I$.
 
-### **Other Properties**
+**Other Properties (Trace)**
 8.  **Trace of a Matrix:** The sum of the diagonal elements of a square matrix.
     *   **Formula:** $\text{Trace}(A) = \sum_{i=1}^{n} a_{ii} = a_{11} + a_{22} + \dots + a_{nn}$.
 
 ---
 
-## 3. Fundamental Matrix Theorems (Pages 2-3)
+**Core Theorems and Proofs**
 
-### **Theorem 1: Associativity of Matrix Multiplication**
+**Theorem 1: Associativity**
 **Statement:** Assuming dimensions allow for multiplication, $A(BC) = (AB)C$.
 
 **Proof Breakdown:**
@@ -119,7 +119,7 @@ When matrices contain complex numbers ($z = a + ib$), we introduce the concept o
     $$ \sum_{j=1}^{n} \sum_{k=1}^{p} a_{ij} b_{jk} c_{kr} = \sum_{k=1}^{p} \sum_{j=1}^{n} a_{ij} b_{jk} c_{kr} $$
     Therefore, matrix multiplication is associative.
 
-### **Theorem 2: Transpose of a Product (Reversal Rule)**
+**Theorem 2: Transpose of a Product**
 **Statement:** The transpose of a product is the product of the transposes in reverse order.
 $$ (AB)' = B'A' $$
 
@@ -143,7 +143,7 @@ $$ (AB)' = B'A' $$
     The $(k, i)$-th element of $(AB)'$ is identical to the $(k, i)$-th element of $B'A'$.
     $$ (AB)' = B'A' $$
 
-### **Theorem 3: Diagonal of Skew-Symmetric Matrix**
+**Theorem 3: Skew-Symmetric Diagonals**
 **Statement:** The diagonal elements of a skew-symmetric matrix are zero.
 
 **Proof:**
@@ -158,11 +158,11 @@ $$ (AB)' = B'A' $$
 
 ---
 
-## 4. The Adjoint of a Matrix (Page 4)
+## Problems: Adjoint and Inverse Matrix
 
 The adjoint is a crucial concept for finding the inverse of a matrix.
 
-### **Definitions**
+**Definitions of Minor and Cofactor**
 *   **Minor ($M_{ij}$):** The determinant of the sub-matrix obtained by deleting the $i$-th row and $j$-th column.
 *   **Cofactor ($A_{ij}$ or $\alpha_{ij}$):** The signed minor.
     $$ \text{Cofactor } \alpha_{ij} = (-1)^{i+j} \times \text{Minor} $$
@@ -170,7 +170,7 @@ The adjoint is a crucial concept for finding the inverse of a matrix.
 *   **Adjoint Matrix ($\text{adj } A$):** The **transpose** of the cofactor matrix.
     $$ \text{adj } A = [\alpha_{ij}]^T $$
 
-### 👁️ **Example Problem 1: Find adj(A)**
+✅ **Example: Calculating the Adjoint**
 Given:
 $$ A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 3 & 2 \\ 3 & 3 & 4 \end{bmatrix} $$
 
@@ -191,7 +191,7 @@ $$ C = \begin{bmatrix} 6 & -2 & -3 \\ 1 & -5 & 3 \\ -5 & 4 & -1 \end{bmatrix} $$
 **Step 3: Transpose to get Adjoint**
 $$ \text{adj } A = C^T = \begin{bmatrix} 6 & 1 & -5 \\ -2 & -5 & 4 \\ -3 & 3 & -1 \end{bmatrix} $$
 
-### **Fundamental Adjoint Theorem**
+**Fundamental Adjoint Theorem**
 **Statement:** For any $n$-square matrix $A$:
 $$ A \cdot (\text{adj } A) = (\text{adj } A) \cdot A = |A| \cdot I_n $$
 
@@ -204,11 +204,11 @@ $$ A \cdot (\text{adj } A) = (\text{adj } A) \cdot A = |A| \cdot I_n $$
     *   If elements of a row are multiplied by cofactors of a different row ($i \neq j$), the sum is zero.
 5.  This results in a diagonal matrix where every diagonal element is $|A|$ and others are 0, which factors out to $|A|I$.
 
-## 5. Properties of Adjoint Matrix (Page 5)
+**Proof: Matrix and Adjoint Relationship**
 
 This page concludes the proof regarding the product of a matrix and its adjoint, and introduces a new theorem regarding the adjoint of an adjoint.
 
-### **Theorem: $A(\text{adj } A) = |A|I$ (Proof Continuation)**
+**Theorem: Product Scaling by Determinant**
 
 We previously established that:
 *   $\text{adj } A$ is the transpose of the cofactor matrix.
@@ -239,7 +239,7 @@ Similarly, $(\text{adj } A)A = |A|I_n$.
 
 ---
 
-### **Theorem: $\text{adj}(\text{adj } A) = |A|^{n-2}A$**
+**Theorem: Adjoint of an Adjoint**
 
 **Statement:** If $|A| \neq 0$ (non-singular), the adjoint of the adjoint of $A$ scales the original matrix $A$ by the determinant raised to the power of $n-2$.
 
@@ -263,9 +263,9 @@ Similarly, $(\text{adj } A)A = |A|I_n$.
 
 ---
 
-## 6. Inverse of a Matrix (Page 6)
+**Inverse Matrix Calculation**
 
-### **Definition and Conditions**
+**Definition and Existence Conditions**
 The inverse of a square matrix $A$ is a matrix $A^{-1}$ such that $AA^{-1} = A^{-1}A = I$.
 
 *   **Formula:**
@@ -273,7 +273,7 @@ The inverse of a square matrix $A$ is a matrix $A^{-1}$ such that $AA^{-1} = A^{
 *   **Singular Matrix:** If $|A| = 0$, the inverse does not exist (cannot divide by zero).
 *   **Non-singular Matrix:** If $|A| \neq 0$, the inverse exists.
 
-### 👁️ **Example Problem 1**
+✅ **Example: Finding the Matrix Inverse**
 **Task:** Find the inverse of $A = \begin{bmatrix} 1 & 2 & -1 \\ -1 & 1 & 2 \\ 2 & -1 & 1 \end{bmatrix}$.
 
 1.  **Determinant ($|A|$):**
@@ -290,7 +290,7 @@ The inverse of a square matrix $A$ is a matrix $A^{-1}$ such that $AA^{-1} = A^{
 
 ---
 
-### ✍️ **Solution to H.W. Problem-2 (Unsolved in PDF)**
+✅ **Homework Solution: Matrix Equality Proof**
 
 **Problem:** If $A = \begin{bmatrix} 1 & -1 & 1 \\ 2 & -1 & 0 \\ 1 & 0 & 0 \end{bmatrix}$, find $A^2$ and show that $A^2 = A^{-1}$.
 
@@ -326,28 +326,28 @@ $$ A^2 = \begin{bmatrix} 0 & 0 & 1 \\ 0 & -1 & 2 \\ 1 & -1 & 1 \end{bmatrix} $$
 
 ---
 
-## 7. Rank of a Matrix (Page 7)
+## Problems: Matrix Rank and Reduction
 
-### **Definition**
+**Definition of Rank**
 The rank of a matrix $A$, denoted $\rho(A)$, is the order (size) of the largest square sub-matrix (minor) whose determinant is **non-zero**.
 *   **Note:** Rank of a Null matrix is 0.
 
-### **Method 1: By Minors**
+**Method 1: Determinant calculation (Minors)**
 We check determinants of square sub-matrices starting from the largest possible size.
 
-👁️ **Example 1:**
+✅ 👁️ **Example 1:**
 $$ A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 3 & 4 \\ 3 & 5 & 7 \end{bmatrix} $$
 *   Check order 3: $|A| = 1(21-20) - 2(14-12) + 3(10-9) = 1 - 4 + 3 = 0$.
 *   Since $|A|=0$, Rank $\neq 3$.
 *   Check order 2: Take sub-matrix $\begin{bmatrix} 1 & 2 \\ 2 & 3 \end{bmatrix}$. Determinant $= 3-4 = -1 \neq 0$.
 *   **Result:** $\rho(A) = 2$.
 
-### **Method 2: Normal / Canonical Form**
+**Method 2: Echelon and Normal Form**
 We use elementary row and column operations to reduce matrix $A$ to the form:
 $$ \begin{bmatrix} I_r & 0 \\ 0 & 0 \end{bmatrix} $$
 Where $I_r$ is the identity matrix of order $r$. The rank is **$r$**.
 
-👁️ **Example Problem 3 (Page 7 Walkthrough):**
+✅ 👁️ **Example Problem 3 (Walkthrough):**
 Given $A$ ($4 \times 4$).
 **Operations performed:**
 1.  Used $a_{11}$ to make the rest of column 1 zero ($R_{21}, R_{31}, R_{41}$).
@@ -357,11 +357,11 @@ Given $A$ ($4 \times 4$).
 
 ---
 
-## 8. Rank Determination Continued (Page 8)
+**Rank Determination Logic & Solutions**
 
 This page continues the reduction of matrices to Normal form to find the rank.
 
-### 👁️ **Problem 4 Walkthrough**
+✅ **Walkthrough: Matrix Reduction to Identity**
 **Given:** $P = \begin{bmatrix} 1 & -1 & 3 & 6 \\ 1 & 3 & -3 & -4 \\ 5 & 3 & 3 & 1 \end{bmatrix}$.
 
 1.  **Zeros in Column 1:** $R_2 - R_1$, $R_3 - 5R_1$.
@@ -375,7 +375,7 @@ This page continues the reduction of matrices to Normal form to find the rank.
 
 ---
 
-### ✍️ **Solutions to H.W. Problems 5, 6, 7**
+✅ **Homework Solutions: Rank of 4x4 Matrices**
 
 #### **H.W. Problem-5**
 **Find Rank of:** $A = \begin{bmatrix} -2 & -1 & -3 & -1 \\ 1 & 2 & 3 & -1 \\ 1 & 0 & 1 & 1 \\ 0 & 1 & 1 & -1 \end{bmatrix}$
@@ -414,9 +414,9 @@ This page continues the reduction of matrices to Normal form to find the rank.
 **Answer:** **Rank = 4**.
 
 
-## 9. System of Linear Equations (Page 9)
+## Theory: Systems of Linear Equations
 
-### **Fundamental Concepts**
+**Core Concepts and Matrix Notation**
 A system of $m$ linear equations with $n$ unknowns ($x_1, x_2, \dots, x_n$) can be represented in matrix form:
 $$ AX = B $$
 
@@ -426,11 +426,11 @@ $$ AX = B $$
 *   **Augmented Matrix ($A^*$ or $[A:B]$):** A combined matrix formed by appending $B$ as an extra column to $A$.
     $$ A^* = \begin{bmatrix} a_{11} & \cdots & a_{1n} & : & b_1 \\ \vdots & \ddots & \vdots & : & \vdots \\ a_{m1} & \cdots & a_{mn} & : & b_m \end{bmatrix} $$
 
-### **Types of Systems**
+**Classification of Systems**
 1.  **Homogeneous:** If $B = 0$ (All constants are zero). Always has at least the trivial solution ($X=0$).
 2.  **Non-Homogeneous:** If $B \neq 0$.
 
-### **Consistency and Rank (Theory)**
+**Rank and Consistency Theory**
 We determine the nature of the solution by comparing the Rank ($\rho$) of the coefficient matrix $A$ and the augmented matrix $A^*$. Let $n$ be the number of variables.
 
 *   **Consistent (Solution Exists):**
@@ -444,7 +444,7 @@ We determine the nature of the solution by comparing the Rank ($\rho$) of the co
 
 ---
 
-### 👁️ **Problem 1: Infinite Solutions Walkthrough (Pages 9-10)**
+## Problems: Solution Sets and Consistency Analysis
 
 **System:**
 $$ \begin{aligned} x + 2y - 3z + 2w &= 2 \\ 2x + 5y - 8z + 6w &= 5 \\ 3x + 4y - 5z + 2w &= 4 \end{aligned} $$
@@ -476,9 +476,9 @@ $$ A^* = \begin{bmatrix} 1 & 2 & -3 & 2 & : & 2 \\ 2 & 5 & -8 & 6 & : & 5 \\ 3 &
 
 ---
 
-## 10. Solving for Unique and No Solutions (Pages 10-11)
+**Solved Examples: Unique and No Solutions**
 
-### 👁️ **Problem 2: Unique Solution**
+✅ **Example: Case of Unique Solution**
 **System:**
 $$ \begin{aligned} 2x + y - 2z &= 10 \\ 3x + 2y + 2z &= 1 \\ 5x + 4y + 3z &= 4 \end{aligned} $$
 
@@ -492,7 +492,7 @@ $$ \begin{bmatrix} 2 & 1 & -2 & : & 10 \\ 0 & 1 & 10 & : & -28 \\ 0 & 0 & -14 & 
     2.  $y + 10(-3) = -28 \implies y = 2$.
     3.  $2x + 2 - 2(-3) = 10 \implies x = 1$.
 
-### 👁️ **Problem 3: Inconsistent System (No Solution)**
+✅ **Example: Case of Inconsistent System**
 **System:**
 $$ \begin{aligned} 4x_1 + 5x_2 + 3x_3 &= 7 \\ \dots \end{aligned} $$
 **Process:**
@@ -502,7 +502,7 @@ $$ \begin{bmatrix} 1 & 1 & 2 & : & 5 \\ 0 & 1 & -5 & : & -8 \\ 0 & 0 & 0 & : & -
 *   $\rho(A^*) = 3$ (Last row of augmented is non-zero).
 *   **Conclusion:** Inconsistent. **No Solution**.
 
-### 👁️ **Problem 4: Conditional Consistency**
+**Analysis: Conditional Consistency Relations**
 **Goal:** Find relation between $a, b, c$ for a solution to exist.
 **Reduced Matrix:**
 $$ \begin{bmatrix} 1 & 2 & -3 & : & a \\ 0 & -7 & 11 & : & b - 3a \\ 0 & 0 & 0 & : & 2a - b + c \end{bmatrix} $$
@@ -512,9 +512,9 @@ $$ \begin{bmatrix} 1 & 2 & -3 & : & a \\ 0 & -7 & 11 & : & b - 3a \\ 0 & 0 & 0 &
 
 ---
 
-## 11. Parametric Analysis of Systems (Pages 11-12)
+**Parametric Analysis of Linear Systems**
 
-### 👁️ **Problem 5: Analysis with Parameter $\lambda$**
+✅ **Example: System Analysis with Parameter Lambda**
 **System:**
 $$ \begin{aligned} x + y + \lambda z &= 2 \\ 3x + 4y + 2z &= \lambda \\ 2x + 3y - z &= 1 \end{aligned} $$
 
@@ -537,7 +537,7 @@ Note: The last term $3-\lambda = -(\lambda-3)$.
 
 ---
 
-### ✍️ **H.W. Problem Solutions**
+✅ **Solutions to Parametric Homework Problems**
 
 #### **H.W. Problem-6**
 **Solve:**
@@ -575,21 +575,21 @@ $$ |A| = (k-1)(k+2)(k-1) = (k-1)^2(k+2) $$
 
 ---
 
-## 12. Eigen Values and Eigen Vectors (Page 12)
+## Theory: Eigenvalues and Eigenvectors
 
-### **Definitions**
+**Definitions of Characteristic Roots**
 If $A$ is an $n \times n$ square matrix, a non-zero vector $V$ is an **Eigenvector** if:
 $$ AV = \lambda V $$
 Where $\lambda$ is a scalar called the **Eigenvalue** (or characteristic root).
 
-### **Characteristic Equation**
+**Formation of Characteristic Equations**
 To find $\lambda$, we rearrange the equation:
 $$ AV - \lambda I V = 0 $$
 $$ (A - \lambda I)V = 0 $$
 For non-trivial solutions ($V \neq 0$), the determinant of the characteristic matrix must be zero:
 $$ |A - \lambda I| = 0 $$
 
-### 👁️ **Problem 1: Finding Eigenvalues**
+✅ **Example: Finding Eigenvalues**
 **Matrix:**
 $$ A = \begin{bmatrix} 1 & 0 & -2 \\ 0 & 0 & 0 \\ -2 & 0 & 4 \end{bmatrix} $$
 
@@ -606,13 +606,13 @@ $$ A = \begin{bmatrix} 1 & 0 & -2 \\ 0 & 0 & 0 \\ -2 & 0 & 4 \end{bmatrix} $$
     $$ \lambda = 0, 0, 5 $$
     **Eigenvalues are 0, 0, and 5.**
 
-## 13. Calculating Eigenvectors (Page 13)
+## Problems: Calculating Eigenvectors and Verifying Theorems
 
-### **Concept**
+**Process of Constructing Eigenvectors**
 After finding Eigenvalues ($\lambda$) from $|A - \lambda I| = 0$, we find the corresponding **Eigenvectors** ($X$) by solving the homogeneous system:
 $$ (A - \lambda I)X = 0 $$
 
-### 👁️ **Problem 1 Continued: Finding Vectors**
+✅ **Case Study: Multiple Eigenvalues (λ=0, 5)**
 **Recall:** Matrix $A = \begin{bmatrix} 1 & 0 & -2 \\ 0 & 0 & 0 \\ -2 & 0 & 4 \end{bmatrix}$. We found Eigenvalues $\lambda = 0, 0, 5$.
 
 #### **Case 1: For $\lambda = 0$**
@@ -639,7 +639,7 @@ $$ \begin{bmatrix} -4 & 0 & -2 \\ 0 & -5 & 0 \\ -2 & 0 & -1 \end{bmatrix} \begin
 
 ---
 
-### 👁️ **Problem 2: Full Eigen-Analysis**
+✅ **Walkthrough: Full Eigen-Analysis Steps**
 **Matrix:** $A = \begin{bmatrix} 2 & 2 & 1 \\ 1 & 3 & 1 \\ 1 & 2 & 2 \end{bmatrix}$
 
 **Step 1: Characteristic Equation**
@@ -652,7 +652,7 @@ $$ (\lambda - 1)^2 (\lambda - 5) = 0 $$
 
 ---
 
-## 14. Eigenvectors Problem 2 Continued (Page 14)
+✅ **Continuation of Eigen-Analysis Walkthrough**
 
 We need to find vectors for $\lambda = 1$ and $\lambda = 5$.
 
@@ -682,16 +682,16 @@ $$ \begin{bmatrix} -3 & 2 & 1 \\ 1 & -2 & 1 \\ 1 & 2 & -3 \end{bmatrix} X = 0 $$
 
 ---
 
-## 15. Cayley-Hamilton Theorem (Page 15)
+## Theory: Cayley-Hamilton Theorem and Applications
 
 This section contains homework problems and a major theoretical proof.
 
-### ✍️ **Homework Problems**
+✅ **Self-Study: Eigenvector Homework Problems**
 *   **Problem 3:** $A = \begin{bmatrix} 4 & 6 & 6 \\ 1 & 3 & 2 \\ -1 & -4 & -3 \end{bmatrix}$. Find eigenvalues/vectors.
 *   **Problem 4:** $A = \begin{bmatrix} 5 & 2 & 0 \\ -1 & 3 & 0 \\ 0 & 2 & -1 \end{bmatrix}$. **Answers:** $\lambda = 5, 3, -1$.
 *   **Problem 5:** $A = \begin{bmatrix} 1 & -3 & 3 \\ 3 & -5 & 3 \\ 6 & -6 & 4 \end{bmatrix}$. **Answers:** $\lambda = 4, -2, -2$.
 
-### **Cayley-Hamilton Theorem**
+**Statement and General Proof of the Theorem**
 **Statement:** Every square matrix satisfies its own characteristic equation.
 If the characteristic equation is $|A - \lambda I| = \lambda^n + a_{n-1}\lambda^{n-1} + \dots + a_0 = 0$, then:
 $$ A^n + a_{n-1}A^{n-1} + \dots + a_0 I = 0 $$
@@ -718,9 +718,9 @@ $$ A^n + a_{n-1}A^{n-1} + \dots + a_0 I = 0 $$
 
 ---
 
-## 16. Verification and Applications (Page 16)
+## Problems: Cayley-Hamilton Verification and Matrix Functions
 
-### 👁️ **Problem 5: Verify Cayley-Hamilton**
+✅ **Verification Example: Matrix Polynomials**
 **Given:** $A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & -1 & 1 \\ 3 & 1 & 1 \end{bmatrix}$.
 
 **Step 1: Characteristic Equation**
@@ -740,7 +740,7 @@ $$ \begin{bmatrix} 44 \\ 33 \\ 53 \end{bmatrix} - \begin{bmatrix} 14 \\ 3 \\ 8 \
 
 ---
 
-### 👁️ **Problem 6: Matrix Polynomials**
+✅ **Calculation: Complex Matrix Polynomial Functions**
 **Task:** Compute $f(A)$ if $f(x) = \frac{1+x}{1-x}$ and $A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}$.
 
 **Method:**
