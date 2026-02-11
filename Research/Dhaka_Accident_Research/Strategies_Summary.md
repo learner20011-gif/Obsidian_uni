@@ -15,7 +15,4 @@
 - **Method:** **Difference-in-Differences (DiD)** analysis comparing accident rate changes within 500m of Metro lines vs. control zones (e.g., Rampura) before/after 2023.
 - **Impact:** Answers critical national safety questions regarding infrastructure shifts.
 
-## 4. Temporal Drift Analysis
-- **Goal:** Prove that static models become obsolete as accident nature changes.
-- **Method:** Rolling training (2007–2010) tested on 2024 data. Use **SHAP values** to visualize feature shift (e.g., shift from Bus-led to Motorbike-led fatalities).
-- **Impact:** Establishes need for dynamic retraining cycles in developing nations.
+
