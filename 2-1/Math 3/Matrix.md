@@ -158,7 +158,7 @@
 
 ### **6.1 Eigen Theories and Setup**
 
-- **General Formula:** $AV=\lambda V$ (where $\lambda$ is the eigenvalue/characteristic root, and $V$ is the eigenvector/characteristic vector).
+- **General Formula:** $AX=\lambda X$ (where $\lambda$ is the eigenvalue/characteristic root, and $X$ is the eigenvector/characteristic vector).
     
 - **Characteristic Polynomial:** The determinant $|A-\lambda I|$.
     
@@ -173,4 +173,3 @@
     
 - **Cayley-Hamilton Proof Formula:** If $|A-\lambda I|=\lambda^{n}+a_{n-1}\lambda^{n-1}+\cdot\cdot\cdot+a_{0}=0$, then replacing $\lambda$ with matrix $A$ yields $A^{n}+a_{n-1}A^{n-1}+\cdot\cdot\cdot+a_{0}I_{n}=0$.
     
-- **Solving Fractional Matrix Polynomials:** When a function involves division, e.g., $f(x)=\frac{1+x}{1-x}$, matrices cannot be divided. It must be converted into an inverse multiplication operation: $f(A)=(I+A)(I-A)^{-1}$.
