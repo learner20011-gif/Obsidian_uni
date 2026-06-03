@@ -8,7 +8,7 @@ prep_time: 15 mins
 cook_time: 40 mins (plus 4 hrs chilling)
 ---
 
-# Classic Caramel Pudding
+
 ## 📐 The Core Ratio
 *What is the mathematical foundation of this dish?*
  * **Ratio:** 1 part Egg : 2 parts Liquid (Milk) for the custard base.
