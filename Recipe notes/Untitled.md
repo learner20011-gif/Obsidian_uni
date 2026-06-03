@@ -1,4 +1,3 @@
-
 ---
 tags:
   - recipe
@@ -9,7 +8,6 @@ prep_time: 15 mins
 cook_time: 40 mins (plus 4 hrs chilling)
 ---
 
-
 # Classic Caramel Pudding
 ## 📐 The Core Ratio
 *What is the mathematical foundation of this dish?*
@@ -19,9 +17,11 @@ cook_time: 40 mins (plus 4 hrs chilling)
 *Why does this recipe work? What is the core technique?*
  * **Primary Technique:** [[Caramelization]] & [[Bain-Marie (Water Bath)]]
  * **The Science/Purpose:** The water bath acts as a thermal insulator. Water cannot exceed 212°F (100°C), which protects the delicate egg proteins from the harsh 300°F oven heat. This ensures the proteins coagulate slowly and evenly into a silky, suspended gel rather than scrambling into a rubbery, porous sponge.
+ * Adding water acts as an emergency brake to stop the cooking process instantly, preventing the caramel from burning and turning bitter. It also thins the sugar so it cools into a rich, pourable syrup rather than rock-hard candy. Using *hot* water is crucial because cold water causes a dangerous, violent splatter and makes the molten sugar seize into stubborn lumps.
+ * 
 ## ⚠️ Common Mistakes to Avoid
 *Where does this usually go wrong?*
- * **Mistake 1:** Walking away from the cooking sugar. Caramel goes from perfectly deep amber to burnt and intensely bitter in a matter of seconds.
+ * **Mistake 1:** **Do not stir with a spoon just gently swirl the pan occasionally.** Walking away from the cooking sugar. Caramel goes from perfectly deep amber to burnt and intensely bitter in a matter of seconds.
  * **Mistake 2:** Whisking the eggs too vigorously. Incorporating air creates bubbles that will bake into the pudding, ruining the dense, silky texture.
  * **Mistake 3:** Pouring hot milk too fast into the eggs without whisking. This is a failure to "temper" and will instantly scramble the eggs.
 ## 🥣 Mise en Place (Ingredients)
