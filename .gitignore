@@ -1,3 +1,7 @@
 temp
 .obsidian
 .trash
+.obsidian/plugins/
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/cache/
