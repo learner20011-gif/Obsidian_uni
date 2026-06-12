@@ -778,39 +778,6 @@ $4.3077 = \frac{\pi \times 0.6 \times N_{min}}{60}$
 $N_{min} = \frac{4.3077 \times 60}{\pi \times 0.6}$
 $N_{min} = \mathbf{137.1 \text{ r.p.m. (Ans.)}}$
 
-***
-
-### What is a turbine? Derive the condition for maximum efficiency of an impulse turbine.
-
-**Definition of a Turbine:**
-A hydraulic turbine is a prime mover (a machine which uses the raw energy of a substance and converts it into mechanical energy) that uses the energy of flowing water and converts it into the mechanical energy (in the form of rotation of the runner).
-
-**Derivation for Maximum Hydraulic Efficiency of an Impulse Turbine (Pelton Wheel):**
-The hydraulic efficiency ($\eta_h$) of a Pelton wheel is given by the ratio of work done per second to the kinetic energy of the jet per second:
-
-$\eta_h = \frac{\text{Work done per second}}{\text{K.E. of jet per second}} = \frac{\rho a V_1 (V_{w1} + V_{w2}) \times u}{\frac{1}{2} (\rho a V_1) \times V_1^2}$
-or, $\eta_h = \frac{2(V_{w1} + V_{w2}) \times u}{V_1^2}$
-
-From inlet and outlet velocity triangles:
-$V_{w1} = V_1$
-$V_{w2} = V_{r2} \cos \phi - u_2 = K V_{r1} \cos \phi - u = K (V_1 - u) \cos \phi - u$
-
-Substituting the values of $V_{w1}$ and $V_{w2}$ in the efficiency equation:
-$\eta_h = \frac{2[V_1 + K (V_1 - u) \cos \phi - u]u}{V_1^2} = \frac{2[(V_1 - u) (1 + K \cos \phi)]u}{V_1^2}$
-
-The hydraulic efficiency will be maximum for a given value of $V_1$ when:
-$\frac{d(\eta_h)}{du} = 0$
-
-i.e., $\frac{d}{du} \left[ \frac{2 (V_1 - u) (1 + K \cos \phi) u}{V_1^2} \right] = 0$
-
-or, $\frac{2 (1 + K \cos \phi)}{V_1^2} \times \frac{d}{du} (V_1 u - u^2) = 0$
-
-Since $\frac{2 (1 + K \cos \phi)}{V_1^2} \neq 0$, 
-$\therefore \frac{d}{du} (V_1 u - u^2) = 0$
-
-$V_1 - 2u = 0$, or, $u = \frac{V_1}{2}$
-
-This equation states that the hydraulic efficiency of an impulse turbine (Pelton wheel) is maximum when the velocity of the wheel is half the velocity of the jet of water at inlet.
 
 ***
 
@@ -950,10 +917,4 @@ When a centrifugal pump operates, the various losses which occur are as follows:
 
 ***
 
-### Q2: What is 'priming'? Why is it necessary?
 
-**What is priming:**
-The operation of filling the suction pipe, casing of the pump and a portion of the delivery pipe completely from outside source with the liquid to be raised, before starting the pump, to remove any air, gas or vapour from these parts of the pump is called priming of a centrifugal pump.
-
-**Why is it necessary:**
-If a centrifugal pump is not primed before starting, air pockets inside the impeller may give rise to vortices and cause discontinuity of flow. Further, dry running of the pump may result in rubbing and seizing of the wearing rings and cause serious damage.
