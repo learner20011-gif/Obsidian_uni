@@ -76,7 +76,7 @@ Gauss's Law states that the total electric flux ($\Psi$) passing through any clo
 *   **Integral Form:** $\oint_S \mathbf{D} \cdot d\mathbf{S} = Q_{enc}$ (where $\mathbf{D} = \varepsilon_0\mathbf{E}$ is the electric flux density).
 *   **Differential (Point) Form:** $\nabla \cdot \mathbf{D} = \rho_v$ (where $\rho_v$ is the volume charge density).
 
-**Electric Field due to an Infinite Sheet of Charge:**
+**Electric Field due to an Infinite Sheet of Charge   ( read frm slide):**  ![[Screenshot_20260613_184913_Xodo.jpg]] 
 1.  **Symmetry and Gaussian Surface:** Consider an infinite sheet lying in the $xy$-plane ($z=0$) with a uniform surface charge density $\rho_s$. By symmetry, the electric field $\mathbf{E}$ (and thus $\mathbf{D}$) must be perpendicular to the sheet, pointing directly away from it (along $+\hat{a}_z$ for $z>0$ and $-\hat{a}_z$ for $z<0$). 
 2.  We construct a Gaussian surface in the shape of a rectangular box (or pillbox) that is cut symmetrically by the sheet. Let the top and bottom faces each have an area $A$, parallel to the sheet.
 3.  **Applying the Integral Form:** 
