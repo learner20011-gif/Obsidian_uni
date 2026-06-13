@@ -55,7 +55,7 @@ The cylindrical components of the electric field at point B are **$160.09\hat{a}
 
 ***
 
-### Q.1 (c) What do you understand by the conservative property of potential function? State how Kirchhoff's Voltage Law (K.V.L.) is originated from this property.
+### 🔴 Q.1 (c) What do you understand by the conservative property of potential function? State how Kirchhoff's Voltage Law (K.V.L.) is originated from this property.
 
 **Conservative Property of Potential Function:**
 The conservative property of an electrostatic field (and its associated potential function) means that the work done in moving a point charge from one location to another is completely independent of the path taken between the two points. Mathematically, this is expressed by stating that the line integral of the electric field $\mathbf{E}$ around any closed path $L$ is exactly zero:
@@ -69,7 +69,7 @@ Kirchhoff's Voltage Law states that the algebraic sum of the potential differenc
 
 ***
 
-### Q.2 (a) State Gauss's Law in electrostatic with necessary mathematical expression. Using this law obtain the expression of electric fields due to an uniformly charged infinitely charge plane of thin sheet with surface charge density of $\rho_s$ C/m$^2$.
+### 🔴 Q.2 (a) State Gauss's Law in electrostatic with necessary mathematical expression. Using this law obtain the expression of electric fields due to an uniformly charged infinitely charge plane of thin sheet with surface charge density of $\rho_s$ C/m$^2$.
 
 **Gauss's Law:**
 Gauss's Law states that the total electric flux ($\Psi$) passing through any closed imaginary surface (a Gaussian surface) is equal to the total net electric charge ($Q_{enc}$) enclosed by that surface.
@@ -160,7 +160,7 @@ To illustrate this, you should sketch two corresponding figures side-by-side:
 
 ***
 
-### Q.3 (a) Explain the boundary conditions for electrostatic and magnetostatic fields.
+### 🔴 Q.3 (a) Explain the boundary conditions for electrostatic and magnetostatic fields.
 
 Boundary conditions dictate how electromagnetic fields behave as they cross an interface separating two different media (e.g., moving from a dielectric to a conductor, or from one magnetic material to another). We analyze these by breaking the fields into components tangential (parallel) to the boundary and normal (perpendicular) to the boundary.
 
@@ -299,7 +299,7 @@ Half the total charge lies within the distance **$R = a$** from the z-axis.
 
 ***
 
-### Q.2 a) State potential function and its conservative property.
+### 🔴 Q.2 a) State potential function and its conservative property.
 
 **Potential Function:**
 The electric scalar potential $V$ at any specific point in an electric field is defined as the work done (by an external agent) per unit charge in transferring a positive test charge from a reference point (usually assumed to be at infinity where potential is zero) to that specific point. Mathematically, it is expressed as:
@@ -877,7 +877,7 @@ $$ \mathbf{E} = \frac{qd}{2 \pi \varepsilon_0 z^3} \mathbf{a}_z $$
 This is the electric field intensity at point $P$ on the z-axis far from the dipole.
 
 *(Related location: Book Page 175-177 / Presentation Slides Page 116-118)*
-### Q.1 (a) State Coulomb's law and the constraints for it, from this law define electric field intensity, E. Write some applications of electrostatics.
+### 🔴 Q.1 (a) State Coulomb's law and the constraints for it, from this law define electric field intensity, E. Write some applications of electrostatics.
 
 **Solution:**
 
@@ -917,7 +917,7 @@ Electrostatic principles are utilized in various diverse fields and devices, inc
 
 ***
 
-### Q.1 (b) Explain Gauss's law along with its salient features and limitations.
+### 🔴 Q.1 (b) Explain Gauss's law along with its salient features and limitations.
 
 **Solution:**
 
@@ -1056,7 +1056,7 @@ This proves that the electric field intensity of an infinitely long, straight li
 
 ***
 
-### Q.2 (b) What are meant by the potential difference between two points and absolute potential of a point in the electric field?
+### 🔴 Q.2 (b) What are meant by the potential difference between two points and absolute potential of a point in the electric field?
 
 **Solution:**
 
@@ -1119,7 +1119,7 @@ $$ \Delta W = W_2 - W_1 = 1.0 \mu\text{J} - 0.5 \mu\text{J} = \mathbf{0.5 \mu\te
 *(Note: The increase in electrostatic energy comes from the mechanical work done by an external force to pull the oppositely charged plates further apart).*
 
 *(Related location: Book Page 256 for capacitance equation, Book Page 181 for energy equation / PDF Page 256, 181)*
-### Q.3 (a) What are electric dipole and dipole moment?
+### 🔴 Q.3 (a) What are electric dipole and dipole moment?
 
 **Solution:**
 
@@ -1137,7 +1137,7 @@ $$ \mathbf{p} = Q\mathbf{d} $$
 
 ***
 
-### Q.3 (b) Derive the equation of potential due to an electric dipole.
+### 🔴 Q.3 (b) Derive the equation of potential due to an electric dipole.
 
 **Solution:**
 
@@ -1253,7 +1253,7 @@ $$ V_{surface} = (10^{-9}) \cdot (10^9) \cdot 1 \cdot 36\pi = 36\pi \text{ Volts
 Therefore, the potential at the center of the sphere is approximately **113 V**.
 
 *(Related location: Concept of Equipotential Conductor: Book Page 206 / PDF Page 206)*
-### Q1. (a) Define Electric Field and Electric Field intensity of a point in space. Show that $\mathbf{E} = -\nabla V$.
+### 🔴 Q1. (a) Define Electric Field and Electric Field intensity of a point in space. Show that $\mathbf{E} = -\nabla V$.
 
 **Electric Field Definition:**
 An electric field is a region of space around a charged particle or object within which a force would be exerted on other charged particles or objects. It is a vector field that associates to each point in space the electrostatic force per unit of charge exerted on an infinitesimal positive test charge at rest at that point.
@@ -1281,7 +1281,7 @@ This shows that the electric field intensity is the negative gradient of the ele
 
 ---
 
-### Q1. (b) Describe the effect of electric field on conductor and hence explain that we are safe inside a car during the thunder storm.
+### 🔴 Q1. (b) Describe the effect of electric field on conductor and hence explain that we are safe inside a car during the thunder storm.
 
 **Effect of Electric Field on a Conductor:**
 A conducting material contains a sea of free electrons that are not tightly bound to their parent atoms and can move freely throughout the material. 
@@ -1341,7 +1341,7 @@ This region is to the right of both sheets.
 
 ---
 
-### Q2. (a) Derive the point form of Gauss's law. State divergence theorem and prove it using Gauss's law.
+### 🔴 Q2. (a) Derive the point form of Gauss's law. State divergence theorem and prove it using Gauss's law.
 
 **Derivation of the Point Form of Gauss's Law:**
 Gauss's law in its integral form states that the total electric flux passing through a closed surface $S$ is equal to the total charge $Q_{enc}$ enclosed by that volume $v$:
@@ -1412,7 +1412,7 @@ The total charge contained in the volume is **360 Coulombs**.
 
 ---
 
-### Q2. (c) Define electric potential and equipotential line. Show that electric potential difference between two points a and b is independent of the path through which a charge is taken between the points.
+### 🔴 Q2. (c) Define electric potential and equipotential line. Show that electric potential difference between two points a and b is independent of the path through which a charge is taken between the points.
 
 **Electric Potential:**
 The electric potential $V$ at any given point in an electric field is defined as the work done by an external agent in bringing a unit positive test charge from a reference point (usually assumed to be at infinity, where potential is zero) to that specific point. It is a scalar quantity measured in Volts (V) or Joules per Coulomb (J/C).
@@ -1483,7 +1483,7 @@ The boundary conditions for a conductor-to-free space interface dictate that the
 *   Normal fields: $D_n = \rho_S, \quad E_n = \frac{\rho_S}{\varepsilon_0}$
 
 *(Related location: Book Page 202 / PDF Page 227)*
-### Q.3 (a) What is electric dipole? Determine the equation of voltage for an electric dipole system.
+### 🔴 Q.3 (a) What is electric dipole? Determine the equation of voltage for an electric dipole system.
 
 **Solution:**
 
@@ -1518,7 +1518,7 @@ $$ V = \frac{\mathbf{p} \cdot \mathbf{a}_r}{4\pi\varepsilon_0 r^2} $$
 
 *(Related location: Book Page 150-151 / PDF Page 175-176)*
 
-### Q.3 (b) Show that the energy stored in an electric field can be given by $W_E = \frac{1}{2} \int \varepsilon_o E^2 dv$.
+### 🔴 Q.3 (b) Show that the energy stored in an electric field can be given by $W_E = \frac{1}{2} \int \varepsilon_o E^2 dv$.
 
 **Solution:**
 
@@ -1647,7 +1647,7 @@ For a good conductor (like copper), $\sigma$ is extremely large, making the rela
 Because charge is conserved, this migrating charge does not disappear but rushes to the exterior surface of the material, establishing a surface charge. Thus, under equilibrium conditions ($t \gg T_r$), the charge density inside the conducting material is zero ($\rho_v = 0$).
 
 *(Related location: Book Page 178-180, 196-197, 433 / PDF Page 203-205, 221-222, 412)*
-### Q.1. (a) State and explain Coulomb's force law.
+### 🔴 Q.1. (a) State and explain Coulomb's force law.
 
 **Solution:**
 
@@ -1672,7 +1672,7 @@ The law implies that like charges (charges of the same sign, so $Q_1Q_2 > 0$) re
 
 ***
 
-### Q.1. (b) Define electric field intensity and hence show that $\vec{E} = \lim_{q \to 0} \frac{\vec{F}}{q}$.
+### 🔴 Q.1. (b) Define electric field intensity and hence show that $\vec{E} = \lim_{q \to 0} \frac{\vec{F}}{q}$.
 
 **Solution:**
 
@@ -1752,7 +1752,7 @@ $$ \mathbf{E} = \frac{\rho_s}{2\varepsilon_0} \left( 1 - \frac{h}{\sqrt{a^2 + h^
 
 ***
 
-### Q.2. (a) What is electric dipole? Show the geometry of electric dipole and derive the expression of electric potential in terms of dipole moment.
+### 🔴 Q.2. (a) What is electric dipole? Show the geometry of electric dipole and derive the expression of electric potential in terms of dipole moment.
 
 **Solution:**
 
@@ -1833,7 +1833,7 @@ Calculate Potential $V_B$:
 $$ V_B = (9 \times 10^9) \frac{3.217 \times 10^{-9}}{20.42} = \frac{28.953}{20.42} \approx 1.418 \text{ V} $$
 
 *(Related location: Book Page 151 (Equation 4.81) / PDF Page 176)*
-### Q.3 (a) State and explain Gauss' laws for electric and magnetic fields. Also, explain their physical meanings.
+### 🔴 Q.3 (a) State and explain Gauss' laws for electric and magnetic fields. Also, explain their physical meanings.
 
 **Solution:**
 
@@ -1861,7 +1861,7 @@ Gauss's laws form half of Maxwell's fundamental equations of electromagnetism. T
 
 ***
 
-### Q.3 (b) Show that $\nabla \cdot \bar{D} = \rho_v$.
+### 🔴 Q.3 (b) Show that $\nabla \cdot \bar{D} = \rho_v$.
 
 **Solution:**
 
@@ -1894,7 +1894,7 @@ This completes the proof showing that the divergence of the electric flux densit
 
 ***
 
-### Q.3 (c) Define absolute potential and hence derive an equation for absolute potential due to a point charge.
+### 🔴 Q.3 (c) Define absolute potential and hence derive an equation for absolute potential due to a point charge.
 
 **Solution:**
 
@@ -1936,7 +1936,7 @@ To find the absolute potential $V(r)$ at a radial distance $r$ from a point char
 
 ***
 
-### Q.4 (a) Determine the boundary conditions for electrostatic fields at the interface between a good conductor and a dielectric media with permittivity $\varepsilon$.
+### 🔴 Q.4 (a) Determine the boundary conditions for electrostatic fields at the interface between a good conductor and a dielectric media with permittivity $\varepsilon$.
 
 **Solution:**
 
@@ -1979,7 +1979,7 @@ Since $D_n = \varepsilon E_n$, we can write $E_n = \frac{\rho_S}{\varepsilon}$.
 
 ***
 
-### Q.4 (b) Explain the effect of static electric field on a conducting material in brief.
+### 🔴 Q.4 (b) Explain the effect of static electric field on a conducting material in brief.
 
 **Solution:**
 
@@ -2041,7 +2041,7 @@ By solving these second-order partial differential equations (usually via method
 Once the scalar field $V$ is found, the vector electric field $\mathbf{E}$ can be easily computed via $\mathbf{E} = -\nabla V$, and from there, parameters like charge distribution (using $\rho_S = D_n$), capacitance, and forces can be fully determined.
 
 *(Related location: Presentation Slides Page 195-196 / Book Page 225-226)*
-### Q.1 (a) State and explain Gauss' law for electrostatics, and hence show that $\nabla \cdot \mathbf{D} = \rho_v$, where the symbols have their usual meaning.
+### 🔴 Q.1 (a) State and explain Gauss' law for electrostatics, and hence show that $\nabla \cdot \mathbf{D} = \rho_v$, where the symbols have their usual meaning.
 
 **Solution:**
 
@@ -2248,7 +2248,7 @@ This is the standard expression for the capacitance of a parallel-plate capacito
 
 ***
 
-### Q.2 (b) Show that the energy stored in an electrostatic field can be calculated by using the equation $W_E = \int_{vol} \frac{1}{2} \varepsilon |\mathbf{E}|^2 dv$.
+### 🔴 Q.2 (b) Show that the energy stored in an electrostatic field can be calculated by using the equation $W_E = \int_{vol} \frac{1}{2} \varepsilon |\mathbf{E}|^2 dv$.
 
 *(Note: The prompt image contains a slight typo, omitting the factor of $\frac{1}{2}$. The physical derivation below yields the correct standard formula, $W_E = \frac{1}{2} \int \varepsilon |\mathbf{E}|^2 dv$)*
 
@@ -2333,7 +2333,7 @@ Since $\nabla^2 \phi = 0$ everywhere (except at the singularity $r=0$, where the
 
 ***
 
-### Q.3 (a) Define boundary conditions. Explain the boundary conditions for (i) dielectric-dielectric and (ii) dielectric-conductor interfaces.
+### 🔴 Q.3 (a) Define boundary conditions. Explain the boundary conditions for (i) dielectric-dielectric and (ii) dielectric-conductor interfaces.
 
 **Solution:**
 
