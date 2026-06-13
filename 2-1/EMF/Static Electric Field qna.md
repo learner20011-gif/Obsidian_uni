@@ -150,7 +150,6 @@ To illustrate this, you should sketch two corresponding figures side-by-side:
     1.  Draw a horizontal line representing an infinite, perfectly conducting plane. Shade the area below the line to indicate the conductor. Label the line "$V = 0$".
     2.  Place a positive point charge "$+Q$" at a distance "$h$" directly above the conducting plane.
     3.  Draw electric field lines emanating from $+Q$ and terminating perpendicular to the conducting plane.
-
 *   **Figure B (The Equivalent Image System):**
     1.  Draw a horizontal dashed line in the exact same position as the conducting plane in Figure A. Label this "Equipotential surface $V = 0$". Do not shade below it; the conductor is gone.
     2.  Place the original positive point charge "$+Q$" at distance "$h$" above the dashed line.
