@@ -622,7 +622,7 @@ This formula shows that the skin depth becomes incredibly small at high frequenc
 ---
 
 ### (b) Let $\mathbf{B} = 0.5 x \mathbf{a}_z$ T in the figure shown below. The position of the sliding bar is given by $x = 4t - 2t^2$. If the separation of the rails is $10$ cm, find the voltmeter reading $V_{ab}$ at : (i) $t = 0.5$ s, (ii) $x = 1$ m.
-![[c538a64c-d064-4e27-a128-846b98dbeff2.jpeg]]
+![[2-1/EMF/attachments/c538a64c-d064-4e27-a128-846b98dbeff2.jpg]]
 **Detailed Answer:**
 
 **1. Identify the Type of EMF:**
