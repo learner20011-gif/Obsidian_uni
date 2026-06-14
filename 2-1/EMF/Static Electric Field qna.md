@@ -2444,4 +2444,9 @@ Let's assume the electron is modeled as a spherical shell of radius $a$ where al
 
 The calculated radius of the electron is approximately **$1.41 \times 10^{-15}$ m**.
 
-*(Related location: Book Page 155-156 (Energy formula), Page 1 (Constants) / PDF Page 180-181, 1)*
+*(Related location: Book Page 155-156 (Energy formula), Page 1 (Constants) / PDF Page 180-181, 1
+
+
+
+
+### untill 2015
