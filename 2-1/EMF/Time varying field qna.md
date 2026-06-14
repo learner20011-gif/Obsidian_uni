@@ -699,3 +699,238 @@ $$V_{ab} = \mp 0.1414 \text{ Volts}$$
 **The voltmeter reading when $x=1$ m is $-0.1414$ V (when moving forward) or $+0.1414$ V (when moving backward).**
 
 *(Related concept location: PDF 2, Section 9.3 "Moving Loop in Static B Field (Motional emf)", pages 425-428)*
+## Concise notes 
+Here are the highly scannable, concise notes derived from the provided Q&A document.
+
+***
+
+### 1. CONTINUITY EQUATION & CHARGE CONSERVATION
+*Ref: Sec 5.8, pg 196*
+
+*   **Principle**: Charge is conserved. Cannot be created/destroyed.
+*   **Formula**: Outward current = Rate of charge decrease.
+    $$I_{out} = -\frac{dQ_{in}}{dt}$$
+*   **Derivation**:
+    1. Express $I_{out}$ as surface integral: $I_{out} = \oint_S \vec{J} \cdot d\vec{S}$
+    2. Apply Divergence Thm: $\oint_S \vec{J} \cdot d\vec{S} = \int_v (\nabla \cdot \vec{J}) dv$
+    3. Express $Q_{in}$ as volume integral: $Q_{in} = \int_v \rho dv \implies -\frac{dQ_{in}}{dt} = -\int_v \frac{\partial \rho}{\partial t} dv$
+    4. Equate integrals: $\int_v (\nabla \cdot \vec{J}) dv = -\int_v \frac{\partial \rho}{\partial t} dv$
+*   **Result (Point Form)**: 
+    $$\nabla \cdot \vec{J} = -\frac{\partial \rho}{\partial t}$$
+*   **Significance**: No spontaneous charge accumulation. Net current diverging from a point causes charge density $\rho$ to drop over time.
+
+
+***
+
+### 2. MAXWELL'S EQUATIONS
+*Ref: Sec 9.5, pg 436, Table 9.1*
+
+| Name | Point (Differential) Form | Integral Form |
+| :--- | :--- | :--- |
+| **Faraday's Law** | $\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}$ | $\oint_L \vec{E} \cdot d\vec{l} = -\int_S \frac{\partial \vec{B}}{\partial t} \cdot d\vec{S}$ |
+| **Ampère's Law** | $\nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t}$ | $\oint_L \vec{H} \cdot d\vec{l} = \int_S \left( \vec{J} + \frac{\partial \vec{D}}{\partial t} \right) \cdot d\vec{S}$ |
+| **Gauss (Electric)** | $\nabla \cdot \vec{D} = \rho_v$ | $\oint_S \vec{D} \cdot d\vec{S} = \int_v \rho_v dv$ |
+| **Gauss (Magnetic)**| $\nabla \cdot \vec{B} = 0$ | $\oint_S \vec{B} \cdot d\vec{S} = 0$ |
+
+
+***
+
+### 3. CURRENTS & AMPÈRE'S LAW MODIFICATION
+*Ref: Sec 5.3, 9.4; Pgs 178-180, 260-265, 433-435*
+
+*   **Conduction ($\vec{J}_c$)**: Motion of free electrons in conductor via applied $\vec{E}$. Obeys Ohm's law: $\vec{J}_c = \sigma \vec{E}$.
+*   **Convection ($\vec{J}_v$)**: Charge flow in insulator (vacuum/gas). No Ohm's law. $\vec{J}_v = \rho_v \vec{u}$.
+*   **Displacement ($\vec{J}_d$)**: Fictitious current. Arises from time-varying $\vec{E}$ (e.g., across capacitor gap). $\vec{J}_d = \frac{\partial \vec{D}}{\partial t}$.
+
+**Why modify Ampère's Law?**
+*   Static Ampère: $\nabla \times \vec{H} = \vec{J}$
+*   Identity: $\nabla \cdot (\nabla \times \vec{A}) \equiv 0 \implies \nabla \cdot \vec{J} = 0$.
+*   *Conflict*: Continuity eq says $\nabla \cdot \vec{J} = -\partial\rho_v/\partial t \neq 0$ for dynamic fields.
+*   *Fix*: Add $\vec{J}_d$. $\nabla \cdot (\vec{J} + \partial\vec{D}/\partial t) = -\partial\rho_v/\partial t + \partial(\nabla \cdot \vec{D})/\partial t = 0$. Resolves conflict! Allows EM wave propagation in vacuum.
+
+**Copper at 1 MHz (Comparison):**
+*   Ratio: $|\vec{J}_c| / |\vec{J}_d| = \sigma / (\omega\varepsilon)$ = Loss Tangent.
+*   For Cu: Ratio $\approx 10^{12}$. Conduction current dominates massively. Displacement current is negligible.
+
+
+***
+
+### 4. KEY DERIVATIONS USING THEOREMS
+*Ref: Sec 7.3, 9.2, 9.6; Pgs 309, 422, 439*
+
+**Faraday's Law ($\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}$)**
+1. $V_{emf} = -d\Phi/dt$
+2. Sub definitions: $\oint_L \vec{E} \cdot d\vec{l} = -\frac{d}{dt} \int_S \vec{B} \cdot d\vec{S}$
+3. Apply Stokes' Thm to LHS: $\int_S (\nabla \times \vec{E}) \cdot d\vec{S} = -\int_S \frac{\partial \vec{B}}{\partial t} \cdot d\vec{S}$
+4. Equate integrands $\implies \nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}$
+
+**Static Ampère's Law ($\nabla \times \vec{H} = \vec{J}$)**
+1. Integral form: $\oint_L \vec{H} \cdot d\vec{l} = I_{enc} = \int_S \vec{J} \cdot d\vec{S}$
+2. Apply Stokes' Thm to LHS: $\int_S (\nabla \times \vec{H}) \cdot d\vec{S} = \int_S \vec{J} \cdot d\vec{S}$
+3. Equate integrands $\implies \nabla \times \vec{H} = \vec{J}$
+
+**Potentials Relation ($\vec{E} = -\nabla V - \frac{\partial \vec{A}}{\partial t}$)**
+1. Gauss (Magnetic): $\nabla \cdot \vec{B} = 0 \implies \vec{B} = \nabla \times \vec{A}$ (Vector potential)
+2. Sub into Faraday: $\nabla \times \vec{E} = -\frac{\partial}{\partial t}(\nabla \times \vec{A}) \implies \nabla \times (\vec{E} + \frac{\partial \vec{A}}{\partial t}) = 0$
+3. Identity: $\nabla \times (-\nabla V) \equiv 0$
+4. Equate inner terms $\implies \vec{E} + \frac{\partial \vec{A}}{\partial t} = -\nabla V \implies \vec{E} = -\nabla V - \frac{\partial \vec{A}}{\partial t}$
+
+
+***
+
+### 5. MAGNETIC MONOPOLE NON-EXISTENCE
+*Ref: Sec 7.5, pgs 317-319*
+
+*   **Concept**: Magnetic charges (monopoles) do not exist isolated. Always N-S pairs.
+*   **Physical Meaning**: Magnetic flux lines have no start/end. They form continuous closed loops.
+*   **Math Proof**: Gauss's Law for $\vec{B}$. Total flux leaving closed surface is zero. $\oint_S \vec{B} \cdot d\vec{S} = 0 \implies \nabla \cdot \vec{B} = 0$.
+
+
+***
+
+### 6. POYNTING THEOREM
+*Ref: Pgs 340-344*
+
+*   **Statement**: Net power leaving volume $v$ = (-) Rate of decrease of stored EM energy - Ohmic heat loss.
+*   **Derivation**:
+    1. Start with Ampère: $\nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t}$
+    2. Dot with $\vec{E}$: $\vec{E} \cdot (\nabla \times \vec{H}) = \vec{E} \cdot \vec{J} + \vec{E} \cdot \frac{\partial \vec{D}}{\partial t}$
+    3. Use Identity: $\nabla \cdot (\vec{E} \times \vec{H}) = \vec{H} \cdot (\nabla \times \vec{E}) - \vec{E} \cdot (\nabla \times \vec{H})$
+    4. Sub Faraday ($\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}$) into identity, rearrange.
+    5. Result: $-\nabla \cdot (\vec{E} \times \vec{H}) = \vec{J} \cdot \vec{E} + \vec{E} \cdot \frac{\partial \vec{D}}{\partial t} + \vec{H} \cdot \frac{\partial \vec{B}}{\partial t}$
+    6. Simplify time derivs: $\frac{\partial}{\partial t} ( \frac{1}{2} \varepsilon E^2 + \frac{1}{2} \mu H^2 )$
+    7. Integrate over volume $v$, apply Divergence Thm to LHS.
+*   **Final Integral Form**:
+    $-\oint_S (\vec{E} \times \vec{H}) \cdot d\vec{S} = \int_v \mathbf{J} \cdot \mathbf{E} \, dv + \frac{\partial}{\partial t} \int_v \left( \frac{1}{2} \varepsilon E^2 + \frac{1}{2} \mu H^2 \right) dv$
+*   **Poynting Vector**: $\mathscr{P} = \vec{E} \times \vec{H}$ (Power density out).
+
+
+***
+
+### 7. HELMHOLTZ WAVE EQUATION & PLANE WAVES
+*Ref: Pgs 284-288, 304-306, 445, 641-642*
+
+**Helmholtz Equation Derivation (Source-free, Lossy medium):**
+*   Phasor Maxwell: $\nabla \times \vec{E}_s = -j\omega\mu \vec{H}_s$  and  $\nabla \times \vec{H}_s = (\sigma + j\omega\varepsilon)\vec{E}_s$
+*   Curl of Faraday: $\nabla \times (\nabla \times \vec{E}_s) = -j\omega\mu (\nabla \times \vec{H}_s)$
+*   Identity: $\nabla(\nabla \cdot \vec{E}_s) - \nabla^2 \vec{E}_s$. Since $\rho_v=0$, $\nabla \cdot \vec{E}_s = 0$.
+*   Combine: $-\nabla^2 \vec{E}_s = -j\omega\mu (\sigma + j\omega\varepsilon)\vec{E}_s$
+*   Result: $\nabla^2 \vec{E}_s - \gamma^2 \vec{E}_s = 0$
+*   *Propagation const*: $\gamma = \sqrt{j\omega\mu(\sigma + j\omega\varepsilon)} = \alpha + j\beta$
+
+**Phasor Expressions (+z dir, x-polarized):**
+*   Solve 1D differential eq: $d^2E_{xs}/dz^2 - \gamma^2 E_{xs} = 0 \implies \vec{E}_s(z) = E_0 e^{-\gamma z} \vec{a}_x$
+*   Find $\vec{H}_s$ via Faraday ($\nabla \times \vec{E}_s = -j\omega\mu \vec{H}_s$): $\vec{H}_s(z) = \frac{E_0}{\eta} e^{-\gamma z} \vec{a}_y$
+*   Intrinsic impedance: $\eta = \frac{j\omega\mu}{\gamma}$
+
+**Phase Velocity ($v$ or $u_p$):**
+*   Instantaneous form: $\vec{E}_x(z, t) = E_{x0} \cos(\omega t - \beta z)$
+*   Set phase = const: $\omega t - \beta z = const$
+*   Differentiate w.r.t $t$: $\omega - \beta(dz/dt) = 0 \implies v = \frac{\omega}{\beta}$
+*   For lossless ($\sigma=0$): $\beta = \omega\sqrt{\mu\varepsilon} \implies v = \frac{1}{\sqrt{\mu\varepsilon}}$
+
+
+***
+
+### 8. POLARIZATION & SKIN DEPTH
+*Ref: Pgs 331-334, 391-392, 402*
+
+*   **Polarization**: Orientation of $\vec{E}$ field vector during propagation.
+    *   *Parallel*: $\vec{E}$ lies strictly within the plane of incidence.
+    *   *Perpendicular*: $\vec{E}$ is normal to the plane of incidence.
+*   **Skin Depth ($\delta$)**: Depth at which wave amplitude decays by $e^{-1}$ ($\sim37\%$) inside a lossy medium.
+    *   Formula: $\delta = \frac{1}{\alpha}$
+    *   Good conductor: $\delta \approx \frac{1}{\sqrt{\pi f \mu \sigma}}$. (High frequency/conductivity $\implies$ wave confined to surface skin).
+
+
+***
+
+### 9. SPECIFIC PROBLEM LOGICS
+
+**Problem: Find $\vec{B}, \vec{D}, \vec{E}, \beta$ from $\vec{H}$ in lossless medium ($\sigma=0$)**
+*   Given: $\vec{H} = H_0 \cos(\omega t - \beta x)\vec{a}_y$
+*   $\vec{B} = \mu \vec{H}$
+*   $\beta = \omega\sqrt{\mu\varepsilon}$
+*   Use Ampere: $\nabla \times \vec{H} = \varepsilon \frac{\partial \vec{E}}{\partial t} \implies$ find curl of $\vec{H}$, integrate w.r.t $t$, divide by $\varepsilon$ to get $\vec{E}$.
+*   $\vec{D} = \varepsilon \vec{E}$
+
+**Problem: Does $\vec{E} = E_0 \cos(\omega t - \beta x)\vec{a}_x$ satisfy vacuum Maxwell eq?**
+*Ref: Ex 6, pg 559*
+*   **No**. $\nabla \cdot \vec{E} = \beta E_0 \sin(\dots) \neq 0$. Violates Gauss's law for vacuum ($\rho_v=0$).
+*   It's a longitudinal wave; EM waves must be transverse (TEM).
+*   *Exception*: Only works if $\beta=0$ (Static DC field) or in non-vacuum plasma where $\rho_v \neq 0$.
+
+**Problem: Motional EMF (Sliding Bar)**
+*Ref: Sec 9.3, pgs 425-428*
+*   Formula: $V_{emf} = \int_L (\vec{u} \times \vec{B}) \cdot d\vec{l}$
+*   Velocity: $\vec{u} = \frac{dx}{dt} \vec{a}_x$
+*   Calculate $\vec{u} \times \vec{B}$, dot it with $d\vec{l}$ (oriented along the bar), and integrate over rail separation length. Substitute specific $x$ or $t$ values.
+Here are the specific mathematical derivations, exact equations, and numerical solutions that were glossed over in the initial summary. 
+
+***
+
+### 10. EXACT DERIVATION: $\vec{H}$ TO $\vec{E}$ IN LOSSLESS MEDIUM
+*Ref: Chapter 9, Example 9.8*
+
+*   **Given**: $\sigma = 0$, $\vec{H} = 2 \cos(10^{10}t - \beta x)\vec{a}_y$
+*   **Find Curl of $\vec{H}$**:
+    $$\nabla \times \vec{H} = \left| \begin{matrix} \vec{a}_x & \vec{a}_y & \vec{a}_z \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ 0 & H_y & 0 \end{matrix} \right| = \vec{a}_z \left( \frac{\partial H_y}{\partial x} \right)$$
+    $$\nabla \times \vec{H} = 2\beta \sin(10^{10}t - \beta x) \vec{a}_z$$
+*   **Apply Ampère's Law** ($\nabla \times \vec{H} = \varepsilon \frac{\partial \vec{E}}{\partial t}$ since $\vec{J}=0$):
+    $$\frac{\partial \vec{E}}{\partial t} = \frac{2\beta}{\varepsilon} \sin(10^{10}t - \beta x) \vec{a}_z$$
+*   **Integrate w.r.t Time ($t$)**:
+    $$\vec{E} = \int \frac{2\beta}{\varepsilon} \sin(10^{10}t - \beta x) \vec{a}_z \, dt$$
+    $$\vec{E} = -\frac{2\beta}{\omega\varepsilon} \cos(10^{10}t - \beta x) \vec{a}_z$$
+*   **Substitute Values** ($\omega = 10^{10}$, $\beta = 600$, $\varepsilon = 1.2 \times 10^{-10}$):
+    $$\vec{E} = -1000 \cos(10^{10}t - 600x) \vec{a}_z \text{ V/m}$$
+
+
+***
+
+### 11. EXACT CALCULATION: $J_c$ vs $J_d$ IN COPPER
+*Ref: Sec 9.4, pg 433*
+
+*   **Given**: $f = 1$ MHz, $\sigma = 5.8 \times 10^7$ S/m, $\varepsilon \approx 10^{-9}/(36\pi)$ F/m.
+*   **Ratio Formula** (Loss Tangent): 
+    $$\frac{|\mathbf{J}_{cs}|}{|\mathbf{J}_{ds}|} = \frac{\sigma}{\omega\varepsilon}$$
+*   **Computation**:
+    $$\frac{|\mathbf{J}_{cs}|}{|\mathbf{J}_{ds}|} = \frac{5.8 \times 10^7}{ (2\pi \times 10^6) \times (10^{-9}/36\pi) }$$
+    $$\frac{|\mathbf{J}_{cs}|}{|\mathbf{J}_{ds}|} = \frac{5.8 \times 10^7 \times 36}{2 \times 10^{-3}}$$
+*   **Exact Result**: $1.044 \times 10^{12}$. 
+*   **Conclusion**: $J_c \gg J_d$. Displacement current is negligible in good conductors at RF frequencies.
+
+
+***
+
+### 12. EXACT SOLUTION: SLIDING BAR MOTIONAL EMF
+*Ref: Sec 9.3, pg 425*
+
+*   **Given**: $\vec{B} = 0.5x \vec{a}_z$, $x(t) = 4t - 2t^2$, $l = 0.1$ m. 
+*   **Velocity ($\vec{u}$)**: 
+    $$\vec{u} = \frac{dx}{dt} \vec{a}_x = (4 - 4t)\vec{a}_x$$
+*   **Cross Product**: 
+    $$\vec{u} \times \vec{B} = ((4 - 4t)\vec{a}_x) \times (0.5x \vec{a}_z) = -0.5x(4 - 4t) \vec{a}_y$$
+*   **Integral Setup**: $d\vec{l}$ is along y-axis ($dy \vec{a}_y$).
+    $$V_{ab} = \int_0^{0.1} -0.5x(4 - 4t) dy = -0.05x(4 - 4t)$$
+
+**Condition (i): At $t = 0.5$ s**
+*   Find $x$: $x(0.5) = 4(0.5) - 2(0.5)^2 = 1.5$ m.
+*   Find $V_{ab}$: $V_{ab} = -0.05(1.5)(4 - 2) = -0.15$ V.
+
+**Condition (ii): At $x = 1$ m**
+*   Find $v(x)$: $v^2 = (4-4t)^2 = 16 - 32t + 16t^2 = 16 - 8x$.
+*   At $x=1$: $v = \pm \sqrt{16-8} = \pm 2\sqrt{2}$ m/s.
+*   Cross product at $x=1$: $\vec{u} \times \vec{B} = -0.5 (\pm 2\sqrt{2})(1) \vec{a}_y = \mp \sqrt{2} \vec{a}_y$.
+*   Find $V_{ab}$: $\int_0^{0.1} \mp \sqrt{2} dy = \mp 0.1\sqrt{2} \approx \mp 0.1414$ V.
+
+
+***
+
+### 13. INTRINSIC WAVE IMPEDANCE ($\eta$)
+*Ref: Pg 282, Eq 13*
+
+*   **Definition**: Ratio of $\vec{E}$ and $\vec{H}$ field intensities.
+*   **General Formula (Lossy)**: 
+    $$\eta = \frac{j\omega\mu}{\gamma} = \sqrt{\frac{j\omega\mu}{\sigma + j\omega\varepsilon}}$$
+*   **Lossless Formula ($\sigma=0$)**: 
+    $$\eta = \sqrt{\frac{\mu}{\varepsilon}}$$
