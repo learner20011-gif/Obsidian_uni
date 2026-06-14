@@ -699,7 +699,12 @@ $$V_{ab} = \mp 0.1414 \text{ Volts}$$
 **The voltmeter reading when $x=1$ m is $-0.1414$ V (when moving forward) or $+0.1414$ V (when moving backward).**
 
 *(Related concept location: PDF 2, Section 9.3 "Moving Loop in Static B Field (Motional emf)", pages 425-428)*
-## Concise notes 
+## Concise notes
+
+Vacuum Permittivity (ε₀): 8.854 × 10⁻¹² F/m
+
+Vacuum Permeability (μ₀): 4π × 10⁻⁷ H/m (approx. 1.257 × 10⁻⁶ H/m)
+
 Here are the highly scannable, concise notes derived from the provided Q&A document.
 
 ***
