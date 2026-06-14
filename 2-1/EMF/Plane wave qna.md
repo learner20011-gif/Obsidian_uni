@@ -227,6 +227,7 @@ $\eta = \frac{8\pi^2}{0.8} = 10\pi^2 \ \Omega$
 Numerically, $\eta \approx 10 \times (3.14159)^2 \approx 98.696 \ \Omega$.
 
 **2. Calculate the time-average power carried by the wave ($\vec{\mathcal{P}}_{ave}$):**
+![[Pasted image 20260614170747.jpg]]
 The time-average power density (average Poynting vector) for a uniform plane wave is given by the formula:
 $\vec{\mathcal{P}}_{ave} = \frac{E_0^2}{2\eta} \hat{a}_k$
 where $\hat{a}_k$ is the unit vector in the direction of wave propagation.
