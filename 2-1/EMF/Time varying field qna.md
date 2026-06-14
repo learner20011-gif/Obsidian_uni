@@ -909,6 +909,7 @@ Here are the specific mathematical derivations, exact equations, and numerical s
 
 ### 12. EXACT SOLUTION: SLIDING BAR MOTIONAL EMF
 *Ref: Sec 9.3, pg 425*
+![[Screenshot_20260615_033410_Xodo.jpg]]
 
 *   **Given**: $\vec{B} = 0.5x \vec{a}_z$, $x(t) = 4t - 2t^2$, $l = 0.1$ m. 
 *   **Velocity ($\vec{u}$)**: 
