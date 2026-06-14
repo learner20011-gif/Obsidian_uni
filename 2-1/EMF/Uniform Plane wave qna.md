@@ -1860,7 +1860,7 @@ The severity of the skin effect (how small $\delta$ gets) depends directly on th
 #### 6. ALTERNATIVE IMPEDANCE FORMULA (Lossless)
 *   While $\eta = \sqrt{\mu/\varepsilon}$ is standard, it can also be quickly derived using the phase constant $\beta$ and phase velocity $v_p = \omega/\beta = 1/\sqrt{\mu\varepsilon}$.
 *   **Formula:** $\mathbf{\eta = \frac{\omega\mu}{\beta}}$
-*   *(Ref: Q.5c - Nonmagnetic medium calculation)*
+*   *(Ref: Q.5c - Nonmagnetic medium calculatio![[Pasted image 20260614200406.jpg]]n)*
 ### SECOND ADDENDUM: MISSED EQUATIONS, IDENTITIES & THEORY
 
 Here are the specific mathematical identities, boundary conditions, and analytical tricks utilized in the solutions that were not explicitly listed in the previous notes.
