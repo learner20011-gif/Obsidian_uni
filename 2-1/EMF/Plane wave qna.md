@@ -227,6 +227,7 @@ $\eta = \frac{8\pi^2}{0.8} = 10\pi^2 \ \Omega$
 Numerically, $\eta \approx 10 \times (3.14159)^2 \approx 98.696 \ \Omega$.
 
 **2. Calculate the time-average power carried by the wave ($\vec{\mathcal{P}}_{ave}$):**
+![[Pasted image 20260614170747.jpg]]
 The time-average power density (average Poynting vector) for a uniform plane wave is given by the formula:
 $\vec{\mathcal{P}}_{ave} = \frac{E_0^2}{2\eta} \hat{a}_k$
 where $\hat{a}_k$ is the unit vector in the direction of wave propagation.
@@ -280,7 +281,30 @@ $$u_p \cdot u_g = u'^2$$
 *Related location pg no. In provided slides: Slide 282, 313 (Intrinsic Impedance) and Slide 527-530 (Phase and Group Velocity).*
 
 ***
+### Define Poynting vector
 
+**Answer:**
+
+**Definition:**
+The **Poynting vector** represents the directional energy flux (or power flow per unit area) of an electromagnetic field. Named after the English physicist John H. Poynting, it is a fundamental quantity used to determine the rate and direction of electromagnetic energy transfer in a uniform plane wave or any electromagnetic system.
+
+**Mathematical Expression:**
+Mathematically, the instantaneous Poynting vector (denoted by $\mathscr{P}$) is defined as the cross product of the electric field intensity vector ($\mathbf{E}$) and the magnetic field intensity vector ($\mathbf{H}$):
+$$\mathscr{P} = \mathbf{E} \times \mathbf{H}$$
+
+**Key Characteristics:**
+1.  **Direction:** Because it is defined by a cross product, the Poynting vector $\mathscr{P}$ is always perpendicular (normal) to both the electric field ($\mathbf{E}$) and the magnetic field ($\mathbf{H}$). For a uniform plane wave, the Poynting vector points exactly in the direction of wave propagation ($\mathbf{a}_k$).
+2.  **Units:** The unit of the Poynting vector is **Watts per square meter (W/m²)**, as it represents power density (power per unit area).
+3.  **Time-Varying Nature:** The instantaneous Poynting vector $\mathscr{P}(x, y, z, t)$ is a time-varying vector quantity. 
+4.  **Relationship to Total Power (Poynting's Theorem):** If you integrate the Poynting vector over a closed surface $S$, it gives the total power flowing out of the volume enclosed by that surface:
+    $$\text{Total Power Out} = \oint_S (\mathbf{E} \times \mathbf{H}) \cdot d\mathbf{S} = \oint_S \mathscr{P} \cdot d\mathbf{S}$$
+
+**Time-Average Poynting Vector ($\mathscr{P}_{ave}$):**
+In most practical engineering and physics applications (especially with time-harmonic fields), the instantaneous power fluctuates rapidly. Therefore, it is far more useful to calculate the **time-average Poynting vector**, which is a time-invariant vector. Using phasor representation ($\mathbf{E}_s$ and $\mathbf{H}_s$), the time-average Poynting vector is given by:
+$$\mathscr{P}_{ave}(z) = \frac{1}{2} \text{Re}(\mathbf{E}_s \times \mathbf{H}_s^*)$$
+where $\mathbf{H}_s^*$ is the complex conjugate of the magnetic field phasor. Integrating this average vector over a surface yields the scalar average power $P_{ave}$ in Watts.
+
+*Related location pg no. In provided slides: Slide 340, Slide 345, Slide 347, Slide 349, and Slide 351.*
 ### b) State and prove Poynting theorem.
 
 **Statement of Poynting's Theorem:**
