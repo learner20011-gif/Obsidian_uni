@@ -607,3 +607,207 @@ Finally, recognizing that the phase velocity of a uniform plane wave in the unbo
 $$f_{c_{mn}} = \frac{u'}{2} \sqrt{\left(\frac{m}{a}\right)^2 + \left(\frac{n}{b}\right)^2}$$
 
 *Related location in provided documents: Presentation PDF Pages 477-482, 640-641.*
+
+## Concise notes
+### FREE SPACE VS. WAVEGUIDE (WG)
+**Free Space:**
+*   Wave type: TEM (Transverse Electromagnetic).
+*   Fields: $E_z = 0, H_z = 0$. E $\perp$ H $\perp$ propagation direction.
+*   Filtering: All frequencies pass (DC to $\infty$).
+*   Velocity: $u_p = u_g = c$.
+
+**Rectangular Waveguide:**
+*   Structure: Hollow metallic tube.
+*   Wave type: TE ($E_z = 0$) or TM ($H_z = 0$). **No TEM.**
+*   Filtering: Acts as High-Pass Filter.
+*   Velocity: $u_p > u'$, $u_g < u'$. (Zig-zag reflection path).
+*(Ref: Slides 450, 481, 528)*
+
+***
+
+### WHY TEM MODE DOES NOT EXIST IN HOLLOW WG
+*   TEM definition: $E_z = 0$, $H_z = 0$.
+*   Helmholtz equations relate transverse fields ($E_{xs}$) to longitudinal fields:
+    $E_{xs} = -\frac{\gamma}{h^2} \frac{\partial E_z}{\partial x} - \frac{j\omega\mu}{h^2} \frac{\partial H_z}{\partial y}$
+*   If $E_z = H_z = 0$, then $E_{xs} = 0$.
+*   All other transverse fields ($E_{ys}, H_{xs}, H_{ys}$) also become $0$.
+*   Exception: If $h^2 = 0 \implies \gamma^2 + k^2 = 0 \implies \gamma = j\beta$ (Free space wave).
+*   Free space wave cannot exist inside metallic walls due to boundary conditions (tangential E must = 0).
+*   **Result:** TEM forces all fields to zero. Impossible.
+*(Ref: Slides 466-468)*
+
+***
+
+### WG AS HIGH-PASS FILTER & $f_c$ DERIVATION
+**Propagation Constant ($\gamma$):**
+*   $\gamma = \sqrt{h^2 - k^2} = \sqrt{(\frac{m\pi}{a})^2 + (\frac{n\pi}{b})^2 - \omega^2\mu\epsilon}$
+*   $\gamma = \alpha + j\beta$
+
+**Filtering Mechanism:**
+*   **Low Freq ($f < f_c$):** $\omega^2\mu\epsilon < h^2 \implies \gamma$ is real ($\gamma = \alpha$). Wave attenuates exponentially. **Evanescent (Blocked).**
+*   **High Freq ($f > f_c$):** $\omega^2\mu\epsilon > h^2 \implies \gamma$ is imaginary ($\gamma = j\beta$). No attenuation. **Propagates (Passes).**
+
+**Cutoff Frequency ($f_c$) Derivation:**
+*   Boundary between pass/block is $\gamma = 0$.
+*   $0 = (\frac{m\pi}{a})^2 + (\frac{n\pi}{b})^2 - \omega_c^2\mu\epsilon$
+*   $\omega_c^2\mu\epsilon = (\frac{m\pi}{a})^2 + (\frac{n\pi}{b})^2$
+*   Substitute $\omega_c = 2\pi f_c$ and $u' = \frac{1}{\sqrt{\mu\epsilon}}$:
+*   **$f_c = \frac{u'}{2} \sqrt{\left(\frac{m}{a}\right)^2 + \left(\frac{n}{b}\right)^2}$**
+*(Ref: Slides 477-482, 640-641)*
+
+***
+
+### VELOCITIES IN WAVEGUIDES
+*   **Medium Vel ($u'$):** Wave speed in unbounded dielectric. $u' = \frac{1}{\sqrt{\mu\epsilon}}$ ($=c$ if air-filled).
+*   **Phase Vel ($u_p$):** Speed of phase fronts down the guide. 
+    *   $u_p = \frac{\omega}{\beta} = \frac{u'}{\sqrt{1 - (f_c/f)^2}}$
+    *   Always **$> u'$**.
+*   **Group Vel ($u_g$):** Speed of energy/info (wave packet) down the guide.
+    *   $u_g = u' \sqrt{1 - (f_c/f)^2}$
+    *   Always **$< u'$**.
+*   **Relation:** **$u_p \cdot u_g = (u')^2$**. (If air-filled, $u_p \cdot u_g = c^2$).
+*(Ref: Slides 526-530)*
+
+***
+
+### MODES & SUBSCRIPTS ($m, n$)
+*   **Modes:** Distinct spatial field patterns (e.g., $\text{TE}_{mn}$, $\text{TM}_{mn}$).
+*   **$m$:** Integer. # of half-cycle variations along width $a$ (x-axis).
+*   **$n$:** Integer. # of half-cycle variations along height $b$ (y-axis).
+*   **Dominant Mode:** Mode with lowest $f_c$ (longest $\lambda_c$). First to propagate.
+    *   For $a > b$, dominant mode = **$\text{TE}_{10}$** ($m=1, n=0$).
+*(Ref: Slides 467, 475, 486, 495)*
+
+***
+
+### WAVELENGTH PROPAGATION CONDITION
+*   Rule: To propagate, operating $\lambda$ MUST be $< \lambda_c$.
+*   Parallel Plates: $\lambda_c = \frac{2a}{m}$. Dominant mode ($m=1$) $\implies \lambda_c = 2a$.
+*   If $\lambda \ge 2a$, wave is evanescent (blocked).
+*(Ref: Extrapolated from Slides 481-483, 495)*
+
+***
+
+### TM MODE DERIVATION ($E_z$)
+**1. Wave Equation:**
+*   $\nabla^2 E_{zs} + k^2 E_{zs} = 0$
+
+**2. Separation of Variables:**
+*   Assume $E_{zs} = X(x)Y(y)Z(z)$. 
+*   Yields: $\frac{X''}{X} + \frac{Y''}{Y} + \frac{Z''}{Z} = -k^2$
+*   Constants: $-k_x^2 - k_y^2 + \gamma^2 = -k^2$
+*   Gen Soln: $E_{zs} = [c_1\cos(k_xx) + c_2\sin(k_xx)][c_3\cos(k_yy) + c_4\sin(k_yy)]e^{-\gamma z}$
+
+**3. Boundary Conditions (Tangential E = 0 at walls):**
+*   At $x=0, E_{zs}=0 \implies c_1=0$.
+*   At $x=a, E_{zs}=0 \implies \sin(k_xa)=0 \implies k_x = \frac{m\pi}{a}$.
+*   At $y=0, E_{zs}=0 \implies c_3=0$.
+*   At $y=b, E_{zs}=0 \implies \sin(k_yb)=0 \implies k_y = \frac{n\pi}{b}$.
+
+**4. Final Equation:**
+*   Combine constants ($c_2c_4 = E_o$):
+*   **$E_{zs} = E_o \sin\left(\frac{m\pi x}{a}\right) \sin\left(\frac{n\pi y}{b}\right) e^{-\gamma z}$**
+*(Ref: Slides 454-460, 471-473)*
+
+***
+
+### BOUNDARY CONDITIONS (TE vs TM)
+*   **TM Mode:** Tangential E is zero at walls.
+    *   $E_z = 0$ at $x=0,a$ and $y=0,b$.
+*   **TE Mode:** Tangential E=0 forces normal derivative of $H_z$ to zero.
+    *   $\frac{\partial H_z}{\partial x} = 0$ at $x=0,a$
+    *   $\frac{\partial H_z}{\partial y} = 0$ at $y=0,b$
+*(Ref: Slides 471, 490, 491)*
+
+***
+
+### TM WAVE IMPEDANCE ($\eta_{TM}$) PROOF
+**1. Definition:**
+*   $\eta_{TM} = \frac{E_x}{H_y} = \frac{\beta}{\omega\epsilon}$
+
+**2. Substitute Phase Constant ($\beta$):**
+*   $\beta = \omega\sqrt{\mu\epsilon} \sqrt{1 - (f_c/f)^2}$
+*   $\eta_{TM} = \frac{\omega\sqrt{\mu\epsilon} \sqrt{1 - (f_c/f)^2}}{\omega\epsilon}$
+*   Simplify ($\frac{\sqrt{\mu\epsilon}}{\epsilon} = \sqrt{\frac{\mu}{\epsilon}}$):
+*   **$\eta_{TM} = \sqrt{\frac{\mu}{\epsilon}} \sqrt{1 - \left(\frac{f_c}{f}\right)^2}$**
+*   Let $\eta' = \sqrt{\mu/\epsilon}$ (intrinsic impedance).
+*   **$\eta_{TM} = \eta' \sqrt{1 - \left(\frac{f_c}{f}\right)^2}$**
+
+**3. Resistive Proof:**
+*   For propagation, $f > f_c$.
+*   $\implies (f_c/f) < 1 \implies \sqrt{1 - (f_c/f)^2}$ is real & positive.
+*   $\eta'$ is real. $\therefore \eta_{TM}$ is purely real (**resistive**).
+
+**4. Less Than $\eta'$ Proof:**
+*   Since $f > f_c$, the term $\sqrt{1 - (f_c/f)^2}$ is a decimal $< 1$.
+*   Multiplying $\eta'$ by a fraction $< 1$ means **$\eta_{TM} < \eta'$** always.
+*(Ref: Slides 484, 486, 499)*
+Yes, upon reviewing the original images carefully, I noticed a few specific items that were present in the cropped images but missed in the previous summaries. 
+
+Here are the concise notes for the missing items:
+
+### MISSED NUMERICAL: 2.5cm x 1.5cm WG at 7.5 GHz
+**Given:** $a = 0.025$m, $b = 0.015$m, $f = 7.5$ GHz. Hollow ($u'=c, \eta' \approx 120\pi$). Mode = $\text{TE}_{10}$.
+
+**1. Cutoff Freq ($f_c$):**
+*   $f_{c_{10}} = \frac{c}{2a} = \frac{3 \times 10^8}{2(0.025)} = \mathbf{6.0 \text{ GHz}}$
+*   Scale Factor = $\sqrt{1 - (f_c/f)^2} = \sqrt{1 - (6/7.5)^2} = \sqrt{1 - 0.64} = \mathbf{0.6}$
+
+**2. Phase Constant ($\beta$):**
+*   $\omega = 2\pi(7.5 \times 10^9) = 15\pi \times 10^9$ rad/s
+*   $\beta = \frac{\omega}{c} \times \text{Scale Factor} = \left(\frac{15\pi \times 10^9}{3 \times 10^8}\right) \times 0.6$
+*   **$\beta = 30\pi \approx 94.25 \text{ rad/m}$**
+
+**3. Phase Velocity ($u_p$):**
+*   $u_p = \frac{c}{\text{Scale Factor}} = \frac{3 \times 10^8}{0.6}$
+*   **$u_p = 5.0 \times 10^8 \text{ m/s}$**
+
+**4. Group Velocity ($u_g$):**
+*   $u_g = c \times \text{Scale Factor} = (3 \times 10^8) \times 0.6$
+*   **$u_g = 1.8 \times 10^8 \text{ m/s}$**
+
+**5. Wave Impedance ($Z_{TE10}$):**
+*   $Z_{TE} = \frac{\eta'}{\text{Scale Factor}} = \frac{120\pi}{0.6}$
+*   **$Z_{TE10} = 200\pi \approx 628.3 \, \Omega$**
+*(Ref: Mathematical application of formulas from Slides 482, 484)*
+
+***
+
+### MISSED THEORY: MAXWELL'S EQUATIONS FOR HOLLOW WG
+*(From the prompt: "Write down the Maxwell's equations for an air filled hollow rectangular waveguide...")*
+
+**Conditions for Air-Filled Hollow WG:**
+*   Source-free region: $\rho_v = 0$ (charge density), $\mathbf{J} = 0$ (current density).
+*   Lossless dielectric (air): $\sigma = 0$.
+
+**Maxwell's Equations (Phasor Form):**
+*   $\nabla \cdot \mathbf{E}_s = 0$
+*   $\nabla \cdot \mathbf{H}_s = 0$
+*   $\nabla \times \mathbf{E}_s = -j\omega\mu_0\mathbf{H}_s$
+*   $\nabla \times \mathbf{H}_s = j\omega\epsilon_0\mathbf{E}_s$
+
+**Reduced to Wave Equations (Helmholtz Equations):**
+Taking the curl of the curl equations gives the standard wave equations used to solve for WG modes:
+*   **$\nabla^2 \mathbf{E}_s + k^2 \mathbf{E}_s = 0$**
+*   **$\nabla^2 \mathbf{H}_s + k^2 \mathbf{H}_s = 0$**
+*(Where $k = \omega\sqrt{\mu_0\epsilon_0}$)*
+*(Ref: Slides 454)*
+
+***
+
+### MISSED THEORY: CRITICAL ANGLE vs. BREWSTER ANGLE
+*(From the cropped image text: "Differentiate between critical angle and Brewster angle")*
+
+**Brewster Angle ($\theta_B$):**
+*   **Definition:** Angle of incidence where there is **NO reflection** ($\Gamma = 0$). 
+*   **Result:** The incident wave is **totally transmitted** (refracted) into the second medium.
+*   **Condition:** Occurs when the numerator of the reflection coefficient equation equals zero.
+*   **Formula:** $\sin^2\theta_{B_{||}} = \frac{1-\mu_1\epsilon_2/\mu_2\epsilon_1}{1-(\epsilon_1/\epsilon_2)^2}$
+*(Ref: Slides 399, 400)*
+
+**Critical Angle ($\theta_c$):**
+*   **Definition:** Angle of incidence that causes the angle of transmission (refraction) to be exactly $90^\circ$.
+*   **Result:** Results in **Total Internal Reflection**. The wave is entirely reflected back; nothing transmits into the second medium.
+*   **Condition:** Only occurs when moving from a denser medium to a less dense medium ($n_1 > n_2$). 
+*   **Formula:** $\theta_c = \sin^{-1}(\frac{n_2}{n_1})$
+*(Ref: Slide 517)*
