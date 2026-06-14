@@ -1861,3 +1861,74 @@ The severity of the skin effect (how small $\delta$ gets) depends directly on th
 *   While $\eta = \sqrt{\mu/\varepsilon}$ is standard, it can also be quickly derived using the phase constant $\beta$ and phase velocity $v_p = \omega/\beta = 1/\sqrt{\mu\varepsilon}$.
 *   **Formula:** $\mathbf{\eta = \frac{\omega\mu}{\beta}}$
 *   *(Ref: Q.5c - Nonmagnetic medium calculation)*
+### SECOND ADDENDUM: MISSED EQUATIONS, IDENTITIES & THEORY
+
+Here are the specific mathematical identities, boundary conditions, and analytical tricks utilized in the solutions that were not explicitly listed in the previous notes.
+
+---
+
+#### 1. CRITICAL VECTOR IDENTITIES
+Used heavily to derive wave equations and power theorems:
+*   **Curl of a Curl:** 
+    $\nabla \times (\nabla \times \vec{A}) = \nabla(\nabla \cdot \vec{A}) - \nabla^2\vec{A}$
+    *(Used to derive $\vec{E}$ and $\vec{H}$ wave equations).*
+*   **Divergence of a Cross Product:** 
+    $\nabla \cdot (\vec{E} \times \vec{H}) = \vec{H} \cdot (\nabla \times \vec{E}) - \vec{E} \cdot (\nabla \times \vec{H})$
+    *(Core identity used to prove Poynting's Theorem).*
+
+---
+
+#### 2. ESSENTIAL INTEGRAL THEOREMS
+Used to convert between differential (point) and integral forms:
+*   **Divergence Theorem (Gauss's Theorem):**
+    $\int_v (\nabla \cdot \vec{A}) dv = \oint_S \vec{A} \cdot d\vec{S}$
+    *(Used in Poynting's Theorem proof to convert volume integral to surface power flux).*
+*   **Stokes's Theorem:**
+    $\int_S (\nabla \times \vec{A}) \cdot d\vec{S} = \oint_L \vec{A} \cdot d\vec{l}$
+    *(Used to prove electrostatic fields are irrotational: $\oint \vec{E} \cdot d\vec{l} = 0 \implies \nabla \times \vec{E} = 0$).*
+
+---
+
+#### 3. USEFUL CALCULUS & ALGEBRA TRICKS
+*   **Time Derivative of a Squared Vector:**
+    $\vec{A} \cdot \frac{\partial \vec{A}}{\partial t} = \frac{1}{2} \frac{\partial}{\partial t} |\vec{A}|^2$
+    *(Used in Poynting's Theorem to group electric/magnetic energy density terms).*
+*   **Algebra for $\alpha$ and $\beta$ Derivation:**
+    To solve complex $\gamma^2 = (\alpha+j\beta)^2 = X + jY$:
+    1.  Real part: $\alpha^2 - \beta^2 = X$
+    2.  Magnitude: $\alpha^2 + \beta^2 = \sqrt{X^2 + Y^2}$
+    3.  Add/Subtract to solve for $\alpha$ and $\beta$ independently.
+*   **Implicit Differentiation for Group Velocity:**
+    Dispersion relation: $\beta^2 = \omega^2\mu\varepsilon - k_c^2$
+    Take $\frac{d}{d\omega}$ of both sides: $2\beta \frac{d\beta}{d\omega} = 2\omega\mu\varepsilon \implies v_g = \frac{d\omega}{d\beta} = \frac{\beta}{\omega\mu\varepsilon}$.
+    *(Used to prove $v_p \cdot v_g = 1/\mu\varepsilon$).*
+
+---
+
+#### 4. GENERAL FIELD RELATIONS (E to H Conversion)
+Instead of solving Maxwell's equations from scratch, $\vec{H}$ can be found directly from $\vec{E}$ for uniform plane waves:
+*   **Vector Cross-Product Form:**
+    $\mathbf{\vec{H} = \frac{1}{\eta} (\hat{a}_k \times \vec{E})}$
+    *(Where $\hat{a}_k$ is the unit vector of propagation direction).*
+*   **General Lossy Time-Domain Form:**
+    If $\vec{E}(z,t) = E_0 e^{-\alpha z} \cos(\omega t - \beta z)\hat{a}_x$
+    Then $\vec{H}(z,t) = \frac{E_0}{|\eta|} e^{-\alpha z} \cos(\omega t - \beta z - \theta_\eta)\hat{a}_y$
+    *(Note the subtraction of the intrinsic impedance phase angle $\theta_\eta$).*
+
+---
+
+#### 5. DETERMINING POLARIZATION HANDEDNESS
+How to define RHCP vs LHCP mathematically:
+1.  Set $z=0$. Evaluate $\vec{E}$ at $t=0$ and at $\omega t = \pi/2$.
+2.  Observe the direction the $\vec{E}$ vector rotates in the transverse plane.
+3.  Point right thumb in direction of wave propagation ($\hat{a}_k$).
+4.  If fingers curl in the same direction as the $\vec{E}$ vector rotation $\implies$ **RHCP**.
+5.  If rotation opposes right-hand fingers (matches left hand) $\implies$ **LHCP**.
+
+---
+
+#### 6. BOUNDARY CONDITIONS (Normal Incidence)
+Used to prove $1 + \Gamma = \tau$:
+*   **Tangential $\vec{E}$ Field is Continuous:** Across a boundary at $z=0$, $\vec{E}_{1,tan} = \vec{E}_{2,tan}$.
+*   **Application:** $\vec{E}_{incident} + \vec{E}_{reflected} = \vec{E}_{transmitted}$
+*   Divide by $E_{incident}$ to yield $1 + \Gamma = \tau$.
