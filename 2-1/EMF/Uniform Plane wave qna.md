@@ -1692,3 +1692,172 @@ $$\vec{\mathcal{P}}_{ave} = \frac{10000}{80\pi} \hat{a}_z = \frac{125}{\pi} \hat
 
 *Related location: Standard Electromagnetics textbooks Chapter on Plane Waves, Section on Plane Waves in Lossless Dielectrics and Power/Poynting Vector.*
 ### up untill 2013
+## Concise notes
+### QUICK REVIEW NOTES: EM WAVES & PROPAGATION
+
+---
+
+#### 1. UNIFORM PLANE WAVE (UPW) CHARACTERISTICS
+*   **Transverse:** $\vec{E} \perp \vec{H} \perp \hat{a}_k$ (Direction of propagation).
+*   **Uniformity:** No field variation in transverse plane ($\nabla_{xy} = 0$). Equiphase surfaces = flat planes.
+*   **Phase:** In lossless media, $\vec{E}$ & $\vec{H}$ oscillate perfectly in time-phase.
+*   **Impedance:** $|\vec{E}| / |\vec{H}| = \eta$ (Intrinsic Impedance).
+*   *(Ref: Slide 283)*
+
+---
+
+#### 2. WAVE EQUATION DERIVATIONS
+**For $\vec{E}$ in Source-Free, Lossy Medium ($\rho_v=0, \sigma \neq 0$):**
+*   **Faraday:** $\nabla \times \vec{E} = -\mu \frac{\partial \vec{H}}{\partial t}$
+*   **Ampere:** $\nabla \times \vec{H} = \sigma\vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}$
+*   Take curl of Faraday: $\nabla \times (\nabla \times \vec{E}) = -\mu \frac{\partial}{\partial t}(\nabla \times \vec{H})$
+*   Apply identity: $\nabla(\nabla \cdot \vec{E}) - \nabla^2\vec{E} = -\mu \frac{\partial}{\partial t}(\nabla \times \vec{H})$
+*   Apply Gauss ($\nabla \cdot \vec{E} = 0$) & sub Ampere:
+    $-\nabla^2\vec{E} = -\mu \frac{\partial}{\partial t}(\sigma\vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t})$
+*   **Result:** $\nabla^2\vec{E} = \mu\sigma \frac{\partial \vec{E}}{\partial t} + \mu\varepsilon \frac{\partial^2 \vec{E}}{\partial t^2}$
+
+**For $\mathbf{H}$ in Free Space ($\sigma=0$):**
+*   Same steps. $\nabla \times (\nabla \times \vec{H}) = \varepsilon_0 \frac{\partial}{\partial t}(\nabla \times \vec{E})$
+*   **Result:** $\nabla^2\mathbf{H} = \mu_0\varepsilon_0 \frac{\partial^2 \mathbf{H}}{\partial t^2}$
+*   *(Ref: Slides 272-276)*
+
+---
+
+#### 3. PROPAGATION PARAMETERS
+*   **Propagation Const ($\gamma$):** $\gamma = \alpha + j\beta = \sqrt{j\omega\mu(\sigma + j\omega\varepsilon)}$
+*   **Intrinsic Impedance ($\eta$):** $\eta = \sqrt{\frac{j\omega\mu}{\sigma + j\omega\varepsilon}}$
+*   **Phase Velocity ($v_p$ or $u$):** Speed of constant phase. 
+    *   $v_p = \frac{\omega}{\beta}$. 
+    *   *Proof (Lossless):* Phase = $\omega t - \beta z = const \to \frac{d}{dt} \to \omega - \beta\frac{dz}{dt} = 0 \to v_p = \frac{\omega}{\beta}$. Sub $\beta=\omega\sqrt{\mu\varepsilon} \to v_p = \frac{1}{\sqrt{\mu\varepsilon}}$
+*   **Group Velocity ($v_g$):** Speed of energy/envelope. $v_g = \frac{d\omega}{d\beta}$
+*   **Velocity Relation:** $v_p \cdot v_g = \frac{1}{\mu\varepsilon} = c^2$ (in vacuum)
+*   *(Ref: Slides 282, 313, 527-530)*
+
+---
+
+#### 4. MEDIA CLASSIFICATION & SKIN DEPTH
+**Loss Tangent:** $\tan\theta = \frac{|\vec{J}_{cond}|}{|\vec{J}_{disp}|} = \frac{\sigma}{\omega\varepsilon}$
+
+**Lossy Dielectric (General):**
+*   Derive $\alpha, \beta$ by squaring $\gamma$: $\gamma^2 = (\alpha+j\beta)^2 = -\omega^2\mu\varepsilon + j\omega\mu\sigma$
+*   Equate real/imag parts. Result:
+    *   $\alpha = \omega \sqrt{\frac{\mu\varepsilon}{2}} \left[ \sqrt{1 + (\frac{\sigma}{\omega\varepsilon})^2} - 1 \right]^{1/2}$
+    *   $\beta = \omega \sqrt{\frac{\mu\varepsilon}{2}} \left[ \sqrt{1 + (\frac{\sigma}{\omega\varepsilon})^2} + 1 \right]^{1/2}$
+
+**Lossless Dielectric ($\sigma \approx 0$):**
+*   $\alpha = 0$ (No attenuation)
+*   $\beta = \omega\sqrt{\mu\varepsilon}$
+*   $\eta = \sqrt{\mu/\varepsilon}$ (Real $\to$ $\vec{E}, \vec{H}$ in-phase)
+
+**Good Conductor ($\sigma \gg \omega\varepsilon$):**
+*   $\tan\theta \to \infty$. Approx: $\sqrt{1 + (\sigma/\omega\varepsilon)^2} \approx \sigma/\omega\varepsilon$
+*   $\alpha \approx \beta \approx \sqrt{\pi f \mu \sigma}$
+*   $\eta \approx \sqrt{\frac{\omega\mu}{\sigma}}\angle 45^\circ \implies \vec{E}$ leads $\vec{H}$ by $45^\circ$.
+*   **Skin Depth ($\delta$):** Depth where wave amplitude drops to $e^{-1}$ (36.8%).
+    *   $\delta = 1/\alpha \implies \delta = \frac{1}{\sqrt{\pi f \mu \sigma}}$
+*   *(Ref: Slides 304-334)*
+
+---
+
+#### 5. POLARIZATION
+*   **Definition:** Locus traced by $\vec{E}$ vector tip over one cycle at a fixed point.
+*   **Linear:** 1 component, OR 2 components in-phase ($\delta = 0^\circ, 180^\circ$).
+*   **Circular:** 2 components, Equal amp ($E_{x0}=E_{y0}$), phase diff = $\pm 90^\circ$.
+*   **Elliptical:** General case. Unequal amps OR arbitrary phase.
+*   **Proof: 2 opposite Circulars = Linear:**
+    *   $\vec{E}_{RH} = E_0\cos(\omega t - \beta z)\hat{x} + E_0\sin(\omega t - \beta z)\hat{y}$
+    *   $\vec{E}_{LH} = E_0\cos(\omega t - \beta z)\hat{x} - E_0\sin(\omega t - \beta z)\hat{y}$
+    *   Sum = $2E_0\cos(\omega t - \beta z)\hat{x}$ (Linear!).
+*   **Static Field Polarization?** $\nabla\times\vec{E} = 0$ (Irrotational). 
+    *   *Proof:* $\oint_L \vec{E}\cdot d\vec{l} = 0 \to \int_S (\nabla\times\vec{E})\cdot d\vec{S} = 0 \to \nabla\times\vec{E} = 0$.
+*   *(Ref: Slides 283, 498)*
+
+---
+
+#### 6. POYNTING VECTOR & THEOREM
+*   **Poynting Vector ($\vec{\mathscr{P}}$):** Directional energy flux (W/m²).
+    *   Instantaneous: $\vec{\mathscr{P}} = \vec{E} \times \vec{H}$
+    *   Time-Average: $\vec{\mathscr{P}}_{ave} = \frac{1}{2}\text{Re}(\vec{E}_s \times \vec{H}_s^*)$
+*   **Poynting Theorem:** Net power out = -(Rate of stored energy change) - (Ohmic losses).
+    *   *Proof:* Use identity $\nabla\cdot(\vec{E}\times\vec{H}) = \vec{H}\cdot(\nabla\times\vec{E}) - \vec{E}\cdot(\nabla\times\vec{H})$
+    *   Sub Maxwell's curl equations into right side.
+    *   $\nabla\cdot(\vec{E}\times\vec{H}) = -\frac{\partial}{\partial t}(\frac{1}{2}\mu H^2 + \frac{1}{2}\varepsilon E^2) - \sigma E^2$
+    *   Integrate over volume $v$, apply Divergence Thm ($\int\nabla\cdot\vec{A} dv = \oint\vec{A}\cdot d\vec{S}$).
+    *   **Result:** $-\oint_S (\vec{E} \times \vec{H}) \cdot d\vec{S} = \frac{\partial}{\partial t} \int_v (\frac{1}{2}\varepsilon E^2 + \frac{1}{2}\mu H^2) dv + \int_v \sigma E^2 dv$
+*   *(Ref: Slides 340-345)*
+
+---
+
+#### 7. BOUNDARIES & STANDING WAVES
+*   **Reflection Coeff ($\Gamma$):** $\Gamma = \frac{E_{r0}}{E_{i0}} = \frac{\eta_2 - \eta_1}{\eta_2 + \eta_1}$
+*   **Transmission Coeff ($\tau$):** $\tau = \frac{E_{t0}}{E_{i0}} = \frac{2\eta_2}{\eta_2 + \eta_1}$
+*   **Proof of $1 + \Gamma = \tau$:**
+    *   At boundary ($z=0$), tangential $\vec{E}$ is continuous.
+    *   $\vec{E}_{inc} + \vec{E}_{ref} = \vec{E}_{trans}$
+    *   $E_{i0} + E_{r0} = E_{t0}$
+    *   Divide by $E_{i0} \implies 1 + \frac{E_{r0}}{E_{i0}} = \frac{E_{t0}}{E_{i0}} \implies 1 + \Gamma = \tau$.
+*   **Standing Wave Ratio (SWR / $s$):**
+    *   $s = \frac{|E_{max}|}{|E_{min}|} = \frac{1+|\Gamma|}{1-|\Gamma|}$
+    *   Range: $1 \le s \le \infty$.
+*   *(Ref: Slides 362-366, 377)*
+Here are the important concepts, formulas, and details from the provided solutions that were missed or slightly glossed over in the previous summary notes. 
+
+### ADDENDUM: MISSED & SUPPLEMENTARY NOTES
+
+---
+
+#### 1. PERFECT CONDUCTORS ($\sigma \to \infty$)
+*   **Properties:** 
+    *   Attenuation constant $\alpha \to \infty$.
+    *   Skin depth $\delta = 0$.
+    *   Intrinsic impedance $\eta = 0$.
+*   **Wave Behavior:** EM waves **cannot** propagate inside a perfect conductor. The internal field is absolutely zero ($\vec{E}=0, \vec{H}=0$).
+*   **Reflection:** A wave striking a perfect conductor undergoes 100% total reflection ($|\Gamma| = 1$).
+*   *(Ref: Q5b - Media Characterization)*
+
+---
+
+#### 2. FACTORS INFLUENCING THE SKIN EFFECT
+The severity of the skin effect (how small $\delta$ gets) depends directly on three physical factors. Increasing any of these **decreases** the skin depth (confining current closer to the surface):
+1.  **Frequency ($f$):** Higher frequency $\to$ faster changing fields $\to$ stronger opposing eddy currents.
+2.  **Conductivity ($\sigma$):** Better conductor $\to$ stronger induced eddy currents $\to$ faster field cancellation.
+3.  **Permeability ($\mu$):** Higher magnetic permeability $\to$ concentrated magnetic flux $\to$ stronger opposing currents.
+*   *(Ref: Q6c - Skin Effect Factors)*
+
+---
+
+#### 3. PRACTICAL ATTENUATION CALCULATIONS
+**Attenuation in Decibels (dB):**
+*   Wave amplitude decays as $E(z) = E_0 e^{-\alpha z}$.
+*   Attenuation in dB is calculated as: $20 \log_{10}\left(\frac{E_{initial}}{E_{final}}\right)$
+*   **Formula:** $\text{Loss (dB)} = 20 \log_{10}(e^{\alpha z}) = 20(\alpha z)\log_{10}(e) \approx \mathbf{8.686 \alpha z}$
+*   *Application:* To find distance $z$ for 80 dB attenuation: $z = \frac{80}{8.686 \alpha}$.
+
+**Attenuation by Percentage:**
+*   To find distance $z$ where amplitude drops to $X\%$ of its initial value:
+*   **Formula:** $e^{-\alpha z} = \frac{X}{100} \implies z = \frac{-\ln(X/100)}{\alpha}$
+*   *Application:* For 1% amplitude: $z = \frac{-\ln(0.01)}{\alpha} \approx \frac{4.605}{\alpha}$.
+*   *(Ref: Q.c - Sea water attenuation calculations)*
+
+---
+
+#### 4. WAVE DIRECTION & CROSS PRODUCT RULE
+*   **The Right-Hand Rule for UPWs:** The electric field, magnetic field, and direction of propagation are mutually orthogonal and satisfy the right-hand cross product rule:
+    $$\mathbf{\hat{a}_E \times \hat{a}_H = \hat{a}_k}$$
+*   *(Note: $\hat{a}_k$ is the unit vector of propagation direction. If $\vec{E}$ is in $+x$ and $\vec{H}$ is in $+y$, the wave propagates in $+z$ because $\hat{x} \times \hat{y} = \hat{z}$).*
+*   *(Ref: Q.5c, Q.b - Plane wave characteristics)*
+
+---
+
+#### 5. PHASOR TO TIME-DOMAIN CONVERSION
+*   **Mathematical Link:** The instantaneous time-domain field is the Real part of the phasor field multiplied by $e^{j\omega t}$.
+    $$\mathbf{\vec{E}(z,t) = \text{Re}[\vec{E}_s(z) e^{j\omega t}]}$$
+*   *Example:* If $\vec{E}_s(z) = E_0 e^{-j\beta z} \hat{a}_x$, then $\vec{E}(z,t) = \text{Re}[E_0 e^{j(\omega t - \beta z)}\hat{a}_x] = E_0 \cos(\omega t - \beta z) \hat{a}_x$.
+*   *(Ref: Q.7a - Wave equation derivation)*
+
+---
+
+#### 6. ALTERNATIVE IMPEDANCE FORMULA (Lossless)
+*   While $\eta = \sqrt{\mu/\varepsilon}$ is standard, it can also be quickly derived using the phase constant $\beta$ and phase velocity $v_p = \omega/\beta = 1/\sqrt{\mu\varepsilon}$.
+*   **Formula:** $\mathbf{\eta = \frac{\omega\mu}{\beta}}$
+*   *(Ref: Q.5c - Nonmagnetic medium calculation)*
