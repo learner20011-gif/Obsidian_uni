@@ -635,7 +635,7 @@ $$f_{c_{mn}} = \frac{u'}{2} \sqrt{\left(\frac{m}{a}\right)^2 + \left(\frac{n}{b}
 *   Free space wave cannot exist inside metallic walls due to boundary conditions (tangential E must = 0).
 *   **Result:** TEM forces all fields to zero. Impossible.
 *(Ref: Slides 466-468)*
-
+![[Pasted image 20260615040613.jpg]]
 ***
 
 ### WG AS HIGH-PASS FILTER & $f_c$ DERIVATION
