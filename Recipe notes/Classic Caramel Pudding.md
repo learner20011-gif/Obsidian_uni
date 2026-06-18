@@ -44,7 +44,7 @@ cook_time: 40 mins (plus 4 hrs chilling)
  * Watch closely. Once it turns a deep, rusty amber color and smells faintly of toasted nuts, immediately remove from heat.
  * Stand back and carefully stir in the 1 tbsp hot water (it will sputter aggressively). Quickly pour the caramel evenly into the bottom of 4 ramekins before it hardens.
 ### Phase 2: The Custard Base
- * In a mixing bowl, use a whisk to gently break up the eggs, yolk, and vanilla until just combined. Keep the whisk touching the bottom of the bowl to avoid creating foam.
+ * In a mixing bowl, use a whisk to gently break up the eggs, yolk, and vanilla until just combined. *Keep the whisk touching the bottom of the bowl to avoid creating foam*.
  * In a saucepan, warm the milk, 1/3 cup sugar, and salt over medium-low heat just until the sugar dissolves and steam rises. **Do not let it boil.**
  * **Temper the eggs:** While whisking the eggs continuously, slowly drizzle in the hot milk mixture.
  * Strain the entire mixture through a fine-mesh sieve into a pouring jug to catch any chalazae (egg white cords) or accidentally cooked egg bits. Pour the strained custard over the hardened caramel in the ramekins.
