@@ -126,3 +126,65 @@ Used to find lists of files that match a specific pattern (like finding all `.cs
     ```
 *   **`permutations(iterable, r)`:** All possible orderings (Order matters: AB ≠ BA).
 *   **`combinations(iterable, r)`:** All unique groups (Order doesn't matter: AB = BA).
+
+
+
+### A. Sampling Theory & Frequency
+Converting continuous real-world signals into discrete digital numbers.
+
+*   **Sampling Rate/Frequency:** The number of measurements ("snapshots") taken per second. Measured in Hertz (Hz).
+*   **Nyquist-Shannon Theorem (Golden Rule):** To perfectly capture a signal, you must sample at least **twice as fast** as the highest frequency present in the signal.
+    *   *Formula:* $f_{sampling} \ge 2 \times f_{highest\_signal}$
+*   **Aliasing:** The error that occurs when you sample too slowly (breaking the Nyquist rule). High frequencies "ghost" or masquerade as lower frequencies (like car wheels spinning backward on video).
+
+---
+
+### B. Signal Windowing & Epoching
+Chopping long signals into usable pieces for mathematical analysis.
+
+*   **Epoching (Slicing):** Cutting a continuous signal into specific, event-aligned time chunks (e.g., extracting exactly 2 seconds of brainwave data every time a light flashes).
+*   **Spectral Leakage (The Problem):** Abruptly slicing a signal creates hard edges. When doing frequency analysis (FFT), the math interprets these sharp cuts as fake high-frequency noise.
+*   **Windowing (The Fix):** Applying a mathematical curve to an epoch to smoothly fade the edges in and out to zero. 
+    *   *Examples:* Hamming or Hanning windows. They eliminate the sharp edges and fix the spectral leakage.
+
+---
+
+### C. Channel Concatenation / Data Fusion
+Handling and combining data from multiple sensors.
+
+*   **Channel Concatenation:** Stitching data from multiple *identical* sensors (like 4 mics or 64 EEG electrodes) into a single mathematical matrix (Channels × Time). Allows algorithms to analyze spatial relationships.
+*   **Data Fusion:** Combining data from *different types* of sensors (e.g., Video + Audio + Accelerometer).
+    *   **Early Fusion (Data-level):** Resampling and syncing raw data to the exact same timeline, then combining them into one matrix.
+    *   **Feature Fusion (Mid-level):** Processing signals separately to extract "features" (e.g., audio pitch, video brightness), then combining only those features.
+    *   **Late Fusion (Decision-level):** Separate algorithms make their own predictions ("Audio says dog", "Video says dog"), and a master system combines the decisions.
+*   **Biggest Challenge:** **Synchronization.** Data must be perfectly time-aligned for fusion to work.
+Here is a concise, cheat-sheet style summary of Physiological Domain Knowledge.
+
+### A. European Data Format (EDF) Architecture
+The universal file standard for medical time-series data (EEG, ECG, Sleep Studies).
+
+*   **Structure:** Divided into two strict sections: the Text Header and the Digital Data.
+*   **The Header (Metadata - ASCII text):**
+    *   *Global Header:* Patient info, start time, date, total number of data records.
+    *   *Signal Header:* Setup info for *each individual channel* (sensor label, physical units like $\mu V$, digital/physical min & max values, and sampling rate).
+*   **Data Records (The Signals):**
+    *   Data is stored in **Interleaved** chunks (usually 1-second blocks).
+    *   *Format:* `[1s of Ch1] [1s of Ch2]` $\rightarrow$ `[Next 1s of Ch1] [Next 1s of Ch2]`
+    *   *Why?* Memory efficiency. Allows software to load specific time blocks without loading the massive 8-hour file into RAM.
+*   **EDF+:** A 2003 upgrade that added a dedicated channel for time-stamped **Annotations** (text markers like "Sleep Stage N2" or "Apnea Event").
+
+---
+
+### B. R&K to AASM Sleep Staging Standards
+The rules for categorizing human sleep. Sleep is scored in **30-second epochs** using brainwaves (EEG), eye movement (EOG), and muscle tone (EMG).
+
+*   **R&K Standard (1968 – 2007):**
+    *   Created for the ink-and-paper era.
+    *   **6 Stages:** Wake, Stage 1, Stage 2, **Stage 3** (deep sleep), **Stage 4** (very deep sleep), REM.
+*   **AASM Standard (2007 – Present):**
+    *   The modern digital standard.
+    *   **5 Stages:** W (Wake), N1, N2, **N3 (Slow Wave/Deep Sleep)**, R (REM).
+    *   Includes strict, modern rules for scoring sleep apnea and micro-arousals.
+*   **Key Data Science Takeaway (The Transition):**
+    *   The AASM merged R&K Stages 3 and 4 because the clinical difference was negligible. 
+    *   *Crucial:* If you are training machine learning models on older R&K datasets, you must programmatically **combine labels 3 and 4 into a single N3 label** to match modern standards.
