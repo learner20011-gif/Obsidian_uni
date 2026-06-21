@@ -158,7 +158,6 @@ Handling and combining data from multiple sensors.
     *   **Feature Fusion (Mid-level):** Processing signals separately to extract "features" (e.g., audio pitch, video brightness), then combining only those features.
     *   **Late Fusion (Decision-level):** Separate algorithms make their own predictions ("Audio says dog", "Video says dog"), and a master system combines the decisions.
 *   **Biggest Challenge:** **Synchronization.** Data must be perfectly time-aligned for fusion to work.
-Here is a concise, cheat-sheet style summary of Physiological Domain Knowledge.
 
 ### A. European Data Format (EDF) Architecture
 The universal file standard for medical time-series data (EEG, ECG, Sleep Studies).
@@ -188,3 +187,39 @@ The rules for categorizing human sleep. Sleep is scored in **30-second epochs** 
 *   **Key Data Science Takeaway (The Transition):**
     *   The AASM merged R&K Stages 3 and 4 because the clinical difference was negligible. 
     *   *Crucial:* If you are training machine learning models on older R&K datasets, you must programmatically **combine labels 3 and 4 into a single N3 label** to match modern standards.
+Here are your concise, high-yield cheat-sheet notes for all the topics covered.
+
+---
+
+### 1. Z-Score Normalization (Standardization)
+*   **What it is:** Scales data so the **Mean ($\mu$) = 0** and **Standard Deviation ($\sigma$) = 1**. 
+*   **Why we need it:** Prevents features with large raw numbers (e.g., Salary) from overpowering features with small numbers (e.g., Age).
+*   **Formula:** $z = \frac{x - \mu}{\sigma}$ (Translates raw data into "how many standard deviations it is from the average").
+*   **When to use:** Distance-based models (KNN, SVM), Gradient Descent models (Neural Networks, Linear/Logistic Regression), and PCA.
+*   **When NOT to use:** Tree-based models (Decision Trees, Random Forest, XGBoost) don't need scaled data.
+*   **⚠️ The Golden Rule:** Always `fit` (calculate mean/std) on the **Training Data ONLY** to prevent data leakage. Then `transform` both Train and Test data.
+
+### 2. Variance & Standard Deviation
+*   **What they are:** Mathematical measures of how "spread out" or unpredictable your data is.
+*   **Variance ($\sigma^2$):** The average *squared* distance of each point from the mean. Mathematically useful, but confusing for humans because the units are squared (e.g., "squared dollars").
+*   **Standard Deviation ($\sigma$):** The square root of variance. Returns the spread back to normal units. Tells you the "typical" deviation from the average.
+*   **The Empirical Rule (68-95-99.7 Rule):** In a normal (bell-curve) distribution:
+    *   ~68% of data falls within $\pm 1\sigma$
+    *   ~95% of data falls within $\pm 2\sigma$
+    *   ~99.7% of data falls within $\pm 3\sigma$ (Anything beyond 3 is an extreme outlier).
+
+### 3. Numerical Stability Constants (Epsilon $\epsilon$)
+*   **What it is:** A purposefully microscopic number (e.g., $10^{-7}$ or $0.0000001$).
+*   **Why we need it:** Computers will crash (`NaN` or `Inf` errors) if they try to divide by zero or take the logarithm of zero. 
+*   **How it's used:** We add $\epsilon$ to denominators or logs to ensure they never hit exactly zero, saving the program without altering the actual math results.
+*   **Examples:** $z = \frac{x - \mu}{\sigma + \epsilon}$ (Standardization) or $loss = \log(probability + \epsilon)$ (Neural Net Loss).
+
+### 4. Tensor Reshaping & Dimensionality Expansion
+*   **Tensors:** Simply containers for numbers (1D = Vector, 2D = Matrix, 3D = Stacked Matrices like images).
+*   **Reshaping:** Rearranging the structure of a Tensor. 
+    *   *Rule:* The total number of items must remain identical (e.g., `(4, 3)` = 12 items. Can reshape to `(2, 6)` or `(12,)`).
+    *   *The `-1` Trick:* If you use `-1` as a dimension in Python, the computer will automatically calculate that dimension for you (e.g., `.reshape(2, -1)`).
+*   **Dimensionality Expansion:** Adding an empty "dummy" dimension without adding new data (e.g., turning shape `(5,)` into `(5, 1)`).
+*   **Why expand?:** ML frameworks are highly rigid. 
+    *   Scikit-Learn strictly requires 2D arrays: `(samples, features)`.
+    *   Neural Networks strictly require batch dimensions for images: `(batch_size, channels, height, width)`. Expanding allows a single item to pass through the model.
