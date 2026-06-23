@@ -41,10 +41,6 @@ To eliminate the arbitrary function $\phi$, we differentiate equation (i) partia
 2.  **Differentiating with respect to $y$:**
     $$ \frac{\partial \phi}{\partial u} \left( \frac{\partial u}{\partial y} + \frac{\partial u}{\partial z}\frac{\partial z}{\partial y} \right) + \frac{\partial \phi}{\partial v} \left( \frac{\partial v}{\partial y} + \frac{\partial v}{\partial z}\frac{\partial z}{\partial y} \right) = 0 \quad ......(iii) $$
 
----
-
-### Theory: Proof of Lagrange's Method Continued (Page 6)
-
 **Proof - Part 2: Elimination of Arbitrary Function**
 We now eliminate the partial derivatives of the arbitrary function, $\frac{\partial \phi}{\partial u}$ and $\frac{\partial \phi}{\partial v}$, from equations (ii) and (iii). This forms a system of homogeneous linear equations. For a non-trivial solution to exist, the determinant of the coefficients must be zero.
 
@@ -71,11 +67,7 @@ $$ \left(\frac{\partial u}{\partial x} + \frac{\partial u}{\partial z}p\right) \
 
 **Rearrangement:**
 Expanding the products and grouping the terms by $p$, $q$, and the remaining terms:
-$$ p \left( \frac{\partial u}{\partial z}\frac{\partial v}{\partial y} - \frac{\partial u}{\partial y}\frac{\partial v}{\partial z} \right) + q \left( \frac{\partial u}{\partial x}\frac{\partial v}{\partial z} - \frac{\partial u}{\partial z}\frac{\partial v}{\partial x} \right) = \left( \frac{\partial u}{\partial y}\frac{\partial v}{\partial x} - \frac{\partial u}{\partial x}\frac{\partial v}{\partial y} \right) \quad ......(iv) $$ 
-
----
-
-### Theory: Conclusion of Lagrange's Theorem Proof (Page 7)
+$$ p \left( \frac{\partial u}{\partial z}\frac{\partial v}{\partial y} - \frac{\partial u}{\partial y}\frac{\partial v}{\partial z} \right) + q \left( \frac{\partial u}{\partial x}\frac{\partial v}{\partial z} - \frac{\partial u}{\partial z}\frac{\partial v}{\partial x} \right) = \left( \frac{\partial u}{\partial y}\frac{\partial v}{\partial x} - \frac{\partial u}{\partial x}\frac{\partial v}{\partial y} \right) \quad ......(iv) $$
 
 **Proof - Part 3: Defining Coefficients and Auxiliary Equations**
 To simplify equation (iv), we define $P, Q,$ and $R$ using Jacobian-style notation (or simply as coefficients):
@@ -200,7 +192,7 @@ $$ (z - 2y) dy = -y dz $$
 $$ z dy - 2y dy = -y dz $$ 
 Rearranging terms to group differentials of products:
 $$ y dz + z dy = 2y dy $$ 
-Notice that $y dz + z dy$ is the exact differential $d(yz)$.
+Notice that $y dz + z dy$ is the ==exact differential== $d(yz)$.
 $$ d(yz) = 2y dy $$ 
 Integrating both sides:
 $$ \int d(yz) = \int 2y dy $$ 
@@ -427,11 +419,7 @@ $$ \frac{dy}{y} = \frac{dz}{z} $$
 Integrating:
 $$ \ln y = \ln z + \ln c_1 $$ 
 $$ \ln y - \ln z = \ln c_1 $$ 
-$$ \frac{y}{z} = c_1 \quad \text{[By integrating]} $$ 
-
-*(Note: The solution requires a second independent integral, which is solved on the next page using multipliers).*
-
----
+$$ \frac{y}{z} = c_1 \quad \text{[By integrating]} $$
 
 **Step 3: Finding Second Integral (Using Multipliers)**
 We need to combine fractions to find a term that relates to the original ratios.
@@ -521,9 +509,6 @@ $$ (x - y)^2 (x + y + z) = c_2 \quad \text{...(7)} $$
 Using (6) and (7), the required general solution is:
 $$ \phi\left[ \frac{x - y}{y - z}, \ (x - y)^2(x + y + z) \right] = 0 $$ 
 where $\phi$ is an arbitrary function.
-
-Here is the detailed explanation of pages 22 through 27 from the provided document.
-
 ### Problem: Solve the PDE: $y^2(x - y)p + x^2(y - x)q = z(x^2 + y^2)$
 
 **Step 1: Form Auxiliary Equations**
@@ -653,8 +638,7 @@ This is the required integral surface.
 
 ---
 
-### Problem: Find the integral surface of the PDE: $x(y^2 + z)p - y(x^2 + z)q = (x^2 - y^2)z$
-**which contains the line $x + y = 0, z = 1$.**
+### Problem: Find the integral surface of the PDE: $x(y^2 + z)p - y(x^2 + z)q = (x^2 - y^2)z$ **which contains the line $x + y = 0, z = 1$.**
 
 **Step 1: Auxiliary Equations**
 $$ \frac{dx}{x(y^2 + z)} = \frac{dy}{-y(x^2 + z)} = \frac{dz}{(x^2 - y^2)z} $$ 
@@ -670,11 +654,7 @@ Since the denominator is zero, equate the numerator to zero:
 $$ x dx + y dy - dz = 0 $$ 
 Integrate:
 $$ \frac{x^2}{2} + \frac{y^2}{2} - z = \frac{c_1}{2} $$ 
-$$ x^2 + y^2 - 2z = c_1 \quad \text{..........(i) [By integrating]} $$ 
-
-*(Solution continues on next page)*
-
----
+$$ x^2 + y^2 - 2z = c_1 \quad \text{..........(i) [By integrating]} $$
 
 **Step 3: Finding Second Integral**
 Choose multipliers $\frac{1}{x}, \frac{1}{y}, \frac{1}{z}$.

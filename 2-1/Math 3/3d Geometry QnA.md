@@ -50,7 +50,7 @@ Angle $\theta$ between lines:
 $\cos\theta = \frac{(-1)(2) + (2)(-1) + (2)(2)}{\sqrt{(-1)^2+2^2+2^2}\sqrt{2^2+(-1)^2+2^2}} = \frac{-2-2+4}{3 \times 3} = 0$
 $\theta = 90^\circ$
 
-### A line makes angles $\alpha, \beta, \gamma, \delta$ with four diagonals of a cube. Prove that $\cos^2\alpha + \cos^2\beta + \cos^2\gamma + \cos^2\delta = 4/3$
+### A line makes angles $\alpha, \beta, \gamma, \delta$ with four diagonals of a cube. Prove that $\cos^2\alpha + \cos^2\beta + \cos^2\gamma + \cos^2\delta = 4/3$  🔴
 
 Let side length be $a$.
 Vertices: $O(0,0,0), P(a,a,a), A(a,0,0), B(0,a,0), C(0,0,a), M(a,a,0), N(0,a,a), L(a,0,a)$
@@ -72,7 +72,7 @@ $= \frac{4(l^2+m^2+n^2)}{3}$
 Since $l^2+m^2+n^2=1$:
 $= \frac{4}{3}$
 
-### Prove that the lines whose direction cosines are given by al+bm+cn=0 and ul^2+vm^2+wn^2=0 are perpendicular if u(b^2+c^2)+v(c^2+a^2)+w(a^2+b^2)=0 and parallel if a^2/u + b^2/v + c^2/w = 0
+### Prove that the lines whose direction cosines are given by al+bm+cn=0 and ul^2+vm^2+wn^2=0 are perpendicular if u(b^2+c^2)+v(c^2+a^2)+w(a^2+b^2)=0 and parallel if a^2/u + b^2/v + c^2/w = 0 🔴
 
 $al+bm+cn=0 \Rightarrow n = \frac{-(al+bm)}{c}$ --- (1)
 $ul^2+vm^2+wn^2=0$ --- (2)
@@ -123,7 +123,7 @@ Divide by $-8$:
 $3(x-2) + 4(y-2) - 5(z-1) = 0$
 $3x - 6 + 4y - 8 - 5z + 5 = 0$
 $3x + 4y - 5z = 9$
-### A variable plane is at a constant distance p from the origin and meets the axes at A,B,C. Show that the locus of the centroid of the tetrahedron OABC is $x^{-2} + y^{-2} + z^{-2} = 16p^{-2}$
+### A variable plane is at a constant distance p from the origin and meets the axes at A,B,C. Show that the locus of the centroid of the tetrahedron OABC is $x^{-2} + y^{-2} + z^{-2} = 16p^{-2}$🔴
 
 Let the equation of the plane be $\frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1$ --- (1)
 
@@ -158,7 +158,7 @@ $d = \sqrt{(2 - (-1))^2 + (-1 - (-5))^2 + (2 - (-10))^2}$
 $d = \sqrt{3^2 + 4^2 + 12^2} = \sqrt{9 + 16 + 144}$
 $d = \sqrt{169} = 13$
 
-### Find the equation to the line through the point (1,2,3) parallel to the line $x-y+2z=5, 3x+y+z=6$
+### Find the equation to the line through the point (1,2,3) parallel to the intersection line of $x-y+2z=5, 3x+y+z=6$
 
 Let $[l,m,n]$ be d.c.'s of the required line.
 Since the line is parallel to the given planes' intersection:
@@ -198,7 +198,7 @@ $\frac{l}{4+3} = \frac{m}{6-2} = \frac{n}{-1-4} \Rightarrow \frac{l}{7} = \frac{
 Equation of required line:
 $\frac{x-2}{7} = \frac{y-3}{4} = \frac{z-1}{-5}$
 
-### Find the eq^n of the line drawn parallel to $\frac{x}{2} = \frac{y}{3} = \frac{z}{4}$ so as to intersect $9x+y+z+4=0=5x+y+3z$ and $x+2y-3z-3=0=2x-5y+3z+3$
+### Find the eq^n of the line drawn parallel to $\frac{x}{2} = \frac{y}{3} = \frac{z}{4}$ so as to intersect $9x+y+z+4=0=5x+y+3z$ and $x+2y-3z-3=0=2x-5y+3z+3$ 🔴
 
 The line is produced by intersection of two planes:
 $(9x+y+z+4) + k_1(5x+y+3z) = 0 \Rightarrow (9+5k_1)x + (1+k_1)y + (1+3k_1)z + 4 = 0$ --- (i)

@@ -213,7 +213,7 @@ $$ z^2p^2 + z^2q^2 + z^2 = 1 $$
 Factor out $z^2$:
 $$ z^2(p^2 + q^2 + 1) = 1 $$
 Alternatively written as:
-$$ z^2(p^2 + q^2 + 1)^2 = 1 $$ *(Note: The slide has a typo squaring the bracket in the final line, but the line before is the standard simplified form).*
+$$ z^2(p^2 + q^2 + 1)^2 = 1 $$
 
 ---
 
@@ -394,12 +394,6 @@ Calculating partials:
 *   $v_y = 2y - 2zq$
 Substituting:
 $$ \frac{\partial \phi}{\partial u}(1 + 1 \cdot q) + \frac{\partial \phi}{\partial v}(2y - 2z \cdot q) = 0 \quad \text{.........(iv)} $$
-
----
-
-### Problem: Elimination of Arbitrary Function (Continued) (Implicit Form)
-
-**Solution (Continued):**
 **Step 4: Eliminate $\phi$ terms**
 We eliminate $\frac{\partial \phi}{\partial u}$ and $\frac{\partial \phi}{\partial v}$ from equations (iii) and (iv) using a determinant:
 
@@ -465,9 +459,6 @@ $$ py + qx = 0 $$
 
 **Answer:**
 $$ yp + xq = 0 $$
-
-Here is the detailed explanation of pages 19 through 21 of the provided document. Note that the document ends at page 21, so this covers the remaining content.
-
 ### Problem: Eliminate the arbitrary functions from the relation $u = f(x + at) + g(x - at)$. 🔴
 
 **Solution:**
@@ -485,8 +476,6 @@ $$ \frac{\partial^2 u}{\partial x^2} = f''(x + at) + g''(x - at) \quad \text{...
 
 **Step 3: Differentiate Twice with Respect to t**
 First partial derivative w.r.t $t$ (using the Chain Rule):
-The derivative of $(x + at)$ w.r.t $t$ is $a$.
-The derivative of $(x - at)$ w.r.t $t$ is $-a$.
 $$ \frac{\partial u}{\partial t} = f'(x + at) \cdot (a) + g'(x - at) \cdot (-a) $$
 $$ \frac{\partial u}{\partial t} = a f'(x + at) - a g'(x - at) $$
 
@@ -522,8 +511,6 @@ $$ \frac{\partial^2 u}{\partial x^2} = f''(x + iy) + g''(x - iy) \quad \text{...
 
 **Step 3: Differentiate Twice with Respect to y**
 First partial derivative w.r.t $y$ (using the Chain Rule):
-The derivative of $(x + iy)$ w.r.t $y$ is $i$.
-The derivative of $(x - iy)$ w.r.t $y$ is $-i$.
 $$ \frac{\partial u}{\partial y} = f'(x + iy) \cdot (i) + g'(x - iy) \cdot (-i) $$
 $$ \frac{\partial u}{\partial y} = i f'(x + iy) - i g'(x - iy) $$
 
