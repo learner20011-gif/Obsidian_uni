@@ -187,7 +187,6 @@ The rules for categorizing human sleep. Sleep is scored in **30-second epochs** 
 *   **Key Data Science Takeaway (The Transition):**
     *   The AASM merged R&K Stages 3 and 4 because the clinical difference was negligible. 
     *   *Crucial:* If you are training machine learning models on older R&K datasets, you must programmatically **combine labels 3 and 4 into a single N3 label** to match modern standards.
-Here are your concise, high-yield cheat-sheet notes for all the topics covered.
 
 ---
 
@@ -199,14 +198,6 @@ Here are your concise, high-yield cheat-sheet notes for all the topics covered.
 *   **When NOT to use:** Tree-based models (Decision Trees, Random Forest, XGBoost) don't need scaled data.
 *   **⚠️ The Golden Rule:** Always `fit` (calculate mean/std) on the **Training Data ONLY** to prevent data leakage. Then `transform` both Train and Test data.
 
-### 2. Variance & Standard Deviation
-*   **What they are:** Mathematical measures of how "spread out" or unpredictable your data is.
-*   **Variance ($\sigma^2$):** The average *squared* distance of each point from the mean. Mathematically useful, but confusing for humans because the units are squared (e.g., "squared dollars").
-*   **Standard Deviation ($\sigma$):** The square root of variance. Returns the spread back to normal units. Tells you the "typical" deviation from the average.
-*   **The Empirical Rule (68-95-99.7 Rule):** In a normal (bell-curve) distribution:
-    *   ~68% of data falls within $\pm 1\sigma$
-    *   ~95% of data falls within $\pm 2\sigma$
-    *   ~99.7% of data falls within $\pm 3\sigma$ (Anything beyond 3 is an extreme outlier).
 
 ### 3. Numerical Stability Constants (Epsilon $\epsilon$)
 *   **What it is:** A purposefully microscopic number (e.g., $10^{-7}$ or $0.0000001$).
@@ -223,3 +214,31 @@ Here are your concise, high-yield cheat-sheet notes for all the topics covered.
 *   **Why expand?:** ML frameworks are highly rigid. 
     *   Scikit-Learn strictly requires 2D arrays: `(samples, features)`.
     *   Neural Networks strictly require batch dimensions for images: `(batch_size, channels, height, width)`. Expanding allows a single item to pass through the model.
+
+
+### 2. The Mean (The Anchor)
+
+*   **Formula:** $\mu = \frac{\sum x_i}{N}$
+
+### 3. Variance ($\sigma^2$)
+*   **Definition:** The average *squared* difference between each data point and the mean. 
+*   **Why square it?:** It turns all negative distances into positives so they don't cancel each other out, and it heavily penalizes extreme outliers.
+*   **The Flaw:** The units are squared (e.g., "squared minutes"), making it illogical for human interpretation.
+*   **Population Formula** (Used when you have *all* the data):
+    $$ \sigma^2 = \frac{\sum (x_i - \mu)^2}{N} $$
+*   **Sample Formula** (Used when you only have a *sample* of the data. Divides by $n-1$ to create a margin of error):
+    $$ s^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1} $$
+
+### 4. Standard Deviation ($\sigma$)
+*   **Definition:** The square root of the variance. 
+*   **Why we use it:** It undoes the squaring, bringing the spread back into the **original units** (e.g., "minutes" instead of "squared minutes"). It represents the "typical" distance a data point falls from the mean.
+*   **Population Formula:**
+    $$ \sigma = \sqrt{\frac{\sum (x_i - \mu)^2}{N}} $$
+*   **Sample Formula:**
+    $$ s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}} $$
+
+### 5. Cheat Code: The 68-95-99.7 Rule
+If your data is normally distributed (Bell Curve), Standard Deviation dictates exactly where your data lives:
+*   **$\pm 1\sigma$:** Contains **~68%** of the data.
+*   **$\pm 2\sigma$:** Contains **~95%** of the data.
+*   **$\pm 3\sigma$:** Contains **~99.7%** of the data (Anything beyond $\pm 3\sigma$ is a severe outlier).
