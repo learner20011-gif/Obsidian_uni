@@ -143,7 +143,7 @@
     
 - **Q.3(c)** | Express pulse via unit step & find integral.
     
-- **Q.4(b)** | Find trig. FS for square wave.
+- **Q.4(b)** | Find trig. FS for square wave.✅
     
 
 **Pg 22**
