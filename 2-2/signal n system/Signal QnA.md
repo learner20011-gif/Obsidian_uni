@@ -1163,3 +1163,786 @@ $$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})^2}{s^2(1 - e^{-s})(1 + e^{-s})}$$
 $$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})}{s^2(1 + e^{-s})}$$
 
 always mention ans related location pg no. In pdf , at the end of every soln 4.2-1 Time Shifting, pg. 349-351
+
+
+### (b) The Z-transform of discrete time signal , x(n) must be represented by , X(Z) with its ROC - Explain.
+
+**Detailed Answer:**
+
+The requirement to represent a Z-transform $X(z)$ alongside its Region of Convergence (ROC) stems from two fundamental mathematical and practical reasons: convergence of the infinite series and uniqueness of the inverse transform.
+
+**1. Convergence of the Infinite Series:**
+The bilateral (two-sided) Z-transform of a discrete-time signal $x(n)$ is defined by the infinite power series:
+$$X(z) = \sum_{n=-\infty}^{\infty} x(n) z^{-n}$$
+Because this is an infinite sum, it does not yield a finite, well-defined value for every possible complex number $z$. The summation will only converge (evaluate to a finite number) for a specific set of values of $z$. This set of values in the complex $z$-plane where the series converges absolutely is defined as the Region of Convergence (ROC). Without the ROC, the expression $X(z)$ is mathematically incomplete because it is undefined outside that region.
+
+**2. Uniqueness of the Inverse Z-Transform (The Primary Reason):**
+More crucially, the algebraic expression for $X(z)$ alone is not sufficient to uniquely identify the original time-domain sequence $x(n)$. It is entirely possible for two completely different time-domain signals to possess the exact same algebraic formula for their Z-transforms. They are distinguished solely by their different Regions of Convergence.
+
+To illustrate this, consider a standard example of two different signals:
+
+*   **Signal 1: A causal (right-sided) exponential sequence**
+    Let $x_1(n) = a^n u(n)$
+    The Z-transform is $X_1(z) = \sum_{n=0}^{\infty} a^n z^{-n} = \sum_{n=0}^{\infty} (az^{-1})^n$. 
+    This geometric series converges if $|az^{-1}| < 1 \implies |z| > |a|$.
+    The closed-form expression is $X_1(z) = \frac{1}{1 - az^{-1}} = \frac{z}{z - a}$.
+    So, $X_1(z) = \frac{z}{z - a}$ with **ROC: $|z| > |a|$**.
+
+*   **Signal 2: An anti-causal (left-sided) exponential sequence**
+    Let $x_2(n) = -a^n u(-n-1)$
+    The Z-transform is $X_2(z) = \sum_{n=-\infty}^{-1} -a^n z^{-n}$.
+    By changing variables ($m = -n$), we can show this evaluates to the exact same closed-form expression, but the convergence condition is different. It converges if $|a^{-1}z| < 1 \implies |z| < |a|$.
+    The closed-form expression is $X_2(z) = \frac{z}{z - a}$.
+    So, $X_2(z) = \frac{z}{z - a}$ with **ROC: $|z| < |a|$**.
+
+**Conclusion:**
+Both $x_1(n)$ and $x_2(n)$ result in the identical algebraic function $X(z) = \frac{z}{z - a}$. If you were only given the function $X(z) = \frac{z}{z - a}$ and asked to find the inverse Z-transform, the answer would be ambiguous. You wouldn't know if the original signal was $a^n u(n)$ or $-a^n u(-n-1)$. 
+However, if you are given both $X(z) = \frac{z}{z - a}$ *and* the ROC $|z| > |a|$, the ambiguity is resolved, and you know the inverse is definitively the causal sequence $a^n u(n)$. Therefore, specifying the ROC is strictly required for a complete and unique Z-domain representation of a discrete-time signal.
+
+always mention ans related location pg no. In pdf , at the end of every soln 5.8 The Bilateral z-Transform, pg. 554-555
+
+### (b) The square wave in the following waveform is applied to the following network. Find the Fourier series of $v_o(t)$.
+![[Pasted image 20260628170311.png]]
+**Detailed Answer:**
+
+To find the Fourier series of the output voltage $v_o(t)$, we will follow a three-step process:
+1.  Determine the Fourier series of the input square wave, $v_i(t)$.
+2.  Determine the frequency response (transfer function) of the given op-amp circuit, $H(j\omega)$.
+3.  Apply the system's frequency response to the input's Fourier series components to find the output Fourier series.
+
+---
+
+**Step 1: Fourier Series of the Input Signal $v_i(t)$**
+
+From the provided graph, the input signal $v_i(t)$ is a periodic square wave with the following parameters:
+*   **Amplitude:** $\pm 10\text{ V}$
+*   **Fundamental Period ($T_0$):** The signal repeats every $2\text{ s}$, so $T_0 = 2\text{ s}$.
+*   **Fundamental Angular Frequency ($\omega_0$):** $\omega_0 = \frac{2\pi}{T_0} = \frac{2\pi}{2} = \pi \text{ rad/s}$.
+
+Let's use the trigonometric Fourier series:
+$$v_i(t) = a_0 + \sum_{n=1}^{\infty} [a_n \cos(n\omega_0 t) + b_n \sin(n\omega_0 t)]$$
+
+*   **Symmetry Analysis:**
+    *   The signal has zero average value (equal area above and below the axis in one period), so the DC component **$a_0 = 0$**.
+    *   The signal is an *odd function* ($v_i(-t) = -v_i(t)$). Therefore, it contains no cosine terms, meaning **$a_n = 0$** for all $n$.
+    *   The signal has *half-wave symmetry* ($v_i(t - T_0/2) = -v_i(t)$). Therefore, it contains only *odd harmonics* ($n = 1, 3, 5, \dots$).
+
+*   **Calculating $b_n$ for odd $n$:**
+    $$b_n = \frac{4}{T_0} \int_{0}^{T_0/2} v_i(t) \sin(n\omega_0 t) dt$$
+    For the interval $0 \le t \le 1$ ($T_0/2$), the value of $v_i(t)$ is $10$.
+    $$b_n = \frac{4}{2} \int_{0}^{1} 10 \sin(n\pi t) dt = 20 \left[ \frac{-\cos(n\pi t)}{n\pi} \right]_{0}^{1}$$
+    $$b_n = \frac{-20}{n\pi} [\cos(n\pi) - \cos(0)] = \frac{-20}{n\pi} [(-1)^n - 1]$$
+    Since $n$ is odd, $(-1)^n = -1$:
+    $$b_n = \frac{-20}{n\pi} [-1 - 1] = \frac{40}{n\pi}$$
+
+So, the Fourier series for the input signal is:
+$$v_i(t) = \sum_{n=1, 3, 5, \dots}^{\infty} \frac{40}{n\pi} \sin(n\pi t)$$
+
+---
+
+**Step 2: Frequency Response of the Circuit $H(j\omega)$**
+
+The circuit shown is an ideal op-amp configured as an **inverting integrator**.
+*   Input resistor $R = 10\text{ k}\Omega = 10^4\ \Omega$
+*   Feedback capacitor $C = 40\text{ }\mu\text{F} = 40 \times 10^{-6}\text{ F}$
+
+The transfer function in the $s$-domain for an inverting integrator is:
+$$H(s) = \frac{V_o(s)}{V_i(s)} = -\frac{1}{sRC}$$
+Calculating the time constant $RC$:
+$$RC = (10^4\ \Omega) \times (40 \times 10^{-6}\text{ F}) = 400 \times 10^{-2} = 0.4\text{ s}$$
+Substituting $RC$ and $s = j\omega$ to get the frequency response:
+$$H(j\omega) = -\frac{1}{j\omega(0.4)} = \frac{-1}{0.4j\omega} \cdot \frac{j}{j} = \frac{-j}{-0.4\omega} = j\frac{1}{0.4\omega} = j\frac{2.5}{\omega}$$
+
+For the $n$-th harmonic, where $\omega = n\omega_0 = n\pi$, the response is:
+$$H(jn\pi) = j\frac{2.5}{n\pi}$$
+
+---
+
+**Step 3: Fourier Series of the Output Signal $v_o(t)$**
+
+It is easier to apply the system response using the exponential Fourier series form.
+The input trigonometric series can be converted to exponential form using $D_n = \frac{1}{2}(a_n - jb_n)$.
+Since $a_n = 0$, $D_n = -j\frac{b_n}{2}$.
+For the input $v_i(t)$, the exponential coefficients are:
+$$D_{in, n} = -j\frac{1}{2}\left(\frac{40}{n\pi}\right) = -j\frac{20}{n\pi} \quad \text{for odd } n$$
+
+The relationship between input and output Fourier coefficients is $D_{out, n} = D_{in, n} \cdot H(jn\omega_0)$.
+Applying the transfer function to find the output coefficients:
+$$D_{out, n} = \left(-j\frac{20}{n\pi}\right) \cdot H(jn\pi)$$
+$$D_{out, n} = \left(-j\frac{20}{n\pi}\right) \cdot \left(j\frac{2.5}{n\pi}\right)$$
+$$D_{out, n} = -j^2 \frac{20 \cdot 2.5}{(n\pi)^2}$$
+Since $j^2 = -1$:
+$$D_{out, n} = \frac{50}{(n\pi)^2} \quad \text{for odd } n$$
+
+Now, we convert the output exponential coefficients back to trigonometric form:
+$$a_{out, n} = 2 \cdot \text{Re}(D_{out, n}) = 2 \left( \frac{50}{(n\pi)^2} \right) = \frac{100}{n^2\pi^2}$$
+$$b_{out, n} = -2 \cdot \text{Im}(D_{out, n}) = 0$$
+The DC component $a_0$ is zero because the integral of a zero-mean square wave over a period is zero.
+
+The final Fourier series for the output voltage $v_o(t)$ consists only of cosine terms (representing a triangle wave, which is expected when integrating a square wave):
+**$$v_o(t) = \sum_{n=1, 3, 5, \dots}^{\infty} \frac{100}{n^2\pi^2} \cos(n\pi t)$$**
+
+always mention ans related location pg no. In pdf , at the end of every soln 6.1 Periodic Signal Representation by Trigonometric Fourier Series, pg. 593-605 and 6.4 LTIC System Response to Periodic Inputs, pg. 637-639
+
+Based on the images provided, here are the detailed solutions to the questions.
+
+### (c) Find the exponential series of the following signal. Also draw the spectrum of that signal. (figure involved.)
+![[Pasted image 20260628170514.png]]
+**Detailed Answer:**
+
+The figure shows a periodic signal $f(t)$ consisting of a sequence of rectangular pulses.
+Let's define the parameters of the signal from the graph:
+1.  **Amplitude ($A$):** The height of the pulses is $A = 10$.
+2.  **Period ($T_0$):** The distance between the start of one pulse to the start of the next is from $t = -1$ to $t = 9$, or from $t = -11$ to $t = -1$. Therefore, the period is $T_0 = 10$.
+3.  **Pulse Width ($\tau$):** The pulse is "on" from $t = -1$ to $t = 1$. The width is $\tau = 1 - (-1) = 2$.
+4.  **Fundamental Angular Frequency ($\omega_0$):** $\omega_0 = \frac{2\pi}{T_0} = \frac{2\pi}{10} = \frac{\pi}{5}$ rad/s.
+
+The signal $f(t)$ is an even function since it is symmetric about the vertical axis ($f(t) = f(-t)$). This means its exponential Fourier series coefficients $D_n$ will be purely real.
+
+The formula for the exponential Fourier series coefficients is:
+$$D_n = \frac{1}{T_0} \int_{-T_0/2}^{T_0/2} f(t) e^{-jn\omega_0 t} dt$$
+
+We can integrate over one full period, for example from $-5$ to $5$. Within this interval, the signal is non-zero only from $-1$ to $1$.
+$$D_n = \frac{1}{10} \int_{-1}^{1} 10 \cdot e^{-jn\left(\frac{\pi}{5}\right)t} dt$$
+$$D_n = \int_{-1}^{1} e^{-jn\frac{\pi}{5}t} dt$$
+
+Let's evaluate the integral:
+$$D_n = \left[ \frac{e^{-jn\frac{\pi}{5}t}}{-jn\frac{\pi}{5}} \right]_{-1}^{1}$$
+$$D_n = \frac{e^{-jn\frac{\pi}{5}(1)} - e^{-jn\frac{\pi}{5}(-1)}}{-jn\frac{\pi}{5}}$$
+$$D_n = \frac{e^{-jn\frac{\pi}{5}} - e^{jn\frac{\pi}{5}}}{-jn\frac{\pi}{5}}$$
+Using Euler's formula, $\sin(x) = \frac{e^{jx} - e^{-jx}}{2j}$, which means $-2j \sin(x) = e^{-jx} - e^{jx}$:
+$$D_n = \frac{-2j \sin\left(n\frac{\pi}{5}\right)}{-jn\frac{\pi}{5}} = \frac{2\sin\left(n\frac{\pi}{5}\right)}{n\frac{\pi}{5}}$$
+To express this in a more standard form using the `sinc` function (where $\text{sinc}(x) = \frac{\sin(x)}{x}$ as defined in the textbook context):
+Multiply numerator and denominator by $\frac{1}{5}$:
+$$D_n = \frac{2}{5} \frac{\sin\left(n\frac{\pi}{5}\right)}{n\frac{\pi}{5}} = 0.4 \text{ sinc}\left(n\frac{\pi}{5}\right)$$
+
+Therefore, the exponential Fourier series is:
+$$f(t) = \sum_{n=-\infty}^{\infty} D_n e^{jn\omega_0 t}$$
+**$$f(t) = \sum_{n=-\infty}^{\infty} \left[ 0.4 \text{ sinc}\left(n\frac{\pi}{5}\right) \right] e^{jn\frac{\pi}{5}t}$$**
+
+**Drawing the Spectrum:**
+The spectrum consists of lines at discrete frequencies $n\omega_0 = n\frac{\pi}{5}$ rad/s (or $nf_0 = \frac{n}{10}$ Hz).
+The envelope of the spectrum is a scaled sinc function: $0.4 \text{ sinc}\left(\frac{\omega\tau}{2}\right) = 0.4 \text{ sinc}\left(\frac{\omega(2)}{2}\right) = 0.4 \text{ sinc}(\omega)$.
+Since $D_n$ is real, we can plot it directly, noting that it can take negative values. A true amplitude spectrum $|D_n|$ would be strictly non-negative, with a corresponding phase spectrum having $\pi$ phase shifts where $D_n$ is negative.
+Let's find some key values for $D_n$:
+*   **DC component ($n=0$):** $D_0 = \frac{10 \times 2}{10} = 2$.
+*   **Zero crossings:** The sinc envelope is zero when the argument is a multiple of $\pi$ (excluding $0$). So, $n\frac{\pi}{5} = k\pi \implies n = 5k$. The coefficients are zero for $n = \pm 5, \pm 10, \pm 15, \dots$
+*   **First null bandwidth:** The first zero occurs at the 5th harmonic.
+
+The spectrum plot is a series of discrete lines following a "sinc" shaped envelope. The central peak is at $D_0=2$. The lines are spaced apart by $\omega_0 = \pi/5$. Every 5th line is exactly zero.
+
+always mention ans related location pg no. In pdf , at the end of every soln 6.3 Exponential Fourier Series, pg. 621-625 and Example 6.9, pg. 628-630
+
+***
+
+### Q.5 (a) A certain band-limited periodic current has only three frequencies in its Fourier series representation: dc, 50 Hz, and 100 Hz. The current may be represented as $i(t) = 4 + 6\sin(100\pi t) + 8\cos(100\pi t) - 3\sin(200\pi t) - 4\cos(200\pi t)$ A.
+### (i) Express $i(t)$ in amplitude-phase form.
+### (ii) If $i(t)$ flows through a 2 $\Omega$ resistor, how many watt of average power will be dissipated?
+
+**Detailed Answer:**
+
+**(i) Express $i(t)$ in amplitude-phase form.**
+
+The amplitude-phase form (also called compact trigonometric form) of a Fourier series is:
+$$x(t) = C_0 + \sum_{n=1}^{\infty} C_n \cos(n\omega_0 t + \theta_n)$$
+Where a general harmonic term $a_n \cos(\omega t) + b_n \sin(\omega t)$ is converted using:
+$C_n = \sqrt{a_n^2 + b_n^2}$
+$\theta_n = \tan^{-1}\left(\frac{-b_n}{a_n}\right)$  *(Note: quadrant must be determined by the signs of $a_n$ and $-b_n$)*
+
+The given current is:
+$i(t) = 4 + \underbrace{8\cos(100\pi t) + 6\sin(100\pi t)}_{\text{First harmonic (50 Hz)}} + \underbrace{(-4)\cos(200\pi t) - 3\sin(200\pi t)}_{\text{Second harmonic (100 Hz)}}$
+
+*   **DC Component ($C_0$):**
+    $C_0 = 4$ A
+
+*   **First Harmonic (50 Hz, $\omega_1 = 100\pi$):**
+    $a_1 = 8$, $b_1 = 6$
+    Amplitude $C_1 = \sqrt{8^2 + 6^2} = \sqrt{64 + 36} = \sqrt{100} = 10$ A
+    Phase $\theta_1 = \tan^{-1}\left(\frac{-6}{8}\right) = \tan^{-1}(-0.75)$.
+    Since $a_1$ is positive and $-b_1$ is negative, the angle is in the 4th quadrant.
+    $\theta_1 \approx -36.87^\circ$ (or $-0.6435$ rad)
+
+*   **Second Harmonic (100 Hz, $\omega_2 = 200\pi$):**
+    $a_2 = -4$, $b_2 = -3$
+    Amplitude $C_2 = \sqrt{(-4)^2 + (-3)^2} = \sqrt{16 + 9} = \sqrt{25} = 5$ A
+    Phase $\theta_2 = \tan^{-1}\left(\frac{-(-3)}{-4}\right) = \tan^{-1}\left(\frac{3}{-4}\right) = \tan^{-1}(-0.75)$.
+    Since $a_2$ is negative and $-b_2$ is positive, the angle is in the 2nd quadrant.
+    $\theta_2 = 180^\circ - 36.87^\circ = 143.13^\circ$ (or $2.498$ rad)
+
+Combining these components, the amplitude-phase form is:
+**$$i(t) = 4 + 10\cos(100\pi t - 36.87^\circ) + 5\cos(200\pi t + 143.13^\circ) \text{ A}$$**
+
+**(ii) Average power dissipated in a $2\ \Omega$ resistor.**
+
+Parseval's theorem states that the total average power of a periodic signal is the sum of the average powers of its individual harmonic components.
+For a current $i(t) = C_0 + \sum C_n \cos(n\omega_0 t + \theta_n)$ flowing through a resistor $R$, the average power $P_{avg}$ is:
+$$P_{avg} = I_{rms}^2 R = \left( C_0^2 + \sum_{n=1}^{\infty} \frac{C_n^2}{2} \right) R$$
+
+Using the amplitudes found in part (i):
+$C_0 = 4$
+$C_1 = 10$
+$C_2 = 5$
+$R = 2\ \Omega$
+
+Calculate the mean square current $I_{rms}^2$:
+$$I_{rms}^2 = 4^2 + \frac{10^2}{2} + \frac{5^2}{2}$$
+$$I_{rms}^2 = 16 + \frac{100}{2} + \frac{25}{2}$$
+$$I_{rms}^2 = 16 + 50 + 12.5 = 78.5\ \text{A}^2$$
+
+Calculate the average power:
+$$P_{avg} = 78.5 \times 2$$
+**$$P_{avg} = 157\ \text{W}$$**
+
+always mention ans related location pg no. In pdf , at the end of every soln 6.1 Periodic Signal Representation by Trigonometric Fourier Series (Compact Form), pg. 597 and 6.3-2 Parseval's Theorem, pg. 632
+
+Based on the images provided, here are the solutions to the requested questions.
+
+### Q.3. (a) Define switching functions with examples. Express the following signals interms of switching functions. (figure involved)
+![[Pasted image 20260628170559.png]]
+**Detailed Answer:**
+
+**Definition of Switching Functions:**
+Switching functions, often associated with the unit step function $u(t)$, are mathematical tools used to represent signals that turn "on" or "off" at specific instants in time. The basic unit step function is defined as:
+$$u(t) = \begin{cases} 1, & \text{for } t > 0 \\ 0, & \text{for } t < 0 \end{cases}$$
+A time-shifted unit step function $u(t - t_0)$ acts as a switch that closes (turns on to a value of 1) at time $t = t_0$. 
+A "gate" function, which is "on" only between times $t_1$ and $t_2$, can be formed by subtracting two step functions: $[u(t - t_1) - u(t - t_2)]$.
+
+**Expressing the signals:**
+
+**(i) For signal $v_1(t)$:**
+Looking at the first graph, the signal $v_1(t)$ is zero for $t < 1$. 
+Between $t=1$ and $t=2$, the signal is a straight line. 
+At $t=1$, the value is $-1$. 
+At $t=2$, the value is $-2$.
+The slope of this line is $m = \frac{-2 - (-1)}{2 - 1} = \frac{-1}{1} = -1$.
+Using the point-slope form $(y - y_1 = m(t - t_1))$ with the point $(1, -1)$:
+$v - (-1) = -1(t - 1) \implies v + 1 = -t + 1 \implies v = -t$
+So, the equation of the line is $y(t) = -t$.
+This line exists only in the interval $1 \le t \le 2$. We use a gate function to restrict it to this interval:
+$$v_1(t) = -t \cdot [u(t - 1) - u(t - 2)]$$
+$$v_1(t) = -t u(t - 1) + t u(t - 2)$$
+
+**(ii) For signal $v_2(t)$:**
+This signal consists of two distinct linear segments.
+*   **Segment 1 ($0 \le t < 2$):** 
+    The line passes through $(0, 2)$ and $(2, -2)$.
+    Slope $m_1 = \frac{-2 - 2}{2 - 0} = \frac{-4}{2} = -2$.
+    The y-intercept is $2$.
+    The equation is $v = -2t + 2$.
+    We multiply this by a gate function for the interval $[0, 2]$:
+    $v_{2a}(t) = (-2t + 2) [u(t) - u(t - 2)]$
+
+*   **Segment 2 ($2 \le t < 3$):**
+    The line passes through $(2, -2)$ and $(3, 0)$.
+    Slope $m_2 = \frac{0 - (-2)}{3 - 2} = \frac{2}{1} = 2$.
+    Using point-slope form with $(3, 0)$: $v - 0 = 2(t - 3) \implies v = 2t - 6$.
+    We multiply this by a gate function for the interval $[2, 3]$:
+    $v_{2b}(t) = (2t - 6) [u(t - 2) - u(t - 3)]$
+
+Combining both segments gives the full expression:
+$$v_2(t) = (-2t + 2)[u(t) - u(t - 2)] + (2t - 6)[u(t - 2) - u(t - 3)]$$
+Expanding and collecting terms with the same step functions:
+$$v_2(t) = (-2t + 2)u(t) - (-2t + 2)u(t - 2) + (2t - 6)u(t - 2) - (2t - 6)u(t - 3)$$
+$$v_2(t) = (-2t + 2)u(t) + [2t - 2 + 2t - 6]u(t - 2) - (2t - 6)u(t - 3)$$
+**$$v_2(t) = (-2t + 2)u(t) + (4t - 8)u(t - 2) - (2t - 6)u(t - 3)$$**
+
+always mention ans related location pg no. In pdf , at the end of every soln 1.4-1 The Unit Step Function u(t), pg. 83-85
+
+***
+
+### Q.2. (a) Briefly describe the following classifications of systems (i) a causal system, and (ii) a time invariant system.
+### A system has the following input-output relation: $y(t) = x(t) - 0.5(t + 1)$
+### Determine whether this system is time invariant and causal.
+
+**Detailed Answer:**
+
+**Brief Descriptions:**
+**(i) A Causal System:** A system is defined as causal if its output at any specific time depends exclusively on the present and/or past values of the input signal. It does not depend on future values of the input. All physically realizable, real-time systems must be causal because a system cannot foresee the future.
+
+**(ii) A Time-Invariant System:** A system is time-invariant if a time shift in the input signal results in an identical time shift in the output signal, without changing the shape or amplitude of the output. This means the system's characteristics and parameters are constant over time. If input $x(t)$ produces output $y(t)$, then input $x(t - t_0)$ must produce output $y(t - t_0)$ for any $t_0$.
+
+**Analysis of the given system:** 
+The input-output relation is $y(t) = x(t) - 0.5(t + 1)$.
+
+**1. Is it Causal?**
+Let's analyze what the output $y$ depends on at time $t$.
+The term $x(t)$ means the output depends on the input at the *current* time $t$. 
+The term $- 0.5(t + 1)$ is just a function of the independent time variable $t$ itself and does not involve the input signal $x$ at any time.
+Because the output $y(t)$ only requires knowledge of the input at the present time $t$ (and no future times like $x(t+1)$), the system is **causal**.
+
+**2. Is it Time-Invariant?**
+We need to check if a delayed input produces a correspondingly delayed output.
+Let an input $x_1(t)$ produce an output $y_1(t)$:
+$y_1(t) = x_1(t) - 0.5(t + 1)$
+
+Now, let's define a second input $x_2(t)$ which is a delayed version of $x_1(t)$ by $t_0$:
+$x_2(t) = x_1(t - t_0)$
+The output $y_2(t)$ due to this new input $x_2(t)$ is found by substituting $x_2(t)$ into the system equation:
+$y_2(t) = x_2(t) - 0.5(t + 1)$
+Substitute $x_2(t) = x_1(t - t_0)$:
+$$y_2(t) = x_1(t - t_0) - 0.5(t + 1) = x_1(t - t_0) - 0.5t - 0.5$$
+
+Next, we take the original output $y_1(t)$ and delay it by $t_0$:
+$$y_1(t - t_0) = x_1(t - t_0) - 0.5((t - t_0) + 1)$$
+$$y_1(t - t_0) = x_1(t - t_0) - 0.5t + 0.5t_0 - 0.5$$
+
+Now we compare $y_2(t)$ and $y_1(t - t_0)$:
+$x_1(t - t_0) - 0.5t - 0.5 \neq x_1(t - t_0) - 0.5t + 0.5t_0 - 0.5$
+Since $y_2(t) \neq y_1(t - t_0)$ (the terms differ by $0.5t_0$), the system does not respond to a delayed input with an equally delayed output. Therefore, the system is **time-varying** (not time-invariant). The explicit presence of the independent variable '$t$' outside the function argument '$x()$' causes this behavior.
+
+always mention ans related location pg no. In pdf , at the end of every soln 1.7-2 Time-Invariant and Time-Varying Systems, pg. 102 and 1.7-4 Causal and Noncausal Systems, pg. 104-105
+
+***
+
+### (c) Find the first derivatives of the following signals and sketch the signals and their derivatives
+### (i) $x(t) = u(t) - u(t - a), \quad a > 0$
+### (ii) $y(t) = t[u(t) - u(t - a)], \quad a > 0$
+
+**Detailed Answer:**
+
+**(i) For the signal $x(t) = u(t) - u(t - a)$**
+
+**Derivative:**
+The derivative of the unit step function $u(t)$ is the unit impulse function $\delta(t)$.
+Applying the derivative operator, which is linear:
+$$\frac{dx(t)}{dt} = \frac{d}{dt}[u(t)] - \frac{d}{dt}[u(t - a)]$$
+**$$\frac{dx(t)}{dt} = \delta(t) - \delta(t - a)$$**
+
+**Sketching:**
+*   **$x(t)$** is a standard rectangular gate pulse. It has a value of 1 starting at $t=0$ and returns to 0 at $t=a$.
+*   **$\frac{dx(t)}{dt}$** consists of two impulses that represent the points where $x(t)$ changes abruptly. There is an upward-pointing impulse at $t=0$ with a strength (area) of 1, and a downward-pointing impulse at $t=a$ with a strength of -1.
+
+**(ii) For the signal $y(t) = t[u(t) - u(t - a)]$**
+
+**Derivative:**
+We need to use the product rule for differentiation: $\frac{d}{dt}(u \cdot v) = \frac{du}{dt}v + u\frac{dv}{dt}$.
+Let $u = t$ and $v = [u(t) - u(t - a)]$.
+$$\frac{dy(t)}{dt} = \frac{d(t)}{dt} \cdot [u(t) - u(t - a)] + t \cdot \frac{d}{dt}[u(t) - u(t - a)]$$
+$$\frac{dy(t)}{dt} = 1 \cdot [u(t) - u(t - a)] + t \cdot [\delta(t) - \delta(t - a)]$$
+Distributing the $t$:
+$$\frac{dy(t)}{dt} = u(t) - u(t - a) + t\delta(t) - t\delta(t - a)$$
+Now, we apply the sampling property of the impulse function: $f(t)\delta(t-t_0) = f(t_0)\delta(t-t_0)$.
+*   For $t\delta(t)$, evaluate $f(t)=t$ at $t_0=0$: $0 \cdot \delta(t) = 0$.
+*   For $t\delta(t-a)$, evaluate $f(t)=t$ at $t_0=a$: $a\delta(t-a)$.
+Substituting these values back:
+**$$\frac{dy(t)}{dt} = u(t) - u(t - a) - a\delta(t - a)$$**
+
+**Sketching:**
+*   **$y(t)$** is a ramp function that is turned on between $t=0$ and $t=a$. It starts at 0, rises with a slope of 1 to reach a value of $a$ at $t=a$, and then drops straight down to 0.
+*   **$\frac{dy(t)}{dt}$** has two parts. The term $[u(t) - u(t - a)]$ is a rectangular pulse of height 1 from $t=0$ to $t=a$, representing the constant slope of the ramp. The term $-a\delta(t - a)$ is a downward-pointing impulse located at $t=a$ with a strength of $a$, representing the sudden drop in the signal's value back to zero.
+
+always mention ans related location pg no. In pdf , at the end of every soln 1.4-2 The Unit Impulse Function $\delta(t)$ (Unit Impulse as a Generalized Function), pg. 88
+
+Based on the provided images, here are the detailed solutions for the two questions.
+
+### (c) Given that the Fourier Transform of $x(t)$ is $X(\omega)$, the differentiation property of the Fourier transform states that: $\frac{dx(t)}{dt} \Leftrightarrow j\omega X(\omega)$. The signum function, $sgn(t)$ is defined as: $sgn(t) = \begin{cases} 1 & ; \quad t > 0 \\ -1 & ; \quad t < 0 \end{cases}$
+### (i) Express the $sgn(t)$ function in terms of the step function
+### (ii) By applying the differentiation property, or otherwise, show that the Fourier transform of $sgn(t)$ is: $sgn(t) \Leftrightarrow \frac{2}{j\omega}$
+
+**Detailed Answer:**
+
+**(i) Expressing $sgn(t)$ in terms of the unit step function:**
+The unit step function $u(t)$ is defined as:
+$$u(t) = \begin{cases} 1 & \text{for } t > 0 \\ 0 & \text{for } t < 0 \end{cases}$$
+
+We want to construct the signum function which is $1$ for $t > 0$ and $-1$ for $t < 0$.
+If we multiply the unit step function by 2, we get $2u(t)$, which equals $2$ for positive time and $0$ for negative time.
+To shift these values down to the desired levels of $1$ and $-1$, we simply subtract $1$ from the entire function. Let's verify:
+*   For $t > 0$: $2u(t) - 1 = 2(1) - 1 = 1$
+*   For $t < 0$: $2u(t) - 1 = 2(0) - 1 = -1$
+
+This perfectly matches the definition of the signum function. Therefore:
+**$$sgn(t) = 2u(t) - 1$$**
+
+**(ii) Deriving the Fourier transform of $sgn(t)$:**
+Let $x(t) = sgn(t) = 2u(t) - 1$.
+First, we take the derivative of $x(t)$ with respect to time. The derivative of a constant is 0, and the derivative of the unit step function $u(t)$ is the Dirac delta function $\delta(t)$.
+$$\frac{dx(t)}{dt} = \frac{d}{dt}[2u(t) - 1] = 2\frac{du(t)}{dt} - \frac{d(1)}{dt}$$
+$$\frac{dx(t)}{dt} = 2\delta(t)$$
+
+Now, we take the Fourier transform of both sides of this equation. Let $\mathcal{F}\{x(t)\} = X(\omega)$.
+Applying the given differentiation property $\mathcal{F}\left\{ \frac{dx(t)}{dt} \right\} = j\omega X(\omega)$ to the left side, and the known transform pair $\mathcal{F}\{\delta(t)\} = 1$ to the right side:
+$$\mathcal{F}\left\{ \frac{dx(t)}{dt} \right\} = \mathcal{F}\{2\delta(t)\}$$
+$$j\omega X(\omega) = 2(1)$$
+$$j\omega X(\omega) = 2$$
+
+Finally, solving for $X(\omega)$ yields the desired Fourier transform:
+**$$X(\omega) = \frac{2}{j\omega}$$**
+Therefore, **$sgn(t) \Leftrightarrow \frac{2}{j\omega}$**.
+
+always mention ans related location pg no. In pdf , at the end of every soln Example 7.10 Fourier Transform of the Sign Function, pg. 698
+
+***
+
+### (b) Determine the Fourier transform of $i_o(t)$ in the following network. (figure involved.)
+![[Pasted image 20260628170652.png]]
+**Detailed Answer:**
+
+To find the Fourier transform of the output current $i_o(t)$, it is most efficient to analyze the circuit in the Laplace ($s$) domain to find the transfer function or the $s$-domain current $I_o(s)$, and then substitute $s = j\omega$ to get the frequency domain representation $I_o(\omega)$.
+
+*(Note: In the provided image, the capacitor value is slightly blurry. It appears to be $\frac{1}{4}$ F. We will proceed with $C = 0.25$ F, as textbook problems rarely use milli-Farads combined with small integer ohms and Henrys, which would lead to unnecessarily messy calculations.)*
+
+**1. Transform the circuit components to the $s$-domain:**
+*   **Voltage source 1 (left):** $v_1(t) = e^{-t}u(t)$. From standard transform tables, $V_1(s) = \frac{1}{s+1}$.
+*   **Resistor:** $R = 2\ \Omega \implies Z_R(s) = 2$.
+*   **Capacitor:** $C = \frac{1}{4}\text{ F} \implies Z_C(s) = \frac{1}{sC} = \frac{1}{s(1/4)} = \frac{4}{s}$.
+*   **Voltage source 2 (middle):** $v_2(t) = 3\delta(t)$. From standard transform tables, $V_2(s) = 3$.
+*   **Inductor:** $L = 2\text{ H} \implies Z_L(s) = sL = 2s$.
+*   The target variable is the current through the inductor, $I_o(s)$.
+
+**2. Formulate the Nodal Equation:**
+Let's use Nodal Analysis. Define the bottom wire as the reference node (Ground, $0\text{V}$). Let the top middle node (where the resistor, capacitor branch, and inductor meet) be $V(s)$.
+
+The current $I_o(s)$ we want to find flows from node $V(s)$ to ground through the inductor, so:
+$I_o(s) = \frac{V(s)}{Z_L(s)} = \frac{V(s)}{2s}$
+
+Now, apply Kirchhoff's Current Law (KCL) at node $V(s)$. The sum of currents leaving the node equals zero:
+$$\frac{V(s) - V_1(s)}{Z_R(s)} + \frac{V(s) - V_2(s)}{Z_C(s)} + \frac{V(s)}{Z_L(s)} = 0$$
+Substitute the component values:
+$$\frac{V(s) - \frac{1}{s+1}}{2} + \frac{V(s) - 3}{4/s} + \frac{V(s)}{2s} = 0$$
+
+**3. Solve for V(s):**
+Multiply the entire equation by a common denominator, such as $4s$, to clear the fractions:
+$$2s\left(V(s) - \frac{1}{s+1}\right) + s \cdot s \cdot (V(s) - 3) + 2V(s) = 0$$
+$$2sV(s) - \frac{2s}{s+1} + s^2V(s) - 3s^2 + 2V(s) = 0$$
+Group the $V(s)$ terms together:
+$$V(s)[s^2 + 2s + 2] = \frac{2s}{s+1} + 3s^2$$
+Find a common denominator for the right side:
+$$V(s)[s^2 + 2s + 2] = \frac{2s + 3s^2(s+1)}{s+1}$$
+$$V(s)[s^2 + 2s + 2] = \frac{3s^3 + 3s^2 + 2s}{s+1}$$
+Solve for $V(s)$:
+$$V(s) = \frac{3s^3 + 3s^2 + 2s}{(s+1)(s^2 + 2s + 2)} = \frac{s(3s^2 + 3s + 2)}{(s+1)(s^2 + 2s + 2)}$$
+
+**4. Determine $I_o(s)$:**
+Substitute the expression for $V(s)$ back into our equation for $I_o(s)$:
+$$I_o(s) = \frac{V(s)}{2s} = \frac{\frac{s(3s^2 + 3s + 2)}{(s+1)(s^2 + 2s + 2)}}{2s}$$
+The '$s$' terms in the numerator and denominator cancel out cleanly:
+$$I_o(s) = \frac{3s^2 + 3s + 2}{2(s+1)(s^2 + 2s + 2)}$$
+
+**5. Convert to Fourier Transform $I_o(\omega)$:**
+To obtain the Fourier transform, we substitute $s = j\omega$ into the Laplace domain expression:
+$$I_o(\omega) = \left. I_o(s) \right|_{s=j\omega} = \frac{3(j\omega)^2 + 3(j\omega) + 2}{2(j\omega+1)((j\omega)^2 + 2j\omega + 2)}$$
+Simplify using the fact that $j^2 = -1$:
+$$I_o(\omega) = \frac{-3\omega^2 + j3\omega + 2}{2(1+j\omega)(-\omega^2 + j2\omega + 2)}$$
+Rearranging the real and imaginary parts in the numerator and denominator gives the final result:
+**$$I_o(\omega) = \frac{(2 - 3\omega^2) + j3\omega}{2(1 + j\omega)((2 - \omega^2) + j2\omega)}$$**
+
+always mention ans related location pg no. In pdf , at the end of every soln 4.4 Analysis of Electrical Networks: The Transformed Network, pg. 373-375
+
+### (b) Determine the Fourier series for the half wave rectified cosine function of period 4 and amplitude 1.
+
+**Detailed Answer:**
+
+**1. Define the signal mathematically over one period:**
+The signal $f(t)$ is a half-wave rectified cosine function.
+*   **Period ($T_0$):** 4 seconds.
+*   **Amplitude ($A$):** 1.
+*   **Fundamental frequency ($\omega_0$):** $\omega_0 = \frac{2\pi}{T_0} = \frac{2\pi}{4} = \frac{\pi}{2}$ rad/s.
+
+The unrectified signal is $\cos(\omega_0 t) = \cos(\frac{\pi}{2}t)$. A half-wave rectifier passes the positive half-cycles and zeroes out the negative half-cycles.
+The function $\cos(\frac{\pi}{2}t)$ is positive for $t \in [-1, 1]$ and negative for $t \in [1, 3]$ within one period from -1 to 3 (or -2 to 2). Let's define the function over the symmetric interval $[-\frac{T_0}{2}, \frac{T_0}{2}] = [-2, 2]$:
+$$f(t) = \begin{cases} \cos\left(\frac{\pi}{2}t\right) & \text{for } -1 \le t \le 1 \\ 0 & \text{for } 1 < |t| \le 2 \end{cases}$$
+
+**2. Analyze symmetry to simplify calculations:**
+Since $\cos(x)$ is an even function, $f(t) = f(-t)$. The signal has **even symmetry**.
+Therefore, all sine terms in the Fourier series will be zero:
+$$b_n = 0 \quad \text{for all } n$$
+The Fourier series will only contain cosine terms:
+$$f(t) = a_0 + \sum_{n=1}^{\infty} a_n \cos(n\omega_0 t)$$
+
+**3. Calculate the DC component ($a_0$):**
+$$a_0 = \frac{1}{T_0} \int_{-T_0/2}^{T_0/2} f(t) dt = \frac{1}{4} \int_{-1}^{1} \cos\left(\frac{\pi}{2}t\right) dt$$
+$$a_0 = \frac{1}{4} \left[ \frac{\sin(\frac{\pi}{2}t)}{\pi/2} \right]_{-1}^{1} = \frac{1}{2\pi} \left[ \sin\left(\frac{\pi}{2}\right) - \sin\left(-\frac{\pi}{2}\right) \right]$$
+$$a_0 = \frac{1}{2\pi} [1 - (-1)] = \frac{2}{2\pi} = \mathbf{\frac{1}{\pi}}$$
+
+**4. Calculate the cosine coefficients ($a_n$):**
+$$a_n = \frac{2}{T_0} \int_{-T_0/2}^{T_0/2} f(t) \cos(n\omega_0 t) dt = \frac{2}{4} \int_{-1}^{1} \cos\left(\frac{\pi}{2}t\right) \cos\left(n\frac{\pi}{2}t\right) dt$$
+Because the integrand is an even function, we can integrate from 0 to 1 and double the result:
+$$a_n = \int_{0}^{1} \cos\left(\frac{\pi}{2}t\right) \cos\left(n\frac{\pi}{2}t\right) dt$$
+Using the trigonometric identity $\cos A \cos B = \frac{1}{2}[\cos(A+B) + \cos(A-B)]$:
+$$a_n = \frac{1}{2} \int_{0}^{1} \left[ \cos\left((n+1)\frac{\pi}{2}t\right) + \cos\left((1-n)\frac{\pi}{2}t\right) \right] dt$$
+
+We must evaluate $n=1$ separately to avoid division by zero.
+*   **For $n=1$:**
+    $$a_1 = \frac{1}{2} \int_{0}^{1} [\cos(\pi t) + \cos(0)] dt = \frac{1}{2} \int_{0}^{1} [\cos(\pi t) + 1] dt$$
+    $$a_1 = \frac{1}{2} \left[ \frac{\sin(\pi t)}{\pi} + t \right]_{0}^{1} = \frac{1}{2} \left[ \left(\frac{\sin(\pi)}{\pi} + 1\right) - (0 + 0) \right] = \frac{1}{2}[0 + 1] = \mathbf{\frac{1}{2}}$$
+
+*   **For $n > 1$:**
+    $$a_n = \frac{1}{2} \left[ \frac{\sin((n+1)\frac{\pi}{2}t)}{(n+1)\frac{\pi}{2}} + \frac{\sin((1-n)\frac{\pi}{2}t)}{(1-n)\frac{\pi}{2}} \right]_{0}^{1}$$
+    $$a_n = \frac{1}{\pi(n+1)} \sin\left((n+1)\frac{\pi}{2}\right) + \frac{1}{\pi(1-n)} \sin\left((1-n)\frac{\pi}{2}\right)$$
+    Using angle addition formulas:
+    $\sin((n+1)\frac{\pi}{2}) = \sin(n\frac{\pi}{2})\cos(\frac{\pi}{2}) + \cos(n\frac{\pi}{2})\sin(\frac{\pi}{2}) = \cos(n\frac{\pi}{2})$
+    $\sin((1-n)\frac{\pi}{2}) = \sin(\frac{\pi}{2})\cos(n\frac{\pi}{2}) - \cos(\frac{\pi}{2})\sin(n\frac{\pi}{2}) = \cos(n\frac{\pi}{2})$
+    Substitute these back into the expression for $a_n$:
+    $$a_n = \frac{\cos(n\frac{\pi}{2})}{\pi(n+1)} + \frac{\cos(n\frac{\pi}{2})}{\pi(1-n)} = \frac{\cos(n\frac{\pi}{2})}{\pi} \left[ \frac{1}{1+n} + \frac{1}{1-n} \right]$$
+    $$a_n = \frac{\cos(n\frac{\pi}{2})}{\pi} \left[ \frac{(1-n) + (1+n)}{(1+n)(1-n)} \right] = \mathbf{\frac{2\cos(n\frac{\pi}{2})}{\pi(1-n^2)}}$$
+
+    Evaluate $a_n$ for even and odd $n$:
+    *   If $n$ is odd ($n=3,5,7\dots$), $\cos(n\frac{\pi}{2}) = 0$, so $a_n = 0$.
+    *   If $n$ is even ($n=2k$, where $k=1,2,3\dots$), $\cos(2k\frac{\pi}{2}) = \cos(k\pi) = (-1)^k$.
+        $$a_{2k} = \frac{2(-1)^k}{\pi(1-(2k)^2)} = \frac{2(-1)^k}{\pi(1-4k^2)}$$
+
+**5. Final Fourier Series Expression:**
+$$f(t) = a_0 + a_1\cos(\omega_0 t) + \sum_{k=1}^{\infty} a_{2k} \cos(2k\omega_0 t)$$
+**$$f(t) = \frac{1}{\pi} + \frac{1}{2}\cos\left(\frac{\pi}{2}t\right) + \sum_{k=1}^{\infty} \frac{2(-1)^k}{\pi(1-4k^2)} \cos(k\pi t)$$**
+
+always mention ans related location pg no. In pdf , at the end of every soln 6.1 Periodic Signal Representation by Trigonometric Fourier Series, pg. 593-605
+
+***
+
+### (c) For a discrete time signa as shown in the Fig. 8(c), show that $X(Z) = \frac{1-z^{-m}}{1-z^{-1}}$
+![[Pasted image 20260628170808.png]]
+**Detailed Answer:**
+
+**1. Define the discrete-time signal $x(n)$:**
+Based on the provided graph, the signal $x(n)$ consists of a sequence of unit impulses (amplitude of 1) starting at $n=0$ and ending at $n=m-1$. The signal is zero for all $n < 0$ and $n \ge m$.
+Mathematically, this finite-duration sequence can be expressed as:
+$$x(n) = \begin{cases} 1, & \text{for } 0 \le n \le m-1 \\ 0, & \text{otherwise} \end{cases}$$
+Alternatively, using the discrete-time unit step function $u(n)$, we can express the signal as a rectangular pulse:
+$$x(n) = u(n) - u(n-m)$$
+
+**2. Approach 1: Apply the Z-transform definition directly**
+The bilateral Z-transform of a discrete-time signal $x(n)$ is defined as:
+$$X(z) = \sum_{n=-\infty}^{\infty} x(n) z^{-n}$$
+Substituting our defined sequence $x(n)$ into the formula, the summation limits are restricted to where the signal is non-zero (from $0$ to $m-1$):
+$$X(z) = \sum_{n=0}^{m-1} (1) z^{-n}$$
+Expanding the summation gives:
+$$X(z) = z^{-0} + z^{-1} + z^{-2} + \dots + z^{-(m-1)}$$
+$$X(z) = 1 + z^{-1} + z^{-2} + \dots + z^{-(m-1)}$$
+This expression is a finite geometric series. The parameters of this series are:
+*   First term, $a = 1$
+*   Common ratio, $r = z^{-1}$
+*   Number of terms, $N = m$
+The formula for the sum of a finite geometric series is $S_N = a \frac{1 - r^N}{1 - r}$ (for $r \neq 1$).
+Applying this formula yields:
+$$X(z) = 1 \cdot \frac{1 - (z^{-1})^m}{1 - z^{-1}}$$
+**$$X(z) = \frac{1 - z^{-m}}{1 - z^{-1}}$$**
+This completes the proof.
+
+**3. Approach 2: Using Z-transform properties**
+We expressed the signal earlier as $x(n) = u(n) - u(n-m)$.
+We can use the linearity property and standard transform pairs:
+*   Standard pair for unit step: $\mathcal{Z}\{u(n)\} = \frac{1}{1-z^{-1}}$
+*   Time-shifting property: If $\mathcal{Z}\{x(n)\} = X(z)$, then $\mathcal{Z}\{x(n-k)\} = z^{-k}X(z)$
+Applying these to our signal:
+$$X(z) = \mathcal{Z}\{u(n)\} - \mathcal{Z}\{u(n-m)\}$$
+$$X(z) = \frac{1}{1-z^{-1}} - z^{-m} \left( \frac{1}{1-z^{-1}} \right)$$
+Factoring out the common term:
+**$$X(z) = \frac{1 - z^{-m}}{1 - z^{-1}}$$**
+
+**4. Determine the Region of Convergence (ROC):**
+The Z-transform is given by the finite sum $X(z) = 1 + \frac{1}{z} + \frac{1}{z^2} + \dots + \frac{1}{z^{m-1}}$.
+This sum evaluates to a finite number for all values of $z$ in the complex plane, except where individual terms might go to infinity. The terms containing $1/z$ will go to infinity only when $z = 0$.
+Therefore, the Region of Convergence (ROC) for this finite-duration right-sided signal is the entire z-plane excluding the origin.
+**ROC: $|z| > 0$**
+
+always mention ans related location pg no. In pdf , at the end of every soln 5.1 The z-Transform, pg. 488-490 and 5.2 Some Properties of the z-Transform, pg. 501-509
+
+Based on the provided images, here are the detailed solutions to a selection of the questions.
+
+
+### (c) Express the current pulse given in Fig. Q. 3(c) in terms of unit step and find its integral.
+![[Pasted image 20260628170939.png]]
+**Detailed Answer:**
+**1. Expressing the current pulse $i(t)$:**
+The graph in Fig. Q. 3(c) displays a piecewise constant signal.
+*   From $t = 0$ to $t = 2$, the current amplitude is $+10$.
+*   From $t = 2$ to $t = 4$, the current amplitude is $-10$.
+*   The current is zero everywhere else.
+We can express this mathematically using unit step functions $u(t)$. A rectangular pulse starting at $t=a$ and ending at $t=b$ with height $H$ is written as $H[u(t-a) - u(t-b)]$.
+Applying this logic to our signal's two parts:
+$$i(t) = 10[u(t) - u(t-2)] + (-10)[u(t-2) - u(t-4)]$$
+$$i(t) = 10u(t) - 10u(t-2) - 10u(t-2) + 10u(t-4)$$
+Combining like terms yields the final expression:
+**$$i(t) = 10u(t) - 20u(t-2) + 10u(t-4)$$**
+
+**2. Finding its integral:**
+Let the integral of the current pulse be $q(t) = \int_{-\infty}^{t} i(\tau) d\tau$.
+We know that the integral of a unit step function $u(t)$ is the unit ramp function, denoted as $r(t) = t \cdot u(t)$.
+Integrating each term of $i(t)$ individually using the linearity property of integration:
+$$q(t) = \int_{-\infty}^{t} [10u(\tau) - 20u(\tau-2) + 10u(\tau-4)] d\tau$$
+**$$q(t) = 10r(t) - 20r(t-2) + 10r(t-4)$$**
+
+To understand the shape of $q(t)$:
+*   For $t \le 0$: $q(t) = 0$
+*   For $0 < t \le 2$: $q(t) = 10t$ (a linear ramp rising to a peak of 20 at $t=2$)
+*   For $2 < t \le 4$: $q(t) = 10t - 20(t-2) = -10t + 40$ (a linear ramp falling from 20 down to 0 at $t=4$)
+*   For $t > 4$: $q(t) = 10t - 20(t-2) + 10(t-4) = 10t - 20t + 40 + 10t - 40 = 0$
+The integral forms a single triangular pulse that exists between $t=0$ and $t=4$.
+
+always mention ans related location pg no. In pdf , at the end of every soln 1.4-1 The Unit Step Function u(t), pg. 83-85
+
+***
+
+### (b) Find the trigonometric Fourier series for the square wave signal of Fig. Q. 4(b).
+![[Pasted image 20260628170926.png]]
+**Detailed Answer:**
+**1. Analyze the Signal Parameters:**
+From Fig. Q. 4(b), the signal $f(t)$ is a periodic square wave.
+*   The signal has a peak amplitude of $A$.
+*   One full period $T$ can be observed, for example, from $-T/2$ to $T/2$.
+*   Within this centered period, the signal is high ($A$) from $-T/4$ to $T/4$, and low ($0$) elsewhere.
+$$f(t) = \begin{cases} A, & \text{for } -T/4 \le t \le T/4 \\ 0, & \text{for } -T/2 < t < -T/4 \text{ and } T/4 < t < T/2 \end{cases}$$
+*   The fundamental angular frequency is defined as $\omega_0 = \frac{2\pi}{T}$.
+*   Crucially, the signal is symmetric about the vertical axis ($f(t) = f(-t)$), meaning it is an **even function**. Because of this even symmetry, its Fourier series will consist only of cosine terms, and all sine coefficients ($b_n$) will evaluate to zero.
+
+**2. Calculate the Fourier Coefficients:**
+The general form for the trigonometric Fourier series is $f(t) = a_0 + \sum_{n=1}^{\infty} [a_n \cos(n\omega_0 t) + b_n \sin(n\omega_0 t)]$.
+
+*   **DC Component ($a_0$):**
+    $$a_0 = \frac{1}{T} \int_{-T/2}^{T/2} f(t) dt$$
+    $$a_0 = \frac{1}{T} \int_{-T/4}^{T/4} A dt = \frac{A}{T} \left[t\right]_{-T/4}^{T/4} = \frac{A}{T} \left(\frac{T}{4} - \left(-\frac{T}{4}\right)\right) = \frac{A}{T} \left(\frac{T}{2}\right) = \frac{A}{2}$$
+
+*   **Cosine Coefficients ($a_n$):**
+    $$a_n = \frac{2}{T} \int_{-T/2}^{T/2} f(t) \cos(n\omega_0 t) dt$$
+    $$a_n = \frac{2}{T} \int_{-T/4}^{T/4} A \cos(n\omega_0 t) dt = \frac{2A}{T} \left[ \frac{\sin(n\omega_0 t)}{n\omega_0} \right]_{-T/4}^{T/4}$$
+    Substitute $\omega_0 = \frac{2\pi}{T}$:
+    $$a_n = \frac{2A}{T \cdot n(2\pi/T)} \left[ \sin\left(n \frac{2\pi}{T} \frac{T}{4}\right) - \sin\left(n \frac{2\pi}{T} \frac{-T}{4}\right) \right]$$
+    $$a_n = \frac{A}{n\pi} \left[ \sin\left(\frac{n\pi}{2}\right) - \sin\left(-\frac{n\pi}{2}\right) \right]$$
+    Since sine is an odd function ($\sin(-\theta) = -\sin(\theta)$):
+    $$a_n = \frac{A}{n\pi} \left[ 2\sin\left(\frac{n\pi}{2}\right) \right] = \frac{2A}{n\pi} \sin\left(\frac{n\pi}{2}\right)$$
+    
+    Let's evaluate $a_n$ for different integer values of $n$:
+    *   If $n$ is even ($n=2, 4, 6\dots$), $\sin(n\pi/2) = 0$, so $a_{\text{even}} = 0$.
+    *   If $n = 1, 5, 9\dots$, $\sin(n\pi/2) = 1$, so $a_n = \frac{2A}{n\pi}$.
+    *   If $n = 3, 7, 11\dots$, $\sin(n\pi/2) = -1$, so $a_n = -\frac{2A}{n\pi}$.
+
+*   **Sine Coefficients ($b_n$):**
+    As deduced from the even symmetry, $b_n = 0$ for all $n$.
+
+**3. Construct the Final Fourier Series:**
+Substituting the calculated coefficients back into the series formula:
+$$f(t) = a_0 + \sum_{n=1}^{\infty} a_n \cos(n\omega_0 t)$$
+$$f(t) = \frac{A}{2} + \sum_{n=1,3,5\dots}^{\infty} \frac{2A}{n\pi} \sin\left(\frac{n\pi}{2}\right) \cos\left(\frac{2\pi n}{T} t\right)$$
+Writing out the first few non-zero terms explicitly gives the final expression:
+**$$f(t) = \frac{A}{2} + \frac{2A}{\pi} \left[ \cos\left(\frac{2\pi}{T} t\right) - \frac{1}{3}\cos\left(\frac{6\pi}{T} t\right) + \frac{1}{5}\cos\left(\frac{10\pi}{T} t\right) - \dots \right]$$**
+
+always mention ans related location pg no. In pdf , at the end of every soln 6.1 Periodic Signal Representation by Trigonometric Fourier Series, pg. 593-605
+
+
+### Q.1 (a) A system is specified by its input-output relationship as $y(t) = \frac{x^2(t)}{dx/dt}$. Show that the system satisfies the homogeneity property but not the additivity property.
+
+**Detailed Answer:**
+
+To determine if a system is linear, it must satisfy the principle of superposition, which consists of two properties: homogeneity (scaling) and additivity.
+
+Given the system equation:
+$$y(t) = \frac{x^2(t)}{\frac{dx(t)}{dt}}$$
+Let's denote the derivative of $x(t)$ as $\dot{x}(t)$ for simplicity. So, $y(t) = \frac{x^2(t)}{\dot{x}(t)}$.
+
+**1. Checking Homogeneity (Scaling Property):**
+The homogeneity property states that if an input $x(t)$ produces an output $y(t)$, then a scaled input $kx(t)$ (where $k$ is a constant) should produce a scaled output $k y(t)$.
+Let the new input be $x_k(t) = k x(t)$.
+The corresponding output $y_k(t)$ is:
+$$y_k(t) = \frac{(x_k(t))^2}{\frac{d x_k(t)}{dt}}$$
+Substitute $x_k(t) = k x(t)$:
+$$y_k(t) = \frac{(k x(t))^2}{\frac{d (k x(t))}{dt}}$$
+$$y_k(t) = \frac{k^2 x^2(t)}{k \frac{dx(t)}{dt}}$$
+$$y_k(t) = k \left( \frac{x^2(t)}{\dot{x}(t)} \right)$$
+$$y_k(t) = k y(t)$$
+Since the output is scaled by the same factor $k$ as the input, the system **satisfies the homogeneity property**.
+
+**2. Checking Additivity Property:**
+The additivity property states that if an input $x_1(t)$ produces $y_1(t)$ and an input $x_2(t)$ produces $y_2(t)$, then an input $x_1(t) + x_2(t)$ should produce an output $y_1(t) + y_2(t)$.
+
+Let the respective outputs for $x_1(t)$ and $x_2(t)$ be:
+$y_1(t) = \frac{x_1^2(t)}{\dot{x}_1(t)}$
+$y_2(t) = \frac{x_2^2(t)}{\dot{x}_2(t)}$
+
+The sum of the individual outputs is:
+$$y_1(t) + y_2(t) = \frac{x_1^2(t)}{\dot{x}_1(t)} + \frac{x_2^2(t)}{\dot{x}_2(t)} = \frac{x_1^2(t)\dot{x}_2(t) + x_2^2(t)\dot{x}_1(t)}{\dot{x}_1(t)\dot{x}_2(t)}$$
+
+Now, let's apply the combined input $x_{12}(t) = x_1(t) + x_2(t)$ to the system. The new output $y_{12}(t)$ is:
+$$y_{12}(t) = \frac{(x_1(t) + x_2(t))^2}{\frac{d}{dt}(x_1(t) + x_2(t))}$$
+$$y_{12}(t) = \frac{x_1^2(t) + 2x_1(t)x_2(t) + x_2^2(t)}{\dot{x}_1(t) + \dot{x}_2(t)}$$
+
+Comparing the two results:
+$$\frac{x_1^2(t) + 2x_1(t)x_2(t) + x_2^2(t)}{\dot{x}_1(t) + \dot{x}_2(t)} \neq \frac{x_1^2(t)\dot{x}_2(t) + x_2^2(t)\dot{x}_1(t)}{\dot{x}_1(t)\dot{x}_2(t)}$$
+Since $y_{12}(t) \neq y_1(t) + y_2(t)$, the system **does not satisfy the additivity property**.
+
+Because it fails the additivity condition, the system is non-linear.
+
+always mention ans related location pg no. In pdf , at the end of every soln 1.7-1 Linear and Nonlinear Systems, pg. 97-98
+
+***
+
+### (c) Define gate function. Express the following signal in terms of switching functions. (figure involved.)
+![[Pasted image 20260628171225.png]]
+**Detailed Answer:**
+
+**Definition of Gate Function:**
+A unit gate function, commonly denoted as $\text{rect}(t/\tau)$, is a rectangular pulse of unit height and width $\tau$, usually centered at the origin. It acts as a mathematical "gate," letting a signal pass through unmodified within a specific time interval and completely blocking it (multiplying by zero) outside that interval.
+It is formally defined as:
+$$\text{rect}\left(\frac{t}{\tau}\right) = \begin{cases} 1, & |t| < \tau/2 \\ 0, & |t| > \tau/2 \end{cases}$$
+Alternatively, a gate function starting at time $t_1$ and ending at time $t_2$ can be defined using unit step functions (which the question refers to as "switching functions"):
+$$\text{Gate}_{(t_1, t_2)}(t) = u(t - t_1) - u(t - t_2)$$
+
+**Expressing the given signal:**
+The provided figure shows a signal $f(t)$ that exists only in the interval from $t = 0$ to $t = T$. Outside this interval, the signal is zero. This means we will multiply some function by a gate that turns on at 0 and off at $T$, which is $[u(t) - u(t-T)]$.
+
+Inside the interval $0 \le t \le T$, the signal is a straight line. Let's find the equation of this line $y = mt + c$.
+We can identify two points on this line from the graph:
+1.  At $t = 0$, the value is $E$. So, $(0, E)$. This gives us the y-intercept, $c = E$.
+2.  At $t = T/2$, the value is $0$. So, $(T/2, 0)$.
+3.  At $t = T$, the value is $-E$. So, $(T, -E)$.
+
+Let's calculate the slope $m$:
+$$m = \frac{\Delta y}{\Delta t} = \frac{-E - E}{T - 0} = \frac{-2E}{T}$$
+
+So, the equation of the line that defines the signal within the active interval is:
+$$y(t) = -\frac{2E}{T}t + E = E\left(1 - \frac{2t}{T}\right)$$
+
+Now, we use the switching functions (unit step functions) to restrict this line to only exist between $t=0$ and $t=T$. We multiply the line equation by the gate function we defined earlier:
+$$f(t) = E\left(1 - \frac{2t}{T}\right) [u(t) - u(t-T)]$$
+
+Expanding this expression gives the final answer in terms of switching functions:
+$$f(t) = E\left(1 - \frac{2t}{T}\right)u(t) - E\left(1 - \frac{2t}{T}\right)u(t-T)$$
+
+always mention ans related location pg no. In pdf , at the end of every soln 1.4-1 The Unit Step Function u(t), pg. 83 and 7.2 Transforms of Some Useful Functions, pg. 689
+
+***
+
+### (b) Find the Laplace transform of the following function $h(t)$. (figure involved.)
+![[Pasted image 20260628171238.png]]
+**Detailed Answer:**
+
+The given figure shows a periodic signal $h(t)$. It's a triangular wave that oscillates between an amplitude of $1$ and $3$, with a period $T = 2$.
+Since it is a periodic function, its Laplace transform $H(s)$ can be found using the formula for periodic signals:
+$$H(s) = \frac{H_1(s)}{1 - e^{-sT}}$$
+where $H_1(s)$ is the Laplace transform of the first period of the signal, and $T$ is the fundamental period. Here, $T=2$.
+
+Let's define the function for the first period, $h_1(t)$, which exists for $0 \le t < 2$ and is zero elsewhere. 
+We can view $h_1(t)$ as a DC offset of 1 added to a triangular pulse that goes from 0 to 2 and back to 0.
+$h_1(t) = 1 \cdot \text{pulse}_{(0,2)} + \text{triangle}_{(0,2)}$
+
+Let's build this systematically using ramp functions $r(t) = t u(t)$. A unit ramp has a slope of 1.
+*   The signal starts at $t=0$ with a value of $1$. Because we are dealing with unilateral Laplace transforms ($t \ge 0$), this initial DC value can be represented by a unit step: $1 \cdot u(t)$.
+*   From $t=0$ to $t=1$, the signal rises from 1 to 3. The slope is $\frac{3-1}{1-0} = 2$. We add a ramp of slope 2 starting at $t=0$: $+2r(t)$.
+    Current function: $u(t) + 2tu(t)$
+*   At $t=1$, the signal must start falling from 3 to 1. The slope of the segment from $t=1$ to $t=2$ is $\frac{1-3}{2-1} = -2$. The current slope is $+2$, so we need to add a ramp that changes the net slope to $-2$. We must add a slope of $-4$ starting at $t=1$: $-4r(t-1)$.
+    Current function: $u(t) + 2tu(t) - 4(t-1)u(t-1)$
+*   At $t=2$, the single-period signal $h_1(t)$ must return to zero (since it represents *only* the first period). The current slope is $-2$. To flatten it to $0$, we add a ramp of slope $+2$ at $t=2$: $+2r(t-2)$.
+    Current function: $u(t) + 2tu(t) - 4(t-1)u(t-1) + 2(t-2)u(t-2)$
+    Let's check the value for $t > 2$: $1 + 2t - 4(t-1) + 2(t-2) = 1 + 2t - 4t + 4 + 2t - 4 = 1$.
+*   The value is stuck at 1 for $t>2$. We need it to be 0 for $t>2$ to properly define just one period. We must subtract a step function at $t=2$: $-1 \cdot u(t-2)$.
+    Final expression for one period:
+    $$h_1(t) = u(t) + 2r(t) - 4r(t-1) + 2r(t-2) - u(t-2)$$
+
+Now, we take the Laplace transform of $h_1(t)$. We know that $\mathcal{L}\{u(t)\} = \frac{1}{s}$ and $\mathcal{L}\{r(t)\} = \frac{1}{s^2}$. Applying the time-shifting property:
+$$H_1(s) = \frac{1}{s} + \frac{2}{s^2} - \frac{4}{s^2}e^{-s} + \frac{2}{s^2}e^{-2s} - \frac{1}{s}e^{-2s}$$
+
+Group the $1/s$ and $1/s^2$ terms:
+$$H_1(s) = \frac{1}{s}(1 - e^{-2s}) + \frac{2}{s^2}(1 - 2e^{-s} + e^{-2s})$$
+Notice that $(1 - 2e^{-s} + e^{-2s})$ is a perfect square: $(1 - e^{-s})^2$.
+$$H_1(s) = \frac{1 - e^{-2s}}{s} + \frac{2(1 - e^{-s})^2}{s^2}$$
+
+Now, apply the formula for periodic signals to find the full transform $H(s)$:
+$$H(s) = \frac{H_1(s)}{1 - e^{-sT}} = \frac{H_1(s)}{1 - e^{-2s}}$$
+$$H(s) = \frac{\frac{1 - e^{-2s}}{s} + \frac{2(1 - e^{-s})^2}{s^2}}{1 - e^{-2s}}$$
+$$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})^2}{s^2(1 - e^{-2s})}$$
+
+We can simplify the denominator of the second term using the difference of squares: $(1 - e^{-2s}) = (1 - e^{-s})(1 + e^{-s})$.
+$$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})^2}{s^2(1 - e^{-s})(1 + e^{-s})}$$
+$$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})}{s^2(1 + e^{-s})}$$
+
+always mention ans related location pg no. In pdf , at the end of every soln 4.2-1 Time Shifting, pg. 349-351
