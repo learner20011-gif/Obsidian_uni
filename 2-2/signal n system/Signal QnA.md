@@ -477,3 +477,689 @@ Since every bounded input guarantees a bounded output, the stability criterion i
 **Conclusion:** The system is **BIBO stable**.
 
 Location pg 110-111 In pdf
+
+Hi
+
+### (b) Find the Laplace transform of the following signal using the properties of Laplace transform. (figure involved.)
+![[Pasted image 20260628100524.png]]
+**Detailed Answer:**
+
+To find the Laplace transform of the given periodic signal $f(t)$, we first determine the mathematical expression for a single period of the signal. Looking at the graph, the signal is a sawtooth wave that repeats every $T=2$ seconds. 
+
+Let's define the first period of the signal as $f_1(t)$. From $t=0$ to $t=1$, the signal rises linearly from 0 to 5, which can be represented by the equation $5t$. From $t=1$ to $t=2$, the signal is 0. 
+We can express $f_1(t)$ using the unit step function $u(t)$:
+$$f_1(t) = 5t [u(t) - u(t-1)]$$
+$$f_1(t) = 5t u(t) - 5t u(t-1)$$
+
+To use the time-shifting property of the Laplace transform, which states that $\mathcal{L}\{x(t-a)u(t-a)\} = e^{-as}X(s)$, we need to rewrite the second term so it is in the form of $(t-1)$:
+$$f_1(t) = 5t u(t) - 5(t - 1 + 1)u(t-1)$$
+$$f_1(t) = 5t u(t) - 5(t-1)u(t-1) - 5u(t-1)$$
+
+Now, we apply the Laplace transform to $f_1(t)$ using the linearity and time-shifting properties. We know the standard transforms $\mathcal{L}\{t u(t)\} = \frac{1}{s^2}$ and $\mathcal{L}\{u(t)\} = \frac{1}{s}$:
+$$F_1(s) = \mathcal{L}\{5t u(t)\} - \mathcal{L}\{5(t-1)u(t-1)\} - \mathcal{L}\{5u(t-1)\}$$
+$$F_1(s) = \frac{5}{s^2} - \frac{5}{s^2}e^{-s} - \frac{5}{s}e^{-s}$$
+$$F_1(s) = \frac{5 - 5e^{-s} - 5se^{-s}}{s^2}$$
+
+For a periodic signal $f(t)$ with period $T$, the Laplace transform is given by the property:
+$$F(s) = \frac{F_1(s)}{1 - e^{-sT}}$$
+
+Substituting our $F_1(s)$ and $T=2$ into this periodic property formula gives the final Laplace transform:
+$$F(s) = \frac{\frac{5 - 5e^{-s} - 5se^{-s}}{s^2}}{1 - e^{-2s}}$$
+$$F(s) = \frac{5[1 - e^{-s}(1+s)]}{s^2(1 - e^{-2s})}$$
+
+"""always mention ans related location pg no. In pdf , at the end of every soln 4.2-1 Time Shifting property, pg. 349"""
+
+***
+
+### (c) A full wave rectified signal having the following Fourier series expansion is used as the input of the circuit shown below. (figure involved.)
+**$e(t) = \frac{2\times100}{\pi}(1 + \frac{2}{3}\cos 2\omega t - \frac{2}{15}\cos 4\omega t + \frac{2}{35}\cos 6\omega t \dots)$**
+**where $\omega = 377$.**
+**Find**
+**(i) The Fourier series expression for the voltage $v_o(t)$ (first three terms only).**
+**(ii) Average power delivered to the $1 \text{ k}\Omega$ resistor.**
+![[Pasted image 20260628100513.png]]
+**Detailed Answer:**
+
+First, let's determine the transfer function $H(s) = \frac{V_o(s)}{E(s)}$ of the given circuit.
+The circuit consists of a capacitor $C$ in series with a parallel combination of an inductor $L$ and a resistor $R$.
+Given values: $C = 1 \mu\text{F} = 10^{-6}\text{ F}$, $L = 0.1\text{ H}$, $R = 1 \text{ k}\Omega = 1000\text{ }\Omega$.
+
+The impedance of the parallel $L$ and $R$ combination ($Z_p$) is:
+$$Z_p = \frac{(sL)(R)}{sL + R}$$
+The total impedance of the circuit ($Z_{tot}$) is:
+$$Z_{tot} = Z_C + Z_p = \frac{1}{sC} + \frac{sLR}{sL + R} = \frac{sL + R + s^2LRC}{sC(sL + R)}$$
+
+Using the voltage divider rule, the output voltage across the resistor (and inductor) is:
+$$V_o(s) = E(s) \frac{Z_p}{Z_{tot}} = E(s) \frac{\frac{sLR}{sL + R}}{\frac{s^2LRC + sL + R}{sC(sL + R)}} = E(s) \frac{s^2LRC}{s^2LRC + sL + R}$$
+
+Divide numerator and denominator by $LRC$:
+$$H(s) = \frac{V_o(s)}{E(s)} = \frac{s^2}{s^2 + \frac{1}{RC}s + \frac{1}{LC}}$$
+
+Plugging in the component values:
+$\frac{1}{RC} = \frac{1}{1000 \times 10^{-6}} = 1000$
+$\frac{1}{LC} = \frac{1}{0.1 \times 10^{-6}} = 10^7$
+$$H(s) = \frac{s^2}{s^2 + 1000s + 10^7}$$
+
+To find the steady-state response for each frequency component, we evaluate $H(j\omega') = \frac{-\omega'^2}{(10^7 - \omega'^2) + j1000\omega'}$.
+
+**Part (i): Fourier series expression for $v_o(t)$ (first three terms)**
+The input signal $e(t)$ has the fundamental frequency $\omega = 377$ rad/s.
+$e(t) = \frac{200}{\pi} + \frac{400}{3\pi}\cos(754 t) - \frac{400}{15\pi}\cos(1508 t) + \dots$
+
+*   **Term 1 (DC component, $\omega' = 0$):**
+    Input $E_{DC} = \frac{200}{\pi} \approx 63.66$ V.
+    $H(j0) = \frac{0}{10^7} = 0$.
+    Output $v_{o,dc}(t) = 0$ V.
+
+*   **Term 2 (First AC component, $\omega' = 2\omega = 754$ rad/s):**
+    Input $e_1(t) = \frac{400}{3\pi}\cos(754t) \approx 42.44 \cos(754t)$ V.
+    Evaluate $H(j754)$: $\omega'^2 = 754^2 = 568516$.
+    $H(j754) = \frac{-568516}{(10^7 - 568516) + j1000(754)} = \frac{-568516}{9431484 + j754000}$
+    Magnitude: $|H(j754)| = \frac{568516}{\sqrt{9431484^2 + 754000^2}} \approx \frac{568516}{9461646} \approx 0.0601$
+    Phase: $\angle H(j754) = 180^\circ - \arctan(\frac{754000}{9431484}) = 180^\circ - 4.57^\circ = 175.43^\circ$
+    Output $v_{o1}(t) = 42.44 \times 0.0601 \cos(754t + 175.43^\circ) \approx 2.55 \cos(754t + 175.4^\circ)$ V.
+
+*   **Term 3 (Second AC component, $\omega' = 4\omega = 1508$ rad/s):**
+    Input $e_2(t) = -\frac{400}{15\pi}\cos(1508t) \approx -8.49 \cos(1508t)$ V.
+    Evaluate $H(j1508)$: $\omega'^2 = 1508^2 = 2274064$.
+    $H(j1508) = \frac{-2274064}{(10^7 - 2274064) + j1000(1508)} = \frac{-2274064}{7725936 + j1508000}$
+    Magnitude: $|H(j1508)| = \frac{2274064}{\sqrt{7725936^2 + 1508000^2}} \approx \frac{2274064}{7871676} \approx 0.2889$
+    Phase: $\angle H(j1508) = 180^\circ - \arctan(\frac{1508000}{7725936}) = 180^\circ - 11.04^\circ = 168.96^\circ$
+    Output $v_{o2}(t) = -8.49 \times 0.2889 \cos(1508t + 168.96^\circ) = -2.45 \cos(1508t + 168.96^\circ)$ V.
+    (Note: $-\cos(\theta + 168.96^\circ)$ is equivalent to $\cos(\theta - 11.04^\circ)$).
+
+The Fourier series expression for $v_o(t)$ consisting of the first three terms is:
+**$v_o(t) \approx 0 + 2.55 \cos(754t + 175.4^\circ) + 2.45 \cos(1508t - 11.0^\circ) \text{ V}$**
+
+**Part (ii): Average power delivered to the $1\text{ k}\Omega$ resistor**
+The average power delivered to the resistor by a sum of orthogonal sinusoidal signals is the sum of the average powers of the individual harmonics: $P_{avg} = \sum \frac{V_{peak, n}^2}{2R}$.
+Using the first three terms calculated above:
+$P \approx \frac{(0)^2}{2000} + \frac{(2.55)^2}{2000} + \frac{(2.45)^2}{2000}$
+$P \approx 0 + 0.00325 + 0.00300 = 0.00625 \text{ W}$
+**Average Power $\approx 6.25 \text{ mW}$**
+
+"""always mention ans related location pg no. In pdf , at the end of every soln 6.4 LTIC System Response to Periodic Inputs, pg. 637"""
+
+***
+
+### (b) Discuss amplitude modulation and sampling as the application scenarios of Fourier transform.
+
+**Detailed Answer:**
+
+The Fourier Transform is a fundamental mathematical tool that allows us to move between the time domain and the frequency domain. It reveals the frequency spectrum of a signal, making it essential for understanding and designing systems in communications and signal processing. Two primary application scenarios that rely heavily on the principles of the Fourier Transform are Amplitude Modulation (AM) and Sampling.
+
+**1. Amplitude Modulation (AM)**
+*   **Concept:** Amplitude modulation is a technique used in electronic communication to transmit baseband signals (like voice or audio, which occur at low frequencies) over long distances. This is achieved by varying the amplitude of a high-frequency carrier wave, typically a sinusoid like $\cos(\omega_c t)$, in proportion to the message signal $m(t)$. 
+*   **Fourier Transform Application:** The Fourier transform explains perfectly how this process shifts signals in the frequency domain. According to the frequency-shifting property (or modulation property) of the Fourier Transform:
+    If $m(t) \Leftrightarrow M(\omega)$, then multiplying the signal by a carrier yields:
+    $$m(t)\cos(\omega_c t) \Leftrightarrow \frac{1}{2}[M(\omega - \omega_c) + M(\omega + \omega_c)]$$
+*   **Significance:** The equation shows that in the frequency domain, the spectrum of the original low-frequency message $M(\omega)$ is shifted and centered symmetrically around the high-frequency carrier at $+\omega_c$ and $-\omega_c$. 
+    *   This allows for **Frequency-Division Multiplexing (FDM)**, where multiple signals can be transmitted simultaneously over the same medium (like air or a cable) without interfering, simply by assigning each signal a different carrier frequency $\omega_c$. 
+    *   It also allows for practical antenna design, as efficient electromagnetic radiation requires antenna sizes proportional to the signal's wavelength; shifting the signal to a higher frequency significantly reduces the required antenna size.
+
+**2. Sampling**
+*   **Concept:** Sampling is the process of converting a continuous-time analog signal $x(t)$ into a discrete-time signal (a sequence of numbers) by extracting its values at regular intervals $T$. This is the crucial first step in digitizing signals for processing by computers or transmitting over digital networks.
+*   **Fourier Transform Application:** Mathematically, ideal sampling can be modeled as multiplying the continuous signal $x(t)$ by an impulse train $\delta_T(t) = \sum \delta(t - nT)$. The Fourier transform of the sampled signal $x_s(t)$ is derived using the frequency-convolution property:
+    $$X_s(\omega) = \frac{1}{T} \sum_{k=-\infty}^{\infty} X(\omega - k\omega_s)$$
+    where $\omega_s = \frac{2\pi}{T}$ is the sampling frequency.
+*   **Significance:** The Fourier transform reveals that sampling a signal in the time domain creates infinite periodic replicas of the original signal's frequency spectrum, spaced exactly by the sampling frequency $\omega_s$. 
+    *   This perfectly illustrates the **Nyquist-Shannon Sampling Theorem**. For the original signal to be perfectly reconstructed from its samples, these spectral replicas must not overlap. 
+    *   To prevent overlap (a phenomenon known as **aliasing**, where high frequencies masquerade as low frequencies and corrupt the data), the sampling frequency $\omega_s$ must be strictly greater than twice the highest frequency component present in the original signal ($B$). Thus, the Fourier Transform provides the exact mathematical proof for the requirement $f_s > 2B$.
+
+"""always mention ans related location pg no. In pdf , at the end of every soln 7.7 Application to Communications: Amplitude Modulation, pg. 736 and 8.1 The Sampling Theorem, pg. 776"""
+
+### Q.1. (a) What is impulse function? Draw the following function $f(t) = 5\delta(t+2) + 10\delta(t) - 4\delta(t-3)$.
+
+**Detailed Answer:**
+
+**Definition of the Impulse Function:**
+The continuous-time unit impulse function, denoted by $\delta(t)$ (also known as the Dirac delta function), is an idealized mathematical construct used to represent a signal that is infinitely narrow, infinitely tall, and has a finite area (specifically, an area of one). 
+
+It is formally defined by two properties:
+1.  **Zero everywhere except at the origin:** 
+    $\delta(t) = 0$ for $t \neq 0$
+2.  **Unit area:**
+    $\int_{-\infty}^{\infty} \delta(t) dt = 1$
+
+A crucial property of the impulse function is the **sampling (or sifting) property**. When a continuous function $\phi(t)$ is multiplied by an impulse located at $t = T$ and integrated over time, it extracts the value of the function at that specific instant:
+$\int_{-\infty}^{\infty} \phi(t)\delta(t-T) dt = \phi(T)$
+
+**Drawing the given function:**
+The given function is $f(t) = 5\delta(t+2) + 10\delta(t) - 4\delta(t-3)$.
+This function consists of three separate scaled and time-shifted impulses:
+
+1.  **$5\delta(t+2)$:** This represents an impulse shifted to the left by 2 units (located at $t = -2$). The scalar multiplier $5$ means it has an area (or "strength") of 5. Graphically, this is drawn as a vertical arrow pointing upwards at $t = -2$ with a height or label indicating 5.
+2.  **$10\delta(t)$:** This represents an impulse located at the origin ($t = 0$). The scalar multiplier $10$ means it has a strength of 10. Graphically, this is a vertical arrow pointing upwards at $t = 0$ with a label indicating 10.
+3.  **$-4\delta(t-3)$:** This represents an impulse shifted to the right by 3 units (located at $t = 3$). The scalar multiplier $-4$ means it has a strength of 4, but the negative sign indicates it points downwards. Graphically, this is a vertical arrow pointing downwards at $t = 3$ with a label indicating -4.
+
+**To sketch this:**
+*   Draw a horizontal time axis ($t$).
+*   At $t = -2$, draw an upward-pointing arrow and label it with strength 5.
+*   At $t = 0$, draw a taller upward-pointing arrow and label it with strength 10.
+*   At $t = 3$, draw a downward-pointing arrow and label it with strength -4.
+
+always mention ans related location pg no. In pdf , at the end of every soln 1.4-2 The Unit Impulse Function $\delta(t)$, pg. 86
+
+***
+
+### Q.2. (a) Explain the following properties of the Laplace transform: (i) Scaling (ii) Time shift (iii) Frequency shift.
+
+**Detailed Answer:**
+
+Let $x(t)$ be a continuous-time signal and $X(s)$ be its Laplace transform, denoted as $\mathcal{L}[x(t)] = X(s)$. The specified properties describe how modifications to the signal in the time domain affect its representation in the complex frequency ($s$) domain.
+
+**(i) Scaling Property**
+The scaling property states that scaling the time variable $t$ by a real, positive constant $a$ ($a > 0$) results in an inverse scaling of the $s$-domain variable and the overall amplitude of the transform. 
+Mathematically, if $x(t) \Longleftrightarrow X(s)$, then:
+$$\mathcal{L}[x(at)] = \frac{1}{a} X\left(\frac{s}{a}\right)$$
+*Explanation:* Time compression of a signal by a factor $a$ (where $a > 1$) causes the signal to happen faster. In the frequency domain, this results in an expansion of the Laplace transform along the $s$-scale by the same factor $a$, accompanied by an amplitude reduction by a factor of $1/a$. Conversely, time expansion ($a < 1$) results in frequency compression.
+
+**(ii) Time Shifting Property**
+The time-shifting property relates a delay in the time domain to a phase shift (multiplication by a complex exponential) in the $s$-domain.
+Mathematically, if $x(t)u(t) \Longleftrightarrow X(s)$, then for a time delay $t_0 \ge 0$:
+$$\mathcal{L}[x(t - t_0)u(t - t_0)] = X(s)e^{-st_0}$$
+*Explanation:* Delaying a causal signal by $t_0$ seconds does not change its basic shape, but it shifts its starting point. In the Laplace domain, this time delay amounts to multiplying the original, unshifted transform $X(s)$ by the exponential factor $e^{-st_0}$.
+
+**(iii) Frequency Shifting Property**
+The frequency-shifting property is the dual of the time-shifting property. It states that multiplying a time-domain signal by an exponential function results in a shift in the complex frequency domain.
+Mathematically, if $x(t) \Longleftrightarrow X(s)$, then:
+$$\mathcal{L}[x(t)e^{s_0 t}] = X(s - s_0)$$
+*Explanation:* If a signal is multiplied by $e^{s_0 t}$, the entire Laplace spectrum of that signal is shifted in the $s$-plane by the amount $s_0$. If $s_0$ is purely imaginary (e.g., $j\omega_0$), this represents a shift along the frequency axis, which forms the basis for modulation.
+
+always mention ans related location pg no. In pdf , at the end of every soln 4.2 Some Properties of the Laplace Transform, pg. 349-357
+
+***
+
+### Q.2. (b) Find the Laplace transform of the function h(t) in the figure below. (figure involved.)
+![[Pasted image 20260628100445.png]]
+**Detailed Answer:**
+
+To find the Laplace transform of the given waveform $h(t)$, we first need to express the graphical piecewise-constant function as a mathematical equation using the unit step function, $u(t)$. 
+
+The unit step function $u(t)$ is defined as 1 for $t \ge 0$ and 0 for $t < 0$. A delayed unit step $u(t-a)$ turns "on" at $t=a$.
+
+Looking at the graph of $h(t)$:
+1.  The signal turns "on" at $t = 0$ with an amplitude of 10. This can be represented by $10u(t)$.
+2.  At $t = 2$, the signal amplitude drops from 10 to 5. We can represent this drop by subtracting a step function of amplitude 5 that starts at $t=2$. This is $-5u(t-2)$.
+3.  At $t = 4$, the signal amplitude drops from 5 to 0. We can represent this final drop by subtracting another step function of amplitude 5 that starts at $t=4$. This is $-5u(t-4)$.
+
+Combining these components, the mathematical expression for the signal is:
+$h(t) = 10u(t) - 5u(t-2) - 5u(t-4)$
+
+Now, we take the unilateral Laplace transform of this equation. Because the Laplace transform is a linear operator, we can take the transform of each term individually:
+$H(s) = \mathcal{L}[10u(t)] - \mathcal{L}[5u(t-2)] - \mathcal{L}[5u(t-4)]$
+
+We use the standard Laplace transform for a unit step function:
+$\mathcal{L}[u(t)] = \frac{1}{s}$
+
+And we apply the time-shifting property $\mathcal{L}[x(t-t_0)u(t-t_0)] = X(s)e^{-st_0}$ to the delayed step functions:
+$\mathcal{L}[u(t-2)] = \frac{1}{s}e^{-2s}$
+$\mathcal{L}[u(t-4)] = \frac{1}{s}e^{-4s}$
+
+Substituting these into our equation for $H(s)$ gives:
+$H(s) = 10\left(\frac{1}{s}\right) - 5\left(\frac{e^{-2s}}{s}\right) - 5\left(\frac{e^{-4s}}{s}\right)$
+
+Factoring out the common term $\frac{5}{s}$:
+$H(s) = \frac{5}{s} \left( 2 - e^{-2s} - e^{-4s} \right)$
+
+always mention ans related location pg no. In pdf , at the end of every soln 4.2-1 Time Shifting (Example 4.6), pg. 350-351
+
+***
+
+### Q.5. (a) Obtain and draw the frequency spectrum of the following waveform. (figure involved.)
+![[Pasted image 20260628100434.png]]
+**Detailed Answer:**
+
+The given waveform $f(t)$ is a periodic sawtooth wave. To obtain its frequency spectrum, we must compute its Exponential Fourier Series coefficients.
+
+**1. Determine Signal Parameters:**
+From the figure, the signal repeats every 1 unit of time. Therefore, the fundamental period is $T_0 = 1$.
+The fundamental radian frequency is $\omega_0 = \frac{2\pi}{T_0} = \frac{2\pi}{1} = 2\pi$ rad/s.
+Over one period (e.g., from $t=0$ to $t=1$), the function rises linearly from 0 to 3. The equation for a single period is:
+$f(t) = 3t$ for $0 \le t < 1$
+
+**2. Calculate the Exponential Fourier Series Coefficients ($D_n$):**
+The exponential Fourier series is given by $f(t) = \sum_{n=-\infty}^{\infty} D_n e^{jn\omega_0 t}$, where the coefficients are:
+$D_n = \frac{1}{T_0} \int_{0}^{T_0} f(t) e^{-jn\omega_0 t} dt$
+
+*   **Calculate the DC component ($n=0$):**
+    $D_0 = \frac{1}{T_0} \int_{0}^{T_0} f(t) dt$
+    This is simply the average value (area under one period divided by the period).
+    Area of the triangle $= \frac{1}{2} \cdot \text{base} \cdot \text{height} = \frac{1}{2}(1)(3) = 1.5$.
+    $D_0 = \frac{1.5}{1} = 1.5$
+
+*   **Calculate the AC components ($n \neq 0$):**
+    Substitute $T_0 = 1$, $\omega_0 = 2\pi$, and $f(t) = 3t$:
+    $D_n = \int_{0}^{1} 3t e^{-jn2\pi t} dt$
+    
+    We evaluate this integral using integration by parts: $\int u dv = uv - \int v du$
+    Let $u = 3t \implies du = 3 dt$
+    Let $dv = e^{-jn2\pi t} dt \implies v = \frac{e^{-jn2\pi t}}{-jn2\pi}$
+    
+    $D_n = \left[ 3t \frac{e^{-jn2\pi t}}{-jn2\pi} \right]_{0}^{1} - \int_{0}^{1} 3 \frac{e^{-jn2\pi t}}{-jn2\pi} dt$
+    
+    Evaluate the first term at limits 1 and 0:
+    At $t=1$: $3(1) \frac{e^{-jn2\pi}}{-jn2\pi} = \frac{3(1)}{-jn2\pi}$ (since $e^{-jn2\pi} = \cos(2\pi n) - j\sin(2\pi n) = 1$ for integer $n$)
+    At $t=0$: $3(0) \frac{e^{0}}{-jn2\pi} = 0$
+    
+    Evaluate the integral part:
+    $\int_{0}^{1} \frac{3}{-jn2\pi} e^{-jn2\pi t} dt = \frac{3}{-jn2\pi} \left[ \frac{e^{-jn2\pi t}}{-jn2\pi} \right]_{0}^{1} = \frac{3}{(-jn2\pi)^2} (e^{-jn2\pi} - e^0) = \frac{3}{(-jn2\pi)^2} (1 - 1) = 0$
+    
+    Therefore, putting it all together:
+    $D_n = \frac{3}{-jn2\pi} - 0 = j\frac{3}{2\pi n}$
+
+**3. Define the Spectrum:**
+The coefficients are:
+$D_n = \begin{cases} 1.5 & \text{for } n = 0 \\ j\frac{3}{2\pi n} & \text{for } n \neq 0 \end{cases}$
+
+To draw the frequency spectrum, we separate this into an amplitude spectrum $|D_n|$ and a phase spectrum $\angle D_n$.
+
+*   **Amplitude Spectrum $|D_n|$:**
+    For $n=0$: $|D_0| = 1.5$
+    For $n \neq 0$: $|D_n| = \left| j\frac{3}{2\pi n} \right| = \frac{3}{2\pi |n|}$
+    The amplitude spectrum consists of lines at frequencies $\omega = 2\pi n$. There is a central spike of height 1.5 at $\omega=0$. For other frequencies, the amplitude decays proportionally to $1/|n|$ symmetrically around the vertical axis.
+
+*   **Phase Spectrum $\angle D_n$:**
+    For $n=0$: The DC term is positive and real, so $\angle D_0 = 0$ rad.
+    For $n > 0$ (positive frequencies): $D_n = j \times \text{(positive number)}$. A purely imaginary positive number has a phase of $\pi/2$ (or $90^\circ$). So $\angle D_n = \pi/2$.
+    For $n < 0$ (negative frequencies): $D_n = j \times \text{(negative number)} = -j \times \text{(positive number)}$. A purely imaginary negative number has a phase of $-\pi/2$ (or $-90^\circ$). So $\angle D_n = -\pi/2$.
+    The phase spectrum is an odd function, with lines at $-\pi/2$ for negative frequencies and lines at $\pi/2$ for positive frequencies.
+
+always mention ans related location pg no. In pdf , at the end of every soln 6.3 Exponential Fourier Series, pg. 621-625
+
+### Q.7. (a) Determine the Fourier transform of the function in the following figure. (figure involved.)
+![[Pasted image 20260628100406.png]]
+**Detailed Answer:**
+
+To find the Fourier transform of the given signal $f(t)$, we can use the properties of the Fourier transform. The signal consists of two identical triangular pulses shifted in time.
+
+**1. Define a basic pulse:**
+Let's first define a basic triangular pulse $p(t)$ centered at the origin ($t=0$). 
+Looking at the figure, each triangle has a base width of 2 (from -4 to -2, and from 2 to 4) and a peak amplitude of 2.
+So, let $p(t)$ be a triangular pulse centered at $t=0$, with a width of 2 (from $t=-1$ to $t=1$) and a peak amplitude of 2.
+
+We can find the Fourier transform of this basic pulse $P(\omega)$ by taking its second derivative, which results in three impulses. 
+$p'(t)$ is a rectangular pulse of amplitude 2 from -1 to 0, and -2 from 0 to 1.
+$p''(t) = 2\delta(t+1) - 4\delta(t) + 2\delta(t-1)$
+
+Taking the Fourier transform of the second derivative:
+$\mathcal{F}\{p''(t)\} = (j\omega)^2 P(\omega) = -\omega^2 P(\omega)$
+$\mathcal{F}\{2\delta(t+1) - 4\delta(t) + 2\delta(t-1)\} = 2e^{j\omega} - 4 + 2e^{-j\omega}$
+$= 2(e^{j\omega} + e^{-j\omega}) - 4 = 4\cos(\omega) - 4 = -4(1 - \cos(\omega))$
+Using the half-angle identity $1 - \cos(\omega) = 2\sin^2(\omega/2)$:
+$-\omega^2 P(\omega) = -8\sin^2(\omega/2)$
+$P(\omega) = \frac{8\sin^2(\omega/2)}{\omega^2} = 2 \left( \frac{\sin(\omega/2)}{\omega/2} \right)^2 = 2\text{sinc}^2\left(\frac{\omega}{2}\right)$
+
+*(Note: In the text, $\text{sinc}(x)$ is defined as $\frac{\sin x}{x}$.)*
+
+**2. Express $f(t)$ in terms of $p(t)$:**
+The given signal $f(t)$ consists of one such pulse shifted to the left by 3 units, and another shifted to the right by 3 units.
+$f(t) = p(t+3) + p(t-3)$
+
+**3. Apply the Time-Shifting Property:**
+The time-shifting property states that if $x(t) \Longleftrightarrow X(\omega)$, then $x(t-t_0) \Longleftrightarrow X(\omega)e^{-j\omega t_0}$.
+Applying this to our signal:
+$\mathcal{F}\{f(t)\} = F(\omega) = \mathcal{F}\{p(t+3)\} + \mathcal{F}\{p(t-3)\}$
+$F(\omega) = P(\omega)e^{j3\omega} + P(\omega)e^{-j3\omega}$
+$F(\omega) = P(\omega) \left[ e^{j3\omega} + e^{-j3\omega} \right]$
+$F(\omega) = P(\omega) [2\cos(3\omega)]$
+
+**4. Final Expression:**
+Substitute $P(\omega)$ back into the equation:
+$F(\omega) = \left[ 2\text{sinc}^2\left(\frac{\omega}{2}\right) \right] [2\cos(3\omega)]$
+$F(\omega) = 4\text{sinc}^2\left(\frac{\omega}{2}\right)\cos(3\omega)$
+
+always mention ans related location pg no. In pdf , at the end of every soln 7.3 Some Properties of the Fourier Transform (Time-Shifting), pg. 707 and Example 7.17, pg. 718
+
+***
+
+### (c) Find the Fourier transform of the following functions: (i) $\delta(t)$, (ii) $e^{j\omega_0 t}$, (iii) $\text{sgn}(t)$
+
+**Detailed Answer:**
+
+**(i) Fourier Transform of $\delta(t)$:**
+By definition of the Fourier transform:
+$X(\omega) = \int_{-\infty}^{\infty} x(t)e^{-j\omega t} dt$
+Substituting $x(t) = \delta(t)$:
+$\mathcal{F}[\delta(t)] = \int_{-\infty}^{\infty} \delta(t)e^{-j\omega t} dt$
+Using the sifting property of the impulse function, $\int_{-\infty}^{\infty} \phi(t)\delta(t-t_0) dt = \phi(t_0)$, we evaluate the integrand at $t=0$:
+$\mathcal{F}[\delta(t)] = e^{-j\omega(0)} = e^0 = 1$
+Therefore, **$\delta(t) \Longleftrightarrow 1$**.
+
+**(ii) Fourier Transform of $e^{j\omega_0 t}$:**
+This can be found easily by using the inverse Fourier transform formula and the sifting property of the delta function in the frequency domain. 
+Consider a frequency domain impulse at $\omega = \omega_0$: $X(\omega) = 2\pi\delta(\omega - \omega_0)$.
+Taking the inverse Fourier transform:
+$x(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} X(\omega)e^{j\omega t} d\omega$
+$x(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} 2\pi\delta(\omega - \omega_0)e^{j\omega t} d\omega$
+$x(t) = \int_{-\infty}^{\infty} \delta(\omega - \omega_0)e^{j\omega t} d\omega$
+By the sifting property, evaluate the integrand at $\omega = \omega_0$:
+$x(t) = e^{j\omega_0 t}$
+Therefore, by duality, **$e^{j\omega_0 t} \Longleftrightarrow 2\pi\delta(\omega - \omega_0)$**.
+
+**(iii) Fourier Transform of $\text{sgn}(t)$:**
+The signum function is defined as $\text{sgn}(t) = 1$ for $t > 0$ and $-1$ for $t < 0$.
+It can be expressed using the unit step function $u(t)$:
+$\text{sgn}(t) = 2u(t) - 1$
+We use the known Fourier transforms of $u(t)$ and a constant $1$:
+$\mathcal{F}[u(t)] = \pi\delta(\omega) + \frac{1}{j\omega}$
+$\mathcal{F}[1] = 2\pi\delta(\omega)$
+Using the linearity property:
+$\mathcal{F}[\text{sgn}(t)] = \mathcal{F}[2u(t)] - \mathcal{F}[1]$
+$\mathcal{F}[\text{sgn}(t)] = 2\left(\pi\delta(\omega) + \frac{1}{j\omega}\right) - 2\pi\delta(\omega)$
+$\mathcal{F}[\text{sgn}(t)] = 2\pi\delta(\omega) + \frac{2}{j\omega} - 2\pi\delta(\omega) = \frac{2}{j\omega}$
+Therefore, **$\text{sgn}(t) \Longleftrightarrow \frac{2}{j\omega}$**.
+
+always mention ans related location pg no. In pdf , at the end of every soln Example 7.3, pg. 693; Example 7.5, pg. 694; Example 7.10, pg. 698
+
+***
+
+### (c) Why it is not possible to find the Fourier transform of ramp signal? State and explain Parseval's theorem.
+
+**Detailed Answer:**
+
+**Why the Fourier transform of a ramp signal does not exist:**
+To find the Fourier transform $X(\omega)$ of a signal $x(t)$, the defining integral must converge:
+$X(\omega) = \int_{-\infty}^{\infty} x(t)e^{-j\omega t} dt$
+A sufficient condition for this integral to converge is given by the first Dirichlet condition, which states that the signal must be absolutely integrable:
+$\int_{-\infty}^{\infty} |x(t)| dt < \infty$
+
+A ramp signal is defined as $r(t) = t \cdot u(t)$. Let's check its absolute integrability:
+$\int_{-\infty}^{\infty} |t \cdot u(t)| dt = \int_{0}^{\infty} t dt = \left[ \frac{t^2}{2} \right]_{0}^{\infty} = \infty$
+Because the integral diverges to infinity, the ramp signal is not absolutely integrable. As $t \rightarrow \infty$, the amplitude of the ramp signal grows without bound. Consequently, the Fourier integral does not converge. Even when extending the Fourier transform to generalized functions (like we do for the unit step $u(t)$ which also technically violates strict absolute integrability), the ramp signal grows too fast (it is not a bounded signal), meaning its Fourier transform does not exist in the conventional or generalized sense.
+
+**State and Explain Parseval's Theorem:**
+*Statement:* Parseval's theorem relates the energy of a signal in the time domain to its energy in the frequency domain. For a Fourier-transformable signal $x(t)$ with Fourier transform $X(\omega)$, Parseval's theorem states:
+$$E_x = \int_{-\infty}^{\infty} |x(t)|^2 dt = \frac{1}{2\pi} \int_{-\infty}^{\infty} |X(\omega)|^2 d\omega$$
+
+*Explanation:* 
+1.  The left side of the equation, $\int_{-\infty}^{\infty} |x(t)|^2 dt$, represents the total energy $E_x$ of the signal $x(t)$ calculated in the time domain.
+2.  The right side of the equation indicates that the total energy can also be calculated in the frequency domain by integrating the squared magnitude of the Fourier transform, $|X(\omega)|^2$, over all frequencies (and scaling by $\frac{1}{2\pi}$ when using radian frequency $\omega$). 
+3.  Because integrating $|X(\omega)|^2$ gives energy, the quantity $|X(\omega)|^2$ is known as the **energy spectral density** of the signal. It describes how the signal's total energy is distributed across different frequencies.
+4.  Essentially, the theorem demonstrates the principle of conservation of energy: the total energy of a signal remains the same regardless of whether it is measured in the time domain or the frequency domain.
+
+always mention ans related location pg no. In pdf , at the end of every soln 7.1 Aperiodic Signal Representation by the Fourier Integral (Existence of the Fourier Transform), pg. 685-686 and 7.6 Signal Energy, pg. 734
+
+### Q.3. (a) Calculate the Laplace transform of the following function. (figure involved.)
+![[Pasted image 20260628100339.png]]
+**Detailed Answer:**
+
+To calculate the Laplace transform of the given periodic signal $f(t)$, we first establish the mathematical expression for a single period of the waveform. Let's denote the first period of the signal as $f_1(t)$.
+
+Looking at the provided graph:
+1.  The signal is a sawtooth (or triangular) wave that starts at $t=0$ and ends one cycle at $t=2$. Therefore, the fundamental period is $T = 2$ seconds.
+2.  During the first period ($0 \le t < 2$), the signal has two distinct parts:
+    *   From $t=0$ to $t=1$, it rises linearly from an amplitude of 0 to 2. The equation for this line is $y = 2t$.
+    *   From $t=1$ to $t=2$, the amplitude is 0.
+
+We can express the first period $f_1(t)$ mathematically using the unit step function $u(t)$:
+$$f_1(t) = 2t [u(t) - u(t-1)]$$
+$$f_1(t) = 2t u(t) - 2t u(t-1)$$
+
+To apply the Laplace transform, we need to utilize the time-shifting property, which states that $\mathcal{L}\{x(t-a)u(t-a)\} = e^{-as}X(s)$. To use this, the $t$ multiplying the delayed step function must also be delayed by the same amount. We rewrite the second term by adding and subtracting 1:
+$$f_1(t) = 2t u(t) - 2(t - 1 + 1)u(t-1)$$
+$$f_1(t) = 2t u(t) - 2(t-1)u(t-1) - 2u(t-1)$$
+
+Now, we take the Laplace transform of the single period, denoted as $F_1(s)$, using the linearity property and standard transform pairs ($\mathcal{L}\{t u(t)\} = \frac{1}{s^2}$ and $\mathcal{L}\{u(t)\} = \frac{1}{s}$):
+$$F_1(s) = \mathcal{L}\{2t u(t)\} - \mathcal{L}\{2(t-1)u(t-1)\} - \mathcal{L}\{2u(t-1)\}$$
+$$F_1(s) = \frac{2}{s^2} - \frac{2}{s^2}e^{-s} - \frac{2}{s}e^{-s}$$
+Finding a common denominator:
+$$F_1(s) = \frac{2 - 2e^{-s} - 2se^{-s}}{s^2}$$
+
+Finally, we apply the property for periodic signals. If a signal $f(t)$ is periodic with period $T$, its Laplace transform $F(s)$ is related to the transform of its first period $F_1(s)$ by the formula:
+$$F(s) = \frac{F_1(s)}{1 - e^{-sT}}$$
+
+Substituting our calculated $F_1(s)$ and the period $T = 2$:
+$$F(s) = \frac{\frac{2 - 2e^{-s} - 2se^{-s}}{s^2}}{1 - e^{-2s}}$$
+$$F(s) = \frac{2[1 - e^{-s} - se^{-s}]}{s^2(1 - e^{-2s})}$$
+
+always mention ans related location pg no. In pdf , at the end of every soln 4.2-1 Time Shifting, pg. 349-351
+
+***
+
+### Q.6. (a) Define the following terms: (i) Amplitude spectrum, (ii) Phase spectrum, and (iii) Ladder network.
+
+**Detailed Answer:**
+
+**(i) Amplitude Spectrum:**
+In the context of Fourier analysis (both Fourier series and Fourier transforms), a signal is represented as a sum or integral of complex exponentials (or sinusoids) of various frequencies. The **amplitude spectrum** is a graphical plot that shows the magnitude (or absolute value) of these frequency components as a function of frequency.
+*   For a periodic signal represented by an exponential Fourier series $x(t) = \sum D_n e^{jn\omega_0 t}$, the amplitude spectrum is the plot of $|D_n|$ versus the frequency variable $n\omega_0$ (or simply index $n$).
+*   For an aperiodic signal represented by a Fourier transform $X(\omega)$, the amplitude spectrum is the plot of $|X(\omega)|$ versus the continuous frequency variable $\omega$. It illustrates how the signal's energy or strength is distributed across different frequencies.
+
+**(ii) Phase Spectrum:**
+Similarly, the **phase spectrum** is a graphical plot that displays the phase angle of the constituent frequency components of a signal as a function of frequency.
+*   For a periodic signal, it is the plot of the angle $\angle D_n$ (or $\theta_n$ in trigonometric form) versus frequency.
+*   For an aperiodic signal, it is the plot of $\angle X(\omega)$ versus $\omega$.
+Together with the amplitude spectrum, the phase spectrum provides a complete frequency-domain description of the signal. The phase spectrum is crucial for understanding the relative timing and alignment of the different sinusoidal components that make up the signal.
+
+**(iii) Ladder Network:**
+A **ladder network** is a specific type of electrical circuit topology consisting of alternating series and parallel components (typically resistors, capacitors, or inductors) connected in a cascading manner. When drawn on a schematic, the repeating "L" sections make the circuit look like a ladder, where series components form the "rails" and parallel components form the "rungs." They are widely used in electrical engineering for applications such as passive filter design, attenuators, and digital-to-analog converters (like the R-2R ladder).
+
+always mention ans related location pg no. In pdf , at the end of every soln 6.1-1 The Fourier Spectrum, pg. 598 and 4.8 Frequency Response of an LTIC System, pg. 413
+
+***
+
+### Q.6. (b) Why a time limited signal is band unlimited in frequency domain? Explain
+
+**Detailed Answer:**
+
+A fundamental principle in signal processing, rooted in the properties of the Fourier Transform, dictates that a signal cannot be both strictly time-limited and strictly band-limited simultaneously. 
+
+**Explanation:**
+1.  **Time-Limited Signal:** A time-limited signal $x(t)$ is defined as having a non-zero value only within a finite time interval (e.g., $t_1 \le t \le t_2$) and being exactly zero everywhere outside this interval. Examples include a simple rectangular pulse or a short burst of sound.
+2.  **Fourier Synthesis:** The Fourier Transform represents any signal as an infinite sum (integral) of everlasting complex exponentials ($e^{j\omega t}$) or sinusoids extending from $t = -\infty$ to $t = \infty$. 
+3.  **The Conflict:** To synthesize a signal that is exactly zero outside a specific time window, an infinite number of these everlasting frequency components must be combined such that they perfectly destructively interfere (cancel each other out exactly to zero) everywhere outside the window, while constructively interfering to form the signal inside the window.
+4.  **Band-Unlimited Consequence:** The abrupt changes required to start and stop a signal perfectly in the time domain (even if the signal looks smooth inside the window, the sudden transition to absolute zero requires infinite resolution) act like sharp edges. To represent such sharp features and exact cancellations, the Fourier transform requires frequency components that extend out to infinity. 
+5.  **Mathematical Perspective (Paley-Wiener Criterion context):** If a signal were band-limited, its spectrum $X(\omega)$ would be zero outside a certain frequency range $[-B, B]$. The inverse Fourier transform of a function with finite support results in an analytic function in the time domain. An analytic function cannot be identically zero over an interval without being zero everywhere. Therefore, a strictly band-limited signal must extend infinitely in time. Conversely, if a signal is strictly time-limited, its spectrum cannot be zero over any continuous band of frequencies, meaning its spectrum must extend to infinity (band-unlimited).
+
+In practical terms, whenever we truncate a signal in time (applying a window), we cause its frequency spectrum to spread out (spectral leakage), ensuring it contains high-frequency components that theoretically stretch to infinity.
+
+always mention ans related location pg no. In pdf , at the end of every soln 8.2-1 Practical Difficulties in Signal Reconstruction (The Treachery of Aliasing), pg. 788-789
+
+***
+
+### (b) Find and draw the Fourier transform of the following sine-wave pulse. (figure involved.)
+![[Pasted image 20260628100321.png]]
+**Detailed Answer:**
+
+**1. Define the Signal Mathematically:**
+The figure displays a single full cycle of a sine wave.
+*   It starts at $t = 0$ and ends at $t = 2$.
+*   The period of this fundamental sine wave is $T = 2$.
+*   The radian frequency is $\omega_0 = \frac{2\pi}{T} = \frac{2\pi}{2} = \pi$ rad/s.
+*   The amplitude is 1.
+
+The signal can be expressed as a continuous sine wave multiplied by a rectangular gate pulse that restricts it to the interval $t=0$ to $t=2$.
+$$f(t) = \sin(\pi t) [u(t) - u(t-2)]$$
+Alternatively, it can be viewed as a sine wave multiplied by a rectangular pulse of width $\tau = 2$ centered at $t = 1$:
+$$f(t) = \sin(\pi t) \cdot \text{rect}\left(\frac{t-1}{2}\right)$$
+
+**2. Calculate the Fourier Transform:**
+We can find the Fourier transform using the properties of the transform, specifically the modulation (frequency shifting) property and the time-shifting property.
+
+*   **Step A: Transform of the rectangular pulse.**
+    Let $g(t) = \text{rect}\left(\frac{t}{2}\right)$. This is a pulse of width $\tau=2$ centered at zero.
+    Its Fourier transform is $G(\omega) = \tau \text{sinc}\left(\frac{\omega\tau}{2}\right) = 2\text{sinc}\left(\frac{2\omega}{2}\right) = 2\text{sinc}(\omega)$.
+    *(Note: Using the definition $\text{sinc}(x) = \frac{\sin x}{x}$)*
+
+*   **Step B: Apply time-shifting.**
+    Our actual gating pulse is shifted to the right by 1 unit: $g(t-1) = \text{rect}\left(\frac{t-1}{2}\right)$.
+    Using the time-shifting property $\mathcal{F}\{x(t-t_0)\} = X(\omega)e^{-j\omega t_0}$:
+    $\mathcal{F}\left\{\text{rect}\left(\frac{t-1}{2}\right)\right\} = 2\text{sinc}(\omega)e^{-j\omega}$
+
+*   **Step C: Apply modulation property.**
+    The signal is $f(t) = \sin(\pi t) \cdot \text{rect}\left(\frac{t-1}{2}\right)$.
+    The modulation property states: $\mathcal{F}\{x(t)\sin(\omega_0 t)\} = \frac{1}{2j} [X(\omega - \omega_0) - X(\omega + \omega_0)]$
+    Here, $\omega_0 = \pi$ and $X(\omega)$ is the transform of our shifted rect pulse.
+    $$F(\omega) = \frac{1}{2j} \left[ 2\text{sinc}(\omega - \pi)e^{-j(\omega - \pi)} - 2\text{sinc}(\omega + \pi)e^{-j(\omega + \pi)} \right]$$
+    $$F(\omega) = \frac{1}{j} \left[ \text{sinc}(\omega - \pi)e^{-j\omega}e^{j\pi} - \text{sinc}(\omega + \pi)e^{-j\omega}e^{-j\pi} \right]$$
+    Since $e^{j\pi} = e^{-j\pi} = -1$:
+    $$F(\omega) = \frac{1}{j} \left[ -\text{sinc}(\omega - \pi)e^{-j\omega} + \text{sinc}(\omega + \pi)e^{-j\omega} \right]$$
+    $$F(\omega) = j e^{-j\omega} \left[ \text{sinc}(\omega - \pi) - \text{sinc}(\omega + \pi) \right]$$
+
+*   **Alternative Algebraic Form:**
+    We can expand the sinc functions to find a single rational expression. Recall $\text{sinc}(x) = \frac{\sin x}{x}$.
+    $F(\omega) = j e^{-j\omega} \left[ \frac{\sin(\omega - \pi)}{\omega - \pi} - \frac{\sin(\omega + \pi)}{\omega + \pi} \right]$
+    Since $\sin(\omega - \pi) = -\sin(\omega)$ and $\sin(\omega + \pi) = -\sin(\omega)$:
+    $F(\omega) = j e^{-j\omega} \left[ \frac{-\sin(\omega)}{\omega - \pi} - \frac{-\sin(\omega)}{\omega + \pi} \right] = j e^{-j\omega} \sin(\omega) \left[ \frac{-1}{\omega - \pi} + \frac{1}{\omega + \pi} \right]$
+    $F(\omega) = j e^{-j\omega} \sin(\omega) \left[ \frac{-(\omega + \pi) + (\omega - \pi)}{(\omega - \pi)(\omega + \pi)} \right] = j e^{-j\omega} \sin(\omega) \left[ \frac{-2\pi}{\omega^2 - \pi^2} \right]$
+    $F(\omega) = j e^{-j\omega} \left( \frac{e^{j\omega} - e^{-j\omega}}{2j} \right) \left[ \frac{2\pi}{\pi^2 - \omega^2} \right] = \frac{e^0 - e^{-j2\omega}}{2} \left[ \frac{2\pi}{\pi^2 - \omega^2} \right]$
+    **$$F(\omega) = \frac{\pi(1 - e^{-j2\omega})}{\pi^2 - \omega^2}$$**
+
+**3. Drawing the Fourier Transform:**
+The most intuitive form for drawing is the superposition of sinc functions:
+$|F(\omega)| = \left| \text{sinc}(\omega - \pi) - \text{sinc}(\omega + \pi) \right|$
+*   The amplitude spectrum consists of the superposition of two sinc functions, one centered at $\omega = \pi$ and the other at $\omega = -\pi$.
+*   Because they are subtracted, at $\omega=0$, $\text{sinc}(-\pi) - \text{sinc}(\pi) = 0 - 0 = 0$.
+*   The main lobes peak near $\pm \pi$ and the side lobes decay as frequency increases.
+*   The phase spectrum includes a linear phase shift component $-\omega$ due to the $e^{-j\omega}$ term, plus the phase jumps from the $j$ multiplier and the sign changes of the sinc functions.
+
+always mention ans related location pg no. In pdf , at the end of every soln 7.2 Transforms of Some Useful Functions (Rectangular Pulse), pg. 691 and 7.3 Some Properties (Frequency Shifting), pg. 711
+
+***
+
+### (c) State and explain Parseval's theorem.
+
+**Detailed Answer:**
+
+**Statement of Parseval's Theorem:**
+Parseval's theorem (specifically for the Fourier transform) establishes a fundamental relationship between the energy of a signal measured in the time domain and its energy measured in the frequency domain. 
+
+For a continuous-time, finite-energy signal $x(t)$ with Fourier transform $X(\omega)$, Parseval's theorem states:
+$$E_x = \int_{-\infty}^{\infty} |x(t)|^2 dt = \frac{1}{2\pi} \int_{-\infty}^{\infty} |X(\omega)|^2 d\omega$$
+*(Note: If the frequency variable $f$ in Hertz is used instead of radian frequency $\omega$, where $\omega = 2\pi f$, the formula is $\int_{-\infty}^{\infty} |x(t)|^2 dt = \int_{-\infty}^{\infty} |X(f)|^2 df$)*
+
+**Explanation:**
+1.  **Time-Domain Energy:** The left side of the equation, $\int_{-\infty}^{\infty} |x(t)|^2 dt$, is the standard definition of the total energy $E_x$ of a signal $x(t)$. It is the area under the squared magnitude of the signal over all time.
+2.  **Frequency-Domain Energy:** The right side of the equation states that you can calculate this exact same total energy by integrating the squared magnitude of the signal's Fourier transform, $|X(\omega)|^2$, over all frequencies (scaling by $\frac{1}{2\pi}$ when integrating with respect to $\omega$).
+3.  **Energy Spectral Density:** This theorem implies that the quantity $|X(\omega)|^2$ represents the density of energy per unit bandwidth. Therefore, $|X(\omega)|^2$ is formally called the **energy spectral density** of the signal. It shows precisely how the signal's total energy is distributed across the frequency spectrum. 
+4.  **Conservation of Energy:** Conceptually, Parseval's theorem is a statement of the conservation of energy. It mathematically guarantees that representing a signal in the frequency domain (via the Fourier transform) does not create or destroy energy; the total energy of the physical signal remains constant regardless of the domain in which it is analyzed.
+
+always mention ans related location pg no. In pdf , at the end of every soln 7.6 Signal Energy, pg. 734
+
+### Q.1 (a) A system is specified by its input-output relationship as $y(t) = \frac{x^2(t)}{dx/dt}$. Show that the system satisfies the homogeneity property but not the additivity property.
+
+**Detailed Answer:**
+
+To determine if a system is linear, it must satisfy the principle of superposition, which consists of two properties: homogeneity (scaling) and additivity.
+
+Given the system equation:
+$$y(t) = \frac{x^2(t)}{\frac{dx(t)}{dt}}$$
+Let's denote the derivative of $x(t)$ as $\dot{x}(t)$ for simplicity. So, $y(t) = \frac{x^2(t)}{\dot{x}(t)}$.
+
+**1. Checking Homogeneity (Scaling Property):**
+The homogeneity property states that if an input $x(t)$ produces an output $y(t)$, then a scaled input $kx(t)$ (where $k$ is a constant) should produce a scaled output $k y(t)$.
+Let the new input be $x_k(t) = k x(t)$.
+The corresponding output $y_k(t)$ is:
+$$y_k(t) = \frac{(x_k(t))^2}{\frac{d x_k(t)}{dt}}$$
+Substitute $x_k(t) = k x(t)$:
+$$y_k(t) = \frac{(k x(t))^2}{\frac{d (k x(t))}{dt}}$$
+$$y_k(t) = \frac{k^2 x^2(t)}{k \frac{dx(t)}{dt}}$$
+$$y_k(t) = k \left( \frac{x^2(t)}{\dot{x}(t)} \right)$$
+$$y_k(t) = k y(t)$$
+Since the output is scaled by the same factor $k$ as the input, the system **satisfies the homogeneity property**.
+
+**2. Checking Additivity Property:**
+The additivity property states that if an input $x_1(t)$ produces $y_1(t)$ and an input $x_2(t)$ produces $y_2(t)$, then an input $x_1(t) + x_2(t)$ should produce an output $y_1(t) + y_2(t)$.
+
+Let the respective outputs for $x_1(t)$ and $x_2(t)$ be:
+$y_1(t) = \frac{x_1^2(t)}{\dot{x}_1(t)}$
+$y_2(t) = \frac{x_2^2(t)}{\dot{x}_2(t)}$
+
+The sum of the individual outputs is:
+$$y_1(t) + y_2(t) = \frac{x_1^2(t)}{\dot{x}_1(t)} + \frac{x_2^2(t)}{\dot{x}_2(t)} = \frac{x_1^2(t)\dot{x}_2(t) + x_2^2(t)\dot{x}_1(t)}{\dot{x}_1(t)\dot{x}_2(t)}$$
+
+Now, let's apply the combined input $x_{12}(t) = x_1(t) + x_2(t)$ to the system. The new output $y_{12}(t)$ is:
+$$y_{12}(t) = \frac{(x_1(t) + x_2(t))^2}{\frac{d}{dt}(x_1(t) + x_2(t))}$$
+$$y_{12}(t) = \frac{x_1^2(t) + 2x_1(t)x_2(t) + x_2^2(t)}{\dot{x}_1(t) + \dot{x}_2(t)}$$
+
+Comparing the two results:
+$$\frac{x_1^2(t) + 2x_1(t)x_2(t) + x_2^2(t)}{\dot{x}_1(t) + \dot{x}_2(t)} \neq \frac{x_1^2(t)\dot{x}_2(t) + x_2^2(t)\dot{x}_1(t)}{\dot{x}_1(t)\dot{x}_2(t)}$$
+Since $y_{12}(t) \neq y_1(t) + y_2(t)$, the system **does not satisfy the additivity property**.
+
+Because it fails the additivity condition, the system is non-linear.
+
+always mention ans related location pg no. In pdf , at the end of every soln 1.7-1 Linear and Nonlinear Systems, pg. 97-98
+
+***
+
+### (c) Define gate function. Express the following signal in terms of switching functions. (figure involved.)
+![[Pasted image 20260628100238.png]]
+**Detailed Answer:**
+
+**Definition of Gate Function:**
+A unit gate function, commonly denoted as $\text{rect}(t/\tau)$, is a rectangular pulse of unit height and width $\tau$, usually centered at the origin. It acts as a mathematical "gate," letting a signal pass through unmodified within a specific time interval and completely blocking it (multiplying by zero) outside that interval.
+It is formally defined as:
+$$\text{rect}\left(\frac{t}{\tau}\right) = \begin{cases} 1, & |t| < \tau/2 \\ 0, & |t| > \tau/2 \end{cases}$$
+Alternatively, a gate function starting at time $t_1$ and ending at time $t_2$ can be defined using unit step functions (which the question refers to as "switching functions"):
+$$\text{Gate}_{(t_1, t_2)}(t) = u(t - t_1) - u(t - t_2)$$
+
+**Expressing the given signal:**
+The provided figure shows a signal $f(t)$ that exists only in the interval from $t = 0$ to $t = T$. Outside this interval, the signal is zero. This means we will multiply some function by a gate that turns on at 0 and off at $T$, which is $[u(t) - u(t-T)]$.
+
+Inside the interval $0 \le t \le T$, the signal is a straight line. Let's find the equation of this line $y = mt + c$.
+We can identify two points on this line from the graph:
+1.  At $t = 0$, the value is $E$. So, $(0, E)$. This gives us the y-intercept, $c = E$.
+2.  At $t = T/2$, the value is $0$. So, $(T/2, 0)$.
+3.  At $t = T$, the value is $-E$. So, $(T, -E)$.
+
+Let's calculate the slope $m$:
+$$m = \frac{\Delta y}{\Delta t} = \frac{-E - E}{T - 0} = \frac{-2E}{T}$$
+
+So, the equation of the line that defines the signal within the active interval is:
+$$y(t) = -\frac{2E}{T}t + E = E\left(1 - \frac{2t}{T}\right)$$
+
+Now, we use the switching functions (unit step functions) to restrict this line to only exist between $t=0$ and $t=T$. We multiply the line equation by the gate function we defined earlier:
+$$f(t) = E\left(1 - \frac{2t}{T}\right) [u(t) - u(t-T)]$$
+
+Expanding this expression gives the final answer in terms of switching functions:
+$$f(t) = E\left(1 - \frac{2t}{T}\right)u(t) - E\left(1 - \frac{2t}{T}\right)u(t-T)$$
+
+always mention ans related location pg no. In pdf , at the end of every soln 1.4-1 The Unit Step Function u(t), pg. 83 and 7.2 Transforms of Some Useful Functions, pg. 689
+
+***
+
+### (b) Find the Laplace transform of the following function $h(t)$. (figure involved.)
+![[Pasted image 20260628100212.png]]
+**Detailed Answer:**
+
+The given figure shows a periodic signal $h(t)$. It's a triangular wave that oscillates between an amplitude of $1$ and $3$, with a period $T = 2$.
+Since it is a periodic function, its Laplace transform $H(s)$ can be found using the formula for periodic signals:
+$$H(s) = \frac{H_1(s)}{1 - e^{-sT}}$$
+where $H_1(s)$ is the Laplace transform of the first period of the signal, and $T$ is the fundamental period. Here, $T=2$.
+
+Let's define the function for the first period, $h_1(t)$, which exists for $0 \le t < 2$ and is zero elsewhere. 
+We can view $h_1(t)$ as a DC offset of 1 added to a triangular pulse that goes from 0 to 2 and back to 0.
+$h_1(t) = 1 \cdot \text{pulse}_{(0,2)} + \text{triangle}_{(0,2)}$
+
+Let's build this systematically using ramp functions $r(t) = t u(t)$. A unit ramp has a slope of 1.
+*   The signal starts at $t=0$ with a value of $1$. Because we are dealing with unilateral Laplace transforms ($t \ge 0$), this initial DC value can be represented by a unit step: $1 \cdot u(t)$.
+*   From $t=0$ to $t=1$, the signal rises from 1 to 3. The slope is $\frac{3-1}{1-0} = 2$. We add a ramp of slope 2 starting at $t=0$: $+2r(t)$.
+    Current function: $u(t) + 2tu(t)$
+*   At $t=1$, the signal must start falling from 3 to 1. The slope of the segment from $t=1$ to $t=2$ is $\frac{1-3}{2-1} = -2$. The current slope is $+2$, so we need to add a ramp that changes the net slope to $-2$. We must add a slope of $-4$ starting at $t=1$: $-4r(t-1)$.
+    Current function: $u(t) + 2tu(t) - 4(t-1)u(t-1)$
+*   At $t=2$, the single-period signal $h_1(t)$ must return to zero (since it represents *only* the first period). The current slope is $-2$. To flatten it to $0$, we add a ramp of slope $+2$ at $t=2$: $+2r(t-2)$.
+    Current function: $u(t) + 2tu(t) - 4(t-1)u(t-1) + 2(t-2)u(t-2)$
+    Let's check the value for $t > 2$: $1 + 2t - 4(t-1) + 2(t-2) = 1 + 2t - 4t + 4 + 2t - 4 = 1$.
+*   The value is stuck at 1 for $t>2$. We need it to be 0 for $t>2$ to properly define just one period. We must subtract a step function at $t=2$: $-1 \cdot u(t-2)$.
+    Final expression for one period:
+    $$h_1(t) = u(t) + 2r(t) - 4r(t-1) + 2r(t-2) - u(t-2)$$
+
+Now, we take the Laplace transform of $h_1(t)$. We know that $\mathcal{L}\{u(t)\} = \frac{1}{s}$ and $\mathcal{L}\{r(t)\} = \frac{1}{s^2}$. Applying the time-shifting property:
+$$H_1(s) = \frac{1}{s} + \frac{2}{s^2} - \frac{4}{s^2}e^{-s} + \frac{2}{s^2}e^{-2s} - \frac{1}{s}e^{-2s}$$
+
+Group the $1/s$ and $1/s^2$ terms:
+$$H_1(s) = \frac{1}{s}(1 - e^{-2s}) + \frac{2}{s^2}(1 - 2e^{-s} + e^{-2s})$$
+Notice that $(1 - 2e^{-s} + e^{-2s})$ is a perfect square: $(1 - e^{-s})^2$.
+$$H_1(s) = \frac{1 - e^{-2s}}{s} + \frac{2(1 - e^{-s})^2}{s^2}$$
+
+Now, apply the formula for periodic signals to find the full transform $H(s)$:
+$$H(s) = \frac{H_1(s)}{1 - e^{-sT}} = \frac{H_1(s)}{1 - e^{-2s}}$$
+$$H(s) = \frac{\frac{1 - e^{-2s}}{s} + \frac{2(1 - e^{-s})^2}{s^2}}{1 - e^{-2s}}$$
+$$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})^2}{s^2(1 - e^{-2s})}$$
+
+We can simplify the denominator of the second term using the difference of squares: $(1 - e^{-2s}) = (1 - e^{-s})(1 + e^{-s})$.
+$$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})^2}{s^2(1 - e^{-s})(1 + e^{-s})}$$
+$$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})}{s^2(1 + e^{-s})}$$
+
+always mention ans related location pg no. In pdf , at the end of every soln 4.2-1 Time Shifting, pg. 349-351
