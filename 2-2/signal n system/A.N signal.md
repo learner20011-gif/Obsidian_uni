@@ -1,12 +1,5 @@
-## Atomic Notes: Periodicity of Continuous-Time Signals## Core Concept
-A continuous-time signal $x(t)$ is periodic if it repeats itself exactly at regular intervals. Mathematically, it satisfies $x(t) = x(t + T)$ for all $t$, where $T$ is a positive constant.
-## Fundamental Period ($T_0$)
-
-* The smallest positive value of $T$ that satisfies $x(t) = x(t + T)$.
-* For a standard sinusoid $x(t) = \sin(\omega t)$ or $\cos(\omega t)$, the fundamental period is:
-$$T_0 = \frac{2\pi}{\omega}$$ 
-
-------------------------------
+## Atomic Notes: Periodicity of Continuous-Time Signals
+ 
 ## Periodicity of Summed Signals
 When adding multiple periodic signals ($x(t) = x_1(t) + x_2(t) + \dots + x_N(t)$):
 ## 1. Condition for Periodicity
@@ -27,4 +20,8 @@ $$T_0 = \text{LCM}(T_1, T_2)$$
 * Ratio: $\frac{T_1}{T_2} = \frac{1}{0.5} = \frac{2}{1}$ (Rational $\rightarrow$ Periodic)
 * Fundamental Period: $T_0 = 1 \times T_1 = 1\text{ s}$ (or $2 \times 0.5 = 1\text{ s}$)
 
-
+M-02:
+$$x(t) = \sin(10t) + \sin(\pi t)$$ 
+$$T_1 = \frac{2\pi}{10} = \frac{\pi}{5} \quad ; \quad T_2 = \frac{2\pi}{\pi} = 2$$ 
+$$\downarrow \text{ it is irrational (অমূলদ)}$$ 
+$$\text{(So, it's a non-periodic signal)}$$
