@@ -640,7 +640,7 @@ $$\delta = \frac{1}{\sqrt{\pi f \mu \sigma}}$$
 
 ***
 
-### 🔴 (b) In a nonmagnetic medium the electric field is given as $\vec{E} = 4 \sin(2\pi \times 10^7 t - 0.8x) \bar{a}_z$ V/m. find relative permittivity and intrinsic impedance of the medium. Calculate also the time-average power carried by the wave.
+### 🔴 (b) In a nonmagnetic medium the electric field is given as yl$\vec{E} = 4 \sin(2\pi \times 10^7 t - 0.8x) \bar{a}_z$ V/m. find relative permittivity and intrinsic impedance of the medium. Calculate also the time-average power carried by the wave.
 
 **Answer:**
 
