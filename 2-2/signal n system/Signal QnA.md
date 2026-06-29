@@ -1946,3 +1946,31 @@ $$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})^2}{s^2(1 - e^{-s})(1 + e^{-s})}$$
 $$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})}{s^2(1 + e^{-s})}$$
 
 always mention ans related location pg no. In pdf , at the end of every soln 4.2-1 Time Shifting, pg. 349-351
+
+
+### 1. Complex Exponential Signal (M-08)
+
+* Signal: $x(t) = D e^{j \omega_0 t} = D(\cos \omega_0 t + j \sin \omega_0 t)$
+* Type: Power Signal
+* Derivation:
+* Find the squared magnitude: $\vert{}x(t)\vert{}^2 = \vert{}D e^{j \omega_0 t}\vert{}^2 = D^2$ (since $\vert{}e^{j \omega_0 t}\vert{} = 1$).
+   * Set up the power formula:
+   $$P = \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} D^2 \, dt$$ 
+   * Integrate over the period:
+   $$P = \lim_{T \to \infty} \frac{1}{T} \left[ D^2 \cdot T \right] = D^2$$ 
+   * Conclusion: Since power is finite ($P = D^2$) and energy is infinite, it is a power signal.
+
+------------------------------
+### 2. Constant / DC Signal (M-09 & M-01)
+
+* Signal: $x(t) = A$
+* Type: Power Signal
+* Energy Calculation:
+* $$E = \int_{-\infty}^{\infty} \vert{}x(t)\vert{}^2 \, dt = \int_{-\infty}^{\infty} A^2 \, dt = \infty$$ 
+* Power Calculation:
+* Set up the limit:
+   $$P = \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} A^2 \, dt$$ 
+   * Evaluate the integral:
+   $$P = \lim_{T \to \infty} \frac{1}{T} \left[ A^2 \cdot T \right] = A^2$$ 
+   * Conclusion: Since $E = \infty$ and $P = A^2$, it is a power signal..
+
