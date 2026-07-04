@@ -72,13 +72,4 @@ This repository is licensed under the MIT License. See LICENSE.md for details (o
 
 ## Contact
 
-Created by learner20011-gif. For questions or suggestions, open an issue or contact the repository owner.
-
----
-
-If you'd like, I can also:
-- Add example templates as files in the Templates/ directory
-- Add a LICENSE.md with MIT license text
-- Create an initial example note for a course
-
-Tell me which of those you want next and I'll add them.
+Created by learner20011-gif. For questions or suggestions, open an issue or contact the repository 
