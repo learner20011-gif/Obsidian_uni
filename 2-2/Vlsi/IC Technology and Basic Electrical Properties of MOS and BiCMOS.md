@@ -1110,4 +1110,5 @@ Therefore, the required pull-up to pull-down ratio $Z_{pu}/Z_{pd}$ for an nMOS i
 
 Location: Pucknell textbook, pages 54-55. Rakib's note, page 58.
 
+### untill mixed and ct Qs
 
