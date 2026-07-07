@@ -84,6 +84,9 @@ Note: This circuit requires the inverted inputs $\overline{A}$ and $\overline{C}
 **Circuit Diagram Description:**
 
 ![[Screenshot_20260707-125852-966.png]]
+![[Pasted image 20260707150019.png]]
+![[Pasted image 20260707150333.png]]
+![[Pasted image 20260707150316.png]]
 
 The improved BiCMOS inverter using MOS transistors for base current discharge is designed to eliminate the static DC current path found in simpler BiCMOS configurations and to provide a fast discharge path for the bipolar transistors without relying on space-consuming on-chip resistors.
 *   The circuit utilizes two bipolar npn transistors, $T_1$ (pull-down) and $T_2$ (pull-up), to drive the output load.
