@@ -82,6 +82,9 @@ Note: This circuit requires the inverted inputs $\overline{A}$ and $\overline{C}
 ### Q.3 (a) Draw the circuit diagram of an improved BiCMOS inverter using MOS transistor for the base current discharge. Discuss about its demerits. (Figure involved)
 
 **Circuit Diagram Description:**
+
+![[Screenshot_20260707-125852-966.png]]
+
 The improved BiCMOS inverter using MOS transistors for base current discharge is designed to eliminate the static DC current path found in simpler BiCMOS configurations and to provide a fast discharge path for the bipolar transistors without relying on space-consuming on-chip resistors.
 *   The circuit utilizes two bipolar npn transistors, $T_1$ (pull-down) and $T_2$ (pull-up), to drive the output load.
 *   A pMOS transistor $T_4$ acts as the logic pull-up, driving the base of $T_2$ when the input is low.
