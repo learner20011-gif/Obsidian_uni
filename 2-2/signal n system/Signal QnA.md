@@ -359,18 +359,68 @@ Since both energy and power are infinite, it falls into neither category.
 
 Location pg 65-66 In pdf
 
-### 1. Complex Exponential Signal (M-08)
+### **Question Statement**For a complex exponential signal of the form $x(t) = D e^{j\omega_0 t}$ (where $D$ is a complex constant), compute the average power $P_x$ and find its root-mean-square (rms) value.
 
-* Signal: $x(t) = D e^{j \omega_0 t} = D(\cos \omega_0 t + j \sin \omega_0 t)$
-* Type: Power Signal
-* Derivation:
-* Find the squared magnitude: $\vert{}x(t)\vert{}^2 = \vert{}D e^{j \omega_0 t}\vert{}^2 = D^2$ (since $\vert{}e^{j \omega_0 t}\vert{} = 1$).
-   * Set up the power formula:
-   $$P = \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} D^2 \, dt$$ 
-   * Integrate over the period:
-   $$P = \lim_{T \to \infty} \frac{1}{T} \left[ D^2 \cdot T \right] = D^2$$ 
-   * Conclusion: Since power is finite ($P = D^2$) and energy is infinite, it is a power signal.
+ **Mathematical Steps**
 
+#### **Step 1: Set up the power equation**
+
+The average power $P_x$ for a continuous-time signal is defined as:
+
+$$P_x = \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} \vert{}x(t)\vert{}^2 \, dt$$
+
+Substituting the given signal $x(t) = D e^{j\omega_0 t}$ into the equation yields:
+
+$$P_x = \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} \vert{}D e^{j\omega_0 t}\vert{}^2 \, dt$$
+
+#### **Step 2: Simplify the magnitude squared term**
+
+Using the algebraic property that the magnitude of a product is the product of the individual magnitudes ($\vert{}ab\vert{} = \vert{}a\vert{}\vert{}b\vert{}$):
+
+$$\vert{}D e^{j\omega_0 t}\vert{}^2 = \vert{}D\vert{}^2 \cdot \vert{}e^{j\omega_0 t}\vert{}^2$$
+
+We know from Euler's identity ($e^{j\theta} = \cos\theta + j\sin\theta$) that the magnitude squared of any complex exponential is always $1$:
+
+$$\vert{}e^{j\omega_0 t}\vert{}^2 = \cos^2(\omega_0 t) + \sin^2(\omega_0 t) = 1$$
+
+Substituting this back simplifies the integrand to a constant value:
+
+$$\vert{}D e^{j\omega_0 t}\vert{}^2 = \vert{}D\vert{}^2 \cdot 1 = \vert{}D\vert{}^2$$
+
+#### **Step 3: Evaluate the time integral**
+
+Substitute the simplified constant $\vert{}D\vert{}^2$ back into the limit expression:
+
+$$P_x = \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} \vert{}D\vert{}^2 \, dt$$
+
+Because $\vert{}D\vert{}^2$ does not depend on time $t$, factor it completely outside of the integral:
+
+$$P_x = \lim_{T \to \infty} \frac{\vert{}D\vert{}^2}{T} \int_{-T/2}^{T/2} 1 \, dt$$
+
+Integrating $1$ over the time interval from $-\frac{T}{2}$ to $\frac{T}{2}$ yields the total duration length, $T$:
+
+$$P_x = \lim_{T \to \infty} \frac{\vert{}D\vert{}^2}{T} \cdot \Big[ t \Big]_{-T/2}^{T/2}$$
+
+$$P_x = \lim_{T \to \infty} \frac{\vert{}D\vert{}^2}{T} \cdot \left( \frac{T}{2} - \left(-\frac{T}{2}\right) \right)$$
+
+$$P_x = \lim_{T \to \infty} \frac{\vert{}D\vert{}^2}{T} \cdot T$$
+
+#### **Step 4: Evaluate the limit to find $P_x$**
+
+Cancel the variable $T$ from both the numerator and denominator:
+
+$$P_x = \lim_{T \to \infty} \vert{}D\vert{}^2$$
+
+$$\mathbf{P_x = \vert{}D\vert{}^2}$$
+
+#### **Step 5: Calculate the root-mean-square (RMS) value**
+
+The RMS value is defined as the positive square root of the average power:
+
+$$x_{\text{rms}} = \sqrt{P_x}$$
+
+$$x_{\text{rms}} = \sqrt{\vert{}D\vert{}^2}$$
+$$\mathbf{x_{\text{rms}} = \vert{}D\vert{}}$$
 ------------------------------
 ### 2. Constant / DC Signal (M-09 & M-01)
 

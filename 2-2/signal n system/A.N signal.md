@@ -25,3 +25,31 @@ $$x(t) = \sin(10t) + \sin(\pi t)$$
 $$T_1 = \frac{2\pi}{10} = \frac{\pi}{5} \quad ; \quad T_2 = \frac{2\pi}{\pi} = 2$$ 
 $$\downarrow \text{ it is irrational (অমূলদ)}$$ 
 $$\text{(So, it's a non-periodic signal)}$$
+### Atomic Notes: Signal Transformations ($x(2t - 6)$)
+
+### **Method 1: Shift First, Then Scale**
+
+1. **Shift:** Delay $x(t)$ by **6**.
+    
+    $$\to x(t - 6)$$
+    
+2. **Scale:** Compress by **2** (replace $t$ with $2t$).
+    
+    $$\to \mathbf{x(2t - 6)}$$
+    
+
+- **Rule:** Scaling applies _only_ to the variable $t$, leaving the shift value untouched.
+    
+
+### **Method 2: Scale First, Then Shift**
+
+1. **Scale:** Compress $x(t)$ by **2**.
+    
+    $$\to x(2t)$$
+    
+2. **Shift:** Delay by **3** (replace $t$ with $t - 3$).
+    
+    $$\to x(2(t - 3)) = \mathbf{x(2t - 6)}$$
+    
+
+- **Rule:** Shifting a pre-scaled signal requires dividing the desired shift by the scaling factor ($\frac{6}{2} = 3$).
