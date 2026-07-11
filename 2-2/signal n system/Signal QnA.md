@@ -1,5 +1,63 @@
 # 1. System Properties
+### The system relationship is given by: $$y(t) = \text{Re}\{x(t)\}$$To prove a system is linear, it must satisfy both **additivity** and **homogeneity**. Let's test each property.
 
+#### **1. Testing the Additivity Property**
+
+The additivity property states that if $x_1(t) \rightarrow y_1(t)$ and $x_2(t) \rightarrow y_2(t)$, then an input of $x_1(t) + x_2(t)$ must produce an output of $y_1(t) + y_2(t)$.
+
+1. Find the individual outputs:
+    
+    $$y_1(t) = \text{Re}\{x_1(t)\}$$
+    
+    $$y_2(t) = \text{Re}\{x_2(t)\}$$
+    
+    Sum of individual outputs: $y_1(t) + y_2(t) = \text{Re}\{x_1(t)\} + \text{Re}\{x_2(t)\}$
+    
+2. Find the system's response to a combined input $x_3(t) = x_1(t) + x_2(t)$:
+    
+    $$y_3(t) = \text{Re}\{x_1(t) + x_2(t)\}$$
+    
+3. Using the mathematical identity of complex numbers where $\text{Re}\{z_1 + z_2\} = \text{Re}\{z_1\} + \text{Re}\{z_2\}$, we can expand $y_3(t)$:
+    
+    $$y_3(t) = \text{Re}\{x_1(t)\} + \text{Re}\{x_2(t)\}$$
+    
+
+Since $y_3(t) = y_1(t) + y_2(t)$, the system **satisfies the additivity property**.
+
+#### **2. Testing the Homogeneity Property**
+
+The homogeneity property states that scaling the input by an arbitrary constant $k$ must scale the output by that same constant $k$ ($k \cdot x(t) \rightarrow k \cdot y(t)$). As suggested by the hint, let's test what happens when $k$ is a complex number, such as $k = j$.
+
+1. Scale the original output by $k = j$:
+    
+    $$j \cdot y(t) = j \cdot \text{Re}\{x(t)\}$$
+    
+2. Pass a scaled input $x_k(t) = j \cdot x(t)$ into the system to find the new output $y_k(t)$:
+    
+    $$y_k(t) = \text{Re}\{j \cdot x(t)\}$$
+    
+3. Let $x(t)$ be represented in its real and imaginary parts as $x(t) = x_r(t) + jx_i(t)$:
+    
+    $$y_k(t) = \text{Re}\{j \cdot (x_r(t) + jx_i(t))\}$$
+    
+    $$y_k(t) = \text{Re}\{jx_r(t) + j^2x_i(t)\}$$
+    
+    Since $j^2 = -1$:
+    
+    $$y_k(t) = \text{Re}\{-x_i(t) + jx_r(t)\}$$
+    
+    Taking the real part of this expression yields:
+    
+    $$y_k(t) = -x_i(t)$$
+    
+4. Compare the two results:
+    
+    - **Expected output if linear:** $j \cdot \text{Re}\{x(t)\} = j \cdot x_r(t)$
+        
+    - **Actual system output:** $-x_i(t)$
+        
+
+Clearly, $-x_i(t) \neq j \cdot x_r(t)$. Because the actual output does not equal the expected scaled output when $k$ is complex, the system **violates the homogeneity property**.
 ### Q.1 (a) A system H has its input-output pairs given. Determine whether the system could be memoryless, causal, linear, and time invariant. For all cases justify your answers. (Figure involved)
 ![[Pasted image 20260626191842.png]]
 **Solution:**
@@ -270,7 +328,192 @@ Since $y_2(t) \neq y_1(t - t_0)$ (the terms differ by $0.5t_0$), the system does
 always mention ans related location pg no. In pdf , at the end of every soln 1.7-2 Time-Invariant and Time-Varying Systems, pg. 102 and 1.7-4 Causal and Noncausal Systems, pg. 104-105
 
 ***
+### **System (b): $y(t) = \frac{d}{dt}x(t)$**
 
+- **Intuition:** The system simply calculates the derivative (slope) of the input. If you shift the input signal in time, its slope profile remains exactly the same, it just occurs later.
+    
+- **Mathematical Proof:**
+    
+    1. **Delay the Output:** Let a standard input $x(t)$ produce the output $y(t) = \frac{d}{dt}x(t)$. Delaying this output function by an arbitrary time $T$ yields:
+        
+        $$y_1(t) = y(t-T) = \frac{d}{d(t-T)}x(t-T) = \frac{d}{dt}x(t-T)$$
+        
+    2. **Pass a Delayed Input:** Now, pass a delayed input $x_2(t) = x(t-T)$ into the system. The system differentiates whatever input it receives:
+        
+        $$y_2(t) = \frac{d}{dt}x_2(t) = \frac{d}{dt}x(t-T)$$
+        
+
+Comparing the two results, $y_1(t) = y_2(t)$. Because the delayed output is identical to the system's response to a delayed input, the system strictly commutes with time-shifting and is **Time-Invariant**.
+
+### **System Equation** $$y(t) = (\sin t)x(t-2)$$
+
+#### **Proof via Time-Shifting**
+
+1. **Delayed Output, $y(t-T)$:**
+    
+    Shift the entire original equation by $T$ seconds (replace all $t$ with $t-T$):
+    
+    $$y_1(t) = \sin(t-T)x(t-T-2)$$
+    
+2. **Response to Delayed Input, $x(t-T)$:**
+    
+    Pass a delayed input $x_2(t) = x(t-T)$ into the system. The system shifts the input argument by $2$ and multiplies it by the current time parameter $\sin t$:
+    
+    $$y_2(t) = (\sin t)x_2(t-2) = (\sin t)x(t-T-2)$$
+    
+3. **Compare:**
+    
+    $$y_1(t) \neq y_2(t) \implies \sin(t-T)x(t-T-2) \neq (\sin t)x(t-T-2)$$
+    
+
+#### **Conclusion**
+
+Because the delayed output does not equal the response to a delayed input, the system parameters depend on absolute time $t$. Therefore, it is a **time-varying-parameter system**.
+
+### **(a) $y(t - 1) = 2x(t - 1)$**
+
+- **Conclusion:** **Memoryless**
+    
+- **Reason:** The output at time $t-1$ depends strictly on the strength of the input at that identical time $t-1$. Because it does not look backward or forward to other time instances, it requires no memory.
+    
+
+### **(b) $y(t) = \frac{d}{dt}x(t)$**
+
+- **Conclusion:** **Dynamic (With Memory)**
+    
+- **Reason:** Calculating a derivative or slope requires evaluating a change across multiple points over time. This is proven by the limit definition of a derivative:
+    
+    $$y(t) = \lim_{T \to 0} \frac{x(t) - x(t-T)}{T}$$
+    
+    Because the output at time $t$ relies on an infinitesimally past value $x(t-T)$, the system possesses memory.
+    
+
+### **(c) $y(t) = (t - 1)x(t)$**
+
+- **Conclusion:** **Memoryless**
+    
+- **Reason:** The output at time $t$ is simply the present input $x(t)$ multiplied by a time-varying coefficient $(t-1)$. Since the output at any instant relies purely on the input value at that same exact instant, the system is memoryless.
+### Analysis of $y(t) = x(-t)$ causal or non
+
+To test for causality, we can plug in specific values for time $t$ (both positive and negative) to see what inputs the system requires.
+
+- **For $t = -2$ (a past time):**
+    
+    $$y(-2) = x(-(-2)) = x(2)$$
+    
+    The output at time $t = -2$ requires the input at a future time $t = 2$.
+    
+- **For $t = 2$ (a future time):**
+    
+    $$y(2) = x(-2)$$
+    
+    The output at time $t = 2$ requires the input at a past time $t = -2$.
+    
+
+#### Conclusion
+
+Because the output depends on future values of the input for any $t < 0$, the system is **non-causal** (specifically, it is an anti-causal system for $t < 0$).
+
+**Answer:** **Non-causal**
+
+### 1. Proof of Noncausality   :   A system is causal if the output $y(t)$ depends only on inputs $x(\tau)$ for $\tau \le t$. Given: $$y(t) = \int_{t-5}^{t+5} x(\tau) d\tau$$
+
+The upper limit of integration is $\tau = t+5$. Because $t+5 > t$, the system depends on future inputs, making it **noncausal**.
+
+#### 2. Proof of Realizability with a 5-Second Delay
+
+Let the delayed output be $y_d(t) = y(t-5)$. Substitute $t-5$ into the system equation:
+
+$$y_d(t) = \int_{(t-5)-5}^{(t-5)+5} x(\tau) d\tau$$
+
+$$y_d(t) = \int_{t-10}^{t} x(\tau) d\tau$$
+
+The upper limit of integration is now $\tau = t$. Because the system only requires past and present inputs ($\tau \le t$), it is **causal** and physically realizable.
+
+### (a) $y(t) = x(-t)$  **Status:** **Invertible**
+    
+- **Proof:** Substitute $-t$ into the system equation to find the inverse operation:
+    
+    $$y(-t) = x(-(-t)) = x(t)$$
+    
+- **Conclusion:** The input can be uniquely recovered using the inverse system $x(t) = y(-t)$.
+    
+
+### (b) $y(t) = tx(t)$  **Status:** **Not Invertible**
+    
+- **Proof:** Attempting to isolate the input yields:
+    
+    $$x(t) = \frac{1}{t}y(t)$$
+    
+- **Conclusion:** At $t = 0$, the equation becomes $y(0) = 0 \cdot x(0) = 0$. Because division by zero is undefined, the value of $x(0)$ is permanently lost and cannot be recovered.
+    
+
+### (c) $y(t) = \frac{d}{dt}x(t)$  **Status:** **Not Invertible**
+    
+- **Proof:** Consider two distinct inputs that differ only by a constant (DC component):
+    
+    $$x_1(t) = 1 \implies y_1(t) = \frac{d}{dt}(1) = 0$$
+    
+    $$x_2(t) = 2 \implies y_2(t) = \frac{d}{dt}(2) = 0$$
+    
+- **Conclusion:** Since distinct inputs ($x_1(t) \neq x_2(t)$) map to the exact same output ($y_1(t) = y_2(t) = 0$), the unique original input cannot be recovered.
+
+### Worked Examples BIBO 
+
+- **Example 1:** $y(t) = t \cdot x(t)$
+    
+    - _Input:_ $x(t) = u(t)$ (bounded)
+        
+    - _Output:_ $y(t) = t \cdot u(t)$ (ramp function)
+        
+    - _Analysis:_ As $t \to \infty$, the output $y(t) \to \infty$.
+        
+    - _Result:_ ❌ **Unstable**
+        
+- **Example 2:** $y(t) = x(t) + 2$
+    
+    - _Input:_ $x(t) = 4$ (bounded)
+        
+    - _Output:_ $y(t) = 6$
+        
+    - _Analysis:_ The output remains finite for all time.
+        
+    - _Result:_ ✅ **Stable**
+        
+**Example 3:** $y(t) = \sin(t) \cdot x(t)$
+
+- _Input:_ Let $x(t)$ be any bounded input such that $\vert{}x(t)\vert{} \le M < \infty$.
+    
+- _Output:_ $y(t) = \sin(t) \cdot x(t)$
+    
+- _Analysis:_ Take the absolute value of both sides:
+    
+    $$\vert{}y(t)\vert{} = \vert{}\sin(t) \cdot x(t)\vert{} = \vert{}\sin(t)\vert{} \cdot \vert{}x(t)\vert{}$$
+    
+    Since $\vert{}\sin(t)\vert{} \le 1$ for all time, we can write:
+    
+    $$\vert{}y(t)\vert{} \le 1 \cdot M \to \vert{}y(t)\vert{} \le M$$
+    
+    Because $M$ is finite, the output is guaranteed to remain finite.
+    
+- _Result:_ ✅ **Stable**
+
+ (a) $y(t) = x^2(t)$
+
+- **Status:** **BIBO-Stable**
+    
+- **Proof:** Assume a bounded input such that $\vert{}x(t)\vert{} \le M_x < \infty$ for all $t$. Taking the absolute value of the output:
+    
+    $$\vert{}y(t)\vert{} = \vert{}x^2(t)\vert{} = \vert{}x(t)\vert{}^2 \le M_x^2$$
+    
+- **Conclusion:** Since $M_x^2 < \infty$, a bounded input always guarantees a bounded output.
+### (c) $y(t) = \frac{d}{dt}x(t)$ **Status:** **BIBO-Unstable**
+    
+- **Proof:** Test the system using the bounded input $x(t) = u(t)$ (unit step function). The derivative of a unit step function yields an impulse function:
+    
+    $$y(t) = \frac{d}{dt}u(t) = \delta(t)$$
+    
+- **Conclusion:** At $t = 0$, the amplitude of the impulse function $\delta(t)$ is infinite ($\vert{}y(0)\vert{} = \infty$), so the system is unstable.
 # 2. Energy and Power Signals
 
 ### Q.1 (b) Provide a mathematical justification whether the following signals are energy or power signal or neither. (i) $e^{kt} u(-t)$, $k>0$ (ii) $u(t+2) - u(t-2)$. Also compute the energy and power of them.

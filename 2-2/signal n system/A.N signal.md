@@ -53,3 +53,92 @@ $$\text{(So, it's a non-periodic signal)}$$
     
 
 - **Rule:** Shifting a pre-scaled signal requires dividing the desired shift by the scaling factor ($\frac{6}{2} = 3$).
+
+
+## Stable and Unstable Systems
+
+### BIBO Stability
+
+**BIBO** = Bounded Input, Bounded Output
+
+- **Stable System:** Every bounded input produces a bounded output for all time.
+    
+- **Unstable System:** At least one bounded input produces an unbounded output.
+    
+
+### Bounded Signal
+
+A signal is bounded if its amplitude always remains finite.
+
+**Examples:**
+
+- **Constant (DC):** $y(t) = 6$
+    
+- **Sine/Cosine:** $\sin(t)$, $\cos(t)$ (amplitude range: $-1$ to $1$)
+    
+- **Unit Step:** $u(t)$ (values: $0$ or $1$)
+    
+
+## Stability Test Procedure
+
+1. **Apply** a known bounded input (e.g., $u(t)$, a constant, or $\sin(t)$).
+    
+2. **Find** the resulting output equation.
+    
+3. **Check the limit:**
+    
+    - If the output remains finite $\to$ **Stable**
+        
+    - If the output goes to $\infty$ as $t \to \infty$ $\to$ **Unstable**
+        
+
+### Worked Examples
+
+- **Example 1:** $y(t) = t \cdot x(t)$
+    
+    - _Input:_ $x(t) = u(t)$ (bounded)
+        
+    - _Output:_ $y(t) = t \cdot u(t)$ (ramp function)
+        
+    - _Analysis:_ As $t \to \infty$, the output $y(t) \to \infty$.
+        
+    - _Result:_ ❌ **Unstable**
+        
+- **Example 2:** $y(t) = x(t) + 2$
+    
+    - _Input:_ $x(t) = 4$ (bounded)
+        
+    - _Output:_ $y(t) = 6$
+        
+    - _Analysis:_ The output remains finite for all time.
+        
+    - _Result:_ ✅ **Stable**
+        
+**Example 3:** $y(t) = \sin(t) \cdot x(t)$
+
+- _Input:_ Let $x(t)$ be any bounded input such that $\vert{}x(t)\vert{} \le M < \infty$.
+    
+- _Output:_ $y(t) = \sin(t) \cdot x(t)$
+    
+- _Analysis:_ Take the absolute value of both sides:
+    
+    $$\vert{}y(t)\vert{} = \vert{}\sin(t) \cdot x(t)\vert{} = \vert{}\sin(t)\vert{} \cdot \vert{}x(t)\vert{}$$
+    
+    Since $\vert{}\sin(t)\vert{} \le 1$ for all time, we can write:
+    
+    $$\vert{}y(t)\vert{} \le 1 \cdot M \to \vert{}y(t)\vert{} \le M$$
+    
+    Because $M$ is finite, the output is guaranteed to remain finite.
+    
+- _Result:_ ✅ **Stable**
+
+## Quick Memory Tricks
+
+- $\text{Bounded} \times \text{Bounded} = \text{Bounded}$ ✅
+    
+- $\text{Growing function (e.g., } t, e^t\text{)} \times \text{Bounded} \to$ Can become Unbounded ❌
+    
+- Adding a finite constant does not affect stability. ✅
+    
+
+> **Exam Definition:** A system is BIBO stable if and only if every bounded input produces a bounded output for all time.
