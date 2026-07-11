@@ -514,6 +514,289 @@ The upper limit of integration is now $\tau = t$. Because the system only requir
     $$y(t) = \frac{d}{dt}u(t) = \delta(t)$$
     
 - **Conclusion:** At $t = 0$, the amplitude of the impulse function $\delta(t)$ is infinite ($\vert{}y(0)\vert{} = \infty$), so the system is unstable.
+
+---
+
+### 2. Pg 22, CT-1 Q2: A time limited rectangular pulse (left) is applied to a system produces an output as shown in the following figure (right). Express y(t) in terms of x(t). Also provide a mathematical justification whether the system is (i) Linear (ii) Time invariant and (iii) Causal. ![[Pasted image 20260712005359.png]]
+
+**Figure Description:** 
+*   **Input $x(t)$:** A standard rectangular pulse of amplitude $1$ spanning from $t=0$ to $t=1$. Mathematically: $x(t) = u(t) - u(t-1)$.
+*   **Output $y(t)$:** A right-angled triangular pulse that starts at $t=0$, rises linearly to an amplitude of $1$ at $t=1$, and immediately drops to $0$. Mathematically: $y(t) = t$ for $0 \le t \le 1$, and $0$ otherwise.
+
+**Solution:**
+
+**Expressing $y(t)$ in terms of $x(t)$:**
+Notice that the output $y(t)$ is identical to the input $x(t)$ multiplied by the time variable $t$. 
+*   For $0 \le t \le 1$: $x(t) = 1$, and $t \cdot x(t) = t \cdot 1 = t$, which matches $y(t)$.
+*   For everywhere else: $x(t) = 0$, and $t \cdot x(t) = 0$, which matches $y(t)$.
+Therefore, the system operation is described by the equation: **$y(t) = t \cdot x(t)$**
+
+**Mathematical Justifications:**
+
+**(i) Linear:**
+A system is linear if it satisfies the superposition principle (additivity and homogeneity).
+Let $x_1(t) \rightarrow y_1(t) = t \cdot x_1(t)$
+Let $x_2(t) \rightarrow y_2(t) = t \cdot x_2(t)$
+Apply a combined weighted input: $x_3(t) = a x_1(t) + b x_2(t)$.
+The system response will be:
+$y_3(t) = t \cdot x_3(t) = t \cdot [a x_1(t) + b x_2(t)]$
+$y_3(t) = a [t \cdot x_1(t)] + b [t \cdot x_2(t)]$
+$y_3(t) = a y_1(t) + b y_2(t)$
+Since the response to a linear combination of inputs equals the linear combination of their individual responses, the system is **Linear**.
+
+**(ii) Time-invariant:**
+A system is time-invariant if a time delay in the input causes an identical time delay in the output.
+1.  Find response to delayed input $x(t - t_0)$: 
+    $y_{delayed\_input}(t) = \mathcal{T}\{x(t - t_0)\} = t \cdot x(t - t_0)$
+2.  Delay the original output by $t_0$: 
+    $y(t - t_0) = (t - t_0) \cdot x(t - t_0)$
+Comparing the two results:
+$t \cdot x(t - t_0) \neq (t - t_0) \cdot x(t - t_0)$
+Since the outputs are not equal, the system is **Time-Variant (Not Time-Invariant)**.
+
+**(iii) Causal:**
+A system is causal if the output at any time $t$ depends only on the present and/or past values of the input, not on future values.
+For the system $y(t) = t \cdot x(t)$, the output $y$ at a specific time $t$ requires only the value of the input $x$ at that exact same time $t$. It does not require $x(t+\tau)$ where $\tau > 0$.
+Therefore, the system is **Causal**.
+
+*Reference: Lathi Chapter 1 / Class Notes Pg 24-29 (Classification of Systems).*
+
+---
+
+### **6. Pg 28, CT-1 Q1: Consider a discrete-time system...**
+**System Equation:** $y[n] = \frac{1}{3} (x[n] + x[n-1] + x[n-2])$
+
+**Solution:**
+
+*   **(i) Memoryless:** A system is memoryless if its output at any given time $n$ depends *only* on the input at that exact same time $n$. Here, $y[n]$ requires $x[n-1]$ and $x[n-2]$, which are past values. 
+    **Conclusion: Not Memoryless (It is a dynamic system with memory).**
+*   **(ii) Causal:** A system is causal if its output depends only on present and past inputs, but not on future inputs (like $x[n+1]$). The equation utilizes $x[n]$ (present), $x[n-1]$ (past), and $x[n-2]$ (past). No future values are used.
+    **Conclusion: Causal.**
+*   **(iii) Linear:** A system is linear if it obeys superposition.
+    Let input $x_1[n]$ produce $y_1[n] = \frac{1}{3} (x_1[n] + x_1[n-1] + x_1[n-2])$
+    Let input $x_2[n]$ produce $y_2[n] = \frac{1}{3} (x_2[n] + x_2[n-1] + x_2[n-2])$
+    Apply a combined input $x_3[n] = a x_1[n] + b x_2[n]$:
+    $y_3[n] = \frac{1}{3} (x_3[n] + x_3[n-1] + x_3[n-2])$
+    $y_3[n] = \frac{1}{3} ( (a x_1[n] + b x_2[n]) + (a x_1[n-1] + b x_2[n-1]) + (a x_1[n-2] + b x_2[n-2]) )$
+    $y_3[n] = a [\frac{1}{3}(x_1[n] + x_1[n-1] + x_1[n-2])] + b [\frac{1}{3}(x_2[n] + x_2[n-1] + x_2[n-2])]$
+    $y_3[n] = a y_1[n] + b y_2[n]$
+    **Conclusion: Linear.**
+*   **(iv) Time-invariant:** A system is time-invariant if a delay in the input causes an identical delay in the output.
+    Response to a delayed input $x[n-k]$ is $y_d[n] = \frac{1}{3} (x[n-k] + x[n-k-1] + x[n-k-2])$.
+    Delaying the original output $y[n]$ by $k$ yields $y[n-k] = \frac{1}{3} (x[n-k] + x[n-1-k] + x[n-2-k])$.
+    Since $y_d[n] = y[n-k]$, the system's behavior does not shift over time.
+    **Conclusion: Time-invariant.**
+*   **(v) Stable:** A system is BIBO (Bounded-Input Bounded-Output) stable if every bounded input produces a bounded output.
+    Assume the input is bounded such that $|x[n]| \le M < \infty$ for all $n$.
+    $|y[n]| = |\frac{1}{3} (x[n] + x[n-1] + x[n-2])| \le \frac{1}{3} (|x[n]| + |x[n-1]| + |x[n-2]|)$
+    $|y[n]| \le \frac{1}{3} (M + M + M) = \frac{3M}{3} = M < \infty$.
+    The output is also bounded.
+    **Conclusion: Stable.**
+
+---
+
+### **13. Pg 33, CT-2 Q1: The input-output relationship of a system is shown in the following figure. Provide a mathematical justification whether the system is (i) Linear and (ii) Invertible. ![[Pasted image 20260712005701.png]]**
+
+**Figure Description:** The figure displays an input-output characteristic curve for a system. The x-axis represents the input $x(t)$, and the y-axis represents the output $y(t)$.
+*   For $x(t) \le 0$, the output is $y(t) = 0$.
+*   For $0 < x(t) < 2$, the output rises linearly from $0$ to $2$. The slope is $\frac{2-0}{2-0} = 1$. Thus, $y(t) = x(t)$.
+*   For $x(t) \ge 2$, the output is constant at $y(t) = 2$.
+This describes a **saturation** or **limiter** system (specifically, a half-wave rectifier with saturation).
+
+**Solution:**
+
+**(i) Linearity Justification:**
+A system is linear if it satisfies the principle of superposition (both additivity and homogeneity).
+Let's check homogeneity (scaling): $T\{a \cdot x(t)\} = a \cdot T\{x(t)\}$ for any scalar $a$.
+*   Let an input be $x_1(t) = 1$. According to the graph, the corresponding output is $y_1(t) = 1$.
+*   Now, scale the input by a constant $a = 3$, so the new input is $x_2(t) = 3 \cdot x_1(t) = 3$.
+*   According to the graph, if the input is $x_2(t) = 3$, the output is capped at $y_2(t) = 2$.
+*   However, if the system were linear, the output should be $3 \cdot y_1(t) = 3 \cdot 1 = 3$.
+Since $y_2(t) \neq 3 \cdot y_1(t)$ (i.e., $2 \neq 3$), homogeneity fails.
+**Conclusion:** The system is **Non-linear**.
+
+**(ii) Invertibility Justification:**
+A system is invertible if distinct inputs lead to distinct outputs (a one-to-one mapping). If a system is invertible, observing the output uniquely determines what the input was.
+*   Let's pick an output value, say $y(t) = 2$.
+*   Looking at the graph, if the output is $2$, what was the input? The input could have been $x(t) = 2$, or $x(t) = 3$, or $x(t) = 100$. Any input $x(t) \ge 2$ maps to the identical output $y(t) = 2$.
+*   Similarly, for an output $y(t) = 0$, the input could be any $x(t) \le 0$.
+Because multiple different inputs can produce the exact same output, the mapping is many-to-one, not one-to-one. We cannot uniquely reverse the operation to find the original input from the output.
+**Conclusion:** The system is **Non-invertible**.
+
+*Reference: Lathi Chapter 1 / Class Notes Pg 29-30 (System Classification).*
+
+---
+
+### **14. Pg 34, CT-2 Q1: The input-output relationship of two systems are shown the following figure. Provide a mathematical justification whether the system shown in figure (i) linear, and (ii) invertible. For both systems the slope is unity. ![[Pasted image 20260712005710.png]]**
+
+**Figure Description:** 
+Two input-output characteristic graphs are shown. Both have $x(t)$ on the horizontal axis and $y(t)$ on the vertical axis.
+*   **System (i):** A straight line that does not pass through the origin. It crosses the y-axis at $y=4$ and has a slope of unity ($1$).
+    Equation: **$y(t) = x(t) + 4$**
+*   **System (ii):** A straight line that passes exactly through the origin $(0,0)$ and has a slope of unity ($1$).
+    Equation: **$y(t) = x(t)$** (This is an identity system).
+
+**Solution for System (i): $y(t) = x(t) + 4$**
+
+**(i) Linearity Justification:**
+We test for additivity.
+*   Let input $x_1(t)$ produce output $y_1(t) = x_1(t) + 4$.
+*   Let input $x_2(t)$ produce output $y_2(t) = x_2(t) + 4$.
+*   Now apply an input that is the sum: $x_3(t) = x_1(t) + x_2(t)$.
+*   The actual system response to this combined input is:
+    $y_3(t) = x_3(t) + 4 = [x_1(t) + x_2(t)] + 4$
+*   However, if the system were linear, the response should be the sum of individual responses:
+    $y_{linear\_sum}(t) = y_1(t) + y_2(t) = (x_1(t) + 4) + (x_2(t) + 4) = x_1(t) + x_2(t) + 8$
+Comparing the two: $[x_1(t) + x_2(t)] + 4 \neq x_1(t) + x_2(t) + 8$.
+Since superposition fails, the system is **Non-linear**. 
+*(A key rule of thumb: An input-output plot must be a straight line passing through the origin to be linear).*
+
+**(ii) Invertibility Justification:**
+We check if there is a unique one-to-one mapping between $x(t)$ and $y(t)$.
+*   The equation is $y(t) = x(t) + 4$.
+*   For any given output value $y(t)$, we can uniquely determine the input by rearranging the equation: $x(t) = y(t) - 4$.
+*   Because every unique input maps to a unique output, and vice-versa, the mapping is strictly one-to-one.
+**Conclusion:** The system is **Invertible**.
+
+*(Note: The prompt specifically asks about figure (i), but for completeness, System (ii) where $y(t)=x(t)$ is both linear (passes through origin) and invertible (one-to-one).*
+
+*Reference: Lathi Chapter 1 / Class Notes Pg 29-30 (System Classification).*
+
+---
+
+### **17. Pg 39, CT-1 Q1: Consider a discrete-time system...**
+**System Equation:** $y[n] = \frac{1}{3} (x[n+1] + x[n] + x[n-1])$
+*(Note: This is a slightly different moving-average system compared to question 6, as it includes a future term $x[n+1]$.)*
+
+**Solution:**
+
+*   **(i) Memoryless:** A system is memoryless if the output at index $n$ depends *only* on the input at the exact same index $n$. Here, calculating $y[n]$ requires $x[n+1]$ (future) and $x[n-1]$ (past). Since it relies on values other than the present input $x[n]$, it requires memory to store or anticipate those values.
+    **Conclusion: Not Memoryless (It is a dynamic system).**
+
+*   **(ii) Causal:** A system is causal if its output at any time depends only on present and/or past inputs, never on future inputs. In this equation, to compute $y[n]$ at the current time $n$, we need the value of $x[n+1]$. For example, to find $y[0]$, we must know $x[1]$, which has not happened yet in real time. Because it relies on a future input, the system is non-causal.
+    **Conclusion: Non-causal.**
+
+*   **(iii) Linear:** A system is linear if it obeys the principle of superposition (additivity and homogeneity).
+    Let input $x_1[n]$ produce $y_1[n] = \frac{1}{3} (x_1[n+1] + x_1[n] + x_1[n-1])$
+    Let input $x_2[n]$ produce $y_2[n] = \frac{1}{3} (x_2[n+1] + x_2[n] + x_2[n-1])$
+    Apply a combined, weighted input: $x_3[n] = a \cdot x_1[n] + b \cdot x_2[n]$.
+    The system's response to this combined input is:
+    $y_3[n] = \frac{1}{3} (x_3[n+1] + x_3[n] + x_3[n-1])$
+    Substitute the definition of $x_3$:
+    $y_3[n] = \frac{1}{3} \big( (a \cdot x_1[n+1] + b \cdot x_2[n+1]) + (a \cdot x_1[n] + b \cdot x_2[n]) + (a \cdot x_1[n-1] + b \cdot x_2[n-1]) \big)$
+    Group terms associated with '$a$' and '$b$':
+    $y_3[n] = a \left[ \frac{1}{3} (x_1[n+1] + x_1[n] + x_1[n-1]) \right] + b \left[ \frac{1}{3} (x_2[n+1] + x_2[n] + x_2[n-1]) \right]$
+    $y_3[n] = a \cdot y_1[n] + b \cdot y_2[n]$
+    Because the response to a linear combination of inputs is the linear combination of the individual responses, the system satisfies superposition.
+    **Conclusion: Linear.**
+
+*   **(iv) Time-invariant:** A system is time-invariant if a delay in the input signal causes an identical delay in the output signal, without changing the shape of the output.
+    Let's apply a delayed input signal $x_d[n] = x[n-k]$. The response to this delayed input is:
+    $y_d[n] = \frac{1}{3} (x_d[n+1] + x_d[n] + x_d[n-1]) = \frac{1}{3} (x[(n+1)-k] + x[n-k] + x[(n-1)-k])$
+    $y_d[n] = \frac{1}{3} (x[n-k+1] + x[n-k] + x[n-k-1])$
+    Now, let's delay the original output signal $y[n]$ by $k$:
+    $y[n-k] = \frac{1}{3} (x[(n-k)+1] + x[n-k] + x[(n-k)-1])$
+    $y[n-k] = \frac{1}{3} (x[n-k+1] + x[n-k] + x[n-k-1])$
+    Comparing the two expressions, $y_d[n] = y[n-k]$. The system's behavior does not depend on the specific time it is operated.
+    **Conclusion: Time-invariant.**
+
+*   **(v) Stable:** A system is Bounded-Input Bounded-Output (BIBO) stable if every bounded input sequence produces a bounded output sequence.
+    Assume the input $x[n]$ is bounded, meaning there exists a finite positive number $M_x$ such that $|x[n]| \le M_x < \infty$ for all $n$.
+    We must show the output $y[n]$ is also bounded by some finite number $M_y$.
+    $|y[n]| = \left| \frac{1}{3} (x[n+1] + x[n] + x[n-1]) \right|$
+    Using the triangle inequality ($|A+B| \le |A| + |B|$):
+    $|y[n]| \le \frac{1}{3} (|x[n+1]| + |x[n]| + |x[n-1]|)$
+    Since each individual input sample is bounded by $M_x$:
+    $|y[n]| \le \frac{1}{3} (M_x + M_x + M_x) = \frac{1}{3} (3M_x) = M_x$
+    Therefore, $|y[n]| \le M_x < \infty$. The output is bounded.
+    **Conclusion: Stable.**
+
+*Reference: Class Notes Pg 24-31 (Classification of Systems).*
+
+---
+
+### **21. Pg 41, CT-01 Q2: Determine whether the following systems are (i) Time-variant and (iii) Causal.**
+
+**Solution:**
+
+**(a) $y_1(t) = t \cdot x(t+1)$**
+
+*   **(i) Time-Variant/Invariant Check:**
+    A system is time-invariant if a delay in the input $x(t) \to x(t-t_0)$ causes an identical shift in the output $y(t) \to y(t-t_0)$.
+    1.  Find the response to a delayed input $x_d(t) = x(t-t_0)$:
+        $y_{delayed\_input}(t) = t \cdot x_d(t+1) = t \cdot x((t+1) - t_0) = \mathbf{t \cdot x(t - t_0 + 1)}$
+    2.  Find the delayed version of the original output:
+        $y_1(t-t_0) = (t-t_0) \cdot x((t-t_0) + 1) = \mathbf{(t - t_0) \cdot x(t - t_0 + 1)}$
+    Comparing the two results: $t \cdot x(t - t_0 + 1) \neq (t - t_0) \cdot x(t - t_0 + 1)$.
+    **Conclusion: The system is Time-Variant.**
+
+*   **(iii) Causal/Non-Causal Check:**
+    A system is causal if the output at present time $t$ depends *only* on present and past inputs (values of $\tau \le t$).
+    Let's test an arbitrary time, say $t = 1$:
+    $y_1(1) = 1 \cdot x(1+1) = x(2)$
+    To determine the output at $t=1$, the system requires the input value at $t=2$, which lies in the future.
+    **Conclusion: The system is Non-Causal.**
+
+**(b) $y_2(t) = x(1-t)$**
+
+*   **(i) Time-Variant/Invariant Check:**
+    1.  Find the response to a delayed input $x_d(t) = x(t-t_0)$:
+        $y_{delayed\_input}(t) = x_d(1-t) = \mathbf{x((1-t) - t_0) = x(1 - t - t_0)}$
+    2.  Find the delayed version of the original output:
+        $y_2(t-t_0) = \mathbf{x(1 - (t-t_0)) = x(1 - t + t_0)}$
+    Comparing the two results: $x(1 - t - t_0) \neq x(1 - t + t_0)$.
+    **Conclusion: The system is Time-Variant.**
+
+*   **(iii) Causal/Non-Causal Check:**
+    Let's test an arbitrary negative time, say $t = -2$:
+    $y_2(-2) = x(1 - (-2)) = x(3)$
+    To determine the output at $t=-2$, the system requires the input value at $t=3$, which is in the future relative to $t=-2$.
+    **Conclusion: The system is Non-Causal.**
+
+---
+
+### **24. Pg 44, CT-01 Q2: The input and output relationship of a system is shown.** ![[Pasted image 20260712010339.png]]
+
+**Figure Analysis:**
+*   **Input $x(t)$:** A standard rectangular pulse from $t=0$ to $t=1$ with amplitude $1$. Mathematically: $x(t) = 1$ for $0 \le t \le 1$.
+*   **Output $y(t)$:** A line starting at $(0,1)$ and dropping linearly to $(1,0)$. The slope is $m = \frac{0-1}{1-0} = -1$. The y-intercept is $1$. Equation for this segment: $y(t) = -t + 1$.
+
+**Expressing $y(t)$ in terms of $x(t)$:**
+Observe the relationship between $x(t)$ and $y(t)$ in the active region $[0, 1]$:
+$x(t) = 1$
+$y(t) = -t + 1 = (1-t) \cdot 1 = (1-t) \cdot x(t)$
+Outside this region, $x(t) = 0$ and $y(t) = 0$, so $(1-t) \cdot 0 = 0$, which holds true.
+**Equation:** $\mathbf{y(t) = (1 - t) x(t)}$
+
+**Mathematical Justifications:**
+
+**(i) Linear:**
+Test for the superposition principle.
+Let $x_1(t) \to y_1(t) = (1-t)x_1(t)$
+Let $x_2(t) \to y_2(t) = (1-t)x_2(t)$
+Apply a linear combination input: $x_3(t) = ax_1(t) + bx_2(t)$.
+The system output is:
+$y_3(t) = (1-t)x_3(t) = (1-t)[ax_1(t) + bx_2(t)]$
+$y_3(t) = a(1-t)x_1(t) + b(1-t)x_2(t)$
+$y_3(t) = a y_1(t) + b y_2(t)$
+Because the response to a linear combination of inputs is the exact linear combination of their individual responses, the system satisfies superposition.
+**Conclusion: The system is Linear.**
+
+**(ii) Time-Variant:**
+Test if a time shift in input causes an identical shift in output.
+1.  Apply a delayed input $x_d(t) = x(t-t_0)$. The response is:
+    $y_{delayed\_input}(t) = (1-t)x_d(t) = \mathbf{(1-t)x(t-t_0)}$
+2.  Delay the original output by $t_0$:
+    $y(t-t_0) = (1-(t-t_0))x(t-t_0) = \mathbf{(1-t+t_0)x(t-t_0)}$
+Comparing the two: $(1-t)x(t-t_0) \neq (1-t+t_0)x(t-t_0)$. The system scales the input by a time-dependent factor $(1-t)$, making its behavior change depending on *when* the signal arrives.
+**Conclusion: The system is Time-Variant.**
+
+**(iii) Causal:**
+A system is causal if the current output $y(t)$ depends only on current or past values of $x(t)$.
+Looking at the equation $y(t) = (1-t)x(t)$:
+To evaluate $y$ at any specific instant $t_1$ (e.g., $t=0.5$), we compute $y(0.5) = (0.5)x(0.5)$. The output relies strictly on the input $x$ at that exact same instant $t_1$. It does not look ahead to $x(t_1 + \tau)$.
+**Conclusion: The system is Causal.**
+
 # 2. Energy and Power Signals
 
 ### Q.1 (b) Provide a mathematical justification whether the following signals are energy or power signal or neither. (i) $e^{kt} u(-t)$, $k>0$ (ii) $u(t+2) - u(t-2)$. Also compute the energy and power of them.
@@ -678,6 +961,245 @@ $$\mathbf{x_{\text{rms}} = \vert{}D\vert{}}$$
    $$P = \lim_{T \to \infty} \frac{1}{T} \left[ A^2 \cdot T \right] = A^2$$ 
    * Conclusion: Since $E = \infty$ and $P = A^2$, it is a power signal..
 
+---
+
+### 1. Pg 22, CT-1 Q1: For the following signal, sketch (i) y1(t)=x(t+1) and (ii) y2(t)=x(t+1)r(t−1). Justify whether y2(t) is energy signal or power signal or neither? Also computer the energy and power of y2(t). ![[Pasted image 20260712005325.png]]
+
+**Figure Description:** The figure shows a continuous-time signal $x(t)$ plotted against $t$. The signal is $0$ for $t < 0$, increases linearly from $0$ to $1$ between $t = 0$ and $t = 1$, remains constant at $1$ between $t = 1$ and $t = 3$, and drops abruptly to $0$ at $t = 3$. 
+Mathematically, $x(t)$ can be defined as:
+*   $x(t) = t$ for $0 \le t < 1$
+*   $x(t) = 1$ for $1 \le t \le 3$
+*   $x(t) = 0$ otherwise.
+
+**Solution:**
+
+**(i) Sketch $y_1(t) = x(t+1)$**
+The operation $t \rightarrow t+1$ represents a time-shift. Specifically, it is a time advance by 1 unit, meaning the entire signal $x(t)$ is shifted to the left by 1 unit on the time axis.
+*   The original ramp from $t=0$ to $t=1$ now occurs from $t=-1$ to $t=0$.
+*   The original flat top from $t=1$ to $t=3$ now occurs from $t=0$ to $t=2$.
+*   The signal drops to zero at $t=2$.
+*(Sketch description: A signal starting at $(-1,0)$, rising linearly to $(0,1)$, staying flat at $y=1$ until $t=2$, and dropping to $0$).*
+
+**(ii) Sketch $y_2(t) = x(t+1)r(t-1)$**
+The function $r(t-1)$ is a delayed unit ramp function. 
+*   $r(t-1) = t - 1$ for $t \ge 1$
+*   $r(t-1) = 0$ for $t < 1$
+To sketch $y_2(t)$, we multiply the shifted signal $y_1(t) = x(t+1)$ by $r(t-1)$.
+*   For $t < 1$: $r(t-1) = 0$, so $y_2(t) = y_1(t) \cdot 0 = 0$.
+*   For $1 \le t \le 2$: In this region, $y_1(t) = 1$ and $r(t-1) = t-1$. Therefore, $y_2(t) = 1 \cdot (t-1) = t-1$.
+*   For $t > 2$: $y_1(t) = 0$, so $y_2(t) = 0 \cdot r(t-1) = 0$.
+*(Sketch description: A triangular pulse that is $0$ everywhere except between $t=1$ and $t=2$. It starts at $(1,0)$ and rises linearly with a slope of 1 to reach the coordinate $(2,1)$, then drops immediately to zero).*
+
+**(iii) Justification and Computation of Energy and Power of $y_2(t)$**
+*   **Justification:** A signal is an energy signal if its total energy $E$ satisfies $0 < E < \infty$ and its average power $P = 0$. A signal is a power signal if its average power $P$ satisfies $0 < P < \infty$ and its total energy $E = \infty$. 
+Since $y_2(t)$ is a time-limited signal (it only exists between $t=1$ and $t=2$) with a finite amplitude, its total area squared (energy) will be finite. Therefore, $y_2(t)$ is an **Energy Signal**.
+*   **Computation of Energy ($E$):**
+    $E = \int_{-\infty}^{\infty} |y_2(t)|^2 dt$
+    $E = \int_{1}^{2} (t-1)^2 dt$
+    Let $u = t-1 \implies du = dt$. When $t=1, u=0$; when $t=2, u=1$.
+    $E = \int_{0}^{1} u^2 du = \left[ \frac{u^3}{3} \right]_{0}^{1} = \frac{1}{3} - 0 = \mathbf{\frac{1}{3} \text{ Joules}}$
+*   **Computation of Power ($P$):**
+    $P = \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} |y_2(t)|^2 dt$
+    Since the integral yields a finite value ($1/3$), dividing a finite number by infinity yields zero.
+    $P = \lim_{T \to \infty} \frac{1/3}{T} = \mathbf{0 \text{ Watts}}$
+
+*Reference: Lathi Chapter 1 / Class Notes Pg 5-6 (Energy & Power signal), Pg 12-13 (Signal Operations).*
+
+---
+
+### **7. Pg 28, CT-1 Q2: Draw the following signal and comment whether...**
+
+**Solution:**
+
+**(i) $x_1(t) = e^{-at}u(-t)$ where $a$ is real.**
+*   **Sketch:** The function $u(-t)$ is a time-reversed unit step, meaning the signal exists only for $t \le 0$ (left-sided). 
+    *   If $a > 0$: As $t$ approaches $-\infty$, the term $-at$ becomes positive infinity, making $e^{-at} \to \infty$. The signal starts at $1$ at $t=0$ and grows exponentially to infinity as you move left. 
+    *   If $a < 0$: The signal decays to $0$ as $t \to -\infty$.
+    *(Standard academic convention usually assumes $a > 0$ when testing unboundedness, but let's evaluate both for thoroughness).*
+*   **Comment:**
+    *   **Case $a > 0$:** The energy $E = \int_{-\infty}^{0} |e^{-at}|^2 dt = \int_{-\infty}^{0} e^{-2at} dt = \infty$. The power $P$ is also $\infty$. Therefore, it is **Neither an energy nor a power signal**.
+    *   **Case $a < 0$ (let $a=-b$ where $b>0$):** $E = \int_{-\infty}^{0} e^{2bt} dt = \frac{1}{2b} [1 - 0] = \frac{1}{2b}$. Because energy is finite, it is an **Energy Signal**.
+
+**(ii) $x_2(t) = t u(t)$.**
+*   **Sketch:** This is the standard unit ramp function. The function is $0$ for $t < 0$, starts at $(0,0)$, and increases linearly with a slope of $1$ for $t \ge 0$.
+*   **Comment:** Let's test for Energy ($E$) and Power ($P$):
+    $E = \int_{0}^{\infty} t^2 dt = \left[ \frac{t^3}{3} \right]_0^\infty = \infty$ (Energy is infinite).
+    $P = \lim_{T \to \infty} \frac{1}{2T} \int_{0}^{T} t^2 dt = \lim_{T \to \infty} \frac{1}{2T} \left[ \frac{T^3}{3} \right] = \lim_{T \to \infty} \frac{T^2}{6} = \infty$ (Power is infinite).
+    Since both energy and power are infinite, it is **Neither an energy nor a power signal**.
+
+---
+
+### **9. Pg 31, CT-1 Q1: Determine the energy and power of the following signals:**
+
+**General Definitions:**
+*   **Energy ($E$):** $E = \int_{-\infty}^{\infty} |x(t)|^2 dt$
+*   **Power ($P$):** $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} |x(t)|^2 dt$
+*   An *energy signal* has $0 < E < \infty$ and $P = 0$. A *power signal* has $0 < P < \infty$ and $E = \infty$.
+
+**(i) $x(t) = ke^{\beta t}$, where $k>0$, $\beta<0$**
+*   **Analysis:** This signal represents an exponential curve that decays as $t \to \infty$, but as $t \to -\infty$, $e^{\beta(-\infty)} = e^{\infty} \to \infty$. Since the signal grows to infinity on the left side of the time axis, its area squared (energy) will diverge to infinity.
+*   **Energy:** $E = \int_{-\infty}^{\infty} (ke^{\beta t})^2 dt = k^2 \int_{-\infty}^{\infty} e^{2\beta t} dt = k^2 \left[ \frac{e^{2\beta t}}{2\beta} \right]_{-\infty}^{\infty}$.
+    Because $\beta < 0$, $e^{2\beta(\infty)} = 0$, but $e^{2\beta(-\infty)} = \infty$.
+    $E = k^2 (0 - \infty) = \mathbf{\infty}$.
+*   **Power:** $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} k^2 e^{2\beta t} dt = \lim_{T \to \infty} \frac{k^2}{4\beta T} (e^{2\beta T} - e^{-2\beta T})$.
+    As $T \to \infty$, $e^{2\beta T} \to 0$ and $e^{-2\beta T} \to \infty$. Thus, $P = \mathbf{\infty}$.
+*   **Conclusion:** It is **neither** an energy nor a power signal.
+
+**(ii) $x(t) = ke^{\beta t}$, where $k>0$, $\beta=-2j$**
+*   **Analysis:** $x(t) = ke^{-j2t}$. This is a complex exponential signal. The magnitude of a complex exponential $e^{j\theta}$ is always 1. So, $|x(t)| = |k| |e^{-j2t}| = k \cdot 1 = k$. This is a signal with a constant magnitude over all time.
+*   **Energy:** $E = \int_{-\infty}^{\infty} |k|^2 dt = \int_{-\infty}^{\infty} k^2 dt = \mathbf{\infty}$.
+*   **Power:** $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} k^2 dt = \lim_{T \to \infty} \frac{1}{2T} [k^2 t]_{-T}^{T} = \lim_{T \to \infty} \frac{1}{2T} (k^2(2T)) = \mathbf{k^2}$.
+*   **Conclusion:** It is a **power signal** with $P = k^2$ Watts.
+
+**(iii) $x(t) = \cos(10\pi t)u(-t)$**
+*   **Analysis:** This is a cosine wave that exists only for $t \le 0$ (left-sided) because of the time-reversed unit step $u(-t)$.
+*   **Energy:** $E = \int_{-\infty}^{0} \cos^2(10\pi t) dt = \int_{-\infty}^{0} \frac{1 + \cos(20\pi t)}{2} dt = \infty$ (because integrating the constant $1/2$ over an infinite interval yields infinity).
+*   **Power:** $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{0} \cos^2(10\pi t) dt$
+    $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{0} \frac{1 + \cos(20\pi t)}{2} dt$
+    $P = \lim_{T \to \infty} \frac{1}{4T} \left[ t + \frac{\sin(20\pi t)}{20\pi} \right]_{-T}^{0}$
+    $P = \lim_{T \to \infty} \frac{1}{4T} \left[ 0 - \left(-T + \frac{\sin(-20\pi T)}{20\pi}\right) \right] = \lim_{T \to \infty} \frac{T}{4T} = \mathbf{\frac{1}{4}}$.
+*   **Conclusion:** It is a **power signal** with $P = 0.25$ Watts. *(Note: A full eternal cosine has power $1/2$. Since this exists for exactly half of eternity, its power is half of that, i.e., $1/4$).*
+
+---
+
+### **11. Pg 32, CT-1 Q1: Determine whether the following signals are energy signal, power signal or neither.**
+
+**(i) $x(t) = e^{\sigma t}u(-t), \sigma > 0$**
+*   This signal exists only for $t \le 0$. As $t$ goes to $-\infty$, the exponent $\sigma t$ goes to $-\infty$ (since $\sigma > 0$), making the signal decay to $0$. It is a bounded, time-limited-like decaying exponential.
+*   **Energy:** $E = \int_{-\infty}^{0} |e^{\sigma t}|^2 dt = \int_{-\infty}^{0} e^{2\sigma t} dt = \left[ \frac{e^{2\sigma t}}{2\sigma} \right]_{-\infty}^{0} = \frac{1}{2\sigma} - 0 = \mathbf{\frac{1}{2\sigma} \text{ Joules}}$.
+*   **Power:** Since energy is finite, power is naturally $0$.
+*   **Conclusion:** It is an **Energy Signal**.
+
+**(ii) $x(t) = e^{\sigma t}u(-t), \sigma < 0$**
+*   This signal also exists only for $t \le 0$. However, as $t \to -\infty$, a negative times a negative creates a positive exponent, so $e^{\sigma t} \to e^{\infty} \to \infty$.
+*   **Energy:** $E = \int_{-\infty}^{0} e^{2\sigma t} dt$. Because $2\sigma$ is negative, evaluating this at the lower limit $-\infty$ yields infinity. $E = \mathbf{\infty}$.
+*   **Power:** $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{0} e^{2\sigma t} dt$. The integral evaluates to infinity, and dividing by $T$ still yields infinity. $P = \mathbf{\infty}$.
+*   **Conclusion:** It is **Neither an energy nor a power signal**.
+
+**(iii) $x(t) = t[u(t+4) - u(t-4)]$**
+*   This is the function $f(t) = t$ restricted to a specific window. The term $[u(t+4) - u(t-4)]$ is a rectangular gate that is $1$ between $t = -4$ and $t = 4$, and $0$ elsewhere.
+*   Thus, $x(t) = t$ for $-4 \le t \le 4$, and $0$ otherwise.
+*   Since it is a finite-amplitude signal existing over a strictly finite duration, it must have finite energy.
+*   **Energy:** $E = \int_{-4}^{4} t^2 dt = \left[ \frac{t^3}{3} \right]_{-4}^{4} = \frac{4^3}{3} - \frac{(-4)^3}{3} = \frac{64}{3} - (-\frac{64}{3}) = \mathbf{\frac{128}{3} \text{ Joules}}$.
+*   **Power:** Since energy is finite, power is naturally $P = \mathbf{0 \text{ Watts}}$.
+*   **Conclusion:** It is an **Energy Signal**.
+
+---
+
+### **18. Pg 39, CT-1 Q2: Draw the following signal and comment whether the signal is energy, power or neither energy nor power signal. (i) $e^{-at} u(-t)$ and $a$ is real.**
+
+**Analysis of the Signal:**
+The signal is $x(t) = e^{-at} u(-t)$.
+The term $u(-t)$ is a time-reversed unit step function. It acts as a "window" that is $1$ for all time $t < 0$ and $0$ for all time $t > 0$. This means our signal $x(t)$ only exists on the left side of the y-axis (negative time).
+The behavior of the signal depends crucially on the sign of the real parameter $a$.
+
+**Case 1: Assume $a > 0$ (Positive real number)**
+*   **Sketch:** For $t < 0$, the exponent $-at$ becomes $(-)(\text{positive})(- \text{time}) = \text{positive}$. As $t \to -\infty$, the term $-at \to +\infty$. Therefore, the signal $e^{-at}$ grows exponentially towards infinity as you move left along the negative time axis. It reaches $1$ at $t=0$ and then drops to $0$ for $t>0$.
+    *(Sketch description: An exponential curve rising rapidly from right to left in the 2nd quadrant, ending at $(0,1)$).*
+*   **Energy Calculation:** $E = \int_{-\infty}^{\infty} |x(t)|^2 dt = \int_{-\infty}^{0} (e^{-at})^2 dt = \int_{-\infty}^{0} e^{-2at} dt$
+    $E = \left[ \frac{e^{-2at}}{-2a} \right]_{-\infty}^{0} = \frac{e^0}{-2a} - \frac{e^{-2a(-\infty)}}{-2a} = \frac{1}{-2a} - \frac{e^{\infty}}{-2a} = \frac{-1}{2a} + \infty = \mathbf{\infty}$
+*   **Power Calculation:** Since energy is infinite, we check power. 
+    $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{0} e^{-2at} dt = \lim_{T \to \infty} \frac{1}{2T} \left[ \frac{e^{-2at}}{-2a} \right]_{-T}^{0} = \lim_{T \to \infty} \frac{1}{2T} \left( \frac{1}{-2a} - \frac{e^{2aT}}{-2a} \right)$
+    As $T \to \infty$, the term $e^{2aT} \to \infty$. Dividing infinity by infinity requires L'Hopital's rule, showing the exponential grows much faster than $T$. Thus, $P = \mathbf{\infty}$.
+*   **Conclusion for $a > 0$:** The signal diverges. It is **Neither an energy nor a power signal**.
+
+**Case 2: Assume $a < 0$ (Negative real number)**
+Let $a = -b$, where $b > 0$. Then the signal is $x(t) = e^{bt} u(-t)$.
+*   **Sketch:** For $t < 0$, the exponent $bt$ is $(+)(-) = \text{negative}$. As $t \to -\infty$, $bt \to -\infty$, so $e^{bt} \to 0$. The signal decays to $0$ as you move left. It rises to $1$ at $t=0$ and drops to $0$ for $t>0$.
+    *(Sketch description: A bounded exponential curve starting near 0 on the far left, rising to $(0,1)$ in the 2nd quadrant).*
+*   **Energy Calculation:** $E = \int_{-\infty}^{0} (e^{bt})^2 dt = \int_{-\infty}^{0} e^{2bt} dt = \left[ \frac{e^{2bt}}{2b} \right]_{-\infty}^{0}$
+    $E = \frac{e^0}{2b} - \frac{e^{-\infty}}{2b} = \frac{1}{2b} - 0 = \mathbf{\frac{1}{2b}}$
+*   Since $b$ is a finite positive number, the energy $E$ is a finite positive value.
+*   **Conclusion for $a < 0$:** Because it has finite energy, it is an **Energy Signal**.
+
+*(Note: Unless specified, problems often assume standard stable forms, but the full analysis covers both possibilities. If $a=0$, it's a step function which is a power signal. Given standard problem sets, demonstrating the case where it converges (is an energy signal) or diverges is expected).*
+
+*Reference: Class Notes Pg 5-6, 9-10 (Energy & Power Signal).*
+
+---
+
+### **20. Pg 42, CT-01 Q1: For the following signal, $x(t)$ sketch (i) $y_1(t)=x(2t-5)$ and (ii) $y_3(t)=x(t)r(t)$. Provide a mathematical justification whether $y_2(t)$ is an energy signal or power signal or neither? Also computer the energy and power of $y_2(t)$. ![[Pasted image 20260712010221.png]]**
+
+*(Note: There is a typo in the provided question text. It asks to sketch $y_1$ and $y_3$, but then asks to justify and compute for $y_2$. Let's assume the question intended to define $y_2(t)$ as one of the functions to be sketched, likely $y_2(t) = y_3(t) = x(t)r(t)$, which is a common pattern in these problem sets.)* Let's analyze $x(t)r(t)$.
+
+**Base Signal $x(t)$ Analysis:**
+The figure shows a triangular pulse.
+*   Rises linearly from $t = -1$ to peak amplitude $1$ at $t = 0$. Equation for this segment: $x(t) = t + 1$.
+*   Falls linearly from amplitude $1$ at $t = 0$ to $0$ at $t = 1$. Equation for this segment: $x(t) = -t + 1$.
+*   $x(t) = 0$ for $t \le -1$ and $t \ge 1$.
+
+**Solution:**
+
+**(i) Sketch $y_1(t) = x(2t - 5)$**
+*   **Transformations:** Rewrite as $x(2(t - 2.5))$. Time compression by a factor of 2, followed by a shift right by 2.5.
+*   **Step-by-step using boundary mapping:** Map the original key points $t = \{-1, 0, 1\}$.
+    *   $2t - 5 = -1 \implies 2t = 4 \implies t = 2$. (Start of signal)
+    *   $2t - 5 = 0 \implies 2t = 5 \implies t = 2.5$. (Peak of signal, amplitude 1)
+    *   $2t - 5 = 1 \implies 2t = 6 \implies t = 3$. (End of signal)
+*   **Final Sketch:** A narrower triangular pulse shifted to the right. It starts at $t=2$, peaks at amplitude 1 at $t=2.5$, and drops to 0 at $t=3$.
+
+**(ii) Sketch $y_2(t) = x(t)r(t)$** *(Assuming $y_2$ is $y_3$)*
+*   **Analysis:** $r(t)$ is the unit ramp function, where $r(t) = t$ for $t \ge 0$, and $0$ for $t < 0$.
+*   We multiply $x(t)$ pointwise by $r(t)$.
+    *   For $t < 0$: $r(t) = 0$, so $y_2(t) = x(t) \cdot 0 = 0$. The left half of the triangle is eliminated.
+    *   For $0 \le t \le 1$: $x(t) = -t + 1$, and $r(t) = t$. The product is $y_2(t) = t(-t + 1) = -t^2 + t$. This describes an inverted parabola. Let's find key points:
+        *   At $t=0$, $y_2(0) = 0(1) = 0$.
+        *   At $t=1$, $y_2(1) = 1(0) = 0$.
+        *   Peak occurs at vertex. Derivative $-2t + 1 = 0 \implies t = 0.5$. Peak value $y_2(0.5) = -(0.5)^2 + 0.5 = 0.25$.
+    *   For $t > 1$: $x(t) = 0$, so $y_2(t) = 0 \cdot t = 0$.
+*   **Final Sketch:** The signal is $0$ everywhere except between $t=0$ and $t=1$. In that interval, draw a smooth parabolic curve starting at $(0,0)$, rising to a peak of $0.25$ at $t=0.5$, and falling back to $(1,0)$.
+
+**(iii) Mathematical Justification & Computation of Energy and Power for $y_2(t)$**
+*   **Justification:** The resulting signal $y_2(t)$ is non-zero only over a finite duration (from $t=0$ to $t=1$) and has a finite bounded amplitude (max $0.25$). Any signal that is entirely bounded within a finite time interval has a finite total area squared (energy). Therefore, it must be an **Energy Signal**.
+*   **Energy Computation ($E$):**
+    $E = \int_{-\infty}^{\infty} |y_2(t)|^2 dt = \int_{0}^{1} (-t^2 + t)^2 dt$
+    Expand the integrand: $(-t^2 + t)^2 = t^4 - 2t^3 + t^2$
+    $E = \int_{0}^{1} (t^4 - 2t^3 + t^2) dt = \left[ \frac{t^5}{5} - \frac{2t^4}{4} + \frac{t^3}{3} \right]_0^1$
+    $E = \left( \frac{1}{5} - \frac{1}{2} + \frac{1}{3} \right) - 0$
+    Find common denominator (30):
+    $E = \frac{6}{30} - \frac{15}{30} + \frac{10}{30} = \frac{16 - 15}{30} = \mathbf{\frac{1}{30} \text{ Joules}}$.
+*   **Power Computation ($P$):**
+    Because it is a finite-duration energy signal, its average power computed over an infinite interval is zero.
+    $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} |y_2(t)|^2 dt = \lim_{T \to \infty} \frac{1/30}{2T} = \mathbf{0 \text{ Watts}}$.
+
+*Reference: Class Notes Pg 5-6 (Energy & Power Signal), Pg 12-15 (Signal Operations).*
+
+Here are the detailed solutions for questions 21 through 24 from your list.
+
+---
+
+### **23. Pg 44, CT-01 Q1: Sketch the signals and analytically determine if energy/power.**
+
+**Solution:**
+
+**(i) Sketch $u(4-t)$**
+*   Rewrite as $u(-(t-4))$.
+*   A standard unit step $u(t)$ turns "on" (becomes 1) for $t > 0$.
+*   $u(-t)$ is time-reversed, so it is 1 for $t < 0$ and 0 for $t > 0$.
+*   $u(-(t-4))$ shifts this reversed step 4 units to the right. It evaluates to 1 when $-(t-4) > 0 \implies t < 4$.
+*   **Sketch:** A horizontal line at amplitude $1$ coming from $t = -\infty$, which drops abruptly to $0$ at exactly $t = 4$ and remains $0$ thereafter.
+
+**(ii) Sketch $u(t-6) - u(t-8)$**
+*   $u(t-6)$ is a unit step starting at $t=6$.
+*   $u(t-8)$ is a unit step starting at $t=8$.
+*   Subtracting the latter from the former turns the signal "off" at $t=8$.
+*   **Sketch:** A rectangular pulse. It is $0$ everywhere except between $t = 6$ and $t = 8$, where it has an amplitude of $1$.
+
+**(iii) Sketch $\sin(\pi t)[\delta(t+0.5) + \delta(t-0.5)]$**
+*   Apply the sifting property of the Dirac delta function: $f(t)\delta(t-t_0) = f(t_0)\delta(t-t_0)$.
+*   First term ($t_0 = -0.5$): $\sin(\pi(-0.5))\delta(t+0.5) = \sin(-\pi/2)\delta(t+0.5) = -1 \cdot \delta(t+0.5)$.
+*   Second term ($t_0 = 0.5$): $\sin(\pi(0.5))\delta(t-0.5) = \sin(\pi/2)\delta(t-0.5) = 1 \cdot \delta(t-0.5)$.
+*   The signal simplifies to: $y(t) = -\delta(t+0.5) + \delta(t-0.5)$.
+*   **Sketch:** Draw two vertical arrows (impulses). One pointing downwards to $-1$ at $t = -0.5$. One pointing upwards to $1$ at $t = 0.5$. The rest of the axis is $0$.
+
+**Analytical determination of Energy/Power for $u(t-4) - u(t-6)$:**
+Let $y(t) = u(t-4) - u(t-6)$. This is a rectangular pulse of amplitude $1$ existing from $t=4$ to $t=6$.
+*   **Energy ($E$):**
+    $E = \int_{-\infty}^{\infty} |y(t)|^2 dt = \int_{4}^{6} (1)^2 dt = [t]_4^6 = 6 - 4 = \mathbf{2 \text{ Joules}}$
+*   **Power ($P$):**
+    $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} |y(t)|^2 dt$.
+    Since the integral evaluates to a finite number ($2$), as $T \to \infty$, the fraction $\frac{2}{2T}$ approaches $0$. Thus, $P = \mathbf{0 \text{ Watts}}$.
+*   **Conclusion:** Because the signal has finite energy ($0 < E < \infty$) and zero average power, it is an **Energy Signal**.
 
 # 3. Signal Fundamentals & Operations
 
@@ -934,6 +1456,217 @@ First, note that the impulse function is even, meaning $\delta(2 - t) = \delta(-
 - Therefore:
     
     $$\int_{-\infty}^{\infty} e^{-2(x-t)}\delta(2 - t) dt = \mathbf{e^{-2(x-2)}}$$
+
+---
+
+### **8. Pg 29, CT-1 Q3: Given the signal... Sketch the following signals derived from x(t)** ![[Pasted image 20260712005603.png]]
+
+**Figure Analysis of Base Signal $x(t)$:**
+The given signal $x(t)$ is:
+*   $1$ for $0 \le t \le 1$
+*   Ramps down from $1$ to $0$ linearly between $t = 1$ and $t = 2$.
+*   $0$ everywhere else.
+
+**Solution:**
+
+**(i) Sketch $x(2t + 1)$**
+*   **Transformations:** This involves a time shift (left by 1) followed by a time scaling (compression by 2).
+*   **Step-by-step:**
+    1.  Shift left by 1 ($x(t+1)$): The flat top moves to $[-1, 0]$ and the ramp moves to $[0, 1]$.
+    2.  Compress by 2 ($x(2t+1)$): The $t$-axis values are halved. 
+*   **Final Shape:** A signal that is flat at amplitude $1$ from $t = -0.5$ to $t = 0$, and ramps down to $0$ at $t = 0.5$.
+
+**(ii) Sketch $x(t+1)u(-t)$**
+*   **Transformations:** Shift left by 1, then multiply by a reversed unit step.
+*   **Step-by-step:**
+    1.  $x(t+1)$ shifts the entire signal left so it exists from $t=-1$ to $t=1$. The flat part is $[-1, 0]$ and the ramp is $[0, 1]$.
+    2.  $u(-t)$ acts as a "window" that only lets the signal through for $t \le 0$ (it is $0$ for $t > 0$).
+*   **Final Shape:** Only the flat part from the shifted signal survives. The result is a perfect rectangular pulse of amplitude $1$ from $t = -1$ to $t = 0$.
+
+**(iii) Sketch $x(-t+1)u(t)$**
+*   **Transformations:** Rewrite as $x(-(t-1))$. Time reversal, shift right by 1, then multiply by a unit step.
+*   **Step-by-step:**
+    1.  $x(-t)$ flips the signal across the y-axis. The flat part is now $[-1, 0]$ and the ramp (now rising) is $[-2, -1]$.
+    2.  $x(-(t-1))$ shifts the flipped signal right by 1. The flat part moves to $[0, 1]$ and the rising ramp moves to $[-1, 0]$.
+    3.  Multiply by $u(t)$, keeping only the $t \ge 0$ portion.
+*   **Final Shape:** Only the flat part survives. The result is a perfect rectangular pulse of amplitude $1$ from $t = 0$ to $t = 1$.
+
+**(iv) Sketch $x(t-1) + x(-t-1)$**
+*   **Transformations:** This is the addition of two distinct signals.
+*   **Step-by-step:**
+    1.  $x(t-1)$ is shifted right by 1. It is flat from $t=1$ to $t=2$, and ramps down to $0$ at $t=3$.
+    2.  $x(-t-1) = x(-(t+1))$ is reversed, then shifted left by 1. The original reversed signal $x(-t)$ lives in $[-2, 0]$. Shifting left by 1 moves it to $[-3, -1]$. It rises from $-3$ to $-2$, and is flat from $-2$ to $-1$.
+*   **Final Shape:** An even, symmetric signal with two separate components. 
+    *   Left side: Ramps up from $t=-3$ to $-2$, flat at amplitude $1$ from $t=-2$ to $-1$. 
+    *   Gap: The signal is $0$ from $t=-1$ to $t=1$.
+    *   Right side: Flat at amplitude $1$ from $t=1$ to $t=2$, ramps down to $0$ at $t=3$.
+
+**(v) Sketch $x(t)\delta(t-1)$**
+*   **Transformations:** Multiplication of a continuous signal by an impulse function.
+*   **Property:** $f(t)\delta(t-t_0) = f(t_0)\delta(t-t_0)$. The impulse "samples" the value of the function at the time the impulse occurs.
+*   **Step-by-step:**
+    Here $t_0 = 1$. So, $x(t)\delta(t-1) = x(1)\delta(t-1)$.
+    Looking at the original graph of $x(t)$, at exactly $t = 1$, the amplitude is $1$. 
+    So, $x(1) = 1$.
+*   **Final Shape:** The result is simply $1 \cdot \delta(t-1) = \delta(t-1)$. Sketch a single upward-pointing impulse arrow located at $t = 1$ on the axis, labeled with an area/weight of $1$.
+
+
+Here are the detailed solutions for questions 9 through 12 from the provided list.
+
+---
+
+### **10. Pg 31, CT-1 Q2: Sketch the following signal and transformations.**
+
+**Base Signal $x(t)$ Analysis:**
+*   $x(t) = e^{2t}$ for $-4 \le t \le -2$ (A tiny exponential tail rising from left to right)
+*   $x(t) = 2$ for $-2 \le t \le 2$ (A flat rectangular center)
+*   $x(t) = e^{-2t}$ for $2 \le t \le 4$ (A tiny exponential tail decaying from left to right)
+*   $x(t) = 0$ otherwise.
+*(Note: $e^{-4}$ is approximately $0.018$, so these tails are extremely small and drop steeply to the axis. The signal is symmetric around the y-axis, meaning it is an **even function**: $x(-t) = x(t)$).*
+
+**Transformations $y(t) = x(\alpha t + \beta)$:**
+When applying transformations, we follow the order: $x(\alpha t + \beta) = x(\alpha(t + \frac{\beta}{\alpha}))$. First scale by $\alpha$, then shift by $-\frac{\beta}{\alpha}$. We map the original boundaries $[-4, -2, 2, 4]$ to new $t$ values by setting $\alpha t + \beta$ equal to the old boundaries.
+
+**(i) $\alpha=-2, \beta=0 \implies y_1(t) = x(-2t)$**
+*   Because $x(t)$ is even, $x(-2t) = x(2t)$. This is purely a time compression by a factor of 2.
+*   Divide all original $t$-boundaries by 2.
+*   New boundaries: $[-2, -1, 1, 2]$.
+*   **Sketch Description:** The flat top is compressed to span from $t = -1$ to $t = 1$ (amplitude remains 2). The left exponential tail spans from $t = -2$ to $t = -1$. The right exponential tail spans from $t = 1$ to $t = 2$.
+
+**(ii) $\alpha=2, \beta=-4 \implies y_2(t) = x(2t - 4)$**
+*   Set $2t - 4$ equal to original boundaries:
+    $2t - 4 = -4 \implies t = 0$
+    $2t - 4 = -2 \implies t = 1$
+    $2t - 4 = 2 \implies t = 3$
+    $2t - 4 = 4 \implies t = 4$
+*   **Sketch Description:** The entire signal is compressed by 2 and shifted to the right. The left tail is from $t = 0$ to $t = 1$. The flat top (amplitude 2) is from $t = 1$ to $t = 3$. The right tail is from $t = 3$ to $t = 4$.
+
+**(iii) $\alpha=-1, \beta=4 \implies y_3(t) = x(-t + 4)$**
+*   Set $-t + 4$ equal to original boundaries:
+    $-t + 4 = -4 \implies t = 8$
+    $-t + 4 = -2 \implies t = 6$
+    $-t + 4 = 2 \implies t = 2$
+    $-t + 4 = 4 \implies t = 0$
+*   **Sketch Description:** The signal is time-reversed (which looks identical to the original due to symmetry) and shifted right by 4. The left tail is from $t = 0$ to $t = 2$. The flat top (amplitude 2) is from $t = 2$ to $t = 6$. The right tail is from $t = 6$ to $t = 8$.
+
+---
+
+### **12. Pg 32, CT-1 Q2: For the following signal $x(t)$, sketch the transformations.**
+
+**Base Signal $x(t)$ Analysis:**
+*   $x(t) = t$ for $0 \le t \le 2$ (A linear ramp starting from $(0,0)$ up to coordinate $(2,2)$).
+*   $x(t) = 2$ for $2 \le t \le 4$ (A flat constant line from $t=2$ to $t=4$ at an amplitude of $2$).
+*   $x(t) = 0$ otherwise. (Drops abruptly to $0$ at $t=4$).
+
+**(i) Sketch $x(t/2)$**
+*   **Transformation:** Time expansion by a factor of 2. All $t$-coordinates of key features are multiplied by 2.
+*   **New Coordinates:** 
+    *   Start of ramp: $(0 \times 2, 0) \to (0, 0)$
+    *   End of ramp / Start of flat: $(2 \times 2, 2) \to (4, 2)$
+    *   End of flat / Drop to zero: $(4 \times 2, 2) \to (8, 2)$
+*   **Sketch Description:** A ramp starting at $t=0$ rising to an amplitude of $2$ at $t=4$. Then a flat constant line at amplitude $2$ extending from $t=4$ to $t=8$, dropping to zero at $t=8$.
+
+**(ii) Sketch $x(t+4)$**
+*   **Transformation:** Time advance (shift to the left) by 4 units. All $t$-coordinates subtract 4.
+*   **New Coordinates:**
+    *   Start of ramp: $(0 - 4, 0) \to (-4, 0)$
+    *   End of ramp: $(2 - 4, 2) \to (-2, 2)$
+    *   End of flat: $(4 - 4, 2) \to (0, 2)$
+*   **Sketch Description:** The whole signal moves into the negative time axis. A ramp starts at $t=-4$ rising to amplitude $2$ at $t=-2$. A flat line continues from $t=-2$ to $t=0$, dropping to zero at $t=0$.
+
+**(iii) Sketch $x(4-t)$**
+*   **Transformation:** Rewrite as $x(-(t-4))$. This is a time reversal (flip across y-axis) followed by a shift to the right by 4 units.
+*   *Alternatively, map boundaries:* Set $4-t$ equal to original boundaries $[0, 2, 4]$.
+    $4-t = 0 \implies t=4$ (Signal ends here)
+    $4-t = 2 \implies t=2$
+    $4-t = 4 \implies t=0$ (Signal starts here)
+*   **Sketch Description:** A flat top starts at $t=0$ and goes to $t=2$ at an amplitude of $2$. At $t=2$, it begins a linear ramp downward, hitting zero exactly at $t=4$. (It looks like a mirrored version of the original signal, stationed perfectly adjacent to the y-axis).
+
+**(iv) Sketch $x(2t+6)$**
+*   **Transformation:** Rewrite as $x(2(t+3))$. This is a time compression by a factor of 2, followed by a shift to the left by 3 units.
+*   *Map boundaries:* Set $2t+6$ equal to original boundaries $[0, 2, 4]$.
+    $2t+6 = 0 \implies 2t = -6 \implies t = -3$
+    $2t+6 = 2 \implies 2t = -4 \implies t = -2$
+    $2t+6 = 4 \implies 2t = -2 \implies t = -1$
+*   **Sketch Description:** The entire signal is compressed and sits entirely on the negative axis. It starts with a ramp from $(-3, 0)$ up to $(-2, 2)$. It is followed by a flat top at amplitude $2$ from $t = -2$ to $t = -1$, dropping to zero at $t = -1$.
+
+
+Here are the detailed solutions for questions 13 through 16 from the provided list.
+
+---
+
+### **19. Pg 39, CT-1 Q3: Given the signal $x(t)$ in the following figure. Sketch the following signals derived from $x(t)$. ![[Pasted image 20260712005941.png]]**
+
+**Base Signal $x(t)$ Analysis:**
+The image shows a pulse waveform $x(t)$:
+*   $x(t) = 0$ for $t < -1$
+*   $x(t) = 1$ for $-1 \le t \le 0$
+*   $x(t) = 2$ for $0 < t \le 1$
+*   $x(t) = 0$ for $t > 1$
+It is a staircase-like pulse composed of two rectangular segments.
+
+**Solution:**
+
+**(i) Sketch $x(2t - 1)$**
+*   **Transformations:** Rewrite as $x(2(t - 0.5))$. This involves a time compression by a factor of 2, followed by a time shift to the right by 0.5 units.
+*   **Step-by-step using boundary mapping:** Set the argument $2t - 1$ equal to the key transition points of the original signal $t = \{-1, 0, 1\}$.
+    *   Transition 1 (starts rising): $2t - 1 = -1 \implies 2t = 0 \implies t = 0$. (Amplitude goes from 0 to 1).
+    *   Transition 2 (steps up): $2t - 1 = 0 \implies 2t = 1 \implies t = 0.5$. (Amplitude steps from 1 to 2).
+    *   Transition 3 (drops to zero): $2t - 1 = 1 \implies 2t = 2 \implies t = 1$. (Amplitude drops from 2 to 0).
+*   **Final Sketch:** 
+    *   From $t = 0$ to $t = 0.5$, draw a horizontal line at amplitude 1.
+    *   From $t = 0.5$ to $t = 1$, draw a horizontal line at amplitude 2.
+    *   Signal is 0 outside this interval $[0, 1]$.
+
+**(ii) Sketch $x(t+1)u(-t)$**
+*   **Transformations:** Time shift left by 1, then multiply by a reversed unit step.
+*   **Step-by-step:**
+    1.  $x(t+1)$: Shift the entire original signal to the left by 1 unit.
+        *   The segment $[-1, 0]$ with amplitude 1 moves to $[-2, -1]$.
+        *   The segment $[0, 1]$ with amplitude 2 moves to $[-1, 0]$.
+    2.  $u(-t)$: This is a window that is 1 for $t < 0$ and 0 for $t > 0$.
+    3.  Multiplication: Multiply the shifted signal by this window. The entire shifted signal lies in the region $t \le 0$, so the window $u(-t)$ preserves the entire shifted signal.
+*   **Final Sketch:** 
+    *   From $t = -2$ to $t = -1$, amplitude is 1.
+    *   From $t = -1$ to $t = 0$, amplitude is 2.
+    *   Signal drops to 0 at $t = 0$ and remains 0 for $t > 0$.
+
+**(iii) Sketch $x(-t+1)u(t)$**
+*   **Transformations:** Rewrite as $x(-(t-1))$. Time reversal, shift right by 1, then multiply by a unit step.
+*   **Step-by-step:**
+    1.  $x(-t)$: Time-reverse (mirror) the original signal across the y-axis.
+        *   The original segment $[0, 1]$ with amp 2 flips to $[-1, 0]$.
+        *   The original segment $[-1, 0]$ with amp 1 flips to $[0, 1]$.
+    2.  $x(-(t-1))$: Shift this mirrored signal to the right by 1 unit.
+        *   The segment $[-1, 0]$ (amp 2) moves to $[0, 1]$.
+        *   The segment $[0, 1]$ (amp 1) moves to $[1, 2]$.
+    3.  $u(t)$: This window is 1 for $t > 0$ and 0 for $t < 0$.
+    4.  Multiplication: The entire shifted-and-mirrored signal lies in $t \ge 0$, so the window $u(t)$ preserves all of it.
+*   **Final Sketch:**
+    *   From $t = 0$ to $t = 1$, amplitude is 2.
+    *   From $t = 1$ to $t = 2$, amplitude is 1.
+    *   Signal is 0 outside this interval.
+
+**(iv) Sketch $x(t)[u(t-1) - u(t-2)]$**
+*   **Transformations:** Multiply the original signal by a rectangular window.
+*   **Step-by-step:**
+    1.  Analyze the window: $[u(t-1) - u(t-2)]$ creates a rectangular pulse that is 1 strictly between $t = 1$ and $t = 2$, and 0 everywhere else.
+    2.  Analyze the original signal $x(t)$ in that window: Look at the original graph of $x(t)$ between $t=1$ and $t=2$. The original signal $x(t)$ is exactly 0 everywhere in that region (it ends at $t=1$).
+    3.  Multiplication: Multiplying $x(t)$ (which is 0 in this region) by the window (which is 1 in this region) results in 0. Multiplying everywhere else where the window is 0 also results in 0.
+*   **Final Sketch:** The result is a flat line at $y = 0$ for all time $t$. The signal is completely zeroed out.
+
+**(v) Sketch $x(t)\delta(t-2)$**
+*   **Transformations:** Multiply the original continuous signal by a shifted impulse function.
+*   **Property:** The sifting property states $f(t)\delta(t-t_0) = f(t_0)\delta(t-t_0)$. The result is an impulse at $t_0$ weighted by the value of the function at that specific instant.
+*   **Step-by-step:**
+    Here $t_0 = 2$. Therefore, $x(t)\delta(t-2) = x(2)\delta(t-2)$.
+    Looking at the original graph of $x(t)$, at the exact instant $t = 2$, the value of the signal is $0$.
+    So, $x(2) = 0$.
+    The result is $0 \cdot \delta(t-2) = 0$.
+*   **Final Sketch:** The result is a flat line at $y = 0$ for all time $t$. There is no impulse because its weight is zero.
+
+*Reference: Class Notes Pg 12-15 (Signal Operations), Pg 22 (Singularity functions/Impulse).*
+
 # 4. Laplace Transform
 
 ### (b) Find the Laplace transform of the following function $h(t)$. (figure involved.)
@@ -1206,6 +1939,128 @@ This intersection represents a vertical strip in the s-plane between $\sigma = b
 Location pg 448 In pdf
 
 ***
+
+---
+
+### **15. Pg 35, CT-3 Q1: Find the Laplace transform of (i) $e^{3t} u(-t)$ and (ii) $e^{-3t} u(t) + e^{3t} u(-t)$. Also sketch ROC of them.**
+
+**General Definition:** The bilateral Laplace transform is defined as $X(s) = \int_{-\infty}^{\infty} x(t) e^{-st} dt$.
+
+**Solution:**
+
+**(i) Find Laplace transform of $x_1(t) = e^{3t} u(-t)$**
+*   The term $u(-t)$ restricts the signal to negative time ($-\infty < t \le 0$). This makes it a left-sided signal.
+*   Apply the definition:
+    $X_1(s) = \int_{-\infty}^{\infty} e^{3t} u(-t) e^{-st} dt = \int_{-\infty}^{0} e^{3t} e^{-st} dt = \int_{-\infty}^{0} e^{(3-s)t} dt$
+*   Evaluate the integral:
+    $X_1(s) = \left[ \frac{e^{(3-s)t}}{3-s} \right]_{-\infty}^{0} = \frac{1}{3-s} \left[ e^0 - \lim_{t \to -\infty} e^{(3-s)t} \right]$
+    $X_1(s) = \frac{1}{3-s} \left[ 1 - \lim_{t \to -\infty} e^{(3-s)t} \right]$
+*   **Determine ROC (Region of Convergence):** For the integral to converge (not blow up to infinity), the term $e^{(3-s)t}$ must decay to zero as $t \to -\infty$. 
+    Let $s = \sigma + j\omega$. The exponent is $(3 - (\sigma + j\omega))t = (3 - \sigma)t - j\omega t$.
+    The magnitude is determined by the real part: $e^{(3-\sigma)t}$. 
+    As $t \to -\infty$, for $e^{(3-\sigma)t}$ to approach $0$, the coefficient $(3-\sigma)$ must be positive.
+    $3 - \sigma > 0 \implies \sigma < 3$.
+    Therefore, the integral converges if $Re\{s\} < 3$.
+*   Under this condition, the limit evaluates to $0$:
+    $X_1(s) = \frac{1}{3-s} = \mathbf{\frac{-1}{s-3}}$, with **ROC: $Re\{s\} < 3$**.
+
+**(ii) Find Laplace transform of $x_2(t) = e^{-3t} u(t) + e^{3t} u(-t)$**
+*   This signal is the sum of a right-sided signal $x_{2R}(t) = e^{-3t} u(t)$ and the left-sided signal from part (i), $x_{2L}(t) = e^{3t} u(-t)$.
+*   We can use linearity and find the transform of each part separately.
+*   **Part 1 (Right-sided):**
+    $\mathcal{L}\{e^{-3t} u(t)\} = \int_{0}^{\infty} e^{-3t} e^{-st} dt = \int_{0}^{\infty} e^{-(s+3)t} dt = \left[ \frac{e^{-(s+3)t}}{-(s+3)} \right]_{0}^{\infty}$
+    For convergence as $t \to \infty$, the real part of $(s+3)$ must be positive: $Re\{s+3\} > 0 \implies \sigma > -3$.
+    Evaluating the integral: $\frac{0 - 1}{-(s+3)} = \frac{1}{s+3}$ with ROC: $Re\{s\} > -3$.
+*   **Part 2 (Left-sided):** From (i), $\mathcal{L}\{e^{3t} u(-t)\} = \frac{-1}{s-3}$ with ROC: $Re\{s\} < 3$.
+*   **Combine:**
+    $X_2(s) = \frac{1}{s+3} - \frac{1}{s-3} = \frac{(s-3) - (s+3)}{(s+3)(s-3)} = \mathbf{\frac{-6}{s^2 - 9}}$
+*   **Determine total ROC:** The overall ROC is the intersection of the ROCs of the individual components.
+    ROC $= \{Re\{s\} > -3\} \cap \{Re\{s\} < 3\} = \mathbf{-3 < Re\{s\} < 3}$. This forms a vertical strip in the s-plane.
+
+**Sketching the ROCs:**
+*   **For (i):** Draw the complex s-plane with axes $\sigma$ (real) and $j\omega$ (imaginary). Draw a dashed vertical line at $\sigma = 3$. Shade the entire region to the **left** of this line. Label the pole at $s = 3$ with an 'x'.
+*   **For (ii):** Draw the s-plane. Draw dashed vertical lines at $\sigma = -3$ and $\sigma = 3$. Shade the vertical strip **between** these two lines. Label poles at $s = -3$ and $s = 3$ with 'x' marks.
+
+*Reference: Class Notes Pg 58-61 (Laplace Transform and ROC).*
+
+---
+
+### **16. Pg 36, CT-3 Q1: Using the differentiation property, find the Laplace transform of the following function. ![[Pasted image 20260712005827.png]]**
+
+**Figure Description:**
+The figure shows a rectangular pulse $f(t)$ centered at the origin.
+*   Amplitude is $A$.
+*   It spans from $t = -T/2$ to $t = T/2$.
+Mathematically, this can be written using unit step functions:
+$f(t) = A [u(t + T/2) - u(t - T/2)]$
+
+**Solution:**
+
+The differentiation property of the Laplace Transform states:
+$\mathcal{L}\left\{\frac{df(t)}{dt}\right\} = s F(s) - f(0^-)$
+Assuming initial conditions are zero (or dealing with a signal that is defined over all time where we use the bilateral transform and the boundary term vanishes), the property simplifies to $\mathcal{L}\{f'(t)\} = s F(s)$.
+Therefore, we can find $F(s)$ by taking the derivative of $f(t)$, finding its transform, and then dividing by $s$.
+$F(s) = \frac{1}{s} \mathcal{L}\{f'(t)\}$
+
+**Step 1: Differentiate the signal $f(t)$**
+The function $f(t) = A [u(t + T/2) - u(t - T/2)]$ consists of flat sections and abrupt jumps. The derivative of a constant is 0, and the derivative of a unit step jump is an impulse function $\delta(t)$ weighted by the size of the jump.
+*   At $t = -T/2$, the signal jumps from $0$ to $A$. This produces a positive impulse: $A \delta(t + T/2)$.
+*   At $t = T/2$, the signal jumps from $A$ down to $0$. This produces a negative impulse: $-A \delta(t - T/2)$.
+So, the derivative is:
+$f'(t) = A \delta(t + T/2) - A \delta(t - T/2)$
+
+**Step 2: Find the Laplace transform of the derivative**
+The Laplace transform of a shifted impulse is $\mathcal{L}\{\delta(t - t_0)\} = e^{-st_0}$.
+Applying this to our derivative equation:
+$\mathcal{L}\{f'(t)\} = \mathcal{L}\{A \delta(t + T/2) - A \delta(t - T/2)\}$
+$\mathcal{L}\{f'(t)\} = A e^{s(T/2)} - A e^{-s(T/2)}$
+$\mathcal{L}\{f'(t)\} = A \left( e^{sT/2} - e^{-sT/2} \right)$
+
+**Step 3: Apply the differentiation property to solve for $F(s)$**
+We know $s F(s) = \mathcal{L}\{f'(t)\}$.
+$s F(s) = A \left( e^{sT/2} - e^{-sT/2} \right)$
+$F(s) = \frac{A}{s} \left( e^{sT/2} - e^{-sT/2} \right)$
+
+*(Optional: While this form is correct, it can be mathematically manipulated to look like a hyperbolic sine function. Recall $\sinh(x) = \frac{e^x - e^{-x}}{2}$, so $e^x - e^{-x} = 2\sinh(x)$. Let $x = sT/2$. Then $F(s) = \frac{2A}{s} \sinh(\frac{sT}{2})$.)*
+
+The final expression is:
+$\mathbf{F(s) = \frac{A}{s} \left( e^{sT/2} - e^{-sT/2} \right)}$
+
+*Reference: Sadiku Chapter 15, Section 15.3 (Properties of the Laplace Transform) / Class Notes Pg 103, 104.*
+
+Here are the detailed solutions for questions 17 through 20 from the provided list.
+
+---
+
+### **22. Pg 42, CT-3 Q2: Sketch the Region of Convergence (ROC) in the complex s-plane of the following signals.**
+
+**Solution:**
+
+The bilateral Laplace transform is defined as $F(s) = \int_{-\infty}^{\infty} f(t) e^{-st} dt$, where $s = \sigma + j\omega$. The ROC is the range of real values $\sigma$ for which this integral converges.
+
+**(i) $f(t) = e^{-at}u(-t) + e^{bt}u(t)$**
+We analyze the left-sided and right-sided portions separately.
+*   **Right-sided portion:** $e^{bt}u(t)$. 
+    $\mathcal{L}\{e^{bt}u(t)\} = \int_{0}^{\infty} e^{bt} e^{-st} dt = \int_{0}^{\infty} e^{-(s-b)t} dt = \frac{1}{s-b}$.
+    For convergence at $\infty$, the real part of $(s-b)$ must be positive: $Re\{s\} > b \implies \mathbf{\sigma > b}$. (Pole at $s=b$)
+*   **Left-sided portion:** $e^{-at}u(-t)$.
+    $\mathcal{L}\{e^{-at}u(-t)\} = \int_{-\infty}^{0} e^{-at} e^{-st} dt = \int_{-\infty}^{0} e^{-(s+a)t} dt = \frac{-1}{s+a}$.
+    For convergence at $-\infty$, the real part of $(s+a)$ must be negative: $-Re\{s+a\} > 0 \implies \mathbf{\sigma < -a}$. (Pole at $s=-a$)
+*   **Total ROC:** The intersection of the two conditions: $\sigma > b$ AND $\sigma < -a$. 
+    This means the ROC is the strip: $\mathbf{b < \sigma < -a}$. 
+    *(Note: This transform only exists if $b < -a$. Assuming this is true for the sketch).*
+*   **Sketch Description:** Draw the complex s-plane (horizontal $\sigma$-axis, vertical $j\omega$-axis). Mark a pole ($\times$) at $\sigma = b$ and a pole ($\times$) at $\sigma = -a$ (where $b$ is to the left of $-a$). Draw vertical dashed lines through both poles. **Shade the region between the two vertical lines**.
+
+**(ii) $f(t) = e^{at}u(t) + e^{bt}u(-t)$, with $b > a$.**
+*   **Right-sided portion:** $e^{at}u(t)$.
+    $\mathcal{L}\{e^{at}u(t)\} = \frac{1}{s-a}$.
+    Condition for convergence: $Re\{s-a\} > 0 \implies \mathbf{\sigma > a}$. (Pole at $s=a$)
+*   **Left-sided portion:** $e^{bt}u(-t)$.
+    $\mathcal{L}\{e^{bt}u(-t)\} = \frac{-1}{s-b}$.
+    Condition for convergence: $-Re\{s-b\} > 0 \implies \mathbf{\sigma < b}$. (Pole at $s=b$)
+*   **Total ROC:** The intersection of the two conditions: $\sigma > a$ AND $\sigma < b$.
+    This implies $\mathbf{a < \sigma < b}$. Because the problem states $b > a$, this intersection is valid and forms a bounded vertical strip.
+*   **Sketch Description:** Draw the complex s-plane. Mark a pole ($\times$) at $\sigma = a$ and a pole ($\times$) at $\sigma = b$. Draw vertical dashed lines through both poles. **Shade the rectangular strip lying strictly between the line $\sigma = a$ and the line $\sigma = b$**.
 
 # 5. Fourier Transform
 
@@ -1559,6 +2414,91 @@ $$E_x = \int_{-\infty}^{\infty} |x(t)|^2 dt = \frac{1}{2\pi} \int_{-\infty}^{\in
 4.  Essentially, the theorem demonstrates the principle of conservation of energy: the total energy of a signal remains the same regardless of whether it is measured in the time domain or the frequency domain.
 
 always mention ans related location pg no. In pdf , at the end of every soln 7.1 Aperiodic Signal Representation by the Fourier Integral (Existence of the Fourier Transform), pg. 685-686 and 7.6 Signal Energy, pg. 734
+
+---
+
+### 3. Pg 25, CT-4 Q2: Using differentiation property, find the Fourier transform of the following function. ![[Pasted image 20260712005508.png]]
+
+**Figure Description:** The figure shows a rectangular pulse $f(t)$ centered at the origin. It has an amplitude of $A$ and spans from $t = -2$ to $t = 2$.
+Mathematically, $f(t)$ can be represented using unit step functions:
+$f(t) = A [u(t+2) - u(t-2)]$
+
+**Solution:**
+
+The time differentiation property of the Fourier Transform states that if $\mathcal{F}\{f(t)\} = F(\omega)$, then:
+$\mathcal{F}\left\{\frac{df(t)}{dt}\right\} = j\omega F(\omega)$
+
+**Step 1: Differentiate the given function $f(t)$**
+Taking the derivative of the rectangular pulse $f(t) = A [u(t+2) - u(t-2)]$ yields two impulse functions (Dirac delta functions) located at the edges of the pulse.
+$\frac{df(t)}{dt} = f'(t) = A \delta(t+2) - A \delta(t-2)$
+
+**Step 2: Apply the Fourier Transform to the derivative**
+We know the Fourier transform pair for a shifted impulse: $\mathcal{F}\{\delta(t - t_0)\} = e^{-j\omega t_0}$.
+Applying this to our derivative:
+$\mathcal{F}\{f'(t)\} = \mathcal{F}\{A \delta(t+2) - A \delta(t-2)\}$
+$\mathcal{F}\{f'(t)\} = A e^{j\omega 2} - A e^{-j\omega 2}$
+
+**Step 3: Simplify using Euler's identity**
+Recall Euler's identity: $e^{j\theta} - e^{-j\theta} = 2j \sin(\theta)$.
+Let $\theta = 2\omega$:
+$\mathcal{F}\{f'(t)\} = A(2j \sin(2\omega)) = 2jA \sin(2\omega)$
+
+**Step 4: Use the differentiation property to find $F(\omega)$**
+Substitute the result from Step 3 into the differentiation property formula:
+$j\omega F(\omega) = 2jA \sin(2\omega)$
+$F(\omega) = \frac{2jA \sin(2\omega)}{j\omega}$
+$\mathbf{F(\omega) = \frac{2A \sin(2\omega)}{\omega}}$
+
+*(Optional: This can also be expressed using the sinc function where $\text{sinc}(x) = \frac{\sin(x)}{x}$. Multiply numerator and denominator by 2: $F(\omega) = 4A \frac{\sin(2\omega)}{2\omega} = 4A \text{sinc}(2\omega)$).*
+
+*Reference: Sadiku Chapter 18, Section 18.3 (Properties of the Fourier Transform - Time Differentiation) / Class Notes Pg 103, 104.*
+
+---
+
+### **5. Pg 27, CT-3 Q3: Use the time-differentiation property to find the Fourier transform of the triangle pulse illustrated in Fig.** ![[Pasted image 20260712005539.png]]
+
+**Figure Analysis:** 
+The image shows a triangular pulse $x(t)$ centered at $t = 0$. It rises from $0$ at $t = -T/2$ to a peak amplitude of $1$ at $t = 0$, and then falls back to $0$ at $t = T/2$.
+Let's define the mathematical equations for the slopes:
+*   **Rising edge** (from $t = -T/2$ to $0$): Slope $m_1 = \frac{1 - 0}{0 - (-T/2)} = \frac{2}{T}$. 
+    Equation: $x(t) = \frac{2}{T}t + 1$ 
+*   **Falling edge** (from $t = 0$ to $T/2$): Slope $m_2 = \frac{0 - 1}{T/2 - 0} = -\frac{2}{T}$. 
+    Equation: $x(t) = -\frac{2}{T}t + 1$
+
+**Solution:**
+
+**Step 1: Find the first derivative $x'(t)$**
+Taking the derivative of $x(t)$ with respect to time yields the slopes of the segments.
+*   For $-T/2 < t < 0$, $x'(t) = \frac{2}{T}$
+*   For $0 < t < T/2$, $x'(t) = -\frac{2}{T}$
+*   Everywhere else, $x'(t) = 0$
+*(Sketch description of $x'(t)$: This results in two adjacent rectangular pulses. A positive rectangular pulse of amplitude $2/T$ from $t = -T/2$ to $0$, followed immediately by a negative rectangular pulse of amplitude $-2/T$ from $t = 0$ to $T/2$.)*
+
+**Step 2: Find the second derivative $x''(t)$**
+Taking the derivative of the rectangular pulses $x'(t)$ yields Dirac delta (impulse) functions at the points of discontinuity (where the signal jumps).
+*   At $t = -T/2$, the signal jumps up from $0$ to $2/T$. This gives $\frac{2}{T}\delta(t + T/2)$.
+*   At $t = 0$, the signal jumps down from $2/T$ to $-2/T$. The total change is $-\frac{4}{T}$. This gives $-\frac{4}{T}\delta(t)$.
+*   At $t = T/2$, the signal jumps up from $-2/T$ to $0$. The total change is $+\frac{2}{T}$. This gives $\frac{2}{T}\delta(t - T/2)$.
+So, the second derivative is:
+$x''(t) = \frac{2}{T}\delta(t + \frac{T}{2}) - \frac{4}{T}\delta(t) + \frac{2}{T}\delta(t - \frac{T}{2})$
+
+**Step 3: Apply the Fourier Transform to $x''(t)$**
+Using the time-shifting property $\mathcal{F}\{\delta(t-t_0)\} = e^{-j\omega t_0}$:
+$\mathcal{F}\{x''(t)\} = \frac{2}{T}e^{j\omega T/2} - \frac{4}{T}(1) + \frac{2}{T}e^{-j\omega T/2}$
+Factor out $\frac{2}{T}$:
+$\mathcal{F}\{x''(t)\} = \frac{2}{T}\left[ e^{j\omega T/2} + e^{-j\omega T/2} \right] - \frac{4}{T}$
+Apply Euler's identity ($e^{j\theta} + e^{-j\theta} = 2\cos\theta$):
+$\mathcal{F}\{x''(t)\} = \frac{2}{T} \left[ 2\cos\left(\frac{\omega T}{2}\right) \right] - \frac{4}{T} = \frac{4}{T}\cos\left(\frac{\omega T}{2}\right) - \frac{4}{T} = \frac{4}{T}\left[ \cos\left(\frac{\omega T}{2}\right) - 1 \right]$
+
+**Step 4: Use the time-differentiation property to solve for $X(\omega)$**
+The time differentiation property states $\mathcal{F}\{x''(t)\} = (j\omega)^2 X(\omega) = -\omega^2 X(\omega)$.
+Equating the two expressions for $\mathcal{F}\{x''(t)\}$:
+$-\omega^2 X(\omega) = \frac{4}{T} \left[ \cos\left(\frac{\omega T}{2}\right) - 1 \right]$
+$X(\omega) = \frac{-4}{\omega^2 T} \left[ \cos\left(\frac{\omega T}{2}\right) - 1 \right] = \frac{4}{\omega^2 T} \left[ 1 - \cos\left(\frac{\omega T}{2}\right) \right]$
+
+Using the half-angle trigonometric identity $1 - \cos(2\theta) = 2\sin^2(\theta)$:
+$X(\omega) = \frac{4}{\omega^2 T} \left[ 2\sin^2\left(\frac{\omega T}{4}\right) \right]$
+$\mathbf{X(\omega) = \frac{8}{\omega^2 T} \sin^2\left(\frac{\omega T}{4}\right)}$
 
 # 6. Fourier Series & Spectrums
 
@@ -2086,6 +3026,61 @@ $$y(t) = x(t) - 0.5 + \frac{1}{\pi} \sin(2\pi t)$$
 
 Location pg 638 In pdf
 
+---
+
+### 4. Pg 27, CT-3 Q2: Find the Fourier series of the square wave in following Fig. Plot the amplitude and phase spectra. ![[Pasted image 20260712005529.png]]
+
+**Figure Description:** The figure shows a periodic square wave $f(t)$. The signal alternates between an amplitude of $1$ and $-1$. Analyzing the axis, one complete cycle occurs between $t = 0$ and $t = 2$.
+*   $f(t) = 1$ for $0 < t < 1$
+*   $f(t) = -1$ for $1 < t < 2$
+*   Period $T = 2$ seconds.
+*   Fundamental angular frequency $\omega_0 = \frac{2\pi}{T} = \frac{2\pi}{2} = \pi \text{ rad/s}$.
+
+**Solution:**
+
+**Step 1: Check for Symmetry to simplify calculations**
+*   **Odd/Even Symmetry:** $f(-t) = -f(t)$. For example, $f(0.5) = 1$ and $f(-0.5) = -1$. Because the function is odd, the DC component $a_0 = 0$ and the cosine coefficients $a_n = 0$. The Fourier series will only contain sine terms ($b_n$).
+*   **Half-wave Symmetry:** $f(t \pm T/2) = -f(t)$. Here $T/2 = 1$. Shifting the wave by 1 unit inverts it. Because it possesses half-wave symmetry, the series will only contain **odd harmonics** ($n = 1, 3, 5, \dots$).
+
+**Step 2: Calculate the Fourier coefficients ($b_n$)**
+The formula for $b_n$ is:
+$b_n = \frac{2}{T} \int_{0}^{T} f(t) \sin(n\omega_0 t) dt$
+Since $T=2$ and $\omega_0 = \pi$:
+$b_n = \frac{2}{2} \left[ \int_{0}^{1} (1) \sin(n\pi t) dt + \int_{1}^{2} (-1) \sin(n\pi t) dt \right]$
+$b_n = \left[ \frac{-\cos(n\pi t)}{n\pi} \right]_{0}^{1} - \left[ \frac{-\cos(n\pi t)}{n\pi} \right]_{1}^{2}$
+$b_n = \frac{1}{n\pi} \left[ (-\cos(n\pi) + \cos(0)) + (\cos(2n\pi) - \cos(n\pi)) \right]$
+We know that $\cos(0) = 1$, $\cos(2n\pi) = 1$, and $\cos(n\pi) = (-1)^n$.
+$b_n = \frac{1}{n\pi} \left[ -(-1)^n + 1 + 1 - (-1)^n \right]$
+$b_n = \frac{1}{n\pi} \left[ 2 - 2(-1)^n \right] = \frac{2}{n\pi} \left[ 1 - (-1)^n \right]$
+
+Evaluating for even and odd $n$:
+*   If $n$ is even ($n = 2, 4, 6...$): $(-1)^n = 1 \implies b_n = \frac{2}{n\pi}[1 - 1] = 0$.
+*   If $n$ is odd ($n = 1, 3, 5...$): $(-1)^n = -1 \implies b_n = \frac{2}{n\pi}[1 - (-1)] = \mathbf{\frac{4}{n\pi}}$.
+
+**Step 3: Write the Fourier Series**
+$f(t) = \sum_{n=1,3,5,\dots}^{\infty} b_n \sin(n\omega_0 t)$
+$\mathbf{f(t) = \sum_{n=\text{odd}}^{\infty} \frac{4}{n\pi} \sin(n\pi t)}$
+
+**Step 4: Plot the Amplitude and Phase Spectra**
+To plot the spectra, we express the series in the amplitude-phase form: $f(t) = a_0 + \sum_{n=1}^{\infty} A_n \cos(n\omega_0 t + \phi_n)$.
+We have sine terms, which can be converted to cosine terms:
+$\sin(\theta) = \cos(\theta - 90^\circ)$
+Therefore, the $n$-th harmonic is: $\frac{4}{n\pi} \cos(n\pi t - 90^\circ)$ (for odd $n$).
+
+*   **Amplitude Spectrum ($A_n$):**
+    $A_n = \frac{4}{n\pi}$ for $n = 1, 3, 5, \dots$
+    $A_n = 0$ for $n = \text{even}$.
+    *(Plot description: A discrete bar graph with vertical lines at $\omega = \pi, 3\pi, 5\pi \dots$. The heights of the bars are $4/\pi \approx 1.27$ at $\omega=\pi$, $4/3\pi \approx 0.42$ at $\omega=3\pi$, $4/5\pi \approx 0.25$ at $\omega=5\pi$, decaying as $1/n$)*.
+
+*   **Phase Spectrum ($\phi_n$):**
+    $\phi_n = -90^\circ$ for all odd $n$.
+    $\phi_n = 0$ for all even $n$.
+    *(Plot description: A discrete bar graph with vertical lines extending downwards to $-90^\circ$ (or $-\pi/2$ radians) strictly at frequencies $\omega = \pi, 3\pi, 5\pi \dots$)*.
+
+*Reference: Sadiku Chapter 17, Sections 17.2 & 17.3 (Symmetry Considerations) / Class Notes Pg 89-91.*
+
+Here are the detailed solutions for the next 4 questions (Questions 5 to 8) from your list.
+
 # 7. Sampling and Modulation
 
 ### (b) Discuss amplitude modulation and sampling as the application scenarios of Fourier transform.
@@ -2255,7 +3250,6 @@ always mention ans related location pg no. In pdf , at the end of every soln 5.1
 
 Based on the provided images, here are the detailed solutions to a selection of the questions.
 
-
 # 9. Miscellaneous
 
 ### (i) $x(t) = u(t) - u(t - a), \quad a > 0$
@@ -2300,996 +3294,3 @@ Based on the provided images, here are the detailed solutions for the two questi
 
 ### (i) Express $i(t)$ in amplitude-phase form.
 
-Here are the detailed solutions for the first 4 questions from the provided PYQs list.
-
-### 1. Pg 22, CT-1 Q1: For the following signal, sketch (i) y1(t)=x(t+1) and (ii) y2(t)=x(t+1)r(t−1). Justify whether y2(t) is energy signal or power signal or neither? Also computer the energy and power of y2(t). [Figure involved]
-
-**Figure Description:** The figure shows a continuous-time signal $x(t)$ plotted against $t$. The signal is $0$ for $t < 0$, increases linearly from $0$ to $1$ between $t = 0$ and $t = 1$, remains constant at $1$ between $t = 1$ and $t = 3$, and drops abruptly to $0$ at $t = 3$. 
-Mathematically, $x(t)$ can be defined as:
-*   $x(t) = t$ for $0 \le t < 1$
-*   $x(t) = 1$ for $1 \le t \le 3$
-*   $x(t) = 0$ otherwise.
-
-**Solution:**
-
-**(i) Sketch $y_1(t) = x(t+1)$**
-The operation $t \rightarrow t+1$ represents a time-shift. Specifically, it is a time advance by 1 unit, meaning the entire signal $x(t)$ is shifted to the left by 1 unit on the time axis.
-*   The original ramp from $t=0$ to $t=1$ now occurs from $t=-1$ to $t=0$.
-*   The original flat top from $t=1$ to $t=3$ now occurs from $t=0$ to $t=2$.
-*   The signal drops to zero at $t=2$.
-*(Sketch description: A signal starting at $(-1,0)$, rising linearly to $(0,1)$, staying flat at $y=1$ until $t=2$, and dropping to $0$).*
-
-**(ii) Sketch $y_2(t) = x(t+1)r(t-1)$**
-The function $r(t-1)$ is a delayed unit ramp function. 
-*   $r(t-1) = t - 1$ for $t \ge 1$
-*   $r(t-1) = 0$ for $t < 1$
-To sketch $y_2(t)$, we multiply the shifted signal $y_1(t) = x(t+1)$ by $r(t-1)$.
-*   For $t < 1$: $r(t-1) = 0$, so $y_2(t) = y_1(t) \cdot 0 = 0$.
-*   For $1 \le t \le 2$: In this region, $y_1(t) = 1$ and $r(t-1) = t-1$. Therefore, $y_2(t) = 1 \cdot (t-1) = t-1$.
-*   For $t > 2$: $y_1(t) = 0$, so $y_2(t) = 0 \cdot r(t-1) = 0$.
-*(Sketch description: A triangular pulse that is $0$ everywhere except between $t=1$ and $t=2$. It starts at $(1,0)$ and rises linearly with a slope of 1 to reach the coordinate $(2,1)$, then drops immediately to zero).*
-
-**(iii) Justification and Computation of Energy and Power of $y_2(t)$**
-*   **Justification:** A signal is an energy signal if its total energy $E$ satisfies $0 < E < \infty$ and its average power $P = 0$. A signal is a power signal if its average power $P$ satisfies $0 < P < \infty$ and its total energy $E = \infty$. 
-Since $y_2(t)$ is a time-limited signal (it only exists between $t=1$ and $t=2$) with a finite amplitude, its total area squared (energy) will be finite. Therefore, $y_2(t)$ is an **Energy Signal**.
-*   **Computation of Energy ($E$):**
-    $E = \int_{-\infty}^{\infty} |y_2(t)|^2 dt$
-    $E = \int_{1}^{2} (t-1)^2 dt$
-    Let $u = t-1 \implies du = dt$. When $t=1, u=0$; when $t=2, u=1$.
-    $E = \int_{0}^{1} u^2 du = \left[ \frac{u^3}{3} \right]_{0}^{1} = \frac{1}{3} - 0 = \mathbf{\frac{1}{3} \text{ Joules}}$
-*   **Computation of Power ($P$):**
-    $P = \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} |y_2(t)|^2 dt$
-    Since the integral yields a finite value ($1/3$), dividing a finite number by infinity yields zero.
-    $P = \lim_{T \to \infty} \frac{1/3}{T} = \mathbf{0 \text{ Watts}}$
-
-*Reference: Lathi Chapter 1 / Class Notes Pg 5-6 (Energy & Power signal), Pg 12-13 (Signal Operations).*
-
----
-
-### 2. Pg 22, CT-1 Q2: A time limited rectangular pulse (left) is applied to a system produces an output as shown in the following figure (right). Express y(t) in terms of x(t). Also provide a mathematical justification whether the system is (i) Linear (ii) Time invariant and (iii) Causal. [Figure involved]
-
-**Figure Description:** 
-*   **Input $x(t)$:** A standard rectangular pulse of amplitude $1$ spanning from $t=0$ to $t=1$. Mathematically: $x(t) = u(t) - u(t-1)$.
-*   **Output $y(t)$:** A right-angled triangular pulse that starts at $t=0$, rises linearly to an amplitude of $1$ at $t=1$, and immediately drops to $0$. Mathematically: $y(t) = t$ for $0 \le t \le 1$, and $0$ otherwise.
-
-**Solution:**
-
-**Expressing $y(t)$ in terms of $x(t)$:**
-Notice that the output $y(t)$ is identical to the input $x(t)$ multiplied by the time variable $t$. 
-*   For $0 \le t \le 1$: $x(t) = 1$, and $t \cdot x(t) = t \cdot 1 = t$, which matches $y(t)$.
-*   For everywhere else: $x(t) = 0$, and $t \cdot x(t) = 0$, which matches $y(t)$.
-Therefore, the system operation is described by the equation: **$y(t) = t \cdot x(t)$**
-
-**Mathematical Justifications:**
-
-**(i) Linear:**
-A system is linear if it satisfies the superposition principle (additivity and homogeneity).
-Let $x_1(t) \rightarrow y_1(t) = t \cdot x_1(t)$
-Let $x_2(t) \rightarrow y_2(t) = t \cdot x_2(t)$
-Apply a combined weighted input: $x_3(t) = a x_1(t) + b x_2(t)$.
-The system response will be:
-$y_3(t) = t \cdot x_3(t) = t \cdot [a x_1(t) + b x_2(t)]$
-$y_3(t) = a [t \cdot x_1(t)] + b [t \cdot x_2(t)]$
-$y_3(t) = a y_1(t) + b y_2(t)$
-Since the response to a linear combination of inputs equals the linear combination of their individual responses, the system is **Linear**.
-
-**(ii) Time-invariant:**
-A system is time-invariant if a time delay in the input causes an identical time delay in the output.
-1.  Find response to delayed input $x(t - t_0)$: 
-    $y_{delayed\_input}(t) = \mathcal{T}\{x(t - t_0)\} = t \cdot x(t - t_0)$
-2.  Delay the original output by $t_0$: 
-    $y(t - t_0) = (t - t_0) \cdot x(t - t_0)$
-Comparing the two results:
-$t \cdot x(t - t_0) \neq (t - t_0) \cdot x(t - t_0)$
-Since the outputs are not equal, the system is **Time-Variant (Not Time-Invariant)**.
-
-**(iii) Causal:**
-A system is causal if the output at any time $t$ depends only on the present and/or past values of the input, not on future values.
-For the system $y(t) = t \cdot x(t)$, the output $y$ at a specific time $t$ requires only the value of the input $x$ at that exact same time $t$. It does not require $x(t+\tau)$ where $\tau > 0$.
-Therefore, the system is **Causal**.
-
-*Reference: Lathi Chapter 1 / Class Notes Pg 24-29 (Classification of Systems).*
-
----
-
-### 3. Pg 25, CT-4 Q2: Using differentiation property, find the Fourier transform of the following function. [Figure involved]
-
-**Figure Description:** The figure shows a rectangular pulse $f(t)$ centered at the origin. It has an amplitude of $A$ and spans from $t = -2$ to $t = 2$.
-Mathematically, $f(t)$ can be represented using unit step functions:
-$f(t) = A [u(t+2) - u(t-2)]$
-
-**Solution:**
-
-The time differentiation property of the Fourier Transform states that if $\mathcal{F}\{f(t)\} = F(\omega)$, then:
-$\mathcal{F}\left\{\frac{df(t)}{dt}\right\} = j\omega F(\omega)$
-
-**Step 1: Differentiate the given function $f(t)$**
-Taking the derivative of the rectangular pulse $f(t) = A [u(t+2) - u(t-2)]$ yields two impulse functions (Dirac delta functions) located at the edges of the pulse.
-$\frac{df(t)}{dt} = f'(t) = A \delta(t+2) - A \delta(t-2)$
-
-**Step 2: Apply the Fourier Transform to the derivative**
-We know the Fourier transform pair for a shifted impulse: $\mathcal{F}\{\delta(t - t_0)\} = e^{-j\omega t_0}$.
-Applying this to our derivative:
-$\mathcal{F}\{f'(t)\} = \mathcal{F}\{A \delta(t+2) - A \delta(t-2)\}$
-$\mathcal{F}\{f'(t)\} = A e^{j\omega 2} - A e^{-j\omega 2}$
-
-**Step 3: Simplify using Euler's identity**
-Recall Euler's identity: $e^{j\theta} - e^{-j\theta} = 2j \sin(\theta)$.
-Let $\theta = 2\omega$:
-$\mathcal{F}\{f'(t)\} = A(2j \sin(2\omega)) = 2jA \sin(2\omega)$
-
-**Step 4: Use the differentiation property to find $F(\omega)$**
-Substitute the result from Step 3 into the differentiation property formula:
-$j\omega F(\omega) = 2jA \sin(2\omega)$
-$F(\omega) = \frac{2jA \sin(2\omega)}{j\omega}$
-$\mathbf{F(\omega) = \frac{2A \sin(2\omega)}{\omega}}$
-
-*(Optional: This can also be expressed using the sinc function where $\text{sinc}(x) = \frac{\sin(x)}{x}$. Multiply numerator and denominator by 2: $F(\omega) = 4A \frac{\sin(2\omega)}{2\omega} = 4A \text{sinc}(2\omega)$).*
-
-*Reference: Sadiku Chapter 18, Section 18.3 (Properties of the Fourier Transform - Time Differentiation) / Class Notes Pg 103, 104.*
-
----
-
-### 4. Pg 27, CT-3 Q2: Find the Fourier series of the square wave in following Fig. Plot the amplitude and phase spectra. [Figure involved]
-
-**Figure Description:** The figure shows a periodic square wave $f(t)$. The signal alternates between an amplitude of $1$ and $-1$. Analyzing the axis, one complete cycle occurs between $t = 0$ and $t = 2$.
-*   $f(t) = 1$ for $0 < t < 1$
-*   $f(t) = -1$ for $1 < t < 2$
-*   Period $T = 2$ seconds.
-*   Fundamental angular frequency $\omega_0 = \frac{2\pi}{T} = \frac{2\pi}{2} = \pi \text{ rad/s}$.
-
-**Solution:**
-
-**Step 1: Check for Symmetry to simplify calculations**
-*   **Odd/Even Symmetry:** $f(-t) = -f(t)$. For example, $f(0.5) = 1$ and $f(-0.5) = -1$. Because the function is odd, the DC component $a_0 = 0$ and the cosine coefficients $a_n = 0$. The Fourier series will only contain sine terms ($b_n$).
-*   **Half-wave Symmetry:** $f(t \pm T/2) = -f(t)$. Here $T/2 = 1$. Shifting the wave by 1 unit inverts it. Because it possesses half-wave symmetry, the series will only contain **odd harmonics** ($n = 1, 3, 5, \dots$).
-
-**Step 2: Calculate the Fourier coefficients ($b_n$)**
-The formula for $b_n$ is:
-$b_n = \frac{2}{T} \int_{0}^{T} f(t) \sin(n\omega_0 t) dt$
-Since $T=2$ and $\omega_0 = \pi$:
-$b_n = \frac{2}{2} \left[ \int_{0}^{1} (1) \sin(n\pi t) dt + \int_{1}^{2} (-1) \sin(n\pi t) dt \right]$
-$b_n = \left[ \frac{-\cos(n\pi t)}{n\pi} \right]_{0}^{1} - \left[ \frac{-\cos(n\pi t)}{n\pi} \right]_{1}^{2}$
-$b_n = \frac{1}{n\pi} \left[ (-\cos(n\pi) + \cos(0)) + (\cos(2n\pi) - \cos(n\pi)) \right]$
-We know that $\cos(0) = 1$, $\cos(2n\pi) = 1$, and $\cos(n\pi) = (-1)^n$.
-$b_n = \frac{1}{n\pi} \left[ -(-1)^n + 1 + 1 - (-1)^n \right]$
-$b_n = \frac{1}{n\pi} \left[ 2 - 2(-1)^n \right] = \frac{2}{n\pi} \left[ 1 - (-1)^n \right]$
-
-Evaluating for even and odd $n$:
-*   If $n$ is even ($n = 2, 4, 6...$): $(-1)^n = 1 \implies b_n = \frac{2}{n\pi}[1 - 1] = 0$.
-*   If $n$ is odd ($n = 1, 3, 5...$): $(-1)^n = -1 \implies b_n = \frac{2}{n\pi}[1 - (-1)] = \mathbf{\frac{4}{n\pi}}$.
-
-**Step 3: Write the Fourier Series**
-$f(t) = \sum_{n=1,3,5,\dots}^{\infty} b_n \sin(n\omega_0 t)$
-$\mathbf{f(t) = \sum_{n=\text{odd}}^{\infty} \frac{4}{n\pi} \sin(n\pi t)}$
-
-**Step 4: Plot the Amplitude and Phase Spectra**
-To plot the spectra, we express the series in the amplitude-phase form: $f(t) = a_0 + \sum_{n=1}^{\infty} A_n \cos(n\omega_0 t + \phi_n)$.
-We have sine terms, which can be converted to cosine terms:
-$\sin(\theta) = \cos(\theta - 90^\circ)$
-Therefore, the $n$-th harmonic is: $\frac{4}{n\pi} \cos(n\pi t - 90^\circ)$ (for odd $n$).
-
-*   **Amplitude Spectrum ($A_n$):**
-    $A_n = \frac{4}{n\pi}$ for $n = 1, 3, 5, \dots$
-    $A_n = 0$ for $n = \text{even}$.
-    *(Plot description: A discrete bar graph with vertical lines at $\omega = \pi, 3\pi, 5\pi \dots$. The heights of the bars are $4/\pi \approx 1.27$ at $\omega=\pi$, $4/3\pi \approx 0.42$ at $\omega=3\pi$, $4/5\pi \approx 0.25$ at $\omega=5\pi$, decaying as $1/n$)*.
-
-*   **Phase Spectrum ($\phi_n$):**
-    $\phi_n = -90^\circ$ for all odd $n$.
-    $\phi_n = 0$ for all even $n$.
-    *(Plot description: A discrete bar graph with vertical lines extending downwards to $-90^\circ$ (or $-\pi/2$ radians) strictly at frequencies $\omega = \pi, 3\pi, 5\pi \dots$)*.
-
-*Reference: Sadiku Chapter 17, Sections 17.2 & 17.3 (Symmetry Considerations) / Class Notes Pg 89-91.*
-
-Here are the detailed solutions for the next 4 questions (Questions 5 to 8) from your list.
-
----
-
-### **5. Pg 27, CT-3 Q3: Use the time-differentiation property to find the Fourier transform of the triangle pulse illustrated in Fig.**
-
-**Figure Analysis:** 
-The image shows a triangular pulse $x(t)$ centered at $t = 0$. It rises from $0$ at $t = -T/2$ to a peak amplitude of $1$ at $t = 0$, and then falls back to $0$ at $t = T/2$.
-Let's define the mathematical equations for the slopes:
-*   **Rising edge** (from $t = -T/2$ to $0$): Slope $m_1 = \frac{1 - 0}{0 - (-T/2)} = \frac{2}{T}$. 
-    Equation: $x(t) = \frac{2}{T}t + 1$ 
-*   **Falling edge** (from $t = 0$ to $T/2$): Slope $m_2 = \frac{0 - 1}{T/2 - 0} = -\frac{2}{T}$. 
-    Equation: $x(t) = -\frac{2}{T}t + 1$
-
-**Solution:**
-
-**Step 1: Find the first derivative $x'(t)$**
-Taking the derivative of $x(t)$ with respect to time yields the slopes of the segments.
-*   For $-T/2 < t < 0$, $x'(t) = \frac{2}{T}$
-*   For $0 < t < T/2$, $x'(t) = -\frac{2}{T}$
-*   Everywhere else, $x'(t) = 0$
-*(Sketch description of $x'(t)$: This results in two adjacent rectangular pulses. A positive rectangular pulse of amplitude $2/T$ from $t = -T/2$ to $0$, followed immediately by a negative rectangular pulse of amplitude $-2/T$ from $t = 0$ to $T/2$.)*
-
-**Step 2: Find the second derivative $x''(t)$**
-Taking the derivative of the rectangular pulses $x'(t)$ yields Dirac delta (impulse) functions at the points of discontinuity (where the signal jumps).
-*   At $t = -T/2$, the signal jumps up from $0$ to $2/T$. This gives $\frac{2}{T}\delta(t + T/2)$.
-*   At $t = 0$, the signal jumps down from $2/T$ to $-2/T$. The total change is $-\frac{4}{T}$. This gives $-\frac{4}{T}\delta(t)$.
-*   At $t = T/2$, the signal jumps up from $-2/T$ to $0$. The total change is $+\frac{2}{T}$. This gives $\frac{2}{T}\delta(t - T/2)$.
-So, the second derivative is:
-$x''(t) = \frac{2}{T}\delta(t + \frac{T}{2}) - \frac{4}{T}\delta(t) + \frac{2}{T}\delta(t - \frac{T}{2})$
-
-**Step 3: Apply the Fourier Transform to $x''(t)$**
-Using the time-shifting property $\mathcal{F}\{\delta(t-t_0)\} = e^{-j\omega t_0}$:
-$\mathcal{F}\{x''(t)\} = \frac{2}{T}e^{j\omega T/2} - \frac{4}{T}(1) + \frac{2}{T}e^{-j\omega T/2}$
-Factor out $\frac{2}{T}$:
-$\mathcal{F}\{x''(t)\} = \frac{2}{T}\left[ e^{j\omega T/2} + e^{-j\omega T/2} \right] - \frac{4}{T}$
-Apply Euler's identity ($e^{j\theta} + e^{-j\theta} = 2\cos\theta$):
-$\mathcal{F}\{x''(t)\} = \frac{2}{T} \left[ 2\cos\left(\frac{\omega T}{2}\right) \right] - \frac{4}{T} = \frac{4}{T}\cos\left(\frac{\omega T}{2}\right) - \frac{4}{T} = \frac{4}{T}\left[ \cos\left(\frac{\omega T}{2}\right) - 1 \right]$
-
-**Step 4: Use the time-differentiation property to solve for $X(\omega)$**
-The time differentiation property states $\mathcal{F}\{x''(t)\} = (j\omega)^2 X(\omega) = -\omega^2 X(\omega)$.
-Equating the two expressions for $\mathcal{F}\{x''(t)\}$:
-$-\omega^2 X(\omega) = \frac{4}{T} \left[ \cos\left(\frac{\omega T}{2}\right) - 1 \right]$
-$X(\omega) = \frac{-4}{\omega^2 T} \left[ \cos\left(\frac{\omega T}{2}\right) - 1 \right] = \frac{4}{\omega^2 T} \left[ 1 - \cos\left(\frac{\omega T}{2}\right) \right]$
-
-Using the half-angle trigonometric identity $1 - \cos(2\theta) = 2\sin^2(\theta)$:
-$X(\omega) = \frac{4}{\omega^2 T} \left[ 2\sin^2\left(\frac{\omega T}{4}\right) \right]$
-$\mathbf{X(\omega) = \frac{8}{\omega^2 T} \sin^2\left(\frac{\omega T}{4}\right)}$
-
----
-
-### **6. Pg 28, CT-1 Q1: Consider a discrete-time system...**
-**System Equation:** $y[n] = \frac{1}{3} (x[n] + x[n-1] + x[n-2])$
-
-**Solution:**
-
-*   **(i) Memoryless:** A system is memoryless if its output at any given time $n$ depends *only* on the input at that exact same time $n$. Here, $y[n]$ requires $x[n-1]$ and $x[n-2]$, which are past values. 
-    **Conclusion: Not Memoryless (It is a dynamic system with memory).**
-*   **(ii) Causal:** A system is causal if its output depends only on present and past inputs, but not on future inputs (like $x[n+1]$). The equation utilizes $x[n]$ (present), $x[n-1]$ (past), and $x[n-2]$ (past). No future values are used.
-    **Conclusion: Causal.**
-*   **(iii) Linear:** A system is linear if it obeys superposition.
-    Let input $x_1[n]$ produce $y_1[n] = \frac{1}{3} (x_1[n] + x_1[n-1] + x_1[n-2])$
-    Let input $x_2[n]$ produce $y_2[n] = \frac{1}{3} (x_2[n] + x_2[n-1] + x_2[n-2])$
-    Apply a combined input $x_3[n] = a x_1[n] + b x_2[n]$:
-    $y_3[n] = \frac{1}{3} (x_3[n] + x_3[n-1] + x_3[n-2])$
-    $y_3[n] = \frac{1}{3} ( (a x_1[n] + b x_2[n]) + (a x_1[n-1] + b x_2[n-1]) + (a x_1[n-2] + b x_2[n-2]) )$
-    $y_3[n] = a [\frac{1}{3}(x_1[n] + x_1[n-1] + x_1[n-2])] + b [\frac{1}{3}(x_2[n] + x_2[n-1] + x_2[n-2])]$
-    $y_3[n] = a y_1[n] + b y_2[n]$
-    **Conclusion: Linear.**
-*   **(iv) Time-invariant:** A system is time-invariant if a delay in the input causes an identical delay in the output.
-    Response to a delayed input $x[n-k]$ is $y_d[n] = \frac{1}{3} (x[n-k] + x[n-k-1] + x[n-k-2])$.
-    Delaying the original output $y[n]$ by $k$ yields $y[n-k] = \frac{1}{3} (x[n-k] + x[n-1-k] + x[n-2-k])$.
-    Since $y_d[n] = y[n-k]$, the system's behavior does not shift over time.
-    **Conclusion: Time-invariant.**
-*   **(v) Stable:** A system is BIBO (Bounded-Input Bounded-Output) stable if every bounded input produces a bounded output.
-    Assume the input is bounded such that $|x[n]| \le M < \infty$ for all $n$.
-    $|y[n]| = |\frac{1}{3} (x[n] + x[n-1] + x[n-2])| \le \frac{1}{3} (|x[n]| + |x[n-1]| + |x[n-2]|)$
-    $|y[n]| \le \frac{1}{3} (M + M + M) = \frac{3M}{3} = M < \infty$.
-    The output is also bounded.
-    **Conclusion: Stable.**
-
----
-
-### **7. Pg 28, CT-1 Q2: Draw the following signal and comment whether...**
-
-**Solution:**
-
-**(i) $x_1(t) = e^{-at}u(-t)$ where $a$ is real.**
-*   **Sketch:** The function $u(-t)$ is a time-reversed unit step, meaning the signal exists only for $t \le 0$ (left-sided). 
-    *   If $a > 0$: As $t$ approaches $-\infty$, the term $-at$ becomes positive infinity, making $e^{-at} \to \infty$. The signal starts at $1$ at $t=0$ and grows exponentially to infinity as you move left. 
-    *   If $a < 0$: The signal decays to $0$ as $t \to -\infty$.
-    *(Standard academic convention usually assumes $a > 0$ when testing unboundedness, but let's evaluate both for thoroughness).*
-*   **Comment:**
-    *   **Case $a > 0$:** The energy $E = \int_{-\infty}^{0} |e^{-at}|^2 dt = \int_{-\infty}^{0} e^{-2at} dt = \infty$. The power $P$ is also $\infty$. Therefore, it is **Neither an energy nor a power signal**.
-    *   **Case $a < 0$ (let $a=-b$ where $b>0$):** $E = \int_{-\infty}^{0} e^{2bt} dt = \frac{1}{2b} [1 - 0] = \frac{1}{2b}$. Because energy is finite, it is an **Energy Signal**.
-
-**(ii) $x_2(t) = t u(t)$.**
-*   **Sketch:** This is the standard unit ramp function. The function is $0$ for $t < 0$, starts at $(0,0)$, and increases linearly with a slope of $1$ for $t \ge 0$.
-*   **Comment:** Let's test for Energy ($E$) and Power ($P$):
-    $E = \int_{0}^{\infty} t^2 dt = \left[ \frac{t^3}{3} \right]_0^\infty = \infty$ (Energy is infinite).
-    $P = \lim_{T \to \infty} \frac{1}{2T} \int_{0}^{T} t^2 dt = \lim_{T \to \infty} \frac{1}{2T} \left[ \frac{T^3}{3} \right] = \lim_{T \to \infty} \frac{T^2}{6} = \infty$ (Power is infinite).
-    Since both energy and power are infinite, it is **Neither an energy nor a power signal**.
-
----
-
-### **8. Pg 29, CT-1 Q3: Given the signal... Sketch the following signals derived from x(t)**
-
-**Figure Analysis of Base Signal $x(t)$:**
-The given signal $x(t)$ is:
-*   $1$ for $0 \le t \le 1$
-*   Ramps down from $1$ to $0$ linearly between $t = 1$ and $t = 2$.
-*   $0$ everywhere else.
-
-**Solution:**
-
-**(i) Sketch $x(2t + 1)$**
-*   **Transformations:** This involves a time shift (left by 1) followed by a time scaling (compression by 2).
-*   **Step-by-step:**
-    1.  Shift left by 1 ($x(t+1)$): The flat top moves to $[-1, 0]$ and the ramp moves to $[0, 1]$.
-    2.  Compress by 2 ($x(2t+1)$): The $t$-axis values are halved. 
-*   **Final Shape:** A signal that is flat at amplitude $1$ from $t = -0.5$ to $t = 0$, and ramps down to $0$ at $t = 0.5$.
-
-**(ii) Sketch $x(t+1)u(-t)$**
-*   **Transformations:** Shift left by 1, then multiply by a reversed unit step.
-*   **Step-by-step:**
-    1.  $x(t+1)$ shifts the entire signal left so it exists from $t=-1$ to $t=1$. The flat part is $[-1, 0]$ and the ramp is $[0, 1]$.
-    2.  $u(-t)$ acts as a "window" that only lets the signal through for $t \le 0$ (it is $0$ for $t > 0$).
-*   **Final Shape:** Only the flat part from the shifted signal survives. The result is a perfect rectangular pulse of amplitude $1$ from $t = -1$ to $t = 0$.
-
-**(iii) Sketch $x(-t+1)u(t)$**
-*   **Transformations:** Rewrite as $x(-(t-1))$. Time reversal, shift right by 1, then multiply by a unit step.
-*   **Step-by-step:**
-    1.  $x(-t)$ flips the signal across the y-axis. The flat part is now $[-1, 0]$ and the ramp (now rising) is $[-2, -1]$.
-    2.  $x(-(t-1))$ shifts the flipped signal right by 1. The flat part moves to $[0, 1]$ and the rising ramp moves to $[-1, 0]$.
-    3.  Multiply by $u(t)$, keeping only the $t \ge 0$ portion.
-*   **Final Shape:** Only the flat part survives. The result is a perfect rectangular pulse of amplitude $1$ from $t = 0$ to $t = 1$.
-
-**(iv) Sketch $x(t-1) + x(-t-1)$**
-*   **Transformations:** This is the addition of two distinct signals.
-*   **Step-by-step:**
-    1.  $x(t-1)$ is shifted right by 1. It is flat from $t=1$ to $t=2$, and ramps down to $0$ at $t=3$.
-    2.  $x(-t-1) = x(-(t+1))$ is reversed, then shifted left by 1. The original reversed signal $x(-t)$ lives in $[-2, 0]$. Shifting left by 1 moves it to $[-3, -1]$. It rises from $-3$ to $-2$, and is flat from $-2$ to $-1$.
-*   **Final Shape:** An even, symmetric signal with two separate components. 
-    *   Left side: Ramps up from $t=-3$ to $-2$, flat at amplitude $1$ from $t=-2$ to $-1$. 
-    *   Gap: The signal is $0$ from $t=-1$ to $t=1$.
-    *   Right side: Flat at amplitude $1$ from $t=1$ to $t=2$, ramps down to $0$ at $t=3$.
-
-**(v) Sketch $x(t)\delta(t-1)$**
-*   **Transformations:** Multiplication of a continuous signal by an impulse function.
-*   **Property:** $f(t)\delta(t-t_0) = f(t_0)\delta(t-t_0)$. The impulse "samples" the value of the function at the time the impulse occurs.
-*   **Step-by-step:**
-    Here $t_0 = 1$. So, $x(t)\delta(t-1) = x(1)\delta(t-1)$.
-    Looking at the original graph of $x(t)$, at exactly $t = 1$, the amplitude is $1$. 
-    So, $x(1) = 1$.
-*   **Final Shape:** The result is simply $1 \cdot \delta(t-1) = \delta(t-1)$. Sketch a single upward-pointing impulse arrow located at $t = 1$ on the axis, labeled with an area/weight of $1$.
-
-
-Here are the detailed solutions for questions 9 through 12 from the provided list.
-
----
-
-### **9. Pg 31, CT-1 Q1: Determine the energy and power of the following signals:**
-
-**General Definitions:**
-*   **Energy ($E$):** $E = \int_{-\infty}^{\infty} |x(t)|^2 dt$
-*   **Power ($P$):** $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} |x(t)|^2 dt$
-*   An *energy signal* has $0 < E < \infty$ and $P = 0$. A *power signal* has $0 < P < \infty$ and $E = \infty$.
-
-**(i) $x(t) = ke^{\beta t}$, where $k>0$, $\beta<0$**
-*   **Analysis:** This signal represents an exponential curve that decays as $t \to \infty$, but as $t \to -\infty$, $e^{\beta(-\infty)} = e^{\infty} \to \infty$. Since the signal grows to infinity on the left side of the time axis, its area squared (energy) will diverge to infinity.
-*   **Energy:** $E = \int_{-\infty}^{\infty} (ke^{\beta t})^2 dt = k^2 \int_{-\infty}^{\infty} e^{2\beta t} dt = k^2 \left[ \frac{e^{2\beta t}}{2\beta} \right]_{-\infty}^{\infty}$.
-    Because $\beta < 0$, $e^{2\beta(\infty)} = 0$, but $e^{2\beta(-\infty)} = \infty$.
-    $E = k^2 (0 - \infty) = \mathbf{\infty}$.
-*   **Power:** $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} k^2 e^{2\beta t} dt = \lim_{T \to \infty} \frac{k^2}{4\beta T} (e^{2\beta T} - e^{-2\beta T})$.
-    As $T \to \infty$, $e^{2\beta T} \to 0$ and $e^{-2\beta T} \to \infty$. Thus, $P = \mathbf{\infty}$.
-*   **Conclusion:** It is **neither** an energy nor a power signal.
-
-**(ii) $x(t) = ke^{\beta t}$, where $k>0$, $\beta=-2j$**
-*   **Analysis:** $x(t) = ke^{-j2t}$. This is a complex exponential signal. The magnitude of a complex exponential $e^{j\theta}$ is always 1. So, $|x(t)| = |k| |e^{-j2t}| = k \cdot 1 = k$. This is a signal with a constant magnitude over all time.
-*   **Energy:** $E = \int_{-\infty}^{\infty} |k|^2 dt = \int_{-\infty}^{\infty} k^2 dt = \mathbf{\infty}$.
-*   **Power:** $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} k^2 dt = \lim_{T \to \infty} \frac{1}{2T} [k^2 t]_{-T}^{T} = \lim_{T \to \infty} \frac{1}{2T} (k^2(2T)) = \mathbf{k^2}$.
-*   **Conclusion:** It is a **power signal** with $P = k^2$ Watts.
-
-**(iii) $x(t) = \cos(10\pi t)u(-t)$**
-*   **Analysis:** This is a cosine wave that exists only for $t \le 0$ (left-sided) because of the time-reversed unit step $u(-t)$.
-*   **Energy:** $E = \int_{-\infty}^{0} \cos^2(10\pi t) dt = \int_{-\infty}^{0} \frac{1 + \cos(20\pi t)}{2} dt = \infty$ (because integrating the constant $1/2$ over an infinite interval yields infinity).
-*   **Power:** $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{0} \cos^2(10\pi t) dt$
-    $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{0} \frac{1 + \cos(20\pi t)}{2} dt$
-    $P = \lim_{T \to \infty} \frac{1}{4T} \left[ t + \frac{\sin(20\pi t)}{20\pi} \right]_{-T}^{0}$
-    $P = \lim_{T \to \infty} \frac{1}{4T} \left[ 0 - \left(-T + \frac{\sin(-20\pi T)}{20\pi}\right) \right] = \lim_{T \to \infty} \frac{T}{4T} = \mathbf{\frac{1}{4}}$.
-*   **Conclusion:** It is a **power signal** with $P = 0.25$ Watts. *(Note: A full eternal cosine has power $1/2$. Since this exists for exactly half of eternity, its power is half of that, i.e., $1/4$).*
-
----
-
-### **10. Pg 31, CT-1 Q2: Sketch the following signal and transformations.**
-
-**Base Signal $x(t)$ Analysis:**
-*   $x(t) = e^{2t}$ for $-4 \le t \le -2$ (A tiny exponential tail rising from left to right)
-*   $x(t) = 2$ for $-2 \le t \le 2$ (A flat rectangular center)
-*   $x(t) = e^{-2t}$ for $2 \le t \le 4$ (A tiny exponential tail decaying from left to right)
-*   $x(t) = 0$ otherwise.
-*(Note: $e^{-4}$ is approximately $0.018$, so these tails are extremely small and drop steeply to the axis. The signal is symmetric around the y-axis, meaning it is an **even function**: $x(-t) = x(t)$).*
-
-**Transformations $y(t) = x(\alpha t + \beta)$:**
-When applying transformations, we follow the order: $x(\alpha t + \beta) = x(\alpha(t + \frac{\beta}{\alpha}))$. First scale by $\alpha$, then shift by $-\frac{\beta}{\alpha}$. We map the original boundaries $[-4, -2, 2, 4]$ to new $t$ values by setting $\alpha t + \beta$ equal to the old boundaries.
-
-**(i) $\alpha=-2, \beta=0 \implies y_1(t) = x(-2t)$**
-*   Because $x(t)$ is even, $x(-2t) = x(2t)$. This is purely a time compression by a factor of 2.
-*   Divide all original $t$-boundaries by 2.
-*   New boundaries: $[-2, -1, 1, 2]$.
-*   **Sketch Description:** The flat top is compressed to span from $t = -1$ to $t = 1$ (amplitude remains 2). The left exponential tail spans from $t = -2$ to $t = -1$. The right exponential tail spans from $t = 1$ to $t = 2$.
-
-**(ii) $\alpha=2, \beta=-4 \implies y_2(t) = x(2t - 4)$**
-*   Set $2t - 4$ equal to original boundaries:
-    $2t - 4 = -4 \implies t = 0$
-    $2t - 4 = -2 \implies t = 1$
-    $2t - 4 = 2 \implies t = 3$
-    $2t - 4 = 4 \implies t = 4$
-*   **Sketch Description:** The entire signal is compressed by 2 and shifted to the right. The left tail is from $t = 0$ to $t = 1$. The flat top (amplitude 2) is from $t = 1$ to $t = 3$. The right tail is from $t = 3$ to $t = 4$.
-
-**(iii) $\alpha=-1, \beta=4 \implies y_3(t) = x(-t + 4)$**
-*   Set $-t + 4$ equal to original boundaries:
-    $-t + 4 = -4 \implies t = 8$
-    $-t + 4 = -2 \implies t = 6$
-    $-t + 4 = 2 \implies t = 2$
-    $-t + 4 = 4 \implies t = 0$
-*   **Sketch Description:** The signal is time-reversed (which looks identical to the original due to symmetry) and shifted right by 4. The left tail is from $t = 0$ to $t = 2$. The flat top (amplitude 2) is from $t = 2$ to $t = 6$. The right tail is from $t = 6$ to $t = 8$.
-
----
-
-### **11. Pg 32, CT-1 Q1: Determine whether the following signals are energy signal, power signal or neither.**
-
-**(i) $x(t) = e^{\sigma t}u(-t), \sigma > 0$**
-*   This signal exists only for $t \le 0$. As $t$ goes to $-\infty$, the exponent $\sigma t$ goes to $-\infty$ (since $\sigma > 0$), making the signal decay to $0$. It is a bounded, time-limited-like decaying exponential.
-*   **Energy:** $E = \int_{-\infty}^{0} |e^{\sigma t}|^2 dt = \int_{-\infty}^{0} e^{2\sigma t} dt = \left[ \frac{e^{2\sigma t}}{2\sigma} \right]_{-\infty}^{0} = \frac{1}{2\sigma} - 0 = \mathbf{\frac{1}{2\sigma} \text{ Joules}}$.
-*   **Power:** Since energy is finite, power is naturally $0$.
-*   **Conclusion:** It is an **Energy Signal**.
-
-**(ii) $x(t) = e^{\sigma t}u(-t), \sigma < 0$**
-*   This signal also exists only for $t \le 0$. However, as $t \to -\infty$, a negative times a negative creates a positive exponent, so $e^{\sigma t} \to e^{\infty} \to \infty$.
-*   **Energy:** $E = \int_{-\infty}^{0} e^{2\sigma t} dt$. Because $2\sigma$ is negative, evaluating this at the lower limit $-\infty$ yields infinity. $E = \mathbf{\infty}$.
-*   **Power:** $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{0} e^{2\sigma t} dt$. The integral evaluates to infinity, and dividing by $T$ still yields infinity. $P = \mathbf{\infty}$.
-*   **Conclusion:** It is **Neither an energy nor a power signal**.
-
-**(iii) $x(t) = t[u(t+4) - u(t-4)]$**
-*   This is the function $f(t) = t$ restricted to a specific window. The term $[u(t+4) - u(t-4)]$ is a rectangular gate that is $1$ between $t = -4$ and $t = 4$, and $0$ elsewhere.
-*   Thus, $x(t) = t$ for $-4 \le t \le 4$, and $0$ otherwise.
-*   Since it is a finite-amplitude signal existing over a strictly finite duration, it must have finite energy.
-*   **Energy:** $E = \int_{-4}^{4} t^2 dt = \left[ \frac{t^3}{3} \right]_{-4}^{4} = \frac{4^3}{3} - \frac{(-4)^3}{3} = \frac{64}{3} - (-\frac{64}{3}) = \mathbf{\frac{128}{3} \text{ Joules}}$.
-*   **Power:** Since energy is finite, power is naturally $P = \mathbf{0 \text{ Watts}}$.
-*   **Conclusion:** It is an **Energy Signal**.
-
----
-
-### **12. Pg 32, CT-1 Q2: For the following signal $x(t)$, sketch the transformations.**
-
-**Base Signal $x(t)$ Analysis:**
-*   $x(t) = t$ for $0 \le t \le 2$ (A linear ramp starting from $(0,0)$ up to coordinate $(2,2)$).
-*   $x(t) = 2$ for $2 \le t \le 4$ (A flat constant line from $t=2$ to $t=4$ at an amplitude of $2$).
-*   $x(t) = 0$ otherwise. (Drops abruptly to $0$ at $t=4$).
-
-**(i) Sketch $x(t/2)$**
-*   **Transformation:** Time expansion by a factor of 2. All $t$-coordinates of key features are multiplied by 2.
-*   **New Coordinates:** 
-    *   Start of ramp: $(0 \times 2, 0) \to (0, 0)$
-    *   End of ramp / Start of flat: $(2 \times 2, 2) \to (4, 2)$
-    *   End of flat / Drop to zero: $(4 \times 2, 2) \to (8, 2)$
-*   **Sketch Description:** A ramp starting at $t=0$ rising to an amplitude of $2$ at $t=4$. Then a flat constant line at amplitude $2$ extending from $t=4$ to $t=8$, dropping to zero at $t=8$.
-
-**(ii) Sketch $x(t+4)$**
-*   **Transformation:** Time advance (shift to the left) by 4 units. All $t$-coordinates subtract 4.
-*   **New Coordinates:**
-    *   Start of ramp: $(0 - 4, 0) \to (-4, 0)$
-    *   End of ramp: $(2 - 4, 2) \to (-2, 2)$
-    *   End of flat: $(4 - 4, 2) \to (0, 2)$
-*   **Sketch Description:** The whole signal moves into the negative time axis. A ramp starts at $t=-4$ rising to amplitude $2$ at $t=-2$. A flat line continues from $t=-2$ to $t=0$, dropping to zero at $t=0$.
-
-**(iii) Sketch $x(4-t)$**
-*   **Transformation:** Rewrite as $x(-(t-4))$. This is a time reversal (flip across y-axis) followed by a shift to the right by 4 units.
-*   *Alternatively, map boundaries:* Set $4-t$ equal to original boundaries $[0, 2, 4]$.
-    $4-t = 0 \implies t=4$ (Signal ends here)
-    $4-t = 2 \implies t=2$
-    $4-t = 4 \implies t=0$ (Signal starts here)
-*   **Sketch Description:** A flat top starts at $t=0$ and goes to $t=2$ at an amplitude of $2$. At $t=2$, it begins a linear ramp downward, hitting zero exactly at $t=4$. (It looks like a mirrored version of the original signal, stationed perfectly adjacent to the y-axis).
-
-**(iv) Sketch $x(2t+6)$**
-*   **Transformation:** Rewrite as $x(2(t+3))$. This is a time compression by a factor of 2, followed by a shift to the left by 3 units.
-*   *Map boundaries:* Set $2t+6$ equal to original boundaries $[0, 2, 4]$.
-    $2t+6 = 0 \implies 2t = -6 \implies t = -3$
-    $2t+6 = 2 \implies 2t = -4 \implies t = -2$
-    $2t+6 = 4 \implies 2t = -2 \implies t = -1$
-*   **Sketch Description:** The entire signal is compressed and sits entirely on the negative axis. It starts with a ramp from $(-3, 0)$ up to $(-2, 2)$. It is followed by a flat top at amplitude $2$ from $t = -2$ to $t = -1$, dropping to zero at $t = -1$.
-
-
-Here are the detailed solutions for questions 13 through 16 from the provided list.
-
----
-
-### **13. Pg 33, CT-2 Q1: The input-output relationship of a system is shown in the following figure. Provide a mathematical justification whether the system is (i) Linear and (ii) Invertible. [Figure involved]**
-
-**Figure Description:** The figure displays an input-output characteristic curve for a system. The x-axis represents the input $x(t)$, and the y-axis represents the output $y(t)$.
-*   For $x(t) \le 0$, the output is $y(t) = 0$.
-*   For $0 < x(t) < 2$, the output rises linearly from $0$ to $2$. The slope is $\frac{2-0}{2-0} = 1$. Thus, $y(t) = x(t)$.
-*   For $x(t) \ge 2$, the output is constant at $y(t) = 2$.
-This describes a **saturation** or **limiter** system (specifically, a half-wave rectifier with saturation).
-
-**Solution:**
-
-**(i) Linearity Justification:**
-A system is linear if it satisfies the principle of superposition (both additivity and homogeneity).
-Let's check homogeneity (scaling): $T\{a \cdot x(t)\} = a \cdot T\{x(t)\}$ for any scalar $a$.
-*   Let an input be $x_1(t) = 1$. According to the graph, the corresponding output is $y_1(t) = 1$.
-*   Now, scale the input by a constant $a = 3$, so the new input is $x_2(t) = 3 \cdot x_1(t) = 3$.
-*   According to the graph, if the input is $x_2(t) = 3$, the output is capped at $y_2(t) = 2$.
-*   However, if the system were linear, the output should be $3 \cdot y_1(t) = 3 \cdot 1 = 3$.
-Since $y_2(t) \neq 3 \cdot y_1(t)$ (i.e., $2 \neq 3$), homogeneity fails.
-**Conclusion:** The system is **Non-linear**.
-
-**(ii) Invertibility Justification:**
-A system is invertible if distinct inputs lead to distinct outputs (a one-to-one mapping). If a system is invertible, observing the output uniquely determines what the input was.
-*   Let's pick an output value, say $y(t) = 2$.
-*   Looking at the graph, if the output is $2$, what was the input? The input could have been $x(t) = 2$, or $x(t) = 3$, or $x(t) = 100$. Any input $x(t) \ge 2$ maps to the identical output $y(t) = 2$.
-*   Similarly, for an output $y(t) = 0$, the input could be any $x(t) \le 0$.
-Because multiple different inputs can produce the exact same output, the mapping is many-to-one, not one-to-one. We cannot uniquely reverse the operation to find the original input from the output.
-**Conclusion:** The system is **Non-invertible**.
-
-*Reference: Lathi Chapter 1 / Class Notes Pg 29-30 (System Classification).*
-
----
-
-### **14. Pg 34, CT-2 Q1: The input-output relationship of two systems are shown the following figure. Provide a mathematical justification whether the system shown in figure (i) linear, and (ii) invertible. For both systems the slope is unity. [Figure involved]**
-
-**Figure Description:** 
-Two input-output characteristic graphs are shown. Both have $x(t)$ on the horizontal axis and $y(t)$ on the vertical axis.
-*   **System (i):** A straight line that does not pass through the origin. It crosses the y-axis at $y=4$ and has a slope of unity ($1$).
-    Equation: **$y(t) = x(t) + 4$**
-*   **System (ii):** A straight line that passes exactly through the origin $(0,0)$ and has a slope of unity ($1$).
-    Equation: **$y(t) = x(t)$** (This is an identity system).
-
-**Solution for System (i): $y(t) = x(t) + 4$**
-
-**(i) Linearity Justification:**
-We test for additivity.
-*   Let input $x_1(t)$ produce output $y_1(t) = x_1(t) + 4$.
-*   Let input $x_2(t)$ produce output $y_2(t) = x_2(t) + 4$.
-*   Now apply an input that is the sum: $x_3(t) = x_1(t) + x_2(t)$.
-*   The actual system response to this combined input is:
-    $y_3(t) = x_3(t) + 4 = [x_1(t) + x_2(t)] + 4$
-*   However, if the system were linear, the response should be the sum of individual responses:
-    $y_{linear\_sum}(t) = y_1(t) + y_2(t) = (x_1(t) + 4) + (x_2(t) + 4) = x_1(t) + x_2(t) + 8$
-Comparing the two: $[x_1(t) + x_2(t)] + 4 \neq x_1(t) + x_2(t) + 8$.
-Since superposition fails, the system is **Non-linear**. 
-*(A key rule of thumb: An input-output plot must be a straight line passing through the origin to be linear).*
-
-**(ii) Invertibility Justification:**
-We check if there is a unique one-to-one mapping between $x(t)$ and $y(t)$.
-*   The equation is $y(t) = x(t) + 4$.
-*   For any given output value $y(t)$, we can uniquely determine the input by rearranging the equation: $x(t) = y(t) - 4$.
-*   Because every unique input maps to a unique output, and vice-versa, the mapping is strictly one-to-one.
-**Conclusion:** The system is **Invertible**.
-
-*(Note: The prompt specifically asks about figure (i), but for completeness, System (ii) where $y(t)=x(t)$ is both linear (passes through origin) and invertible (one-to-one).*
-
-*Reference: Lathi Chapter 1 / Class Notes Pg 29-30 (System Classification).*
-
----
-
-### **15. Pg 35, CT-3 Q1: Find the Laplace transform of (i) $e^{3t} u(-t)$ and (ii) $e^{-3t} u(t) + e^{3t} u(-t)$. Also sketch ROC of them.**
-
-**General Definition:** The bilateral Laplace transform is defined as $X(s) = \int_{-\infty}^{\infty} x(t) e^{-st} dt$.
-
-**Solution:**
-
-**(i) Find Laplace transform of $x_1(t) = e^{3t} u(-t)$**
-*   The term $u(-t)$ restricts the signal to negative time ($-\infty < t \le 0$). This makes it a left-sided signal.
-*   Apply the definition:
-    $X_1(s) = \int_{-\infty}^{\infty} e^{3t} u(-t) e^{-st} dt = \int_{-\infty}^{0} e^{3t} e^{-st} dt = \int_{-\infty}^{0} e^{(3-s)t} dt$
-*   Evaluate the integral:
-    $X_1(s) = \left[ \frac{e^{(3-s)t}}{3-s} \right]_{-\infty}^{0} = \frac{1}{3-s} \left[ e^0 - \lim_{t \to -\infty} e^{(3-s)t} \right]$
-    $X_1(s) = \frac{1}{3-s} \left[ 1 - \lim_{t \to -\infty} e^{(3-s)t} \right]$
-*   **Determine ROC (Region of Convergence):** For the integral to converge (not blow up to infinity), the term $e^{(3-s)t}$ must decay to zero as $t \to -\infty$. 
-    Let $s = \sigma + j\omega$. The exponent is $(3 - (\sigma + j\omega))t = (3 - \sigma)t - j\omega t$.
-    The magnitude is determined by the real part: $e^{(3-\sigma)t}$. 
-    As $t \to -\infty$, for $e^{(3-\sigma)t}$ to approach $0$, the coefficient $(3-\sigma)$ must be positive.
-    $3 - \sigma > 0 \implies \sigma < 3$.
-    Therefore, the integral converges if $Re\{s\} < 3$.
-*   Under this condition, the limit evaluates to $0$:
-    $X_1(s) = \frac{1}{3-s} = \mathbf{\frac{-1}{s-3}}$, with **ROC: $Re\{s\} < 3$**.
-
-**(ii) Find Laplace transform of $x_2(t) = e^{-3t} u(t) + e^{3t} u(-t)$**
-*   This signal is the sum of a right-sided signal $x_{2R}(t) = e^{-3t} u(t)$ and the left-sided signal from part (i), $x_{2L}(t) = e^{3t} u(-t)$.
-*   We can use linearity and find the transform of each part separately.
-*   **Part 1 (Right-sided):**
-    $\mathcal{L}\{e^{-3t} u(t)\} = \int_{0}^{\infty} e^{-3t} e^{-st} dt = \int_{0}^{\infty} e^{-(s+3)t} dt = \left[ \frac{e^{-(s+3)t}}{-(s+3)} \right]_{0}^{\infty}$
-    For convergence as $t \to \infty$, the real part of $(s+3)$ must be positive: $Re\{s+3\} > 0 \implies \sigma > -3$.
-    Evaluating the integral: $\frac{0 - 1}{-(s+3)} = \frac{1}{s+3}$ with ROC: $Re\{s\} > -3$.
-*   **Part 2 (Left-sided):** From (i), $\mathcal{L}\{e^{3t} u(-t)\} = \frac{-1}{s-3}$ with ROC: $Re\{s\} < 3$.
-*   **Combine:**
-    $X_2(s) = \frac{1}{s+3} - \frac{1}{s-3} = \frac{(s-3) - (s+3)}{(s+3)(s-3)} = \mathbf{\frac{-6}{s^2 - 9}}$
-*   **Determine total ROC:** The overall ROC is the intersection of the ROCs of the individual components.
-    ROC $= \{Re\{s\} > -3\} \cap \{Re\{s\} < 3\} = \mathbf{-3 < Re\{s\} < 3}$. This forms a vertical strip in the s-plane.
-
-**Sketching the ROCs:**
-*   **For (i):** Draw the complex s-plane with axes $\sigma$ (real) and $j\omega$ (imaginary). Draw a dashed vertical line at $\sigma = 3$. Shade the entire region to the **left** of this line. Label the pole at $s = 3$ with an 'x'.
-*   **For (ii):** Draw the s-plane. Draw dashed vertical lines at $\sigma = -3$ and $\sigma = 3$. Shade the vertical strip **between** these two lines. Label poles at $s = -3$ and $s = 3$ with 'x' marks.
-
-*Reference: Class Notes Pg 58-61 (Laplace Transform and ROC).*
-
----
-
-### **16. Pg 36, CT-3 Q1: Using the differentiation property, find the Laplace transform of the following function. [Figure involved]**
-
-**Figure Description:**
-The figure shows a rectangular pulse $f(t)$ centered at the origin.
-*   Amplitude is $A$.
-*   It spans from $t = -T/2$ to $t = T/2$.
-Mathematically, this can be written using unit step functions:
-$f(t) = A [u(t + T/2) - u(t - T/2)]$
-
-**Solution:**
-
-The differentiation property of the Laplace Transform states:
-$\mathcal{L}\left\{\frac{df(t)}{dt}\right\} = s F(s) - f(0^-)$
-Assuming initial conditions are zero (or dealing with a signal that is defined over all time where we use the bilateral transform and the boundary term vanishes), the property simplifies to $\mathcal{L}\{f'(t)\} = s F(s)$.
-Therefore, we can find $F(s)$ by taking the derivative of $f(t)$, finding its transform, and then dividing by $s$.
-$F(s) = \frac{1}{s} \mathcal{L}\{f'(t)\}$
-
-**Step 1: Differentiate the signal $f(t)$**
-The function $f(t) = A [u(t + T/2) - u(t - T/2)]$ consists of flat sections and abrupt jumps. The derivative of a constant is 0, and the derivative of a unit step jump is an impulse function $\delta(t)$ weighted by the size of the jump.
-*   At $t = -T/2$, the signal jumps from $0$ to $A$. This produces a positive impulse: $A \delta(t + T/2)$.
-*   At $t = T/2$, the signal jumps from $A$ down to $0$. This produces a negative impulse: $-A \delta(t - T/2)$.
-So, the derivative is:
-$f'(t) = A \delta(t + T/2) - A \delta(t - T/2)$
-
-**Step 2: Find the Laplace transform of the derivative**
-The Laplace transform of a shifted impulse is $\mathcal{L}\{\delta(t - t_0)\} = e^{-st_0}$.
-Applying this to our derivative equation:
-$\mathcal{L}\{f'(t)\} = \mathcal{L}\{A \delta(t + T/2) - A \delta(t - T/2)\}$
-$\mathcal{L}\{f'(t)\} = A e^{s(T/2)} - A e^{-s(T/2)}$
-$\mathcal{L}\{f'(t)\} = A \left( e^{sT/2} - e^{-sT/2} \right)$
-
-**Step 3: Apply the differentiation property to solve for $F(s)$**
-We know $s F(s) = \mathcal{L}\{f'(t)\}$.
-$s F(s) = A \left( e^{sT/2} - e^{-sT/2} \right)$
-$F(s) = \frac{A}{s} \left( e^{sT/2} - e^{-sT/2} \right)$
-
-*(Optional: While this form is correct, it can be mathematically manipulated to look like a hyperbolic sine function. Recall $\sinh(x) = \frac{e^x - e^{-x}}{2}$, so $e^x - e^{-x} = 2\sinh(x)$. Let $x = sT/2$. Then $F(s) = \frac{2A}{s} \sinh(\frac{sT}{2})$.)*
-
-The final expression is:
-$\mathbf{F(s) = \frac{A}{s} \left( e^{sT/2} - e^{-sT/2} \right)}$
-
-*Reference: Sadiku Chapter 15, Section 15.3 (Properties of the Laplace Transform) / Class Notes Pg 103, 104.*
-
-Here are the detailed solutions for questions 17 through 20 from the provided list.
-
----
-
-### **17. Pg 39, CT-1 Q1: Consider a discrete-time system...**
-**System Equation:** $y[n] = \frac{1}{3} (x[n+1] + x[n] + x[n-1])$
-*(Note: This is a slightly different moving-average system compared to question 6, as it includes a future term $x[n+1]$.)*
-
-**Solution:**
-
-*   **(i) Memoryless:** A system is memoryless if the output at index $n$ depends *only* on the input at the exact same index $n$. Here, calculating $y[n]$ requires $x[n+1]$ (future) and $x[n-1]$ (past). Since it relies on values other than the present input $x[n]$, it requires memory to store or anticipate those values.
-    **Conclusion: Not Memoryless (It is a dynamic system).**
-
-*   **(ii) Causal:** A system is causal if its output at any time depends only on present and/or past inputs, never on future inputs. In this equation, to compute $y[n]$ at the current time $n$, we need the value of $x[n+1]$. For example, to find $y[0]$, we must know $x[1]$, which has not happened yet in real time. Because it relies on a future input, the system is non-causal.
-    **Conclusion: Non-causal.**
-
-*   **(iii) Linear:** A system is linear if it obeys the principle of superposition (additivity and homogeneity).
-    Let input $x_1[n]$ produce $y_1[n] = \frac{1}{3} (x_1[n+1] + x_1[n] + x_1[n-1])$
-    Let input $x_2[n]$ produce $y_2[n] = \frac{1}{3} (x_2[n+1] + x_2[n] + x_2[n-1])$
-    Apply a combined, weighted input: $x_3[n] = a \cdot x_1[n] + b \cdot x_2[n]$.
-    The system's response to this combined input is:
-    $y_3[n] = \frac{1}{3} (x_3[n+1] + x_3[n] + x_3[n-1])$
-    Substitute the definition of $x_3$:
-    $y_3[n] = \frac{1}{3} \big( (a \cdot x_1[n+1] + b \cdot x_2[n+1]) + (a \cdot x_1[n] + b \cdot x_2[n]) + (a \cdot x_1[n-1] + b \cdot x_2[n-1]) \big)$
-    Group terms associated with '$a$' and '$b$':
-    $y_3[n] = a \left[ \frac{1}{3} (x_1[n+1] + x_1[n] + x_1[n-1]) \right] + b \left[ \frac{1}{3} (x_2[n+1] + x_2[n] + x_2[n-1]) \right]$
-    $y_3[n] = a \cdot y_1[n] + b \cdot y_2[n]$
-    Because the response to a linear combination of inputs is the linear combination of the individual responses, the system satisfies superposition.
-    **Conclusion: Linear.**
-
-*   **(iv) Time-invariant:** A system is time-invariant if a delay in the input signal causes an identical delay in the output signal, without changing the shape of the output.
-    Let's apply a delayed input signal $x_d[n] = x[n-k]$. The response to this delayed input is:
-    $y_d[n] = \frac{1}{3} (x_d[n+1] + x_d[n] + x_d[n-1]) = \frac{1}{3} (x[(n+1)-k] + x[n-k] + x[(n-1)-k])$
-    $y_d[n] = \frac{1}{3} (x[n-k+1] + x[n-k] + x[n-k-1])$
-    Now, let's delay the original output signal $y[n]$ by $k$:
-    $y[n-k] = \frac{1}{3} (x[(n-k)+1] + x[n-k] + x[(n-k)-1])$
-    $y[n-k] = \frac{1}{3} (x[n-k+1] + x[n-k] + x[n-k-1])$
-    Comparing the two expressions, $y_d[n] = y[n-k]$. The system's behavior does not depend on the specific time it is operated.
-    **Conclusion: Time-invariant.**
-
-*   **(v) Stable:** A system is Bounded-Input Bounded-Output (BIBO) stable if every bounded input sequence produces a bounded output sequence.
-    Assume the input $x[n]$ is bounded, meaning there exists a finite positive number $M_x$ such that $|x[n]| \le M_x < \infty$ for all $n$.
-    We must show the output $y[n]$ is also bounded by some finite number $M_y$.
-    $|y[n]| = \left| \frac{1}{3} (x[n+1] + x[n] + x[n-1]) \right|$
-    Using the triangle inequality ($|A+B| \le |A| + |B|$):
-    $|y[n]| \le \frac{1}{3} (|x[n+1]| + |x[n]| + |x[n-1]|)$
-    Since each individual input sample is bounded by $M_x$:
-    $|y[n]| \le \frac{1}{3} (M_x + M_x + M_x) = \frac{1}{3} (3M_x) = M_x$
-    Therefore, $|y[n]| \le M_x < \infty$. The output is bounded.
-    **Conclusion: Stable.**
-
-*Reference: Class Notes Pg 24-31 (Classification of Systems).*
-
----
-
-### **18. Pg 39, CT-1 Q2: Draw the following signal and comment whether the signal is energy, power or neither energy nor power signal. (i) $e^{-at} u(-t)$ and $a$ is real.**
-
-**Analysis of the Signal:**
-The signal is $x(t) = e^{-at} u(-t)$.
-The term $u(-t)$ is a time-reversed unit step function. It acts as a "window" that is $1$ for all time $t < 0$ and $0$ for all time $t > 0$. This means our signal $x(t)$ only exists on the left side of the y-axis (negative time).
-The behavior of the signal depends crucially on the sign of the real parameter $a$.
-
-**Case 1: Assume $a > 0$ (Positive real number)**
-*   **Sketch:** For $t < 0$, the exponent $-at$ becomes $(-)(\text{positive})(- \text{time}) = \text{positive}$. As $t \to -\infty$, the term $-at \to +\infty$. Therefore, the signal $e^{-at}$ grows exponentially towards infinity as you move left along the negative time axis. It reaches $1$ at $t=0$ and then drops to $0$ for $t>0$.
-    *(Sketch description: An exponential curve rising rapidly from right to left in the 2nd quadrant, ending at $(0,1)$).*
-*   **Energy Calculation:** $E = \int_{-\infty}^{\infty} |x(t)|^2 dt = \int_{-\infty}^{0} (e^{-at})^2 dt = \int_{-\infty}^{0} e^{-2at} dt$
-    $E = \left[ \frac{e^{-2at}}{-2a} \right]_{-\infty}^{0} = \frac{e^0}{-2a} - \frac{e^{-2a(-\infty)}}{-2a} = \frac{1}{-2a} - \frac{e^{\infty}}{-2a} = \frac{-1}{2a} + \infty = \mathbf{\infty}$
-*   **Power Calculation:** Since energy is infinite, we check power. 
-    $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{0} e^{-2at} dt = \lim_{T \to \infty} \frac{1}{2T} \left[ \frac{e^{-2at}}{-2a} \right]_{-T}^{0} = \lim_{T \to \infty} \frac{1}{2T} \left( \frac{1}{-2a} - \frac{e^{2aT}}{-2a} \right)$
-    As $T \to \infty$, the term $e^{2aT} \to \infty$. Dividing infinity by infinity requires L'Hopital's rule, showing the exponential grows much faster than $T$. Thus, $P = \mathbf{\infty}$.
-*   **Conclusion for $a > 0$:** The signal diverges. It is **Neither an energy nor a power signal**.
-
-**Case 2: Assume $a < 0$ (Negative real number)**
-Let $a = -b$, where $b > 0$. Then the signal is $x(t) = e^{bt} u(-t)$.
-*   **Sketch:** For $t < 0$, the exponent $bt$ is $(+)(-) = \text{negative}$. As $t \to -\infty$, $bt \to -\infty$, so $e^{bt} \to 0$. The signal decays to $0$ as you move left. It rises to $1$ at $t=0$ and drops to $0$ for $t>0$.
-    *(Sketch description: A bounded exponential curve starting near 0 on the far left, rising to $(0,1)$ in the 2nd quadrant).*
-*   **Energy Calculation:** $E = \int_{-\infty}^{0} (e^{bt})^2 dt = \int_{-\infty}^{0} e^{2bt} dt = \left[ \frac{e^{2bt}}{2b} \right]_{-\infty}^{0}$
-    $E = \frac{e^0}{2b} - \frac{e^{-\infty}}{2b} = \frac{1}{2b} - 0 = \mathbf{\frac{1}{2b}}$
-*   Since $b$ is a finite positive number, the energy $E$ is a finite positive value.
-*   **Conclusion for $a < 0$:** Because it has finite energy, it is an **Energy Signal**.
-
-*(Note: Unless specified, problems often assume standard stable forms, but the full analysis covers both possibilities. If $a=0$, it's a step function which is a power signal. Given standard problem sets, demonstrating the case where it converges (is an energy signal) or diverges is expected).*
-
-*Reference: Class Notes Pg 5-6, 9-10 (Energy & Power Signal).*
-
----
-
-### **19. Pg 39, CT-1 Q3: Given the signal $x(t)$ in the following figure. Sketch the following signals derived from $x(t)$.**
-
-**Base Signal $x(t)$ Analysis:**
-The image shows a pulse waveform $x(t)$:
-*   $x(t) = 0$ for $t < -1$
-*   $x(t) = 1$ for $-1 \le t \le 0$
-*   $x(t) = 2$ for $0 < t \le 1$
-*   $x(t) = 0$ for $t > 1$
-It is a staircase-like pulse composed of two rectangular segments.
-
-**Solution:**
-
-**(i) Sketch $x(2t - 1)$**
-*   **Transformations:** Rewrite as $x(2(t - 0.5))$. This involves a time compression by a factor of 2, followed by a time shift to the right by 0.5 units.
-*   **Step-by-step using boundary mapping:** Set the argument $2t - 1$ equal to the key transition points of the original signal $t = \{-1, 0, 1\}$.
-    *   Transition 1 (starts rising): $2t - 1 = -1 \implies 2t = 0 \implies t = 0$. (Amplitude goes from 0 to 1).
-    *   Transition 2 (steps up): $2t - 1 = 0 \implies 2t = 1 \implies t = 0.5$. (Amplitude steps from 1 to 2).
-    *   Transition 3 (drops to zero): $2t - 1 = 1 \implies 2t = 2 \implies t = 1$. (Amplitude drops from 2 to 0).
-*   **Final Sketch:** 
-    *   From $t = 0$ to $t = 0.5$, draw a horizontal line at amplitude 1.
-    *   From $t = 0.5$ to $t = 1$, draw a horizontal line at amplitude 2.
-    *   Signal is 0 outside this interval $[0, 1]$.
-
-**(ii) Sketch $x(t+1)u(-t)$**
-*   **Transformations:** Time shift left by 1, then multiply by a reversed unit step.
-*   **Step-by-step:**
-    1.  $x(t+1)$: Shift the entire original signal to the left by 1 unit.
-        *   The segment $[-1, 0]$ with amplitude 1 moves to $[-2, -1]$.
-        *   The segment $[0, 1]$ with amplitude 2 moves to $[-1, 0]$.
-    2.  $u(-t)$: This is a window that is 1 for $t < 0$ and 0 for $t > 0$.
-    3.  Multiplication: Multiply the shifted signal by this window. The entire shifted signal lies in the region $t \le 0$, so the window $u(-t)$ preserves the entire shifted signal.
-*   **Final Sketch:** 
-    *   From $t = -2$ to $t = -1$, amplitude is 1.
-    *   From $t = -1$ to $t = 0$, amplitude is 2.
-    *   Signal drops to 0 at $t = 0$ and remains 0 for $t > 0$.
-
-**(iii) Sketch $x(-t+1)u(t)$**
-*   **Transformations:** Rewrite as $x(-(t-1))$. Time reversal, shift right by 1, then multiply by a unit step.
-*   **Step-by-step:**
-    1.  $x(-t)$: Time-reverse (mirror) the original signal across the y-axis.
-        *   The original segment $[0, 1]$ with amp 2 flips to $[-1, 0]$.
-        *   The original segment $[-1, 0]$ with amp 1 flips to $[0, 1]$.
-    2.  $x(-(t-1))$: Shift this mirrored signal to the right by 1 unit.
-        *   The segment $[-1, 0]$ (amp 2) moves to $[0, 1]$.
-        *   The segment $[0, 1]$ (amp 1) moves to $[1, 2]$.
-    3.  $u(t)$: This window is 1 for $t > 0$ and 0 for $t < 0$.
-    4.  Multiplication: The entire shifted-and-mirrored signal lies in $t \ge 0$, so the window $u(t)$ preserves all of it.
-*   **Final Sketch:**
-    *   From $t = 0$ to $t = 1$, amplitude is 2.
-    *   From $t = 1$ to $t = 2$, amplitude is 1.
-    *   Signal is 0 outside this interval.
-
-**(iv) Sketch $x(t)[u(t-1) - u(t-2)]$**
-*   **Transformations:** Multiply the original signal by a rectangular window.
-*   **Step-by-step:**
-    1.  Analyze the window: $[u(t-1) - u(t-2)]$ creates a rectangular pulse that is 1 strictly between $t = 1$ and $t = 2$, and 0 everywhere else.
-    2.  Analyze the original signal $x(t)$ in that window: Look at the original graph of $x(t)$ between $t=1$ and $t=2$. The original signal $x(t)$ is exactly 0 everywhere in that region (it ends at $t=1$).
-    3.  Multiplication: Multiplying $x(t)$ (which is 0 in this region) by the window (which is 1 in this region) results in 0. Multiplying everywhere else where the window is 0 also results in 0.
-*   **Final Sketch:** The result is a flat line at $y = 0$ for all time $t$. The signal is completely zeroed out.
-
-**(v) Sketch $x(t)\delta(t-2)$**
-*   **Transformations:** Multiply the original continuous signal by a shifted impulse function.
-*   **Property:** The sifting property states $f(t)\delta(t-t_0) = f(t_0)\delta(t-t_0)$. The result is an impulse at $t_0$ weighted by the value of the function at that specific instant.
-*   **Step-by-step:**
-    Here $t_0 = 2$. Therefore, $x(t)\delta(t-2) = x(2)\delta(t-2)$.
-    Looking at the original graph of $x(t)$, at the exact instant $t = 2$, the value of the signal is $0$.
-    So, $x(2) = 0$.
-    The result is $0 \cdot \delta(t-2) = 0$.
-*   **Final Sketch:** The result is a flat line at $y = 0$ for all time $t$. There is no impulse because its weight is zero.
-
-*Reference: Class Notes Pg 12-15 (Signal Operations), Pg 22 (Singularity functions/Impulse).*
-
----
-
-### **20. Pg 42, CT-01 Q1: For the following signal, $x(t)$ sketch (i) $y_1(t)=x(2t-5)$ and (ii) $y_3(t)=x(t)r(t)$. Provide a mathematical justification whether $y_2(t)$ is an energy signal or power signal or neither? Also computer the energy and power of $y_2(t)$. [Figure involved]**
-
-*(Note: There is a typo in the provided question text. It asks to sketch $y_1$ and $y_3$, but then asks to justify and compute for $y_2$. Let's assume the question intended to define $y_2(t)$ as one of the functions to be sketched, likely $y_2(t) = y_3(t) = x(t)r(t)$, which is a common pattern in these problem sets.)* Let's analyze $x(t)r(t)$.
-
-**Base Signal $x(t)$ Analysis:**
-The figure shows a triangular pulse.
-*   Rises linearly from $t = -1$ to peak amplitude $1$ at $t = 0$. Equation for this segment: $x(t) = t + 1$.
-*   Falls linearly from amplitude $1$ at $t = 0$ to $0$ at $t = 1$. Equation for this segment: $x(t) = -t + 1$.
-*   $x(t) = 0$ for $t \le -1$ and $t \ge 1$.
-
-**Solution:**
-
-**(i) Sketch $y_1(t) = x(2t - 5)$**
-*   **Transformations:** Rewrite as $x(2(t - 2.5))$. Time compression by a factor of 2, followed by a shift right by 2.5.
-*   **Step-by-step using boundary mapping:** Map the original key points $t = \{-1, 0, 1\}$.
-    *   $2t - 5 = -1 \implies 2t = 4 \implies t = 2$. (Start of signal)
-    *   $2t - 5 = 0 \implies 2t = 5 \implies t = 2.5$. (Peak of signal, amplitude 1)
-    *   $2t - 5 = 1 \implies 2t = 6 \implies t = 3$. (End of signal)
-*   **Final Sketch:** A narrower triangular pulse shifted to the right. It starts at $t=2$, peaks at amplitude 1 at $t=2.5$, and drops to 0 at $t=3$.
-
-**(ii) Sketch $y_2(t) = x(t)r(t)$** *(Assuming $y_2$ is $y_3$)*
-*   **Analysis:** $r(t)$ is the unit ramp function, where $r(t) = t$ for $t \ge 0$, and $0$ for $t < 0$.
-*   We multiply $x(t)$ pointwise by $r(t)$.
-    *   For $t < 0$: $r(t) = 0$, so $y_2(t) = x(t) \cdot 0 = 0$. The left half of the triangle is eliminated.
-    *   For $0 \le t \le 1$: $x(t) = -t + 1$, and $r(t) = t$. The product is $y_2(t) = t(-t + 1) = -t^2 + t$. This describes an inverted parabola. Let's find key points:
-        *   At $t=0$, $y_2(0) = 0(1) = 0$.
-        *   At $t=1$, $y_2(1) = 1(0) = 0$.
-        *   Peak occurs at vertex. Derivative $-2t + 1 = 0 \implies t = 0.5$. Peak value $y_2(0.5) = -(0.5)^2 + 0.5 = 0.25$.
-    *   For $t > 1$: $x(t) = 0$, so $y_2(t) = 0 \cdot t = 0$.
-*   **Final Sketch:** The signal is $0$ everywhere except between $t=0$ and $t=1$. In that interval, draw a smooth parabolic curve starting at $(0,0)$, rising to a peak of $0.25$ at $t=0.5$, and falling back to $(1,0)$.
-
-**(iii) Mathematical Justification & Computation of Energy and Power for $y_2(t)$**
-*   **Justification:** The resulting signal $y_2(t)$ is non-zero only over a finite duration (from $t=0$ to $t=1$) and has a finite bounded amplitude (max $0.25$). Any signal that is entirely bounded within a finite time interval has a finite total area squared (energy). Therefore, it must be an **Energy Signal**.
-*   **Energy Computation ($E$):**
-    $E = \int_{-\infty}^{\infty} |y_2(t)|^2 dt = \int_{0}^{1} (-t^2 + t)^2 dt$
-    Expand the integrand: $(-t^2 + t)^2 = t^4 - 2t^3 + t^2$
-    $E = \int_{0}^{1} (t^4 - 2t^3 + t^2) dt = \left[ \frac{t^5}{5} - \frac{2t^4}{4} + \frac{t^3}{3} \right]_0^1$
-    $E = \left( \frac{1}{5} - \frac{1}{2} + \frac{1}{3} \right) - 0$
-    Find common denominator (30):
-    $E = \frac{6}{30} - \frac{15}{30} + \frac{10}{30} = \frac{16 - 15}{30} = \mathbf{\frac{1}{30} \text{ Joules}}$.
-*   **Power Computation ($P$):**
-    Because it is a finite-duration energy signal, its average power computed over an infinite interval is zero.
-    $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} |y_2(t)|^2 dt = \lim_{T \to \infty} \frac{1/30}{2T} = \mathbf{0 \text{ Watts}}$.
-
-*Reference: Class Notes Pg 5-6 (Energy & Power Signal), Pg 12-15 (Signal Operations).*
-
-Here are the detailed solutions for questions 21 through 24 from your list.
-
----
-
-### **21. Pg 41, CT-01 Q2: Determine whether the following systems are (i) Time-variant and (iii) Causal.**
-
-**Solution:**
-
-**(a) $y_1(t) = t \cdot x(t+1)$**
-
-*   **(i) Time-Variant/Invariant Check:**
-    A system is time-invariant if a delay in the input $x(t) \to x(t-t_0)$ causes an identical shift in the output $y(t) \to y(t-t_0)$.
-    1.  Find the response to a delayed input $x_d(t) = x(t-t_0)$:
-        $y_{delayed\_input}(t) = t \cdot x_d(t+1) = t \cdot x((t+1) - t_0) = \mathbf{t \cdot x(t - t_0 + 1)}$
-    2.  Find the delayed version of the original output:
-        $y_1(t-t_0) = (t-t_0) \cdot x((t-t_0) + 1) = \mathbf{(t - t_0) \cdot x(t - t_0 + 1)}$
-    Comparing the two results: $t \cdot x(t - t_0 + 1) \neq (t - t_0) \cdot x(t - t_0 + 1)$.
-    **Conclusion: The system is Time-Variant.**
-
-*   **(iii) Causal/Non-Causal Check:**
-    A system is causal if the output at present time $t$ depends *only* on present and past inputs (values of $\tau \le t$).
-    Let's test an arbitrary time, say $t = 1$:
-    $y_1(1) = 1 \cdot x(1+1) = x(2)$
-    To determine the output at $t=1$, the system requires the input value at $t=2$, which lies in the future.
-    **Conclusion: The system is Non-Causal.**
-
-**(b) $y_2(t) = x(1-t)$**
-
-*   **(i) Time-Variant/Invariant Check:**
-    1.  Find the response to a delayed input $x_d(t) = x(t-t_0)$:
-        $y_{delayed\_input}(t) = x_d(1-t) = \mathbf{x((1-t) - t_0) = x(1 - t - t_0)}$
-    2.  Find the delayed version of the original output:
-        $y_2(t-t_0) = \mathbf{x(1 - (t-t_0)) = x(1 - t + t_0)}$
-    Comparing the two results: $x(1 - t - t_0) \neq x(1 - t + t_0)$.
-    **Conclusion: The system is Time-Variant.**
-
-*   **(iii) Causal/Non-Causal Check:**
-    Let's test an arbitrary negative time, say $t = -2$:
-    $y_2(-2) = x(1 - (-2)) = x(3)$
-    To determine the output at $t=-2$, the system requires the input value at $t=3$, which is in the future relative to $t=-2$.
-    **Conclusion: The system is Non-Causal.**
-
----
-
-### **22. Pg 42, CT-3 Q2: Sketch the Region of Convergence (ROC) in the complex s-plane of the following signals.**
-
-**Solution:**
-
-The bilateral Laplace transform is defined as $F(s) = \int_{-\infty}^{\infty} f(t) e^{-st} dt$, where $s = \sigma + j\omega$. The ROC is the range of real values $\sigma$ for which this integral converges.
-
-**(i) $f(t) = e^{-at}u(-t) + e^{bt}u(t)$**
-We analyze the left-sided and right-sided portions separately.
-*   **Right-sided portion:** $e^{bt}u(t)$. 
-    $\mathcal{L}\{e^{bt}u(t)\} = \int_{0}^{\infty} e^{bt} e^{-st} dt = \int_{0}^{\infty} e^{-(s-b)t} dt = \frac{1}{s-b}$.
-    For convergence at $\infty$, the real part of $(s-b)$ must be positive: $Re\{s\} > b \implies \mathbf{\sigma > b}$. (Pole at $s=b$)
-*   **Left-sided portion:** $e^{-at}u(-t)$.
-    $\mathcal{L}\{e^{-at}u(-t)\} = \int_{-\infty}^{0} e^{-at} e^{-st} dt = \int_{-\infty}^{0} e^{-(s+a)t} dt = \frac{-1}{s+a}$.
-    For convergence at $-\infty$, the real part of $(s+a)$ must be negative: $-Re\{s+a\} > 0 \implies \mathbf{\sigma < -a}$. (Pole at $s=-a$)
-*   **Total ROC:** The intersection of the two conditions: $\sigma > b$ AND $\sigma < -a$. 
-    This means the ROC is the strip: $\mathbf{b < \sigma < -a}$. 
-    *(Note: This transform only exists if $b < -a$. Assuming this is true for the sketch).*
-*   **Sketch Description:** Draw the complex s-plane (horizontal $\sigma$-axis, vertical $j\omega$-axis). Mark a pole ($\times$) at $\sigma = b$ and a pole ($\times$) at $\sigma = -a$ (where $b$ is to the left of $-a$). Draw vertical dashed lines through both poles. **Shade the region between the two vertical lines**.
-
-**(ii) $f(t) = e^{at}u(t) + e^{bt}u(-t)$, with $b > a$.**
-*   **Right-sided portion:** $e^{at}u(t)$.
-    $\mathcal{L}\{e^{at}u(t)\} = \frac{1}{s-a}$.
-    Condition for convergence: $Re\{s-a\} > 0 \implies \mathbf{\sigma > a}$. (Pole at $s=a$)
-*   **Left-sided portion:** $e^{bt}u(-t)$.
-    $\mathcal{L}\{e^{bt}u(-t)\} = \frac{-1}{s-b}$.
-    Condition for convergence: $-Re\{s-b\} > 0 \implies \mathbf{\sigma < b}$. (Pole at $s=b$)
-*   **Total ROC:** The intersection of the two conditions: $\sigma > a$ AND $\sigma < b$.
-    This implies $\mathbf{a < \sigma < b}$. Because the problem states $b > a$, this intersection is valid and forms a bounded vertical strip.
-*   **Sketch Description:** Draw the complex s-plane. Mark a pole ($\times$) at $\sigma = a$ and a pole ($\times$) at $\sigma = b$. Draw vertical dashed lines through both poles. **Shade the rectangular strip lying strictly between the line $\sigma = a$ and the line $\sigma = b$**.
-
----
-
-### **23. Pg 44, CT-01 Q1: Sketch the signals and analytically determine if energy/power.**
-
-**Solution:**
-
-**(i) Sketch $u(4-t)$**
-*   Rewrite as $u(-(t-4))$.
-*   A standard unit step $u(t)$ turns "on" (becomes 1) for $t > 0$.
-*   $u(-t)$ is time-reversed, so it is 1 for $t < 0$ and 0 for $t > 0$.
-*   $u(-(t-4))$ shifts this reversed step 4 units to the right. It evaluates to 1 when $-(t-4) > 0 \implies t < 4$.
-*   **Sketch:** A horizontal line at amplitude $1$ coming from $t = -\infty$, which drops abruptly to $0$ at exactly $t = 4$ and remains $0$ thereafter.
-
-**(ii) Sketch $u(t-6) - u(t-8)$**
-*   $u(t-6)$ is a unit step starting at $t=6$.
-*   $u(t-8)$ is a unit step starting at $t=8$.
-*   Subtracting the latter from the former turns the signal "off" at $t=8$.
-*   **Sketch:** A rectangular pulse. It is $0$ everywhere except between $t = 6$ and $t = 8$, where it has an amplitude of $1$.
-
-**(iii) Sketch $\sin(\pi t)[\delta(t+0.5) + \delta(t-0.5)]$**
-*   Apply the sifting property of the Dirac delta function: $f(t)\delta(t-t_0) = f(t_0)\delta(t-t_0)$.
-*   First term ($t_0 = -0.5$): $\sin(\pi(-0.5))\delta(t+0.5) = \sin(-\pi/2)\delta(t+0.5) = -1 \cdot \delta(t+0.5)$.
-*   Second term ($t_0 = 0.5$): $\sin(\pi(0.5))\delta(t-0.5) = \sin(\pi/2)\delta(t-0.5) = 1 \cdot \delta(t-0.5)$.
-*   The signal simplifies to: $y(t) = -\delta(t+0.5) + \delta(t-0.5)$.
-*   **Sketch:** Draw two vertical arrows (impulses). One pointing downwards to $-1$ at $t = -0.5$. One pointing upwards to $1$ at $t = 0.5$. The rest of the axis is $0$.
-
-**Analytical determination of Energy/Power for $u(t-4) - u(t-6)$:**
-Let $y(t) = u(t-4) - u(t-6)$. This is a rectangular pulse of amplitude $1$ existing from $t=4$ to $t=6$.
-*   **Energy ($E$):**
-    $E = \int_{-\infty}^{\infty} |y(t)|^2 dt = \int_{4}^{6} (1)^2 dt = [t]_4^6 = 6 - 4 = \mathbf{2 \text{ Joules}}$
-*   **Power ($P$):**
-    $P = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} |y(t)|^2 dt$.
-    Since the integral evaluates to a finite number ($2$), as $T \to \infty$, the fraction $\frac{2}{2T}$ approaches $0$. Thus, $P = \mathbf{0 \text{ Watts}}$.
-*   **Conclusion:** Because the signal has finite energy ($0 < E < \infty$) and zero average power, it is an **Energy Signal**.
-
----
-
-### **24. Pg 44, CT-01 Q2: The input and output relationship of a system is shown.**
-
-**Figure Analysis:**
-*   **Input $x(t)$:** A standard rectangular pulse from $t=0$ to $t=1$ with amplitude $1$. Mathematically: $x(t) = 1$ for $0 \le t \le 1$.
-*   **Output $y(t)$:** A line starting at $(0,1)$ and dropping linearly to $(1,0)$. The slope is $m = \frac{0-1}{1-0} = -1$. The y-intercept is $1$. Equation for this segment: $y(t) = -t + 1$.
-
-**Expressing $y(t)$ in terms of $x(t)$:**
-Observe the relationship between $x(t)$ and $y(t)$ in the active region $[0, 1]$:
-$x(t) = 1$
-$y(t) = -t + 1 = (1-t) \cdot 1 = (1-t) \cdot x(t)$
-Outside this region, $x(t) = 0$ and $y(t) = 0$, so $(1-t) \cdot 0 = 0$, which holds true.
-**Equation:** $\mathbf{y(t) = (1 - t) x(t)}$
-
-**Mathematical Justifications:**
-
-**(i) Linear:**
-Test for the superposition principle.
-Let $x_1(t) \to y_1(t) = (1-t)x_1(t)$
-Let $x_2(t) \to y_2(t) = (1-t)x_2(t)$
-Apply a linear combination input: $x_3(t) = ax_1(t) + bx_2(t)$.
-The system output is:
-$y_3(t) = (1-t)x_3(t) = (1-t)[ax_1(t) + bx_2(t)]$
-$y_3(t) = a(1-t)x_1(t) + b(1-t)x_2(t)$
-$y_3(t) = a y_1(t) + b y_2(t)$
-Because the response to a linear combination of inputs is the exact linear combination of their individual responses, the system satisfies superposition.
-**Conclusion: The system is Linear.**
-
-**(ii) Time-Variant:**
-Test if a time shift in input causes an identical shift in output.
-1.  Apply a delayed input $x_d(t) = x(t-t_0)$. The response is:
-    $y_{delayed\_input}(t) = (1-t)x_d(t) = \mathbf{(1-t)x(t-t_0)}$
-2.  Delay the original output by $t_0$:
-    $y(t-t_0) = (1-(t-t_0))x(t-t_0) = \mathbf{(1-t+t_0)x(t-t_0)}$
-Comparing the two: $(1-t)x(t-t_0) \neq (1-t+t_0)x(t-t_0)$. The system scales the input by a time-dependent factor $(1-t)$, making its behavior change depending on *when* the signal arrives.
-**Conclusion: The system is Time-Variant.**
-
-**(iii) Causal:**
-A system is causal if the current output $y(t)$ depends only on current or past values of $x(t)$.
-Looking at the equation $y(t) = (1-t)x(t)$:
-To evaluate $y$ at any specific instant $t_1$ (e.g., $t=0.5$), we compute $y(0.5) = (0.5)x(0.5)$. The output relies strictly on the input $x$ at that exact same instant $t_1$. It does not look ahead to $x(t_1 + \tau)$.
-**Conclusion: The system is Causal.**
