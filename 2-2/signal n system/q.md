@@ -145,97 +145,50 @@
     
 - **Q.4(b)** | Find trig. FS for square wave.✅
     
-
-**Pg 22**
-
-- **CT-1 Q1** | Sketch $x(t+1)$, $x(t+1)r(t-1)$. Justify energy/power.
+1. **Pg 22, CT-1 Q1:** For the following signal, sketch (i) y1​(t)=x(t+1) and (ii) y2​(t)=x(t+1)r(t−1). Justify whether y2​(t) is energy signal or power signal or neither? Also computer the energy and power of y2​(t). [Figure involved]
     
-- **CT-1 Q2** | Express $y(t)$ via $x(t)$. Justify Linear, TI, Causal.
+2. **Pg 22, CT-1 Q2:** A time limited rectangular pulse (left) is applied to a system produces an output as shown in the following figure (right). Express y(t) in terms of x(t). Also provide a mathematical justification whether the system is (i) Linear (ii) Time invariant and (iii) Causal. [Figure involved]
     
-
-**Pg 25**
-
-- **CT-4 Q2** | Find FT of $f(t)$ via diff. prop.
+3. **Pg 25, CT-4 Q2:** Using differentiation property, find the Fourier transform of the following function. [Figure involved]
     
-
-**Pg 27**
-
-- **CT-3 Q2** | Find FS of square wave. Plot amplitude & phase spectra.
+4. **Pg 27, CT-3 Q2:** Find the Fourier series of the square wave in following Fig. Plot the amplitude and phase spectra. [Figure involved]
     
-- **CT-3 Q3** | Find FT of triangle pulse via time-diff prop.
+5. **Pg 27, CT-3 Q3:** Use the time-differentiation property to find the Fourier transform of the triangle pulse illustrated in Fig. Hints: first draw the first derivative and second derivative of the given function and then use the time-differentiation property. [Figure involved]
     
-
-**Pg 28**
-
-- **CT-1 Q1** | Moving-avg sys $y[n]$. Det. memoryless, causal, linear, TI, stable.
+6. **Pg 28, CT-1 Q1:** Consider a discrete-time system whose output signal y[n] is the average of the three most recent values of the input signal x[n]; that is y[n]=31​(x[n]+x[n−1]+x[n−2]). Such a system is referred as a moving-average system. Determine whether the system is (i) Memoryless (ii) Causal (iii) Linear (iv) Time-invariant (v) Stable.
     
-- **CT-1 Q2** | Draw $e^{-at}u(-t)$, $tu(t)$. Comment energy/power.
+7. **Pg 28, CT-1 Q2:** Draw the following signal and comment whether the signal is energy, power or neither energy nor power signal. (i) e−atu(−t) and a is real (ii) tu(t).
     
-
-**Pg 29**
-
-- **CT-1 Q3** | Sketch $x(2t+1)$, $x(t+1)u(-t)$, $x(-t+1)u(t)$, $x(t-1)+x(-t-1)$, $x(t)\delta(t-1)$.
+8. **Pg 29, CT-1 Q3:** Given the signal in the following figure. Sketch the following signals derived from x(t): (i) x(2t+1) (ii) x(t+1)u(−t) (iii) x(−t+1)u(t) (iv) x(t−1)+x(−t−1) (v) x(t)δ(t−1). [Figure involved]
     
-
-**Pg 31**
-
-- **CT-1 Q1** | Det. energy & power of $ke^{\beta t}$, $k>0$, $\beta<0$ etc.
+9. **Pg 31, CT-1 Q1:** Determine the energy and power of the following signals: (i) keβt, k>0, β<0 (ii) keβt, k>0, β=−2j and (iii) cos(10πt)u(−t).
     
-- **CT-1 Q2** | Sketch $x(t)$ piecewise. Sketch $x(\alpha t+\beta)$.
+10. **Pg 31, CT-1 Q2:** Sketch the following signal x(t)={e2t,−4≤t≤−2;2,−2≤t≤2;e−2t,2≤t≤4;0,otherwise}. Also sketch y(t)=x(αt+β) when (i) α=−2, β=0 (ii) α=2, β=−4 and (iii) α=−1, β=4.
     
-
-**Pg 32**
-
-- **CT-1 Q1** | Det. & compute energy/power of $e^{\sigma t}u(-t)$, $t[u(t+4)-u(t-4)]$.
+11. **Pg 32, CT-1 Q1:** Determine whether the following signals are energy signal, power signal or neither. Also compute the energy and power of each signals. (i) eσtu(−t), σ>0 (ii) eσtu(−t), σ<0 and (iii) t[u(t+4)−u(t−4)].
     
-- **CT-1 Q2** | Sketch $x(t/2)$, $x(t+4)$, $x(4-t)$, $x(2t+6)$.
+12. **Pg 32, CT-1 Q2:** For the following signal x(t)={t,0≤t≤2;2,2≤t≤4;0,otherwise} sketch, (i) x(t/2) (ii) x(t+4) (iii) x(4−t) (iv) and x(2t+6).
     
-
-**Pg 33**
-
-- **CT-2 Q1** | Math justify if sys is Linear & Invertible from $x(t)$-$y(t)$ graph.
+13. **Pg 33, CT-2 Q1:** The input-output relationship of a system is shown in the following figure. Provide a mathematical justification whether the system is (i) Linear and (ii) Invertible. [Figure involved]
     
-
-**Pg 34**
-
-- **CT-2 Q1** | Math justify Linear & Invertible from graph (unity slope).
+14. **Pg 34, CT-2 Q1:** The input-output relationship of two systems are shown the following figure. Provide a mathematical justification whether the system shown in figure (i) linear, and (ii) invertible. For both systems the slope is unity. [Figure involved]
     
-
-**Pg 35**
-
-- **CT-3 Q1** | Find LT & ROC for $e^{3t}u(-t)$, $e^{-3t}u(t)+e^{3t}u(-t)$.
+15. **Pg 35, CT-3 Q1:** Find the Laplace transform of (i) e3tu(−t) and (ii) e−3tu(t)+e3tu(−t). Also sketch ROC of them.
     
-
-**Pg 36**
-
-- **CT-3 Q1** | Find LT of $f(t)$ via diff. prop.
+16. **Pg 36, CT-3 Q1:** Using the differentiation property, find the Laplace transform of the following function. [Figure involved]
     
-
-**Pg 38**
-
-- **CT-1 Q1** | Moving avg sys properties (memoryless, causal, linear, TI, stable).
+17. **Pg 38, CT-1 Q1:** Consider a discrete-time system whose output signal y[n] is the average of the three most recent values of the input signal x[n]; that is y[n]=31​(x[n+1]+x[n]+x[n−1]). Such a system is referred as a moving-average system. Determine whether the system is (i) Memoryless (ii) Causal (iii) Linear (iv) Time-invariant (v) Stable with short reasoning.
     
-- **CT-1 Q2** | Sketch & classify energy/power for $e^{-at}u(-t)$.
+18. **Pg 38, CT-1 Q2:** Draw the following signal and comment whether the signal is energy, power or neither energy nor power signal. (i) e−atu(−t) and a is real.
     
-- **CT-1 Q3** | Sketch derived signals from $x(t)$.
+19. **Pg 38, CT-1 Q3:** Given the signal x(t) in the following figure. Sketch the following signals derived from x(t). (i) x(2t−1) (ii) x(t+1)u(−t) (iii) x(−t+1)u(t) (iv) x(t)[u(t−1)−u(t−2)] (v) x(t)δ(t−2). [Figure involved]
     
-
-**Pg 41**
-
-- **CT-01 Q1** | Sketch $x(2t-5)$, $x(t)r(t)$. Justify & calc energy/power.
+20. **Pg 41, CT-01 Q1:** For the following signal, x(t) sketch (i) y1​(t)=x(2t−5) and (ii) y3​(t)=x(t)r(t). Provide a mathematical justification whether y2​(t) is an energy signal or power signal or neither? Also computer the energy and power of y2​(t). [Figure involved]
     
-- **CT-01 Q2** | Det. Time-variant & Causal for $y_1(t)=t x(t+1)$, $y_2(t)=x(1-t)$.
+21. **Pg 41, CT-01 Q2:** Determine whether the following systems are (i) Time-variant and (iii) Causal. (a) y1​(t)=t x(t+1) (b) y2​(t)=x(1−t).
     
-
-**Pg 42**
-
-- **CT-3 Q2** | Sketch ROC & poles for $e^{-at}u(-t)+e^{bt}u(t)$ etc.
+22. **Pg 42, CT-3 Q2:** Sketch the Region of Convergence (ROC) in the complex s-plane of the following signals. Clearly indicate the boundaries of the ROC and the locations of the poles. (i) f(t)=e−atu(−t)+ebtu(t) (ii) f(t)=eatu(t)+ebtu(−t), b>a.
     
-
-**Pg 44**
-
-- **CT-01 Q1** | Sketch $u(t-1)$, $u(t-6)-u(t-8)$, etc. Det. & calc energy/power.
+23. **Pg 44, CT-01 Q1:** Sketch the signals: (i) u(4−t) (ii) u(t−6)−u(t−8) and (iii) sin(πt)[δ(t+0.5)+δ(t−0.5)]. Analytically determine whether the signal u(t−4)−u(t−6) is energy or power signal? Also compute energy and power of that signal.
     
-- **CT-01 Q2** | Express $y(t)$ via $x(t)$. Justify Linear, Time-variant, Causal.
-
-[^1]: 
+24. **Pg 44, CT-01 Q2:** The input and output relationship of a system is shown in the following figure. Express y(t) in terms of x(t). Also provide a mathematical justification whether the system is (i) Linear (ii) Time-variant and (iii) Causal. [Figure involved]
