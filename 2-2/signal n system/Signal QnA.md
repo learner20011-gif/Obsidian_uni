@@ -221,14 +221,7 @@ Let's denote the derivative of $x(t)$ as $\dot{x}(t)$ for simplicity. So, $y(t) 
 **1. Checking Homogeneity (Scaling Property):**
 The homogeneity property states that if an input $x(t)$ produces an output $y(t)$, then a scaled input $kx(t)$ (where $k$ is a constant) should produce a scaled output $k y(t)$.
 Let the new input be $x_k(t) = k x(t)$.
-The corresponding output $y_k(t)$ is:
-$$y_k(t) = \frac{(x_k(t))^2}{\frac{d x_k(t)}{dt}}$$
-Substitute $x_k(t) = k x(t)$:
-$$y_k(t) = \frac{(k x(t))^2}{\frac{d (k x(t))}{dt}}$$
-$$y_k(t) = \frac{k^2 x^2(t)}{k \frac{dx(t)}{dt}}$$
-$$y_k(t) = k \left( \frac{x^2(t)}{\dot{x}(t)} \right)$$
-$$y_k(t) = k y(t)$$
-S
+The corresponding 
 
 ***
 
