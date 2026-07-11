@@ -208,22 +208,6 @@ always mention ans related location pg no. In pdf , at the end of every soln 1.7
 
 ***
 
-### Q.1 (a) A system is specified by its input-output relationship as $y(t) = \frac{x^2(t)}{dx/dt}$. Show that the system satisfies the homogeneity property but not the additivity property.
-
-**Detailed Answer:**
-
-To determine if a system is linear, it must satisfy the principle of superposition, which consists of two properties: homogeneity (scaling) and additivity.
-
-Given the system equation:
-$$y(t) = \frac{x^2(t)}{\frac{dx(t)}{dt}}$$
-Let's denote the derivative of $x(t)$ as $\dot{x}(t)$ for simplicity. So, $y(t) = \frac{x^2(t)}{\dot{x}(t)}$.
-
-**1. Checking Homogeneity (Scaling Property):**
-The homogeneity property states that if an input $x(t)$ produces an output $y(t)$, then a scaled input $kx(t)$ (where $k$ is a constant) should produce a scaled output $k y(t)$.
-Let the new input be $x_k(t) = k x(t)$.
-The corresponding 
-
-***
 
 ### Q.2 (a) The input-output relationship of a system is shown below.
 $y(t) = \begin{cases} V_{cc}, & x(t) > V_{ref} \\ -V_{cc}, & x(t) < -V_{ref} \\ 2x(t), & \text{otherwise} \end{cases}$
