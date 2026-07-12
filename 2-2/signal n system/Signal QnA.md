@@ -1,5 +1,5 @@
 # 1. System Properties
-### The system relationship is given by: $$y(t) = \text{Re}\{x(t)\}$$To prove a system is linear, it must satisfy both **additivity** and **homogeneity**. Let's test each property.
+### The system relationship is given by: $$y(t) = \text{Re}\{x(t)\}$$To prove a system is linear, it must satisfy both **additivity** and **homogeneity**. Let's test each property..
 
 #### **1. Testing the Additivity Property**
 
