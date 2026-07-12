@@ -208,6 +208,51 @@ always mention ans related location pg no. In pdf , at the end of every soln 1.7
 
 ***
 
+### Q.1 (a) A system is specified by its input-output relationship as $y(t) = \frac{x^2(t)}{dx/dt}$. Show that the system satisfies the homogeneity property but not the additivity property.
+
+**Detailed Answer:**
+
+To determine if a system is linear, it must satisfy the principle of superposition, which consists of two properties: homogeneity (scaling) and additivity.
+
+Given the system equation:
+$$y(t) = \frac{x^2(t)}{\frac{dx(t)}{dt}}$$
+Let's denote the derivative of $x(t)$ as $\dot{x}(t)$ for simplicity. So, $y(t) = \frac{x^2(t)}{\dot{x}(t)}$.
+
+**1. Checking Homogeneity (Scaling Property):**
+The homogeneity property states that if an input $x(t)$ produces an output $y(t)$, then a scaled input $kx(t)$ (where $k$ is a constant) should produce a scaled output $k y(t)$.
+Let the new input be $x_k(t) = k x(t)$.
+The corresponding output $y_k(t)$ is:
+$$y_k(t) = \frac{(x_k(t))^2}{\frac{d x_k(t)}{dt}}$$
+Substitute $x_k(t) = k x(t)$:
+$$y_k(t) = \frac{(k x(t))^2}{\frac{d (k x(t))}{dt}}$$
+$$y_k(t) = \frac{k^2 x^2(t)}{k \frac{dx(t)}{dt}}$$
+$$y_k(t) = k \left( \frac{x^2(t)}{\dot{x}(t)} \right)$$
+$$y_k(t) = k y(t)$$
+Since the output is scaled by the same factor $k$ as the input, the system **satisfies the homogeneity property**.
+
+**2. Checking Additivity Property:**
+The additivity property states that if an input $x_1(t)$ produces $y_1(t)$ and an input $x_2(t)$ produces $y_2(t)$, then an input $x_1(t) + x_2(t)$ should produce an output $y_1(t) + y_2(t)$.
+
+Let the respective outputs for $x_1(t)$ and $x_2(t)$ be:
+$y_1(t) = \frac{x_1^2(t)}{\dot{x}_1(t)}$
+$y_2(t) = \frac{x_2^2(t)}{\dot{x}_2(t)}$
+
+The sum of the individual outputs is:
+$$y_1(t) + y_2(t) = \frac{x_1^2(t)}{\dot{x}_1(t)} + \frac{x_2^2(t)}{\dot{x}_2(t)} = \frac{x_1^2(t)\dot{x}_2(t) + x_2^2(t)\dot{x}_1(t)}{\dot{x}_1(t)\dot{x}_2(t)}$$
+
+Now, let's apply the combined input $x_{12}(t) = x_1(t) + x_2(t)$ to the system. The new output $y_{12}(t)$ is:
+$$y_{12}(t) = \frac{(x_1(t) + x_2(t))^2}{\frac{d}{dt}(x_1(t) + x_2(t))}$$
+$$y_{12}(t) = \frac{x_1^2(t) + 2x_1(t)x_2(t) + x_2^2(t)}{\dot{x}_1(t) + \dot{x}_2(t)}$$
+
+Comparing the two results:
+$$\frac{x_1^2(t) + 2x_1(t)x_2(t) + x_2^2(t)}{\dot{x}_1(t) + \dot{x}_2(t)} \neq \frac{x_1^2(t)\dot{x}_2(t) + x_2^2(t)\dot{x}_1(t)}{\dot{x}_1(t)\dot{x}_2(t)}$$
+Since $y_{12}(t) \neq y_1(t) + y_2(t)$, the system **does not satisfy the additivity property**.
+
+Because it fails the additivity condition, the system is non-linear.
+
+always mention ans related location pg no. In pdf , at the end of every soln 1.7-1 Linear and Nonlinear Systems, pg. 97-98
+
+***
 
 ### Q.2 (a) The input-output relationship of a system is shown below.
 $y(t) = \begin{cases} V_{cc}, & x(t) > V_{ref} \\ -V_{cc}, & x(t) < -V_{ref} \\ 2x(t), & \text{otherwise} \end{cases}$
