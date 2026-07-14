@@ -69,7 +69,7 @@ By constructing the core out of thin steel sheets (laminations) that are insulat
 * **Related Topics:** Mam Slide: 69, 74, 201 | Firoz Note: Page 129, 130.
 Here are the detailed solutions for the next four questions from your list.
 
-### 5. Page 2, Q.16: Why the armature core but not the magnetic pole core of a dc machine must be laminated?
+### 5. Page 2, Q.16: Why the w X3 X3core but not the magnetic pole core of a dc machine must be laminated?
 
 **Detailed Solution:**
 The necessity of lamination depends entirely on whether the magnetic flux passing through a specific part of the machine is constant or changing (alternating). 
