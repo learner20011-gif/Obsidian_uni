@@ -1,4 +1,5 @@
-Here are the detailed solutions for the first four questions from your list.
+
+[1, 2, 3, 4, 5, 6, 7, 8, 17, 22, 23, 24, 25, 40, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
 
 ### 1. Page 2, Q.12: Name the different essential parts of a dc machine.
 
