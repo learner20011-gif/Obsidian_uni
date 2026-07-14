@@ -88,7 +88,7 @@ The necessity of lamination depends entirely on whether the magnetic flux passin
 **Detailed Solution:**
 DC machines can operate as either DC Generators or DC Motors. Broadly, they are classified based on the method by which their magnetic field is produced (excitation). The classification is as follows:
 
-1.  **Permanent Magnet DC Machines:** The magnetic field is provided by permanent magnets instead of electromagnets.
+1.  **Permanent Magnet DC ½Machines:** The magnetic field is provided by permanent magnets instead of electromagnets.
 2.  **Separately Excited DC Machines:** The field winding is supplied by an independent, external DC power source.
 3.  **Self-Excited DC Machines:** The field winding is supplied by the machine's own armature. Depending on how the field winding is connected to the armature, self-excited machines are further sub-classified into:
     *   **Shunt Machine:** The field winding is connected in parallel (shunt) with the armature.
