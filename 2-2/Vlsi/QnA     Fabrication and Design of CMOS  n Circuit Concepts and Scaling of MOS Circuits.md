@@ -1,3 +1,5 @@
+[20, 22, 25, 27, 31, 32, 36, 37, 38, 40, 41, 42, 44, 46]
+    
 ### 1. "Describe the n-MOS fabrication process." (Page 6, Q.2(a))
 
 The fabrication of n-MOS (n-channel Metal-Oxide-Semiconductor) transistors involves a sequence of photographic and chemical steps to selectively pattern regions on a silicon wafer. The detailed steps are as follows:
