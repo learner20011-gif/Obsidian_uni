@@ -1,3 +1,5 @@
+
+[1, 2, 3, 7, 13, 14, 16, 18, 19, 20, 24, 27, 36, 37, 38, 39, 41, 43]
 ### 1. State Moore's 1st law of micro-electronics and draw a comparison of speed/power performance of available technologies. figure involved.
 
 **Answer:**
