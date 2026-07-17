@@ -1,8 +1,8 @@
 
-[1, 2, 3, 4, 5, 6, 7, 8, 17, 22, 23, 24, 25, 40, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+[1, 2, 3, 4, 5, 6, 7, 8, 11, 17, 22, 23, 24, 25, 40, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 61, 62, 63, 64, 65, 67, 71, 72, 74]
 
 ### 1. Page 2, Q.12: Name the different essential parts of a dc machine.
-
+![[Pasted image 20260715001457.png]]
 **Detailed Solution:**
 A DC machine (which can act as either a motor or a generator) consists of two main parts: the stationary part called the **Stator** and the rotating part called the **Rotor** (or Armature). The essential parts that make up a complete DC machine are:
 
@@ -69,7 +69,7 @@ By constructing the core out of thin steel sheets (laminations) that are insulat
 * **Related Topics:** Mam Slide: 69, 74, 201 | Firoz Note: Page 129, 130.
 Here are the detailed solutions for the next four questions from your list.
 
-### 5. Page 2, Q.16: Why the w X3 X3core but not the magnetic pole core of a dc machine must be laminated?
+### 5. Page 2, Q.16: Why the armature core but not the magnetic pole core of a dc machine must be laminated?
 
 **Detailed Solution:**
 The necessity of lamination depends entirely on whether the magnetic flux passing through a specific part of the machine is constant or changing (alternating). 
@@ -286,7 +286,7 @@ Since $Y_b + Y_f = 94$, we can simply choose:
 ***
 
 ### 17. Page 12, Q.1(d): What is the essential difference between lap and wave windings? The armature of a 4 pole dc shunt generator is lap-wound and generates 216V when running at 600 rpm. Armature has 144 slots, with 6 conductors per slot. If this armature rewound to wave-connected, find the emf generated with the same flux per pole but running at 500 rpm.
-
+![[Armature-Windings-of-DC-Generator-Lap-Wave-pptx-5-2048.webp]]
 **Detailed Solution:**
 **Part 1: Essential difference between lap and wave windings**
 The fundamental difference lies in the number of parallel paths ($A$) the winding creates for the current:
@@ -551,7 +551,7 @@ $$E_g = 125 \text{ Volts}$$
 ***
 
 ### 27. Page 4, Q.41: How does the armature reaction affect the performance of a dc machine? How do we avoid its effect in a dc machine?
-
+![[Pasted image 20260714231849.png]]
 **Detailed Solution:**
 **Armature Reaction** is the effect of the magnetic field produced by the armature current on the main field flux distribution in the air gap when the machine is loaded. 
 
@@ -559,6 +559,7 @@ $$E_g = 125 \text{ Volts}$$
 Armature reaction produces two primary undesirable effects on the machine's performance:
 1.  **Cross-Magnetizing Effect (Distortion):** The armature flux pushes and distorts the main field flux. This shifts the Magnetic Neutral Axis (MNA) away from the Geometrical Neutral Axis (GNA). As a result, the brushes are no longer positioned in the zero-flux region, leading to severe **sparking at the brushes** and poor commutation.
 2.  **Demagnetizing Effect (Flux Weakening):** Due to magnetic saturation at the pole tips, the increase in flux at one pole tip does not fully compensate for the decrease in flux at the other pole tip. This results in a net reduction of the total main field flux. In a generator, this causes the **terminal voltage to drop**, and in a motor, it causes a reduction in torque and a potential dangerous increase in speed.
+![[Pasted image 20260715002834.png]]
 
 **Methods to Avoid/Minimize the Effects:**
 1.  **Compensating Windings:** These are extra windings embedded in slots on the main pole faces. They are connected in series with the armature but carry current in the opposite direction. Their MMF directly cancels the armature MMF right under the pole faces, preventing flux distortion and weakening.
@@ -584,7 +585,7 @@ The magnetic field produced by the armature (Armature MMF) is always perfectly a
 When you shift the brushes by an angle $\theta$ to align with the new MNA, the entire armature MMF vector ($\Phi_A$) shifts by that same angle $\theta$. Because the armature MMF is no longer perpendicular to the main field, it resolves into two distinct vector components:
 1.  **Cross-Magnetizing Component ($\Phi_C = \Phi_A \cos\theta$):** This component is perpendicular to the main field and continues to distort the flux distribution.
 2.  **Direct Demagnetizing Component ($\Phi_D = \Phi_A \sin\theta$):** This is a new component that points in the exact opposite direction of the main field flux ($\Phi_F$). 
-
+![[Pasted image 20260715003637.png]]
 **Resulting Change:**
 By shifting the brushes, you actively introduce a direct demagnetizing force. This strongly opposes the main field flux, causing a significant net reduction (weakening) of the total flux per pole. In a generator, this results in a much sharper drop in the generated terminal voltage as the load increases. 
 
@@ -785,6 +786,7 @@ Here are the detailed solutions for the next four questions from your list. *(No
 
 **1. No-Load Characteristic (Open Circuit Characteristic / OCC):**
 This curve plots the generated EMF at no load ($E_0$) versus the field current ($I_f$) while the machine is driven at a constant rated speed. 
+![[Pasted image 20260715010455.png]]
 *   **Explanation:** The shape of this curve is essentially the magnetization curve (B-H curve) of the iron core. It is the **same for all types of DC generators** (shunt, series, or compound). 
     *   At $I_f = 0$, there is a small initial voltage due to the *residual magnetism* in the iron poles.
     *   As $I_f$ increases, $E_0$ increases linearly because the air gap reluctance dominates and the iron is unsaturated.
@@ -794,14 +796,18 @@ This curve plots the generated EMF at no load ($E_0$) versus the field current (
 **2. Load Characteristics (Internal Characteristics - $E$ vs $I_a$):**
 This curve plots the generated EMF *under load* ($E$) versus the armature current ($I_a$). It shows how the actual induced voltage inside the armature changes as the machine delivers current, primarily due to *armature reaction*.
 
-*   **Shunt Generator:** 
+*   **Shunt Generator:** ![[Pasted image 20260715021010.png]]
     *   *Explanation:* In a shunt generator, the terminal voltage drops as load is applied. Because the field winding is connected across the terminals, this drop in terminal voltage causes a slight drop in field current ($I_f$). Furthermore, as armature current ($I_a$) increases, the *armature reaction* demagnetizes the main flux. Both of these effects cause the internally generated EMF ($E$) to droop gradually as $I_a$ increases.
-*   **Series Generator:** 
+    * ![[Pasted image 20260715015707.png]]
+*   **Series Generator:**   ![[Pasted image 20260715021142.png]]
     *   *Explanation:* In a series generator, the load current is the field current ($I_a = I_f$). Therefore, as the load current increases, the field flux increases, causing the generated EMF ($E$) to rise rapidly initially. Once the magnetic core reaches saturation, the curve flattens. After saturation, the demagnetizing effect of armature reaction becomes dominant, causing the generated EMF ($E$) to eventually start dropping at very high currents.
+    * ![[Pasted image 20260715021424.png]]
 *   **Compound Generator:** 
     *   *Explanation:* This generator has both shunt and series fields. 
         *   In a **Cumulative Compound** generator, the series field aids the shunt field. As $I_a$ increases, the series flux increases, compensating for the armature reaction. The generated EMF ($E$) can rise or stay relatively flat depending on the number of series turns.
-        *   In a **Differential Compound** generator, the series field opposes the shunt field. As $I_a$ increases, the series field rapidly weakens the total flux. The generated EMF ($E$) drops sharply and rapidly.
+        *  ![[Pasted image 20260715024155.png]]![[Pasted image 20260715024337.png]]
+        *   In a **Differential Compound** generator, the series field opposes the shunt field. As $I_a$ increases, the series field rapidly weakens the total flux. The generated EMF ($E$) drops sharply and rapidly.![[Pasted image 20260715024213.png]]
+        * ![[Pasted image 20260715024741.png]]
 
 *   **Figure involved:** Yes. (1) A single OCC curve ($E_0$ vs $I_f$) showing residual voltage and saturation. (2) Graphs showing $E$ vs $I_a$ for Shunt (drooping), Series (rising then dipping), and Compound (rising/flat or sharply falling).
 *   **Related Topics:** Mam Slide: 130, 148, 153, 160 | Firoz Note: Page 33, 39, 43, 45, 48.
@@ -822,8 +828,8 @@ When all terminal characteristics are plotted on the same graph starting from th
 2.  **Flat-Compounded Generator:** The series field provides just enough extra flux to exactly cancel out the armature reaction and the $I_a R_a$ voltage drop. The terminal voltage ($V_t$) remains **practically constant** from no-load to full-load.
 3.  **Under-Compounded Generator:** The series field is too weak to fully compensate for the voltage drops. The terminal voltage ($V_t$) **drops slightly**, but it drops less than a standard shunt generator.
 4.  **Shunt Generator:** There is no series field to compensate for the drops. As $I_L$ increases, $V_t$ **drops noticeably** due to armature reaction, $I_a R_a$ drop, and the resulting decrease in shunt field current.
-5.  **Differential Compound Generator:** The series field strictly opposes the shunt field. As $I_L$ increases, the opposing series flux rapidly destroys the main flux. The terminal voltage ($V_t$) **drops drastically** to near zero at relatively low load currents.
-6.  **Series Generator:** (Starts from residual voltage near zero). As $I_L$ increases, the field strength increases, causing the voltage to **rise steeply**, peak at saturation, and then drop due to armature reaction and $I_a R_a$ drops. 
+5.  **Differential Compound Generator:** The series field strictly opposes the shunt field. As $I_L$ increases, the opposing series flux rapidly destroys the main flux. The terminal voltage ($V_t$) **drops drastically** to near zero at relatively low load currents.![[Pasted image 20260715025633.png]]![[Pasted image 20260715025654.png]]
+6.  **Series Generator:** (Starts from residual voltage near zero). As $I_L$ increases, the field strength increases, causing the voltage to **rise steeply**, peak at saturation, and then drop due to armature reaction and $I_a R_a$ drops. ![[Pasted image 20260715025820.png]]
 
 *   **Figure involved:** Yes. A single graph with $V_t$ on the Y-axis and $I_L$ on the X-axis, showing lines for Over, Flat, Under, Shunt, Differential, and Series generators branching out from the Y-axis.
 *   **Related Topics:** Mam Slide: 179 | Firoz Note: Page 48, 49.
@@ -888,6 +894,7 @@ Because this "residual flux" is still present in the air gap, the rotating armat
 ### 47. Page 3, Q.22: What are the conditions to be fulfilled for a shunt generator to build up voltage?
 
 **Detailed Solution:**
+![[Pasted image 20260715035244.png]]
 A self-excited shunt generator relies on its own output to power its field winding. To successfully "build up" from a tiny residual voltage to its full rated terminal voltage, four strict conditions must be satisfied:
 
 1.  **Presence of Residual Magnetism:** There must be some residual magnetic flux left in the field poles. If the machine is brand new or has lost its residual magnetism (due to a severe short circuit or long disuse), the initial voltage will be absolute zero. Without an initial voltage to push the first bit of current through the field winding, the build-up process cannot even start.
