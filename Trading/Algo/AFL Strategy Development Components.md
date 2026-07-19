@@ -1,3 +1,135 @@
+
+Here's a breakdown of the fundamental components that make up a signal-generating algo strategy — the "parts list" you'd assemble and test individually before combining.
+
+## 1. Market/Regime Filters (should you trade at all right now?)
+
+These decide _whether_ to even look for signals — often more impactful than the signal itself.
+
+- **Trend filters** — ADX, moving average slope, Hurst exponent, linear regression slope
+- **Volatility filters** — ATR, historical volatility, Bollinger Band width, VIX-style regime
+- **Volume/liquidity filters** — minimum volume threshold, volume moving average
+- **Session/time filters** — time-of-day, day-of-week, pre/post-news blackout windows
+- **Market breadth filters** (for equities) — advance/decline, % stocks above 200MA
+
+## 2. Trend/Direction Indicators
+
+Tell you the prevailing bias.
+
+- Moving averages (SMA, EMA, WMA, Hull, KAMA)
+- MACD
+- ADX/DMI
+- Parabolic SAR
+- Linear regression / regression channel
+- Ichimoku (Kumo cloud, Tenkan/Kijun)
+- SuperTrend
+
+## 3. Momentum/Oscillator Indicators
+
+Tell you overbought/oversold or speed of move.
+
+- RSI
+- Stochastic (%K/%D)
+- CCI
+- Williams %R
+- Rate of Change (ROC)
+- Money Flow Index (MFI)
+- TSI (True Strength Index)
+
+## 4. Mean-Reversion Components
+
+- Bollinger Bands (price vs. bands)
+- Z-score of price vs. moving average
+- Keltner Channels
+- Pairs/spread z-score (for stat-arb)
+- RSI extremes as reversal triggers
+
+## 5. Breakout/Volatility-Expansion Components
+
+- Donchian Channels (N-bar high/low breakout)
+- ATR-based breakout bands
+- Bollinger Band squeeze/expansion
+- Opening range breakout
+- Volatility contraction pattern detection
+
+## 6. Volume-Based Components
+
+- On-Balance Volume (OBV)
+- Volume-weighted average price (VWAP)
+- Accumulation/Distribution
+- Chaikin Money Flow
+- Volume spike/anomaly detection
+
+## 7. Price Action / Pattern Components
+
+- Support/resistance levels (pivot points, swing highs/lows)
+- Candlestick patterns (engulfing, pin bar, inside bar)
+- Chart patterns (if coded — flags, triangles)
+- Gap detection
+
+## 8. Entry Logic
+
+Combines the above into an actual trigger.
+
+- Crossover (fast MA crosses slow MA)
+- Threshold cross (RSI crosses 30)
+- Confirmation stacking (trend filter + momentum trigger both true)
+- Multi-timeframe confirmation (daily trend + hourly entry)
+
+## 9. Exit Logic (as important as entry — often more)
+
+- **Stop-loss** — fixed %, ATR-multiple, structure-based (below swing low)
+- **Take-profit** — fixed %, risk-reward multiple, trailing stop
+- **Time-based exit** — max holding period
+- **Signal-based exit** — opposite signal, indicator reversal
+- **Volatility-based exit** — ATR trailing stop, chandelier exit
+
+## 10. Position Sizing / Money Management
+
+Not a "signal" but determines survival.
+
+- Fixed fractional risk (% of equity per trade)
+- Volatility-based sizing (ATR-adjusted)
+- Kelly criterion / fractional Kelly
+- Pyramiding/scaling rules
+- Max concurrent positions / correlation limits
+
+## 11. Risk Overlay (portfolio-level, not per-trade)
+
+- Max drawdown circuit breaker (stop trading if DD > X%)
+- Daily/weekly loss limits
+- Equity curve trading (trade only when strategy's own equity curve is in uptrend)
+- Correlation-based exposure caps across multiple strategies
+
+## 12. Market Microstructure/Execution Assumptions
+
+Needed for realistic backtests, not signals themselves, but part of the "system."
+
+- Slippage model
+- Commission model
+- Fill assumption (next bar open, limit vs. market)
+- Liquidity/capacity constraints
+
+---
+
+### How this maps to your learning plan
+
+A robust strategy usually needs **one from each of these buckets**, not five indicators from the same bucket stacked together (e.g., RSI + Stochastic + CCI are all momentum — they're highly correlated and don't add real diversification, they just look like more confirmation while actually adding overfit risk).
+
+A clean structure to build toward:
+
+```
+Regime Filter (should I trade?)
+    → Trend/Direction bias (which way?)
+        → Entry trigger (momentum, breakout, or mean-reversion — pick one class)
+            → Exit logic (stop + target + trailing)
+                → Position sizing (how much?)
+                    → Risk overlay (portfolio-level brake)
+```
+
+If you want, I can help you draft an AFL template that's structured exactly this way — with each component as a clearly separated, swappable block — so you can test them individually and combine deliberately rather than by trial-and-error stacking.
+
+
+
 ## AmiBroker AFL: Strategy Development Components
 
 ---
