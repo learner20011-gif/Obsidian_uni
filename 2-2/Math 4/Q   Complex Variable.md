@@ -1,8 +1,12 @@
-Here is the comprehensive extraction of all Complex Variable questions from the provided PDF. They have been transcribed full-text, categorized according to the provided syllabus topics, and exact word-for-word duplicates have been removed to avoid redundancy (with the remaining variation retained). 
+# Complex Variable - Comprehensive Question Bank (Aggregated by Topic)
+
+This document aggregates all Complex Variable questions across all sources (PDF Exam Papers/Class Tests, Firoz Note, and Feruj Sheet/Slides) organized strictly by topic.
 
 ***
 
-### **Complex number system**
+## 1. Complex Number System
+
+### Source: PDF Extraction
 
 **Pg 1, Q1(a):** Find two complex numbers whose sum is 4 and whose product is 8.
 **Pg 1, Q1(c):** Find the acute angle between the vectors $z_1 = 3-4i$ and $z_2 = -4+3i$.
@@ -48,148 +52,8 @@ Here is the comprehensive extraction of all Complex Variable questions from the 
 
 ---
 
-### **General functions of a complex variable**
 
-**Pg 1, Q1(b):** Separate real and imaginary parts of the following function. $f(z) = \sqrt{z}$.
-**Pg 4, Q1(a):** Separate the real and imaginary parts of $f(z) = \sqrt{1-z}$.
-**Pg 6, Q1(a):** Separate the real and imaginary part of $f(z) = \sin 2z$.
-**Pg 13, CT-03, 3.(a):** Separate the real and imaginary parts of $z^x$, if $z = x+iy$
-**Pg 14, CT-01, 3.(a):** Separate the real and imaginary parts of $\frac{1}{1+z}$
-**Pg 18, CT-I, 1.(b):** Separate each of the following into real and imaginary parts, i.e., find $u(x, y)$ and $v(x, y)$ $f(z) = z + \frac{1}{z}$
-
----
-
-### **Limits and continuity of a function of complex variable and related theorems**
-
-**Pg 6, Q1(c):** Is the function $f(z) = \begin{cases} \frac{z^2+2z}{z-i}; & z \neq i \\ 3+2i; & z=i \end{cases}$ Continuous at $z = i$? If it is not true, redefine the function to be continuous at $z = i$.
-**Pg 13, CT-03, 3.(b):** Evaluate $\lim_{z\to i} \frac{d}{dz}\left\{(z-\pi i)^2 \frac{e^z}{(z^2+\pi^2)^2}\right\}$
-**Pg 14, CT-01, 3.(b):** Evaluate $\lim_{z\to 2i} \left\{(z-2i) \frac{z^2-2z}{(z+1)^2(z^2+4)}\right\}$
-**Pg 18, CT-I, 3.(b):** $\lim_{z\to i/3} \frac{d}{dz} \left\{(z-i/3)^2 \cdot \frac{z}{(3z-i)^2(z-3i)^2}\right\}$
-
----
-
-### **Complex differentiation and the Cauchy-Riemann equations**
-
-**Pg 1, Q2(a):** Show that $f(z) = |z|^2$ is differentiable at $z=0$ but not analytic at $z=0$.
-**Pg 1, Q2(b):** Prove that $u = 2x(1-y)$ is a harmonic function and find v such that $f(z) = u+iv$ becomes an analytic function.
-**Pg 1, Q2(c):** In a two dimensional flow, the stream function is $\psi = \tan^{-1}(y/x)$. Find the velocity potential $\phi$ if $f(z) = \phi(x,y) + i\psi(x,y)$ is analytic.
-**Pg 2, Q2(a):** Prove that the real and imaginary parts of an analytic function satisfy Laplace's equation.
-**Pg 2, Q2(b):** Show that the function $u = \frac{1}{2}\log(x^2+y^2)$ is harmonic and find v such that $f(z) = u+iv$ is analytic.
-**Pg 2, Q2(c):** Define analytic function. Show that $\frac{d}{dz}(\bar{z})$ does not exists anywhere.
-**Pg 4, Q2(a):** State and prove necessary and sufficient condition for Cauchy-Riemann equations.
-**Pg 6, Q2(b):** Find the orthogonal trajectories of the family of curves $e^{-x}\cos y + xy = \alpha$
-**Pg 13, CT-04, 2.(a):** If $v = x^2-y^2-a^2$, find u such that $f(z) = u+iv$ is analytic. Aso find $f(z)$ interms of z.
-**Pg 15, CT-04, 2.(a):** If $v = \tan^{-1}(y/x)$, find u such that $f(z) = u+iv$ is analytic. Aso find $f(z)$ interms of z.
-**Pg 17, CT-II, 2.(a):** If $u = \frac{1}{2}\log(x^2-y^2)$, find v such that $f(z) = u+iv$ is analytic. Aso find $f(z)$ interms of z
-**Pg 19, CT-II, 2.(a):** If $v = 2y + x^2 - y^2$, find u such that $f(z) = u+iv$ is analytic. Aso find $f(z)$ interms of z.
-**Pg 20, CT-II, 2.(a):** Determine whether or not the function $2xy + i(x^2-y^2)$ is analytic
-**Pg 20, CT-II, 2.(b):** Find u such that $f(z) = u+iv$ is analytic and if $v = -2xy$
-**Pg 21, CT-I, 3.(a):** Test analyticity of the function $f(z) = e^{z^2}$
-
-**Multiple Choice Questions (Complex Differentiation & Integration Theory):**
-*Extracted from Pg 13, 15, 17, 19, 20:*
-* Write the correct answer from multiple choice:
-  * (a) Analytic function and derivable function of complex variable are same (i) yes (ii) no.(iii) none
-  * (a) (Alternative variant from Pg 17) Analytic function $f(z)$ is the derivative $f'(z)$ exists at all points of z in complex region. (i) yes (ii) no.(iii) none
-  * (b) Analytic function satisfy Laplacee's equn. & Cauchy Riemann equn. (i) yes (ii) no. (iii) both
-  * (c) $f'(z) = u_1(z,0) - iu_2(z,0)$ is (i) Laplace's equn. (ii) Milne-Thomson rule. (iii) both
-  * (d) Real & imaginary parts of an analytic function represents two families of curves are orthogonal(i) yes (ii) no.(iii) none
-  * (e) A point at which $f(z)$ fails to be Analytic is called singular point. (i) yes (ii) no.(iii) none
-  * (f) Which is Laplace's equn. (i) $\frac{\partial u}{\partial x} + \frac{\partial v}{\partial x} = 0$ (ii) $\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 v}{\partial x^2} = 0$ (iii) $\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0$ (i) ? (ii)? .(iii) ?
-  * (g) Define complex integration $\int_C f(z)dz$.
-  * (h) If $f(z)$ is analytic in a simple closed curve C then $\int_C f(z)dz =$ (i) $2\pi i$ (ii) 0 (iii) None.
-  * (h) (Alternative variant from Pg 20) If $f(z)$ be continuous in a region R and $\int_C f(z)dz = 0$ around a simple closed curve C then $f(z)$ is .........
-  * (i) $\oint_C Pdx + Qdy = ?$  *(Also written as $\oint_C udx + vdy = ?$ on pg 17)*
-  * (j) If $\int_C zdz = 0$, C is closed curve, then z (i)must be satisfy Cauchy-Riemanns equns. (ii) analytic function(iii)None
-  * (k) Difference between Cau.'s int. formu. & Cau.'s Resi. Them. are any point 'a' & 'poles of order m' respectively (i) no (ii) yes
-  * (l) All derivable function are Analytic function. Ans. (a) yes (b) no (Pg 21)
-  * (m) All Analytic function are derivable function. Ans. (a) yes (b) no (Pg 21)
-
----
-
-### **Mapping by elementary functions / Conformal mapping**
-
-**Pg 2, Q4(a):** Prove that the bilinear transformation can be considered as a combination of translation, rotation, stretching and inversion.
-**Pg 6, Q4(a):** Prove that every bilinear transformation transforms a circle of the z-plane into a circle of the w-plane.
-
----
-
-### **Line Integral of a complex function**
-
-**Pg 6, Q3(c):** Evaluate $\oint_c |z|^2 dz$ around the square with vertices at $(0, 0), (1, 0), (1, 1)$, and $(0, 1)$.
-**Pg 13, CT-04, 2.(b):** (i) Define complex integration. (ii) Apply Green's theorem on the $\int_C f(z)dz$ and hence find the result by using Cauchy Riemann equations . *(Note: (i) added based on Pg 17 equivalent question)*
-
----
-
-### **Cauchy's Integral theorem**
-
-**Pg 4, Q3(a):** State and prove Cauchy's integral theorem.
-
----
-
-### **Cauchy's Integral formula**
-
-**Pg 2, Q3(b):** State and prove Cauchy's integral formula.
-**Pg 2, Q3(c):** Evaluate $\oint_c \frac{e^z}{(z^2+\pi^2)^2} dz$ where c is the circle $|z|=4$.
-**Pg 4, Q3(b):** Evaluate $\frac{1}{2\pi i}\oint_c \frac{e^{zt}}{z^2+1} dz$, if $t > 0$ and c is the circle $|z|=3$.
-**Pg 13, CT-04, 4.(a):** Evaluate $\oint_C \frac{e^{iz}}{(z+3)^4} dz$ where C is the circle (i) $|z|=1$ (ii) $|z|=4$
-**Pg 13, CT-04, 4.(b):** Evaluate $\oint_C \frac{3z^2+z}{z^2-1} dz$ where C is the circle $|z-1|=1$
-**Pg 15, CT-04, 3.(a):** Evaluate $\oint_C \frac{z^2+1}{z^2-1} dz$ where C is the circle $|z-1|=1$
-**Pg 15, CT-04, 3.(b):** Evaluate $\oint_C \frac{z^2}{(z-1)(z+2)^2} dz$ where C is the circle $|z|=3$
-
----
-
-### **Taylor's theorem and Laurent's theorem**
-
-**Pg 1, Q3(c):** Expand $f(z) = \frac{1}{(z+1)(z+3)}$ in a Laurent series valid for $1 < |z| < 3$.
-**Pg 4, Q3(c):** If $F(z) = \frac{3z-3}{(2z-1)(z-2)}$, find a Laurent series of $F(z)$ about $z=1$ convergent for $\frac{1}{2} < |z-1| < 1$.
-**Pg 6, Q2(c):** Expand $\ln(\frac{1+z}{1-z})$ in a Taylor series about, $z=0$.
-
----
-
-### **Singular points**
-
-**Pg 2, Q3(a):** Find all the singular points of $f(z) = \frac{(z+3i)^5}{(z^2-2z+5)^2}$.
-**Pg 4, Q2(b):** Define two types of singular point with example. Prove that $u = e^{-x}(x\sin y - y\cos y)$ is harmonic. Find v such that $f(z) = u+iv$ is analytic. Express $u+iv$ as a function of z.
-
----
-
-### **Residue / Cauchy's Residue theorem / Evaluation of residues**
-
-**Pg 1, Q3(a):** State and prove Cauchy's Residue theorem for a pole of order m at $z=a$ inside simple closed curve C.
-**Pg 1, Q3(b):** Evalute $\oint_C \frac{z^2-2z}{(z+1)^2(z^2+4)} dz$ Where C is the circle $|z|=3$
-**Pg 6, Q3(a):** If $F(z)$ is analytic inside and on a simple closed curve C except for a pole of order m and at $z=a$ inside C, then Prove that $\oint F(z)dz = 2\pi i \left[\lim_{z\to a} \frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{m-1}}\{(z-a)^m F(z)\}\right]$.
-**Pg 6, Q3(b):** Evaluate $\oint_c \frac{dz}{z(z-4)^2}$ where c is the circle, $|z|=1$.
-**Pg 17, CT-II, 3.(a):** Evaluate $\oint_C \frac{z+4}{z^2+2z+5}$ where C is the circle (i) $|z+1+i|=2$
-**Pg 17, CT-II, 3.(b):** Evaluate $\oint_C \frac{z^2-2z}{z^2+4} dz$ where C is the circle $|z|=3$
-**Pg 19, CT-II, 3.(b):** Evaluate $\oint_C \frac{z^2-2z}{(z+1)^2} dz$ where C is the circle $|z|=2$
-
----
-
-### **Contour integration**
-
-**Pg 1, Q4:** Evaluate the following contour integrals:
-(i) $\int_0^\infty \frac{1}{x^4+a^4} dx$
-(ii) $\int_0^{2\pi} \frac{d\theta}{a+b\sin\theta}$ if $a > |b|$.
-
-**Pg 2, Q4(b):** Evaluate the following by contour integration:
-(i) $\int_0^\infty \frac{dx}{1+x^6}$
-(ii) $\int_0^\infty \frac{\sin x}{x} dx$
-
-**Pg 4, Q4:** Evaluate the following contour integrations:
-a) $\int_0^\infty \frac{dx}{x^6+1}$
-b) $\int_0^{2\pi} \frac{\cos 3\theta}{5+4\cos 2\theta} d\theta$.
-
-**Pg 6, Q4(b):** Evaluate he following by contour integration (Any two):
-(iii) $\int_0^\infty \frac{\cos mx}{(x^2+1)^2} dx$ if $m>0$ *(Note: options (i) and (ii) were duplicates of previous papers).*
-
-
-## below all Qs from firoz note 
-Here are the full-text questions extracted exactly as written from the provided text, categorized by the relevant topics from your syllabus.
-
-_Note: As the exact PDF name and page numbers are not present in the provided raw text, the locations are mapped using the Chapter names and numbers indicated in the text_.
-
-### **Complex Number System**
+### Source: Firoz Note
 
 - **Problem-11:** Prove that, $\overline{z_1+z_2}=\overline{z_1}+\overline{z_2}$
     
@@ -236,10 +100,6 @@ _Note: As the exact PDF name and page numbers are not present in the provided ra
     - _Location:_ Chapter-1 Complex Number
         
 - **Prblm-2-1:** Prove that, $(i) arg(z_1z_2)=arg z_1+arg z_2$, $(ii) arg\overline{z}=-argz$
-    
-    - _Location:_ Chapter-1 Complex Number
-        
-- **Prblm-2.2:** Express $2+2\sqrt{3}i$ in polar form.
     
     - _Location:_ Chapter-1 Complex Number
         
@@ -298,209 +158,9 @@ _Note: As the exact PDF name and page numbers are not present in the provided ra
 - **Problem:** a) $\vert{}\frac{z-3}{z+3}\vert{}<2$
     
     - _Location:_ Chapter-1 Complex Number
-        
-
-### **Limits and continuity of a function of complex variable and related theorems**
-
-- **Ques:** a) $\lim_{z\rightarrow\infty}\frac{z-1}{z+1}$, b) $\lim_{z\rightarrow\infty}\frac{2z+3i}{z^2+z+1}$
-    
-    - _Location:_ Chapter-2 Functions, Limits & Continuity
-        
-- **Example-2:** Prove that $\lim_{z\rightarrow0}\frac{\overline{z}}{z}$ lim doesn't exists.
-    
-    - _Location:_ Chapter-2 Functions, Limits & Continuity
-        
-- **Example 03:** $\lim_{z\rightarrow i}(z-i)\frac{e^{mz}}{(z^2+1)}$
-    
-    - _Location:_ Chapter-2 Functions, Limits & Continuity
-        
-- **Example 04:** $\lim_{z\rightarrow ae^{i\pi/4}}(z-ae^{i\pi/4})\frac{1}{z^4+a^4}$
-    
-    - _Location:_ Chapter-2 Functions, Limits & Continuity
-        
-- **Example-05:** $\lim_{z\rightarrow ae^{i3\pi/4}}(z-ae^{i3\pi/4})\frac{1}{z^4+a^4}$
-    
-    - _Location:_ Chapter-2 Functions, Limits & Continuity
-        
-- **Example-06:** $f(z)=z^2$ if $z\ne i$, $0$ if $z=i$ (Implied: Check continuity)
-    
-    - _Location:_ Chapter-2 Functions, Limits & Continuity
-        
-- **Problem-7:** $f(z)=\frac{z^2+4}{z-2i}$ if $z\ne 2i$, $3+4i$ if $z=2i$ (Implied: Check continuity)
-    
-    - _Location:_ Chapter-2 Functions, Limits & Continuity
-        
-- **Example-8:** Explain the difference between the limit of a function of real variable & complex variable.
-    
-    - _Location:_ Chapter-2 Functions, Limits & Continuity
-        
-
-### **Complex differentiation and the Cauchy-Riemann equations**
-
-- **Problem 3.1.1:** $f(z)=z^2$ (Implied: Evaluate analytic function derivative)
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.1.3:** $f(z)=\overline{z}$ (Implied: Check if analytic)
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Problem:** $f(z)=ize^z$ (Implied: Satisfy Cauchy Riemann equations)
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Problem:** $f(z)=ze^{-z}$ (Implied: Satisfy Cauchy Riemann equations)
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.2.1:** Prove that, real & imaginary parts of an analytic function f(z) of a complex variable satisfy laplace's equation.
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.2.2:** Show that, $f(z)=\vert{}z\vert{}^2$ is diff at $z=0$ but not analytic at $z=0$
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.2.3:** Show that a) $u=n^3-3ny^2+3n^2-3y^2+1$ is harmonic b) find v such that $f(z)=u+iv$ is analytic. c) find also $f(z)$ in terms of $z$.
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.2.4:** Show that a) $u=2n(1-y)$ is harmonic b) find v such that $f(z)=u+iv$ is analytic. c) find also $f(z)$ in terms of $z$.
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.2.4:** (Milne- Thomson Rule) $u_1(n,y)=\frac{\partial u}{\partial x}$ and $u_2(x,y)=\frac{\partial u}{\partial y}$ prove that $f'(z)=u_1(z,0)-i u_2(z,0)$
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.2.5:** (Milne-Thomson Rule) If $v_1(x,y)=\frac{\partial v}{\partial x}$ and $v_2(x,y)=\frac{\partial v}{\partial y}$ prove that $f'(z)=v_1(z,0)-i v_2(z,0)$
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.2.5:** If $Im\{f'(z)\}=6x(2y-1)$ & $f(0)=3-2i$ find $f(z)$ & $f(1+i)$
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.4.1:** find the orthogonal set of curves $x^2-y^2=a^2$
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.4.2:** Find the orthogonal set of curves $e^{-n}(x\sin y-y\cos y)=\alpha$
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.4.3:** Prove that, in polar form Cauchy Riemann eqn can be written $\frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial\theta}$ & $\frac{\partial v}{\partial r}=\frac{-1}{r}\frac{\partial u}{\partial\theta}$
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm-3.4.4:** $\frac{\partial^2\Psi}{\partial r^2}+\frac{1}{r}\frac{\partial\Psi}{\partial r}+\frac{1}{r^2}\frac{\partial^2\Psi}{\partial\theta^2}=0$ That is $\frac{\partial^2u}{\partial r^2}+\frac{1}{r}\frac{\partial u}{\partial r}+\frac{1}{r^2}\frac{\partial^2u}{\partial\theta^2}=0$ and $\frac{\partial^2v}{\partial r^2}+\frac{1}{r}\frac{\partial v}{\partial r}+\frac{1}{r^2}\frac{\partial^2v}{\partial\theta^2}=0$
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Problem-3.4.5:** An analytic function with constant modulus is constant
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.4.6:** Show that, $u=\frac{1}{2}\log(x^2+y^2)$ is harmonic & determine its conjugate & find $f(z)$.
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-- **Prblm 3.4.7:** $\Psi=\tan^{-1}(y/x)$ Find $\phi=?$
-    
-    - _Location:_ Chapter-3 Complex Differentiation
-        
-
-### **Line Integral of a complex function**
-
-- **Prblm 4.1.1:** Evaluate $\int_C \overline{z} dz$ from $z=0$ to $z=4+2i$ along the curve C given by $z=t^2+it$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Prblm-4.1.2:** Evaluate $\int_{(0,3)}^{(2,4)}(2y+x^2)dx+(3x-y)dy$ i) Along parabola $x=2t$, $y=t^2+3$ ii) Straight line from $(0,3)$ to $(2,3)$ then $(2,3)$ to $(2,4)$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Prblm 4.1.3:** Evaluate $\int_0^{1+i}(x^2-iy)dz$ along the path $y=x$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Prblm 4.1.4:** Evaluate from $(1,2)$ to $(2,8)$ $\int_C (x^2-iy^2)dz$ i) $y=2x^2$ ii) Straight line from $(1,2)$ to $(2,8)$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Prblm 4.1.5:** $\int(z^2+3z)dz$ from $(2,0)$ to $(2,1)$ and $(2,1)$ to $(2,2)$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Prblm 4.3.1:** $\oint_C (2xy-x^2)dx+(x+y)dy$ along $y=x^2$ & $x=y^2$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Complen form of Green's Theorem Proof:** $\oint_C B(z,\overline{z})dz=2i\iint_R \frac{\partial B}{\partial \overline{z}} dx dy$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Prblm 4.4.9:** $F=3z+5$, $z=t^2+it$ Total Work done $z=0$ to $z=4+2i$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-
-### **Cauchy's Integral theorem & Cauchy's Integral formula**
-
-- **Problem 4.4.1:** Prove that, (i) $\oint_C dz=0$ (ii) $\oint_C z dz=0$ (iii) $\oint_C (z-z_0)dz=0$ where C is simple closed curve & $z_0$ is constant.
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **4.4.3:** Evaluate $\oint_C \frac{dz}{z-a}$ where is any simple closed curve C and $z=a$ is (i) outside (ii) Inside
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Prblm-4.4.4:** Find the value of $\oint_C (z^2+2z+1)dz$ where C is the circle $\vert{}z\vert{}=1$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Prblm-4.4.5:** Evaluate $\oint_C \frac{dz}{2z-3}$ where c is $\vert{}z\vert{}=1$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Prblm 4.4.6:** Evaluate $\frac{1}{2\pi i}\oint_C \frac{e^z}{z-2}dz$ where c is $\vert{}z\vert{}=1$
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **Prblm 4.4.7:** Evaluate $\oint_C \frac{dz}{(z-a)^n}$, $n=1,2,3$ Where $z=a$ is inside the curve C
-    
-    - _Location:_ Chapter-4 Complex Integration
-        
-- **5.1 Cauchy's Integration Formula:** prove that $f(a)=\frac{1}{2\pi i}\oint_C \frac{f(z)}{z-a}dz$
-    
-    - _Location:_ Chapter-5 Cauchy's Integral Formula
-        
-- **Prblm 5.1.1:** Evaluate $\oint_C \frac{e^z}{z-2}dz$, where C is the circle (i) $\vert{}z\vert{}=3$ (ii) $\vert{}z\vert{}=1$
-    
-    - _Location:_ Chapter-5 Cauchy's Integral Formula
-        
-- **Prblm-5.1.2:** Evaluate $\oint_C \frac{e^{2z}}{(z+1)^4}dz$ , where c is the circle $\vert{}z\vert{}=3$
-    
-    - _Location:_ Chapter-5 Cauchy's Integral Formula
-        
-- **Prblm 5.1.3:** Evaluate $\oint_C \frac{e^{iz}}{z^3}dz$ where C is the circle $\vert{}z\vert{}=2$
-    
-    - _Location:_ Chapter-5 Cauchy's Integral Formula
-        
-- **Prblm 5.1.4:** Evaluate $\oint \frac{1}{z(z-2)^4}dz$ where C is the circle $\vert{}z\vert{}=1$
-    
-    - _Location:_ Chapter-5 Cauchy's Integral Formula
-        
-- **Prblm 5.1.5:** Evaluate $\oint_C \frac{(z+4)}{(z^2+2z+5)}dz$ where C is the circle $\vert{}z+1-i\vert{}=2$
-    
-    - _Location:_ Chapter-5 Cauchy's Integral Formula
 
 
-## feruj sheet and all in 1slide
-
-Here are the full-text questions extracted exactly as written from the provided materials, organized by the topics outlined in your syllabus.
-
-### **Complex number system**
+### Source: Feruj Sheet & Slides
 
 - **Problem 1.1:** Prove that $z_{1}+z_{2}=\overline{z_{1}}+\overline{z_{2}}$ (Location: Feruj Sheet, pg. 1)
     
@@ -577,9 +237,74 @@ Here are the full-text questions extracted exactly as written from the provided 
 - **Problems 1.1 Question 15:** Represent graphically the set of values of z for which (a) $\vert{}z\vert{}>\vert{}z-1\vert{}$ (b) $\vert{}z+2\vert{}>1+\vert{}z-2\vert{}$ (Location: Feruj Sheet, pg. 13)
     
 - **Question:** $\vert{}z-1+3j\vert{}=2\vert{}$ (Location: Slide, pg. 22)
-    
 
-### **Limits and continuity of a function of complex variable and related theorems**
+
+---
+
+## 2. General Functions of a Complex Variable
+
+### Source: PDF Extraction
+
+**Pg 1, Q1(b):** Separate real and imaginary parts of the following function. $f(z) = \sqrt{z}$.
+**Pg 4, Q1(a):** Separate the real and imaginary parts of $f(z) = \sqrt{1-z}$.
+**Pg 6, Q1(a):** Separate the real and imaginary part of $f(z) = \sin 2z$.
+**Pg 13, CT-03, 3.(a):** Separate the real and imaginary parts of $z^x$, if $z = x+iy$
+**Pg 14, CT-01, 3.(a):** Separate the real and imaginary parts of $\frac{1}{1+z}$
+**Pg 18, CT-I, 1.(b):** Separate each of the following into real and imaginary parts, i.e., find $u(x, y)$ and $v(x, y)$ $f(z) = z + \frac{1}{z}$
+
+---
+
+
+---
+
+## 3. Limits and Continuity of a Function of Complex Variable
+
+### Source: PDF Extraction
+
+**Pg 6, Q1(c):** Is the function $f(z) = \begin{cases} \frac{z^2+2z}{z-i}; & z \neq i \\ 3+2i; & z=i \end{cases}$ Continuous at $z = i$? If it is not true, redefine the function to be continuous at $z = i$.
+**Pg 13, CT-03, 3.(b):** Evaluate $\lim_{z\to i} \frac{d}{dz}\left\{(z-\pi i)^2 \frac{e^z}{(z^2+\pi^2)^2}\right\}$
+**Pg 14, CT-01, 3.(b):** Evaluate $\lim_{z\to 2i} \left\{(z-2i) \frac{z^2-2z}{(z+1)^2(z^2+4)}\right\}$
+**Pg 18, CT-I, 3.(b):** $\lim_{z\to i/3} \frac{d}{dz} \left\{(z-i/3)^2 \cdot \frac{z}{(3z-i)^2(z-3i)^2}\right\}$
+
+---
+
+
+### Source: Firoz Note
+
+- **Ques:** a) $\lim_{z\rightarrow\infty}\frac{z-1}{z+1}$, b) $\lim_{z\rightarrow\infty}\frac{2z+3i}{z^2+z+1}$
+    
+    - _Location:_ Chapter-2 Functions, Limits & Continuity
+        
+- **Example-2:** Prove that $\lim_{z\rightarrow0}\frac{\overline{z}}{z}$ lim doesn't exists.
+    
+    - _Location:_ Chapter-2 Functions, Limits & Continuity
+        
+- **Example 03:** $\lim_{z\rightarrow i}(z-i)\frac{e^{mz}}{(z^2+1)}$
+    
+    - _Location:_ Chapter-2 Functions, Limits & Continuity
+        
+- **Example 04:** $\lim_{z\rightarrow ae^{i\pi/4}}(z-ae^{i\pi/4})\frac{1}{z^4+a^4}$
+    
+    - _Location:_ Chapter-2 Functions, Limits & Continuity
+        
+- **Example-05:** $\lim_{z\rightarrow ae^{i3\pi/4}}(z-ae^{i3\pi/4})\frac{1}{z^4+a^4}$
+    
+    - _Location:_ Chapter-2 Functions, Limits & Continuity
+        
+- **Example-06:** $f(z)=z^2$ if $z\ne i$, $0$ if $z=i$ (Implied: Check continuity)
+    
+    - _Location:_ Chapter-2 Functions, Limits & Continuity
+        
+- **Problem-7:** $f(z)=\frac{z^2+4}{z-2i}$ if $z\ne 2i$, $3+4i$ if $z=2i$ (Implied: Check continuity)
+    
+    - _Location:_ Chapter-2 Functions, Limits & Continuity
+        
+- **Example-8:** Explain the difference between the limit of a function of real variable & complex variable.
+    
+    - _Location:_ Chapter-2 Functions, Limits & Continuity
+
+
+### Source: Feruj Sheet & Slides
 
 - **Question 1:** Evaluate: (a) $lim_{z\rightarrow\infty}\frac{z-1}{z+i}$ and (b) $lim_{z\rightarrow\infty}\frac{2z+3i}{z^{2}+z+1}$ (Location: Feruj Sheet, pg. 15)
     
@@ -608,9 +333,128 @@ Here are the full-text questions extracted exactly as written from the provided 
 - **Problems 2.1 Question 5:** Find $lim_{z\rightarrow e^{\pi i/3}}(z-e^{\pi i/3})(\frac{z}{z^{3}+1})$ (Location: Feruj Sheet, pg. 20)
     
 - **Problems 2.1 Question 6:** Prove that If $u(x,y)=y^{3}/(x^{2}+y^{2})$ then $lim_{(x,y)\rightarrow(0,0)}u(x,y)=0$ (Location: Feruj Sheet, pg. 20)
-    
 
-### **Complex differentiation and the Cauchy-Riemann equations**
+
+---
+
+## 4. Complex Differentiation and Cauchy-Riemann Equations
+
+### Source: PDF Extraction
+
+**Pg 1, Q2(a):** Show that $f(z) = |z|^2$ is differentiable at $z=0$ but not analytic at $z=0$.
+**Pg 1, Q2(b):** Prove that $u = 2x(1-y)$ is a harmonic function and find v such that $f(z) = u+iv$ becomes an analytic function.
+**Pg 1, Q2(c):** In a two dimensional flow, the stream function is $\psi = \tan^{-1}(y/x)$. Find the velocity potential $\phi$ if $f(z) = \phi(x,y) + i\psi(x,y)$ is analytic.
+**Pg 2, Q2(a):** Prove that the real and imaginary parts of an analytic function satisfy Laplace's equation.
+**Pg 2, Q2(b):** Show that the function $u = \frac{1}{2}\log(x^2+y^2)$ is harmonic and find v such that $f(z) = u+iv$ is analytic.
+**Pg 2, Q2(c):** Define analytic function. Show that $\frac{d}{dz}(\bar{z})$ does not exists anywhere.
+**Pg 4, Q2(a):** State and prove necessary and sufficient condition for Cauchy-Riemann equations.
+**Pg 6, Q2(b):** Find the orthogonal trajectories of the family of curves $e^{-x}\cos y + xy = \alpha$
+**Pg 13, CT-04, 2.(a):** If $v = x^2-y^2-a^2$, find u such that $f(z) = u+iv$ is analytic. Aso find $f(z)$ interms of z.
+**Pg 15, CT-04, 2.(a):** If $v = \tan^{-1}(y/x)$, find u such that $f(z) = u+iv$ is analytic. Aso find $f(z)$ interms of z.
+**Pg 17, CT-II, 2.(a):** If $u = \frac{1}{2}\log(x^2-y^2)$, find v such that $f(z) = u+iv$ is analytic. Aso find $f(z)$ interms of z
+**Pg 19, CT-II, 2.(a):** If $v = 2y + x^2 - y^2$, find u such that $f(z) = u+iv$ is analytic. Aso find $f(z)$ interms of z.
+**Pg 20, CT-II, 2.(a):** Determine whether or not the function $2xy + i(x^2-y^2)$ is analytic
+**Pg 20, CT-II, 2.(b):** Find u such that $f(z) = u+iv$ is analytic and if $v = -2xy$
+**Pg 21, CT-I, 3.(a):** Test analyticity of the function $f(z) = e^{z^2}$
+
+**Multiple Choice Questions (Complex Differentiation & Integration Theory):**
+*Extracted from Pg 13, 15, 17, 19, 20:*
+* Write the correct answer from multiple choice:
+  * (a) Analytic function and derivable function of complex variable are same (i) yes (ii) no.(iii) none
+  * (a) (Alternative variant from Pg 17) Analytic function $f(z)$ is the derivative $f'(z)$ exists at all points of z in complex region. (i) yes (ii) no.(iii) none
+  * (b) Analytic function satisfy Laplacee's equn. & Cauchy Riemann equn. (i) yes (ii) no. (iii) both
+  * (c) $f'(z) = u_1(z,0) - iu_2(z,0)$ is (i) Laplace's equn. (ii) Milne-Thomson rule. (iii) both
+  * (d) Real & imaginary parts of an analytic function represents two families of curves are orthogonal(i) yes (ii) no.(iii) none
+  * (e) A point at which $f(z)$ fails to be Analytic is called singular point. (i) yes (ii) no.(iii) none
+  * (f) Which is Laplace's equn. (i) $\frac{\partial u}{\partial x} + \frac{\partial v}{\partial x} = 0$ (ii) $\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 v}{\partial x^2} = 0$ (iii) $\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0$ (i) ? (ii)? .(iii) ?
+  * (g) Define complex integration $\int_C f(z)dz$.
+  * (h) If $f(z)$ is analytic in a simple closed curve C then $\int_C f(z)dz =$ (i) $2\pi i$ (ii) 0 (iii) None.
+  * (h) (Alternative variant from Pg 20) If $f(z)$ be continuous in a region R and $\int_C f(z)dz = 0$ around a simple closed curve C then $f(z)$ is .........
+  * (i) $\oint_C Pdx + Qdy = ?$  *(Also written as $\oint_C udx + vdy = ?$ on pg 17)*
+  * (j) If $\int_C zdz = 0$, C is closed curve, then z (i)must be satisfy Cauchy-Riemanns equns. (ii) analytic function(iii)None
+  * (k) Difference between Cau.'s int. formu. & Cau.'s Resi. Them. are any point 'a' & 'poles of order m' respectively (i) no (ii) yes
+  * (l) All derivable function are Analytic function. Ans. (a) yes (b) no (Pg 21)
+  * (m) All Analytic function are derivable function. Ans. (a) yes (b) no (Pg 21)
+
+---
+
+
+### Source: Firoz Note
+
+- **Problem 3.1.1:** $f(z)=z^2$ (Implied: Evaluate analytic function derivative)
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.1.3:** $f(z)=\overline{z}$ (Implied: Check if analytic)
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Problem:** $f(z)=ize^z$ (Implied: Satisfy Cauchy Riemann equations)
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Problem:** $f(z)=ze^{-z}$ (Implied: Satisfy Cauchy Riemann equations)
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.2.1:** Prove that, real & imaginary parts of an analytic function f(z) of a complex variable satisfy laplace's equation.
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.2.2:** Show that, $f(z)=\vert{}z\vert{}^2$ is diff at $z=0$ but not analytic at $z=0$
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.2.3:** Show that a) $u=n^3-3ny^2+3n^2-3y^2+1$ is harmonic b) find v such that $f(z)=u+iv$ is analytic. c) find also $f(z)$ in terms of $z$.
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.2.4:** Show that a) $u=2n(1-y)$ is harmonic b) find v such that $f(z)=u+iv$ is analytic. c) find also $f(z)$ in terms of $z$.
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.2.4:** (Milne- Thomson Rule) $u_1(n,y)=\frac{\partial u}{\partial x}$ and $u_2(x,y)=\frac{\partial u}{\partial y}$ prove that $f'(z)=u_1(z,0)-i u_2(z,0)$
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.2.5:** (Milne-Thomson Rule) If $v_1(x,y)=\frac{\partial v}{\partial x}$ and $v_2(x,y)=\frac{\partial v}{\partial y}$ prove that $f'(z)=v_1(z,0)-i v_2(z,0)$
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.2.5:** If $Im\{f'(z)\}=6x(2y-1)$ & $f(0)=3-2i$ find $f(z)$ & $f(1+i)$
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.4.1:** find the orthogonal set of curves $x^2-y^2=a^2$
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.4.2:** Find the orthogonal set of curves $e^{-n}(x\sin y-y\cos y)=\alpha$
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.4.3:** Prove that, in polar form Cauchy Riemann eqn can be written $\frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial\theta}$ & $\frac{\partial v}{\partial r}=\frac{-1}{r}\frac{\partial u}{\partial\theta}$
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm-3.4.4:** $\frac{\partial^2\Psi}{\partial r^2}+\frac{1}{r}\frac{\partial\Psi}{\partial r}+\frac{1}{r^2}\frac{\partial^2\Psi}{\partial\theta^2}=0$ That is $\frac{\partial^2u}{\partial r^2}+\frac{1}{r}\frac{\partial u}{\partial r}+\frac{1}{r^2}\frac{\partial^2u}{\partial\theta^2}=0$ and $\frac{\partial^2v}{\partial r^2}+\frac{1}{r}\frac{\partial v}{\partial r}+\frac{1}{r^2}\frac{\partial^2v}{\partial\theta^2}=0$
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Problem-3.4.5:** An analytic function with constant modulus is constant
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.4.6:** Show that, $u=\frac{1}{2}\log(x^2+y^2)$ is harmonic & determine its conjugate & find $f(z)$.
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+        
+- **Prblm 3.4.7:** $\Psi=\tan^{-1}(y/x)$ Find $\phi=?$
+    
+    - _Location:_ Chapter-3 Complex Differentiation
+
+
+### Source: Feruj Sheet & Slides
 
 - **Problem 3.1.1:** Test the analyticity of the function $f(z)=\overline{z}$ (Location: Feruj Sheet, pg. 21)
     
@@ -659,9 +503,21 @@ Here are the full-text questions extracted exactly as written from the provided 
 - **Problems 3.1 Question 5:** Give an example such that u and v are harmonic but $u+iv$ is not analytic. (Location: Feruj Sheet, pg. 35)
     
 - **Problems 3.1 Question 6:** If $w=f(z)=u+iv$ is an analytic function and $v(x,y)=\frac{x-y}{x^{2}+y^{2}}$ , find u. (Location: Feruj Sheet, pg. 35)
-    
 
-### **Mapping by elementary functions / Conformal mapping**
+
+---
+
+## 5. Mapping by Elementary Functions / Conformal Mapping
+
+### Source: PDF Extraction
+
+**Pg 2, Q4(a):** Prove that the bilinear transformation can be considered as a combination of translation, rotation, stretching and inversion.
+**Pg 6, Q4(a):** Prove that every bilinear transformation transforms a circle of the z-plane into a circle of the w-plane.
+
+---
+
+
+### Source: Feruj Sheet & Slides
 
 - **Problem 8.1:** Let $w=f(z)=u+iv$ be analytic in a region R. Prove that $\frac{\partial(u,v)}{\partial(x,y)}=\vert{}f^{\prime}(z)\vert{}^{2}$ (Location: Feruj Sheet, pg. 76)
     
@@ -674,9 +530,56 @@ Here are the full-text questions extracted exactly as written from the provided 
 - **Problem 8.5:** Find a bilinear transformation that maps the upper half of the z plane into the unit circle in the w plane in such a way that $z=i$ is mapped into $w=0$ while the point at infinity is mapped into $w=-1$ (Location: Feruj Sheet, pg. 80)
     
 - **Problem 8.6:** Prove that the bilinear transformation transforms circles of the z plane into circles of the w plane where, by circles, we include circles of infinite radius, which are straight lines. (Location: Feruj Sheet, pg. 81)
-    
 
-### **Line Integral of a complex function**
+
+---
+
+## 6. Line Integral of a Complex Function
+
+### Source: PDF Extraction
+
+**Pg 6, Q3(c):** Evaluate $\oint_c |z|^2 dz$ around the square with vertices at $(0, 0), (1, 0), (1, 1)$, and $(0, 1)$.
+**Pg 13, CT-04, 2.(b):** (i) Define complex integration. (ii) Apply Green's theorem on the $\int_C f(z)dz$ and hence find the result by using Cauchy Riemann equations . *(Note: (i) added based on Pg 17 equivalent question)*
+
+---
+
+
+### Source: Firoz Note
+
+- **Prblm 4.1.1:** Evaluate $\int_C \overline{z} dz$ from $z=0$ to $z=4+2i$ along the curve C given by $z=t^2+it$
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Prblm-4.1.2:** Evaluate $\int_{(0,3)}^{(2,4)}(2y+x^2)dx+(3x-y)dy$ i) Along parabola $x=2t$, $y=t^2+3$ ii) Straight line from $(0,3)$ to $(2,3)$ then $(2,3)$ to $(2,4)$
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Prblm 4.1.3:** Evaluate $\int_0^{1+i}(x^2-iy)dz$ along the path $y=x$
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Prblm 4.1.4:** Evaluate from $(1,2)$ to $(2,8)$ $\int_C (x^2-iy^2)dz$ i) $y=2x^2$ ii) Straight line from $(1,2)$ to $(2,8)$
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Prblm 4.1.5:** $\int(z^2+3z)dz$ from $(2,0)$ to $(2,1)$ and $(2,1)$ to $(2,2)$
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Prblm 4.3.1:** $\oint_C (2xy-x^2)dx+(x+y)dy$ along $y=x^2$ & $x=y^2$
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Complen form of Green's Theorem Proof:** $\oint_C B(z,\overline{z})dz=2i\iint_R \frac{\partial B}{\partial \overline{z}} dx dy$
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Prblm 4.4.9:** $F=3z+5$, $z=t^2+it$ Total Work done $z=0$ to $z=4+2i$
+    
+    - _Location:_ Chapter-4 Complex Integration
+
+
+### Source: Feruj Sheet & Slides
 
 - **Example:** Evaluate $\int_{0}^{2+i}(\overline{z})^{2}dz$ along the real axis from $z=0$ to $z=2$ and then along a line parallel to y-axis from $z=2$ to $z=2+i.$ (Location: Slide, pg. 4)
     
@@ -711,9 +614,77 @@ Here are the full-text questions extracted exactly as written from the provided 
 - **Problem 4.3.1:** Verify Green's Theorem in the plane for $\oint_{c}(2xy-x^{2})dx+(x+y^{2})dy$ where C is the closed curve of the region bounded by $y=x^{2}$ and $y^{2}=x$. (Location: Feruj Sheet, pg. 40)
     
 - **Question:** Complex form of Green's Theorem: If $B(z,\overline{z})$ is continuous and has continuous partial derivatives in a region and on its boundary C, where $z=x+iy$ and $\overline{z}=x-iy$, Prove that Green's theorem can be written in complex form as $\oint_{C}B(z,\overline{z})dz=2~i\iint_{R}\frac{\partial B}{\partial\overline{z}}dxdy$ . (Location: Feruj Sheet, pg. 40)
-    
 
-### **Cauchy's Integral theorem & Cauchy's Integral formula**
+
+---
+
+## 7. Cauchy's Integral Theorem & Cauchy's Integral Formula
+
+### Source: PDF Extraction
+
+**Pg 2, Q3(b):** State and prove Cauchy's integral formula.
+**Pg 2, Q3(c):** Evaluate $\oint_c \frac{e^z}{(z^2+\pi^2)^2} dz$ where c is the circle $|z|=4$.
+**Pg 4, Q3(b):** Evaluate $\frac{1}{2\pi i}\oint_c \frac{e^{zt}}{z^2+1} dz$, if $t > 0$ and c is the circle $|z|=3$.
+**Pg 13, CT-04, 4.(a):** Evaluate $\oint_C \frac{e^{iz}}{(z+3)^4} dz$ where C is the circle (i) $|z|=1$ (ii) $|z|=4$
+**Pg 13, CT-04, 4.(b):** Evaluate $\oint_C \frac{3z^2+z}{z^2-1} dz$ where C is the circle $|z-1|=1$
+**Pg 15, CT-04, 3.(a):** Evaluate $\oint_C \frac{z^2+1}{z^2-1} dz$ where C is the circle $|z-1|=1$
+**Pg 15, CT-04, 3.(b):** Evaluate $\oint_C \frac{z^2}{(z-1)(z+2)^2} dz$ where C is the circle $|z|=3$
+
+---
+
+
+### Source: Firoz Note
+
+- **Problem 4.4.1:** Prove that, (i) $\oint_C dz=0$ (ii) $\oint_C z dz=0$ (iii) $\oint_C (z-z_0)dz=0$ where C is simple closed curve & $z_0$ is constant.
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **4.4.3:** Evaluate $\oint_C \frac{dz}{z-a}$ where is any simple closed curve C and $z=a$ is (i) outside (ii) Inside
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Prblm-4.4.4:** Find the value of $\oint_C (z^2+2z+1)dz$ where C is the circle $\vert{}z\vert{}=1$
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Prblm-4.4.5:** Evaluate $\oint_C \frac{dz}{2z-3}$ where c is $\vert{}z\vert{}=1$
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Prblm 4.4.6:** Evaluate $\frac{1}{2\pi i}\oint_C \frac{e^z}{z-2}dz$ where c is $\vert{}z\vert{}=1$
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **Prblm 4.4.7:** Evaluate $\oint_C \frac{dz}{(z-a)^n}$, $n=1,2,3$ Where $z=a$ is inside the curve C
+    
+    - _Location:_ Chapter-4 Complex Integration
+        
+- **5.1 Cauchy's Integration Formula:** prove that $f(a)=\frac{1}{2\pi i}\oint_C \frac{f(z)}{z-a}dz$
+    
+    - _Location:_ Chapter-5 Cauchy's Integral Formula
+        
+- **Prblm 5.1.1:** Evaluate $\oint_C \frac{e^z}{z-2}dz$, where C is the circle (i) $\vert{}z\vert{}=3$ (ii) $\vert{}z\vert{}=1$
+    
+    - _Location:_ Chapter-5 Cauchy's Integral Formula
+        
+- **Prblm-5.1.2:** Evaluate $\oint_C \frac{e^{2z}}{(z+1)^4}dz$ , where c is the circle $\vert{}z\vert{}=3$
+    
+    - _Location:_ Chapter-5 Cauchy's Integral Formula
+        
+- **Prblm 5.1.3:** Evaluate $\oint_C \frac{e^{iz}}{z^3}dz$ where C is the circle $\vert{}z\vert{}=2$
+    
+    - _Location:_ Chapter-5 Cauchy's Integral Formula
+        
+- **Prblm 5.1.4:** Evaluate $\oint \frac{1}{z(z-2)^4}dz$ where C is the circle $\vert{}z\vert{}=1$
+    
+    - _Location:_ Chapter-5 Cauchy's Integral Formula
+        
+- **Prblm 5.1.5:** Evaluate $\oint_C \frac{(z+4)}{(z^2+2z+5)}dz$ where C is the circle $\vert{}z+1-i\vert{}=2$
+    
+    - _Location:_ Chapter-5 Cauchy's Integral Formula
+
+
+### Source: Feruj Sheet & Slides
 
 - **Example:** Evaluate $\int(z-a)^{n}dz$ where c is the circle with centre a and r. Discuss the case when $n=-1$. (Location: Slide, pg. 7)
     
@@ -792,9 +763,22 @@ Here are the full-text questions extracted exactly as written from the provided 
 - **Problem 5.1.7:** Evaluate $\int_{C}\frac{z+1}{(z-3)(z-1)}dz,$ where C is $|z|=2$ (Location: Feruj Sheet, pg. 50)
     
 - **Problem 5.1.8:** Evaluate $\int_{c}\frac{z+4}{z^{2}+2z+5}$ Where C is the circle $(i)|z+1+i|=2$ $(ii)|z+1-i|=2$ (iii) $|z|=1$ (Location: Feruj Sheet, pg. 50)
-    
 
-### **Taylor's theorem and Laurent's theorem**
+
+---
+
+## 8. Taylor's Theorem and Laurent's Theorem
+
+### Source: PDF Extraction
+
+**Pg 1, Q3(c):** Expand $f(z) = \frac{1}{(z+1)(z+3)}$ in a Laurent series valid for $1 < |z| < 3$.
+**Pg 4, Q3(c):** If $F(z) = \frac{3z-3}{(2z-1)(z-2)}$, find a Laurent series of $F(z)$ about $z=1$ convergent for $\frac{1}{2} < |z-1| < 1$.
+**Pg 6, Q2(c):** Expand $\ln(\frac{1+z}{1-z})$ in a Taylor series about, $z=0$.
+
+---
+
+
+### Source: Feruj Sheet & Slides
 
 - **Problem 6.1:** Prove Taylor's theorem: If $f(z)$ is analytic inside a circle C with center at a, then for all z inside C, $f(z)=f(a)+f^{\prime}(a)(z-a)+\frac{f^{\prime\prime}(a)}{2!}(z-a)^{2}+\frac{f^{\prime\prime\prime}(a)}{3!}(z-a)^{3}+\cdot\cdot\cdot$ (Location: Feruj Sheet, pg. 58)
     
@@ -809,14 +793,43 @@ Here are the full-text questions extracted exactly as written from the provided 
 - **Problem 6.6:** Prove Laurent's theorem: Suppose $f(z)$ is analytic inside and on the boundary of the ring-shaped region R bounded by two concentric circles $C_{1}$ and $C_{2}$ with center at a and respective radii r and $r_{2}(r_{1}>r_{2})$ (see Fig. 6-5). Then for all z in R, $f(z)=\sum_{n=0}^{\infty}a_{n}(z-a)^{n}+\sum_{n=1}^{\infty}\frac{a_{-n}}{(z-a)^{n}}$ (Location: Feruj Sheet, pg. 61)
     
 - **Problem 6.7:** Expand $f(z)=\frac{1}{(z+1)(z+3)}$ in a Laurent series valid for: (a) $1<|z|<3$ (b) $|z|>3$, (c) $0<|z+1|<2$ (d) $|z|<1$. (Location: Feruj Sheet, pg. 63)
-    
 
-### **Singular points**
+
+---
+
+## 9. Singular Points
+
+### Source: PDF Extraction
+
+**Pg 2, Q3(a):** Find all the singular points of $f(z) = \frac{(z+3i)^5}{(z^2-2z+5)^2}$.
+**Pg 4, Q2(b):** Define two types of singular point with example. Prove that $u = e^{-x}(x\sin y - y\cos y)$ is harmonic. Find v such that $f(z) = u+iv$ is analytic. Express $u+iv$ as a function of z.
+
+---
+
+
+### Source: Feruj Sheet & Slides
 
 - **Example:** Locate and name all the singularities of $f(z)=\frac{z^{8}+z^{4}+2}{(z-1)^{3}(3z+2)^{2}}.$ Determine where $f(z)$ is analytic. (Location: Slide, pg. 14)
-    
 
-### **Residue & Cauchy's Residue theorem**
+
+---
+
+## 10. Residue & Cauchy's Residue Theorem
+
+### Source: PDF Extraction
+
+**Pg 1, Q3(a):** State and prove Cauchy's Residue theorem for a pole of order m at $z=a$ inside simple closed curve C.
+**Pg 1, Q3(b):** Evalute $\oint_C \frac{z^2-2z}{(z+1)^2(z^2+4)} dz$ Where C is the circle $|z|=3$
+**Pg 6, Q3(a):** If $F(z)$ is analytic inside and on a simple closed curve C except for a pole of order m and at $z=a$ inside C, then Prove that $\oint F(z)dz = 2\pi i \left[\lim_{z\to a} \frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{m-1}}\{(z-a)^m F(z)\}\right]$.
+**Pg 6, Q3(b):** Evaluate $\oint_c \frac{dz}{z(z-4)^2}$ where c is the circle, $|z|=1$.
+**Pg 17, CT-II, 3.(a):** Evaluate $\oint_C \frac{z+4}{z^2+2z+5}$ where C is the circle (i) $|z+1+i|=2$
+**Pg 17, CT-II, 3.(b):** Evaluate $\oint_C \frac{z^2-2z}{z^2+4} dz$ where C is the circle $|z|=3$
+**Pg 19, CT-II, 3.(b):** Evaluate $\oint_C \frac{z^2-2z}{(z+1)^2} dz$ where C is the circle $|z|=2$
+
+---
+
+
+### Source: Feruj Sheet & Slides
 
 - **Question (5.2):** Cauchy's Residue theorem: If $F(z)$ is analytic inside and on a simple closed curve C except for a pole of order m at $z=a$ inside C, Prove that (i) $\frac{1}{2\pi~i}\oint_{C}F(z)dz=lim_{z\rightarrow a}\frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{m-1}}\{(z-a)^{m}F(z)\}$ (ii) if there are two poles at $z=a_{1}$ and $z=a_{2}$ inside C of orders $m_{1}$ and $m_{2}$ respectively, Prove that... (iii) In general if $F(z)$ has a number of poles inside C with residues $R_{1}$, $R_{2}$, $R_{3}$,........., then $\oint_{C}F(z)dz=2\pi i\{R_{1}+R_{2}+R_{3}+\cdot\cdot\cdot...\}$ (Location: Feruj Sheet, pg. 52)
     
@@ -833,9 +846,31 @@ Here are the full-text questions extracted exactly as written from the provided 
 - **Example 2:** The function $f(z) = 1/(z – 1)^{2}(z – 3)$ has a pole of order 2 at $z = 1$. Find the residues. (Location: Slide, pg. 131)
     
 - **Example 4:** Evaluate $\int_{c}\frac{d~z}{z^{2}-1}$ where (b) the contour C is the circle |z|= 2 (Location: Slide, pg. 138)
-    
 
-### **Contour integration / Evaluation of residues**
+
+---
+
+## 11. Contour Integration
+
+### Source: PDF Extraction
+
+**Pg 1, Q4:** Evaluate the following contour integrals:
+(i) $\int_0^\infty \frac{1}{x^4+a^4} dx$
+(ii) $\int_0^{2\pi} \frac{d\theta}{a+b\sin\theta}$ if $a > |b|$.
+
+**Pg 2, Q4(b):** Evaluate the following by contour integration:
+(i) $\int_0^\infty \frac{dx}{1+x^6}$
+(ii) $\int_0^\infty \frac{\sin x}{x} dx$
+
+**Pg 4, Q4:** Evaluate the following contour integrations:
+a) $\int_0^\infty \frac{dx}{x^6+1}$
+b) $\int_0^{2\pi} \frac{\cos 3\theta}{5+4\cos 2\theta} d\theta$.
+
+**Pg 6, Q4(b):** Evaluate he following by contour integration (Any two):
+(iii) $\int_0^\infty \frac{\cos mx}{(x^2+1)^2} dx$ if $m>0$ *(Note: options (i) and (ii) were duplicates of previous papers).*
+
+
+### Source: Feruj Sheet & Slides
 
 - **Example:** Evaluate the Cauchy principal value of $\int_{-\infty}^{\infty}\frac{dx}{(x^{2}+1)(x^{2}+9)}$ (Location: Slide, pg. 150)
     
@@ -862,3 +897,6 @@ Here are the full-text questions extracted exactly as written from the provided 
 - **Problem 7.7:** Given $a>|b|$, show that $\int_{0}^{2\pi}\frac{d\theta}{a+b~sin~\theta}=\frac{2\pi}{\sqrt{a^{2}-b^{2}}}.$ (Location: Feruj Sheet, pg. 73)
     
 - **Problem 7.8:** Show that $\int_{0}^{2\pi}\frac{cos~3\theta}{5-4~cos~\theta}d\theta=\frac{\pi}{12}.$ (Location: Feruj Sheet, pg. 74)
+
+
+---
