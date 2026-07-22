@@ -847,7 +847,7 @@ To find the distance of a fault from the test end using the Murray Loop Test, we
 The formula $l_1 = \frac{Q}{P + Q} (2l)$ calculates the exact distance from the test end to the fault point. You only need to know the total length of one single cable run ($l$) and the balanced values of the ratio arms ($P$ and $Q$).
 
 *   **Reference in eee2211 slide:** Pages 79, 80.
-### 29. Page 29, Class test #3 Q1: Suppose, you are assigned to localize a short circuit fault using Murray loop test. Unlike the conventional test set-up, where a sound cable identical to the faulty cable is used as one of the bridge arms, here, a resistance equal to the sound cable resistance is inserted in that bridge arm instead of the actual cable. The connecting wire resistance is negligible. (c) Derive the equation for finding the fault location for the above situation. (d) Given, the sound cable resistance = 10 $\Omega$, resistance of the ratio arms, P= 30 $\Omega$, Q= 10 $\Omega$, length of the cable= 10 km. Find the location of the fault.
+### 29.  ✅ Page 29, Class test #3 Q1: Suppose, you are assigned to localize a short circuit fault using Murray loop test. Unlike the conventional test set-up, where a sound cable identical to the faulty cable is used as one of the bridge arms, here, a resistance equal to the sound cable resistance is inserted in that bridge arm instead of the actual cable. The connecting wire resistance is negligible. (c) Derive the equation for finding the fault location for the above situation. (d) Given, the sound cable resistance = 10 $\Omega$, resistance of the ratio arms, P= 30 $\Omega$, Q= 10 $\Omega$, length of the cable= 10 km. Find the location of the fault.
 
 **Solution:**
 
@@ -1040,7 +1040,7 @@ The effective impedance of the specimen is **$132.24\ \Omega$**.
 
 ### 35. Page 4, Q.4 (b): What value should $C_1$ have for $V_0$ to be equal to $0.1V_i$ for the circuit shown in following figure? 
 
-[figure Involved] - The figure shows a voltage divider circuit. The top arm has a resistor $900\text{ k}\Omega$ in parallel with capacitor $C_1$. The bottom arm has a resistor $100\text{ k}\Omega$ in parallel with a capacitor $45\text{ pF}$. The input voltage $V_i$ is across the entire combination, and output voltage $V_0$ is across the bottom arm.
+[figure Involved] -  ![[Pasted image 20260722082537.png]] The figure shows a voltage divider circuit. The top arm has a resistor $900\text{ k}\Omega$ in parallel with capacitor $C_1$. The bottom arm has a resistor $100\text{ k}\Omega$ in parallel with a capacitor $45\text{ pF}$. The input voltage $V_i$ is across the entire combination, and output voltage $V_0$ is across the bottom arm.
 
 **Solution:**
 This circuit is a compensated voltage divider, exactly like the ones used in oscilloscope probes to step down high frequency signals without distorting their shape. 
@@ -1490,6 +1490,7 @@ This equation proves that the modified De Sauty's bridge **cannot accurately det
 ### 45. Page 11, Q.3. (c): A Maxwell's capacitance bridge shown in the figure below is used to measure an unknown inductance in comparison with capacitance. The various values at balance are: $R_2 = 400\ \Omega$, $R_3 = 600\ \Omega$, $R_4 = 1000\ \Omega$, $C_4 = 0.5\ \mu F$. Calculate the values of $R_1$ and $L_1$. Calculate also the value of storage factor of coil if frequency is 1000 Hz.
 
 **Solution:**
+![[Pasted image 20260722091443.png]]
 *(Note: This is the exact same electrical setup as Question 41, but this prompt explicitly provides the frequency ($1000\text{ Hz}$) needed to calculate the storage/Q-factor numerically).*
 
 **Given Data:**

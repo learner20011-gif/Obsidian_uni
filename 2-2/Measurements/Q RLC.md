@@ -45,7 +45,7 @@
 
 33.   **Page 2, Q.3. (a):** Explain why Hay's bridge is useful for measuring the inductance of coils with a storage factor Q>10.
 34.   **Page 2, Q.3. (b):** An Owen's bridge is used to measure the properties of a sample of sheet steel at 2 kHz. At balance the various values are: $R_2 = 834\ \Omega$, $R_3 = 100\ \Omega$, $C_2 = 0.124\ \mu F$ and $C_4 = 0.1\ \mu F$. Derive the balance conditions and calculate the effective impedance of the specimen under test conditions.
-35.   **Page 4, Q.4 (b):** What value should $C_1$ have for $V_0$ to be equal to $0.1 V_i$ for the circuit shown in following figure? ![[Pasted image 20260707154055.png]]**[figure Involved]**
+35.   **Page 4, Q.4 (b):** What value should $C_1$ have for $V_0$ to be equal to $0.1 V_i$ for the circuit shown in following figure?   ![[Pasted image 20260722082519.png]]   **[figure Involved]**
 
 36.   **Page 5, Q.8 (a):** Illustrate the concept of dissipation factor of a capacitor with proper phasor diagram.
 37.   **Page 5, Q.8 (b):** Analyze how Hay's bridge is more advantages over Maxwell's inductance bridge for measurement of inductance of high Q-coils.

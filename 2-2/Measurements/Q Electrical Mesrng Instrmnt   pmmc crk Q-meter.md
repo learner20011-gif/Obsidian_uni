@@ -126,7 +126,9 @@ Here are the full texts for all the questions related to **Electrical Measuring 
 
 
 ### **1. Cathode Ray Oscilloscope (CRO) & Cathode Ray Tube (CRT)**
+  - **Page 4, Q.4 (b):** What value should $C_1$ have for $V_0$ to be equal to $0.1 V_i$ for the circuit shown in following figure?   ![[Pasted image 20260722082519.png]]   **[figure Involved]**
 
+-   **Page 5, Q.8 (a):** Illustrate the concept of dissipation factor of a capacitor with proper phasor diagram.
 *   **Page 5, Q.5 (a):** Graphically analyze the Lissajous patterns generated in the CRO when two sinusoid at voltages of equal magnitude and frequency are applied to the vertical and horizontal deflection plates, but the signal at vertical deflection plate has the following phase angle: (i) $0^\circ$ (ii) $45^\circ$ and (iii) $90^\circ$
 *   **Page 5, Q.5 (b):** "For a given accelerating voltage, and for particular dimensions of CRT, the deflection of the electron beam is directly proportional to the deflecting voltage."- Justify the statement mathematically.
 *   **Page 5, Q.5 (c):** Describe the operation of a time base generator circuit for CRO.
