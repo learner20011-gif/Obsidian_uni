@@ -1,6 +1,16 @@
 
 
+### Math complex variable class note (L).pdf
 
+- Q38, Q39, Q40, Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50, Q51, Q52, Q53, Q54, Q55, Q56, Q57, Q58, Q59, Q60, Q61, Q62, Q63
+    
+- Q112, Q113, Q114, Q115, Q116, Q117, Q118, Q119
+    
+- Q164, Q165, Q166, Q167, Q168, Q169, Q170, Q171, Q172, Q173, Q174, Q175, Q176, Q177, Q178, Q179, Q180, Q181
+    
+- Q216, Q217, Q218, Q219, Q220, Q221, Q222, Q223
+    
+- Q248, Q249, Q250, Q251, Q252, Q253, Q254, Q255, Q256, Q257, Q258, Q259
 
 # Complex Variable - Comprehensive Question Bank (Aggregated by Topic)
 
