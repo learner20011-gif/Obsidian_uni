@@ -1499,9 +1499,7 @@ The expanded LHS perfectly matches the expanded RHS. **(Proved)**
 
 ***
 
-### Q43. Prblm-12: Prove that, $(v) z_1\overline{z_2}+\overline{z_1}\overline{z_2}=2Re(z_1\overline{z_2})$
-
-*(Note: There is a typographical error in the provided source text. The term $\overline{z_1}\overline{z_2}$ should be written as $\overline{z_1}z_2$ or $\overline{z_1 \overline{z_2}}$ to make the mathematical identity true. We will prove the standard intended identity: $z_1\overline{z_2} + \overline{z_1}z_2 = 2Re(z_1\overline{z_2})$, which is also correctly written in Q65 of your document).*
+### Q43. Prblm-12: Prove that, $z_1\overline{z_2} + \overline{z_1}z_2 = 2Re(z_1\overline{z_2})$
 
 **Solution:**
 
