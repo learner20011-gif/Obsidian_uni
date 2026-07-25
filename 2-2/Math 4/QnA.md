@@ -2852,5 +2852,178 @@ $$z = 4e^{i\pi/3}$$
 
 **Answer:** 
 The polar form is **$4\left(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\right)$**.
+Here are the detailed solutions for the next four questions (Q73 to Q76). 
+
+*(Note: Several of these questions from the Feruj Sheet are conceptually identical to problems covered earlier in the Firoz Note section. Detailed step-by-step solutions are provided again below for completeness).*
+
+### Q73. Prob. 2.3: Express $-\sqrt{6}-\sqrt{2}i$ in polar form.
+
+**Solution:**
+
+We need to convert the Cartesian complex number $z = -\sqrt{6} - \sqrt{2}i$ into the polar form $z = r(\cos\theta + i\sin\theta)$.
+
+**Step 1: Identify Cartesian coordinates.**
+The complex number is in the form $z = x + iy$.
+*   Real part: $x = -\sqrt{6}$
+*   Imaginary part: $y = -\sqrt{2}$
+
+**Step 2: Calculate the Modulus ($r$).**
+The modulus represents the absolute distance from the origin $(0,0)$.
+$$r = \sqrt{x^2 + y^2}$$
+$$r = \sqrt{(-\sqrt{6})^2 + (-\sqrt{2})^2}$$
+$$r = \sqrt{6 + 2}$$
+$$r = \sqrt{8} = \sqrt{4 \cdot 2} = 2\sqrt{2}$$
+
+**Step 3: Calculate the Argument ($\theta$).**
+The argument $\theta$ is the angle the vector makes with the positive real axis.
+Because both $x$ and $y$ are negative, the point lies in the **third quadrant**.
+
+First, find the reference angle $\alpha$ in the first quadrant:
+$$\alpha = \tan^{-1}\left(\left| \frac{y}{x} \right|\right)$$
+$$\alpha = \tan^{-1}\left(\frac{\sqrt{2}}{\sqrt{6}}\right)$$
+$$\alpha = \tan^{-1}\left(\sqrt{\frac{2}{6}}\right) = \tan^{-1}\left(\sqrt{\frac{1}{3}}\right) = \tan^{-1}\left(\frac{1}{\sqrt{3}}\right)$$
+From standard trigonometric ratios, we know that $\tan(\frac{\pi}{6}) = \frac{1}{\sqrt{3}}$. Thus, $\alpha = \frac{\pi}{6}$ (or $30^\circ$).
+
+Now, adjust for the third quadrant. 
+To find the **principal argument** (which must be in the range $-\pi < \theta \le \pi$), we subtract $\pi$ from the reference angle:
+$$\theta = -\pi + \alpha = -\pi + \frac{\pi}{6} = -\frac{6\pi}{6} + \frac{\pi}{6} = -\frac{5\pi}{6}$$
+*(Alternatively, using a positive argument in the range $0 \le \theta < 2\pi$: $\theta = \pi + \pi/6 = 7\pi/6$).*
+
+**Step 4: Write the polar form.**
+Substitute the modulus $r = 2\sqrt{2}$ and the principal argument $\theta = -\frac{5\pi}{6}$ into the polar structure:
+$$z = 2\sqrt{2} \left[ \cos\left(-\frac{5\pi}{6}\right) + i\sin\left(-\frac{5\pi}{6}\right) \right]$$
+
+**Answer:** 
+The polar form is **$2\sqrt{2} \left( \cos\left(-\frac{5\pi}{6}\right) + i\sin\left(-\frac{5\pi}{6}\right) \right)$** or equivalently **$2\sqrt{2}e^{-i5\pi/6}$**.
+
+***
+
+### Q74. Question: Prove De Moivre's theorem: $(\cos~\theta+i~\sin~\theta)^{n}=\cos~n\theta+i~\sin~n\theta$ where n is any positive integer
+![[IMG_20260725_092823034_HDR.jpg]]
+**Solution:**
+
+We will prove this theorem using the Principle of Mathematical Induction.
+
+**Step 1: Verify the Base Case ($n = 1$)**
+For $n = 1$, we substitute $1$ into both sides of the equation.
+*   **Left-Hand Side (LHS):** $(\cos\theta + i\sin\theta)^1 = \cos\theta + i\sin\theta$
+*   **Right-Hand Side (RHS):** $\cos(1\cdot\theta) + i\sin(1\cdot\theta) = \cos\theta + i\sin\theta$
+Since LHS = RHS, the statement is true for $n=1$.
+
+**Step 2: Formulate the Inductive Hypothesis**
+Assume that the theorem holds true for some arbitrary positive integer $k$. That is:
+$$(\cos\theta + i\sin\theta)^k = \cos(k\theta) + i\sin(k\theta) \quad \text{--- (Assumption)}$$
+
+**Step 3: Perform the Inductive Step ($n = k + 1$)**
+We must prove that if the assumption holds, the theorem must also be true for $n = k + 1$. 
+Let's evaluate the expression for $n = k + 1$:
+$$(\cos\theta + i\sin\theta)^{k+1}$$
+
+Using standard exponent rules ($x^{a+b} = x^a \cdot x^b$), split the expression:
+$$= (\cos\theta + i\sin\theta)^k \cdot (\cos\theta + i\sin\theta)^1$$
+
+Now, substitute our Inductive Hypothesis for the first term:
+$$= (\cos(k\theta) + i\sin(k\theta)) \cdot (\cos\theta + i\sin\theta)$$
+
+Multiply the two complex binomials together (using FOIL):
+$$= \cos(k\theta)\cos\theta + i\cos(k\theta)\sin\theta + i\sin(k\theta)\cos\theta + i^2\sin(k\theta)\sin\theta$$
+
+Since $i^2 = -1$, substitute it and group the real and imaginary parts:
+$$= [\cos(k\theta)\cos\theta - \sin(k\theta)\sin\theta] + i[\sin(k\theta)\cos\theta + \cos(k\theta)\sin\theta]$$
+
+**Step 4: Apply Trigonometric Compound Angle Identities**
+We utilize the standard angle addition formulas:
+1.  $\cos(A + B) = \cos A\cos B - \sin A\sin B$
+2.  $\sin(A + B) = \sin A\cos B + \cos A\sin B$
+
+Let $A = k\theta$ and $B = \theta$:
+*   The real part becomes: $\cos(k\theta + \theta) = \cos((k+1)\theta)$
+*   The imaginary part becomes: $\sin(k\theta + \theta) = \sin((k+1)\theta)$
+
+Substitute these back:
+$$= \cos((k+1)\theta) + i\sin((k+1)\theta)$$
+
+**Step 5: Conclusion**
+We have shown that if the formula is true for $n=k$, it inherently must be true for $n=k+1$. Because we proved it is true for the base case $n=1$, it is therefore true for all positive integers $n$ by mathematical induction. **(Proved)**
+
+***
+
+### Q75. Example 1.3.8. (Double-angle Identities): Use De Moivre's identity with $n=2$ to derive the double-angle formulas for $\cos~2\theta$ and $\sin 2\theta$.
+
+**Solution:**
+
+De Moivre's Theorem allows us to quickly link exponents of complex numbers to multiples of angles, making it a powerful tool to derive trigonometric identities.
+
+**Step 1: Apply De Moivre's theorem for $n=2$.**
+The theorem states: $(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)$.
+Substitute $n = 2$:
+$$(\cos\theta + i\sin\theta)^2 = \cos(2\theta) + i\sin(2\theta) \quad \text{--- (Equation 1)}$$
+
+**Step 2: Expand the left side using basic algebra.**
+Treat $(\cos\theta + i\sin\theta)$ as a standard binomial $(a+b)$ and square it using $(a+b)^2 = a^2 + 2ab + b^2$:
+$$(\cos\theta + i\sin\theta)^2 = (\cos\theta)^2 + 2(\cos\theta)(i\sin\theta) + (i\sin\theta)^2$$
+$$(\cos\theta + i\sin\theta)^2 = \cos^2\theta + 2i\sin\theta\cos\theta + i^2\sin^2\theta$$
+
+We know that the imaginary unit squared is $i^2 = -1$. Substitute this into the last term:
+$$(\cos\theta + i\sin\theta)^2 = \cos^2\theta + 2i\sin\theta\cos\theta - \sin^2\theta$$
+
+Rearrange to group the real terms and imaginary terms:
+$$(\cos\theta + i\sin\theta)^2 = (\cos^2\theta - \sin^2\theta) + i(2\sin\theta\cos\theta) \quad \text{--- (Equation 2)}$$
+
+**Step 3: Equate the two representations.**
+Since Equation 1 and Equation 2 are expansions of the exact same expression, they must be perfectly equal to each other:
+$$\cos(2\theta) + i\sin(2\theta) = (\cos^2\theta - \sin^2\theta) + i(2\sin\theta\cos\theta)$$
+
+**Step 4: Separate into real and imaginary parts.**
+For two complex numbers to be equal, their real parts must be identical, and their imaginary parts must be identical.
+*   **Equating the Real parts:**
+    $$\cos(2\theta) = \cos^2\theta - \sin^2\theta$$
+*   **Equating the Imaginary parts (the coefficients of $i$):**
+    $$\sin(2\theta) = 2\sin\theta\cos\theta$$
+
+These two equations are the exact standard double-angle formulas for cosine and sine. **(Derived)**
+
+***
+
+### Q76. Problems.1: Prove that $e^{i\theta}=e^{i(\theta+2k\pi)}$ , $k=0,\pm1,\pm2,\dots$
+
+**Solution:**
+
+This question asks us to mathematically prove that the complex exponential function $e^{i\theta}$ is periodic with a period of $2\pi$.
+
+**Step 1: Start by expanding the Right-Hand Side (RHS).**
+$$\text{RHS} = e^{i(\theta + 2k\pi)}$$
+Distribute the $i$ in the exponent:
+$$= e^{i\theta + i2k\pi}$$
+
+**Step 2: Apply exponent rules.**
+Using the fundamental law of exponents $e^{a+b} = e^a \cdot e^b$, we separate the sum into a product:
+$$= e^{i\theta} \cdot e^{i2k\pi}$$
+
+**Step 3: Evaluate $e^{i2k\pi}$ using Euler's Formula.**
+Euler's formula defines the complex exponential as $e^{i\phi} = \cos\phi + i\sin\phi$. 
+Apply this to the angle $\phi = 2k\pi$:
+$$e^{i2k\pi} = \cos(2k\pi) + i\sin(2k\pi)$$
+
+**Step 4: Use trigonometric properties of integers.**
+We are given that $k$ is an integer ($0, \pm1, \pm2, \dots$). 
+*   $2k\pi$ represents full $360^\circ$ rotations around the unit circle. 
+*   The cosine of any integer multiple of $2\pi$ is always exactly $1$: $\cos(2k\pi) = 1$.
+*   The sine of any integer multiple of $2\pi$ is always exactly $0$: $\sin(2k\pi) = 0$.
+
+Substitute these trigonometric values back into the expression:
+$$e^{i2k\pi} = 1 + i(0)$$
+$$e^{i2k\pi} = 1$$
+
+**Step 5: Final substitution and conclusion.**
+Substitute $e^{i2k\pi} = 1$ back into our expanded RHS from Step 2:
+$$\text{RHS} = e^{i\theta} \cdot (1)$$
+$$\text{RHS} = e^{i\theta}$$
+
+This matches the Left-Hand Side (LHS).
+$$e^{i\theta} = e^{i(\theta+2k\pi)}$$
+**(Proved)**
+
+
 
 
