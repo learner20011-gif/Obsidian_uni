@@ -2692,4 +2692,165 @@ Let the complex variable $z$ be written in standard Cartesian form: $z = x + iy$
     $$|e^{iz}| = e^{-y} \cdot 1 = e^{-y}$$
 **Answer (ii): $|e^{iz}| = e^{-y}$** (where $y$ is the imaginary part of $z$).
 
+Here are the detailed solutions for the next four questions (Q69 to Q72).
+
+### Q69. Example 1.3.3. (Polar form): Find the modulus, argument, and polar form of the complex numbers: 
+(a) $z_{1}=5$ 
+(b) $z_{2}=-3i$ 
+(c) $z_{3}=\sqrt{3}+i$ 
+(d) $z_{4}=1+i$ 
+(e) $z_{5}=1-i$ 
+(f) $z_{6}=-1-i$
+
+**Solution:**
+
+To find these values, we use the relations for a complex number $z = x + iy$:
+*   **Modulus:** $r = |z| = \sqrt{x^2 + y^2}$
+*   **Argument:** $\theta = \tan^{-1}(y/x)$, adjusted for the correct quadrant.
+*   **Polar form:** $z = r(\cos\theta + i\sin\theta)$ or in exponential form $z = re^{i\theta}$.
+
+**(a) $z_1 = 5$** (or $5 + 0i$)
+*   **Modulus:** $r = \sqrt{5^2 + 0^2} = 5$
+*   **Argument:** The point lies on the positive real axis, so the angle is $0$. $\theta = 0$.
+*   **Polar Form:** $5(\cos 0 + i\sin 0)$ or $5e^{i0}$.
+
+**(b) $z_2 = -3i$** (or $0 - 3i$)
+*   **Modulus:** $r = \sqrt{0^2 + (-3)^2} = \sqrt{9} = 3$
+*   **Argument:** The point lies on the negative imaginary axis, which corresponds to $-90^\circ$ or $-\pi/2$ radians. $\theta = -\frac{\pi}{2}$.
+*   **Polar Form:** $3\left(\cos\left(-\frac{\pi}{2}\right) + i\sin\left(-\frac{\pi}{2}\right)\right)$ or $3e^{-i\pi/2}$.
+
+**(c) $z_3 = \sqrt{3} + i$**
+*   **Modulus:** $r = \sqrt{(\sqrt{3})^2 + 1^2} = \sqrt{3 + 1} = \sqrt{4} = 2$
+*   **Argument:** Both $x$ and $y$ are positive (Quadrant I). $\theta = \tan^{-1}(1/\sqrt{3}) = \frac{\pi}{6}$ (or $30^\circ$).
+*   **Polar Form:** $2\left(\cos\frac{\pi}{6} + i\sin\frac{\pi}{6}\right)$ or $2e^{i\pi/6}$.
+
+**(d) $z_4 = 1 + i$**
+*   **Modulus:** $r = \sqrt{1^2 + 1^2} = \sqrt{2}$
+*   **Argument:** Quadrant I. $\theta = \tan^{-1}(1/1) = \tan^{-1}(1) = \frac{\pi}{4}$ (or $45^\circ$).
+*   **Polar Form:** $\sqrt{2}\left(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\right)$ or $\sqrt{2}e^{i\pi/4}$.
+
+**(e) $z_5 = 1 - i$**
+*   **Modulus:** $r = \sqrt{1^2 + (-1)^2} = \sqrt{2}$
+*   **Argument:** Quadrant IV ($x$ positive, $y$ negative). $\theta = \tan^{-1}(-1/1) = -\frac{\pi}{4}$ (or $-45^\circ$).
+*   **Polar Form:** $\sqrt{2}\left(\cos\left(-\frac{\pi}{4}\right) + i\sin\left(-\frac{\pi}{4}\right)\right)$ or $\sqrt{2}e^{-i\pi/4}$.
+
+**(f) $z_6 = -1 - i$**
+*   **Modulus:** $r = \sqrt{(-1)^2 + (-1)^2} = \sqrt{2}$
+*   **Argument:** Quadrant III ($x$ negative, $y$ negative). The reference angle is $\pi/4$. The angle relative to the negative real axis is $-\pi + \pi/4 = -\frac{3\pi}{4}$ (or $-135^\circ$).
+*   **Polar Form:** $\sqrt{2}\left(\cos\left(-\frac{3\pi}{4}\right) + i\sin\left(-\frac{3\pi}{4}\right)\right)$ or $\sqrt{2}e^{-i3\pi/4}$.
+
+***
+
+### Q70. Example 1.3.4. (Principal argument): Compute $Argz_{j},$ where $z_{j}$ is as in the preceding example for $j=1,...,6$.
+
+**Solution:**
+
+The **Principal Argument**, denoted with a capital "A" as $\text{Arg}(z)$, is the unique angle $\theta$ of the complex number that satisfies the restriction:
+$$-\pi < \text{Arg}(z) \le \pi$$
+*(or $-180^\circ < \text{Arg}(z) \le 180^\circ$)*.
+
+We will simply extract the angles we calculated in Q69 and ensure they fall within this specified principal range.
+
+*   **For $z_1 = 5$:** The angle is $0$. Since $0$ is within $(-\pi, \pi]$, the principal argument is:
+    $$\text{Arg}(z_1) = 0$$
+
+*   **For $z_2 = -3i$:** The angle is $-\pi/2$. Since $-\pi/2$ is within $(-\pi, \pi]$, the principal argument is:
+    $$\text{Arg}(z_2) = -\frac{\pi}{2}$$
+
+*   **For $z_3 = \sqrt{3} + i$:** The angle is $\pi/6$. Since $\pi/6$ is within $(-\pi, \pi]$, the principal argument is:
+    $$\text{Arg}(z_3) = \frac{\pi}{6}$$
+
+*   **For $z_4 = 1 + i$:** The angle is $\pi/4$. Since $\pi/4$ is within $(-\pi, \pi]$, the principal argument is:
+    $$\text{Arg}(z_4) = \frac{\pi}{4}$$
+
+*   **For $z_5 = 1 - i$:** The angle is $-\pi/4$. Since $-\pi/4$ is within $(-\pi, \pi]$, the principal argument is:
+    $$\text{Arg}(z_5) = -\frac{\pi}{4}$$
+
+*   **For $z_6 = -1 - i$:** The angle is $-3\pi/4$. Since $-3\pi/4$ is within $(-\pi, \pi]$, the principal argument is:
+    $$\text{Arg}(z_6) = -\frac{3\pi}{4}$$
+
+***
+
+### Q71. Problem 2.1: Prove that $(i)\arg(z_{1}z_{2})=\arg~z_{1}+\arg~z_{2}$ and $(ii)\arg\overline{z}=-\arg~z$
+
+**Solution:**
+
+We will prove these properties using the exponential (polar) representation of complex numbers. Note that the lowercase "arg" denotes the general argument, which allows for multiples of $2\pi$.
+
+**Part (i): Prove $\arg(z_1 z_2) = \arg z_1 + \arg z_2$**
+
+1.  **Define the complex numbers:** Let $z_1$ and $z_2$ be expressed in polar form as:
+    $$z_1 = r_1 e^{i\theta_1}$$
+    $$z_2 = r_2 e^{i\theta_2}$$
+    By definition, their arguments are $\arg(z_1) = \theta_1$ and $\arg(z_2) = \theta_2$.
+2.  **Multiply the numbers:**
+    $$z_1 z_2 = (r_1 e^{i\theta_1})(r_2 e^{i\theta_2})$$
+3.  **Combine using exponent rules:** The rule $e^a \cdot e^b = e^{a+b}$ gives:
+    $$z_1 z_2 = (r_1 r_2) e^{i(\theta_1 + \theta_2)}$$
+4.  **Identify the argument of the product:** The resulting expression is in standard polar form $Re^{i\Theta}$, where the modulus is $r_1r_2$ and the argument is $(\theta_1 + \theta_2)$.
+    $$\arg(z_1 z_2) = \theta_1 + \theta_2$$
+5.  **Substitute the original arguments back:**
+    $$\arg(z_1 z_2) = \arg(z_1) + \arg(z_2)$$ 
+    *(Holding true up to additive multiples of $2\pi$)*. **(Proved)**
+
+**Part (ii): Prove $\arg(\overline{z}) = -\arg z$**
+
+1.  **Define the complex number:** Let $z$ be expressed in polar form as:
+    $$z = r e^{i\theta}$$
+    where $\arg(z) = \theta$.
+2.  **Find the complex conjugate:** Using Euler's formula, $z = r(\cos\theta + i\sin\theta)$. 
+    The complex conjugate $\overline{z}$ flips the sign of the imaginary part:
+    $$\overline{z} = r(\cos\theta - i\sin\theta)$$
+3.  **Apply trigonometric properties:** Since cosine is even ($\cos\theta = \cos(-\theta)$) and sine is odd ($-\sin\theta = \sin(-\theta)$), we can rewrite the conjugate as:
+    $$\overline{z} = r(\cos(-\theta) + i\sin(-\theta))$$
+4.  **Convert back to exponential form:**
+    $$\overline{z} = r e^{i(-\theta)}$$
+5.  **Identify the new argument:** The argument of $\overline{z}$ is clearly $-\theta$.
+    $$\arg(\overline{z}) = -\theta$$
+6.  **Substitute the original argument back:**
+    $$\arg(\overline{z}) = -\arg(z)$$ 
+    **(Proved)**
+
+***
+
+### Q72. Prob. 2.2: Express $2+2\sqrt{3}i$ in polar form.
+
+**Solution:**
+
+We need to convert the complex number $z = 2 + 2\sqrt{3}i$ into the standard polar form $z = r(\cos\theta + i\sin\theta)$ or $re^{i\theta}$.
+
+**Step 1: Identify Cartesian coordinates.**
+The complex number is in the form $z = x + iy$.
+*   Real part: $x = 2$
+*   Imaginary part: $y = 2\sqrt{3}$
+
+**Step 2: Calculate the Modulus ($r$).**
+The modulus is the distance from the origin.
+$$r = \sqrt{x^2 + y^2}$$
+$$r = \sqrt{2^2 + (2\sqrt{3})^2}$$
+$$r = \sqrt{4 + 4(3)}$$
+$$r = \sqrt{4 + 12}$$
+$$r = \sqrt{16} = 4$$
+
+**Step 3: Calculate the Argument ($\theta$).**
+The argument $\theta$ is the angle made with the positive real axis.
+Since both $x$ and $y$ are positive, the point $(2, 2\sqrt{3})$ lies in the **first quadrant**.
+For the first quadrant, we can calculate the principal argument directly:
+$$\theta = \tan^{-1}\left(\frac{y}{x}\right)$$
+$$\theta = \tan^{-1}\left(\frac{2\sqrt{3}}{2}\right)$$
+$$\theta = \tan^{-1}(\sqrt{3})$$
+
+From standard trigonometric values, we know that $\tan(60^\circ) = \sqrt{3}$.
+Therefore, $\theta = 60^\circ$, or in radians:
+$$\theta = \frac{\pi}{3}$$
+
+**Step 4: Write the polar form.**
+Substitute the calculated modulus $r=4$ and argument $\theta=\frac{\pi}{3}$ into the standard polar format.
+$$z = 4\left(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\right)$$
+Or, in exponential form:
+$$z = 4e^{i\pi/3}$$
+
+**Answer:** 
+The polar form is **$4\left(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\right)$**.
+
 
