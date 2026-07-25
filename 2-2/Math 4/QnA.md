@@ -157,51 +157,44 @@ To represent this graphically on the complex plane (Argand diagram):
 De Moivre's Theorem states that for any real number $\theta$ and any integer $n$, the following identity holds:
 $$(\cos \theta + i \sin \theta)^n = \cos(n\theta) + i \sin(n\theta)$$
 
-**Proof:**
-We will prove this theorem in three parts: for positive integers, for zero, and for negative integers.
+**Proof (Using Exponential Form $e^{i\theta}$ / Euler's Formula):**
 
-**Part 1: For any positive integer $n$ (using Mathematical Induction)**
-*   **Base Case ($n=1$):** 
-    $$(\cos \theta + i \sin \theta)^1 = \cos(1\cdot\theta) + i \sin(1\cdot\theta)$$
-    The statement is clearly true for $n=1$.
-*   **Inductive Step:** 
-    Assume the theorem holds true for some positive integer $k$. That is:
-    $$(\cos \theta + i \sin \theta)^k = \cos(k\theta) + i \sin(k\theta)$$
-    Now, we must prove it is true for $n = k+1$:
-    $$(\cos \theta + i \sin \theta)^{k+1} = (\cos \theta + i \sin \theta)^k (\cos \theta + i \sin \theta)$$
-    Substitute the assumption:
-    $$= (\cos(k\theta) + i \sin(k\theta)) (\cos \theta + i \sin \theta)$$
-    Multiply the terms:
-    $$= \cos(k\theta)\cos\theta + i\cos(k\theta)\sin\theta + i\sin(k\theta)\cos\theta + i^2\sin(k\theta)\sin\theta$$
-    Since $i^2 = -1$, group the real and imaginary parts:
-    $$= [\cos(k\theta)\cos\theta - \sin(k\theta)\sin\theta] + i[\sin(k\theta)\cos\theta + \cos(k\theta)\sin\theta]$$
-    Using the standard trigonometric compound angle identities ($\cos(A+B)$ and $\sin(A+B)$):
-    $$= \cos(k\theta + \theta) + i \sin(k\theta + \theta)$$
-    $$= \cos((k+1)\theta) + i \sin((k+1)\theta)$$
-    Thus, by the principle of mathematical induction, the theorem is true for all positive integers $n$.
+**Step 1: Euler's Formula**
+By Euler's formula, any complex expression $(\cos\theta + i\sin\theta)$ can be written in exponential form as:
+$$e^{i\theta} = \cos \theta + i \sin \theta$$
 
-**Part 2: For $n = 0$**
-$$(\cos \theta + i \sin \theta)^0 = 1$$
-On the right-hand side, substitute $n=0$:
-$$\cos(0\cdot\theta) + i \sin(0\cdot\theta) = \cos(0) + i\sin(0) = 1 + i(0) = 1$$
-Thus, the theorem is true for $n = 0$.
+**Step 2: Exponentiation of Left-Hand Side (LHS)**
+Substituting Euler's formula into the LHS of De Moivre's identity:
+$$\text{LHS} = (\cos \theta + i \sin \theta)^n = \left(e^{i\theta}\right)^n$$
 
-**Part 3: For any negative integer $n$**
-Let $n = -m$, where $m$ is a positive integer.
-$$(\cos \theta + i \sin \theta)^n = (\cos \theta + i \sin \theta)^{-m} = \frac{1}{(\cos \theta + i \sin \theta)^m}$$
-From Part 1, we know this expands to:
-$$= \frac{1}{\cos(m\theta) + i \sin(m\theta)}$$
-To clear the complex number from the denominator, multiply the numerator and denominator by its complex conjugate:
-$$= \frac{1 \cdot (\cos(m\theta) - i \sin(m\theta))}{(\cos(m\theta) + i \sin(m\theta))(\cos(m\theta) - i \sin(m\theta))}$$
-$$= \frac{\cos(m\theta) - i \sin(m\theta)}{\cos^2(m\theta) - i^2 \sin^2(m\theta)}$$
-Since $i^2 = -1$ and $\cos^2(m\theta) + \sin^2(m\theta) = 1$:
-$$= \frac{\cos(m\theta) - i \sin(m\theta)}{1} = \cos(m\theta) - i \sin(m\theta)$$
-Because cosine is an even function ($\cos(-x) = \cos(x)$) and sine is an odd function ($-\sin(x) = \sin(-x)$), we can rewrite this as:
-$$= \cos(-m\theta) + i \sin(-m\theta)$$
-Substituting back $n = -m$:
-$$= \cos(n\theta) + i \sin(n\theta)$$
+**Step 3: Applying Laws of Exponents**
+Using the law of indices $(e^a)^b = e^{ab}$:
+$$\left(e^{i\theta}\right)^n = e^{i(n\theta)}$$
 
-**Conclusion:** The theorem holds for all integers $n$. (Proved)
+**Step 4: Re-applying Euler's Formula to Right-Hand Side (RHS)**
+Applying Euler's formula with angle $\phi = n\theta$:
+$$e^{i(n\theta)} = \cos(n\theta) + i \sin(n\theta) = \text{RHS}$$
+
+---
+
+**Case Analysis for any Integer $n$:**
+
+1. **For Positive Integer ($n > 0$):**
+   $$\left(e^{i\theta}\right)^n = \underbrace{e^{i\theta} \cdot e^{i\theta} \cdots e^{i\theta}}_{n \text{ times}} = e^{i(\overbrace{\theta + \theta + \dots + \theta}^{n \text{ times}})} = e^{i(n\theta)} = \cos(n\theta) + i\sin(n\theta)$$
+
+2. **For Zero ($n = 0$):**
+   $$\text{LHS} = (\cos \theta + i \sin \theta)^0 = 1$$
+   $$\text{RHS} = e^{i(0\cdot\theta)} = e^0 = 1 = \cos(0) + i \sin(0) = 1$$
+
+3. **For Negative Integer ($n < 0$):**
+   Let $n = -m$ where $m$ is a positive integer ($m > 0$).
+   $$\text{LHS} = (\cos \theta + i \sin \theta)^n = (e^{i\theta})^{-m} = \frac{1}{(e^{i\theta})^m} = \frac{1}{e^{im\theta}} = e^{-im\theta}$$
+   Substituting $-m = n$:
+   $$= e^{i(n\theta)} = \cos(n\theta) + i \sin(n\theta) = \text{RHS}$$
+
+**Conclusion:** 
+$$(\cos \theta + i \sin \theta)^n = \cos(n\theta) + i \sin(n\theta)$$ 
+for all integers $n$. **(Proved)**
 
 ***
 
