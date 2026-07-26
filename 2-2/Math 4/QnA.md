@@ -3027,4 +3027,1706 @@ $$e^{i\theta} = e^{i(\theta+2k\pi)}$$
 
 
 
+Here are the detailed solutions for the next four questions (Q77 to Q80).
+
+### Q77. Problem 3.2: (a) Find the roots of $z^{5}+32=0$ and (b) locate values of $z^{5}$ in the complex Plane.
+
+*(Note: Part (b) asks to locate the values of "$z^5$". Because $z^5 = -32$, locating $z^5$ just means plotting the single point $-32$ on the real axis. However, in the context of this specific topic, this is almost certainly a typographical error in the source material intended to say "locate the values of **$z$**" (i.e., the roots). I will solve for the roots and plot the roots).*
+
+**Solution:**
+
+**Part (a): Find the roots of $z^5 + 32 = 0$**
+
+**Step 1: Isolate $z$**
+$$z^5 = -32$$
+We are looking for the five $5^{\text{th}}$ roots of the complex number $w = -32 + 0i$.
+
+**Step 2: Express $w = -32$ in polar form**
+*   **Modulus ($r$):** The distance from the origin to $-32$ is $32$.
+*   **Argument ($\theta$):** The number lies on the negative real axis, so the angle is exactly $\pi$ radians ($180^\circ$).
+
+Adding the $2k\pi$ periodicity, the general polar form is:
+$$w = 32 \left( \cos(\pi + 2k\pi) + i\sin(\pi + 2k\pi) \right)$$
+
+**Step 3: Apply De Moivre's Theorem for roots**
+To find the $5^{\text{th}}$ roots, we raise $w$ to the power of $\frac{1}{5}$:
+$$z_k = w^{\frac{1}{5}} = 32^{\frac{1}{5}} \left[ \cos\left(\frac{\pi + 2k\pi}{5}\right) + i\sin\left(\frac{\pi + 2k\pi}{5}\right) \right]$$
+*   The magnitude for all roots is $R = 32^{\frac{1}{5}} = (2^5)^{\frac{1}{5}} = 2$.
+*   The angles are $\alpha_k = \frac{\pi(1 + 2k)}{5}$ for $k = 0, 1, 2, 3, 4$.
+
+**Step 4: Calculate the specific roots (converting to degrees for clarity)**
+Since $\pi = 180^\circ$, the base angle is $\frac{180^\circ}{5} = 36^\circ$, and we add $\frac{360^\circ}{5} = 72^\circ$ for each subsequent root.
+*   **For $k = 0$:** $\alpha_0 = 36^\circ$
+    $$z_0 = 2(\cos 36^\circ + i\sin 36^\circ)$$
+*   **For $k = 1$:** $\alpha_1 = 36^\circ + 72^\circ = 108^\circ$
+    $$z_1 = 2(\cos 108^\circ + i\sin 108^\circ)$$
+*   **For $k = 2$:** $\alpha_2 = 108^\circ + 72^\circ = 180^\circ$
+    $$z_2 = 2(\cos 180^\circ + i\sin 180^\circ) = 2(-1 + 0i) = -2$$
+*   **For $k = 3$:** $\alpha_3 = 180^\circ + 72^\circ = 252^\circ$
+    $$z_3 = 2(\cos 252^\circ + i\sin 252^\circ)$$
+*   **For $k = 4$:** $\alpha_4 = 252^\circ + 72^\circ = 324^\circ$
+    $$z_4 = 2(\cos 324^\circ + i\sin 324^\circ)$$
+
+**Part (b): Locate the roots graphically in the complex plane**
+1.  Draw the real (x) and imaginary (y) axes.
+2.  Draw a circle centered at the origin $(0,0)$ with a radius of exactly $2$.
+3.  All five roots lie on the circumference of this circle.
+4.  Because they are spaced evenly by $72^\circ$, they form the vertices of a **regular pentagon**.
+5.  Plot $z_2$ directly on the negative real axis at $(-2, 0)$. Plot $z_0$ in Quadrant I ($36^\circ$), $z_1$ in Quadrant II ($108^\circ$), $z_3$ in Quadrant III ($252^\circ$), and $z_4$ in Quadrant IV ($324^\circ$).
+
+***
+
+### Q78. Problem 3.3: Find the roots of the followings: (i) $z^{2}+\pi^{2}=0$ (ii) $z^{6}+1=0$ (iii) $z^{2}+1=0$
+
+**Solution:**
+
+**Part (i): $z^2 + \pi^2 = 0$**
+1.  Isolate $z^2$:
+    $$z^2 = -\pi^2$$
+2.  Take the square root of both sides.
+    $$z = \pm\sqrt{-\pi^2}$$
+    $$z = \pm\sqrt{\pi^2 \cdot (-1)}$$
+    $$z = \pm\pi\sqrt{-1}$$
+3.  Since $\sqrt{-1} = i$:
+    **$z = \pm i\pi$** (The two roots are $i\pi$ and $-i\pi$).
+
+---
+
+**Part (ii): $z^6 + 1 = 0$**
+1.  Isolate $z^6$:
+    $$z^6 = -1$$
+2.  Write $-1$ in polar form:
+    $w = 1 \cdot (\cos(\pi + 2k\pi) + i\sin(\pi + 2k\pi))$
+3.  Apply De Moivre's theorem for the 6th roots ($k = 0, 1, 2, 3, 4, 5$):
+    $$z_k = 1^{\frac{1}{6}} \left[ \cos\left(\frac{\pi + 2k\pi}{6}\right) + i\sin\left(\frac{\pi + 2k\pi}{6}\right) \right]$$
+4.  Calculate the 6 roots:
+    *   $k=0$: $z_0 = \cos\frac{\pi}{6} + i\sin\frac{\pi}{6} = \frac{\sqrt{3}}{2} + \frac{1}{2}i$
+    *   $k=1$: $z_1 = \cos\frac{3\pi}{6} + i\sin\frac{3\pi}{6} = \cos\frac{\pi}{2} + i\sin\frac{\pi}{2} = i$
+    *   $k=2$: $z_2 = \cos\frac{5\pi}{6} + i\sin\frac{5\pi}{6} = -\frac{\sqrt{3}}{2} + \frac{1}{2}i$
+    *   $k=3$: $z_3 = \cos\frac{7\pi}{6} + i\sin\frac{7\pi}{6} = -\frac{\sqrt{3}}{2} - \frac{1}{2}i$
+    *   $k=4$: $z_4 = \cos\frac{9\pi}{6} + i\sin\frac{9\pi}{6} = \cos\frac{3\pi}{2} + i\sin\frac{3\pi}{2} = -i$
+    *   $k=5$: $z_5 = \cos\frac{11\pi}{6} + i\sin\frac{11\pi}{6} = \frac{\sqrt{3}}{2} - \frac{1}{2}i$
+
+---
+
+**Part (iii): $z^2 + 1 = 0$**
+1.  Isolate $z^2$:
+    $$z^2 = -1$$
+2.  Take the square root of both sides:
+    $$z = \pm\sqrt{-1}$$
+3.  By the fundamental definition of the imaginary unit:
+    **$z = \pm i$** (The two roots are $i$ and $-i$).
+
+***
+
+### Q79. Problem 3.4: Find an equation for (a) a circle of radius 4 with center at $(-2,1)$
+
+**Solution:**
+
+We need to provide the mathematical equation representing this specific circle in the complex plane.
+
+**Step 1: Understand the definition of a circle in the complex plane.**
+Geometrically, a circle is the locus (set) of all points $z$ that are at a constant, fixed distance from a central point. 
+In complex variables, the distance between any arbitrary point $z$ and a fixed center point $z_0$ is defined by the modulus of their difference: $|z - z_0|$.
+Therefore, the general equation of a circle is:
+$$|z - z_0| = r$$
+where $r$ is the constant radius.
+
+**Step 2: Identify the given parameters.**
+*   **Radius:** The problem states $r = 4$.
+*   **Center:** The Cartesian coordinates are $(-2, 1)$. The x-coordinate represents the real part and the y-coordinate represents the imaginary part. Therefore, the center corresponds to the complex number:
+    $$z_0 = -2 + 1i = -2 + i$$
+
+**Step 3: Substitute the parameters into the general equation.**
+Replace $z_0$ with $(-2 + i)$ and $r$ with $4$:
+$$|z - (-2 + i)| = 4$$
+
+Distribute the negative sign to simplify the expression inside the modulus:
+$$|z + 2 - i| = 4$$
+
+This is the standard, concise representation of the circle.
+
+**Answer:** The equation for the circle is **$|z + 2 - i| = 4$**.
+
+***
+
+### Q80. Problem 3.5: Given a complex number Z, interpret geometrically $Ze^{ia}$, where a is real.
+
+*(Note: This is conceptually identical to Q7 and Q59, using "$a$" instead of "$\alpha$").*
+
+**Solution:**
+
+To determine the geometric effect of multiplying by $e^{ia}$, we should represent the original complex number $Z$ in polar (exponential) coordinates.
+
+**Step 1: Express $Z$ in polar form.**
+Let $Z$ be represented as a vector in the complex plane. Its polar form is:
+$$Z = r e^{i\theta}$$
+where:
+*   $r = |Z|$ is the modulus (the length of the vector from the origin).
+*   $\theta = \arg(Z)$ is the argument (the counterclockwise angle the vector makes with the positive real axis).
+
+**Step 2: Perform the multiplication.**
+Multiply $Z$ by the given term $e^{ia}$:
+$$Z \cdot e^{ia} = (r e^{i\theta}) \cdot e^{ia}$$
+
+**Step 3: Apply the laws of exponents.**
+When multiplying exponential terms with the same base, you add their exponents ($x^m \cdot x^n = x^{m+n}$):
+$$Z e^{ia} = r e^{i(\theta + a)}$$
+
+**Step 4: Geometrically interpret the new expression.**
+Let's call the new resulting complex number $W = Z e^{ia}$. The new expression $r e^{i(\theta + a)}$ is also in standard polar form. We can analyze its components:
+1.  **Modulus (Magnitude):** The modulus of $W$ is $r$. This is exactly the same as the modulus of the original vector $Z$. Therefore, the length of the vector has not changed.
+2.  **Argument (Direction):** The new argument of $W$ is $(\theta + a)$. The original angle $\theta$ has been increased by an amount exactly equal to $a$.
+
+**Conclusion:**
+Multiplying a complex number $Z$ by $e^{ia}$ (where $a$ is real) does not change the length of the vector representing $Z$, but it adds an angle $a$ to its direction.
+Therefore, it geometrically represents a **rotation of the vector $Z$ around the origin by an angle $a$**. 
+*   If $a > 0$, the rotation is counter-clockwise.
+*   If $a < 0$, the rotation is clockwise.
+Here are the detailed solutions for the next four questions (Q81 to Q84).
+
+*(Note: Questions Q81, Q82, and Q83 from the Feruj Sheet are conceptually and numerically identical to questions Q60, Q61, Q62, and Q63 from the Firoz Note. Detailed step-by-step solutions are provided again below for completeness).*
+
+### Q81. Problem 4.1: If $z_{1}=3-i4$ and $z_{2}=-4+i3$, find (i) $z_{1}\circ z_{2}$ (ii) $z_{1}\times z_{2}$.
+
+**Solution:**
+
+In 2D complex vector notation (standard in engineering mathematics), the symbols "$\circ$" and "$\times$" between complex numbers denote the **Dot Product** and the scalar magnitude of the **Cross Product**, respectively. They do not represent standard algebraic complex multiplication.
+
+Let the complex numbers represent 2D Cartesian vectors:
+$z_1 = x_1 + iy_1 \implies \vec{v_1} = (x_1, y_1)$
+$z_2 = x_2 + iy_2 \implies \vec{v_2} = (x_2, y_2)$
+
+The algebraic definitions for these operations are:
+*   **Dot Product ($z_1 \circ z_2$):** $x_1x_2 + y_1y_2$
+*   **Cross Product ($z_1 \times z_2$):** $x_1y_2 - x_2y_1$
+
+**Identify the components:**
+$z_1 = 3 - 4i \implies x_1 = 3, y_1 = -4$
+$z_2 = -4 + 3i \implies x_2 = -4, y_2 = 3$
+
+**Part (i): Find $z_1 \circ z_2$**
+$$z_1 \circ z_2 = (x_1)(x_2) + (y_1)(y_2)$$
+$$z_1 \circ z_2 = (3)(-4) + (-4)(3)$$
+$$z_1 \circ z_2 = -12 - 12 = -24$$
+
+**Part (ii): Find $z_1 \times z_2$**
+$$z_1 \times z_2 = (x_1)(y_2) - (x_2)(y_1)$$
+$$z_1 \times z_2 = (3)(3) - (-4)(-4)$$
+$$z_1 \times z_2 = 9 - 16 = -7$$
+
+*(Self-Check: Both of these can be found simultaneously by calculating $\overline{z_1}z_2$.
+$\overline{z_1}z_2 = (3+4i)(-4+3i) = -12 + 9i - 16i + 12i^2 = -12 - 7i - 12 = -24 - 7i$. 
+The real part is the dot product ($-24$) and the imaginary part is the cross product ($-7$).)*
+
+**Answer:**
+*   **(i) $z_1 \circ z_2 = -24$**
+*   **(ii) $z_1 \times z_2 = -7$**
+
+***
+
+### Q82. Problem 4.2: Prove that area of a parallelogram having sides $z_{1}$ and $z_{2}$ is $\vert{}z_{1}\times z_{2}\vert{}$.
+
+**Solution:**
+
+We will prove this geometrically by connecting the definition of the complex 2D cross product to the standard trigonometric formula for the area of a parallelogram.
+
+**Step 1: Express the complex numbers in polar form.**
+Let the two sides of the parallelogram be represented by position vectors $z_1$ and $z_2$:
+$$z_1 = r_1 e^{i\theta_1}$$
+$$z_2 = r_2 e^{i\theta_2}$$
+where:
+*   $r_1 = |z_1|$ is the length of the first side.
+*   $r_2 = |z_2|$ is the length of the second side.
+*   The angle between the two sides is $\Delta\theta = \theta_2 - \theta_1$.
+
+**Step 2: State the geometric area of the parallelogram.**
+From standard geometry, the area of a parallelogram formed by two adjacent vectors is the product of their lengths and the sine of the angle between them:
+$$\text{Area} = r_1 \cdot r_2 \cdot |\sin(\theta_2 - \theta_1)| \quad \text{--- (Equation 1)}$$
+
+**Step 3: Evaluate the complex product $\overline{z_1}z_2$.**
+The 2D cross product $z_1 \times z_2$ is mathematically defined as the imaginary part of $\overline{z_1}z_2$. Let's evaluate this:
+$$\overline{z_1}z_2 = (r_1 e^{-i\theta_1}) \cdot (r_2 e^{i\theta_2})$$
+$$\overline{z_1}z_2 = r_1 r_2 e^{i(\theta_2 - \theta_1)}$$
+
+Using Euler's formula ($e^{i\phi} = \cos\phi + i\sin\phi$), we expand this into real and imaginary parts:
+$$\overline{z_1}z_2 = r_1 r_2 [\cos(\theta_2 - \theta_1) + i\sin(\theta_2 - \theta_1)]$$
+
+**Step 4: Extract the cross product.**
+Taking the imaginary part gives us the cross product:
+$$z_1 \times z_2 = Im(\overline{z_1}z_2) = r_1 r_2 \sin(\theta_2 - \theta_1)$$
+
+**Step 5: Relate the cross product to the Area.**
+Take the absolute value (modulus) of the cross product:
+$$|z_1 \times z_2| = |r_1 r_2 \sin(\theta_2 - \theta_1)|$$
+Since $r_1$ and $r_2$ are lengths (always positive), they can be pulled outside the absolute value:
+$$|z_1 \times z_2| = r_1 r_2 |\sin(\theta_2 - \theta_1)|$$
+
+Comparing this result directly with Equation 1, we conclude:
+$$\text{Area} = |z_1 \times z_2|$$
+**(Proved)**
+
+***
+
+### Q83. Question: Represent graphically the set of values of z for which (a) $\vert{}\frac{z-3}{z+3}\vert{}=2,$ (b) $\vert{}\frac{z-3}{z+3}\vert{}<2.$
+
+**Solution:**
+
+We need to translate these algebraic conditions into geometric loci in the complex plane.
+
+**Part (a): $\left|\frac{z-3}{z+3}\right| = 2$**
+
+**Step 1: Simplify using modulus properties.**
+$$\frac{|z - 3|}{|z + 3|} = 2 \implies |z - 3| = 2|z + 3|$$
+
+**Step 2: Substitute $z = x + iy$.**
+$$|(x - 3) + iy| = 2|(x + 3) + iy|$$
+
+**Step 3: Apply the distance formula and square both sides.**
+The modulus of $a + ib$ is $\sqrt{a^2 + b^2}$.
+$$\sqrt{(x - 3)^2 + y^2} = 2\sqrt{(x + 3)^2 + y^2}$$
+Squaring both sides removes the square roots:
+$$(x - 3)^2 + y^2 = 4 \left[ (x + 3)^2 + y^2 \right]$$
+
+**Step 4: Expand the binomials.**
+$$x^2 - 6x + 9 + y^2 = 4(x^2 + 6x + 9 + y^2)$$
+$$x^2 - 6x + 9 + y^2 = 4x^2 + 24x + 36 + 4y^2$$
+
+**Step 5: Group terms to form a standard equation.**
+Subtract the left-hand terms from the right side:
+$$0 = 3x^2 + 3y^2 + 30x + 27$$
+Divide by 3:
+$$x^2 + y^2 + 10x + 9 = 0$$
+
+**Step 6: Complete the square for $x$.**
+$$(x^2 + 10x + 25) + y^2 = -9 + 25$$
+$$(x + 5)^2 + y^2 = 16$$
+$$(x + 5)^2 + (y - 0)^2 = 4^2$$
+
+**Conclusion for (a):** This is the equation of a **circle**. 
+*   **Center:** $(-5, 0)$ or $z = -5$
+*   **Radius:** $4$
+*   **Graphical Representation:** The set of values forms the boundary (circumference) of this circle.
+
+---
+
+**Part (b): $\left|\frac{z-3}{z+3}\right| < 2$**
+
+**Step 1: Follow the same algebraic steps as (a).**
+$$\frac{|z - 3|}{|z + 3|} < 2 \implies |z - 3| < 2|z + 3|$$
+$$(x - 3)^2 + y^2 < 4 \left[ (x + 3)^2 + y^2 \right]$$
+$$x^2 - 6x + 9 + y^2 < 4x^2 + 24x + 36 + 4y^2$$
+
+**Step 2: Group terms.**
+$$0 < 3x^2 + 3y^2 + 30x + 27$$
+$$0 < x^2 + y^2 + 10x + 9$$
+
+**Step 3: Complete the square.**
+$$-9 + 25 < x^2 + 10x + 25 + y^2$$
+$$16 < (x + 5)^2 + y^2$$
+$$(x + 5)^2 + (y - 0)^2 > 4^2$$
+
+**Conclusion for (b):** 
+The inequality states that the distance squared from any point $(x,y)$ to the center $(-5,0)$ is strictly *greater* than $16$ (the radius squared).
+*   **Graphical Representation:** The set of values is the **entire region strictly outside the circle** found in Part (a). It does not include the boundary of the circle itself.
+
+***
+
+### Q84. Problems.1: Prove that the equation of any circle or line in the z plane can be written as $\alpha\overline{z}+\beta z+\overline{\beta}\overline{z}+\gamma=0$ where a and y are real constants while $\beta$ may be a complex constant.
+
+*(Note: There is a typographical error in the source material's equation. The correct standard form for the general equation of a circle or a straight line in the complex plane is $\alpha z\overline{z} + \overline{\beta}z + \beta\overline{z} + \gamma = 0$, where $\alpha, \gamma \in \mathbb{R}$ and $\beta \in \mathbb{C}$. We will prove this corrected, standard mathematical identity).*
+
+**Solution:**
+
+We will prove this by showing that this single equation can transform into the standard geometric equation of a circle (when $\alpha \neq 0$) and the standard equation of a line (when $\alpha = 0$).
+
+**Part 1: Proof for a Circle ($\alpha \neq 0$)**
+
+1.  **Define a circle geometrically:** A circle with center $z_0$ and radius $r$ is given by:
+    $$|z - z_0| = r$$
+2.  **Square both sides and use $|w|^2 = w\overline{w}$:**
+    $$|z - z_0|^2 = r^2$$
+    $$(z - z_0)(\overline{z - z_0}) = r^2$$
+    $$(z - z_0)(\overline{z} - \overline{z_0}) = r^2$$
+3.  **Expand the expression:**
+    $$z\overline{z} - z\overline{z_0} - z_0\overline{z} + z_0\overline{z_0} = r^2$$
+    $$z\overline{z} - \overline{z_0}z - z_0\overline{z} + (|z_0|^2 - r^2) = 0$$
+4.  **Map to the general equation:**
+    Let $\alpha = 1$ (a real constant).
+    Let $\beta = -z_0$ (a complex constant). This means $\overline{\beta} = -\overline{z_0}$.
+    Let $\gamma = |z_0|^2 - r^2$ (a real constant, since absolute values and radii are real).
+    
+    Substituting these into our expanded equation yields:
+    $$\alpha z\overline{z} + \overline{\beta}z + \beta\overline{z} + \gamma = 0$$
+    Thus, the equation represents a circle if $\alpha \neq 0$ and $|\beta|^2 > \alpha\gamma$ (to ensure a real, positive radius).
+
+**Part 2: Proof for a Straight Line ($\alpha = 0$)**
+
+1.  **Define a line in Cartesian coordinates:** The standard equation of a straight line in the 2D plane is:
+    $$Ax + By + C = 0 \quad \text{(where } A, B, C \in \mathbb{R} \text{)}$$
+2.  **Convert $x$ and $y$ into complex variables:**
+    We know that $z = x + iy$ and $\overline{z} = x - iy$. 
+    Adding them gives: $z + \overline{z} = 2x \implies x = \frac{z + \overline{z}}{2}$
+    Subtracting them gives: $z - \overline{z} = 2iy \implies y = \frac{z - \overline{z}}{2i} = \frac{-i(z - \overline{z})}{2}$
+3.  **Substitute $x$ and $y$ into the line equation:**
+    $$A\left(\frac{z + \overline{z}}{2}\right) + B\left(\frac{z - \overline{z}}{2i}\right) + C = 0$$
+    Multiply the whole equation by 2 to clear denominators:
+    $$A(z + \overline{z}) + \frac{B}{i}(z - \overline{z}) + 2C = 0$$
+    Since $\frac{1}{i} = -i$:
+    $$A(z + \overline{z}) - iB(z - \overline{z}) + 2C = 0$$
+4.  **Group the $z$ and $\overline{z}$ terms:**
+    $$(A - iB)z + (A + iB)\overline{z} + 2C = 0$$
+5.  **Map to the general equation:**
+    Let $\alpha = 0$ (a real constant).
+    Let $\beta = A + iB$ (a complex constant). This means $\overline{\beta} = A - iB$.
+    Let $\gamma = 2C$ (a real constant).
+    
+    Substituting these into our grouped equation yields:
+    $$\alpha z\overline{z} + \overline{\beta}z + \beta\overline{z} + \gamma = 0$$
+    
+**Conclusion:**
+Because both a circle and a straight line can be algebraically manipulated into the exact form $\alpha z\overline{z} + \overline{\beta}z + \beta\overline{z} + \gamma = 0$ (depending solely on the value of the real constant $\alpha$), we have proven that this single equation represents any circle or line in the complex plane. **(Proved)**
+
+
+Here are the detailed solutions for the next four questions (Q85 to Q88).
+
+### Q85. Problem 5.2: Find an equation for the circle passing through the points 1-i, 2i, $1+i$.
+
+**Solution:**
+
+We need to find the equation of a circle that passes through three specific points in the complex plane: $z_1 = 1 - i$, $z_2 = 0 + 2i$, and $z_3 = 1 + i$.
+
+**Step 1: Convert the complex numbers to Cartesian coordinates.**
+In the $xy$-plane, the three points are:
+*   $P_1 (1, -1)$
+*   $P_2 (0, 2)$
+*   $P_3 (1, 1)$
+
+**Step 2: Use the general Cartesian equation of a circle.**
+The general equation of a circle is:
+$$x^2 + y^2 + Dx + Ey + F = 0$$
+where $D, E,$ and $F$ are real constants. We will substitute our three points into this equation to create a system of three linear equations.
+
+*   **Substitute $P_1 (1, -1)$:**
+    $$1^2 + (-1)^2 + D(1) + E(-1) + F = 0$$
+    $$1 + 1 + D - E + F = 0$$
+    $$D - E + F = -2 \quad \text{--- (Equation 1)}$$
+
+*   **Substitute $P_3 (1, 1)$:** *(Doing this one next because it's similar to P1)*
+    $$1^2 + 1^2 + D(1) + E(1) + F = 0$$
+    $$1 + 1 + D + E + F = 0$$
+    $$D + E + F = -2 \quad \text{--- (Equation 2)}$$
+
+*   **Substitute $P_2 (0, 2)$:**
+    $$0^2 + 2^2 + D(0) + E(2) + F = 0$$
+    $$4 + 2E + F = 0$$
+    $$2E + F = -4 \quad \text{--- (Equation 3)}$$
+
+**Step 3: Solve the system of equations.**
+Subtract Equation 1 from Equation 2:
+$$(D + E + F) - (D - E + F) = -2 - (-2)$$
+$$2E = 0 \implies E = 0$$
+
+Substitute $E = 0$ into Equation 3:
+$$2(0) + F = -4 \implies F = -4$$
+
+Substitute $E = 0$ and $F = -4$ into Equation 2:
+$$D + 0 - 4 = -2 \implies D = 2$$
+
+**Step 4: Write the Cartesian equation and find the center/radius.**
+Substitute $D=2, E=0, F=-4$ back into the general equation:
+$$x^2 + y^2 + 2x - 4 = 0$$
+
+To find the center and radius, complete the square for the $x$ terms:
+$$(x^2 + 2x) + y^2 = 4$$
+$$(x^2 + 2x + 1) + y^2 = 4 + 1$$
+$$(x + 1)^2 + (y - 0)^2 = 5$$
+$$(x - (-1))^2 + (y - 0)^2 = (\sqrt{5})^2$$
+
+This is a circle with:
+*   **Center:** $(h, k) = (-1, 0)$, which corresponds to the complex number $z_0 = -1$.
+*   **Radius:** $r = \sqrt{5}$.
+
+**Step 5: Convert back to the complex plane format.**
+The standard equation for a circle in the complex plane is $|z - z_0| = r$.
+$$|z - (-1)| = \sqrt{5}$$
+$$|z + 1| = \sqrt{5}$$
+
+**Answer:** The equation for the circle is **$|z + 1| = \sqrt{5}$** (or $x^2 + y^2 + 2x - 4 = 0$ in Cartesian form).
+
+***
+
+### Q86. Problem 5.3: Find the radius and coordinate of the follwings: where C is the circle $(i)\vert{}z+1+i\vert{}=2$ $(ii)\vert{}z+1-i\vert{}=2$ (iii) z = 1
+
+**Solution:**
+
+The standard equation of a circle in the complex plane is $|z - z_0| = r$, where $z_0$ is the coordinate of the center and $r$ is the radius. We must rearrange the given equations into this standard form.
+
+**Part (i): $|z + 1 + i| = 2$**
+Rewrite the expression inside the modulus to isolate the minus sign:
+$$|z - (-1 - i)| = 2$$
+By comparing this to $|z - z_0| = r$, we get:
+*   **Center coordinate ($z_0$):** $-1 - i$ (In Cartesian coordinates, this is the point **$(-1, -1)$**).
+*   **Radius ($r$):** **$2$**.
+
+**Part (ii): $|z + 1 - i| = 2$**
+Rewrite the expression inside the modulus:
+$$|z - (-1 + i)| = 2$$
+By comparing this to $|z - z_0| = r$, we get:
+*   **Center coordinate ($z_0$):** $-1 + i$ (In Cartesian coordinates, this is the point **$(-1, 1)$**).
+*   **Radius ($r$):** **$2$**.
+
+**Part (iii): $z = 1$**
+*(Note: As written, "$z=1$" is the equation of a single point, not a circle. However, in the context of typical complex variables exams where it explicitly states "where C is the circle...", this is universally a typographical error for **$|z| = 1$**. I will provide the answer for the corrected standard interpretation).*
+
+Assuming the intended equation is **$|z| = 1$**:
+Rewrite in standard form:
+$$|z - 0| = 1$$
+*   **Center coordinate ($z_0$):** $0$ (or $0+0i$, which is the origin **$(0,0)$**).
+*   **Radius ($r$):** **$1$**.
+
+*(If taken literally as $z=1$, it represents a "point circle" with center $(1,0)$ and radius $0$).*
+
+***
+
+### Q87. Problem 5.4: Explain the fallacy: $-1=\sqrt{-1}\sqrt{-1}=\sqrt{(-1)(-1)}=\sqrt{1}=1$ Hence $1=-1$.
+
+**Solution:**
+
+This is a famous mathematical paradox. The fallacy lies in the misapplication of a rule of radicals that is only partially true.
+
+**The Rule in Question:**
+The product rule for square roots states that:
+$$\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}$$
+
+**The Fallacy Explained:**
+In basic algebra, students are taught this rule using real, positive numbers. However, **this rule is only universally true if at least one of the real numbers $a$ or $b$ is non-negative ($a \ge 0$ or $b \ge 0$).**
+
+When *both* $a$ and $b$ are strictly negative (as in $a = -1$ and $b = -1$), the rule completely breaks down. The principal square root function is multi-valued when extended to the complex plane. To maintain consistency, mathematics defines the principal branch of the square root such that for a negative real number $-x$ (where $x>0$), $\sqrt{-x} = i\sqrt{x}$.
+
+Let's break down the exact sequence of the paradox:
+1.  **$-1 = \sqrt{-1}\sqrt{-1}$** : This step is **Correct**. By definition, the imaginary unit $i = \sqrt{-1}$, and $i \cdot i = i^2 = -1$.
+2.  **$\sqrt{-1}\sqrt{-1} = \sqrt{(-1)(-1)}$** : This step is **Incorrect (The Fallacy)**. Because both numbers are negative, you cannot combine them under a single square root radical. By blindly multiplying the negatives inside the root, you jump from the imaginary number line back to the positive real number line, discarding the necessary $i^2 = -1$ phase shift.
+3.  **$\sqrt{(-1)(-1)} = \sqrt{1} = 1$** : This step is mathematically correct based *only* on the expression $\sqrt{1}$, but it's built on the illegal operation from the previous step.
+
+**Conclusion:**
+The fallacy occurs exactly at the step $\sqrt{-1}\sqrt{-1} = \sqrt{(-1)(-1)}$. The algebraic identity $\sqrt{a}\sqrt{b} = \sqrt{ab}$ is strictly invalid when $a < 0$ and $b < 0$. 
+
+***
+
+### Q88. Problems 1.1 Question 1: Find the real and imaginary parts of the following: 
+(a) $3x+2iy-ix+5y=7+5i$. 
+(b) $x-3iy+4ix-2y-5-10i=(x+y+2)-(y-x+3)i$. 
+(d) $f(z)=i~ze^{-z}$ 
+(e) $f(z)=\sqrt{z}$ 
+(f) $\frac{z-a}{z+a}$ 
+(g) $(\frac{-1+i\sqrt{3}}{2})^{3}$
+
+**Solution:**
+
+This question contains two types of problems: (a) and (b) are algebraic equations where we must solve for the real variables $x$ and $y$, while (d), (e), (f), and (g) require us to separate complex expressions into their real $u(x,y)$ and imaginary $v(x,y)$ functions.
+
+---
+**Part (a): Solve $3x+2iy-ix+5y=7+5i$**
+Group the real and imaginary terms on the left side:
+$$(3x + 5y) + i(-x + 2y) = 7 + 5i$$
+For two complex numbers to be equal, their real parts and imaginary parts must be equal:
+1.  $3x + 5y = 7$ (Real part)
+2.  $-x + 2y = 5$ (Imaginary part) $\implies x = 2y - 5$
+
+Substitute $x$ into equation 1:
+$$3(2y - 5) + 5y = 7$$
+$$6y - 15 + 5y = 7$$
+$$11y = 22 \implies y = 2$$
+Find $x$:
+$$x = 2(2) - 5 = 4 - 5 = -1$$
+**Answer (a):** The real part is $x = -1$, and the imaginary part is $y = 2$.
+
+---
+**Part (b): Solve $x-3iy+4ix-2y-5-10i=(x+y+2)-(y-x+3)i$**
+Group the real and imaginary terms on both sides:
+$$\text{LHS}: (x - 2y - 5) + i(4x - 3y - 10)$$
+$$\text{RHS}: (x + y + 2) + i(-y + x - 3)$$
+Equate the real parts:
+$$x - 2y - 5 = x + y + 2$$
+$$-3y = 7 \implies y = -\frac{7}{3}$$
+Equate the imaginary parts:
+$$4x - 3y - 10 = x - y - 3$$
+$$3x - 2y = 7$$
+Substitute $y = -7/3$:
+$$3x - 2\left(-\frac{7}{3}\right) = 7$$
+$$3x + \frac{14}{3} = \frac{21}{3}$$
+$$3x = \frac{7}{3} \implies x = \frac{7}{9}$$
+**Answer (b):** Real part $x = \frac{7}{9}$, Imaginary part $y = -\frac{7}{3}$.
+
+---
+**Part (d): $f(z) = ize^{-z}$**
+Let $z = x + iy$.
+$$f(z) = i(x + iy) e^{-(x+iy)}$$
+$$f(z) = (ix + i^2y) e^{-x} e^{-iy}$$
+Since $i^2 = -1$ and $e^{-iy} = \cos y - i\sin y$:
+$$f(z) = (-y + ix) e^{-x} (\cos y - i\sin y)$$
+$$f(z) = e^{-x} \left[ -y\cos y + iy\sin y + ix\cos y - i^2x\sin y \right]$$
+$$f(z) = e^{-x} \left[ -y\cos y + iy\sin y + ix\cos y + x\sin y \right]$$
+Group real and imaginary parts:
+$$f(z) = e^{-x}(x\sin y - y\cos y) + i \cdot e^{-x}(x\cos y + y\sin y)$$
+**Answer (d):** 
+*   **Real part:** $u = e^{-x}(x\sin y - y\cos y)$
+*   **Imaginary part:** $v = e^{-x}(x\cos y + y\sin y)$
+
+---
+**Part (e): $f(z) = \sqrt{z}$**
+It is easiest to find this using polar coordinates. Let $z = r e^{i\theta}$, where $r = \sqrt{x^2+y^2}$ and $\theta = \tan^{-1}(y/x)$.
+$$f(z) = \sqrt{r e^{i\theta}} = \sqrt{r} e^{i\theta/2}$$
+Using Euler's formula:
+$$f(z) = \sqrt{r} \left( \cos\frac{\theta}{2} + i\sin\frac{\theta}{2} \right)$$
+**Answer (e):** 
+*   **Real part:** $u = \sqrt{r}\cos(\frac{\theta}{2})$
+*   **Imaginary part:** $v = \sqrt{r}\sin(\frac{\theta}{2})$
+
+---
+**Part (f): $f(z) = \frac{z-a}{z+a}$** *(Assuming 'a' is a real constant)*
+Let $z = x + iy$.
+$$f(z) = \frac{(x-a) + iy}{(x+a) + iy}$$
+Multiply numerator and denominator by the complex conjugate of the denominator:
+$$f(z) = \frac{(x-a) + iy}{(x+a) + iy} \cdot \frac{(x+a) - iy}{(x+a) - iy}$$
+Denominator: $(x+a)^2 - i^2y^2 = (x+a)^2 + y^2$.
+Numerator: $(x-a)(x+a) - iy(x-a) + iy(x+a) - i^2y^2$
+$$= (x^2 - a^2) - ixy + iay + ixy + iay + y^2$$
+$$= (x^2 + y^2 - a^2) + i(2ay)$$
+Separate the fraction:
+$$f(z) = \frac{x^2+y^2-a^2}{(x+a)^2+y^2} + i\frac{2ay}{(x+a)^2+y^2}$$
+**Answer (f):** 
+*   **Real part:** $u = \frac{x^2+y^2-a^2}{(x+a)^2+y^2}$
+*   **Imaginary part:** $v = \frac{2ay}{(x+a)^2+y^2}$
+
+---
+**Part (g): $f(z) = \left(\frac{-1+i\sqrt{3}}{2}\right)^{3}$**
+The term inside the parentheses is one of the complex cube roots of unity (often denoted as $\omega$). Let's convert it to polar form.
+$x = -1/2$, $y = \sqrt{3}/2$.
+$r = \sqrt{(-1/2)^2 + (\sqrt{3}/2)^2} = \sqrt{1/4 + 3/4} = 1$.
+$\theta = \pi - \tan^{-1}(\sqrt{3}/1) = \pi - \pi/3 = 2\pi/3$.
+So, $\frac{-1+i\sqrt{3}}{2} = e^{i(2\pi/3)}$.
+Now, cube it:
+$$\left(e^{i\frac{2\pi}{3}}\right)^3 = e^{i\left(\frac{2\pi}{3} \cdot 3\right)} = e^{i2\pi}$$
+By Euler's formula: $e^{i2\pi} = \cos(2\pi) + i\sin(2\pi) = 1 + i(0) = 1$.
+**Answer (g):** 
+*   **Real part:** $1$
+*   **Imaginary part:** $0$
+
+Here are the detailed solutions for the next four questions (Q89 to Q92).
+
+*(Note: Several of these questions from the Feruj Sheet are conceptually or numerically identical to problems covered earlier in the document. Detailed step-by-step solutions are provided again below for completeness).*
+
+### Q89. Problems 1.1 Question 2: Find two complex numbers whose sum is 4 and whose product is 8.
+
+**Solution:**
+
+Let the two unknown complex numbers be denoted as $z_1$ and $z_2$.
+According to the problem description, we are given two conditions:
+1) $z_1 + z_2 = 4$ (Sum of the roots)
+2) $z_1 \cdot z_2 = 8$ (Product of the roots)
+
+In algebra, any two numbers that have a known sum and a known product can be represented as the two roots of a quadratic equation. The standard form of such an equation with variable $z$ is:
+$$z^2 - (\text{Sum})z + (\text{Product}) = 0$$
+
+**Step 1: Form the quadratic equation.**
+Substitute the given sum and product into the standard equation:
+$$z^2 - 4z + 8 = 0$$
+
+**Step 2: Solve the quadratic equation using the quadratic formula.**
+The quadratic formula is $z = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+Here, $a = 1$, $b = -4$, and $c = 8$.
+
+$$z = \frac{-(-4) \pm \sqrt{(-4)^2 - 4(1)(8)}}{2(1)}$$
+$$z = \frac{4 \pm \sqrt{16 - 32}}{2}$$
+$$z = \frac{4 \pm \sqrt{-16}}{2}$$
+
+**Step 3: Simplify the square root of the negative number.**
+We know that $\sqrt{-16} = \sqrt{16 \cdot (-1)} = \sqrt{16}\sqrt{-1} = 4i$.
+Substitute this back into the equation:
+$$z = \frac{4 \pm 4i}{2}$$
+$$z = 2 \pm 2i$$
+
+**Answer:** The two complex numbers are **$2 + 2i$** and **$2 - 2i$**.
+
+***
+
+### Q90. Problems 1.1 Question 3: Prove that $z=re^{i\theta}$, if $z=x+iy$.
+
+**Solution:**
+
+This question asks us to derive the exponential (polar) form of a complex number from its Cartesian representation.
+
+**Step 1: Represent Cartesian coordinates in terms of polar coordinates.**
+If we plot the complex number $z = x + iy$ as a point $P(x,y)$ on the 2D Cartesian plane (the Argand diagram):
+*   Let $r$ be the distance from the origin to point $P$. By the Pythagorean theorem, $r = \sqrt{x^2 + y^2}$.
+*   Let $\theta$ be the angle that the line segment from the origin to $P$ makes with the positive x-axis.
+
+Using basic right-triangle trigonometry, we can relate $(x,y)$ to $(r,\theta)$:
+*   $\cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}} = \frac{x}{r} \implies x = r\cos\theta$
+*   $\sin\theta = \frac{\text{opposite}}{\text{hypotenuse}} = \frac{y}{r} \implies y = r\sin\theta$
+
+**Step 2: Substitute into the complex number expression.**
+Start with the Cartesian form:
+$$z = x + iy$$
+Substitute $x$ and $y$ with their polar equivalents:
+$$z = (r\cos\theta) + i(r\sin\theta)$$
+
+**Step 3: Factor out the common modulus $r$.**
+$$z = r(\cos\theta + i\sin\theta)$$
+
+**Step 4: Apply Euler's Formula.**
+Euler's formula states that for any real angle $\theta$:
+$$e^{i\theta} = \cos\theta + i\sin\theta$$
+
+Substitute this exponential term into our equation for $z$:
+$$z = r(e^{i\theta})$$
+$$z = re^{i\theta}$$
+
+**(Proved)**
+
+***
+
+### Q91. Problems 1.1 Question 4: Prove that (i) $-\vert{}z\vert{}\le Re~z\le\vert{}z\vert{}$ (ii) $-\vert{}z\vert{}\le Im~z\le\vert{}z\vert{}$
+
+**Solution:**
+
+We need to prove that the real and imaginary parts of any complex number are bounded by the positive and negative values of its modulus.
+
+Let the complex number be defined as $z = x + iy$, where $x$ and $y$ are real numbers.
+*   The real part is $Re(z) = x$.
+*   The imaginary part is $Im(z) = y$.
+*   The modulus is $|z| = \sqrt{x^2 + y^2}$.
+
+**Part (i): Prove $-|z| \le Re(z) \le |z|$**
+1.  Since $y$ is a real number, its square is always non-negative: $y^2 \ge 0$.
+2.  Therefore, adding $x^2$ to both sides, we get: $x^2 \le x^2 + y^2$.
+3.  Because both sides are non-negative, we can take the principal square root without changing the inequality:
+    $$\sqrt{x^2} \le \sqrt{x^2 + y^2}$$
+4.  By definition, $\sqrt{x^2}$ is the absolute value of $x$, denoted $|x|$, and $\sqrt{x^2 + y^2}$ is $|z|$.
+    $$|x| \le |z|$$
+5.  A fundamental property of absolute values states that $|A| \le B$ is equivalent to $-B \le A \le B$. Applying this property:
+    $$-|z| \le x \le |z|$$
+6.  Substitute $x = Re(z)$:
+    $$-|z| \le Re(z) \le |z|$$
+    **(Proved)**
+
+**Part (ii): Prove $-|z| \le Im(z) \le |z|$**
+1.  Since $x$ is a real number, its square is always non-negative: $x^2 \ge 0$.
+2.  Therefore, adding $y^2$ to both sides, we get: $y^2 \le x^2 + y^2$.
+3.  Taking the square root of both sides:
+    $$\sqrt{y^2} \le \sqrt{x^2 + y^2}$$
+4.  This simplifies to:
+    $$|y| \le |z|$$
+5.  Applying the absolute value inequality property:
+    $$-|z| \le y \le |z|$$
+6.  Substitute $y = Im(z)$:
+    $$-|z| \le Im(z) \le |z|$$
+    **(Proved)**
+
+***
+
+### Q92. Problems 1.1 Question 5: (i) If $z=x+iy$, evaluate $\vert{}e^{iz}\vert{}$. (ii) If $z=x+iy$, evaluate $\vert{}e^{z}\vert{}$ (iii) If $z=6e^{\pi\frac{1}{3}}$ , evaluate $\vert{}e^{iz}\vert{}$ .
+
+**Solution:**
+
+**Part (i): Evaluate $|e^{iz}|$**
+1.  Substitute $z = x + iy$ into the exponent $iz$:
+    $$iz = i(x + iy) = ix + i^2y = ix - y = -y + ix$$
+2.  Apply this to the exponential function:
+    $$e^{iz} = e^{-y + ix}$$
+3.  Use the rule of exponents $e^{a+b} = e^a \cdot e^b$:
+    $$e^{iz} = e^{-y} \cdot e^{ix}$$
+4.  Take the modulus. The modulus of a product is the product of moduli:
+    $$|e^{iz}| = |e^{-y}| \cdot |e^{ix}|$$
+5.  Since $y$ is real, $-y$ is real, making $e^{-y}$ a positive real number. Thus, $|e^{-y}| = e^{-y}$.
+6.  By Euler's formula, $|e^{ix}| = |\cos x + i\sin x| = \sqrt{\cos^2x+\sin^2x} = 1$.
+    $$|e^{iz}| = e^{-y} \cdot 1 = e^{-y}$$
+**Answer (i): $e^{-y}$**
+
+---
+
+**Part (ii): Evaluate $|e^z|$**
+1.  Substitute $z = x + iy$ directly:
+    $$e^z = e^{x + iy} = e^x \cdot e^{iy}$$
+2.  Take the modulus of the product:
+    $$|e^z| = |e^x| \cdot |e^{iy}|$$
+3.  Since $x$ is real, $e^x$ is a positive real number, so $|e^x| = e^x$.
+4.  By Euler's formula, $|e^{iy}| = \sqrt{\cos^2y+\sin^2y} = 1$.
+    $$|e^z| = e^x \cdot 1 = e^x$$
+**Answer (ii): $e^x$**
+
+---
+
+**Part (iii): If $z = 6e^{i\frac{\pi}{3}}$, evaluate $|e^{iz}|$**
+*(Note: There is a typo in the prompt's source text "$e^{\pi\frac{1}{3}}$". It strictly requires the imaginary unit "$i$" in the exponent to represent an angle, so $6e^{i\pi/3}$ is used. This is numerically identical to Q17 and Q48).*
+1.  First, convert $z$ into Cartesian coordinates to find its imaginary part ($y$), because we know from Part (i) that $|e^{iz}| = e^{-y}$.
+2.  Using Euler's formula on $z$:
+    $$z = 6\left(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\right)$$
+3.  Substitute standard trigonometric values ($\cos 60^\circ = 1/2$, $\sin 60^\circ = \sqrt{3}/2$):
+    $$z = 6\left(\frac{1}{2} + i\frac{\sqrt{3}}{2}\right) = 3 + 3\sqrt{3}i$$
+4.  Identify the imaginary part: $y = 3\sqrt{3}$.
+5.  Substitute $y$ into our formula from Part (i):
+    $$|e^{iz}| = e^{-y} = e^{-3\sqrt{3}}$$
+**Answer (iii): $e^{-3\sqrt{3}}$**
+
+Here are the detailed solutions for the next four questions (Q93 to Q96).
+
+### Q93. Problems 1.1 Question 6: Prove that (i) $Re\{z\}=\frac{z+\overline{z}}{2}$ (ii) $Im\{z\}=\frac{z-\overline{z}}{2i}$
+
+**Solution:**
+
+We will prove these fundamental relationships between a complex number, its conjugate, and its real and imaginary parts using Cartesian coordinates.
+
+Let the complex number be defined in standard Cartesian form:
+$$z = x + iy$$
+where $x$ is the real part, $Re\{z\} = x$, and $y$ is the imaginary part, $Im\{z\} = y$.
+
+The complex conjugate of $z$ is obtained by changing the sign of the imaginary part:
+$$\overline{z} = x - iy$$
+
+**Part (i): Prove $Re\{z\} = \frac{z+\overline{z}}{2}$**
+
+**Step 1: Evaluate the sum $z + \overline{z}$.**
+Add the complex number and its conjugate together:
+$$z + \overline{z} = (x + iy) + (x - iy)$$
+$$z + \overline{z} = x + x + iy - iy$$
+The imaginary terms $+iy$ and $-iy$ cancel each other out:
+$$z + \overline{z} = 2x$$
+
+**Step 2: Isolate $x$.**
+Divide both sides of the equation by 2:
+$$x = \frac{z + \overline{z}}{2}$$
+
+**Step 3: Conclude.**
+Since we defined $x$ as the real part of $z$ ($Re\{z\}$):
+$$Re\{z\} = \frac{z + \overline{z}}{2}$$
+**(Proved)**
+
+---
+
+**Part (ii): Prove $Im\{z\} = \frac{z-\overline{z}}{2i}$**
+
+**Step 1: Evaluate the difference $z - \overline{z}$.**
+Subtract the complex conjugate from the original complex number:
+$$z - \overline{z} = (x + iy) - (x - iy)$$
+Distribute the negative sign:
+$$z - \overline{z} = x + iy - x + iy$$
+The real terms $+x$ and $-x$ cancel each other out:
+$$z - \overline{z} = 2iy$$
+
+**Step 2: Isolate $y$.**
+Divide both sides of the equation by $2i$:
+$$y = \frac{z - \overline{z}}{2i}$$
+
+**Step 3: Conclude.**
+Since we defined $y$ as the imaginary part of $z$ ($Im\{z\}$):
+$$Im\{z\} = \frac{z - \overline{z}}{2i}$$
+**(Proved)**
+
+***
+
+### Q94. Problems 1.1 Question 7: Prove that $z^{-1}=\frac{\overline{z}}{\vert{}z\vert{}^{2}}$
+
+**Solution:**
+
+We need to prove the formula for the multiplicative inverse of a complex number $z$.
+
+**Step 1: Start with a fundamental property of complex moduli.**
+We know from earlier proofs (Q41) that multiplying a complex number by its conjugate yields the square of its modulus:
+$$z\overline{z} = |z|^2$$
+
+**Step 2: Divide by $z$.**
+Assuming $z \neq 0$ (since the inverse of $0$ is undefined), divide both sides of the equation by $z$:
+$$\frac{z\overline{z}}{z} = \frac{|z|^2}{z}$$
+$$\overline{z} = \frac{|z|^2}{z}$$
+
+**Step 3: Divide by $|z|^2$.**
+Divide both sides of the equation by $|z|^2$ (which is a strictly positive real number since $z \neq 0$):
+$$\frac{\overline{z}}{|z|^2} = \frac{1}{z}$$
+
+**Step 4: Rewrite the expression.**
+By algebraic definition, $\frac{1}{z}$ is written as $z^{-1}$. Therefore:
+$$z^{-1} = \frac{\overline{z}}{|z|^2}$$
+**(Proved)**
+
+*(Alternative Cartesian proof: Let $z = x+iy$. Then $z^{-1} = \frac{1}{x+iy}$. To rationalize the denominator, multiply top and bottom by the conjugate $x-iy$. This gives $\frac{x-iy}{(x+iy)(x-iy)} = \frac{x-iy}{x^2+y^2}$. We recognize the numerator as $\overline{z}$ and the denominator as $|z|^2$. Thus, $z^{-1} = \frac{\overline{z}}{|z|^2}$.)*
+
+***
+
+### Q95. Problems 1.1 Question 8: If $w=3iz-z^{2}$ and $z=x+iy$, find $\vert{}w\vert{}^{2}$ in terms of x and y.
+
+**Solution:**
+
+We are given a complex function $w$ in terms of $z$ and need to find the square of its modulus in terms of the real variables $x$ and $y$.
+
+**Method 1: Using Algebraic substitution directly (Cartesian approach)**
+
+**Step 1: Substitute $z = x + iy$ into the equation for $w$.**
+$$w = 3i(x + iy) - (x + iy)^2$$
+
+**Step 2: Expand the terms.**
+For the first term: $3i(x + iy) = 3ix + 3i^2y = 3ix - 3y = -3y + 3ix$
+For the second term: $(x + iy)^2 = x^2 + 2ixy + i^2y^2 = x^2 - y^2 + 2ixy$
+
+Substitute these back into $w$:
+$$w = (-3y + 3ix) - (x^2 - y^2 + 2ixy)$$
+Distribute the negative sign:
+$$w = -3y + 3ix - x^2 + y^2 - 2ixy$$
+
+**Step 3: Group the real and imaginary parts.**
+Let $w = u + iv$.
+Real part ($u$): $y^2 - x^2 - 3y$
+Imaginary part ($v$): $3x - 2xy$
+So, $w = (y^2 - x^2 - 3y) + i(3x - 2xy)$.
+
+**Step 4: Calculate $|w|^2$.**
+The square of the modulus is the sum of the squares of the real and imaginary parts: $|w|^2 = u^2 + v^2$.
+$$|w|^2 = (y^2 - x^2 - 3y)^2 + (3x - 2xy)^2$$
+*(While technically correct, expanding this binomial and trinomial leads to a very long polynomial. Let's use a more elegant method utilizing complex conjugate properties).*
+
+---
+
+**Method 2: Using Conjugate Properties ($|w|^2 = w\overline{w}$)**
+
+This method is often cleaner algebraically for complex polynomials.
+
+**Step 1: Write $w$ and factor it.**
+$$w = 3iz - z^2$$
+$$w = z(3i - z)$$
+
+**Step 2: Apply the modulus property $|AB|^2 = |A|^2|B|^2$.**
+$$|w|^2 = |z|^2 \cdot |3i - z|^2$$
+
+**Step 3: Evaluate the individual moduli in terms of $x$ and $y$.**
+*   **Evaluate $|z|^2$:**
+    Since $z = x + iy$, we have:
+    $$|z|^2 = x^2 + y^2$$
+
+*   **Evaluate $|3i - z|^2$:**
+    Substitute $z = x + iy$ into the expression:
+    $$3i - z = 3i - (x + iy) = -x + i(3 - y)$$
+    The modulus squared of this new complex number is the sum of the squares of its real and imaginary parts:
+    $$|3i - z|^2 = (-x)^2 + (3 - y)^2$$
+    $$|3i - z|^2 = x^2 + (9 - 6y + y^2)$$
+    $$|3i - z|^2 = x^2 + y^2 - 6y + 9$$
+
+**Step 4: Multiply the results together.**
+$$|w|^2 = (x^2 + y^2) \cdot (x^2 + y^2 - 6y + 9)$$
+
+This is a much cleaner and more factored final answer than the full expansion from Method 1. (If expanded fully, it would be $x^4 + 2x^2y^2 + y^4 - 6x^2y - 6y^3 + 9x^2 + 9y^2$).
+
+**Answer:** **$|w|^2 = (x^2 + y^2)(x^2 + y^2 - 6y + 9)$**
+
+***
+
+### Q96. Problems 1.1 Question 9: Prove that on the circle $z=Re^{i\theta}$, $\vert{}e^{iz}\vert{}=e^{-R~\sin~\theta}$
+
+**Solution:**
+
+We need to evaluate the modulus of the complex exponential function $e^{iz}$ specifically for points $z$ that lie on a circle of radius $R$ centered at the origin.
+
+**Step 1: Express the condition $z$ in Cartesian form.**
+We are given $z$ in polar form: $z = R e^{i\theta}$.
+Using Euler's formula ($e^{i\theta} = \cos\theta + i\sin\theta$), we can convert this to Cartesian coordinates:
+$$z = R(\cos\theta + i\sin\theta)$$
+$$z = (R\cos\theta) + i(R\sin\theta)$$
+Let $z = x + iy$. By direct comparison:
+*   $x = R\cos\theta$
+*   $y = R\sin\theta$
+
+**Step 2: Recall the formula for $|e^{iz}|$.**
+In a previous problem (Q46 Part ii, or Q92 Part i), we proved the general identity that for any complex number $z = x + iy$:
+$$|e^{iz}| = e^{-y}$$
+
+*Quick re-derivation:*
+$iz = i(x+iy) = ix - y = -y + ix$
+$e^{iz} = e^{-y + ix} = e^{-y} \cdot e^{ix}$
+$|e^{iz}| = |e^{-y}| \cdot |e^{ix}| = e^{-y} \cdot 1 = e^{-y}$.
+
+**Step 3: Substitute the polar $y$-component into the formula.**
+From Step 1, we found that for points on this circle, the imaginary part is $y = R\sin\theta$.
+Substitute this into the modulus expression:
+$$|e^{iz}| = e^{-y}$$
+$$|e^{iz}| = e^{-(R\sin\theta)}$$
+$$|e^{iz}| = e^{-R\sin\theta}$$
+
+**(Proved)**
+
+Here are the detailed solutions for the next four questions (Q97 to Q100).
+
+### Q97. Problems 1.1 Question 11: If $z=x+iy$, prove that $\vert{}x\vert{}+\vert{}y\vert{}\le\sqrt{2}\vert{}x+iy\vert{}$.
+
+**Solution:**
+
+We need to prove that the sum of the absolute values of the real and imaginary parts of a complex number is bounded by $\sqrt{2}$ times its modulus.
+
+**Step 1: Understand the components.**
+Let $z = x + iy$.
+*   The modulus is $|z| = \sqrt{x^2 + y^2}$.
+*   We need to prove: $|x| + |y| \le \sqrt{2} \sqrt{x^2 + y^2}$.
+
+**Step 2: Use algebraic manipulation (Squaring).**
+Since both sides of the target inequality ($|x| + |y|$ and $\sqrt{2}|z|$) are strictly non-negative real numbers, squaring both sides will preserve the direction of the inequality. 
+Let's analyze the square of the left-hand side (LHS):
+$$(\text{LHS})^2 = (|x| + |y|)^2$$
+Expand the binomial:
+$$(\text{LHS})^2 = |x|^2 + 2|x||y| + |y|^2$$
+Since the square of an absolute value is just the square of the number ($|a|^2 = a^2$):
+$$(\text{LHS})^2 = x^2 + 2|xy| + y^2$$
+
+Now let's analyze the square of the right-hand side (RHS):
+$$(\text{RHS})^2 = (\sqrt{2} \sqrt{x^2 + y^2})^2$$
+$$(\text{RHS})^2 = 2(x^2 + y^2)$$
+$$(\text{RHS})^2 = 2x^2 + 2y^2$$
+
+**Step 3: Compare the squared expressions.**
+We want to prove that $(\text{LHS})^2 \le (\text{RHS})^2$.
+Substitute the expanded forms:
+$$x^2 + 2|xy| + y^2 \le 2x^2 + 2y^2$$
+
+Subtract $(x^2 + y^2)$ from both sides:
+$$2|xy| \le x^2 + y^2$$
+
+Subtract $2|xy|$ from both sides to bring everything to one side:
+$$0 \le x^2 - 2|xy| + y^2$$
+
+**Step 4: Complete the algebraic proof.**
+Recognize that $x^2 = |x|^2$ and $y^2 = |y|^2$. The right side of our inequality forms a perfect binomial square:
+$$0 \le |x|^2 - 2|x||y| + |y|^2$$
+$$0 \le (|x| - |y|)^2$$
+
+This statement is universally true. The square of any real number (in this case, the difference between two absolute values, $|x| - |y|$) is always greater than or equal to zero. 
+
+Because this foundational statement is true, we can reverse all our logical steps:
+1.  $0 \le (|x| - |y|)^2$ (True for all $x,y$)
+2.  $2|xy| \le x^2 + y^2$
+3.  $x^2 + 2|xy| + y^2 \le 2x^2 + 2y^2$
+4.  $(|x| + |y|)^2 \le 2(x^2 + y^2)$
+5.  Take the principal square root of both non-negative sides:
+    $$|x| + |y| \le \sqrt{2} \sqrt{x^2 + y^2}$$
+6.  Substitute $|z| = \sqrt{x^2 + y^2}$:
+    $$|x| + |y| \le \sqrt{2} |z|$$
+**(Proved)**
+
+***
+
+### Q98. Problems 1.1 Question 13: Express each of the following complex numbers in polar form. (i) $-1+\sqrt{3}i$ (ii) $-2\sqrt{3}-2i$ (iii) $2\sqrt{2}+2\sqrt{2}i$ (iv) $\sqrt{5}-i$
+
+**Solution:**
+
+We will convert each Cartesian complex number $z = x + iy$ into the polar form $z = r(\cos\theta + i\sin\theta)$, where $r = \sqrt{x^2 + y^2}$ and $\theta$ is the principal argument in the range $(-\pi, \pi]$.
+
+**Part (i): $-1 + \sqrt{3}i$**
+*   **Modulus ($r$):** $r = \sqrt{(-1)^2 + (\sqrt{3})^2} = \sqrt{1 + 3} = \sqrt{4} = 2$.
+*   **Argument ($\theta$):** The point is in the **second quadrant** ($x<0, y>0$).
+    Reference angle $\alpha = \tan^{-1}\left|\frac{\sqrt{3}}{-1}\right| = \tan^{-1}(\sqrt{3}) = \frac{\pi}{3}$.
+    Principal argument $\theta = \pi - \frac{\pi}{3} = \frac{2\pi}{3}$.
+*   **Polar Form:** **$2\left(\cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}\right)$**
+
+**Part (ii): $-2\sqrt{3} - 2i$** *(Note: This is numerically identical to Q19).*
+*   **Modulus ($r$):** $r = \sqrt{(-2\sqrt{3})^2 + (-2)^2} = \sqrt{12 + 4} = \sqrt{16} = 4$.
+*   **Argument ($\theta$):** The point is in the **third quadrant** ($x<0, y<0$).
+    Reference angle $\alpha = \tan^{-1}\left|\frac{-2}{-2\sqrt{3}}\right| = \tan^{-1}\left(\frac{1}{\sqrt{3}}\right) = \frac{\pi}{6}$.
+    Principal argument $\theta = -\pi + \frac{\pi}{6} = -\frac{5\pi}{6}$.
+*   **Polar Form:** **$4\left(\cos\left(-\frac{5\pi}{6}\right) + i\sin\left(-\frac{5\pi}{6}\right)\right)$**
+
+**Part (iii): $2\sqrt{2} + 2\sqrt{2}i$**
+*   **Modulus ($r$):** $r = \sqrt{(2\sqrt{2})^2 + (2\sqrt{2})^2} = \sqrt{8 + 8} = \sqrt{16} = 4$.
+*   **Argument ($\theta$):** The point is in the **first quadrant** ($x>0, y>0$).
+    $\theta = \tan^{-1}\left(\frac{2\sqrt{2}}{2\sqrt{2}}\right) = \tan^{-1}(1) = \frac{\pi}{4}$.
+*   **Polar Form:** **$4\left(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\right)$**
+
+**Part (iv): $\sqrt{5} - i$**
+*   **Modulus ($r$):** $r = \sqrt{(\sqrt{5})^2 + (-1)^2} = \sqrt{5 + 1} = \sqrt{6}$.
+*   **Argument ($\theta$):** The point is in the **fourth quadrant** ($x>0, y<0$).
+    $\theta = \tan^{-1}\left(\frac{-1}{\sqrt{5}}\right) = -\tan^{-1}\left(\frac{1}{\sqrt{5}}\right)$.
+    Since $1/\sqrt{5}$ is not a standard trigonometric fraction, we leave it in inverse tangent form.
+*   **Polar Form:** **$\sqrt{6}\left[\cos\left(-\tan^{-1}\frac{1}{\sqrt{5}}\right) + i\sin\left(-\tan^{-1}\frac{1}{\sqrt{5}}\right)\right]$**
+
+***
+
+### Q99. Problems 1.1 Question 14: Find the roots of the following: (i) $z^{4}=-a^{4}$ (ii) $z^{4}=16$ (iii) $z^{2}-z=1$
+
+**Solution:**
+
+**Part (i): $z^4 = -a^4$** *(Note: This was solved earlier in Q57 Part iii. Repeating briefly here).*
+Assume $a > 0$.
+1.  Polar form of $-a^4$: $w = a^4 \left( \cos(\pi + 2k\pi) + i\sin(\pi + 2k\pi) \right)$.
+2.  De Moivre's Theorem for 4th roots ($k = 0, 1, 2, 3$):
+    $$z_k = a \left[ \cos\left(\frac{\pi + 2k\pi}{4}\right) + i\sin\left(\frac{\pi + 2k\pi}{4}\right) \right]$$
+3.  The four roots are:
+    **$z_0 = a\left(\frac{1}{\sqrt{2}} + i\frac{1}{\sqrt{2}}\right)$**
+    **$z_1 = a\left(-\frac{1}{\sqrt{2}} + i\frac{1}{\sqrt{2}}\right)$**
+    **$z_2 = a\left(-\frac{1}{\sqrt{2}} - i\frac{1}{\sqrt{2}}\right)$**
+    **$z_3 = a\left(\frac{1}{\sqrt{2}} - i\frac{1}{\sqrt{2}}\right)$**
+
+---
+
+**Part (ii): $z^4 = 16$**
+1.  Polar form of $16$: $w = 16 \left( \cos(0 + 2k\pi) + i\sin(0 + 2k\pi) \right)$.
+2.  De Moivre's Theorem for 4th roots ($k = 0, 1, 2, 3$):
+    $$z_k = 16^{\frac{1}{4}} \left[ \cos\left(\frac{2k\pi}{4}\right) + i\sin\left(\frac{2k\pi}{4}\right) \right] = 2 \left[ \cos\left(\frac{k\pi}{2}\right) + i\sin\left(\frac{k\pi}{2}\right) \right]$$
+3.  The four roots are separated by $90^\circ$ ($\pi/2$):
+    *   $k=0$: **$z_0 = 2(\cos 0 + i\sin 0) = 2$**
+    *   $k=1$: **$z_1 = 2(\cos\frac{\pi}{2} + i\sin\frac{\pi}{2}) = 2i$**
+    *   $k=2$: **$z_2 = 2(\cos\pi + i\sin\pi) = -2$**
+    *   $k=3$: **$z_3 = 2(\cos\frac{3\pi}{2} + i\sin\frac{3\pi}{2}) = -2i$**
+
+---
+
+**Part (iii): $z^2 - z = 1$**
+1.  This is a standard quadratic equation. Rearrange to standard form:
+    $$z^2 - z - 1 = 0$$
+2.  Apply the quadratic formula, where $a=1, b=-1, c=-1$:
+    $$z = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+    $$z = \frac{-(-1) \pm \sqrt{(-1)^2 - 4(1)(-1)}}{2(1)}$$
+    $$z = \frac{1 \pm \sqrt{1 + 4}}{2}$$
+    $$z = \frac{1 \pm \sqrt{5}}{2}$$
+3.  Because the discriminant is positive ($5 > 0$), this equation has purely real roots (which are a subset of complex numbers).
+    **The two roots are $z = \frac{1 + \sqrt{5}}{2}$ and $z = \frac{1 - \sqrt{5}}{2}$.** *(Note: The positive root is the famous Golden Ratio, $\phi$).*
+
+***
+
+### Q100. Problems 1.1 Question 15: Represent graphically the set of values of z for which (a) $\vert{}z\vert{}>\vert{}z-1\vert{}$ (b) $\vert{}z+2\vert{}>1+\vert{}z-2\vert{}$
+
+**Solution:**
+
+We need to interpret these algebraic inequalities geometrically.
+
+**Part (a): $|z| > |z - 1|$**
+1.  **Geometric Interpretation:** 
+    *   $|z|$ is the distance from point $z$ to the origin $(0,0)$.
+    *   $|z - 1|$ is the distance from point $z$ to the fixed point $z_0 = 1$ (or coordinate $(1,0)$).
+    *   The inequality states: "The distance from $z$ to the origin is strictly *greater* than the distance from $z$ to the point $(1,0)$."
+2.  **Find the boundary line:**
+    The boundary occurs where the distances are equal: $|z| = |z - 1|$. 
+    The locus of points equidistant from two fixed points is the **perpendicular bisector** of the line segment joining them. The segment joins $(0,0)$ and $(1,0)$. The perpendicular bisector is the vertical line passing exactly halfway between them: $x = 0.5$.
+3.  **Algebraic confirmation:**
+    Let $z = x + iy$.
+    $$\sqrt{x^2 + y^2} > \sqrt{(x-1)^2 + y^2}$$
+    Square both sides:
+    $$x^2 + y^2 > (x-1)^2 + y^2$$
+    $$x^2 > x^2 - 2x + 1$$
+    $$0 > -2x + 1$$
+    $$2x > 1 \implies x > 0.5$$
+4.  **Graphical Representation:** The set of values is the entire **right half-plane** strictly to the right of the vertical line $x = 0.5$. (The line $x=0.5$ itself is drawn as dashed and is not included).
+
+---
+
+**Part (b): $|z + 2| > 1 + |z - 2|$**
+1.  **Algebraic setup:**
+    Let $z = x + iy$. This inequality is quite complex to interpret purely geometrically at first glance due to the "$+1$". Let's use algebra.
+    $$\sqrt{(x+2)^2 + y^2} > 1 + \sqrt{(x-2)^2 + y^2}$$
+2.  **Square both sides to eliminate the outer square roots:**
+    $$(x+2)^2 + y^2 > 1 + 2\sqrt{(x-2)^2 + y^2} + [(x-2)^2 + y^2]$$
+    $$x^2 + 4x + 4 + y^2 > 1 + 2\sqrt{(x-2)^2 + y^2} + x^2 - 4x + 4 + y^2$$
+3.  **Cancel common terms and simplify:**
+    $$4x > 1 + 2\sqrt{(x-2)^2 + y^2} - 4x$$
+    $$8x - 1 > 2\sqrt{(x-2)^2 + y^2}$$
+4.  **Square both sides again** (Note: this is only fully valid if $8x - 1 > 0$, implying $x > 1/8$):
+    $$(8x - 1)^2 > 4[(x-2)^2 + y^2]$$
+    $$64x^2 - 16x + 1 > 4(x^2 - 4x + 4 + y^2)$$
+    $$64x^2 - 16x + 1 > 4x^2 - 16x + 16 + 4y^2$$
+5.  **Simplify into standard conic form:**
+    $$60x^2 - 4y^2 > 15$$
+    Divide by 15:
+    $$\frac{60x^2}{15} - \frac{4y^2}{15} > 1$$
+    $$4x^2 - \frac{4y^2}{15} > 1$$
+    $$\frac{x^2}{(1/2)^2} - \frac{y^2}{(\sqrt{15}/2)^2} > 1$$
+6.  **Graphical Representation:**
+    The corresponding equality $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ is the standard equation of a **hyperbola** centered at the origin, opening left and right along the x-axis. 
+    *   Vertices are at $(\pm 1/2, 0)$.
+    *   The inequality "$>$" represents the regions "inside" the cups of the hyperbola (i.e., further away from the origin than the vertices).
+    *   However, recall our restriction from Step 4 that $8x - 1 > 0$, so $x > 1/8$. This means we completely discard the left branch of the hyperbola (where $x < -1/2$).
+    *   Therefore, the graphical representation is the **open region strictly enclosed by the right-hand branch of the hyperbola** $4x^2 - \frac{4y^2}{15} = 1$.
+
+
+Here are the detailed solutions for the next four questions (Q101 to Q104).
+
+### Q101. Question: $|z - 1 + 3i| = 2$
+
+*(Note: The source text has a typo using `$j$` instead of `$i$`. In engineering, `$j$` is often used for the imaginary unit. The prompt also has an extraneous `|` at the end. The standard interpretation is the equation of the circle $|z - (1 - 3i)| = 2$. Assuming the task is to describe this geometrically).*
+
+**Solution:**
+
+We need to interpret the algebraic equation $|z - 1 + 3i| = 2$ geometrically in the complex plane.
+
+**Step 1: Understand the standard equation.**
+In the complex plane, the distance between any variable point $z$ and a fixed point $z_0$ is given by the modulus of their difference: $|z - z_0|$. 
+A circle is defined as the set of all points that are a constant distance (the radius, $r$) from a fixed center point ($z_0$). 
+Thus, the standard equation of a circle is:
+$$|z - z_0| = r$$
+
+**Step 2: Format the given equation to match the standard form.**
+We need to factor out a minus sign inside the absolute value bars so it matches the format $(z - z_0)$.
+$$|z - (1 - 3i)| = 2$$
+
+**Step 3: Extract the geometric parameters.**
+By comparing our formatted equation to the standard form $|z - z_0| = r$, we can directly read the parameters:
+1.  **Radius ($r$):** The constant on the right side of the equation is $2$. So, the radius is $2$.
+2.  **Center ($z_0$):** The complex number being subtracted from $z$ is $1 - 3i$. 
+    *   In Cartesian coordinates, the real part is $1$ and the imaginary part is $-3$. 
+    *   Therefore, the center is the point $(1, -3)$.
+
+**Answer:** The equation represents a **circle** in the complex plane with its center at **$1 - 3i$** (coordinate $(1, -3)$) and a radius of **$2$**.
+
+***
+
+### Q102. Pg 1, Q1(b): Separate real and imaginary parts of the following function. $f(z) = \sqrt{z}$.
+
+**Solution:**
+
+We need to express the complex function $f(z) = \sqrt{z}$ in the form $u(x,y) + iv(x,y)$, where $u$ and $v$ are purely real functions. Let $z = x + iy$.
+
+**Method 1: Using Polar Coordinates (Standard and Easiest Method)**
+**Step 1: Express $z$ in polar form.**
+Let $z = r e^{i\theta}$, where:
+*   $r = \sqrt{x^2 + y^2}$
+*   $\theta = \tan^{-1}\left(\frac{y}{x}\right)$ (Principal argument)
+
+**Step 2: Apply the square root function.**
+$$f(z) = z^{1/2} = (r e^{i\theta})^{1/2} = r^{1/2} e^{i\theta/2} = \sqrt{r} e^{i\frac{\theta}{2}}$$
+
+**Step 3: Expand using Euler's formula.**
+$$f(z) = \sqrt{r} \left( \cos\frac{\theta}{2} + i\sin\frac{\theta}{2} \right)$$
+$$f(z) = \sqrt{r}\cos\frac{\theta}{2} + i\sqrt{r}\sin\frac{\theta}{2}$$
+
+**Step 4: State the real and imaginary parts.**
+*   **Real part $u(r,\theta)$:** $\sqrt{r}\cos\frac{\theta}{2}$
+*   **Imaginary part $v(r,\theta)$:** $\sqrt{r}\sin\frac{\theta}{2}$
+
+---
+**Method 2: Using Strict Cartesian Coordinates (Algebraic Method)**
+Let $\sqrt{x+iy} = u + iv$. We need to find $u$ and $v$ in terms of $x$ and $y$.
+**Step 1: Square both sides.**
+$$x + iy = (u + iv)^2$$
+$$x + iy = u^2 + 2iuv + i^2v^2$$
+$$x + iy = (u^2 - v^2) + i(2uv)$$
+
+**Step 2: Equate real and imaginary parts.**
+1) $x = u^2 - v^2$
+2) $y = 2uv \implies v = \frac{y}{2u}$
+
+**Step 3: Solve for $u$.**
+Substitute $v$ into the first equation:
+$$x = u^2 - \left(\frac{y}{2u}\right)^2$$
+$$x = u^2 - \frac{y^2}{4u^2}$$
+Multiply by $4u^2$:
+$$4u^2 x = 4u^4 - y^2$$
+$$4u^4 - 4xu^2 - y^2 = 0$$
+This is a quadratic equation in terms of $u^2$. Using the quadratic formula:
+$$u^2 = \frac{-(-4x) \pm \sqrt{(-4x)^2 - 4(4)(-y^2)}}{2(4)}$$
+$$u^2 = \frac{4x \pm \sqrt{16x^2 + 16y^2}}{8}$$
+$$u^2 = \frac{4x \pm 4\sqrt{x^2 + y^2}}{8} = \frac{x \pm \sqrt{x^2 + y^2}}{2}$$
+Since $u$ must be a real number, $u^2$ must be positive. Since $\sqrt{x^2+y^2} \ge x$, we must take the positive root. Let $r = \sqrt{x^2+y^2}$.
+$$u^2 = \frac{r + x}{2} \implies u = \pm\sqrt{\frac{r + x}{2}}$$
+
+**Step 4: Solve for $v$.**
+Using $v^2 = u^2 - x$:
+$$v^2 = \frac{r + x}{2} - x = \frac{r + x - 2x}{2} = \frac{r - x}{2} \implies v = \pm\sqrt{\frac{r - x}{2}}$$
+The signs of $u$ and $v$ must match the sign of $y$ (since $2uv = y$). Assuming the principal branch where the real part $u \ge 0$:
+
+**Answer:** 
+Let $r = \sqrt{x^2+y^2}$.
+*   **Real part $u(x,y) = \sqrt{\frac{r + x}{2}}$**
+*   **Imaginary part $v(x,y) = \text{sgn}(y)\sqrt{\frac{r - x}{2}}$** (where sgn is the sign function).
+
+***
+
+### Q103. Pg 4, Q1(a): Separate the real and imaginary parts of $f(z) = \sqrt{1-z}$.
+
+**Solution:**
+
+We need to express $f(z) = \sqrt{1-z}$ in the form $u + iv$.
+
+Let $z = x + iy$.
+Substitute this into the function:
+$$f(z) = \sqrt{1 - (x + iy)}$$
+$$f(z) = \sqrt{(1 - x) - iy}$$
+
+To handle the square root, we will use the same algebraic technique as Q102 (Method 2).
+Let the square root equal a new complex number $u + iv$:
+$$\sqrt{(1 - x) - iy} = u + iv$$
+
+**Step 1: Square both sides.**
+$$(1 - x) - iy = (u + iv)^2$$
+$$(1 - x) - iy = u^2 - v^2 + i(2uv)$$
+
+**Step 2: Equate real and imaginary parts.**
+We get a system of two equations:
+1) $u^2 - v^2 = 1 - x$
+2) $2uv = -y$
+
+**Step 3: Solve for $u^2$ and $v^2$ using the modulus identity.**
+We know an algebraic identity: $(u^2 + v^2)^2 = (u^2 - v^2)^2 + (2uv)^2$.
+Let's substitute our equations into this identity:
+$$(u^2 + v^2)^2 = (1 - x)^2 + (-y)^2$$
+$$(u^2 + v^2)^2 = (1 - x)^2 + y^2$$
+Taking the principal positive square root (since $u^2+v^2$ must be positive):
+$$u^2 + v^2 = \sqrt{(1 - x)^2 + y^2}$$
+
+Let's define $R = \sqrt{(1 - x)^2 + y^2}$ to simplify notation. So, $u^2 + v^2 = R$.
+
+**Step 4: Solve for $u$ and $v$.**
+We now have a much simpler system:
+A) $u^2 + v^2 = R$
+B) $u^2 - v^2 = 1 - x$
+
+Add equation (A) and equation (B):
+$$2u^2 = R + (1 - x)$$
+$$u^2 = \frac{R + 1 - x}{2} \implies u = \pm\sqrt{\frac{R + 1 - x}{2}}$$
+
+Subtract equation (B) from equation (A):
+$$2v^2 = R - (1 - x)$$
+$$v^2 = \frac{R - 1 + x}{2} \implies v = \pm\sqrt{\frac{R - 1 + x}{2}}$$
+
+**Step 5: Determine signs.**
+From Equation 2 ($2uv = -y$), we know the product of $u$ and $v$ has the opposite sign of $y$. If we take the principal root where the real part $u > 0$, the sign of $v$ must be opposite to the sign of $y$.
+
+**Answer:**
+Let $R = \sqrt{(1-x)^2 + y^2}$.
+*   **Real part: $u(x,y) = \sqrt{\frac{R + 1 - x}{2}}$**
+*   **Imaginary part: $v(x,y) = -\text{sgn}(y) \sqrt{\frac{R - 1 + x}{2}}$**
+
+***
+
+### Q104. Pg 6, Q1(a): Separate the real and imaginary part of $f(z) = \sin 2z$.
+
+**Solution:**
+
+We need to express $f(z) = \sin(2z)$ in the form $u(x,y) + iv(x,y)$, where $u$ and $v$ are real functions.
+
+**Step 1: Substitute $z = x + iy$ into the function.**
+$$f(z) = \sin(2(x + iy))$$
+$$f(z) = \sin(2x + i2y)$$
+
+**Step 2: Use the trigonometric compound angle formula.**
+The formula for the sine of a sum is:
+$$\sin(A + B) = \sin A\cos B + \cos A\sin B$$
+Let $A = 2x$ and $B = i2y$:
+$$f(z) = \sin(2x)\cos(i2y) + \cos(2x)\sin(i2y)$$
+
+**Step 3: Convert complex trigonometric functions to hyperbolic functions.**
+There are fundamental identities relating circular trigonometric functions of imaginary arguments to real hyperbolic functions:
+*   $\cos(i\theta) = \cosh(\theta)$
+*   $\sin(i\theta) = i\sinh(\theta)$
+
+Apply these identities to our expression (where $\theta = 2y$):
+*   $\cos(i2y) = \cosh(2y)$
+*   $\sin(i2y) = i\sinh(2y)$
+
+Substitute these back into the function:
+$$f(z) = \sin(2x)[\cosh(2y)] + \cos(2x)[i\sinh(2y)]$$
+
+**Step 4: Group the real and imaginary parts.**
+Rearrange the terms to clearly show the $u + iv$ format:
+$$f(z) = [\sin(2x)\cosh(2y)] + i[\cos(2x)\sinh(2y)]$$
+
+Both $\sin(2x)\cosh(2y)$ and $\cos(2x)\sinh(2y)$ are entirely real-valued functions for any real numbers $x$ and $y$. Therefore, the separation is complete.
+
+**Answer:**
+*   **Real part: $u(x,y) = \sin(2x)\cosh(2y)$**
+*   **Imaginary part: $v(x,y) = \cos(2x)\sinh(2y)$**
+
+Here are the detailed solutions for the next four questions (Q105 to Q108).
+
+### Q105. Pg 13, CT-03, 3.(a): Separate the real and imaginary parts of $z^x$, if $z = x+iy$
+
+**Solution:**
+
+We need to express the complex power function $f(z) = z^x$ in the form $u(x,y) + iv(x,y)$, where $z = x + iy$ and $x$ is real.
+
+**Step 1: Express $z$ in polar form.**
+Let $z = r e^{i\theta}$, where:
+*   $r = |z| = \sqrt{x^2 + y^2}$
+*   $\theta = \arg(z) = \tan^{-1}\left(\frac{y}{x}\right)$
+
+**Step 2: Substitute polar form into the function.**
+$$z^x = (r e^{i\theta})^x$$
+Using exponent rules $(ab)^x = a^x b^x$:
+$$z^x = r^x \cdot (e^{i\theta})^x$$
+$$z^x = r^x \cdot e^{ix\theta}$$
+
+**Step 3: Expand the exponential term using Euler's formula.**
+Euler's formula states that $e^{i\phi} = \cos\phi + i\sin\phi$. Here, $\phi = x\theta$.
+$$e^{ix\theta} = \cos(x\theta) + i\sin(x\theta)$$
+
+Substitute this back into the expression:
+$$z^x = r^x [\cos(x\theta) + i\sin(x\theta)]$$
+$$z^x = r^x \cos(x\theta) + i \cdot r^x \sin(x\theta)$$
+
+**Step 4: Express the result fully in terms of $x$ and $y$.**
+Substitute $r = \sqrt{x^2 + y^2} = (x^2 + y^2)^{1/2}$ and $\theta = \tan^{-1}(y/x)$.
+Therefore, $r^x = \left((x^2 + y^2)^{1/2}\right)^x = (x^2 + y^2)^{x/2}$.
+
+$$z^x = (x^2 + y^2)^{\frac{x}{2}} \cos\left(x \tan^{-1}\left(\frac{y}{x}\right)\right) + i (x^2 + y^2)^{\frac{x}{2}} \sin\left(x \tan^{-1}\left(\frac{y}{x}\right)\right)$$
+
+**Answer:**
+Let $r = \sqrt{x^2+y^2}$ and $\theta = \tan^{-1}(y/x)$.
+*   **Real part: $u(x,y) = r^x \cos(x\theta) = (x^2 + y^2)^{\frac{x}{2}} \cos\left(x \tan^{-1}\frac{y}{x}\right)$**
+*   **Imaginary part: $v(x,y) = r^x \sin(x\theta) = (x^2 + y^2)^{\frac{x}{2}} \sin\left(x \tan^{-1}\frac{y}{x}\right)$**
+
+***
+
+### Q106. Pg 14, CT-01, 3.(a): Separate the real and imaginary parts of $\frac{1}{1+z}$
+
+**Solution:**
+
+We need to express the rational complex function $f(z) = \frac{1}{1+z}$ in the form $u(x,y) + iv(x,y)$.
+
+**Step 1: Substitute $z = x + iy$ into the function.**
+$$f(z) = \frac{1}{1 + (x + iy)}$$
+Group the real parts together in the denominator:
+$$f(z) = \frac{1}{(1 + x) + iy}$$
+
+**Step 2: Rationalize the denominator.**
+To remove the imaginary unit $i$ from the denominator, we multiply both the numerator and the denominator by the complex conjugate of the denominator, which is $(1 + x) - iy$.
+$$f(z) = \frac{1}{(1 + x) + iy} \cdot \frac{(1 + x) - iy}{(1 + x) - iy}$$
+
+**Step 3: Perform the multiplication.**
+*   **Numerator:** $1 \cdot [(1 + x) - iy] = (1 + x) - iy$
+*   **Denominator:** This is a difference of squares, $(A + iB)(A - iB) = A^2 + B^2$.
+    Here, $A = (1+x)$ and $B = y$.
+    Denominator $= (1 + x)^2 + y^2$
+
+Put it all together:
+$$f(z) = \frac{(1 + x) - iy}{(1 + x)^2 + y^2}$$
+
+**Step 4: Separate the real and imaginary parts.**
+Split the fraction into two distinct terms over the common denominator:
+$$f(z) = \frac{1 + x}{(1 + x)^2 + y^2} - i \frac{y}{(1 + x)^2 + y^2}$$
+
+Rewrite slightly to explicitly show the $u + iv$ format:
+$$f(z) = \left[ \frac{1 + x}{(1 + x)^2 + y^2} \right] + i \left[ \frac{-y}{(1 + x)^2 + y^2} \right]$$
+
+**Answer:**
+*   **Real part: $u(x,y) = \frac{1 + x}{(1 + x)^2 + y^2}$**
+*   **Imaginary part: $v(x,y) = \frac{-y}{(1 + x)^2 + y^2}$**
+
+***
+
+### Q107. Pg 18, CT-I, 1.(b): Separate each of the following into real and imaginary parts, i.e., find $u(x, y)$ and $v(x, y)$ $f(z) = z + \frac{1}{z}$
+
+**Solution:**
+
+We need to express $f(z) = z + \frac{1}{z}$ in the standard form $u(x,y) + iv(x,y)$. 
+*(Note: This function is famous in fluid dynamics, known as the Joukowsky transform).*
+
+**Step 1: Substitute $z = x + iy$ into the function.**
+$$f(z) = (x + iy) + \frac{1}{x + iy}$$
+
+**Step 2: Rationalize the fraction term.**
+We need to remove $i$ from the denominator of the second term. Multiply the numerator and denominator by the complex conjugate $x - iy$.
+$$\frac{1}{x + iy} = \frac{1}{x + iy} \cdot \frac{x - iy}{x - iy}$$
+$$\frac{1}{x + iy} = \frac{x - iy}{x^2 - (iy)^2}$$
+Since $i^2 = -1$:
+$$\frac{1}{x + iy} = \frac{x - iy}{x^2 + y^2}$$
+
+Separate this into real and imaginary parts:
+$$\frac{1}{x + iy} = \frac{x}{x^2 + y^2} - i \frac{y}{x^2 + y^2}$$
+
+**Step 3: Combine with the original $z$ term.**
+Substitute the rationalized fraction back into the full function equation:
+$$f(z) = (x + iy) + \left( \frac{x}{x^2 + y^2} - i \frac{y}{x^2 + y^2} \right)$$
+
+**Step 4: Group the real parts and imaginary parts.**
+Group the terms without $i$ (real) and the terms with $i$ (imaginary):
+$$f(z) = \left( x + \frac{x}{x^2 + y^2} \right) + i \left( y - \frac{y}{x^2 + y^2} \right)$$
+
+We can factor out $x$ and $y$ to make it look cleaner:
+$$f(z) = x\left( 1 + \frac{1}{x^2 + y^2} \right) + iy\left( 1 - \frac{1}{x^2 + y^2} \right)$$
+
+**Answer:**
+*   **Real part: $u(x,y) = x + \frac{x}{x^2 + y^2}$**  *(or $x\left( 1 + \frac{1}{x^2 + y^2} \right)$)*
+*   **Imaginary part: $v(x,y) = y - \frac{y}{x^2 + y^2}$** *(or $y\left( 1 - \frac{1}{x^2 + y^2} \right)$)*
+
+*(Alternatively, in polar coordinates $z = re^{i\theta}$, $f(z) = (r+1/r)\cos\theta + i(r-1/r)\sin\theta$.)*
+
+***
+
+### Q108. Pg 6, Q1(c): Is the function $f(z) = \begin{cases} \frac{z^2+2z}{z-i}; & z \neq i \\ 3+2i; & z=i \end{cases}$ Continuous at $z = i$? If it is not true, redefine the function to be continuous at $z = i$.
+
+**Solution:**
+
+A complex function $f(z)$ is continuous at a point $z = z_0$ if and only if three conditions are met:
+1.  $f(z_0)$ is defined.
+2.  $\lim_{z \to z_0} f(z)$ exists.
+3.  $\lim_{z \to z_0} f(z) = f(z_0)$.
+
+Let's test these conditions at the point $z_0 = i$.
+
+**Step 1: Check if $f(i)$ is defined.**
+From the piecewise definition, when $z = i$, the function value is given as:
+$$f(i) = 3 + 2i$$
+So, the function is defined at $z=i$.
+
+**Step 2: Evaluate the limit as $z \to i$.**
+We must evaluate the limit of the function for $z \neq i$.
+$$\lim_{z \to i} f(z) = \lim_{z \to i} \frac{z^2 + 2z}{z - i}$$
+
+Let's try direct substitution of $z=i$:
+Numerator: $i^2 + 2i = -1 + 2i$
+Denominator: $i - i = 0$
+Since we get $\frac{-1 + 2i}{0}$, the limit approaches **infinity** (or more accurately, the limit does not exist as a finite complex number).
+
+*(Note: There is highly likely a typo in the exam paper's question. A standard calculus/complex analysis limit problem of this type is usually designed to be an indeterminate form $0/0$ that can be factored. For example, if the numerator was $z^2+1$, it factors to $(z+i)(z-i)$, which cancels the denominator. Or perhaps the numerator was meant to be $z^2 - 2iz - 1 = (z-i)^2$. However, we must solve the problem exactly as written).*
+
+Because the denominator goes to 0 while the numerator goes to a non-zero constant ($-1+2i$), the magnitude of the fraction grows without bound.
+$$\lim_{z \to i} |f(z)| = \infty$$
+
+**Step 3: Compare the limit to the function value.**
+Since the limit does not exist as a finite number, it cannot possibly equal the defined finite value $f(i) = 3+2i$.
+Therefore, the function is **not continuous** at $z = i$.
+
+**Step 4: Redefine the function to be continuous (if possible).**
+To make a function continuous at a removable singularity, we define $f(z_0)$ to be exactly equal to $\lim_{z \to z_0} f(z)$.
+However, because the limit evaluates to infinity, $z=i$ is a **pole**, not a removable singularity. It is mathematically impossible to redefine the function with a finite complex value to make it continuous at a pole.
+
+**Conclusion/Answer:**
+*   Is the function continuous at $z = i$? **No.** The limit as $z \to i$ goes to infinity.
+*   Redefine the function: **It cannot be redefined** to be continuous at $z=i$ because the singularity is a pole (the limit does not exist finitely), unless we are working in the extended complex plane where we can define $f(i) = \infty$. 
+
+*(Assuming the likely typo where the numerator was meant to be $z^2+1$: $\lim_{z\to i} \frac{z^2+1}{z-i} = \lim \frac{(z+i)(z-i)}{z-i} = \lim(z+i) = 2i$. Then we would redefine $f(i) = 2i$.)*
+
+
+Here are the detailed solutions for the next four questions (Q109 to Q112).
+
+### Q109. Pg 13, CT-03, 3.(b): Evaluate $\lim_{z\to i} \frac{d}{dz}\left\{(z-\pi i)^2 \frac{e^z}{(z^2+\pi^2)^2}\right\}$
+
+**Solution:**
+
+We need to evaluate the limit of the derivative of a complex function.
+Let $F(z) = (z-\pi i)^2 \frac{e^z}{(z^2+\pi^2)^2}$.
+
+**Step 1: Simplify the expression inside the derivative.**
+The term $(z^2 + \pi^2)$ is a difference of squares in the complex plane, because $\pi^2 = -(-\pi^2) = -(i\pi)^2$.
+Thus, $z^2 + \pi^2 = (z + i\pi)(z - i\pi)$.
+
+Substitute this back into the denominator of $F(z)$:
+$$(z^2 + \pi^2)^2 = [(z + i\pi)(z - i\pi)]^2 = (z + i\pi)^2(z - i\pi)^2$$
+
+Now, substitute this expanded denominator back into $F(z)$:
+$$F(z) = (z - \pi i)^2 \frac{e^z}{(z + i\pi)^2(z - i\pi)^2}$$
+
+Cancel the common term $(z - \pi i)^2$ from the numerator and denominator:
+$$F(z) = \frac{e^z}{(z + i\pi)^2}$$
+
+**Step 2: Find the derivative $\frac{d}{dz} F(z)$.**
+We need to differentiate $F(z) = \frac{e^z}{(z + i\pi)^2}$. We will use the quotient rule: $\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$.
+*   $u = e^z \implies u' = e^z$
+*   $v = (z + i\pi)^2 \implies v' = 2(z + i\pi) \cdot (1) = 2(z + i\pi)$
+
+Apply the quotient rule:
+$$\frac{d}{dz}F(z) = \frac{e^z(z + i\pi)^2 - e^z[2(z + i\pi)]}{[(z + i\pi)^2]^2}$$
+$$\frac{d}{dz}F(z) = \frac{e^z(z + i\pi)^2 - 2e^z(z + i\pi)}{(z + i\pi)^4}$$
+
+Factor out the common terms $e^z(z + i\pi)$ from the numerator:
+$$\frac{d}{dz}F(z) = \frac{e^z(z + i\pi) [(z + i\pi) - 2]}{(z + i\pi)^4}$$
+
+Cancel one $(z + i\pi)$ from the numerator and denominator:
+$$\frac{d}{dz}F(z) = \frac{e^z(z + i\pi - 2)}{(z + i\pi)^3}$$
+
+**Step 3: Evaluate the limit as $z \to i$.**
+We want to find $\lim_{z \to i} \frac{d}{dz} F(z)$.
+Substitute the derivative expression:
+$$\lim_{z \to i} \frac{e^z(z + i\pi - 2)}{(z + i\pi)^3}$$
+
+Since $z=i$ does not cause the denominator to be zero (the denominator only vanishes at $z = -i\pi$), we can evaluate the limit by direct substitution:
+$$= \frac{e^i(i + i\pi - 2)}{(i + i\pi)^3}$$
+$$= \frac{e^i(i(1+\pi) - 2)}{[i(1+\pi)]^3}$$
+
+Evaluate the denominator using $i^3 = -i$:
+$$[i(1+\pi)]^3 = i^3(1+\pi)^3 = -i(1+\pi)^3$$
+
+Substitute this back:
+$$= \frac{e^i(i(1+\pi) - 2)}{-i(1+\pi)^3}$$
+
+Multiply numerator and denominator by $i$ to remove $-i$ from the denominator:
+$$= \frac{i \cdot e^i(i(1+\pi) - 2)}{-i^2(1+\pi)^3}$$
+$$= \frac{e^i(i^2(1+\pi) - 2i)}{1(1+\pi)^3}$$
+$$= \frac{e^i(-(1+\pi) - 2i)}{(1+\pi)^3}$$
+
+Factor out the negative sign:
+$$= \frac{-e^i((1+\pi) + 2i)}{(1+\pi)^3}$$
+
+**Answer:** 
+The limit evaluates to **$\frac{-e^i((1+\pi) + 2i)}{(1+\pi)^3}$**. 
+*(This can also be written using Euler's formula $e^i = \cos 1 + i\sin 1$, but exponential form is generally preferred here).*
+
+***
+
+### Q110. Pg 14, CT-01, 3.(b): Evaluate $\lim_{z\to 2i} \left\{(z-2i) \frac{z^2-2z}{(z+1)^2(z^2+4)}\right\}$
+
+**Solution:**
+
+We need to evaluate the limit of a complex rational expression.
+Let $F(z) = (z-2i) \frac{z^2-2z}{(z+1)^2(z^2+4)}$.
+
+**Step 1: Direct substitution check.**
+If we directly substitute $z = 2i$:
+Numerator: $(2i - 2i) \cdot \dots = 0 \cdot \dots = 0$
+Denominator: $(2i+1)^2 ((2i)^2 + 4) = (2i+1)^2 (-4 + 4) = (2i+1)^2 \cdot 0 = 0$
+We get an indeterminate form $0/0$. We must simplify the expression.
+
+**Step 2: Factor the denominator.**
+Look at the term $(z^2 + 4)$. This is a sum of squares, which can be factored over complex numbers using $i^2 = -1$:
+$z^2 + 4 = z^2 - (-4) = z^2 - (2i)^2$
+Using the difference of squares formula $a^2 - b^2 = (a-b)(a+b)$:
+$$z^2 + 4 = (z - 2i)(z + 2i)$$
+
+**Step 3: Substitute the factored form back into the limit expression.**
+Substitute this into the denominator of $F(z)$:
+$$F(z) = (z-2i) \frac{z^2-2z}{(z+1)^2 (z - 2i)(z + 2i)}$$
+
+**Step 4: Simplify the expression.**
+Cancel the common factor $(z - 2i)$ from the numerator and denominator. (This is valid because in a limit as $z \to 2i$, $z$ approaches but is not exactly equal to $2i$, so we are not dividing by exactly zero).
+$$F(z) = \frac{z^2 - 2z}{(z+1)^2 (z + 2i)}$$
+We can also factor $z$ from the numerator:
+$$F(z) = \frac{z(z - 2)}{(z+1)^2 (z + 2i)}$$
+
+**Step 5: Evaluate the limit by direct substitution.**
+Now evaluate the limit of the simplified expression as $z \to 2i$:
+$$\lim_{z\to 2i} \frac{z(z - 2)}{(z+1)^2 (z + 2i)}$$
+Substitute $z = 2i$:
+$$= \frac{(2i)(2i - 2)}{(2i + 1)^2 (2i + 2i)}$$
+$$= \frac{2i(2i - 2)}{(2i + 1)^2 (4i)}$$
+
+Cancel $2i$ from the top and $4i$ from the bottom:
+$$= \frac{2i - 2}{2 (2i + 1)^2}$$
+Factor out 2 from the numerator:
+$$= \frac{2(i - 1)}{2 (2i + 1)^2}$$
+$$= \frac{i - 1}{(1 + 2i)^2}$$
+
+**Step 6: Expand and simplify the result.**
+Expand the denominator $(1 + 2i)^2$:
+$$(1 + 2i)^2 = 1^2 + 2(1)(2i) + (2i)^2 = 1 + 4i + 4i^2 = 1 + 4i - 4 = -3 + 4i$$
+
+So the result is:
+$$= \frac{i - 1}{-3 + 4i}$$
+
+**Step 7: Rationalize the denominator.**
+Multiply numerator and denominator by the complex conjugate of the denominator, $-3 - 4i$:
+$$= \frac{(i - 1)(-3 - 4i)}{(-3 + 4i)(-3 - 4i)}$$
+Numerator: $(i)(-3) + (i)(-4i) + (-1)(-3) + (-1)(-4i) = -3i - 4i^2 + 3 + 4i = -3i + 4 + 3 + 4i = 7 + i$
+Denominator: $(-3)^2 - (4i)^2 = 9 - 16(-1) = 9 + 16 = 25$
+
+Result:
+$$= \frac{7 + i}{25} = \frac{7}{25} + i\frac{1}{25}$$
+
+**Answer:** The limit evaluates to **$\frac{7}{25} + \frac{1}{25}i$**.
+
+***
+
+### Q111. Pg 18, CT-I, 3.(b): $\lim_{z\to i/3} \frac{d}{dz} \left\{(z-i/3)^2 \cdot \frac{z}{(3z-i)^2(z-3i)^2}\right\}$
+
+**Solution:**
+
+We need to evaluate the limit of the derivative of a complex function.
+Let $F(z) = (z-i/3)^2 \cdot \frac{z}{(3z-i)^2(z-3i)^2}$.
+
+**Step 1: Simplify the expression inside the derivative.**
+Look closely at the term $(3z - i)^2$ in the denominator.
+We can factor a $3$ out of the base expression:
+$(3z - i) = 3(z - i/3)$
+Therefore, squaring it gives:
+$(3z - i)^2 = [3(z - i/3)]^2 = 9(z - i/3)^2$
+
+Substitute this back into $F(z)$:
+$$F(z) = (z - i/3)^2 \cdot \frac{z}{9(z - i/3)^2 (z - 3i)^2}$$
+
+Cancel the common term $(z - i/3)^2$ from the numerator and denominator:
+$$F(z) = \frac{z}{9(z - 3i)^2}$$
+To make differentiation easier, bring the 9 out:
+$$F(z) = \frac{1}{9} \frac{z}{(z - 3i)^2}$$
+
+**Step 2: Find the derivative $\frac{d}{dz} F(z)$.**
+We will differentiate $\frac{1}{9} \frac{z}{(z - 3i)^2}$ using the quotient rule: $\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$.
+*   The constant $1/9$ stays in front.
+*   $u = z \implies u' = 1$
+*   $v = (z - 3i)^2 \implies v' = 2(z - 3i) \cdot (1) = 2(z - 3i)$
+
+Apply the quotient rule:
+$$\frac{d}{dz}F(z) = \frac{1}{9} \left[ \frac{(1)(z - 3i)^2 - z[2(z - 3i)]}{[(z - 3i)^2]^2} \right]$$
+$$\frac{d}{dz}F(z) = \frac{1}{9} \left[ \frac{(z - 3i)^2 - 2z(z - 3i)}{(z - 3i)^4} \right]$$
+
+Factor out the common term $(z - 3i)$ from the numerator:
+$$\frac{d}{dz}F(z) = \frac{1}{9} \left[ \frac{(z - 3i) [ (z - 3i) - 2z ]}{(z - 3i)^4} \right]$$
+
+Cancel one $(z - 3i)$ term from the top and bottom:
+$$\frac{d}{dz}F(z) = \frac{1}{9} \frac{z - 3i - 2z}{(z - 3i)^3}$$
+$$\frac{d}{dz}F(z) = \frac{1}{9} \frac{-z - 3i}{(z - 3i)^3}$$
+Factor out the negative sign:
+$$\frac{d}{dz}F(z) = -\frac{1}{9} \frac{z + 3i}{(z - 3i)^3}$$
+
+**Step 3: Evaluate the limit as $z \to i/3$.**
+We evaluate $\lim_{z \to i/3} -\frac{1}{9} \frac{z + 3i}{(z - 3i)^3}$ by direct substitution:
+$$= -\frac{1}{9} \frac{(i/3) + 3i}{(i/3 - 3i)^3}$$
+
+Simplify the numerator and denominator by finding common denominators:
+*   Numerator: $\frac{i}{3} + 3i = \frac{i}{3} + \frac{9i}{3} = \frac{10i}{3}$
+*   Denominator base: $\frac{i}{3} - 3i = \frac{i}{3} - \frac{9i}{3} = -\frac{8i}{3}$
+*   Denominator cubed: $(-\frac{8i}{3})^3 = \frac{(-8)^3 i^3}{3^3} = \frac{-512(-i)}{27} = \frac{512i}{27}$
+
+Substitute these values back into the limit expression:
+$$= -\frac{1}{9} \frac{\frac{10i}{3}}{\frac{512i}{27}}$$
+$$= -\frac{1}{9} \left( \frac{10i}{3} \cdot \frac{27}{512i} \right)$$
+
+Cancel the $i$ terms:
+$$= -\frac{1}{9} \left( \frac{10}{3} \cdot \frac{27}{512} \right)$$
+$$= -\frac{1}{9} \left( \frac{10 \cdot 9}{512} \right)$$
+Cancel the 9s:
+$$= -\frac{10}{512}$$
+Simplify the fraction by dividing top and bottom by 2:
+$$= -\frac{5}{256}$$
+
+**Answer:** The limit evaluates to **$-\frac{5}{256}$**.
+
+***
+
+### Q112. Ques: a) $\lim_{z\rightarrow\infty}\frac{z-1}{z+1}$, b) $\lim_{z\rightarrow\infty}\frac{2z+3i}{z^2+z+1}$
+
+**Solution:**
+
+We need to evaluate two limits of complex rational functions as $z$ approaches complex infinity. The technique is identical to evaluating limits at infinity in real calculus: divide the numerator and denominator by the highest power of $z$ present in the denominator. 
+Note that as $|z| \to \infty$, the term $1/z \to 0$.
+
+**Part a) Evaluate $\lim_{z\rightarrow\infty}\frac{z-1}{z+1}$**
+
+**Step 1: Identify the highest power of $z$ in the denominator.**
+The denominator is $z+1$. The highest power of $z$ is $z^1 = z$.
+
+**Step 2: Divide numerator and denominator by $z$.**
+$$\lim_{z\rightarrow\infty} \frac{\frac{z-1}{z}}{\frac{z+1}{z}}$$
+$$\lim_{z\rightarrow\infty} \frac{\frac{z}{z} - \frac{1}{z}}{\frac{z}{z} + \frac{1}{z}}$$
+$$\lim_{z\rightarrow\infty} \frac{1 - \frac{1}{z}}{1 + \frac{1}{z}}$$
+
+**Step 3: Apply the limit.**
+As $z \to \infty$, the term $\frac{1}{z} \to 0$.
+Substitute $0$ for these terms:
+$$= \frac{1 - 0}{1 + 0} = \frac{1}{1} = 1$$
+
+**Answer (a): $1$**
+
+---
+
+**Part b) Evaluate $\lim_{z\rightarrow\infty}\frac{2z+3i}{z^2+z+1}$**
+
+**Step 1: Identify the highest power of $z$ in the denominator.**
+The denominator is $z^2+z+1$. The highest power of $z$ is $z^2$.
+
+**Step 2: Divide numerator and denominator by $z^2$.**
+$$\lim_{z\rightarrow\infty} \frac{\frac{2z+3i}{z^2}}{\frac{z^2+z+1}{z^2}}$$
+$$\lim_{z\rightarrow\infty} \frac{\frac{2z}{z^2} + \frac{3i}{z^2}}{\frac{z^2}{z^2} + \frac{z}{z^2} + \frac{1}{z^2}}$$
+$$\lim_{z\rightarrow\infty} \frac{\frac{2}{z} + \frac{3i}{z^2}}{1 + \frac{1}{z} + \frac{1}{z^2}}$$
+
+**Step 3: Apply the limit.**
+As $z \to \infty$, any term with $z$ in the denominator (like $\frac{1}{z}$, $\frac{1}{z^2}$) approaches $0$.
+Substitute $0$ for these terms:
+$$= \frac{0 + 0}{1 + 0 + 0} = \frac{0}{1} = 0$$
+
+**Answer (b): $0$**
+
+
 
