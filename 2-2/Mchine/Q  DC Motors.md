@@ -1,7 +1,57 @@
 
 
-*(Note: Certain specific topics from the syllabus, such as "Swinburne's test", "Hopkinson's test", "Break and pulley test", and "Regenerative test", do not have any corresponding direct questions in this past year questions PDF).*
 
+ * 1
+ * 2
+ * 3
+ * 5
+ * 6
+ * 7
+ * 8
+ * 9
+ * 10
+ * 12
+ * 16
+ * 17
+ * 18
+ * 19
+ * 20
+ * 22
+ * 24
+ * 25
+ * 26
+ * 28
+ * 29
+ * 30
+ * 31
+ * 33
+ * 34
+ * 35
+ * 36
+ * 37
+ * 39
+ * 40
+ * 41
+ * 42
+ * 44
+ * 45
+ * 74
+ * 75
+ * 76
+ * 77
+ * 78
+ * 61
+ * 62
+ * 64
+ * 65
+ * 66
+ * 67
+ * 68
+ * 69
+ * 70
+ * 71
+ * 72
+ * 
 ### **1. Working principle of motor**
 1.   **Page 4, Q.52:** Explain the principle of operation of a DC motor.
 2.   **Page 5, Q.71:** How will you change the direction of rotation of a d.c motor?

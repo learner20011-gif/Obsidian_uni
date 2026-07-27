@@ -1,4 +1,11 @@
-
+78  
+79  
+80  
+81  
+82  
+83  
+84  
+85
 
 ### **1. Overview of construction**
 1.   **Page 2, Q.12:** Name the different essential parts of a dc machine.
