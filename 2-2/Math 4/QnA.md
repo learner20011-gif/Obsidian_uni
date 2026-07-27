@@ -818,7 +818,7 @@ To represent these roots graphically in the complex Argand plane:
 
 Here are the detailed solutions for the next four questions (Q21 to Q24).
 
-### Q21. Pg 19, CT-I, 3.(b): Suppose $z = re^{i\theta}$. Prove that $z^i = e^{-(\theta+2k\pi)}\{\cos(\ln r) + i\sin(\ln r)\}$ where $k = 0, \pm 1, \pm 2, \dots$
+### Q21🤓. Pg 19, CT-I, 3.(b): Suppose $z = re^{i\theta}$. Prove that $z^i = e^{-(\theta+2k\pi)}\{\cos(\ln r) + i\sin(\ln r)\}$ where $k = 0, \pm 1, \pm 2, \dots$
 
 **Solution:**
 
