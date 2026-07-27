@@ -792,3 +792,785 @@ $$v_c(t) = 6 - (4 + 2t)e^{-t} \text{ V}, \quad \text{for } t > 0$$
 As calculated in part (ii), $\alpha = 1$ and $\omega_0 = 1$. Because $\alpha = \omega_0$, the nature of the response is **Critically damped**.
 
 *Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.5 (Step Response of a Series RLC Circuit), pg. 331-336.*
+
+
+### 21. Page 3, Q.5(a): For the following circuit (i) Draw the s-domain circuit considering $v_0(0) = 5V$. (ii) Find $v_0(t)$ (Figure Involved)
+
+**Solution:**
+
+**(i) S-domain Circuit Representation:**
+To transform the circuit into the s-domain (Laplace domain), we replace the time-domain components with their complex frequency equivalents.
+*   **Voltage Source:** The independent voltage source $v_i(t) = 10e^{-t}u(t)$ V transforms to $V_i(s) = \frac{10}{s+1}$ V.
+*   **Resistors:** The two $10 \Omega$ resistors remain unchanged as $10 \Omega$.
+*   **Capacitor:** The capacitor $C = 0.1$ F transforms to an impedance $Z_C(s) = \frac{1}{sC} = \frac{1}{0.1s} = \frac{10}{s} \Omega$.
+*   **Initial Condition:** The initial condition of the capacitor $v_0(0) = 5$ V is modeled as a parallel independent current source. Its value is $I_0 = C v_0(0) = 0.1 \times 5 = 0.5$ A. Because the positive terminal of $v_0(t)$ is at the top, this equivalent current source points DOWNWARDS from the node.
+*   **Current Source:** The independent impulse current source $2\delta(t)$ A transforms to a constant $2$ A pointing UPWARDS.
+
+*The s-domain circuit consists of the voltage source $V_i(s)$ in series with the first $10\Omega$ resistor, connected to the output node $V_0(s)$. At the output node, the second $10\Omega$ resistor, the capacitor impedance $10/s$, the $0.5$ A downward current source, and the $2$ A upward current source are all connected in parallel to ground.*
+
+**(ii) Find $v_0(t)$:**
+We apply Nodal Analysis at the output node $V_0(s)$. The net current entering the node from the independent sources is $2\text{ A (up)} - 0.5\text{ A (down)} = 1.5\text{ A}$.
+
+Summing the currents leaving the node:
+$$ \frac{V_0(s) - V_i(s)}{10} + \frac{V_0(s)}{10} + \frac{V_0(s)}{10/s} = 1.5 $$
+
+Substitute $V_i(s) = \frac{10}{s+1}$ and multiply the entire equation by 10 to eliminate the denominators:
+$$ \left(V_0(s) - \frac{10}{s+1}\right) + V_0(s) + s V_0(s) = 15 $$
+
+Group the $V_0(s)$ terms together:
+$$ V_0(s) (1 + 1 + s) - \frac{10}{s+1} = 15 $$
+$$ V_0(s) (s + 2) = 15 + \frac{10}{s+1} $$
+
+Find a common denominator for the right side:
+$$ V_0(s) (s + 2) = \frac{15(s + 1) + 10}{s+1} = \frac{15s + 15 + 10}{s+1} = \frac{15s + 25}{s+1} $$
+
+Solve for $V_0(s)$:
+$$ V_0(s) = \frac{15s + 25}{(s+1)(s+2)} $$
+
+Now, use partial fraction expansion to prepare for the inverse Laplace transform:
+$$ V_0(s) = \frac{A}{s+1} + \frac{B}{s+2} $$
+$$ A = \left. \frac{15s + 25}{s+2} \right|_{s=-1} = \frac{-15 + 25}{-1 + 2} = \frac{10}{1} = 10 $$
+$$ B = \left. \frac{15s + 25}{s+1} \right|_{s=-2} = \frac{-30 + 25}{-2 + 1} = \frac{-5}{-1} = 5 $$
+
+Substitute $A$ and $B$ back into the partial fraction expression:
+$$ V_0(s) = \frac{10}{s+1} + \frac{5}{s+2} $$
+
+Taking the inverse Laplace transform of each term yields the time-domain voltage:
+$$ v_0(t) = \left( 10e^{-t} + 5e^{-2t} \right) u(t) \text{ V} $$
+
+*Reference: Fundamentals of Electric Circuits by Sadiku, Chapter 16 (Applications of the Laplace Transform), Section 16.3, similar to Example 16.5 (Page 723).*
+
+***
+
+### 22. Page 5, Q.2(b): The switch of the following circuit was opened for a long period of time and is closed at t=0 s. Fill the table for the following circuit parameters. (Figure Involved)
+
+**Solution:**
+We are given $R_1=1\Omega$, $L=2\text{ H}$, $R_2=1\Omega$, and $V_s=10 u(-t)\text{ V}$. We need to evaluate the inductor current $i_L$ and voltage $v_L$ at $t=0^+$ and $t=10\text{s}$.
+
+**1. Analysis for $t < 0$ (Steady State):**
+For $t < 0$, the function $u(-t) = 1$, so the voltage source is a constant $10\text{ V}$. The switch is open, meaning the circuit consists of the $10\text{ V}$ source in series with $R_1$, $L$, and $R_2$. 
+In DC steady state, the inductor acts as a short circuit ($0\Omega$).
+*   The initial inductor current $i_L(0^-)$ is simply the source voltage divided by the total series resistance:
+$$ i_L(0^-) = \frac{V_s}{R_1 + R_2} = \frac{10}{1 + 1} = 5 \text{ A} $$
+*   Because current through an inductor cannot change instantaneously, $i_L(0^+) = i_L(0^-) = 5 \text{ A}$.
+
+**2. Analysis for $t = 0^+$:**
+At $t=0$, the switch closes, creating a short circuit from the node between $R_1$ and $L$ directly to ground. Simultaneously, for $t > 0$, $u(-t) = 0$, so the voltage source becomes $0\text{ V}$.
+*   The closing of the switch isolates the right side of the circuit from the left. The inductor $L$ and resistor $R_2$ now form a closed, source-free series loop on their own.
+*   By KVL around this isolated loop at $t=0^+$, $v_L(0^+) + i_L(0^+)R_2 = 0$. 
+$$ v_L(0^+) = - i_L(0^+) \times R_2 = -5 \times 1 = -5 \text{ V} $$
+
+**3. Analysis for $t > 0$:**
+The right side of the circuit is a source-free RL circuit.
+*   The time constant is $\tau = \frac{L}{R_2} = \frac{2\text{ H}}{1\Omega} = 2 \text{ s}$.
+*   The equation for the decaying inductor current is:
+$$ i_L(t) = i_L(0^+) e^{-t/\tau} = 5 e^{-0.5t} \text{ A} $$
+*   The equation for the inductor voltage is:
+$$ v_L(t) = L \frac{di_L}{dt} = 2 \left( 5 \times -0.5 e^{-0.5t} \right) = -5 e^{-0.5t} \text{ V} $$
+
+**4. Evaluation at $t = 10 \text{ s}$:**
+*   $i_L(10) = 5 e^{-0.5 \times 10} = 5 e^{-5} \approx 5 \times 0.006738 = 0.0337 \text{ A}$
+*   $v_L(10) = -5 e^{-0.5 \times 10} = -5 e^{-5} \approx -5 \times 0.006738 = -0.0337 \text{ V}$
+
+**Filled Table Values:**
+*   (i) $i_L, t=0\text{ s}$ $\rightarrow$ **$5 \text{ A}$** (This represents $t=0^+$)
+*   (ii) $v_L, t=0\text{ s}$ $\rightarrow$ **$-5 \text{ V}$** (This represents $t=0^+$)
+*   (iii) $i_L, t=10\text{ s}$ $\rightarrow$ **$0.0337 \text{ A}$**
+*   (iv) $v_L, t=10\text{ s}$ $\rightarrow$ **$-0.0337 \text{ V}$**
+
+*Reference: Fundamentals of Electric Circuits by Sadiku, Chapter 7 (First-Order Circuits), Section 7.3 Source-Free RL Circuit (Page 259).*
+
+***
+
+### 23. Page 7, Q.5(a): In the following circuit the switch is closed for a long time before it is opened at t = 0. Find the inductor current i(t) for t>0 by transforming the circuit in s-domain. (Figure Involved)
+
+**Solution:**
+
+**1. Initial Conditions ($t < 0$):**
+The switch is closed, establishing a DC steady state. The $0.5\text{ H}$ inductor acts as a short circuit, and the $1/20\text{ F}$ capacitor acts as an open circuit.
+*   Because the inductor is a short, the node directly after it is at $10\text{ V}$. 
+*   The current flows from the $10\text{ V}$ source, through the shorted inductor, and down through the $5\Omega$ resistor (since the path with the open capacitor draws no steady current).
+*   The initial inductor current is:
+$$ i(0^-) = \frac{10\text{ V}}{5\Omega} = 2 \text{ A} $$
+*   The capacitor is connected between the $10\text{ V}$ node and the $2\Omega$ resistor (which goes to ground). Since no current flows through the $2\Omega$ resistor, there is no voltage drop across it. Thus, the initial capacitor voltage is:
+$$ v_c(0^-) = 10\text{ V} $$
+
+**2. S-Domain Transformation ($t > 0$):**
+At $t=0$, the switch opens, disconnecting the $5\Omega$ resistor. The circuit becomes a series RLC circuit driven by the $10\text{ V}$ source. We transform the circuit into the Laplace domain:
+*   Voltage source: $V_s(s) = \frac{10}{s}$
+*   Inductor: impedance is $sL = 0.5s$. To account for the initial current, we use a series voltage source $-L i(0) = -0.5(2) = -1$ V (opposing the current flow).
+*   Capacitor: impedance is $\frac{1}{sC} = \frac{1}{(1/20)s} = \frac{20}{s}$. To account for the initial voltage, we use a series voltage source $\frac{v_c(0)}{s} = \frac{10}{s}$.
+*   Resistor: $2\Omega$.
+
+**3. Circuit Analysis in the S-Domain:**
+Apply Kirchhoff's Voltage Law (KVL) around the series loop:
+$$ V_s(s) + L i(0) - \frac{v_c(0)}{s} = I(s) \left( sL + R + \frac{1}{sC} \right) $$
+*(Note: $L i(0)$ is added because it acts as a source in the direction of current, while $v_c(0)/s$ acts against it).*
+$$ \frac{10}{s} + 1 - \frac{10}{s} = I(s) \left( 0.5s + 2 + \frac{20}{s} \right) $$
+
+Notice that the $\frac{10}{s}$ terms cancel out entirely:
+$$ 1 = I(s) \left( \frac{0.5s^2 + 2s + 20}{s} \right) $$
+
+Solve for $I(s)$:
+$$ I(s) = \frac{s}{0.5s^2 + 2s + 20} $$
+Multiply numerator and denominator by 2 to make the $s^2$ coefficient 1:
+$$ I(s) = \frac{2s}{s^2 + 4s + 40} $$
+
+**4. Inverse Laplace Transform:**
+We complete the square for the denominator:
+$$ s^2 + 4s + 40 = (s^2 + 4s + 4) + 36 = (s+2)^2 + 6^2 $$
+Rewrite $I(s)$ to match standard Laplace transform pairs $\frac{s+a}{(s+a)^2 + \omega^2}$ and $\frac{\omega}{(s+a)^2 + \omega^2}$:
+$$ I(s) = \frac{2(s+2-2)}{(s+2)^2 + 6^2} = 2 \left( \frac{s+2}{(s+2)^2 + 6^2} \right) - \frac{4}{(s+2)^2 + 6^2} $$
+To match the sine transform form exactly, multiply and divide the second term by 6:
+$$ I(s) = 2 \left( \frac{s+2}{(s+2)^2 + 6^2} \right) - \frac{4}{6} \left( \frac{6}{(s+2)^2 + 6^2} \right) $$
+$$ I(s) = 2 \left( \frac{s+2}{(s+2)^2 + 6^2} \right) - \frac{2}{3} \left( \frac{6}{(s+2)^2 + 6^2} \right) $$
+
+Taking the inverse Laplace transform gives the time-domain current:
+$$ i(t) = \left( 2e^{-2t}\cos(6t) - \frac{2}{3}e^{-2t}\sin(6t) \right) u(t) \text{ A} $$
+
+*Reference: Fundamentals of Electric Circuits by Sadiku, Chapter 16 (Applications of the Laplace Transform), Section 16.3 Circuit Analysis (Page 722).*
+
+***
+
+### 24. Page 9, Q.3(a): A 240W power supply circuit is shown in the following figure. This circuit employs a large inductor and capacitor. Find $i_L(t)$ for $t > 0$. Assume steady-state conditions exist at $t = 0^-$. (Figure Involved)
+
+**Solution:**
+
+**1. Initial Conditions ($t < 0$):**
+The switch, located on the vertical branch, has an arrow indicating it **closes** at $t=0$. Therefore, for $t < 0$, the switch is OPEN. 
+The $7\text{ A}$ current source supplies the circuit. In DC steady state, the $4\text{ H}$ inductor acts as a short circuit, and the $1/4\text{ F}$ capacitor acts as an open circuit.
+*   Because the inductor is a short, the $8\Omega$ resistor and the $2\Omega$ resistor are effectively in parallel.
+*   Equivalent resistance $R_{eq} = 8\Omega || 2\Omega = \frac{8 \times 2}{8 + 2} = 1.6 \Omega$.
+*   The voltage across the parallel combination (which is also the initial capacitor voltage) is:
+$$ v_c(0^-) = I \times R_{eq} = 7 \text{ A} \times 1.6 \Omega = 11.2 \text{ V} $$
+*   The current flowing through the $2\Omega$ resistor branch (and thus through the shorted inductor from right to left) is:
+$$ i_{2\Omega} = \frac{11.2 \text{ V}}{2 \Omega} = 5.6 \text{ A} $$
+*   The reference arrow for $i_L$ points to the right. Since the actual current flows leftward from the source to the $2\Omega$ load, the initial inductor current is:
+$$ i_L(0^-) = -5.6 \text{ A} $$
+
+**2. Circuit Analysis for $t > 0$:**
+At $t=0$, the switch closes, creating a short circuit directly across the $7\text{ A}$ source and the $8\Omega$ resistor, thereby completely bypassing them.
+The left portion of the circuit now forms a source-free parallel RLC circuit containing the $1/4\text{ F}$ capacitor, the $2\Omega$ resistor, and the $4\text{ H}$ inductor. 
+*   $R = 2\Omega$
+*   $L = 4\text{ H}$
+*   $C = 0.25\text{ F}$
+
+First, we determine the damping coefficient $\alpha$ and resonant frequency $\omega_0$ for a parallel RLC circuit:
+$$ \alpha = \frac{1}{2RC} = \frac{1}{2(2)(0.25)} = \frac{1}{1} = 1 \text{ Np/s} $$
+$$ \omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{4(0.25)}} = \frac{1}{\sqrt{1}} = 1 \text{ rad/s} $$
+Because $\alpha = \omega_0 = 1$, the circuit is **critically damped**.
+The general solution for the inductor current in a critically damped circuit is:
+$$ i_L(t) = (A_1 + A_2 t) e^{-\alpha t} = (A_1 + A_2 t) e^{-t} $$
+
+**3. Solving for Constants $A_1$ and $A_2$:**
+*   Using the initial current:
+$$ i_L(0) = A_1 = -5.6 \text{ A} $$
+*   To find $A_2$, we evaluate the derivative $\frac{di_L}{dt}$ at $t=0^+$. The voltage across the inductor in this parallel configuration is equal to the voltage across the capacitor, $v_L = v_c$.
+$$ v_L(0^+) = L \frac{di_L(0^+)}{dt} = v_c(0^+) $$
+$$ 4 \frac{di_L(0^+)}{dt} = 11.2 \implies \frac{di_L(0^+)}{dt} = \frac{11.2}{4} = 2.8 \text{ A/s} $$
+*   Now, differentiate the general solution:
+$$ \frac{di_L(t)}{dt} = A_2 e^{-t} - (A_1 + A_2 t) e^{-t} $$
+Evaluate at $t=0$:
+$$ \frac{di_L(0)}{dt} = A_2 - A_1 = 2.8 $$
+*   Substitute $A_1 = -5.6$ into the equation:
+$$ A_2 - (-5.6) = 2.8 \implies A_2 + 5.6 = 2.8 \implies A_2 = 2.8 - 5.6 = -2.8 $$
+
+**4. Final Expression:**
+Substituting $A_1$ and $A_2$ back into the generic response equation gives:
+$$ i_L(t) = (-5.6 - 2.8t) e^{-t} u(t) \text{ A} $$
+
+*Reference: Fundamentals of Electric Circuits by Sadiku, Chapter 8 (Second-Order Circuits), Section 8.4 Source-Free Parallel RLC Circuit (Page 327).*
+
+
+Based on the document provided, here are the detailed step-by-step solutions for the next 4 questions (Questions 25 to 28).
+
+### 25. Page 9, Q.3(b): Find $i(t)$ for $t > 0$ in the following circuit.
+*(Image shows a 20V source, a 10 $\Omega$ resistor, a switch opening at t=0, a 40 $\Omega$ resistor, a 60 $\Omega$ resistor, a 1 mF capacitor, and a 2.5 H inductor).*
+
+**Solution:**
+From the schematic, we interpret the circuit as follows: The $20\text{V}$ source and $10\Omega$ resistor are in series, connected via a switch to a node. From this node, a $40\Omega$ resistor goes to ground, and a branch containing a $60\Omega$ resistor, a $1\text{mF}$ capacitor, and a $2.5\text{H}$ inductor in series also goes to ground.
+
+**1. Analysis for $t < 0$ (Steady State):**
+The switch is closed, so the circuit has reached DC steady state. 
+*   In DC steady state, the capacitor acts as an open circuit. This means no current flows through the rightmost branch (containing the $60\Omega$ resistor, capacitor, and inductor).
+*   Therefore, the initial inductor current is **$i_L(0^-) = 0 \text{ A}$**.
+*   The voltage at the node above the $40\Omega$ resistor is determined by a simple voltage divider between the $10\Omega$ and $40\Omega$ resistors:
+$$ V_C(0^-) = 20\text{V} \times \frac{40\Omega}{10\Omega + 40\Omega} = 20 \times \frac{40}{50} = 16\text{ V} $$
+*   Because the capacitor is in parallel with the $40\Omega$ resistor (via the shorted inductor), its initial voltage is **$v_c(0^-) = 16\text{ V}$**.
+
+**2. Analysis for $t > 0$:**
+At $t = 0$, the switch opens, completely disconnecting the $20\text{V}$ source and $10\Omega$ resistor. 
+The remaining circuit forms a source-free series RLC loop consisting of the $40\Omega$ resistor, the $60\Omega$ resistor, the $1\text{mF}$ capacitor, and the $2.5\text{H}$ inductor.
+*   Equivalent resistance, $R = 40\Omega + 60\Omega = 100\Omega$.
+*   Inductance, $L = 2.5\text{ H}$.
+*   Capacitance, $C = 1\text{ mF} = 0.001\text{ F}$.
+
+Let's find the damping coefficient ($\alpha$) and resonant frequency ($\omega_0$):
+$$ \alpha = \frac{R}{2L} = \frac{100}{2 \times 2.5} = \frac{100}{5} = 20 \text{ Np/s} $$
+$$ \omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{2.5 \times 0.001}} = \frac{1}{\sqrt{0.0025}} = \frac{1}{0.05} = 20 \text{ rad/s} $$
+Since $\alpha = \omega_0 = 20$, the circuit is **critically damped**.
+The general equation for current in a critically damped series RLC circuit is:
+$$ i(t) = (A_1 + A_2 t) e^{-\alpha t} $$
+
+**3. Solving for Constants:**
+*   At $t=0^+$, the current cannot change instantaneously, so $i(0^+) = i_L(0^-) = 0$.
+$$ i(0) = A_1 = 0 $$
+*   To find $A_2$, we evaluate $\frac{di(0^+)}{dt}$ using KVL around the loop at $t=0^+$. The sum of voltage drops must be zero:
+$$ v_R(0^+) + v_L(0^+) + v_C(0^+) = 0 $$
+$$ R i(0^+) + L \frac{di(0^+)}{dt} + v_C(0^+) = 0 $$
+$$ 100(0) + 2.5 \frac{di(0^+)}{dt} + 16 = 0 \implies 2.5 \frac{di(0^+)}{dt} = -16 \implies \frac{di(0^+)}{dt} = -6.4 \text{ A/s} $$
+*   Taking the derivative of our general current equation $i(t) = A_2 t e^{-20t}$:
+$$ \frac{di(t)}{dt} = A_2 e^{-20t} - 20 A_2 t e^{-20t} $$
+*   Evaluating at $t=0$:
+$$ \frac{di(0^+)}{dt} = A_2 = -6.4 $$
+
+**Final Equation:**
+Substituting $A_1$ and $A_2$ back into the general equation gives:
+$$ \mathbf{i(t) = -6.4 t e^{-20t} u(t) \text{ A}} $$
+
+***
+
+### 26. Page 11, Q.1(b): The switch in the following figure opens at t = 0. Determine v(t) for t > 0.
+*(Image shows a 5A source, 4 $\Omega$ resistor, switch, 6 $\Omega$ resistor, 100mF capacitor, 5 $\Omega$ resistor, 20 $\Omega$ resistor, 30V source).*
+
+**Solution:**
+Based on the schematic, we interpret the topology as follows: A $5\text{A}$ current source in parallel with a $4\Omega$ resistor is connected via a switch to Node C. At Node C, a $6\Omega$ resistor and a $100\text{mF}$ capacitor connect to ground. Also from Node C, a $5\Omega$ resistor connects to Node D. At Node D, a $20\Omega$ resistor connects to ground, and a $30\text{V}$ voltage source connects to ground.
+
+**1. Analysis for $t < 0$ (Steady State):**
+The switch is closed. The capacitor is fully charged and acts as an open circuit. 
+We can convert the 5A source and parallel $4\Omega$ resistor into a Thevenin equivalent: a $20\text{V}$ source in series with a $4\Omega$ resistor.
+Now we apply Nodal Analysis at Node C to find the initial capacitor voltage $v(0^-)$:
+$$ \frac{V_c - 20}{4} + \frac{V_c}{6} + \frac{V_c - 30}{5 + 20} = 0 $$
+$$ \frac{V_c}{4} - 5 + \frac{V_c}{6} + \frac{V_c}{25} - \frac{30}{25} = 0 $$
+$$ V_c \left( \frac{1}{4} + \frac{1}{6} + \frac{1}{25} \right) = 5 + 1.2 $$
+To find a common denominator (300):
+$$ V_c \left( \frac{75 + 50 + 12}{300} \right) = 6.2 \implies V_c \left( \frac{137}{300} \right) = 6.2 $$
+$$ V_c(0^-) = \frac{6.2 \times 300}{137} = \frac{1860}{137} \approx 13.577 \text{ V} $$
+Because capacitor voltage cannot change instantaneously, **$v(0^+) = 13.577 \text{ V}$**.
+
+**2. Analysis for $t > 0$:**
+The switch opens, disconnecting the left portion of the circuit. The capacitor now interacts with the rest of the circuit to its right. We find the Thevenin equivalent of the circuit connected to the capacitor.
+*   **Thevenin Resistance ($R_{th}$):** Looking from the capacitor's terminals with the 30V source turned off (shorted to ground):
+$$ R_{th} = 6\Omega \parallel (5\Omega + 20\Omega) = 6 \parallel 25 = \frac{6 \times 25}{6 + 25} = \frac{150}{31} \approx 4.839 \Omega $$
+*   **Thevenin Voltage ($V_{th}$):** The open-circuit steady-state voltage across the capacitor branch. Using a voltage divider from the 30V source:
+$$ v(\infty) = V_{th} = 30 \times \frac{6}{6 + 25} = \frac{180}{31} \approx 5.806 \text{ V} $$
+*   **Time Constant ($\tau$):** 
+$$ \tau = R_{th} C = \left(\frac{150}{31} \Omega \right) \times 0.1 \text{ F} = \frac{15}{31} \text{ s} \approx 0.484 \text{ s} $$
+
+**3. Final Equation:**
+Using the general step response formula for a first-order RC circuit:
+$$ v(t) = v(\infty) + [v(0^+) - v(\infty)] e^{-t/\tau} $$
+$$ v(t) = \frac{180}{31} + \left( \frac{1860}{137} - \frac{180}{31} \right) e^{-\frac{31}{15}t} $$
+$$ \mathbf{v(t) \approx 5.806 + 7.77 e^{-2.067 t} \text{ V}} \quad \text{for } t > 0 $$
+
+***
+
+### 27. Page 11, Q.1(c): The switch of the circuit in the figure below is controlled electronically so that it closes when $v_c$ rises to 9V and opens when $v_c$ falls to 5V. Find and plot $v_c(t)$ for several switchings. Also find the frequency of the generating triangular waveform.
+
+**Solution:**
+From the schematic, we have a $12\text{V}$ DC source, a series resistor $R_1 = 6\text{k}\Omega$, a capacitor $C = 0.5\text{mF}$ to ground, and a branch containing a switch and $R_2 = 3\text{k}\Omega$ connected in parallel with the capacitor.
+
+**1. Charging Phase (Switch is OPEN):**
+The switch opens when the voltage falls to $5\text{V}$. During this phase, the capacitor charges from the $12\text{V}$ source through $R_1$.
+*   Initial voltage: $V_{initial} = 5\text{V}$
+*   Target steady-state voltage: $V_{\infty, charge} = 12\text{V}$
+*   Time constant: $\tau_c = R_1 C = 6\text{k}\Omega \times 0.5\text{mF} = 3\text{ s}$
+The equation for the charging voltage is:
+$$ v_{c,charge}(t) = V_{\infty} + (V_{initial} - V_{\infty}) e^{-t/\tau_c} = 12 + (5 - 12) e^{-t/3} = 12 - 7e^{-t/3} \text{ V} $$
+We find the time $t_c$ it takes to reach the trigger voltage of $9\text{V}$:
+$$ 9 = 12 - 7e^{-t_c/3} \implies 7e^{-t_c/3} = 3 \implies e^{-t_c/3} = \frac{3}{7} $$
+$$ t_c = -3 \ln(3/7) = 3 \ln(7/3) \approx \mathbf{2.542 \text{ s}} $$
+
+**2. Discharging Phase (Switch is CLOSED):**
+The switch closes when the voltage hits $9\text{V}$. Now, $R_2$ ($3\text{k}\Omega$) is placed in parallel with the capacitor, creating a voltage divider with $R_1$.
+*   Initial voltage: $V_{initial} = 9\text{V}$
+*   Target steady-state voltage (Thevenin equivalent): $V_{\infty, discharge} = 12 \times \frac{3\text{k}}{6\text{k} + 3\text{k}} = 12 \times \frac{3}{9} = 4\text{V}$
+*   Equivalent resistance: $R_{eq} = 6\text{k} \parallel 3\text{k} = 2\text{k}\Omega$
+*   Time constant: $\tau_d = R_{eq} C = 2\text{k}\Omega \times 0.5\text{mF} = 1\text{ s}$
+The equation for the discharging voltage is:
+$$ v_{c,discharge}(t) = V_{\infty} + (V_{initial} - V_{\infty}) e^{-t/\tau_d} = 4 + (9 - 4) e^{-t/1} = 4 + 5e^{-t} \text{ V} $$
+We find the time $t_d$ it takes to fall back to the trigger voltage of $5\text{V}$:
+$$ 5 = 4 + 5e^{-t_d} \implies 1 = 5e^{-t_d} \implies e^{-t_d} = 0.2 $$
+$$ t_d = -\ln(0.2) = \ln(5) \approx \mathbf{1.609 \text{ s}} $$
+
+**3. Frequency of the Waveform:**
+The total period $T$ of one complete charge/discharge cycle is:
+$$ T = t_c + t_d = 2.542 + 1.609 = 4.151 \text{ s} $$
+The frequency $f$ is:
+$$ f = \frac{1}{T} = \frac{1}{4.151} \approx \mathbf{0.241 \text{ Hz}} $$
+*(The plot of $v_c(t)$ is a continuous waveform oscillating between 5V and 9V, following exponential charge and discharge curves).*
+
+***
+
+### 28. Page 11, Q.2(c): In the following figure, the switch S has been at position A for a long time and is moved to position B at t = 0. (i) Find $v_c(t)$ for t > 0; (ii) Find $i_L(0^+)$, $v_c(0^+)$ and $i_L(t)$ for t > 0.
+
+**Solution:**
+The circuit has a $10\text{V}$ source at Position A, ground at Position B. The main circuit consists of a switch node connected to a vertical $2.5\Omega$ resistor to ground, and a horizontal branch containing a $2.5\Omega$ resistor, a $2.5\text{H}$ inductor, and a $0.1\text{F}$ capacitor to ground.
+
+**1. Initial Conditions ($t < 0$):**
+Switch is at Position A ($10\text{V}$). DC steady state.
+*   The $2.5\text{H}$ inductor acts as a short, and the $0.1\text{F}$ capacitor acts as an open circuit.
+*   Because the capacitor is an open circuit, no steady-state current flows through the horizontal branch.
+$$ \mathbf{i_L(0^-) = 0 \text{ A}} $$
+*   The voltage at the switch node is $10\text{V}$. Since there is no voltage drop across the horizontal $2.5\Omega$ resistor and the inductor, the capacitor voltage is equal to the switch node voltage.
+$$ \mathbf{v_c(0^-) = 10 \text{ V}} $$
+Due to continuity, **$i_L(0^+) = 0 \text{ A}$** and **$v_c(0^+) = 10 \text{ V}$**.
+
+**2. Circuit Analysis ($t > 0$):**
+The switch moves to Position B (ground). 
+*   This shorts the vertical $2.5\Omega$ resistor to ground, removing it from the dynamics.
+*   We are left with a source-free series RLC circuit connected to ground.
+*   $R = 2.5\Omega$, $L = 2.5\text{H}$, $C = 0.1\text{F}$.
+
+Let's find the damping coefficient ($\alpha$) and resonant frequency ($\omega_0$):
+$$ \alpha = \frac{R}{2L} = \frac{2.5}{2 \times 2.5} = 0.5 \text{ Np/s} $$
+$$ \omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{2.5 \times 0.1}} = \frac{1}{\sqrt{0.25}} = \frac{1}{0.5} = 2 \text{ rad/s} $$
+Since $\alpha < \omega_0$ ($0.5 < 2$), the circuit is **underdamped**.
+The damped natural frequency is:
+$$ \omega_d = \sqrt{\omega_0^2 - \alpha^2} = \sqrt{2^2 - 0.5^2} = \sqrt{4 - 0.25} = \sqrt{3.75} \approx 1.936 \text{ rad/s} $$
+
+**3. Finding $v_c(t)$:**
+The general solution for an underdamped series RLC circuit voltage is:
+$$ v_c(t) = e^{-\alpha t} (A_1 \cos \omega_d t + A_2 \sin \omega_d t) $$
+*   Using $v_c(0) = 10\text{V}$:
+$$ v_c(0) = A_1 = 10 $$
+*   To find $A_2$, we use the relationship $i_L(t) = C \frac{dv_c}{dt}$ (since current $i_L$ flows into the positive terminal of the capacitor):
+$$ i_L(0^+) = C \left[ -\alpha A_1 + \omega_d A_2 \right] = 0 $$
+$$ -0.5(10) + \sqrt{3.75} A_2 = 0 \implies \sqrt{3.75} A_2 = 5 \implies A_2 = \frac{5}{\sqrt{3.75}} \approx 2.582 $$
+$$ \mathbf{v_c(t) = e^{-0.5t} \left( 10 \cos 1.936t + 2.582 \sin 1.936t \right) \text{ V}} $$
+
+**4. Finding $i_L(t)$:**
+The general solution for the inductor current is:
+$$ i_L(t) = e^{-\alpha t} (B_1 \cos \omega_d t + B_2 \sin \omega_d t) $$
+*   Using $i_L(0) = 0\text{A}$:
+$$ i_L(0) = B_1 = 0 $$
+*   To find $B_2$, we need $\frac{di_L(0^+)}{dt}$. Apply KVL around the loop at $t=0^+$:
+$$ R i_L(0^+) + L \frac{di_L(0^+)}{dt} + v_c(0^+) = 0 $$
+$$ 0 + 2.5 \frac{di_L(0^+)}{dt} + 10 = 0 \implies \frac{di_L(0^+)}{dt} = -4 \text{ A/s} $$
+*   Take the derivative of $i_L(t)$ and evaluate at $t=0$:
+$$ \frac{di_L(0)}{dt} = -\alpha B_1 + \omega_d B_2 = \sqrt{3.75} B_2 $$
+$$ \sqrt{3.75} B_2 = -4 \implies B_2 = \frac{-4}{\sqrt{3.75}} \approx -2.066 $$
+$$ \mathbf{i_L(t) = -2.066 e^{-0.5t} \sin(1.936t) \text{ A}} $$
+
+Based on the provided document, here are the full texts and detailed step-by-step solutions for the next 4 questions (Questions 29 to 32).
+
+### 29. Page 14, Q.1(c): A relay has a resistance of $200 \Omega$ and an inductance of $500\text{ mH}$. The relay contacts close when the current through the coil reaches $350\text{ mA}$. What time elapses between the application of $110\text{ V}$ to the coil and contact closure.
+
+**Solution:**
+When a DC voltage is suddenly applied to an RL circuit (like a relay coil), it acts as a step response. The circuit consists of a voltage source $V_s = 110\text{ V}$, a resistor $R = 200 \Omega$, and an inductor $L = 500\text{ mH} = 0.5\text{ H}$ in series.
+
+The general equation for the current in a series RL circuit subjected to a DC step voltage is:
+$$ i(t) = \frac{V_s}{R} \left( 1 - e^{-\frac{R}{L}t} \right) $$
+
+**1. Identify the given parameters:**
+*   $V_s = 110\text{ V}$
+*   $R = 200 \Omega$
+*   $L = 0.5\text{ H}$
+*   Target current, $i(t_{close}) = 350\text{ mA} = 0.35\text{ A}$
+
+**2. Calculate the steady-state current and time constant:**
+*   Steady-state maximum current: $I_{max} = \frac{V_s}{R} = \frac{110}{200} = 0.55\text{ A}$
+*   Time constant: $\tau = \frac{L}{R} = \frac{0.5}{200} = 0.0025\text{ s}$
+*   Inverse time constant: $\frac{R}{L} = \frac{200}{0.5} = 400\text{ s}^{-1}$
+
+**3. Set up the equation and solve for $t_{close}$:**
+$$ 0.35 = 0.55 \left( 1 - e^{-400t} \right) $$
+Divide both sides by $0.55$:
+$$ \frac{0.35}{0.55} = 1 - e^{-400t} $$
+$$ \frac{35}{55} = \frac{7}{11} = 1 - e^{-400t} $$
+Rearrange to solve for the exponential term:
+$$ e^{-400t} = 1 - \frac{7}{11} = \frac{4}{11} $$
+Take the natural logarithm (ln) of both sides:
+$$ -400t = \ln\left(\frac{4}{11}\right) $$
+$$ t = \frac{-\ln(4/11)}{400} = \frac{\ln(11/4)}{400} $$
+$$ t \approx \frac{1.0116}{400} \approx 0.002529 \text{ s} $$
+
+**Answer:**
+The time elapsed before contact closure is **$2.529\text{ ms}$**. 
+*(Related location: Sadiku textbook, Chapter 7, Practice Problem 7.21)*
+
+***
+
+### 30. Page 14, Q.2(b): Obtain $i_1$ and $i_2$ for $t > 0$ for the following network. (Figure Involved)
+
+**Solution:**
+Based on the provided schematic image, the circuit consists of:
+*   An independent current source $i_s(t) = 4u(t)\text{ A}$
+*   A parallel resistor $R_1 = 2 \Omega$
+*   A series inductor $L_1 = 1\text{ H}$
+*   A parallel branch with a resistor $R_2 = 3 \Omega$ (current $i_1$ flows through it)
+*   A parallel branch with an inductor $L_2 = 1\text{ H}$ (current $i_2$ flows through it)
+
+**1. S-Domain Transformation:**
+We convert the circuit elements into their Laplace (s-domain) equivalents, assuming zero initial conditions:
+*   Current source: $I_s(s) = \frac{4}{s}$
+*   $R_1 = 2 \Omega$
+*   $L_1$ impedance: $Z_{L1} = sL_1 = s$
+*   $R_2 = 3 \Omega$
+*   $L_2$ impedance: $Z_{L2} = sL_2 = s$
+
+**2. Source Transformation and Simplification:**
+Convert the current source and parallel $R_1$ into a Thevenin equivalent:
+*   $V_{th}(s) = I_s(s) \times R_1 = \frac{4}{s} \times 2 = \frac{8}{s} \text{ V}$
+*   This voltage source is in series with $R_1 = 2 \Omega$ and $L_1 = s$.
+*   Total series impedance: $Z_{series} = 2 + s$
+
+Let $V_A(s)$ be the voltage at the node above the $3\Omega$ resistor and $1\text{H}$ inductor. The $3\Omega$ resistor and $s \Omega$ inductor are in parallel.
+*   Equivalent parallel impedance: $Z_{p} = \frac{3 \cdot s}{3 + s} = \frac{3s}{s+3} \Omega$
+
+**3. Solve for Node Voltage $V_A(s)$:**
+Using voltage division:
+$$ V_A(s) = V_{th}(s) \frac{Z_p}{Z_{series} + Z_p} $$
+$$ V_A(s) = \left(\frac{8}{s}\right) \frac{\frac{3s}{s+3}}{(2+s) + \frac{3s}{s+3}} $$
+Multiply the numerator and denominator of the main fraction by $(s+3)$:
+$$ V_A(s) = \left(\frac{8}{s}\right) \frac{3s}{(2+s)(s+3) + 3s} $$
+$$ V_A(s) = \frac{24}{s^2 + 5s + 6 + 3s} = \frac{24}{s^2 + 8s + 6} $$
+
+**4. Solve for Currents $I_1(s)$ and $I_2(s)$:**
+*   $I_1(s)$ is the current through the $3\Omega$ resistor:
+$$ I_1(s) = \frac{V_A(s)}{3} = \frac{8}{s^2 + 8s + 6} $$
+*   $I_2(s)$ is the current through the $L_2$ inductor ($Z = s$):
+$$ I_2(s) = \frac{V_A(s)}{s} = \frac{24}{s(s^2 + 8s + 6)} $$
+
+**5. Inverse Laplace Transform:**
+First, find the roots of $s^2 + 8s + 6 = 0$ using the quadratic formula:
+$$ s_{1,2} = \frac{-8 \pm \sqrt{64 - 24}}{2} = \frac{-8 \pm \sqrt{40}}{2} = -4 \pm \sqrt{10} $$
+Let $p_1 = -4 + \sqrt{10}$ and $p_2 = -4 - \sqrt{10}$.
+
+*For $i_1(t)$:*
+$$ I_1(s) = \frac{8}{(s-p_1)(s-p_2)} = \frac{A}{s-p_1} + \frac{B}{s-p_2} $$
+$$ A = \frac{8}{p_1 - p_2} = \frac{8}{2\sqrt{10}} = \frac{4}{\sqrt{10}} $$
+$$ B = \frac{8}{p_2 - p_1} = -\frac{4}{\sqrt{10}} $$
+$$ i_1(t) = \frac{4}{\sqrt{10}} \left( e^{(-4+\sqrt{10})t} - e^{(-4-\sqrt{10})t} \right) u(t) = \mathbf{ \frac{8}{\sqrt{10}} e^{-4t} \sinh(\sqrt{10}t) u(t) \text{ A} } $$
+
+*For $i_2(t)$:*
+$$ I_2(s) = \frac{24}{s(s-p_1)(s-p_2)} = \frac{K_0}{s} + \frac{K_1}{s-p_1} + \frac{K_2}{s-p_2} $$
+$$ K_0 = \frac{24}{p_1 p_2} = \frac{24}{(-4+\sqrt{10})(-4-\sqrt{10})} = \frac{24}{16 - 10} = 4 $$
+$$ K_1 = \frac{24}{p_1(p_1 - p_2)} = \frac{24}{(-4+\sqrt{10})(2\sqrt{10})} = \frac{12}{-4\sqrt{10} + 10} = -2 - 0.8\sqrt{10} $$
+$$ K_2 = \frac{24}{p_2(p_2 - p_1)} = \frac{24}{(-4-\sqrt{10})(-2\sqrt{10})} = \frac{12}{4\sqrt{10} + 10} = -2 + 0.8\sqrt{10} $$
+$$ \mathbf{ i_2(t) = \left[ 4 - (2 + 0.8\sqrt{10})e^{(-4+\sqrt{10})t} + (-2 + 0.8\sqrt{10})e^{(-4-\sqrt{10})t} \right] u(t) \text{ A} } $$
+*(Related location: Sadiku textbook, Chapter 16, Circuit Analysis in s-domain)*
+
+***
+
+### 31. Page 15, Q.4(c): (ii) An 8 V battery is connected to the network via a switch. If the switch is closed at t = 0, find the current i(t) through Y(s) using the Laplace transform.
+
+**Solution:**
+*(Note: Because this is part (ii) of a question, the definition of the network $Y(s)$ is required from part (i). Based on standard textbook problems matching this exact phrasing, we assume the known problem where the input admittance $Y(s)$ has a pole at $s = -3$, a zero at $s = -1$, and $Y(\infty) = 0.25 \text{ S}$).*
+
+**1. Determine the Admittance $Y(s)$:**
+Given a zero at $s=-1$ and a pole at $s=-3$, the form of the admittance is:
+$$ Y(s) = K \frac{s+1}{s+3} $$
+Applying the final value $Y(\infty) = 0.25$:
+$$ \lim_{s \to \infty} Y(s) = \lim_{s \to \infty} K \frac{s(1 + 1/s)}{s(1 + 3/s)} = K = 0.25 \text{ S} $$
+Thus, the admittance is:
+$$ Y(s) = 0.25 \frac{s+1}{s+3} $$
+
+**2. Formulate the circuit in the s-domain:**
+An $8\text{V}$ battery connected at $t=0$ acts as a step input voltage $v(t) = 8u(t)\text{ V}$. 
+Transforming the voltage source to the s-domain:
+$$ V(s) = \frac{8}{s} $$
+
+**3. Calculate the Current $I(s)$:**
+By Ohm's law in the s-domain, $I(s) = Y(s) V(s)$:
+$$ I(s) = \left( 0.25 \frac{s+1}{s+3} \right) \left( \frac{8}{s} \right) = \frac{2(s+1)}{s(s+3)} $$
+
+**4. Inverse Laplace Transform:**
+We use partial fraction expansion to find $i(t)$:
+$$ I(s) = \frac{2(s+1)}{s(s+3)} = \frac{A}{s} + \frac{B}{s+3} $$
+Solve for $A$ and $B$ using the residue method:
+$$ A = \left. \frac{2(s+1)}{s+3} \right|_{s=0} = \frac{2(1)}{3} = \frac{2}{3} $$
+$$ B = \left. \frac{2(s+1)}{s} \right|_{s=-3} = \frac{2(-3+1)}{-3} = \frac{-4}{-3} = \frac{4}{3} $$
+Substituting the coefficients back:
+$$ I(s) = \frac{2/3}{s} + \frac{4/3}{s+3} $$
+Taking the inverse Laplace transform of each term:
+$$ \mathbf{ i(t) = \left( \frac{2}{3} + \frac{4}{3}e^{-3t} \right) u(t) \text{ A} } $$
+*(Related location: Sadiku textbook, Chapter 16, Problem 16.104)*
+
+***
+
+### 32. Page 23, Q.1: For the following circuit shown in Fig. 1 fill the table (right). Assume that the switch of the following circuit was closed for a long time and is opened at t=0s. (Figure Involved)
+
+**Solution:**
+Based on the schematic, the circuit consists of a top common node connected to ground through four parallel branches:
+1.  A $1\Omega$ resistor carrying a downward current labeled $i_x$.
+2.  A dependent current source of value $9i_x$ pointing downwards.
+3.  A $1\text{F}$ capacitor.
+4.  A switch connected in series with a $5\text{V}$ DC source.
+
+**1. Analysis for $t < 0$ (Initial Conditions):**
+The switch is closed for a long time, establishing DC steady state. 
+*   The switch directly connects the top node to the positive terminal of the $5\text{V}$ source, holding the entire top node at $5\text{V}$.
+*   Therefore, the initial voltage across the capacitor is entirely dictated by this source:
+$$ \mathbf{v_c(0^-) = 5 \text{ V}} $$
+By continuity, $v_c(0^+) = v_c(0^-) = 5\text{ V}$.
+
+**2. Analysis for $t > 0$ (Time Constant $\tau$):**
+At $t=0$, the switch opens, disconnecting the $5\text{V}$ source. The circuit becomes a source-free parallel RC circuit with a dependent source. We need to find the equivalent resistance $R_{eq}$ seen by the capacitor to determine the time constant $\tau = R_{eq}C$.
+*   Let the voltage at the top node be $v$. 
+*   The current down through the $1\Omega$ resistor is $i_x = \frac{v}{1} = v$.
+*   Apply Kirchhoff's Current Law (KCL) at the top node for $t > 0$:
+$$ i_C + i_{R} + i_{dep} = 0 $$
+$$ C \frac{dv}{dt} + i_x + 9i_x = 0 $$
+Substitute $i_x = v$ and $C = 1\text{F}$:
+$$ 1 \frac{dv}{dt} + v + 9v = 0 \implies \frac{dv}{dt} + 10v = 0 $$
+This is a standard first-order differential equation of the form $\frac{dv}{dt} + \frac{1}{\tau}v = 0$. By matching coefficients, we see that $\frac{1}{\tau} = 10$, so the time constant is:
+$$ \mathbf{\tau = 0.1 \text{ s}} $$
+
+**3. Calculate $v_c(t = 1\text{s})$:**
+The general solution for the source-free RC circuit voltage is $v_c(t) = v_c(0) e^{-t/\tau}$.
+$$ v_c(t) = 5 e^{-t/0.1} = 5 e^{-10t} \text{ V} $$
+Substitute $t = 1\text{ s}$ into the equation:
+$$ v_c(1) = 5 e^{-10(1)} = 5 e^{-10} \text{ V} $$
+$$ \mathbf{v_c(1) \approx 2.27 \times 10^{-4} \text{ V}} $$
+
+**Filled Table Values:**
+*   (i) Time constant, $\tau$ $\rightarrow$ **$0.1 \text{ s}$**
+*   (ii) $V_c(0^-)$ $\rightarrow$ **$5 \text{ V}$**
+*   (iii) $V_c(t=1s)$ $\rightarrow$ **$5e^{-10} \text{ V}$** (or $2.27 \times 10^{-4} \text{ V}$)
+
+*(Related location: Sadiku textbook, Chapter 7, Section 7.2 Source-Free RC Circuit and Dependent Sources)*
+
+Based on the document provided, here are the detailed step-by-step solutions for the next 4 questions (Questions 33 to 36).
+
+### 33. Page 26, Q (Handwritten 1): Design a first order RC circuit which capacitor voltage is $v_c = 50 - 100e^{-2000t}$ [Hint: sketch the graph of vc vs t to understand it properly].
+
+**Solution:**
+To design a first-order RC circuit that produces this specific voltage response, we need to extract the key characteristics from the given equation: $v_c(t) = 50 - 100e^{-2000t}$ V (for $t \ge 0$).
+
+**1. Determine the key parameters of the response:**
+*   **Initial Voltage $v_c(0)$:** Substitute $t = 0$ into the equation.
+    $$ v_c(0) = 50 - 100e^0 = 50 - 100 = -50 \text{ V} $$
+*   **Steady-State (Final) Voltage $v_c(\infty)$:** Substitute $t \to \infty$ into the equation.
+    $$ v_c(\infty) = 50 - 100(0) = 50 \text{ V} $$
+*   **Time Constant ($\tau$):** The exponential term is of the form $e^{-t/\tau}$. Here, the term is $e^{-2000t}$.
+    $$ \frac{1}{\tau} = 2000 \implies \tau = \frac{1}{2000} = 0.0005 \text{ s} = 0.5 \text{ ms} $$
+
+**2. Design the Circuit:**
+The standard step response of a series RC circuit connected to a DC voltage source $V_s$ is given by:
+$$ v_c(t) = v_c(\infty) + [v_c(0) - v_c(\infty)] e^{-t/\tau} $$
+Checking our parameters against this formula:
+$$ v_c(t) = 50 + [-50 - 50] e^{-2000t} = 50 - 100e^{-2000t} $$
+This matches the given equation perfectly. 
+
+To realize this physically:
+*   We need a DC voltage source $V_s$ equal to the final steady-state voltage: **$V_s = 50 \text{ V}$**.
+*   We need a capacitor with an initial voltage: **$V_0 = -50 \text{ V}$** (meaning the initial polarity is opposite to the source voltage).
+*   We need the product of $R$ and $C$ to equal the time constant: $RC = 0.0005 \text{ s}$. 
+    Let's choose a standard, reasonable capacitor value, for example, **$C = 1 \mu\text{F} = 10^{-6} \text{ F}$**.
+    Then, calculate the required resistance:
+    $$ R = \frac{\tau}{C} = \frac{0.0005}{10^{-6}} = \mathbf{500 \Omega} $$
+
+**Final Design:**
+The circuit consists of a **$50 \text{ V}$ DC voltage source** connected in series with a switch (that closes at $t=0$), a **$500 \Omega$ resistor**, and a **$1 \mu\text{F}$ capacitor**. The capacitor must be pre-charged with an initial voltage of **$-50 \text{ V}$** (the positive terminal of the initial voltage opposing the positive terminal of the 50V source).
+
+*(Related location: Sadiku textbook, Chapter 7, Section 7.5 Step Response of an RC Circuit)*
+
+***
+
+### 34. Page 26, Q (Handwritten 2): The switch closes at t>0. Find the inductor current when the switch is closed. [Figure Involved]
+
+**Solution:**
+Based on the handwritten circuit diagram, we have a $24\text{V}$ DC source, a switch that closes at $t=0$, a $16 \Omega$ resistor in series, and then a parallel combination of two branches: a $40 \Omega$ resistor branch and a branch with a $10 \Omega$ resistor in series with a $20 \text{ H}$ inductor. We need to find the current $i(t)$ flowing down through the inductor branch for $t > 0$.
+
+**1. Initial Conditions ($t < 0$):**
+Before the switch closes, the circuit is open, and no power is supplied to the inductor. Assuming it has been in this state for a long time, the inductor is completely unenergized.
+$$ i(0^-) = 0 \text{ A} $$
+Because current through an inductor cannot change instantaneously, $i(0^+) = 0 \text{ A}$.
+
+**2. Steady-State Conditions ($t \to \infty$):**
+When the switch has been closed for a long time, the circuit reaches DC steady state, and the $20 \text{ H}$ inductor acts as a short circuit ($0 \Omega$).
+The circuit simplifies to a $24\text{V}$ source in series with the $16 \Omega$ resistor, which then splits into a $40 \Omega$ resistor and a $10 \Omega$ resistor in parallel.
+*   Equivalent resistance of the parallel part: $R_p = 40 || 10 = \frac{40 \times 10}{40 + 10} = \frac{400}{50} = 8 \Omega$.
+*   Total circuit resistance: $R_{total} = 16 \Omega + 8 \Omega = 24 \Omega$.
+*   Total current from the source: $I_s = \frac{24\text{V}}{24\Omega} = 1 \text{ A}$.
+*   Using current division to find the current $i(\infty)$ through the $10 \Omega$ (inductor) branch:
+$$ i(\infty) = I_s \times \frac{40}{40 + 10} = 1 \times \frac{40}{50} = \mathbf{0.8 \text{ A}} $$
+
+**3. Thevenin Resistance and Time Constant ($t > 0$):**
+To find the time constant, we determine the Thevenin equivalent resistance $R_{th}$ seen by the inductor. 
+We turn off the $24\text{V}$ voltage source (replace with a short circuit) and look into the terminals where the inductor is connected.
+*   The $16 \Omega$ and $40 \Omega$ resistors are in parallel: $16 || 40 = \frac{16 \times 40}{16 + 40} = \frac{640}{56} = \frac{80}{7} \Omega \approx 11.43 \Omega$.
+*   This combination is in series with the $10 \Omega$ resistor in the inductor's branch.
+*   Total equivalent resistance seen by inductor: $R_{eq} = \frac{80}{7} + 10 = \frac{150}{7} \Omega$.
+*   The time constant is:
+$$ \tau = \frac{L}{R_{eq}} = \frac{20}{\frac{150}{7}} = \frac{140}{150} = \mathbf{\frac{14}{15} \text{ s}} \approx 0.933 \text{ s} $$
+
+**4. Formulate the Final Equation:**
+Using the general step response formula for a first-order RL circuit:
+$$ i(t) = i(\infty) + [i(0) - i(\infty)] e^{-t/\tau} $$
+$$ i(t) = 0.8 + [0 - 0.8] e^{-\frac{15}{14}t} $$
+$$ \mathbf{i(t) = 0.8 \left( 1 - e^{-\frac{15}{14}t} \right) \text{ A}} \quad \text{for } t > 0 $$
+
+*(Related location: Sadiku textbook, Chapter 7, Section 7.6 Step Response of an RL Circuit)*
+
+***
+
+### 35. Page 30, Q.1: The switch in the circuit closes at time t = 0. Determine the voltage v(t) after the switch closes using Laplace technique. [Figure Involved]
+
+**Solution:**
+From the schematic, the circuit consists of a $12\text{V}$ DC source. A $4\Omega$ resistor has a switch in parallel with it that closes at $t=0$. This is followed by a $2\Omega$ resistor in series. Then the circuit splits into a parallel combination of a $2\text{H}$ inductor and a $0.125\text{F}$ capacitor to ground. $v(t)$ is the voltage across the parallel LC pair.
+
+**1. Initial Conditions ($t < 0$):**
+Before the switch closes, the circuit is in DC steady state. The $12\text{V}$ source is in series with the $4\Omega$ and $2\Omega$ resistors. 
+*   The capacitor acts as an open circuit.
+*   The inductor acts as a short circuit to ground.
+*   Therefore, the steady-state voltage across the shorted inductor (and the parallel capacitor) is zero: **$v(0^-) = 0 \text{ V}$**.
+*   The initial current flowing through the inductor is:
+$$ i_L(0^-) = \frac{12\text{V}}{4\Omega + 2\Omega} = \frac{12}{6} = \mathbf{2 \text{ A}} $$
+Due to continuity, $v(0^+) = 0 \text{ V}$ and $i_L(0^+) = 2 \text{ A}$.
+
+**2. S-Domain Transformation ($t > 0$):**
+At $t=0$, the switch closes, completely shorting out the $4\Omega$ resistor. The circuit for $t > 0$ consists of the $12\text{V}$ source, the $2\Omega$ resistor, and the parallel LC pair.
+We transform this into the Laplace domain:
+*   Voltage source: $V_s(s) = \frac{12}{s}$
+*   Resistor: $R = 2 \Omega$
+*   Capacitor: $Z_C(s) = \frac{1}{sC} = \frac{1}{0.125s} = \frac{8}{s} \Omega$. (No initial voltage source needed as $v(0)=0$).
+*   Inductor: $Z_L(s) = sL = 2s \Omega$. It has an initial current $i_L(0) = 2\text{ A}$ flowing downwards. In parallel representation, this is a current source $\frac{i_L(0)}{s} = \frac{2}{s}$ pointing downwards.
+
+**3. Nodal Analysis in the S-Domain:**
+Let $V(s)$ be the voltage at the node above the LC pair. Apply KCL at this node:
+$$ \frac{V(s) - \frac{12}{s}}{2} + \frac{V(s)}{8/s} + \frac{V(s)}{2s} + \frac{2}{s} = 0 $$
+$$ \frac{V(s)}{2} - \frac{6}{s} + \frac{sV(s)}{8} + \frac{V(s)}{2s} + \frac{2}{s} = 0 $$
+Group the $V(s)$ terms and move the constant terms to the right:
+$$ V(s) \left( \frac{1}{2} + \frac{s}{8} + \frac{1}{2s} \right) = \frac{6}{s} - \frac{2}{s} = \frac{4}{s} $$
+Multiply the equation by $8s$ to clear the fractions:
+$$ V(s) \left( 4s + s^2 + 4 \right) = 32 $$
+$$ V(s) (s^2 + 4s + 4) = 32 $$
+$$ V(s) = \frac{32}{s^2 + 4s + 4} = \frac{32}{(s+2)^2} $$
+
+**4. Inverse Laplace Transform:**
+The expression $V(s) = \frac{32}{(s+2)^2}$ matches the standard Laplace transform pair $\mathcal{L}^{-1}\left\{\frac{1}{(s+a)^2}\right\} = t e^{-at} u(t)$.
+$$ \mathbf{v(t) = 32 t e^{-2t} u(t) \text{ V}} $$
+*(This indicates a critically damped response, which aligns with $\alpha = \frac{1}{2RC} = \frac{1}{2(2)(0.125)} = 2$ and $\omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{2(0.125)}} = 2$)*.
+
+*(Related location: Sadiku textbook, Chapter 16, Section 16.3 Circuit Analysis)*
+
+***
+
+### 36. Page 33, Q.2: The switch of the following circuit was opened for long period of time, and is closed at t = 0s. Fill the table for the circuit parameters: R1=2Ω, R2 = 2Ω, C = 1F. The input is Vs= 10 u(−t). [Figure Involved]
+
+**Solution:**
+Based on the schematic, we have a voltage source $V_s$ connected to $R_1$. The other side of $R_1$ is a node. From this node, a capacitor $C$ connects to ground. Also from this node, a switch connects to $R_2$, which goes to ground.
+The input is given as $V_s = 10 u(-t) \text{ V}$. This means:
+*   $V_s = 10 \text{ V}$ for $t < 0$
+*   $V_s = 0 \text{ V}$ for $t > 0$
+
+**1. Initial Conditions ($t < 0$):**
+The problem states the switch was "opened for long period of time".
+*   The circuit consists of the $10\text{V}$ source, $R_1 = 2\Omega$, and the capacitor $C = 1\text{F}$ in series. $R_2$ is disconnected.
+*   In DC steady state, the capacitor acts as an open circuit, so no current flows. 
+*   The capacitor fully charges to the source voltage: **$V_c(0^-) = 10 \text{ V}$**.
+*   The current through the capacitor is zero: **$i_c(0^-) = 0 \text{ A}$**.
+
+**2. Conditions Immediately After Switching ($t = 0^+$):**
+At $t=0$, the switch closes, connecting $R_2$ across the capacitor. Simultaneously, the voltage source $V_s$ drops to $0\text{ V}$ (acts as a short circuit to ground).
+*   Because capacitor voltage cannot change instantaneously, **$V_c(0^+) = 10 \text{ V}$**.
+*   The circuit now consists of the capacitor discharging through two parallel paths to ground: $R_1$ and $R_2$.
+*   To find $i_c(0^+)$, we use KCL at the top node. Assuming standard passive sign convention where $i_c$ points downwards:
+$$ i_c(0^+) + i_{R1}(0^+) + i_{R2}(0^+) = 0 $$
+$$ i_c(0^+) + \frac{V_c(0^+)}{R_1} + \frac{V_c(0^+)}{R_2} = 0 $$
+$$ i_c(0^+) + \frac{10}{2} + \frac{10}{2} = 0 \implies i_c(0^+) + 5 + 5 = 0 \implies \mathbf{i_c(0^+) = -10 \text{ A}} $$
+
+**3. Transient Response ($t > 0$):**
+The circuit is a source-free parallel RC circuit. The capacitor discharges through the equivalent resistance $R_{eq}$ of $R_1$ and $R_2$ in parallel:
+*   $R_{eq} = R_1 || R_2 = 2 || 2 = 1 \Omega$.
+*   Time constant: $\tau = R_{eq} C = 1 \Omega \times 1 \text{F} = \mathbf{1 \text{ s}}$.
+*   The voltage equation is:
+$$ V_c(t) = V_c(0) e^{-t/\tau} = 10 e^{-t} \text{ V} $$
+*   The current equation (downwards) is:
+$$ i_c(t) = C \frac{dV_c}{dt} = 1 \times (-10 e^{-t}) = -10 e^{-t} \text{ A} $$
+
+**4. Values at $t = 6\text{s}$:**
+*   **$V_c(6) = 10 e^{-6} \text{ V}$** (approx. $0.0248 \text{ V}$)
+*   **$i_c(6) = -10 e^{-6} \text{ A}$** (approx. $-0.0248 \text{ A}$)
+
+**Filled Table Values:**
+*   **(i) $V_c, t=0\text{s}$ :** $\mathbf{10 \text{ V}}$ (Evaluating at $t=0^+$)
+*   **(ii) $i_c, t=0\text{s}$ :** $\mathbf{-10 \text{ A}}$ (Evaluating at $t=0^+$)
+*   **(iii) $V_c, t=6\text{s}$ :** $\mathbf{10e^{-6} \text{ V}}$
+*   **(iv) $i_c, t=6\text{s}$ :** $\mathbf{-10e^{-6} \text{ A}}$
+
+*(Related location: Sadiku textbook, Chapter 7, Section 7.2 Source-Free RC Circuit)*
+
+
+
+Based on the provided document, here are the full texts and detailed step-by-step solutions for the next 4 questions (Questions 37 to 40).
+
+### 37. Page 34, Q.2: The switch of the following circuit was opened for long period of time, and is closed at t = 0s. Fill the table for the circuit parameters: R1=1$\Omega$, R2 = 1$\Omega$, C = 1F. The input is a step signal having magnitude of 10 V.
+*(Image shows a voltage source $V_s$ connected to $R_1$, then a node with a capacitor $C$ to ground and a switch to $R_2$ to ground. A table is provided to fill in values for $V_c(0^-)$, $V_c$ for $t>0$, $i_c(0^-)$, $i_c$ for $t>0$, $\tau$ for $t<0$, and $\tau$ for $t>0$.)*
+
+**Solution:**
+The input is a step signal of $10\text{ V}$, which means $V_s(t) = 10u(t) \text{ V}$. This implies $V_s = 0\text{ V}$ for $t < 0$ and $V_s = 10\text{ V}$ for $t > 0$.
+
+**1. Analysis for $t < 0$:**
+*   The switch is OPEN. The voltage source is $0\text{ V}$.
+*   The circuit is just a $0\text{ V}$ source in series with $R_1$ and $C$.
+*   Since there is no active source, the capacitor is completely uncharged.
+*   **$V_c(0^-) = 0 \text{ V}$**
+*   **$i_c(0^-) = 0 \text{ A}$**
+*   The time constant of the circuit in this state (if it had a source to respond to) would just involve $R_1$ and $C$.
+*   **$\tau (t < 0) = R_1 \times C = 1\Omega \times 1\text{F} = 1 \text{ s}$**
+
+**2. Analysis for $t > 0$:**
+*   At $t = 0$, the switch CLOSES, and the voltage source becomes $10\text{ V}$.
+*   The circuit now has the $10\text{ V}$ source and $R_1$ in series, driving the parallel combination of the capacitor $C$ and resistor $R_2$.
+*   To find the response, we determine the Thevenin equivalent circuit seen by the capacitor.
+    *   **Thevenin Resistance ($R_{th}$):** Turn off the source (short it to ground). Looking from the capacitor's terminals, $R_1$ and $R_2$ are in parallel.
+        $$ R_{th} = R_1 || R_2 = \frac{1 \times 1}{1 + 1} = 0.5 \Omega $$
+    *   **Thevenin Voltage ($V_{th}$):** The open-circuit voltage across the capacitor's terminals (with the capacitor removed). It's a simple voltage divider between $R_1$ and $R_2$:
+        $$ V_{th} = V_s \times \frac{R_2}{R_1 + R_2} = 10 \times \frac{1}{1 + 1} = 5 \text{ V} $$
+*   The new time constant is:
+    *   **$\tau (t > 0) = R_{th} \times C = 0.5\Omega \times 1\text{F} = 0.5 \text{ s}$**
+*   The capacitor voltage will exponentially approach the Thevenin voltage ($5\text{V}$) from its initial voltage ($0\text{V}$):
+    *   **$V_c(t) = V_{th} + (V_c(0) - V_{th}) e^{-t/\tau} = 5 + (0 - 5) e^{-t/0.5} = \mathbf{5(1 - e^{-2t}) \text{ V}}$**
+*   The capacitor current is found by taking the derivative of the voltage:
+    *   **$i_c(t) = C \frac{dV_c}{dt} = 1 \times \frac{d}{dt}(5 - 5e^{-2t}) = 1 \times (-5 \times -2) e^{-2t} = \mathbf{10 e^{-2t} \text{ A}}$**
+
+**Filled Table Values:**
+*   (i) $V_c(0^-)$ $\rightarrow$ **$0 \text{ V}$**
+*   (ii) $V_c, t>0$ $\rightarrow$ **$5(1 - e^{-2t}) \text{ V}$**
+*   (iii) $i_c(0^-)$ $\rightarrow$ **$0 \text{ A}$**
+*   (iv) $i_c, t>0$ $\rightarrow$ **$10 e^{-2t} \text{ A}$**
+*   (v) $\tau, t<0$ $\rightarrow$ **$1 \text{ s}$**
+*   (vi) $\tau, t>0$ $\rightarrow$ **$0.5 \text{ s}$**
+
+***
+
+### 38. Page 39, CT-02 Q.2: For the circuit in Fig. $v(t) = 90e^{-50t}V$ and $i(t) = 30e^{-50t}A$ at $t > 0$. (i) Find L and R. (ii) Determine the time constant. (iii) Calculate the initial energy in the inductor. (iv) What fraction of the initial energy is dissipated in 10 ms?
+*(Image shows a source-free RL circuit with a resistor R and an inductor L in a single closed loop. Current $i$ flows from R to L, and voltage $v$ is across L).*
+
+**Solution:**
+The circuit is a source-free RL loop. The current $i(t)$ flows through both elements. The voltage $v(t)$ is given across the inductor.
+
+**1. Find R and L:**
+*   In a source-free RL circuit, the current decays exponentially: $i(t) = I_0 e^{-t/\tau}$. Comparing this with the given $i(t) = 30e^{-50t}\text{ A}$, we can see that the initial current is $I_0 = 30\text{ A}$ and the inverse of the time constant is $\frac{1}{\tau} = 50\text{ s}^{-1}$.
+*   The voltage across an inductor is given by $v_L(t) = L \frac{di}{dt}$.
+    $$ v_L(t) = L \frac{d}{dt}(30e^{-50t}) = L (30)(-50)e^{-50t} = -1500L e^{-50t} \text{ V} $$
+*   The problem gives the voltage magnitude as $v(t) = 90e^{-50t}\text{ V}$. Assuming standard passive sign convention where the magnitude $|v| = |L \frac{di}{dt}|$:
+    $$ |-1500L| = 90 \implies 1500L = 90 \implies L = \frac{90}{1500} = \mathbf{0.06 \text{ H}} \text{ (or } 60 \text{ mH)} $$
+*   The time constant for an RL circuit is $\tau = \frac{L}{R}$. We know $\frac{1}{\tau} = \frac{R}{L} = 50$.
+    $$ \frac{R}{0.06} = 50 \implies R = 50 \times 0.06 = \mathbf{3 \Omega} $$
+
+**2. Determine the time constant:**
+*   From the exponential term $e^{-50t}$, we know $\frac{1}{\tau} = 50$.
+    $$ \tau = \frac{1}{50} = \mathbf{0.02 \text{ s}} \text{ (or } 20 \text{ ms)} $$
+
+**3. Calculate the initial energy in the inductor:**
+*   The initial energy $W(0)$ stored in the magnetic field of the inductor is:
+    $$ W(0) = \frac{1}{2} L i(0)^2 = \frac{1}{2} (0.06\text{ H}) (30\text{ A})^2 $$
+    $$ W(0) = 0.03 \times 900 = \mathbf{27 \text{ Joules}} $$
+
+**4. Fraction of initial energy dissipated in 10 ms:**
+*   The energy stored in the inductor as a function of time is $W(t) = \frac{1}{2} L i(t)^2$.
+*   Since $i(t) = I_0 e^{-t/\tau}$, then $W(t) = \frac{1}{2} L (I_0 e^{-t/\tau})^2 = \left(\frac{1}{2} L I_0^2\right) e^{-2t/\tau} = W(0) e^{-2t/\tau}$.
+*   At $t = 10\text{ ms} = 0.01\text{ s}$, the remaining energy is:
+    $$ W(0.01) = 27 e^{-2(0.01)/0.02} = 27 e^{-2(0.5)} = 27 e^{-1} \text{ J} $$
+*   The energy dissipated by the resistor is the difference between initial and remaining energy:
+    $$ W_{dissip} = W(0) - W(0.01) = 27 - 27e^{-1} = 27(1 - e^{-1}) \text{ J} $$
+*   The fraction of energy dissipated is:
+    $$ \text{Fraction} = \frac{W_{dissip}}{W(0)} = \frac{27(1 - e^{-1})}{27} = 1 - e^{-1} $$
+    $$ \text{Fraction} \approx 1 - 0.3679 = \mathbf{0.6321 \text{ or } 63.21\%} $$
+
+***
+
