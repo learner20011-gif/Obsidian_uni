@@ -1,3 +1,5 @@
 {
-  "cssTheme": "Things"
+  "cssTheme": "Things",
+  "theme": "moonstone",
+  "baseFontSize": 21
 }

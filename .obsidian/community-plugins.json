@@ -1,4 +1,6 @@
 [
   "obsidian-git",
-  "cmdr"
+  "cmdr",
+  "obsidian-tikzjax",
+  "advanced-pdf-export"
 ]
