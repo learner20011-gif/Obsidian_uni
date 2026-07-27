@@ -31,7 +31,7 @@ A DC machine (which can act as either a motor or a generator) consists of two ma
 8. **Shaft and Bearings:** The shaft transfers mechanical power to or from the machine. Bearings (ball or roller type) are used to support the shaft and ensure free, low-friction rotation.
 
 * **Figure involved:** No specific figure requested, but cross-sectional views of DC machines are typically used to illustrate these parts.
-* **Related Topics:** Mam Slide: 10, 12, 62, 63, 65 | Firoz Note: N/A
+* **Related Topics:** Mam Slide: 10, 12, 62, 63, 65 | Firoz Note: N/A | Rosenblatt: Sections 2-2, 2-3, 2-4, 2-5, Pages 14-15 | Theraja Vol II: PDF Pages 33-37
 
 ***
 
@@ -49,7 +49,7 @@ Each of these components plays a distinct and critical role in the electromechan
     * *In a DC motor:* They supply external DC power to the rotating commutator, which then feeds the armature windings. 
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 62, 63, 71, 75, 78 | Firoz Note: N/A
+* **Related Topics:** Mam Slide: 62, 63, 71, 75, 78 | Firoz Note: N/A | Rosenblatt: Sections 2-2, 2-3, 2-5, Pages 14-15 | Theraja Vol II: PDF Pages 31-33, 37
 
 ***
 
@@ -64,7 +64,7 @@ Carbon (or carbon-graphite) is widely used for manufacturing brushes in DC machi
 4. **Negative Temperature Coefficient:** Carbon has a negative temperature coefficient of resistance, meaning its electrical resistance decreases as its temperature increases. As the machine operates and heats up due to friction and current flow, the brush resistance drops, preventing excessive voltage drops at the brush contacts.
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 10, 62, 78 | Firoz Note: Page 53 (concept of contact resistance).
+* **Related Topics:** Mam Slide: 10, 62, 78 | Firoz Note: Page 53 (concept of contact resistance). | Rosenblatt: Section 2-5, Page 15 | Theraja Vol II: PDF Pages 37-38
 
 ***
 
@@ -81,7 +81,7 @@ If the core were made of a solid block of steel, this induced EMF would cause la
 By constructing the core out of thin steel sheets (laminations) that are insulated from one another using a light coat of varnish, the continuous conducting path is broken. The lamination is done parallel to the direction of the magnetic field and perpendicular to the direction of the induced eddy currents. This effectively increases the electrical resistance of the eddy current path by a huge margin, restricting the eddy currents to negligible values and keeping the armature heating and power losses to a minimum. 
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 69, 74, 201 | Firoz Note: Page 129, 130.
+* **Related Topics:** Mam Slide: 69, 74, 201 | Firoz Note: Page 129, 130. | Rosenblatt: Section 2-2, Page 14 | Theraja Vol II: PDF Pages 36-37
 Here are the detailed solutions for the next four questions from your list.
 
 ### 5. Page 2, Q.16: Why the armature core but not the magnetic pole core of a dc machine must be laminated?
@@ -94,7 +94,7 @@ The necessity of lamination depends entirely on whether the magnetic flux passin
 *(Note: In practice, the pole faces/shoes—the part of the pole closest to the armature—are often laminated to reduce minor eddy currents caused by flux pulsations when the slotted armature teeth pass by them).*
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 69, 74, 200, 201 | Firoz Note: Page 129, 130.
+* **Related Topics:** Mam Slide: 69, 74, 200, 201 | Firoz Note: Page 129, 130. | Rosenblatt: Sections 2-2, 2-3, Page 14 | Theraja Vol II: PDF Pages 34-36
 
 ***
 
@@ -117,7 +117,7 @@ DC machines can operate as either DC Generators or DC Motors. Broadly, they are 
             *   **Short-Shunt Compound:** The shunt field winding is connected in parallel directly across the armature alone.
 
 * **Figure involved:** None (A tree diagram or hierarchy chart is usually drawn to represent this classification).
-* **Related Topics:** Mam Slide: 128, 235 | Firoz Note: Page 28, 29.
+* **Related Topics:** Mam Slide: 128, 235 | Firoz Note: Page 28, 29. | Rosenblatt: Sections 4-7, 4-10, 4-11, 4-14, Pages 36-47 | Theraja Vol II: PDF Pages 54-55
 
 ***
 
@@ -138,7 +138,7 @@ Based on the classification above, the features of the different types of DC gen
     *   *Features:* Contains both shunt and series field windings, but they are connected so that their magnetic fluxes oppose each other ($\Phi_{total} = \Phi_{shunt} - \Phi_{series}$). As the load current increases, the series flux increases and severely weakens the total flux, causing a very sharp drop in terminal voltage. This feature makes it highly suitable for specific applications like arc welding, where a sharp voltage drop is needed to prevent excessive current.
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 72, 136, 169 | Firoz Note: Page 29, 42.
+* **Related Topics:** Mam Slide: 72, 136, 169 | Firoz Note: Page 29, 42. | Rosenblatt: Sections 4-7, 4-10, 4-11, 4-14, Pages 36-47 | Theraja Vol II: PDF Pages 54-55
 
 ***
 
@@ -179,7 +179,7 @@ Since the specific type of generator is not mentioned, the most general equivale
 *(Note: If drawing a Shunt Generator, the Field Circuit branch would simply be connected in parallel across the positive and negative terminals of the Armature Circuit).*
 
 * **Figure involved:** Yes (Equivalent Electrical Circuit Diagram of a DC Generator).
-* **Related Topics:** Mam Slide: 129, 137, 145 | Firoz Note: Page 27, 28.
+* **Related Topics:** Mam Slide: 129, 137, 145 | Firoz Note: Page 27, 28. | Rosenblatt: Sections 4-7, 4-10, Pages 36-40 | Theraja Vol II: PDF Page 54
 
 Here are the detailed solutions for the next four questions from your list.
 
@@ -195,7 +195,7 @@ Here are the detailed solutions for the next four questions from your list.
     * For a simplex wave winding, $Y_c = \frac{2(C \pm 1)}{P}$, where $C$ is the number of coils and $P$ is the number of poles.
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 93 (Pitch Factor), 108 (Commutator Pitch) | Firoz Note: Page 147.
+* **Related Topics:** Mam Slide: 93 (Pitch Factor), 108 (Commutator Pitch) | Firoz Note: Page 147. | Rosenblatt: Sections 3-2, 3-14, Pages 16-17, 25-27 | Theraja Vol II: PDF Pages 39-41
 
 ***
 
@@ -219,7 +219,7 @@ The two basic sequences of armature winding connections used in DC machines are 
     *   *Wave Winding:* Does not require equalizer rings. (Dummy coils may sometimes be required for mechanical balance).
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 98, 119, 120 | Firoz Note: Page 148, 149.
+* **Related Topics:** Mam Slide: 98, 119, 120 | Firoz Note: Page 148, 149. | Rosenblatt: Section 3-11, Page 23 | Theraja Vol II: PDF Page 42
 
 ***
 
@@ -236,7 +236,7 @@ A frog-leg winding (also known as a self-equalizing winding) is a specialized ar
 *   **Result:** It provides the high-current capacity of a lap winding but completely eliminates the need for external equalizer rings, ensuring excellent and sparkless commutation.
 
 * **Figure involved:** Shape of a frog-leg winding coil. (Mam Slide 122)
-* **Related Topics:** Mam Slide: 98, 119, 120, 122, 123 | Firoz Note: Page 148, 149.
+* **Related Topics:** Mam Slide: 98, 119, 120, 122, 123 | Firoz Note: Page 148, 149. | Rosenblatt: Section 3-11, Page 23 | Theraja Vol II: PDF Pages 42-47
 
 ***
 
@@ -254,7 +254,7 @@ This voltage difference between parallel paths causes massive "circulating curre
 In a wave-wound machine, there are only two parallel paths ($A = 2$). The coils making up each of these two paths are distributed uniformly continuously around the *entire* armature. This means conductors from *both* parallel paths pass under *all* of the North and South poles. Consequently, if one pole has a slightly stronger or weaker flux, it affects both parallel paths equally. Since the total induced EMF in both paths remains identical despite any magnetic imbalance, no potential difference exists between the paths, and no circulating currents are formed. Therefore, equalizer rings are completely unnecessary in wave windings.
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 110, 120 | Firoz Note: N/A.
+* **Related Topics:** Mam Slide: 110, 120 | Firoz Note: N/A. | Rosenblatt: Section 3-13, Pages 24-25 | Theraja Vol II: PDF Page 95
 
 Here are the detailed solutions for the next four questions from your list.
 
@@ -296,7 +296,7 @@ Since $Y_b + Y_f = 94$, we can simply choose:
 *(Both are odd integers and satisfy the average pitch requirement).*
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 115, 116 | Firoz Note: Page 147, 148 (Formula basis).
+* **Related Topics:** Mam Slide: 115, 116 | Firoz Note: Page 147, 148 (Formula basis). | Rosenblatt: Section 3-14, Pages 27-28 | Theraja Vol II: PDF Pages 47-49
 
 ***
 
@@ -339,7 +339,7 @@ $$E_2 = 36 \times 10 = 360 \text{ V}$$
 **Answer:** The EMF generated when rewound to wave-connected and running at 500 rpm is **360 V**.
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 100, 111, 125, 126 (EMF Equation) | Firoz Note: Page 25, 26.
+* **Related Topics:** Mam Slide: 100, 111, 125, 126 (EMF Equation) | Firoz Note: Page 25, 26. | Rosenblatt: Section 3-11, Page 23; Section 4-1, Pages 30-31 | Theraja Vol II: PDF Pages 57-58
 
 ***
 
@@ -359,7 +359,7 @@ The differences between lap winding and wave winding can be summarized clearly b
 | **Application** | High-current, low-voltage machines (e.g., starter motors in cars). | High-voltage, low-current machines (e.g., small generators). |
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 119, 120 | Firoz Note: Page 148, 149.
+* **Related Topics:** Mam Slide: 119, 120 | Firoz Note: Page 148, 149. | Rosenblatt: Section 3-11, Page 23 | Theraja Vol II: PDF Page 42
 
 ***
 
@@ -375,7 +375,7 @@ To differentiate between them, we look at their core structural and operational 
 4. **Commutator Pitch ($Y_c$):** In a lap winding, the commutator pitch is $Y_c = \pm 1$ (for simplex). In a wave winding, the commutator pitch is much wider, calculated as $Y_c = \frac{2(C \pm 1)}{P}$. 
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 119, 120 | Firoz Note: Page 148, 149.
+* **Related Topics:** Mam Slide: 119, 120 | Firoz Note: Page 148, 149. | Rosenblatt: Section 3-11, Page 23 | Theraja Vol II: PDF Page 42
 Here are the detailed solutions for the next four questions from your list. Note that question #21 in your list is just a section header ("5. EMF equation of DC machines"), so the next four actual questions to be solved are #20, #22, #23, and #24.
 
 ### 20. Page 27, Q.2: A triplex wave winding is to be installed in a ... Determine all the pitches for a retrogressive winding. (Note: Text is partially cut off in the source image)
@@ -413,7 +413,7 @@ To find the individual values of $Y_b$ and $Y_f$:
 3. Usually, they are chosen such that $Y_b = Y_f = Y_A$ (if $Y_A$ is an odd integer). If $Y_A$ is an even integer, you choose $Y_b$ and $Y_f$ such that one is $Y_A + 1$ and the other is $Y_A - 1$.
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 115, 116 | Firoz Note: Page 147, 148.
+* **Related Topics:** Mam Slide: 115, 116 | Firoz Note: Page 147, 148. | Rosenblatt: Section 3-14, Pages 27-28 | Theraja Vol II: PDF Page 47
 
 ***
 
@@ -449,7 +449,7 @@ This requires the derivation of the standard EMF equation of a DC generator.
     $$E = k \Phi S \quad \text{ (Proved)}$$
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 125, 126 | Firoz Note: Page 25, 26.
+* **Related Topics:** Mam Slide: 125, 126 | Firoz Note: Page 25, 26. | Rosenblatt: Section 4-1, Pages 30-31 | Theraja Vol II: PDF Pages 57-58
 
 ***
 
@@ -478,7 +478,7 @@ This derivation builds directly upon the standard EMF equation, converting mecha
     $$E = K \Phi \omega \quad \text{ (Proved)}$$
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 238, 239 | Firoz Note: Page 26.
+* **Related Topics:** Mam Slide: 238, 239 | Firoz Note: Page 26. | Rosenblatt: Section 4-1, Pages 30-31 | Theraja Vol II: PDF Pages 57-58
 
 ***
 
@@ -520,7 +520,7 @@ $$E = 270.72 \text{ Volts}$$
 **Answer:** The generated voltage of the dynamo is **270.72 V**.
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 125, 126 | Firoz Note: Page 25, 26.
+* **Related Topics:** Mam Slide: 125, 126 | Firoz Note: Page 25, 26. | Rosenblatt: Section 4-1, Pages 30-31 | Theraja Vol II: PDF Page 58
 Here are the detailed solutions for the next four questions from your list. *(Note: Item #26 in your list is just a section header "6. Armature reaction in DC generators", so the next four actual questions are 25, 27, 28, and 29).*
 
 ### 25. Page 26, Q.No.4: The armature of a 4 pole generator having simplex lap winding is rotating at 1200 rpm. If the total number of armature conductors is 2500 and the flux per pole is 250 kilolines, determine the generated voltage of a dc generator.
@@ -561,7 +561,7 @@ $$E_g = 125 \text{ Volts}$$
 **Answer:** The generated voltage of the DC generator is **125 V**.
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 125, 126 | Firoz Note: Page 25, 26.
+* **Related Topics:** Mam Slide: 125, 126 | Firoz Note: Page 25, 26. | Rosenblatt: Section 4-1, Pages 30-31 | Theraja Vol II: PDF Page 58
 
 ***
 
@@ -583,7 +583,7 @@ Armature reaction produces two primary undesirable effects on the machine's perf
 4.  **Brush Shifting:** Manually shifting the brushes to match the new shifted MNA. (Note: This is only effective for a constant, unchanging load, so it is rarely used in modern dynamic applications).
 
 * **Figure involved:** Vector diagrams and flux distribution curves are typically used to illustrate these concepts (e.g., Mam Slide 184, 185).
-* **Related Topics:** Mam Slide: 184, 185, 228, 229, 230 | Firoz Note: Page 55, 61, 62, 63.
+* **Related Topics:** Mam Slide: 184, 185, 228, 229, 230 | Firoz Note: Page 55, 61, 62, 63. | Rosenblatt: Sections 5-1, 5-3, 5-4, 5-5, 5-8, Pages 49-51, 53-55, 58-59 | Theraja Vol II: PDF Pages 81-83, 85
 
 ***
 
@@ -605,7 +605,7 @@ When you shift the brushes by an angle $\theta$ to align with the new MNA, the e
 By shifting the brushes, you actively introduce a direct demagnetizing force. This strongly opposes the main field flux, causing a significant net reduction (weakening) of the total flux per pole. In a generator, this results in a much sharper drop in the generated terminal voltage as the load increases. 
 
 * **Figure involved:** A vector diagram showing the components of armature flux after brush shift. (Mam Slide 189 / Firoz Note 63).
-* **Related Topics:** Mam Slide: 189 | Firoz Note: Page 63, 64.
+* **Related Topics:** Mam Slide: 189 | Firoz Note: Page 63, 64. | Rosenblatt: Section 5-2, Pages 51-53 | Theraja Vol II: PDF Pages 81-83
 
 ***
 
@@ -629,7 +629,7 @@ Both compensating windings and interpoles are advanced structural design feature
 **Summary:** Compensating windings neutralize armature reaction *under the main poles*, while interpoles neutralize it *between the main poles* (and aid current reversal).
 
 * **Figure involved:** Cross-sectional diagram showing interpoles and compensating winding slots. (Mam Slide 194, 197).
-* **Related Topics:** Mam Slide: 194, 197, 231, 232 | Firoz Note: Page 66, 68, 70.
+* **Related Topics:** Mam Slide: 194, 197, 231, 232 | Firoz Note: Page 66, 68, 70. | Rosenblatt: Sections 5-5, 5-8, Pages 55, 58-59 | Theraja Vol II: PDF Pages 85, 93
 
 Here are the detailed solutions for the next four questions from your list.
 
@@ -649,7 +649,7 @@ The armature reaction produces two major detrimental effects on the performance 
     Due to the distortion, the flux density at the trailing pole tip is very high, pushing the iron core into magnetic saturation. Because of this saturation, the increase in flux at the trailing tip is much less than the decrease in flux at the leading tip. Consequently, the *average* or *net* flux per pole is reduced. Since the generated EMF of a generator is directly proportional to the flux per pole ($E \propto \Phi$), this demagnetizing effect causes a noticeable **drop in the generated terminal voltage** as the load increases.
 
 *   **Figure involved:** None explicitly requested, but diagrams showing flux distribution (main flux, armature flux, and resultant flux) or MNA shifting are highly relevant.
-*   **Related Topics:** Mam Slide: 184, 185, 228, 229 | Firoz Note: Page 55, 56, 57, 61, 62.
+*   **Related Topics:** Mam Slide: 184, 185, 228, 229 | Firoz Note: Page 55, 56, 57, 61, 62. | Rosenblatt: Section 5-1, Pages 49-51 | Theraja Vol II: PDF Page 81
 
 ***
 
@@ -670,7 +670,7 @@ Both compensating windings and interpoles are structural modifications used in a
 *   **Reduction of Armature Reaction:** The armature MMF is strongest at the interpolar axis (where the main flux is weakest). The interpoles are designed to produce an MMF that opposes and perfectly cancels the armature cross-magnetizing MMF in this specific neutral zone. This keeps the Magnetic Neutral Axis (MNA) fixed at the Geometrical Neutral Axis (GNA) regardless of the load, preventing the shift that causes poor commutation.
 
 *   **Figure involved:** None requested, but cross-sectional views of the stator with compensating windings and interpoles are relevant.
-*   **Related Topics:** Mam Slide: 194, 197, 231, 232 | Firoz Note: Page 66, 68, 70.
+*   **Related Topics:** Mam Slide: 194, 197, 231, 232 | Firoz Note: Page 66, 68, 70. | Rosenblatt: Sections 5-5, 5-8, Pages 55, 58-59 | Theraja Vol II: PDF Pages 85, 93
 
 ***
 
@@ -693,7 +693,7 @@ Armature reaction is the phenomenon where the magnetic field produced by the cur
 *(Note: A fourth method is designing the machine with a very strong main field MMF compared to the armature MMF, making the main field "stiff" and harder to distort).*
 
 *   **Figure involved:** None directly requested, though diagrams of chamfered pole tips, interpoles, and compensating windings are typically used to illustrate these points.
-*   **Related Topics:** Mam Slide: 184, 192, 194, 197, 230 | Firoz Note: Page 55, 64, 66, 70.
+*   **Related Topics:** Mam Slide: 184, 192, 194, 197, 230 | Firoz Note: Page 55, 64, 66, 70. | Rosenblatt: Sections 5-1, 5-3, 5-5, 5-8, Pages 49-51, 53-55, 58-59 | Theraja Vol II: PDF Pages 81, 85, 93
 
 ***
 
@@ -715,7 +715,7 @@ Compensating windings are the most effective method for neutralizing the effects
     Since $\text{MMF}_{\text{compensating}}$ cancels out $\text{MMF}_{\text{armature}}$, the net flux under the pole face remains strictly equal to the original $\text{MMF}_{\text{pole}}$. This completely eliminates the cross-magnetizing distortion under the poles and stops the trailing pole tip from saturating. As a result, the demagnetizing effect is nullified, and the machine maintains a stable voltage and avoids sudden flashovers during heavy load changes.
 
 *   **Figure involved:** None requested, but the setup is visualized as conductors in the pole face with current arrows pointing opposite to the armature conductors (Mam slide 194).
-*   **Related Topics:** Mam Slide: 194, 232 | Firoz Note: Page 66, 68, 69.
+*   **Related Topics:** Mam Slide: 194, 232 | Firoz Note: Page 66, 68, 69. | Rosenblatt: Section 5-5, Page 55 | Theraja Vol II: PDF Page 85
 Here are the detailed solutions for the next four questions from your list. *(Note: Item #34 in your list is a section header "7. Commutation and methods of improving commutation", so the next four actual questions are 35, 36, 37, and 38).*
 
 ### 35. Page 4, Q.44: What is commutation? Explain the methods to improve commutation.
@@ -736,7 +736,7 @@ To achieve sparkless, ideal commutation, the current must reverse smoothly withi
     While primarily used to neutralize armature reaction under the main pole faces, compensating windings help keep the Magnetic Neutral Axis (MNA) from shifting. By keeping the MNA exactly aligned with the Geometrical Neutral Axis (GNA), the coils undergoing commutation do not accidentally cut main-field flux, which prevents unwanted induced voltages during the current reversal process.
 
 *   **Figure involved:** None explicitly requested, but diagrams of brush short-circuiting coils are commonly drawn.
-*   **Related Topics:** Mam Slide: 195, 197, 233 | Firoz Note: Page 54, 78.
+*   **Related Topics:** Mam Slide: 195, 197, 233 | Firoz Note: Page 54, 78. | Rosenblatt: Sections 5-6, 5-8, Pages 55-57, 58-59 | Theraja Vol II: PDF Pages 89-92
 
 ***
 
@@ -754,7 +754,7 @@ During the brief time interval ($t_c$, the time of commutation) when the brush s
 If the commutation is "ideal" or "linear", this change from $+I_c$ to $-I_c$ happens smoothly as a straight line over time $t_c$. If the self-inductance of the coil delays this reversal, it is called "under-commutation", and the current will be forced to jump the final gap via an arc (spark) as the brush loses contact with the segment.
 
 *   **Figure involved:** Yes (The graph of current vs. time during the commutation period showing the reversal from $+I$ to $-I$ in Mam Slide 195 or 196).
-*   **Related Topics:** Mam Slide: 195, 196 | Firoz Note: Page 54.
+*   **Related Topics:** Mam Slide: 195, 196 | Firoz Note: Page 54. | Rosenblatt: Section 5-6, Pages 55-57 | Theraja Vol II: PDF Pages 89-90
 
 ***
 
@@ -774,7 +774,7 @@ Interpoles are placed exactly in the commutating zone and are responsible for in
 **Why it works over a broad range of loads:** The interpoles are connected in **series** with the armature winding. As the load on the machine increases, the armature current $I_A$ increases, which means the reactance voltage $L(di/dt)$ also increases proportionally. Because the interpole winding carries the exact same armature current $I_A$, the magnetic flux it produces—and therefore the canceling EMF it induces—also increases automatically in exact proportion to the load. Thus, interpoles provide *automatic neutralization* of the $L(di/dt)$ problem at no load, full load, and everything in between.
 
 *   **Figure involved:** Yes (The graph of actual commutation with inductance taken into account, showing the spark at the trailing edge; Mam Slide 196).
-*   **Related Topics:** Mam Slide: 196, 197 | Firoz Note: Page 58, 59.
+*   **Related Topics:** Mam Slide: 196, 197 | Firoz Note: Page 58, 59. | Rosenblatt: Section 5-7, Pages 57-58 | Theraja Vol II: PDF Page 91
 
 ***
 
@@ -792,7 +792,7 @@ The $L(di/dt)$ problem, frequently referred to as the **Reactance Voltage Proble
 4.  **The Resulting Spark:** This high self-induced voltage fundamentally delays the current reversal (a condition known as under-commutation). By the time the brush mechanically slides off the commutator segment, the current has not yet fully reversed. The high $L(di/dt)$ voltage breaks down the air gap between the moving segment and the brush, forcing the remaining current to jump across as an electrical spark. This sparking damages the commutator surface and burns the brushes.
 
 *   **Figure involved:** Yes (Current vs. Time graph for commutation showing the $L(di/dt)$ delay curve; Mam Slide 196).
-*   **Related Topics:** Mam Slide: 196 | Firoz Note: Page 58, 59.
+*   **Related Topics:** Mam Slide: 196 | Firoz Note: Page 58, 59. | Rosenblatt: Section 5-7, Pages 57-58 | Theraja Vol II: PDF Page 91
 Here are the detailed solutions for the next four questions from your list. *(Note: Items #39 and #43 in your list are section headers, so the next four actual questions are 40, 41, 42, and 44).*
 
 ### 40. Page 3, Q.31: Draw and explain the no-load (generated emf at no load versus field current) and load (generated emf at on load versus armature current) characteristics of DC shunt, series and compound generators. [Figure Involved]
@@ -825,7 +825,7 @@ This curve plots the generated EMF *under load* ($E$) versus the armature curren
         * ![[Pasted image 20260715024741.png]]
 
 *   **Figure involved:** Yes. (1) A single OCC curve ($E_0$ vs $I_f$) showing residual voltage and saturation. (2) Graphs showing $E$ vs $I_a$ for Shunt (drooping), Series (rising then dipping), and Compound (rising/flat or sharply falling).
-*   **Related Topics:** Mam Slide: 130, 148, 153, 160 | Firoz Note: Page 33, 39, 43, 45, 48.
+*   **Related Topics:** Mam Slide: 130, 148, 153, 160 | Firoz Note: Page 33, 39, 43, 45, 48. | Rosenblatt: Sections 4-2, 4-8, 4-10, 4-14, Pages 31-33, 37-41, 46-47 | Theraja Vol II: PDF Pages 111-113, 124
 
 ***
 
@@ -847,7 +847,7 @@ When all terminal characteristics are plotted on the same graph starting from th
 6.  **Series Generator:** (Starts from residual voltage near zero). As $I_L$ increases, the field strength increases, causing the voltage to **rise steeply**, peak at saturation, and then drop due to armature reaction and $I_a R_a$ drops. ![[Pasted image 20260715025820.png]]
 
 *   **Figure involved:** Yes. A single graph with $V_t$ on the Y-axis and $I_L$ on the X-axis, showing lines for Over, Flat, Under, Shunt, Differential, and Series generators branching out from the Y-axis.
-*   **Related Topics:** Mam Slide: 179 | Firoz Note: Page 48, 49.
+*   **Related Topics:** Mam Slide: 179 | Firoz Note: Page 48, 49. | Rosenblatt: Sections 4-8, 4-12, Pages 37-38, 41-44 | Theraja Vol II: PDF Page 128
 
 ***
 
@@ -867,7 +867,7 @@ To compare how different DC generators react to the application of a load, we pl
     *   *Differential:* The series field opposes the shunt field. Terminal voltage plunges rapidly as soon as load is applied. Excellent for welding, where you need a high open-circuit voltage to strike the arc, but a rapid voltage drop to limit the current once the arc is formed.
 
 *   **Figure involved:** Yes. The unified characteristic graph showing $V_t$ vs $I_L$ with curves labeled Over-compound, Flat-compound, Under-compound, Shunt, and Differential Compound.
-*   **Related Topics:** Mam Slide: 179 | Firoz Note: Page 48, 49.
+*   **Related Topics:** Mam Slide: 179 | Firoz Note: Page 48, 49. | Rosenblatt: Sections 4-8, 4-12, Pages 37-38, 41-44 | Theraja Vol II: PDF Page 128
 
 ***
 
@@ -888,7 +888,7 @@ The magnetization characteristic, also known as the Open Circuit Characteristic 
 *   **Saturation Region:** At high field currents, the iron core becomes completely magnetically saturated. No matter how much more field current you push through the coils, the magnetic flux ($\Phi$) barely increases. Consequently, the curve flattens out into a nearly horizontal line, meaning $E_A$ remains almost constant despite large increases in $I_f$.
 
 *   **Figure involved:** Yes. A graph showing Generated Voltage ($E_A$) on the Y-axis and Field Current ($I_f$) on the X-axis. The curve starts slightly above the origin, goes up linearly, bends at a knee, and then flattens out.
-*   **Related Topics:** Mam Slide: 130, 243 | Firoz Note: Page 33.
+*   **Related Topics:** Mam Slide: 130, 243 | Firoz Note: Page 33. | Rosenblatt: Section 4-2, Pages 31-33 | Theraja Vol II: PDF Pages 111-113
 Here are the detailed solutions for the next four questions from your list. *(Note: Item #46 in your list is a section header "10. Voltage build-up in self-excited generator", so the next four actual questions to be solved are 45, 47, 48, and 49).*
 
 ### 45. Page 3, Q.21: Why is the emf not zero when the field current is reduced to zero in dc generator?
@@ -902,7 +902,7 @@ The main field poles of a DC generator are made of ferromagnetic materials (like
 Because this "residual flux" is still present in the air gap, the rotating armature conductors continue to cut these magnetic lines of force. According to Faraday’s Law of Electromagnetic Induction, cutting even a weak magnetic field generates an EMF. Therefore, a small voltage (typically between 2V and 10V, depending on the machine size) is induced at the armature terminals, which is known as the **residual voltage**.
 
 *   **Figure involved:** None directly requested, though it is visually represented as the Y-intercept on the Open Circuit Characteristic (OCC) curve.
-*   **Related Topics:** Mam Slide: 130, 243 | Firoz Note: Page 33, 34.
+*   **Related Topics:** Mam Slide: 130, 243 | Firoz Note: Page 33, 34. | Rosenblatt: Section 4-4, Pages 34-35 | Theraja Vol II: PDF Page 113
 
 ***
 
@@ -918,7 +918,7 @@ A self-excited shunt generator relies on its own output to power its field windi
 4.  **Armature Speed ($N$) must be GREATER than the Critical Speed ($N_c$):** The generator must be driven by the prime mover at a speed fast enough to induce sufficient voltage to overcome the field resistance. For a fixed field resistance, if the speed is below the critical speed, the voltage will not build up.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 134, 172 | Firoz Note: Page 34.
+*   **Related Topics:** Mam Slide: 134, 172 | Firoz Note: Page 34. | Rosenblatt: Sections 4-4, 4-5, Pages 34-36 | Theraja Vol II: PDF Page 123
 
 ***
 
@@ -942,7 +942,7 @@ The sketch required here is a graph with **Field Current ($I_f$) on the X-axis**
 *   Draw a zigzag/staircase pattern bouncing between the $R_f$ line and the OCC curve starting from $E_{res}$, moving upwards until it reaches the intersection point of the two curves.
 
 *   **Figure involved:** Yes (The Build-up Process Graph / OCC vs. Field Resistance line).
-*   **Related Topics:** Mam Slide: 132 | Firoz Note: Page 39 (Negative buildup graph concept maps to the general buildup process).
+*   **Related Topics:** Mam Slide: 132 | Firoz Note: Page 39 (Negative buildup graph concept maps to the general buildup process). | Rosenblatt: Section 4-4, Pages 34-35 | Theraja Vol II: PDF Page 122
 
 ***
 
@@ -963,7 +963,7 @@ The critical resistance serves as a strict boundary condition for the operation 
 3.  **Speed Relation:** Because the OCC curve depends on the speed of the machine, the critical resistance is directly proportional to the speed. This means a generator has a specific critical resistance for every speed, linking the mechanical prime-mover requirements to the electrical excitation limits.
 
 *   **Figure involved:** None explicitly requested by the prompt, but it relies heavily on the visualization of the $R_f$ line acting as a tangent on the OCC graph.
-*   **Related Topics:** Mam Slide: 133, 172 | Firoz Note: Page 34.
+*   **Related Topics:** Mam Slide: 133, 172 | Firoz Note: Page 34. | Rosenblatt: Section 4-5, Pages 35-36 | Theraja Vol II: PDF Pages 113-114
 Here are the detailed solutions for the next four questions from your list.
 
 ### 50. Page 3, Q.25: Why critical resistance is important? How it helps in the voltage buildup process?
@@ -980,7 +980,7 @@ Critical resistance itself is a threshold rather than an active component that "
 When $R_f < R_c$, the initial residual voltage pushes a small field current. Because the resistance is low enough, this small field current induces a voltage that is *greater* than the voltage drop required to push that exact same current through the field coils (i.e., the OCC curve is higher than the $I_f R_f$ line). This excess voltage drives an even larger current, creating a cumulative positive-feedback loop. This loop forces the voltage to keep climbing until magnetic saturation flattens the OCC curve, causing it to finally intersect the field resistance line at the steady operating voltage.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 133, 172 | Firoz Note: Page 34.
+*   **Related Topics:** Mam Slide: 133, 172 | Firoz Note: Page 34. | Rosenblatt: Section 4-5, Pages 35-36 | Theraja Vol II: PDF Pages 113, 122
 
 ***
 
@@ -1009,7 +1009,7 @@ A self-excited DC generator can fail to build up voltage on starting due to seve
     *   *Remedy:* Clean the commutator surface with fine sandpaper (not emery cloth) and adjust the brush spring tension to ensure solid electrical contact.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 134, 172 | Firoz Note: Page 34.
+*   **Related Topics:** Mam Slide: 134, 172 | Firoz Note: Page 34. | Rosenblatt: Section 4-6, Page 36 | Theraja Vol II: PDF Page 123
 
 ***
 
@@ -1030,7 +1030,7 @@ The critical field resistance ($R_c$) for a given speed can be determined graphi
 This calculated value represents the maximum resistance the field circuit can have at that specific speed for the voltage to successfully build up.
 
 *   **Figure involved:** None specifically requested, but the explanation describes the graphical construction of the $R_c$ tangent line on the OCC graph.
-*   **Related Topics:** Mam Slide: 133 | Firoz Note: Page 34 (concept of resistance line slope).
+*   **Related Topics:** Mam Slide: 133 | Firoz Note: Page 34 (concept of resistance line slope). | Rosenblatt: Section 4-5, Pages 35-36 | Theraja Vol II: PDF Page 114
 
 ***
 
@@ -1049,7 +1049,7 @@ A self-excited DC generator uses its own generated armature voltage to power its
 6.  **Reaching Steady State:** This positive-feedback loop causes the voltage to rise rapidly. However, as the iron in the poles becomes magnetically saturated, it requires increasingly larger amounts of field current to produce smaller and smaller increases in flux. The voltage buildup finally stops when the generated voltage exactly equals the voltage drop across the field winding ($E_A = I_f R_f$). At this point, the system is in equilibrium, and the generator sits stably at its rated no-load voltage.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 132 | Firoz Note: Page 39 (Negative buildup graph concept maps to general).
+*   **Related Topics:** Mam Slide: 132 | Firoz Note: Page 39 (Negative buildup graph concept maps to general). | Rosenblatt: Section 4-4, Pages 34-35 | Theraja Vol II: PDF Page 122
 Here are the detailed solutions for the next four questions from your list.
 
 ### 54. Page 7, Q.4(b): What are the reasons a DC generator may fails to build up and what are its remedies.
@@ -1080,7 +1080,7 @@ A self-excited DC generator requires specific conditions to build up voltage. If
    * **Remedy:** Check for and repair broken connections. Clean the commutator with fine sandpaper (not emery cloth) and adjust brush spring tension for solid electrical contact.
 
 * **Figure involved:** None.
-* **Related Topics:** Mam Slide: 134, 172 | Firoz Note: Page 34.
+* **Related Topics:** Mam Slide: 134, 172 | Firoz Note: Page 34. | Rosenblatt: Section 4-6, Page 36 | Theraja Vol II: PDF Page 123
 
 ***
 
@@ -1100,7 +1100,7 @@ Critical resistance is defined as the maximum value of resistance that the field
 3. **Speed Dependency:** The critical resistance is directly proportional to the operating speed of the generator. This means if the prime mover speed drops, the critical resistance also drops, which can cause a normally operating generator to lose its excitation if the new $R_c$ falls below the fixed $R_f$.
 
 * **Figure involved:** None explicitly requested, but visualizing the tangent line on the OCC graph is key to the definition.
-* **Related Topics:** Mam Slide: 133, 172 | Firoz Note: Page 34.
+* **Related Topics:** Mam Slide: 133, 172 | Firoz Note: Page 34. | Rosenblatt: Section 4-5, Pages 35-36 | Theraja Vol II: PDF Pages 113-114
 
 ***
 
@@ -1121,7 +1121,7 @@ The OCC essentially reflects the magnetic behavior (B-H curve) of the ferromagne
 This curve is the same for all types of DC generators (series, shunt, and compound) because it represents the fundamental magnetic properties of the machine's iron core.
 
 * **Figure involved:** Yes. A graph with Field Current ($I_f$) on the X-axis and Generated Voltage ($E$ or $V$) on the Y-axis, showing the residual voltage intercept, linear rise, knee, and saturated flat region.
-* **Related Topics:** Mam Slide: 130, 243 | Firoz Note: Page 33.
+* **Related Topics:** Mam Slide: 130, 243 | Firoz Note: Page 33. | Rosenblatt: Section 4-2, Pages 31-33 | Theraja Vol II: PDF Page 113
 
 ***
 
@@ -1140,7 +1140,7 @@ As voltage builds, the field current increases, which increases the flux and gen
 Graphically and physically, the build-up process stops exactly at the point where the **Magnetization Curve (OCC) intersects the Field Resistance Line ($V = I_f R_f$)**. At this precise intersection point, the voltage generated by the armature ($E_A$) is exactly equal to the voltage required to sustain that specific field current ($I_f R_f$). There is no longer any excess voltage to push additional current into the field coils, so the cumulative process terminates, and the generator operates stably at this voltage.
 
 * **Figure involved:** None explicitly requested, but visualizing the intersection of the OCC curve and the $R_f$ line makes the stopping point clear.
-* **Related Topics:** Mam Slide: 132, 172 | Firoz Note: Page 33, 39.
+* **Related Topics:** Mam Slide: 132, 172 | Firoz Note: Page 33, 39. | Rosenblatt: Section 4-4, Pages 34-35 | Theraja Vol II: PDF Page 122
 Here are the detailed solutions for the next four questions from your list. *(Note: Item #60 in your list is a section header "11. DC shunt, DC series and DC compound generator characteristics", so the next four actual questions to be solved are 58, 59, 61, and 62).*
 
 ### 58. Page 12, Q.1(c): The open circuit characteristic (OCC) of a dc machine when running at 1000 rpm is given below: Field current (A) If : 0, 0.5, 1, 2, 3, 4, 5. Induced voltage (V) Ea : 10, 60, 120, 200, 232, 248, 258. (i) What is the source of induced voltage at zero field current? What do we do if there is no induced voltage at zero field current in the operation of shunt generator? (ii) What is critical resistance? Find the critical resistance of the shunt generator having the OCC given above. (iii) Determine the shunt field resistance required to obtain an open circuit voltage of 250 V.
@@ -1173,7 +1173,7 @@ Here are the detailed solutions for the next four questions from your list. *(No
     **Required Shunt Field Resistance = $59.52 \ \Omega$.**
 
 *   **Figure involved:** Yes (Drawing the OCC curve from the data points and plotting the tangent/operating lines is highly recommended for solving such problems).
-*   **Related Topics:** Mam Slide: 130, 133, 172 | Firoz Note: Page 33, 34.
+*   **Related Topics:** Mam Slide: 130, 133, 172 | Firoz Note: Page 33, 34. | Rosenblatt: Sections 4-2, 4-5, Pages 31-33, 35-36 | Theraja Vol II: PDF Pages 115-117
 
 ***
 
@@ -1203,7 +1203,7 @@ A DC shunt generator may fail to build up voltage due to several specific condit
     *   *Remedy:* Clean the commutator and adjust the brush spring tension.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 134, 172 | Firoz Note: Page 34.
+*   **Related Topics:** Mam Slide: 134, 172 | Firoz Note: Page 34. | Rosenblatt: Section 4-6, Page 36 | Theraja Vol II: PDF Page 123
 
 ***
 
@@ -1224,7 +1224,7 @@ Operating "above the knee" of the magnetization curve means the iron core of the
 Because of these combined effects, the terminal voltage will always reduce with increased load in an uncompensated shunt or separately excited generator, regardless of whether it operates above or below the knee of the curve.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 146, 147, 148 | Firoz Note: Page 39, 43.
+*   **Related Topics:** Mam Slide: 146, 147, 148 | Firoz Note: Page 39, 43. | Rosenblatt: Section 4-7, Pages 36-37 | Theraja Vol II: PDF Page 124
 
 ***
 
@@ -1252,7 +1252,7 @@ Yes, I generally agree with this statement for the vast majority of standard pow
 Therefore, the statement is true for power distribution, but specific tasks dictate exceptions.
 
 *   **Figure involved:** None explicitly requested, but visualizing the $V_{NL}$ and $V_{FL}$ levels on a terminal characteristic graph adds clarity.
-*   **Related Topics:** Mam Slide: 174, 175 | Firoz Note: Page 40, 41.
+*   **Related Topics:** Mam Slide: 174, 175 | Firoz Note: Page 40, 41. | Rosenblatt: Section 4-9, Page 38 | Theraja Vol II: PDF Page 125
 Here are the detailed solutions for the next four questions from your list. *(Note: Item #60 in your list is a section header "11. DC shunt, DC series and DC compound generator characteristics", so the next four actual questions to be solved are 63, 64, 65, and 66).*
 
 ### 63. Page 3, Q.30: Explain how can you determine whether the generator is connected as a differential compound generator or as a cumulative compound generator.
@@ -1275,7 +1275,7 @@ While the generator is loaded, safely short-circuit the series field winding (by
 *   If the terminal voltage *rises* when the series field is shorted, the series field was suppressing the voltage; hence, it was **Differential**.
 
 *   **Figure involved:** None requested, but visualizing the external characteristic curves ($V_t$ vs $I_L$) perfectly explains this test.
-*   **Related Topics:** Mam Slide: 156, 160, 164, 165 | Firoz Note: Page 44, 45, 48.
+*   **Related Topics:** Mam Slide: 156, 160, 164, 165 | Firoz Note: Page 44, 45, 48. | Rosenblatt: Sections 4-10, 4-11, Pages 39-41 | Theraja Vol II: PDF Page 128
 
 ***
 
@@ -1300,7 +1300,7 @@ The extraordinarily fast voltage drop in a differentially compounded DC generato
     Because the shunt field is connected across the output terminals, as the terminal voltage ($V_t$) drops due to the reasons above, the current pushed into the shunt field ($I_{sh} = V_t / R_{sh}$) also drops. This reduces the positive $\Phi_{shunt}$, meaning the negative $\Phi_{series}$ has an even greater dominating effect. This creates a rapid downward spiral, causing the voltage to crash to near zero very quickly.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 164, 165 | Firoz Note: Page 48, 49.
+*   **Related Topics:** Mam Slide: 164, 165 | Firoz Note: Page 48, 49. | Rosenblatt: Section 4-11, Page 41 | Theraja Vol II: PDF Page 128
 
 ***
 
@@ -1328,7 +1328,7 @@ Different types of DC generators possess unique voltage-current characteristics,
     *   Almost exclusively used for **Arc Welding**. An arc welder requires a high open-circuit voltage to initially strike the arc (break down the air gap). Once the arc is formed, the resistance drops near zero (a short circuit). The differential generator's voltage plunges instantly when this heavy current flows, safely limiting the current and maintaining a stable welding arc without burning the equipment.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 168, 169 | Firoz Note: Page 44, 45.
+*   **Related Topics:** Mam Slide: 168, 169 | Firoz Note: Page 44, 45. | Rosenblatt: Sections 4-7, 4-10, 4-11, 4-14, Pages 36-47 | Theraja Vol II: PDF Page 132
 
 ***
 
@@ -1383,7 +1383,7 @@ Commercial efficiency is the ratio of useful electrical power output to the tota
 **Commercial Efficiency = 81.70%**
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 145, 199, 202, 204, 205 | Firoz Note: Page 125, 126, 134, 139, 140.
+*   **Related Topics:** Mam Slide: 145, 199, 202, 204, 205 | Firoz Note: Page 125, 126, 134, 139, 140. | Rosenblatt: Sections 10-2, 10-8, Pages 108-109, 113-114 | Theraja Vol II: PDF Pages 70-72
 
 Here are the detailed solutions for the next four questions from your list. *(Note: Item #66 from the previous response was the last one, so the next four are 67, 68, 69, and 70).*
 
@@ -1410,7 +1410,7 @@ The characteristics of these generators are best described by their **External C
     *   *Reason:* The series field is deliberately wired to oppose the shunt field. As load current increases, the series flux violently destroys the main field flux, shutting down the generated voltage. It is used strictly for applications like arc welding.
 
 *   **Figure involved:** Yes (A single graph displaying all these curves plotting $V_t$ against $I_L$ branching from the same no-load voltage point).
-*   **Related Topics:** Mam Slide: 160, 164, 165, 179 | Firoz Note: Page 45, 48, 49.
+*   **Related Topics:** Mam Slide: 160, 164, 165, 179 | Firoz Note: Page 45, 48, 49. | Rosenblatt: Sections 4-8, 4-11, 4-12, Pages 37-38, 41-44 | Theraja Vol II: PDF Page 128
 
 ***
 
@@ -1455,7 +1455,7 @@ $$R_d = \frac{1.10403}{44.0} \approx 0.0251 \ \Omega$$
 **Answer:** The required resistance of the diverter is approximately **0.0251 $\Omega$**. *(If the intended current was strictly 130A, $I_d = 130 - 122.67 = 7.33A$, and $R_d = 1.104 / 7.33 = 0.15 \Omega$)*.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 161, 289, 290 | Firoz Note: Page 49, 50 (Similar numerical Example 5.7).
+*   **Related Topics:** Mam Slide: 161, 289, 290 | Firoz Note: Page 49, 50 (Similar numerical Example 5.7). | Rosenblatt: Section 4-13, Pages 45-46 | Theraja Vol II: PDF Pages 129-131
 
 ***
 
@@ -1474,7 +1474,7 @@ The **Over-Compounded DC Generator** is designed specifically to exhibit negativ
 *(Note: A DC Series generator also exhibits negative regulation, but over-compounded generators are the practical machines utilized for this specific trait in power distribution).*
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 174, 175, 179 | Firoz Note: Page 40, 48.
+*   **Related Topics:** Mam Slide: 174, 175, 179 | Firoz Note: Page 40, 48. | Rosenblatt: Sections 4-9, 4-12, Pages 38, 41-42 | Theraja Vol II: PDF Pages 125, 128
 
 ***
 
@@ -1521,7 +1521,7 @@ $$R_d = 0.08333... \ \Omega$$
 **Answer:** The diverter resistance required to obtain flat compound operation is **$0.0833 \ \Omega$**.
 
 *   **Figure involved:** None requested, but visualizing the parallel circuit of $R_d$ and $R_{se}$ receiving $I_a$ helps.
-*   **Related Topics:** Mam Slide: 161, 289, 290 | Firoz Note: Page 49, 50 (Exactly matches Example logic).
+*   **Related Topics:** Mam Slide: 161, 289, 290 | Firoz Note: Page 49, 50 (Exactly matches Example logic). | Rosenblatt: Sections 4-12, 4-13, Pages 43-46 | Theraja Vol II: PDF Pages 129-131
 
 Here are the detailed solutions for the next four questions from your list.
 
@@ -1542,7 +1542,7 @@ The fundamental difference in the number of turns between the field windings of 
     *   **Reason for many turns:** To prevent the field winding from drawing too much current (which would waste the generator's useful output power), its resistance ($R_{sh}$) must be very high. This high resistance limits the field current ($I_{sh}$) to a very small fraction of the total current. Because the current is so small, **many thousands of turns** ($N_{sh}$) of fine wire are required to achieve the necessary Ampere-Turns ($N \times I$) to produce the magnetic flux.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 72, 150 | Firoz Note: Page 42.
+*   **Related Topics:** Mam Slide: 72, 150 | Firoz Note: Page 42. | Rosenblatt: Sections 2-3, 4-10, Pages 14, 40 | Theraja Vol II: PDF Page 54
 
 ***
 
@@ -1567,7 +1567,7 @@ To control or adjust the terminal voltage of this generator, operators can manip
 *(Note: A third method, specific to compound generators, involves using a **diverter variable resistor** placed in parallel with the series field winding. By adjusting the diverter, you control how much load current passes through the series field, thereby tweaking the degree of compounding and finely adjusting the terminal voltage under load).*
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 161 | Firoz Note: Page 32.
+*   **Related Topics:** Mam Slide: 161 | Firoz Note: Page 32. | Rosenblatt: Sections 4-10, 4-12, Pages 39-44 | Theraja Vol II: PDF Page 129
 
 ***
 
@@ -1616,7 +1616,7 @@ We calculate where the total electrical power generated by the armature goes.
 *(Verification Check: Power Delivered + Power Lost = $34500 + 744.2 + 232.56 + 575 = 36051.76 \text{ W}$. This perfectly matches the Total Power Generated).*
 
 *   **Figure involved:** None requested, but visualizing the long-shunt circuit diagram with a diverter is necessary for the calculation.
-*   **Related Topics:** Mam Slide: 157, 166 (circuit diagram of long shunt) | Firoz Note: Page 42, 50.
+*   **Related Topics:** Mam Slide: 157, 166 (circuit diagram of long shunt) | Firoz Note: Page 42, 50. | Rosenblatt: Sections 4-10, 10-2, Pages 39-40, 108-109 | Theraja Vol II: PDF Pages 68, 70
 
 ***
 
@@ -1667,7 +1667,7 @@ $$R_d \approx 0.0197 \ \Omega$$
 *(Note: If calculated using the long-shunt armature current of 152.7 A, $I_d = 37.7 \text{ A}$, yielding $R_d = 0.0183 \ \Omega$. Both methods are acceptable depending on connection assumption).*
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 161, 289, 290 | Firoz Note: Page 49, 50.
+*   **Related Topics:** Mam Slide: 161, 289, 290 | Firoz Note: Page 49, 50. | Rosenblatt: Section 4-13, Pages 45-46 | Theraja Vol II: PDF Pages 129-131
 Here are the detailed solutions for the next four questions from your list. *(Note: Item #77 in your list is a section header "12. Parallel operation of DC generators", so the next four actual questions to be solved are 75, 76, 78, and 79).*
 
 ### 75. Page 14, Q.3(d): A 25kW, 250V dc shunt generator has armature and field resistances of 0.08$\Omega$ and 110$\Omega$ respectively. Determine the total armature power developed when working (i) as a generator delivering 25kW output and (ii) as a motor taking 25kW input.
@@ -1711,7 +1711,7 @@ In a motor, the machine draws power from the supply. This supply current splits 
     $$P_{m\_dev} = E_b \times I_a = 242.182 \times 97.727 = 23,667 \text{ W} \text{ or } \mathbf{23.667 \text{ kW}}$$
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 145, 224, 247 | Firoz Note: Page 36, 80, 83.
+*   **Related Topics:** Mam Slide: 145, 224, 247 | Firoz Note: Page 36, 80, 83. | Rosenblatt: Section 10-3, Page 109 | Theraja Vol II: PDF Page 70
 
 ***
 
@@ -1762,7 +1762,7 @@ Assuming stray losses are 0 W:
 **Efficiency $\approx$ 96.36%**
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 145, 199, 204, 205 | Firoz Note: Page 36, 126.
+*   **Related Topics:** Mam Slide: 145, 199, 204, 205 | Firoz Note: Page 36, 126. | Rosenblatt: Sections 10-2, 10-8, Pages 108-109, 113-114 | Theraja Vol II: PDF Page 70
 
 ***
 
@@ -1780,7 +1780,7 @@ When paralleling DC generators, it is standard operating procedure to adjust the
 A slightly higher voltage entirely eliminates this risk, providing a safe margin for error.
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: 209 | Firoz Note: Page N/A.
+*   **Related Topics:** Mam Slide: 209 | Firoz Note: Page N/A. | Rosenblatt: Section 6-2, Pages 63-64 | Theraja Vol II: PDF Page 97
 
 ***
 
@@ -1812,7 +1812,7 @@ Simply closing the switch does not make Generator 2 share the load. The load mus
 4.  **Completion:** This dual adjustment continues until the ammeters on both generators show that they are sharing the load in the desired proportion (usually proportional to their kW ratings), or until Generator 1's current is reduced to zero if the goal is to completely swap machines.
 
 *   **Figure involved:** Yes (Circuit diagram showing two shunt generators, busbars, field rheostats, and paralleling switches with a voltmeter; Mam Slide 209).
-*   **Related Topics:** Mam Slide: 209 | Firoz Note: Page N/A.
+*   **Related Topics:** Mam Slide: 209 | Firoz Note: Page N/A. | Rosenblatt: Section 6-2, Pages 62-64 | Theraja Vol II: PDF Page 97
 
 
 
@@ -1834,7 +1834,7 @@ Imagine two identical DC shunt generators, G1 and G2, operating in parallel and 
 5.  **Conclusion:** The dropping voltage of G1 and the rising voltage of G2 will quickly meet at a new, stable equilibrium point. G1 is physically prevented from "stealing" all the load because the very act of taking more load reduces its ability to push current. Therefore, the system is inherently stable.
 
 *   **Figure involved:** None requested, but visualizing the two drooping $V-I$ curves intersecting at a stable operating point is the concept.
-*   **Related Topics:** Mam Slide: 210, 211 | Firoz Note: N/A.
+*   **Related Topics:** Mam Slide: 210, 211 | Firoz Note: N/A. | Rosenblatt: Section 6-3, Pages 64-66 | Theraja Vol II: PDF Page 97
 
 ***
 
@@ -1851,7 +1851,7 @@ Connecting over-compounded DC generators in parallel requires the standard condi
 4.  **Proper Series Field Resistance:** For the machines to share the load proportionally according to their sizes, the resistance of their series field circuits (including any diverter resistors) must be strictly **inversely proportional** to the kW ratings of the generators. This ensures the total load current divides correctly among the series fields.
 
 *   **Figure involved:** None explicitly requested here, but the circuit diagram showing the Equalizer Bar is standard.
-*   **Related Topics:** Mam Slide: 212 | Firoz Note: N/A.
+*   **Related Topics:** Mam Slide: 212 | Firoz Note: N/A. | Rosenblatt: Section 6-6, Pages 69-71 | Theraja Vol II: PDF Page 99
 
 ***
 
@@ -1876,7 +1876,7 @@ Stability is achieved by using an **Equalizer Bar**.
 *   If G1 tries to take more load, the extra current does *not* all go through G1's series field. Instead, it flows through the equalizer bar and is shared with G2's series field. This boosts G2's voltage simultaneously, forcing G2 to pick its share of the load back up. The positive feedback loop is broken, and stability is guaranteed.
 
 *   **Figure involved:** Yes (A circuit diagram showing two compound generators connected in parallel with the Equalizer Bar bridging the armature/series-field junctions; Mam Slide 212).
-*   **Related Topics:** Mam Slide: 212 | Firoz Note: N/A.
+*   **Related Topics:** Mam Slide: 212 | Firoz Note: N/A. | Rosenblatt: Section 6-4, Pages 66-67 | Theraja Vol II: PDF Page 99
 
 ***
 
@@ -1899,7 +1899,7 @@ Compound generators are stabilized by installing an **Equalizer Connection (Equa
 *   If Machine 1 tries to run away, its extra current is shared with Machine 2's series field, boosting Machine 2's voltage equally and forcing it to pull its weight. The equalizer bar ensures that excitation changes happen equally to all machines, transforming the unstable positive feedback into a stable, shared response.
 
 *   **Figure involved:** Yes (Circuit diagram of compound generators in parallel with an Equalizer bus bar; Mam slide 212).
-*   **Related Topics:** Mam Slide: 210, 211, 212 | Firoz Note: N/A.
+*   **Related Topics:** Mam Slide: 210, 211, 212 | Firoz Note: N/A. | Rosenblatt: Sections 6-3, 6-4, 6-5, Pages 64-69 | Theraja Vol II: PDF Pages 97, 99
 Here are the detailed solutions for the next four questions from your list. *(Note: Items #86 and #88 in your list are section headers for "1. Universal motor" and "2. Stepper motor" respectively, so the next four actual questions to be solved are 84, 85, 87, and 89).*
 
 ### 84. Page 10, Q.8(b): The parallel operation of shunt generators is inherently stable; however compound generators are not – why. How the parallel operation of compound generator can make stable?
@@ -1920,7 +1920,7 @@ The parallel operation of compound generators is made perfectly stable by the ma
 *   **Result:** This connection places the series field windings of all the machines directly in parallel with each other. Consequently, the total load current returning from the system is split among the series fields purely based on their ohmic resistances, entirely independently of which armature generated the current. If one generator tries to surge and take more load, its extra current is shared across all the series fields via the equalizer bar, boosting the voltage of the other generators equally. This prevents any single machine from running away with the load, transforming the unstable behavior into stable, shared operation.
 
 *   **Figure involved:** Yes (Circuit diagram of compound generators in parallel connected by an Equalizer Bar).
-*   **Related Topics:** Mam Slide: 210, 211, 212 | Firoz Note: N/A.
+*   **Related Topics:** Mam Slide: 210, 211, 212 | Firoz Note: N/A. | Rosenblatt: Sections 6-3, 6-4, 6-5, Pages 64-69 | Theraja Vol II: PDF Pages 97, 99
 
 ***
 
@@ -1941,7 +1941,7 @@ As explained in the previous question, cumulative compound generators are unstab
 *   **The Solution:** This is made stable by utilizing an **Equalizer Bar**. The equalizer bar electrically connects the junction points between the armature and the series fields of all paralleled machines. This puts all series fields in parallel with one another. If one generator's armature surges and produces more current, the equalizer bar forces that extra current to be shared equally among all the series fields in the system. This equally boosts the voltage of the other machines, keeping them perfectly in step and preventing the runaway condition.
 
 *   **Figure involved:** None requested (though external characteristic curves graph is relevant for the first part, and the equalizer bar circuit for the second).
-*   **Related Topics:** Mam Slide: 160, 164, 165, 212 | Firoz Note: Page 48, 49.
+*   **Related Topics:** Mam Slide: 160, 164, 165, 212 | Firoz Note: Page 48, 49. | Rosenblatt: Sections 4-10, 4-11, 6-4, 6-5, Pages 39-41, 66-69 | Theraja Vol II: PDF Pages 99, 128
 
 ***
 
@@ -1969,7 +1969,7 @@ Because they offer very high starting torque, can run at incredibly high speeds,
 *   Hair dryers
 
 *   **Figure involved:** None.
-*   **Related Topics:** Mam Slide: N/A (Topic is outside the provided DC Machine slides) | Firoz Note: N/A.
+*   **Related Topics:** Mam Slide: N/A (Topic is outside the provided DC Machine slides) | Firoz Note: N/A. | Rosenblatt: Section 18-3, Pages 378-379 | Theraja Vol II: N/A
 
 ***
 
@@ -2020,5 +2020,5 @@ To make the motor step $30^\circ$ forward continuously, the phases are energized
 This creates a cascading "staircase" visual of voltage pulses moving from A to B to C and back to A, causing the $30^\circ$ steps.
 
 *   **Figure involved:** Yes (Truth table, and cascading square-wave timing diagrams for Phases A, B, and C).
-*   **Related Topics:** Mam Slide: N/A (Topic is outside the provided DC Machine slides) | Firoz Note: N/A.
+*   **Related Topics:** Mam Slide: N/A (Topic is outside the provided DC Machine slides) | Firoz Note: N/A. | Rosenblatt: N/A | Theraja Vol II: N/A
 
