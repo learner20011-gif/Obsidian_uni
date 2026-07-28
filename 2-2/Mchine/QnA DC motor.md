@@ -17,6 +17,8 @@ The fundamental principle of a DC motor is based on the electromagnetic force ex
 
 * **Reference in Mam Slide:** 20, 214, 215, 216
 * **Reference in Firoz Note:** 2, 72, 74, 76
+* **Reference in Rosenblatt:** Sections 7-1, 7-2, 7-3, Pages 72-74
+* **Reference in Theraja Vol II:** PDF Page 139
 
 ---
 
@@ -35,6 +37,8 @@ To change the direction of rotation of a DC motor, you must reverse the directio
 
 * **Reference in Mam Slide:** 214, 295
 * **Reference in Firoz Note:** 91, 114
+* **Reference in Rosenblatt:** Section 7-3, Pages 73-74
+* **Reference in Theraja Vol II:** PDF Page 139
 
 ---
 
@@ -55,6 +59,8 @@ As described in Q.52, when a DC supply is connected across the motor terminals, 
 
 * **Reference in Mam Slide:** 10, 11, 12, 61, 62, 63, 65, 236
 * **Reference in Firoz Note:** 72, 74, 78
+* **Reference in Rosenblatt:** Sections 2-2, 2-3, 2-4, 2-5, 7-1, 7-2, 7-3, 7-4, Pages 14-15, 72-78
+* **Reference in Theraja Vol II:** PDF Page 139
 
 ---
 
@@ -79,6 +85,8 @@ $$E_b = \frac{P \Phi Z N}{60 A}$$
 
 * **Reference in Mam Slide:** 220, 221, 222
 * **Reference in Firoz Note:** 80, 81, 82
+* **Reference in Rosenblatt:** Section 7-5, Pages 78-79
+* **Reference in Theraja Vol II:** PDF Page 141
 Here are the detailed solutions for the next 4 questions from your syllabus list (Items 6, 7, 8, and 9).
 
 ### 6. Page 4, Q.56: What is back EMF in a dc motor? What will happen if the back EMF (Eb) is equal to the terminal voltage (V) of a dc motor?
@@ -98,6 +106,8 @@ If the armature current drops to zero, the electromagnetic torque developed by t
 
 * **Reference in Mam Slide:** 220, 221
 * **Reference in Firoz Note:** 80, 81
+* **Reference in Rosenblatt:** Section 7-5, Pages 78-79
+* **Reference in Theraja Vol II:** PDF Page 141
 * **Figure Involved:** None
 
 ---
@@ -139,6 +149,8 @@ $$E_b = \frac{V}{2}$$
 
 * **Reference in Mam Slide:** 225
 * **Reference in Firoz Note:** 85, 86
+* **Reference in Rosenblatt:** Section 7-6, Pages 79-81
+* **Reference in Theraja Vol II:** PDF Page 142
 * **Figure Involved:** None
 
 ---
@@ -174,6 +186,8 @@ $$E_{b2} = 220 - 0.72 = 219.28 \text{ V}$$
 
 * **Reference in Mam Slide:** 222
 * **Reference in Firoz Note:** 81
+* **Reference in Rosenblatt:** Sections 7-5, 7-6, Pages 78-81
+* **Reference in Theraja Vol II:** PDF Pages 141-143
 * **Figure Involved:** None
 
 ---
@@ -202,6 +216,8 @@ Thus, it is proven that the gross mechanical power developed by a DC motor reach
 
 * **Reference in Mam Slide:** 220, 221, 225
 * **Reference in Firoz Note:** 80, 81, 85, 86
+* **Reference in Rosenblatt:** Sections 7-5, 7-6, Pages 78-81
+* **Reference in Theraja Vol II:** PDF Pages 141-142
 * **Figure Involved:** None
 Here are the detailed solutions for the next 4 questions from your syllabus list (Items 6, 7, 8, and 9).
 
@@ -222,6 +238,8 @@ If the armature current drops to zero, the electromagnetic torque developed by t
 
 * **Reference in Mam Slide:** 220, 221
 * **Reference in Firoz Note:** 80, 81
+* **Reference in Rosenblatt:** Section 7-5, Pages 78-79
+* **Reference in Theraja Vol II:** PDF Page 141
 * **Figure Involved:** None
 
 ---
@@ -263,6 +281,8 @@ $$E_b = \frac{V}{2}$$
 
 * **Reference in Mam Slide:** 225
 * **Reference in Firoz Note:** 85, 86
+* **Reference in Rosenblatt:** Section 7-6, Pages 79-81
+* **Reference in Theraja Vol II:** PDF Page 142
 * **Figure Involved:** None
 
 ---
@@ -298,6 +318,8 @@ $$E_{b2} = 220 - 0.72 = 219.28 \text{ V}$$
 
 * **Reference in Mam Slide:** 222
 * **Reference in Firoz Note:** 81
+* **Reference in Rosenblatt:** Sections 7-5, 7-6, Pages 78-81
+* **Reference in Theraja Vol II:** PDF Pages 141-143
 * **Figure Involved:** None
 
 ---
@@ -326,6 +348,8 @@ Thus, it is proven that the gross mechanical power developed by a DC motor reach
 
 * **Reference in Mam Slide:** 220, 221, 225
 * **Reference in Firoz Note:** 80, 81, 85, 86
+* **Reference in Rosenblatt:** Sections 7-5, 7-6, Pages 78-81
+* **Reference in Theraja Vol II:** PDF Pages 141-142
 * **Figure Involved:** None
 Here are the detailed solutions for the next 4 questions from your syllabus list (Items 10, 12, 13, and 14).
 
@@ -361,6 +385,8 @@ $$E_{b2} = 230 - 9.0 = 221 \text{ V}$$
 
 * **Reference in Mam Slide:** 222, 267 (Starter necessity)
 * **Reference in Firoz Note:** 81, 114
+* **Reference in Rosenblatt:** Sections 7-5, 7-6, Pages 78-81
+* **Reference in Theraja Vol II:** PDF Pages 141-143
 * **Figure Involved:** None
 
 ---
@@ -393,6 +419,8 @@ Different types of DC motors have distinct torque-speed characteristics, making 
 
 * **Reference in Mam Slide:** 8, 9, 235
 * **Reference in Firoz Note:** 111, 112
+* **Reference in Rosenblatt:** Sections 7-9, 7-10, 7-11, Pages 84-87
+* **Reference in Theraja Vol II:** PDF Page 165
 * **Figure Involved:** None
 
 ---
@@ -419,6 +447,8 @@ Because they offer high speed (often exceeding 10,000 RPM) and high power-to-wei
 *   Hair dryers and trimming machines.
 
 * **Reference:** Standard Electrical Machines theory (This specific special machine topic is not directly detailed in the provided DC Machines/Transformers PDF slides, but relies on fundamental AC/DC machine differentiation).
+* **Reference in Rosenblatt:** Section 18-3, Pages 378-379
+* **Reference in Theraja Vol II:** N/A
 * **Figure Involved:** None
 
 ---
@@ -463,6 +493,8 @@ Let the three phases of the stator be A, B, and C. By energizing the phases sequ
 5.  This staggered, non-overlapping sequence represents the applied voltage commands that pull the rotor $30^\circ$ forward per pulse.
 
 * **Reference:** Standard Electrical Machines theory (Special Machines chapter).
+* **Reference in Rosenblatt:** N/A
+* **Reference in Theraja Vol II:** N/A
 * **Figure Involved:** Yes, you must draw the 3-phase staggered square-wave timing diagram described above.
 
 
@@ -511,6 +543,8 @@ $$P_{dev} = \frac{3234.6}{1000} = 3.235 \text{ kW}$$
 
 *   **Reference in Mam Slide:** 247 (Equivalent circuit and formulas)
 *   **Reference in Firoz Note:** 202, 203
+*   **Reference in Rosenblatt:** Sections 7-5, 7-6, Pages 78-81
+*   **Reference in Theraja Vol II:** PDF Pages 141-145
 *   **Figure Involved:** None required (unless asked to draw the equivalent circuit).
 
 ---
@@ -559,6 +593,8 @@ $$P_{dev} = E_b \times I_a = 226.36 \times 19.21 = 4348.4 \text{ W}$$
 
 *   **Reference in Mam Slide:** 224 (Example 8.5), 247
 *   **Reference in Firoz Note:** 83, 84, 85 (Matches Example 8.5)
+*   **Reference in Rosenblatt:** Sections 7-6, 10-2, Pages 79-81, 108-109
+*   **Reference in Theraja Vol II:** PDF Pages 166-169
 *   **Figure Involved:** None.
 
 ---
@@ -601,6 +637,8 @@ $$P_{dev} = E_b \times I_a = 226.36 \times 19.21 = 4348.4 \text{ W}$$
 
 *   **Reference in Mam Slide:** 129 (Generator eq), 247 (Motor eq)
 *   **Reference in Firoz Note:** 28, 29, 98, 99
+*   **Reference in Rosenblatt:** Sections 4-7, 7-5, 7-6, Pages 36-37, 78-81
+*   **Reference in Theraja Vol II:** PDF Pages 70, 141
 *   **Figure Involved:** None.
 
 ---
@@ -649,6 +687,8 @@ $$N_1 = 1200 \times \frac{206.764}{219.6} = 1129.85 \text{ rpm}$$
 
 *   **Reference in Mam Slide:** 249, 250 (Motor equations and torque-speed relationships)
 *   **Reference in Firoz Note:** 204, 205 (Exact matched problem)
+*   **Reference in Rosenblatt:** Sections 7-4, 7-7, Pages 74-78, 81-83
+*   **Reference in Theraja Vol II:** PDF Pages 151-153
 *   **Figure Involved:** None.
 Here are the detailed step-by-step solutions for the next 4 questions (Items 20, 22, 23, and 24) from your syllabus list. 
 
@@ -698,6 +738,8 @@ $$T_{dev} = \frac{P_{dev}}{\omega_m} = \frac{4347.7}{186} \approx 23.37 \text{ N
 
 *   **Reference in Mam Slide:** 247 (Formulas for DC Shunt Motor)
 *   **Reference in Firoz Note:** 202, 203 (Similar math problem)
+*   **Reference in Rosenblatt:** Sections 7-4, 7-5, 7-6, Pages 74-81
+*   **Reference in Theraja Vol II:** PDF Pages 141-145
 
 ---
 
@@ -739,6 +781,8 @@ $$T_{dev} = \frac{P_{dev}}{\omega_m} = \frac{4347.7}{186} \approx 23.37 \text{ N
 
 *   **Reference in Mam Slide:** 218, 219, 240
 *   **Reference in Firoz Note:** 109, 110
+*   **Reference in Rosenblatt:** Section 7-4, Pages 74-78
+*   **Reference in Theraja Vol II:** PDF Page 144
 
 ---
 
@@ -787,6 +831,8 @@ In "plugging" (reverse current braking), the armature terminals are reversed. Th
 
 *   **Reference in Mam Slide:** 295, 296 (Plugging theory)
 *   **Reference in Firoz Note:** 209, 210 (Exact matched problem)
+*   **Reference in Rosenblatt:** Sections 9-5, 9-6, Pages 106-107
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -815,6 +861,8 @@ In DC motor analysis, the "load" is generally represented by the Armature Curren
 
 *   **Reference in Mam Slide:** 242 (Definition), 259 (Figure 8.14)
 *   **Reference in Firoz Note:** 111 (Torque vs current graph), 112 (Combined graphs)
+*   **Reference in Rosenblatt:** Sections 7-9, 7-10, 7-11, Pages 84-87
+*   **Reference in Theraja Vol II:** PDF Pages 159-161
 Here are the detailed step-by-step solutions for the next 4 questions (Items 25, 26, 28, and 29) from your syllabus list. 
 
 *(Note: Item 27 is a section heading: "6. Characteristics of a DC shunt motor", so I have skipped it and solved the next 4 actual questions).*
@@ -859,6 +907,8 @@ $$\tau_{load} = \frac{37,500}{125.66} \approx 298.4 \text{ N-m}$$
 
 *   **Reference in Mam Slide:** 222 (Voltage equation), 223 (Power distribution)
 *   **Reference in Firoz Note:** 82 (Power flow), 83 (Torque and power equations)
+*   **Reference in Rosenblatt:** Sections 7-4, 7-6, 10-4, Pages 74-81, 109-110
+*   **Reference in Theraja Vol II:** PDF Page 145
 *   **Figure Involved:** None
 
 ---
@@ -902,6 +952,8 @@ $$P_{out} = 8320 - 500 = 7820 \text{ W}$$
 
 *   **Reference in Mam Slide:** 260 (Series motor equation), 204 (Power stages)
 *   **Reference in Firoz Note:** 107 (Series motor circuit), 138, 139 (Power flow)
+*   **Reference in Rosenblatt:** Sections 7-11, 10-4, Pages 86-87, 109-110
+*   **Reference in Theraja Vol II:** PDF Page 145
 *   **Figure Involved:** None
 
 ---
@@ -923,6 +975,8 @@ For these reasons, proper protective equipment (like no-field release coils or o
 
 *   **Reference in Mam Slide:** 227
 *   **Reference in Firoz Note:** 90, 91
+*   **Reference in Rosenblatt:** Section 7-7, Pages 81-83
+*   **Reference in Theraja Vol II:** PDF Pages 160, 176
 *   **Figure Involved:** None
 
 ---
@@ -943,6 +997,8 @@ This question explores the exact same phenomenon as Q.58, but specifically in th
 
 *   **Reference in Mam Slide:** 227
 *   **Reference in Firoz Note:** 90, 91
+*   **Reference in Rosenblatt:** Section 7-7, Pages 81-83
+*   **Reference in Theraja Vol II:** PDF Pages 160, 176
 *   **Figure Involved:** None
 Here are the detailed solutions for the next 4 questions from your syllabus list (Items 30, 31, 33, and 34). 
 
@@ -963,6 +1019,8 @@ When a mechanical load is applied to the shaft of a running DC shunt motor, a sp
 
 *   **Reference in Mam Slide:** 248, 251
 *   **Reference in Firoz Note:** 96
+*   **Reference in Rosenblatt:** Section 7-9, Pages 84-85
+*   **Reference in Theraja Vol II:** PDF Page 160
 *   **Figure Involved:** None required (A flow chart of this sequence is often drawn).
 
 ---
@@ -987,6 +1045,8 @@ Through this automatic adjustment (dictated by the Back EMF), the shunt motor su
 
 *   **Reference in Mam Slide:** 248, 251
 *   **Reference in Firoz Note:** 96
+*   **Reference in Rosenblatt:** Section 7-9, Pages 84-85
+*   **Reference in Theraja Vol II:** PDF Page 160
 *   **Figure Involved:** None
 
 ---
@@ -1010,6 +1070,8 @@ In reality, the motor will rapidly accelerate to a "runaway" speed. The immense 
 
 *   **Reference in Mam Slide:** 262, 263
 *   **Reference in Firoz Note:** 110, 111
+*   **Reference in Rosenblatt:** Section 7-11, Pages 86-87
+*   **Reference in Theraja Vol II:** PDF Page 159
 *   **Figure Involved:** Speed vs. Armature Current curve for a Series Motor (showing speed approaching infinity as current approaches zero).
 
 ---
@@ -1032,6 +1094,8 @@ To prevent accidental un-loading during operation, a DC series motor shaft must 
 
 *   **Reference in Mam Slide:** 262, 263
 *   **Reference in Firoz Note:** 110
+*   **Reference in Rosenblatt:** Section 7-11, Pages 86-87
+*   **Reference in Theraja Vol II:** PDF Page 159
 *   **Figure Involved:** None required (Conceptual explanation).
 
 
@@ -1058,6 +1122,8 @@ To prevent this catastrophic no-load condition, a series motor must **always** b
 
 * **Reference in Mam Slide:** 262, 263
 * **Reference in Firoz Note:** 110
+* **Reference in Rosenblatt:** Section 7-11, Pages 86-87
+* **Reference in Theraja Vol II:** PDF Page 159
 
 ---
 
@@ -1100,6 +1166,8 @@ However, in a series motor, torque is proportional to the *square* of the curren
 
 * **Reference in Mam Slide:** 260, 262
 * **Reference in Firoz Note:** 108, 111
+* **Reference in Rosenblatt:** Section 7-11, Pages 86-87
+* **Reference in Theraja Vol II:** PDF Page 159
 
 ---
 
@@ -1124,6 +1192,8 @@ Because of its extraordinarily high starting torque and variable speed nature (w
 
 * **Reference in Mam Slide:** 264
 * **Reference in Firoz Note:** 109, 110
+* **Reference in Rosenblatt:** Section 7-11, Pages 86-87
+* **Reference in Theraja Vol II:** PDF Page 159
 
 ---
 
@@ -1149,6 +1219,8 @@ The fundamental governing equation is $T \propto \Phi I_a$.
 Here are the detailed solutions for the next 4 questions from your syllabus list (Items 40, 41, 42, and 44). 
 
 *(Note: Item 43 in your list is a section heading: "9. Speed of a DC machine", so I have skipped it to solve the actual questions).*
+* **Reference in Rosenblatt:** Sections 7-9, 7-10, 7-11, Pages 84-87
+* **Reference in Theraja Vol II:** PDF Pages 159-161
 
 ### 40. Page 5, Q.65: Draw and explain the mechanical characteristics of DC series and shunt motor. [Figure Involved]
 
@@ -1175,6 +1247,8 @@ The **mechanical characteristic** of a DC motor refers specifically to the relat
 
 *   **Reference in Mam Slide:** 242 (Definition), 250 (Shunt curve), 262 (Series curve)
 *   **Reference in Firoz Note:** 103 (Shunt $N$ vs $T_a$), 111 (Series $N$ vs $T_a$), 112 (Combined graphs)
+*   **Reference in Rosenblatt:** Sections 7-9, 7-11, Pages 84-87
+*   **Reference in Theraja Vol II:** PDF Pages 159-160
 
 ---
 
@@ -1200,6 +1274,8 @@ This question asks for the **Speed vs. Torque characteristic** (often called the
 
 *   **Reference in Mam Slide:** 255, 258, 266 (Comparing all motors)
 *   **Reference in Firoz Note:** 112
+*   **Reference in Rosenblatt:** Sections 7-9, 7-10, Pages 84-86
+*   **Reference in Theraja Vol II:** PDF Pages 160-161
 
 ---
 
@@ -1228,6 +1304,8 @@ This requires outlining the electrical characteristics (Torque vs $I_a$ and Spee
 
 *   **Reference in Mam Slide:** 264, 265, 266
 *   **Reference in Firoz Note:** 111, 112
+*   **Reference in Rosenblatt:** Sections 7-9, 7-10, 7-11, Pages 84-87
+*   **Reference in Theraja Vol II:** PDF Pages 159-161
 
 ---
 
@@ -1258,6 +1336,8 @@ From this equation, we can control speed either by changing the applied armature
 
 *   **Reference in Mam Slide:** 280, 281, 282, 283
 *   **Reference in Firoz Note:** 88, 89
+*   **Reference in Rosenblatt:** Sections 9-2, 9-3, Pages 105-106
+*   **Reference in Theraja Vol II:** PDF Pages 176, 194
 
 Here are the detailed step-by-step solutions for the next 4 questions (Items 45, 47, 48, and 49) from your syllabus list. 
 
@@ -1283,6 +1363,8 @@ When a mechanical load is added, the armature current ($I_a$) increases. This ca
 
 *   **Reference in Mam Slide:** 234 (Definition of speed regulation), 258 (Differential motor characteristics)
 *   **Reference in Firoz Note:** 93 (Positive and Negative regulation rules), 112 (Graph of characteristics)
+*   **Reference in Rosenblatt:** Sections 7-10, 7-13, Pages 85-86, 88-89
+*   **Reference in Theraja Vol II:** PDF Page 161
 *   **Figure Involved:** None required (but a Speed vs Load graph showing a rising curve can be drawn for clarity).
 
 ---
@@ -1307,6 +1389,8 @@ Electrical braking is used to bring a motor to a quick, smooth stop by using ele
 
 *   **Reference in Mam Slide:** 293, 294 (Dynamic), 295 (Plugging), 297 (Regenerative)
 *   **Reference in Firoz Note:** Not explicitly covered in the provided Firoz notes.
+*   **Reference in Rosenblatt:** Sections 9-5, 9-6, Pages 106-107
+*   **Reference in Theraja Vol II:** PDF Page 175
 *   **Figure Involved:** Circuit diagrams showing the connections for Dynamic braking (armature across a resistor) and Plugging (reversed armature terminals with series resistor).
 
 ---
@@ -1336,6 +1420,8 @@ Based on this equation, there are three primary ways to control the speed:
 
 *   **Reference in Mam Slide:** 281, 282 (Flux & Armature Control), 286, 287 (Voltage / Ward-Leonard Control)
 *   **Reference in Firoz Note:** 88, 89
+*   **Reference in Rosenblatt:** Sections 9-2, 9-3, 9-4, Pages 105-106
+*   **Reference in Theraja Vol II:** PDF Page 176
 *   **Figure Involved:** Circuit diagrams for (a) Field Control (rheostat on the field branch), (b) Armature Control (rheostat on the armature branch), and (c) Ward-Leonard system layout.
 
 ---
@@ -1362,6 +1448,8 @@ This constraint comes down to the physical and electrical limits of the motor's 
 
 * **Reference in Mam Slide:** 259, 264
 * **Reference in Firoz Note:** 111, 112
+* **Reference in Rosenblatt:** Sections 9-2, 9-3, Pages 105-106
+* **Reference in Theraja Vol II:** PDF Page 176
 
 
 Here are the detailed step-by-step solutions for the next 4 questions (Items 50, 51, 52, and 53) from your syllabus list.
@@ -1388,6 +1476,8 @@ Where:
 
 *   **Reference in Mam Slide:** 283, 284, 285 (Armature / Rheostatic Control Method)
 *   **Reference in Firoz Note:** 88, 89
+*   **Reference in Rosenblatt:** Section 9-3, Pages 105-106
+*   **Reference in Theraja Vol II:** PDF Page 176
 *   **Figure Involved:** Circuit diagram showing a variable resistor in series with the armature.
 
 ---
@@ -1420,6 +1510,8 @@ The Ward-Leonard system is an extremely precise **Voltage Control** method used 
 
 *   **Reference in Mam Slide:** 280 (Factors), 287 (Ward-Leonard System)
 *   **Reference in Firoz Note:** 88
+*   **Reference in Rosenblatt:** Sections 7-7, 9-4, Pages 81-83, 106
+*   **Reference in Theraja Vol II:** PDF Pages 176, 192-193
 *   **Figure Involved:** Block diagram of the Ward-Leonard system showing the AC Motor coupled to the DC Generator, which is electrically wired to the Main DC Motor.
 
 ---
@@ -1444,6 +1536,8 @@ Thyristor (Solid-State Electronic) speed control has largely replaced bulky mech
 
 *   **Reference in Mam Slide:** 300, 302, 303, 304 (Electronic Speed Control)
 *   **Reference in Firoz Note:** Not heavily detailed in handwritten notes, mostly in slides.
+*   **Reference in Rosenblatt:** N/A
+*   **Reference in Theraja Vol II:** PDF Page 175
 *   **Figure Involved:** Circuit diagram of a thyristor (SCR) bridge rectifier connected to a DC motor, and waveforms showing the "chopped" AC voltage output.
 
 ---
@@ -1467,6 +1561,8 @@ Braking is the process of bringing a running motor to a stop. This can be done p
 
 *   **Reference in Mam Slide:** 293 (Electric Braking introduction)
 *   **Reference in Firoz Note:** N/A
+*   **Reference in Rosenblatt:** Sections 9-5, 9-6, Pages 106-107
+*   **Reference in Theraja Vol II:** PDF Page 175
 *   **Figure Involved:** None required (Table format is best).
 
 Here are the detailed step-by-step solutions for the next 4 questions (Items 54, 55, 56, and 57) from your syllabus list.
@@ -1493,6 +1589,8 @@ If the field is weakened too much, the armature reaction becomes prominent, whic
 
 *   **Reference in Mam Slide:** 281, 282
 *   **Reference in Firoz Note:** 88, 89
+*   **Reference in Rosenblatt:** Section 9-2, Page 105
+*   **Reference in Theraja Vol II:** PDF Page 176
 *   **Figure Involved:** A circuit diagram of a DC shunt motor with a variable resistor ($R_{ext}$) placed in the field branch.
 
 ---
@@ -1515,6 +1613,8 @@ The speed of a DC shunt motor is primarily dictated by the formula $N \propto \f
 
 *   **Reference in Mam Slide:** 281, 282 (Flux Control), 283, 284 (Armature Control)
 *   **Reference in Firoz Note:** 88, 89
+*   **Reference in Rosenblatt:** Sections 9-2, 9-3, Pages 105-106
+*   **Reference in Theraja Vol II:** PDF Page 176
 *   **Figure Involved:** Two circuit diagrams: one showing a rheostat in the field branch, and another showing a rheostat in the armature branch.
 
 ---
@@ -1562,6 +1662,8 @@ $$N_2 = 829.48 \text{ rpm}$$
 
 *   **Reference in Mam Slide:** 282 (Flux control theory)
 *   **Reference in Firoz Note:** 86, 87 (Speed ratio mathematical relationship)
+*   **Reference in Rosenblatt:** Sections 7-7, 9-2, Pages 81-83, 105
+*   **Reference in Theraja Vol II:** PDF Pages 176-179
 *   **Figure Involved:** None
 
 ---
@@ -1583,6 +1685,8 @@ To achieve stable, smooth, and predictable speed control from zero to base speed
 
 *   **Reference in Mam Slide:** 287 (Ward-Leonard System Diagram clearly showing separate excitation)
 *   **Reference in Firoz Note:** N/A (Standard application theory)
+*   **Reference in Rosenblatt:** Section 9-4, Page 106
+*   **Reference in Theraja Vol II:** PDF Pages 192-193
 *   **Figure Involved:** None required (but a schematic of a separately excited motor could be helpful).
 
 Here are the detailed step-by-step solutions for the next 4 questions (Items 58, 59, 61, and 62) from your syllabus list.
@@ -1608,6 +1712,8 @@ The field control method (also known as flux control) adjusts the speed of a DC 
 
 *   **Reference in Mam Slide:** 292 (Advantages of Field Control Method)
 *   **Reference in Firoz Note:** 88, 89
+*   **Reference in Rosenblatt:** Section 9-2, Page 105
+*   **Reference in Theraja Vol II:** PDF Page 176
 *   **Figure Involved:** None
 
 ---
@@ -1647,6 +1753,8 @@ The plugging torque equation contains an additional constant term ($k_4 \Phi$) t
 
 *   **Reference in Mam Slide:** 294, 295, 296 (Plugging and Dynamic equations)
 *   **Reference in Firoz Note:** Not explicitly detailed
+*   **Reference in Rosenblatt:** Sections 9-5, 15-22, Pages 106, 263
+*   **Reference in Theraja Vol II:** PDF Page 175
 *   **Figure Involved:** None required (but writing out the equations clearly is mandatory).
 
 ---
@@ -1674,6 +1782,8 @@ To prevent this, a starter (a temporary high-power external resistance) must be 
 
 *   **Reference in Mam Slide:** 267 (Necessity of a Starter)
 *   **Reference in Firoz Note:** 103, 110, 114
+*   **Reference in Rosenblatt:** Section 8-1, Page 91
+*   **Reference in Theraja Vol II:** PDF Page 175
 *   **Figure Involved:** None
 
 ---
@@ -1709,6 +1819,8 @@ When a DC motor fails to start upon applying power, the issue usually falls into
     * Here are the detailed step-by-step solutions for the next 4 questions (Items 64, 65, 66, and 67) from your syllabus list. 
 
 *(Note: Item 63 is a section heading: "12. Three point and four point starter with its advantages and disadvantages", so I have skipped it to solve the actual questions).*
+* **Reference in Rosenblatt:** Sections 8-1, 8-2, 8-3, Pages 91-93
+* **Reference in Theraja Vol II:** PDF Page 175
 
 ### 64. Page 5, Q.72: What are the purposes of starter used in a dc motor? Describe the working of the three-point starter for DC shunt motor with neat diagram. [Figure Involved]
 
@@ -1743,6 +1855,8 @@ A 3-point starter connects to the motor circuit via three terminals: **L (Line)*
 
 *   **Reference in Mam Slide:** 268 (Purposes), 270 (3-point diagram)
 *   **Reference in Firoz Note:** 114, 115
+*   **Reference in Rosenblatt:** Sections 8-1, 8-2, Pages 91-92
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -1767,6 +1881,8 @@ The 4-point starter solves this problem by mechanically and electrically isolati
 
 *   **Reference in Mam Slide:** 271 (Why 3-point is unpopular), 272 (4-point diagram)
 *   **Reference in Firoz Note:** 115 (Drawbacks of 3-point), 116, 117 (Four-point starter)
+*   **Reference in Rosenblatt:** Sections 8-2, 8-3, Pages 91-93
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -1785,6 +1901,8 @@ Based on the construction, control mechanisms, and the specific types of DC moto
 
 *   **Reference in Mam Slide:** 270, 272, 273, 274, 275, 276
 *   **Reference in Firoz Note:** 114, 116, 120, 122, 123, 124
+*   **Reference in Rosenblatt:** Sections 8-2, 8-3, 8-5, 8-7, 8-8, 8-11, Pages 91-102
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -1820,6 +1938,8 @@ Therefore, the circuit architecture of the 3-point starter at the initial switch
 
 *   **Reference in Mam Slide:** General motor torque theory ($T \propto \Phi I_a$) and starter principles (Slides 267, 268)
 *   **Reference in Firoz Note:** General DC machine principles.
+*   **Reference in Rosenblatt:** Section 8-2, Pages 91-92
+*   **Reference in Theraja Vol II:** PDF Page 175
 *   **Figure Involved:** None
 Here are the detailed step-by-step solutions for the next 4 questions (Items 64, 65, 66, and 67) from your syllabus list. 
 
@@ -1858,6 +1978,8 @@ A 3-point starter connects to the motor circuit via three terminals: **L (Line)*
 
 *   **Reference in Mam Slide:** 268 (Purposes), 270 (3-point diagram)
 *   **Reference in Firoz Note:** 114, 115
+*   **Reference in Rosenblatt:** Sections 8-1, 8-2, Pages 91-92
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -1882,6 +2004,8 @@ The 4-point starter solves this problem by mechanically and electrically isolati
 
 *   **Reference in Mam Slide:** 271 (Why 3-point is unpopular), 272 (4-point diagram)
 *   **Reference in Firoz Note:** 115 (Drawbacks of 3-point), 116, 117 (Four-point starter)
+*   **Reference in Rosenblatt:** Sections 8-2, 8-3, Pages 91-93
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -1900,6 +2024,8 @@ Based on the construction, control mechanisms, and the specific types of DC moto
 
 *   **Reference in Mam Slide:** 270, 272, 273, 274, 275, 276
 *   **Reference in Firoz Note:** 114, 116, 120, 122, 123, 124
+*   **Reference in Rosenblatt:** Sections 8-2, 8-3, 8-5, 8-7, 8-8, 8-11, Pages 91-102
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -1930,6 +2056,8 @@ Therefore, the circuit architecture of the 3-point starter at the initial switch
 
 *   **Reference in Mam Slide:** 270 (3-point starter operation)
 *   **Reference in Firoz Note:** 114 (Operation analysis)
+*   **Reference in Rosenblatt:** Section 8-2, Pages 91-92
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 Here are the detailed solutions for the next 4 questions from your syllabus list (Items 68, 69, 70, and 71). These questions focus heavily on the necessity, operation, and comparison of DC motor starters.
 
@@ -1953,6 +2081,8 @@ Because the NVR coil is on a separate circuit, manipulating the field rheostat t
 
 *   **Reference in Mam Slide:** 267 (Necessity), 271 (3-point drawback), 272 (4-point diagram)
 *   **Reference in Firoz Note:** 114, 115, 116, 117
+*   **Reference in Rosenblatt:** Sections 8-1, 8-2, 8-3, Pages 91-93
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -1982,6 +2112,8 @@ When the operator pulls the handle to the very first position (**Stud 1**), two 
 
 *   **Reference in Mam Slide:** 270
 *   **Reference in Firoz Note:** 114
+*   **Reference in Rosenblatt:** Section 8-2, Pages 91-92
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -1998,6 +2130,8 @@ The four-point starter performs all the standard protective duties of a basic st
 
 *   **Reference in Mam Slide:** 272 (4-point diagram)
 *   **Reference in Firoz Note:** 116, 117
+*   **Reference in Rosenblatt:** Section 8-3, Pages 92-93
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -2025,6 +2159,8 @@ When a DC motor is off, speed $N = 0$, so back EMF $E_b = 0$. According to Ohm's
 
 *   **Reference in Mam Slide:** 267, 270, 271, 272
 *   **Reference in Firoz Note:** 114, 115, 116, 117
+*   **Reference in Rosenblatt:** Sections 8-1, 8-2, 8-3, Pages 91-93
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 Here are the detailed step-by-step solutions for the next 4 questions (Items 72, 74, 75, and 76) from your syllabus list. 
 
@@ -2049,6 +2185,8 @@ By adding a fourth terminal, the NVR coil is wired into its own independent, **p
 
 *   **Reference in Mam Slide:** 267, 271, 272
 *   **Reference in Firoz Note:** 114, 115, 116, 117
+*   **Reference in Rosenblatt:** Sections 8-1, 8-2, 8-3, Pages 91-93
+*   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
 
@@ -2080,6 +2218,8 @@ By adding a fourth terminal, the NVR coil is wired into its own independent, **p
 
 *   **Reference in Mam Slide:** 223, 224
 *   **Reference in Firoz Note:** 82, 83
+*   **Reference in Rosenblatt:** Section 7-6, Pages 79-81
+*   **Reference in Theraja Vol II:** PDF Pages 141-142
 
 ---
 
@@ -2111,6 +2251,8 @@ These are physical friction losses caused by the rotation of the machine. They a
 
 *   **Reference in Mam Slide:** 198, 199, 200, 201, 202, 203
 *   **Reference in Firoz Note:** 125 (Power flow), 128, 129, 130, 131
+*   **Reference in Rosenblatt:** Sections 10-1, 10-2, 10-4, 10-5, Pages 108-110
+*   **Reference in Theraja Vol II:** PDF Pages 67-69, 166
 
 ---
 
@@ -2154,6 +2296,8 @@ These are physical friction losses caused by the rotation of the machine. They a
 
 *   **Reference in Mam Slide:** 205 (Efficiency derivation)
 *   **Reference in Firoz Note:** 140, 141 (Condition for maximum efficiency)
+*   **Reference in Rosenblatt:** Section 10-9, Page 114
+*   **Reference in Theraja Vol II:** PDF Page 70
 
 Here are the detailed step-by-step solutions for the final 2 questions (Items 77 and 78) from your syllabus list.
 
@@ -2184,6 +2328,8 @@ These are physical friction losses caused by the mechanical rotation of the mach
 
 *   **Reference in Mam Slide:** 198, 199, 200, 201, 202, 203
 *   **Reference in Firoz Note:** 125, 128, 129, 130, 131
+*   **Reference in Rosenblatt:** Sections 10-1, 10-2, 10-4, 10-5, Pages 108-110
+*   **Reference in Theraja Vol II:** PDF Pages 67-69
 *   **Figure Involved:** None required (A tree-diagram showing Total Losses splitting into Copper, Iron, and Mechanical is often drawn for clarity).
 
 ---
@@ -2247,4 +2393,6 @@ $$\eta \approx 0.821617 \times 100\% = 82.16\%$$
 
 *   **Reference in Mam Slide:** 204 (Power stages), 205 (Efficiency formula), 224
 *   **Reference in Firoz Note:** 140 (Efficiency of DC machines)
+*   **Reference in Rosenblatt:** Section 10-8, Pages 113-114
+*   **Reference in Theraja Vol II:** PDF Pages 166-169
 *   **Figure Involved:** None required (but a power flow diagram is helpful conceptually).
