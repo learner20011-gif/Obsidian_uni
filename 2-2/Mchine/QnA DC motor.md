@@ -841,9 +841,9 @@ In "plugging" (reverse current braking), the armature terminals are reversed. Th
 **Solution:**
 
 In DC motor analysis, the "load" is generally represented by the Armature Current ($I_a$). Therefore, the "load versus induced torque" characteristic is mathematically the **Torque vs. Armature Current ($T_a$ vs. $I_a$)** curve. To provide a complete comparative answer, it is standard to plot the four main DC motors (Series, Shunt, Cumulative Compound, and Differential Compound) on the same graph.
-
+![[Pasted image 20260729014055.png]]  ![[Pasted image 20260729015156.png]]
 **Explanation of the Characteristics:**
-1.  **Shunt Motor:** Torque is strictly proportional to armature current ($T \propto \Phi I_a$). Because the flux $\Phi$ is essentially constant, the curve is a straight line passing through the origin.
+1.  **Shunt Motor:** Torque is strictly proportional to armature current ($T \propto \Phi I_a$). Because the flux $\Phi$ is essentially constant, the curve is a straight line passing through the origin. 
 2.  **Series Motor:** At light loads (before magnetic saturation), the flux $\Phi$ is directly proportional to $I_a$. Therefore, Torque $T \propto I_a^2$. The curve starts as a parabola. After saturation, $\Phi$ becomes constant, and the curve becomes a straight line.
 3.  **Cumulative Compound Motor:** The series field assists the shunt field. As load ($I_a$) increases, the total flux increases. Thus, its torque rises faster than a shunt motor but slower than a series motor. The curve lies between the shunt and series curves.
 4.  **Differential Compound Motor:** The series field opposes the shunt field. As load ($I_a$) increases, the net flux decreases. Therefore, the torque increases at a much slower rate than a shunt motor. 
@@ -857,7 +857,7 @@ In DC motor analysis, the "load" is generally represented by the Armature Curren
 *   Draw a curve that sits exactly between the Series parabola and the Shunt straight line; label this **"Cumulative Compound"**.
 *   Draw a line starting from the origin that droops below the Shunt straight line; label this **"Differential Compound"**.
 
-*(Note: Sometimes "Load vs Torque" is alternatively interpreted as "Speed vs Torque". If you have time in the exam, drawing the Speed vs Torque curve—where Series drops exponentially, Shunt is relatively flat, Cumulative drops steadily, and Differential rises dangerously—is highly recommended as a supplementary figure).*
+*(Note: Sometimes "Load vs Torque" is alternatively interpreted as "Speed vs Torque". If you have time in the exam, drawing the Speed vs Torque curve—where Series drops exponentially, Shunt is relatively flat, Cumulative drops steadily, and Differential rises dangerously—is highly recommended as a supplementary figure).*   ![[Pasted image 20260729013256.png]]
 
 *   **Reference in Mam Slide:** 242 (Definition), 259 (Figure 8.14)
 *   **Reference in Firoz Note:** 111 (Torque vs current graph), 112 (Combined graphs)
