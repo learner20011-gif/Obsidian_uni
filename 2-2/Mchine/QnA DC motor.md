@@ -1877,6 +1877,7 @@ The main drawback of the 3-point starter arises when it is used with motors that
 
 **Resolution Using a Four-Point Starter:**
 The 4-point starter solves this problem by mechanically and electrically isolating the NVR coil from the field circuit.
+![[Pasted image 20260729085814.jpg]]
 1.  **Structural Change:** A 4th terminal (usually labeled $N$ or $L_2$) is added. The NVR coil is removed from the field circuit series loop.
 2.  **Parallel Circuit:** Instead, the NVR coil is connected in parallel with the field and armature, directly across the main supply lines, usually in series with its own fixed current-limiting protective resistor.
 3.  **How it Resolves the Issue:** Because the NVR coil is now on an independent parallel branch, changing the field resistance to control the motor's speed no longer has any effect on the current flowing through the NVR coil. 
