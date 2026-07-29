@@ -1898,9 +1898,9 @@ Based on the construction, control mechanisms, and the specific types of DC moto
 
 1.  **Three-Point Starter:** Used manually for DC shunt and compound motors (best for constant-speed applications).
 2.  **Four-Point Starter:** Used manually for DC shunt and compound motors (specifically designed for variable-speed applications requiring field control).
-3.  **Series Motor Starter (Two-Point Starter):** Used specifically for DC series motors. They generally feature a No-Load release or No-Voltage release mechanism.
-4.  **Definite-Time Starter:** An automatic starter that cuts out starting resistance in fixed, pre-set time intervals using timers, regardless of the motor's actual speed.
-5.  **Counter-EMF Starter:** An automatic starter where magnetic contactors monitor the motor's rising Back EMF and automatically cut out steps of resistance as the $E_b$ reaches specific voltage thresholds.
+3.  **Series Motor Starter (Two-Point Starter):** Used specifically for DC series motors. They generally feature a No-Load release or No-Voltage release mechanism.  ![[Pasted image 20260729090917.png]]
+4.  **Definite-Time Starter:** An automatic starter that cuts out starting resistance in fixed, pre-set time intervals using timers, regardless of the motor's actual speed.  ![[Pasted image 20260729092319.png]]
+5.  **Counter-EMF Starter:** An automatic starter where magnetic contactors monitor the motor's rising Back EMF and automatically cut out steps of resistance as the $E_b$ reaches specific voltage thresholds.  ![[Pasted image 20260729092231.png]]
 6.  **Across-The-Line Starter:** A simple contactor system used to connect very small fractional-horsepower DC motors directly to the supply line without starting resistors, as their internal resistance is high enough, and inertia low enough, to prevent damage.
 
 *   **Reference in Mam Slide:** 270, 272, 273, 274, 275, 276
@@ -1945,125 +1945,8 @@ Therefore, the circuit architecture of the 3-point starter at the initial switch
 *   **Reference in Rosenblatt:** Section 8-2, Pages 91-92
 *   **Reference in Theraja Vol II:** PDF Page 175
 *   **Figure Involved:** None
-Here are the detailed step-by-step solutions for the next 4 questions (Items 64, 65, 66, and 67) from your syllabus list. 
 
-*(Note: Item 63 is a section heading: "12. Three point and four point starter with its advantages and disadvantages", so I have skipped it to solve the actual questions).*
 
-### 64. Page 5, Q.72: What are the purposes of starter used in a dc motor? Describe the working of the three-point starter for DC shunt motor with neat diagram. [Figure Involved]
-
-**Solution:**
-
-**Purposes of a Starter in a DC Motor:**
-1.  **To Limit Excessive Starting Current:** At the moment of starting ($N = 0$), the back EMF ($E_b$) is zero. The armature current is only limited by the very small armature resistance ($I_a = V/R_a$). This causes a massive, destructive inrush of current. The primary purpose of the starter is to insert a high external resistance in series with the armature to limit this current to a safe value.
-2.  **Overload Protection:** Starters contain an Overload Release (OLR) mechanism to protect the motor from drawing excessive current during continuous mechanical overloading.
-3.  **No-Voltage/Under-Voltage Protection:** Starters contain a No-Volt Release (NVR) mechanism that disconnects the motor if the power supply fails, preventing the motor from restarting unexpectedly when power returns.
-
-**Working of a Three-Point Starter:**
-A 3-point starter connects to the motor circuit via three terminals: **L (Line)**, **F (Field)**, and **A (Armature)**.
-*   **Construction:** It consists of a graded starting resistance divided into several studs. A spring-loaded metallic handle is used to sweep across these studs. The starter incorporates two electromagnets: the No-Volt Release (NVR) coil and the Overload Release (OLR) coil.
-*   **Starting Operation:** 
-    1. The operator turns on the main supply and pushes the handle against the spring tension to **Stud 1**.
-    2. At Stud 1, the *entire* starting resistance is connected in series with the armature, safely limiting the starting current. Simultaneously, the field winding is connected directly to the full supply voltage through the brass arc and NVR coil, providing maximum starting flux.
-    3. As the motor accelerates, it builds up back EMF ($E_b$). The operator manually sweeps the handle across the subsequent studs (2, 3, 4...), gradually cutting the resistance out of the armature circuit as the motor reaches full speed.
-*   **Holding Operation:** At the final "RUN" position, all starting resistance is removed from the armature. The handle is physically held in the "RUN" position by the magnetic pull of the **NVR coil**, which is wired in series with the shunt field.
-*   **Protective Operation:**
-    *   *No-Volt Protection:* If the power supply fails or the field circuit breaks, the NVR coil loses its magnetism. The spring instantly pulls the handle back to the "OFF" position, safely disconnecting the motor.
-    *   *Overload Protection:* If the motor draws too much current, the **OLR coil** (wired in series with the line) becomes highly magnetized. It pulls a small metal lever that short-circuits the NVR coil. This kills the NVR's magnetism, causing the spring to snap the handle back to "OFF".
-
-**[Figure Involved - Three-Point Starter Diagram]**
-*(Instruction for drawing):*
-*   Draw the DC supply connected to terminal **L**.
-*   Route **L** through the OLR coil to the pivot of the movable Handle.
-*   Draw a series of resistor coils connected between contact studs.
-*   The last stud connects to terminal **A** (which goes to the motor armature).
-*   The Handle has a soft iron piece. When at the "RUN" position, it touches an electromagnet (NVR coil).
-*   The NVR coil connects the first stud to terminal **F** (which goes to the motor shunt field).
-*   Show a small lever below the NVR coil that can short-circuit it, operated by the magnetic pull of the OLR coil.
-
-*   **Reference in Mam Slide:** 268 (Purposes), 270 (3-point diagram)
-*   **Reference in Firoz Note:** 114, 115
-*   **Reference in Rosenblatt:** Sections 8-1, 8-2, Pages 91-92
-*   **Reference in Theraja Vol II:** PDF Page 175
-
----
-
-### 65. Page 5, Q.73: Which characteristics of three-point starter make it unpopular? How those problems can be resolved using four-point starter?
-
-**Solution:**
-
-**Why the Three-Point Starter is Unpopular:**
-The main drawback of the 3-point starter arises when it is used with motors that require **speed control above base speed** using the field weakening method.
-1.  In a 3-point starter, the No-Volt Release (NVR) electromagnet coil is wired in **series** with the motor's shunt field circuit.
-2.  To increase the motor's speed, an external rheostat is used to add resistance to the field circuit, which decreases the field current ($I_f$).
-3.  Because the NVR coil is in the same series loop, the current flowing through the NVR coil also decreases drastically.
-4.  If the speed is increased too much, the magnetic pull of the NVR coil becomes weaker than the tension of the handle's return spring.
-5.  Consequently, the handle will unexpectedly snap back to the "OFF" position, shutting down the motor during normal operation. This "unwanted tripping" makes the 3-point starter unsuitable for variable-speed applications.
-
-**Resolution Using a Four-Point Starter:**
-The 4-point starter solves this problem by mechanically and electrically isolating the NVR coil from the field circuit.
-1.  **Structural Change:** A 4th terminal (usually labeled $N$ or $L_2$) is added. The NVR coil is removed from the field circuit series loop.
-2.  **Parallel Circuit:** Instead, the NVR coil is connected in parallel with the field and armature, directly across the main supply lines, usually in series with its own fixed current-limiting protective resistor.
-3.  **How it Resolves the Issue:** Because the NVR coil is now on an independent parallel branch, changing the field resistance to control the motor's speed no longer has any effect on the current flowing through the NVR coil. 
-4.  The NVR coil maintains a constant, strong magnetic pull regardless of how much the field is weakened, ensuring the handle stays securely in the "RUN" position at all operational speeds.
-
-*   **Reference in Mam Slide:** 271 (Why 3-point is unpopular), 272 (4-point diagram)
-*   **Reference in Firoz Note:** 115 (Drawbacks of 3-point), 116, 117 (Four-point starter)
-*   **Reference in Rosenblatt:** Sections 8-2, 8-3, Pages 91-93
-*   **Reference in Theraja Vol II:** PDF Page 175
-
----
-
-### 66. Page 5, Q.74: Name Different types of starters.
-
-**Solution:**
-
-Based on the construction, control mechanisms, and the specific types of DC motors they operate, the different types of starters are:
-
-1.  **Three-Point Starter:** Used manually for DC shunt and compound motors (best for constant-speed applications).
-2.  **Four-Point Starter:** Used manually for DC shunt and compound motors (specifically designed for variable-speed applications requiring field control).
-3.  **Series Motor Starter (Two-Point Starter):** Used specifically for DC series motors. They generally feature a No-Load release or No-Voltage release mechanism.
-4.  **Definite-Time Starter:** An automatic starter that cuts out starting resistance in fixed, pre-set time intervals using timers, regardless of the motor's actual speed.
-5.  **Counter-EMF Starter:** An automatic starter where magnetic contactors monitor the motor's rising Back EMF and automatically cut out steps of resistance as the $E_b$ reaches specific voltage thresholds.
-6.  **Across-The-Line Starter:** A simple contactor system used to connect very small fractional-horsepower DC motors directly to the supply line without starting resistors, as their internal resistance is high enough, and inertia low enough, to prevent damage.
-
-*   **Reference in Mam Slide:** 270, 272, 273, 274, 275, 276
-*   **Reference in Firoz Note:** 114, 116, 120, 122, 123, 124
-*   **Reference in Rosenblatt:** Sections 8-2, 8-3, 8-5, 8-7, 8-8, 8-11, Pages 91-102
-*   **Reference in Theraja Vol II:** PDF Page 175
-
----
-
-### 67. Page 8, Q.7(a): Explain how a 3-point starter can be used to start a DC motor with low speed but high starting torque
-
-**Solution:**
-
-To understand how a 3-point starter achieves this specific mechanical starting condition, we must look at the fundamental formulas for torque and speed:
-*   **Torque Equation:** $T \propto \Phi \cdot I_a$
-*   **Speed Equation:** $N \propto \frac{V_{terminal} - I_a R_{total}}{\Phi}$
-
-When the handle of a 3-point starter is moved to the very first "ON" position (Stud 1), the electrical circuitry forces the motor into a state that naturally yields high torque and low speed:
-
-1.  **High Starting Torque Generation:**
-    *   To get maximum torque, we need maximum magnetic flux ($\Phi$). 
-    *   In a 3-point starter, the moment the handle touches Stud 1, the shunt field winding is connected directly to the full supply voltage (via the brass arc and the NVR coil). This ensures the field current ($I_f$) is at its absolute maximum, generating **maximum magnetic flux ($\Phi$)**.
-    *   Simultaneously, the starting resistance is sized to allow a safely large armature current ($I_a$) to flow (typically 1.5 to 2 times the full-load rated current).
-    *   Because both $\Phi$ (maximum) and $I_a$ (high) are maximized, their product ($T \propto \Phi \cdot I_a$) generates an extraordinarily **high starting torque**, allowing the motor to easily overcome heavy mechanical inertia.
-
-2.  **Low Starting Speed Maintenance:**
-    *   While the motor generates heavy torque, it must not instantly accelerate to dangerous speeds.
-    *   At Stud 1, the *entire* series of heavy starting resistors ($R_{start}$) is placed in series with the armature.
-    *   The effective voltage actually reaching the armature is drastically reduced due to the massive voltage drop across these resistors: $V_{armature} = V_T - I_a R_{start}$.
-    *   Looking at the speed equation, the numerator ($V_{terminal} - I_a R_{total}$) is very small, while the denominator ($\Phi$) is at its maximum value. 
-    *   A small numerator divided by a large denominator results in a very **low speed ($N$)**.
-
-Therefore, the circuit architecture of the 3-point starter at the initial switch-on mathematically forces the machine to produce high starting torque while physically constraining the rotational speed to a slow, manageable crawl until the operator sweeps the handle further.
-
-*   **Reference in Mam Slide:** 270 (3-point starter operation)
-*   **Reference in Firoz Note:** 114 (Operation analysis)
-*   **Reference in Rosenblatt:** Section 8-2, Pages 91-92
-*   **Reference in Theraja Vol II:** PDF Page 175
-
-Here are the detailed solutions for the next 4 questions from your syllabus list (Items 68, 69, 70, and 71). These questions focus heavily on the necessity, operation, and comparison of DC motor starters.
 
 ### 68. Page 9, Q.6(b): Why starter is required for DC motor? What is the drawback of three point starter? Explain how this drawback can be overcome in four point starter.
 
