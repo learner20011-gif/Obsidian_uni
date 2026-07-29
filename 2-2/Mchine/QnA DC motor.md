@@ -1826,7 +1826,9 @@ When a DC motor fails to start upon applying power, the issue usually falls into
 ### 64. Page 5, Q.72: What are the purposes of starter used in a dc motor? Describe the working of the three-point starter for DC shunt motor with neat diagram. [Figure Involved]
 
 **Solution:**
+![[Pasted image 20260729083801.jpg]]
 
+![[Pasted image 20260729084236.png]]
 **Purposes of a Starter in a DC Motor:**
 1.  **To Limit Excessive Starting Current:** At the moment of starting ($N = 0$), the back EMF ($E_b$) is zero. The armature current is only limited by the very small armature resistance ($I_a = V/R_a$). This causes a massive, destructive inrush of current. The primary purpose of the starter is to insert a high external resistance in series with the armature to limit this current to a safe value.
 2.  **Overload Protection:** Starters contain an Overload Release (OLR) mechanism to protect the motor from drawing excessive current during continuous mechanical overloading.
