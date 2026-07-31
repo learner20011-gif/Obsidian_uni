@@ -2015,29 +2015,91 @@ Since the roots are complex conjugate pairs, the system is **underdamped**.
 
 **Solution:**
 
-**(i) & (ii) Analysis for $t < 0$**
-For $t < 0$, the switch is in position 'a'. The $1\ \mu\text{F}$ capacitor is connected to the left-hand $10\text{ V}$ source through a voltage divider made of two $2\text{ k}\Omega$ resistors. In DC steady state, the capacitor acts as an open circuit.
-The voltage across the capacitor is the voltage across the middle $2\text{ k}\Omega$ resistor:
-$$V_c(0^-) = 10\text{ V} \times \frac{2\text{ k}\Omega}{2\text{ k}\Omega + 2\text{ k}\Omega} = 10 \times 0.5 = 5\text{ V}$$
-Because the voltage across a capacitor cannot change instantaneously: 
-$$V_c(0) = 5\text{ V}$$
-To find the time constant for $t < 0$, we find the Thevenin resistance seen by the capacitor with the voltage source short-circuited:
-$$R_{th1} = 2\text{ k}\Omega \parallel 2\text{ k}\Omega = 1\text{ k}\Omega$$
-$$\tau_{t<0} = R_{th1} C = 1\text{ k}\Omega \times 1\ \mu\text{F} = 10^3 \times 10^{-6} = 1\text{ ms}$$
+Here are the step-by-step calculations for the given circuit:
 
-**(iii) & (iv) Analysis for $t > 0$**
-At $t = 0$, the switch moves to position 'b'. The capacitor is now connected to the right-hand $10\text{ V}$ source through a $1\text{ k}\Omega$ resistor.
-The final steady-state voltage the capacitor will reach is $V_c(\infty) = 10\text{ V}$.
-The new Thevenin resistance is $R_{th2} = 1\text{ k}\Omega$. The time constant for $t > 0$ is:
-$$\tau_{t>0} = R_{th2} C = 1\text{ k}\Omega \times 1\ \mu\text{F} = 1\text{ ms}$$
-Using the step-response equation $V_c(t) = V_c(\infty) + [V_c(0) - V_c(\infty)] e^{-t/\tau}$:
-$$V_c(t) = 10 + (5 - 10) e^{-t/1\text{ms}} = 10 - 5e^{-1000t}\text{ V}$$
-At $t = 2\text{ ms} = 0.002\text{ s}$:
-$$V_c(2\text{ ms}) = 10 - 5e^{-1000(0.002)} = 10 - 5e^{-2} \approx 10 - 5(0.1353) = 9.323\text{ V}$$
-The capacitor current $i(t)$ is given by $i(t) = C \frac{dV_c}{dt}$:
-$$i(t) = (10^{-6}) \frac{d}{dt}(10 - 5e^{-1000t}) = (10^{-6})(-5)(-1000)e^{-1000t} = 5 \times 10^{-3} e^{-1000t}\text{ A} = 5e^{-1000t}\text{ mA}$$
-At $t = 2\text{ ms}$:
-$$i(2\text{ ms}) = 5e^{-2} \approx 0.677\text{ mA}$$
+---
+
+#### **(i) Capacitor Voltage $v_c$ at $t = 0\text{ s}$**
+
+* For $t < 0$, the switch is connected to position **'a'**.
+* The left voltage source is given by $10 u(t)\text{ V}$.
+* For $t < 0$, the unit step function $u(t) = 0$, which means the voltage source is $0\text{ V}$ (a short circuit).
+* Since the circuit has been in this state for a long time, the capacitor acts as an open circuit and charges to the steady-state voltage across it:
+
+$$v_c(0^-) = 0\text{ V}$$
+
+
+* Because the voltage across a capacitor cannot change instantaneously:
+
+$$v_c(0) = v_c(0^-) = \mathbf{0\text{ V}}$$
+
+
+
+---
+
+#### **(ii) The Time Constant $\tau$ for $t < 0$**
+
+* For $t < 0$, the switch is at position **'a'**.
+* To find the equivalent resistance $R_{eq}$ seen by the capacitor, deactivate the independent voltage source (replace the $10 u(t)$ source with a short circuit):
+* Shorting the voltage source shorts out the first parallel $2\text{ k}\Omega$ resistor.
+* The remaining resistance between terminal **'a'** and ground is simply the series $2\text{ k}\Omega$ resistor.
+* Therefore, $R_{eq} = 2\text{ k}\Omega = 2000\ \Omega$.
+
+
+* Calculate the time constant $\tau$:
+
+$$\tau = R_{eq} \times C = 2000\ \Omega \times 1\ \mu\text{F} = 2000 \times 10^{-6}\text{ s} = \mathbf{2\text{ ms}}$$
+
+
+
+---
+
+#### **(iii) Capacitor Voltage $v_c$ at $t = 2\text{ ms}$**
+
+* At $t = 0$, the switch moves to position **'b'**.
+* For $t > 0$, the right sub-circuit is connected, where the voltage source is $10 u(-t)\text{ V}$.
+* For $t > 0$, $u(-t) = 0$, so the source voltage is $0\text{ V}$.
+* The final steady-state voltage as $t \to \infty$ is:
+
+$$v_c(\infty) = 0\text{ V}$$
+
+
+* The time constant for $t > 0$ is:
+
+$$\tau_{t>0} = R_{eq, t>0} \times C = 1\text{ k}\Omega \times 1\ \mu\text{F} = 1000\ \Omega \times 10^{-6}\text{ F} = 1\text{ ms}$$
+
+
+* The expression for capacitor voltage for $t \ge 0$ is:
+
+$$v_c(t) = v_c(\infty) + \left[v_c(0) - v_c(\infty)\right] e^{-t / \tau_{t>0}}$$
+
+
+$$v_c(t) = 0 + (0 - 0) e^{-t / 1\text{ ms}} = 0\text{ V}$$
+
+
+* Therefore, at $t = 2\text{ ms}$:
+
+$$v_c(2\text{ ms}) = \mathbf{0\text{ V}}$$
+
+
+
+---
+
+#### **(iv) Capacitor Current $i$ at $t = 2\text{ ms}$**
+
+* The capacitor current is given by:
+
+$$i(t) = C \frac{dv_c(t)}{dt}$$
+
+
+* Since $v_c(t) = 0\text{ V}$ for all $t \ge 0$:
+
+$$\frac{dv_c(t)}{dt} = 0$$
+
+
+* Therefore, at $t = 2\text{ ms}$:
+
+$$i(2\text{ ms}) = \mathbf{0\text{ A}}$$
 
 *Location in Sadiku Textbook: Chapter 7, Section 7.5 (Step Response of an RC Circuit), Page 273.*
 
