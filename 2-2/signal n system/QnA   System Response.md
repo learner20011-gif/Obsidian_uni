@@ -1250,37 +1250,181 @@ $$v(t) = -24 + 14.4 e^{-t}\text{ V} \quad \text{for } t > 0$$
 ### 27. Page 11, Q.1(c): The switch of the circuit in the figure below is controlled electronically so that it closes when $v_c$ rises to 9V and opens when $v_c$ falls to 5V. Find and plot $v_c(t)$ for several switchings. Also find the frequency of the generating triangular waveform.
 
 **Solution:**
-From the schematic, we have a $12\text{V}$ DC source, a series resistor $R_1 = 6\text{k}\Omega$, a capacitor $C = 0.5\text{mF}$ to ground, and a branch containing a switch and $R_2 = 3\text{k}\Omega$ connected in parallel with the capacitor.
+Here is the complete step-by-step mathematical analysis for the given electronically controlled switching circuit.
 
-**1. Charging Phase (Switch is OPEN):**
-The switch opens when the voltage falls to $5\text{V}$. During this phase, the capacitor charges from the $12\text{V}$ source through $R_1$.
-*   Initial voltage: $V_{initial} = 5\text{V}$
-*   Target steady-state voltage: $V_{\infty, charge} = 12\text{V}$
-*   Time constant: $\tau_c = R_1 C = 6\text{k}\Omega \times 0.5\text{mF} = 3\text{ s}$
-The equation for the charging voltage is:
-$$ v_{c,charge}(t) = V_{\infty} + (V_{initial} - V_{\infty}) e^{-t/\tau_c} = 12 + (5 - 12) e^{-t/3} = 12 - 7e^{-t/3} \text{ V} $$
-We find the time $t_c$ it takes to reach the trigger voltage of $9\text{V}$:
-$$ 9 = 12 - 7e^{-t_c/3} \implies 7e^{-t_c/3} = 3 \implies e^{-t_c/3} = \frac{3}{7} $$
-$$ t_c = -3 \ln(3/7) = 3 \ln(7/3) \approx \mathbf{2.542 \text{ s}} $$
+#### **1. Circuit Parameters and Operational Rules**
 
-**2. Discharging Phase (Switch is CLOSED):**
-The switch closes when the voltage hits $9\text{V}$. Now, $R_2$ ($3\text{k}\Omega$) is placed in parallel with the capacitor, creating a voltage divider with $R_1$.
-*   Initial voltage: $V_{initial} = 9\text{V}$
-*   Target steady-state voltage (Thevenin equivalent): $V_{\infty, discharge} = 12 \times \frac{3\text{k}}{6\text{k} + 3\text{k}} = 12 \times \frac{3}{9} = 4\text{V}$
-*   Equivalent resistance: $R_{eq} = 6\text{k} \parallel 3\text{k} = 2\text{k}\Omega$
-*   Time constant: $\tau_d = R_{eq} C = 2\text{k}\Omega \times 0.5\text{mF} = 1\text{ s}$
-The equation for the discharging voltage is:
-$$ v_{c,discharge}(t) = V_{\infty} + (V_{initial} - V_{\infty}) e^{-t/\tau_d} = 4 + (9 - 4) e^{-t/1} = 4 + 5e^{-t} \text{ V} $$
-We find the time $t_d$ it takes to fall back to the trigger voltage of $5\text{V}$:
-$$ 5 = 4 + 5e^{-t_d} \implies 1 = 5e^{-t_d} \implies e^{-t_d} = 0.2 $$
-$$ t_d = -\ln(0.2) = \ln(5) \approx \mathbf{1.609 \text{ s}} $$
+- **Voltage Source:** $V_s(t) = 12u(t)\text{ V}$ (For $t \ge 0$, $V_s = 12\text{ V}$)
+    
+- **Resistor 1:** $R_1 = 6\text{ k}\Omega = 6000\ \Omega$
+    
+- **Resistor 2:** $R_2 = 3\text{ k}\Omega = 3000\ \Omega$ (in series with the switch)
+    
+- **Capacitor:** $C = 0.5\text{ mF} = 0.5 \times 10^{-3}\text{ F} = 500\ \mu\text{F}$
+    
+- **Switch Behavior:**
+    
+    - **Closes** when $v_c(t)$ rises to **$9\text{ V}$**.
+        
+    - **Opens** when $v_c(t)$ falls to **$5\text{ V}$**.
+        
 
-**3. Frequency of the Waveform:**
-The total period $T$ of one complete charge/discharge cycle is:
-$$ T = t_c + t_d = 2.542 + 1.609 = 4.151 \text{ s} $$
-The frequency $f$ is:
-$$ f = \frac{1}{T} = \frac{1}{4.151} \approx \mathbf{0.241 \text{ Hz}} $$
-*(The plot of $v_c(t)$ is a continuous waveform oscillating between 5V and 9V, following exponential charge and discharge curves).*
+#### **2. Initial Phase: $t = 0$ to First Switching ($0 \le t \le t_1$)**
+
+- **Initial Condition:** At $t = 0^-$, the capacitor is uncharged, so $v_c(0) = 0\text{ V}$.
+    
+- **State of Switch:** Since $v_c(0) = 0\text{ V} < 9\text{ V}$, the switch is **OPEN**.
+    
+
+#### **A. Circuit Analysis (Switch Open)**
+
+- The $3\text{ k}\Omega$ resistor is disconnected.
+    
+- The source $V_s = 12\text{ V}$ charges the capacitor through $R_1 = 6\text{ k}\Omega$.
+    
+- **Final Voltage ($V_{\infty1}$):** $12\text{ V}$
+    
+- **Time Constant ($\tau_1$):**
+    
+    $$\tau_1 = R_1 \times C = (6000\ \Omega) \times (0.5 \times 10^{-3}\text{ F}) = 3\text{ s}$$
+    
+- **Voltage Equation $v_c(t)$:**
+    
+    $$v_c(t) = V_{\infty1} + [v_c(0) - V_{\infty1}]e^{-t/\tau_1} = 12 - (12 - 0)e^{-t/3} = 12(1 - e^{-t/3})\text{ V}$$
+    
+
+#### **B. Time to reach $9\text{ V}$ ($t_1$)**
+
+- The switch closes when $v_c(t_1) = 9\text{ V}$:
+    
+    $$9 = 12(1 - e^{-t_1/3}) \implies 1 - e^{-t_1/3} = \frac{9}{12} = 0.75$$
+    
+    $$e^{-t_1/3} = 0.25 \implies \frac{t_1}{3} = -\ln(0.25) = \ln(4) \approx 1.3863$$
+    
+    $$t_1 = 3 \times \ln(4) \approx 4.159\text{ s}$$
+    
+
+#### **3. Phase 1: Discharging Cycle ($t_1 \le t \le t_2$)**
+
+- **Initial Condition:** $v_c(t_1) = 9\text{ V}$
+    
+- **State of Switch:** **CLOSED** (since $v_c$ reached $9\text{ V}$).
+    
+
+#### **A. Circuit Analysis (Switch Closed)**
+
+- The capacitor is now connected to both $R_1 = 6\text{ k}\Omega$ and $R_2 = 3\text{ k}\Omega$.
+    
+- **Thévenin Equivalent Resistance ($R_{eq}$):**
+    
+    $$R_{eq} = R_1 \parallel R_2 = \frac{6\text{ k}\Omega \times 3\text{ k}\Omega}{6\text{ k}\Omega + 3\text{ k}\Omega} = 2\text{ k}\Omega = 2000\ \Omega$$
+    
+- **Thévenin Equivalent Voltage ($V_{\infty2}$):**
+    
+    $$V_{\infty2} = V_s \times \frac{R_2}{R_1 + R_2} = 12\text{ V} \times \frac{3\text{ k}\Omega}{6\text{ k}\Omega + 3\text{ k}\Omega} = 4\text{ V}$$
+    
+- **Time Constant ($\tau_2$):**
+    
+    $$\tau_2 = R_{eq} \times C = (2000\ \Omega) \times (0.5 \times 10^{-3}\text{ F}) = 1\text{ s}$$
+    
+- **Voltage Equation $v_c(t')$ (where $t' = t - t_1$):**
+    
+    $$v_c(t') = V_{\infty2} + [v_c(t_1) - V_{\infty2}]e^{-t'/\tau_2} = 4 + (9 - 4)e^{-t'/1} = 4 + 5e^{-(t - t_1)}\text{ V}$$
+    
+
+#### **B. Duration of Discharging Phase ($T_{off} = t_2 - t_1$)**
+
+- The switch opens when $v_c$ falls to $5\text{ V}$:
+    
+    $$5 = 4 + 5e^{-T_{off}/1} \implies 1 = 5e^{-T_{off}} \implies e^{-T_{off}} = 0.2$$
+    
+    $$T_{off} = -\ln(0.2) = \ln(5) \approx 1.6094\text{ s}$$
+    
+
+#### **4. Phase 2: Steady Charging Cycle ($t_2 \le t \le t_3$)**
+
+- **Initial Condition:** $v_c(t_2) = 5\text{ V}$
+    
+- **State of Switch:** **OPEN** (since $v_c$ fell to $5\text{ V}$).
+    
+
+#### **A. Circuit Analysis (Switch Open Again)**
+
+- The circuit reverts to the charging configuration ($V_{\infty1} = 12\text{ V}$, $\tau_1 = 3\text{ s}$).
+    
+- **Voltage Equation $v_c(t'')$ (where $t'' = t - t_2$):**
+    
+    $$v_c(t'') = V_{\infty1} + [5 - V_{\infty1}]e^{-t''/\tau_1} = 12 + (5 - 12)e^{-t''/3} = 12 - 7e^{-(t - t_2)/3}\text{ V}$$
+    
+
+#### **B. Duration of Charging Phase ($T_{on} = t_3 - t_2$)**
+
+- The switch closes again when $v_c$ reaches $9\text{ V}$:
+    
+    $$9 = 12 - 7e^{-T_{on}/3} \implies 7e^{-T_{on}/3} = 3 \implies e^{-T_{on}/3} = \frac{3}{7}$$
+    
+    $$\frac{T_{on}}{3} = -\ln\left(\frac{3}{7}\right) = \ln\left(\frac{7}{3}\right) \approx 0.8473$$
+    
+    $$T_{on} = 3 \times \ln\left(\frac{7}{3}\right) \approx 2.5419\text{ s}$$
+    
+
+#### **5. Period and Frequency of the Triangular Waveform**
+
+Once the initial startup phase ($0 \le t \le t_1$) completes, the circuit enters a stable periodic oscillation between $5\text{ V}$ and $9\text{ V}$.
+
+- **Total Period ($T$):**
+    
+    $$T = T_{on} + T_{off} = 3\ln\left(\frac{7}{3}\right) + \ln(5)$$
+    
+    $$T \approx 2.5419\text{ s} + 1.6094\text{ s} = 4.1513\text{ s}$$
+    
+- **Frequency ($f$):**
+    
+    $$f = \frac{1}{T} = \frac{1}{4.1513\text{ s}} \approx 0.2409\text{ Hz} \quad (\text{or } 240.9\text{ mHz})$$
+    
+
+#### **6. Mathematical Summary for $v_c(t)$ Across Cycles**
+
+1. **Initial Startup ($0 \le t \le 4.159\text{ s}$):**
+    
+    $$v_c(t) = 12(1 - e^{-t/3})\text{ V}$$
+    
+2. **First Discharge ($4.159\text{ s} \le t \le 5.768\text{ s}$):**
+    
+    $$v_c(t) = 4 + 5e^{-(t - 4.159)}\text{ V}$$
+    
+3. **Subsequent Periodic Cycles ($n \ge 1$):**
+    
+    - **Charging Phase ($5\text{ V} \to 9\text{ V}$):**
+        
+        $$v_c(t') = 12 - 7e^{-t'/3}\text{ V} \quad \text{for } 0 \le t' \le 2.542\text{ s}$$
+        
+    - **Discharging Phase ($9\text{ V} \to 5\text{ V}$):**
+        
+        $$v_c(t'') = 4 + 5e^{-t''/1}\text{ V} \quad \text{for } 0 \le t'' \le 1.609\text{ s}$$
+        
+
+#### **7. Waveform Plot Description**
+
+To sketch/plot $v_c(t)$:
+
+- **Vertical Axis:** $v_c(t)$ in Volts ($\text{V}$)
+    
+- **Horizontal Axis:** Time $t$ in seconds ($\text{s}$)
+    
+- **Key Landmarks:**
+    
+    - **$t = 0\text{ s}$:** $v_c = 0\text{ V}$
+        
+    - **$t = 4.16\text{ s}$:** $v_c$ exponentially rises to **$9\text{ V}$** (First peak).
+        
+    - **$t = 5.77\text{ s}$:** $v_c$ exponentially drops to **$5\text{ V}$** (First trough).
+        
+    - **$t = 8.31\text{ s}$:** $v_c$ rises back to **$9\text{ V}$** (Second peak).
+        
+    - **$t = 9.92\text{ s}$:** $v_c$ drops back to **$5\text{ V}$** (Second trough).
+        
+    - The waveform continuously oscillates between **$5\text{ V}$** and **$9\text{ V}$** with a period of **$4.15\text{ s}$**.
 
 ***
 
@@ -1337,7 +1481,7 @@ $$ \mathbf{i_L(t) = -2.066 e^{-0.5t} \sin(1.936t) \text{ A}} $$
 Based on the provided document, here are the full texts and detailed step-by-step solutions for the next 4 questions (Questions 29 to 32).
 
 ### 29. Page 14, Q.1(c): A relay has a resistance of $200 \Omega$ and an inductance of $500\text{ mH}$. The relay contacts close when the current through the coil reaches $350\text{ mA}$. What time elapses between the application of $110\text{ V}$ to the coil and contact closure.
-
+![[Pasted image 20260731212230.png]]
 **Solution:**
 When a DC voltage is suddenly applied to an RL circuit (like a relay coil), it acts as a step response. The circuit consists of a voltage source $V_s = 110\text{ V}$, a resistor $R = 200 \Omega$, and an inductor $L = 500\text{ mH} = 0.5\text{ H}$ in series.
 
