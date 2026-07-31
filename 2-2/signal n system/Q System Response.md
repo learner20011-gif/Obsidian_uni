@@ -1,29 +1,40 @@
-Based on the provided PDF, here are the full texts of the questions related to the topics under **System Response**, organized accordingly. Exact word-for-word duplicates have been filtered to keep only one instance. 
-- 13
-    
-- 15
-    
-- 19
-    
-- 22
-    
-- 26
-    
-- 27
-    
-- 29
-    
-- 32
-    
-- 33
-    
-- 34
-    
-- 36
-    
-- 37
-    
-- 38
+* 2
+* 5
+* 7
+* 12
+* 13
+* 15
+* 19
+* 21
+* 22
+* 26
+* 27
+* 29
+* 32
+* 33
+* 34
+* 36
+* 37
+* 38
+* 40
+* 42
+* 44
+* 46
+* 47
+* 50
+* 52
+* 53
+* 54
+* 56
+* 57
+* 59
+* 61
+* 62
+* 64
+* 65
+* 68
+* 69
+* 72
 ### **Time domain and frequency domain analysis of LTI systems**
 
 1. **Page 14, Q.3(b):** Determine $i_o(t)$ for the following network using Fourier transform method. ![[Pasted image 20260727113934.png]][Figure Involved]
