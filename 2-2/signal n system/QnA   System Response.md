@@ -847,38 +847,110 @@ $$ v_0(t) = \left( 10e^{-t} + 5e^{-2t} \right) u(t) \text{ V} $$
 ### 22. Page 5, Q.2(b): The switch of the following circuit was opened for a long period of time and is closed at t=0 s. Fill the table for the following circuit parameters. (Figure Involved)
 
 **Solution:**
-We are given $R_1=1\Omega$, $L=2\text{ H}$, $R_2=1\Omega$, and $V_s=10 u(-t)\text{ V}$. We need to evaluate the inductor current $i_L$ and voltage $v_L$ at $t=0^+$ and $t=10\text{s}$.
+#### **Given Circuit Parameters**
 
-**1. Analysis for $t < 0$ (Steady State):**
-For $t < 0$, the function $u(-t) = 1$, so the voltage source is a constant $10\text{ V}$. The switch is open, meaning the circuit consists of the $10\text{ V}$ source in series with $R_1$, $L$, and $R_2$. 
-In DC steady state, the inductor acts as a short circuit ($0\Omega$).
-*   The initial inductor current $i_L(0^-)$ is simply the source voltage divided by the total series resistance:
-$$ i_L(0^-) = \frac{V_s}{R_1 + R_2} = \frac{10}{1 + 1} = 5 \text{ A} $$
-*   Because current through an inductor cannot change instantaneously, $i_L(0^+) = i_L(0^-) = 5 \text{ A}$.
+- **Resistors:** $R_1 = 1\ \Omega$, $R_2 = 1\ \Omega$
+    
+- **Inductor:** $L = 2\text{ H}$
+    
+- **Voltage Source:** $V_s(t) = 10u(-t)\text{ V}$
+    
+    - For $t < 0$, $u(-t) = 1$, so $V_s(t) = 10\text{ V}$.
+        
+    - For $t > 0$, $u(-t) = 0$, so $V_s(t) = 0\text{ V}$.
+        
+- **Switch:** Open for $t < 0$, closed at $t = 0\text{ s}$.
+    
 
-**2. Analysis for $t = 0^+$:**
-At $t=0$, the switch closes, creating a short circuit from the node between $R_1$ and $L$ directly to ground. Simultaneously, for $t > 0$, $u(-t) = 0$, so the voltage source becomes $0\text{ V}$.
-*   The closing of the switch isolates the right side of the circuit from the left. The inductor $L$ and resistor $R_2$ now form a closed, source-free series loop on their own.
-*   By KVL around this isolated loop at $t=0^+$, $v_L(0^+) + i_L(0^+)R_2 = 0$. 
-$$ v_L(0^+) = - i_L(0^+) \times R_2 = -5 \times 1 = -5 \text{ V} $$
+#### **Step-by-Step Solution**
 
-**3. Analysis for $t > 0$:**
-The right side of the circuit is a source-free RL circuit.
-*   The time constant is $\tau = \frac{L}{R_2} = \frac{2\text{ H}}{1\Omega} = 2 \text{ s}$.
-*   The equation for the decaying inductor current is:
-$$ i_L(t) = i_L(0^+) e^{-t/\tau} = 5 e^{-0.5t} \text{ A} $$
-*   The equation for the inductor voltage is:
-$$ v_L(t) = L \frac{di_L}{dt} = 2 \left( 5 \times -0.5 e^{-0.5t} \right) = -5 e^{-0.5t} \text{ V} $$
+#### **1. Analysis for $t < 0$ (DC Steady State prior to $t = 0$)**
 
-**4. Evaluation at $t = 10 \text{ s}$:**
-*   $i_L(10) = 5 e^{-0.5 \times 10} = 5 e^{-5} \approx 5 \times 0.006738 = 0.0337 \text{ A}$
-*   $v_L(10) = -5 e^{-0.5 \times 10} = -5 e^{-5} \approx -5 \times 0.006738 = -0.0337 \text{ V}$
+- The switch is open, isolating $R_2$ from the circuit.
+    
+- The voltage source is $V_s = 10\text{ V}$ (since $t < 0$).
+    
+- Because the switch was open for a long period of time, the circuit reached a DC steady state.
+    
+- Under DC steady state, an ideal inductor acts as a **short circuit** ($v_L(0^-) = 0\text{ V}$).
+    
+- The current flowing through the inductor is:
+    
 
-**Filled Table Values:**
-*   (i) $i_L, t=0\text{ s}$ $\rightarrow$ **$5 \text{ A}$** (This represents $t=0^+$)
-*   (ii) $v_L, t=0\text{ s}$ $\rightarrow$ **$-5 \text{ V}$** (This represents $t=0^+$)
-*   (iii) $i_L, t=10\text{ s}$ $\rightarrow$ **$0.0337 \text{ A}$**
-*   (iv) $v_L, t=10\text{ s}$ $\rightarrow$ **$-0.0337 \text{ V}$**
+$$i_L(0^-) = \frac{V_s}{R_1} = \frac{10\text{ V}}{1\ \Omega} = 10\text{ A}$$
+
+#### **2. Analysis at $t = 0\text{ s}$ ($t = 0^+$)**
+
+- **Inductor Current $i_L(0)$:**
+    
+    - Since the current through an inductor cannot change instantaneously:
+        
+    
+    $$i_L(0^+) = i_L(0^-) = 10\text{ A}$$
+    
+- **Inductor Voltage $v_L(0)$:**
+    
+    - At $t = 0^+$, the voltage source becomes $V_s(0^+) = 0\text{ V}$ (shorted to ground).
+        
+    - The switch closes, placing $R_2$ in parallel with the inductor $L$.
+        
+    - The total effective resistance seen by the inductor $L$ is $R_{eq} = R_1 \parallel R_2$:
+        
+    
+    $$R_{eq} = \frac{R_1 \cdot R_2}{R_1 + R_2} = \frac{1 \cdot 1}{1 + 1} = 0.5\ \Omega$$
+    
+    - Using Kirchhoff's Current Law (KCL) or equivalent node analysis at $t = 0^+$:
+        
+        - Current through $R_1$: $i_{R1} = \frac{v_L(0^+)}{R_1}$
+            
+        - Current through $R_2$: $i_{R2} = \frac{v_L(0^+)}{R_2}$
+            
+        - $i_{R1} + i_{R2} + i_L(0^+) = 0$
+            
+        - $\frac{v_L(0^+)}{1} + \frac{v_L(0^+)}{1} + 10 = 0$
+            
+        - $2 v_L(0^+) = -10 \implies v_L(0^+) = -5\text{ V}$
+            
+
+#### **3. Transient Response Analysis for $t > 0$**
+
+- For $t > 0$, the voltage source is $0\text{ V}$, making this a source-free $RL$ circuit with equivalent resistance $R_{eq} = 0.5\ \Omega$.
+    
+- The time constant $\tau$ of the circuit is:
+    
+
+$$\tau = \frac{L}{R_{eq}} = \frac{2\text{ H}}{0.5\ \Omega} = 4\text{ s}$$
+
+- The general expression for the inductor current $i_L(t)$ for $t \ge 0$ is:
+    
+
+$$i_L(t) = i_L(0^+) e^{-t/\tau} = 10 e^{-t/4}\text{ A}$$
+
+- The general expression for the inductor voltage $v_L(t)$ for $t > 0$ is:
+    
+
+$$v_L(t) = L \frac{di_L(t)}{dt} = 2 \cdot \left(- \frac{10}{4} e^{-t/4}\right) = -5 e^{-t/4}\text{ V}$$
+
+#### **4. Analysis at $t = 10\text{ s}$**
+
+- **Inductor Current $i_L(10\text{ s})$:**
+    
+
+$$i_L(10) = 10 e^{-10/4} = 10 e^{-2.5} \approx 10 \cdot 0.082085 = 0.821\text{ A}$$
+
+- **Inductor Voltage $v_L(10\text{ s})$:**
+    
+
+$$v_L(10) = -5 e^{-10/4} = -5 e^{-2.5} \approx -5 \cdot 0.082085 = -0.410\text{ V}$$
+
+#### **Completed Table**
+
+| **Parameter**                    | **Notation / Formula** | **Exact Value**        | **Numerical Value (approx.)** |
+| -------------------------------- | ---------------------- | ---------------------- | ----------------------------- |
+| **(i) $i_L, t = 0\text{ s}$**    | $i_L(0^+)$             | $10\text{ A}$          | **$10\text{ A}$**             |
+| **(ii) $v_L, t = 0\text{ s}$**   | $v_L(0^+)$             | $-5\text{ V}$          | **$-5\text{ V}$**             |
+| **(iii) $i_L, t = 10\text{ s}$** | $10 e^{-2.5}\text{ A}$ | $10 e^{-2.5}\text{ A}$ | **$0.821\text{ A}$**          |
+| **(iv) $v_L, t = 10\text{ s}$**  | $-5 e^{-2.5}\text{ V}$ | $-5 e^{-2.5}\text{ V}$ | **$-0.410\text{ V}$**         |
 
 *Reference: Fundamentals of Electric Circuits by Sadiku, Chapter 7 (First-Order Circuits), Section 7.3 Source-Free RL Circuit (Page 259).*
 
