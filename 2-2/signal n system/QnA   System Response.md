@@ -554,7 +554,7 @@ $$v_a = V_c - V_1$$
 Apply Kirchhoff's Current Law (KCL) at node $V_1$:
 $$\frac{V_1}{2} - \beta v_a + \frac{V_1 - V_c}{1} = 0$$
 
-here +beta not neg. dependnt crnt src pointing downward not upward.
+here +beta positive , not neg.   dependnt crnt src pointing downward not upward.
 Substitute $v_a = V_c - V_1$:
 $$\frac{V_1}{2} - \beta(V_c - V_1) + V_1 - V_c = 0$$
 $$0.5 V_1 - \beta V_c + \beta V_1 + V_1 - V_c = 0$$
@@ -1105,38 +1105,146 @@ $$ \mathbf{i(t) = -6.4 t e^{-20t} u(t) \text{ A}} $$
 ***
 
 ### 26. Page 11, Q.1(b): The switch in the following figure opens at t = 0. Determine v(t) for t > 0.
-*(Image shows a 5A source, 4 $\Omega$ resistor, switch, 6 $\Omega$ resistor, 100mF capacitor, 5 $\Omega$ resistor, 20 $\Omega$ resistor, 30V source).*
+*(Image shows a 6A source, 4 $\Omega$ resistor, switch, 6 $\Omega$ resistor, 100mF capacitor, 5 $\Omega$ resistor, 20 $\Omega$ resistor, 30V source).*
 
 **Solution:**
-Based on the schematic, we interpret the topology as follows: A $5\text{A}$ current source in parallel with a $4\Omega$ resistor is connected via a switch to Node C. At Node C, a $6\Omega$ resistor and a $100\text{mF}$ capacitor connect to ground. Also from Node C, a $5\Omega$ resistor connects to Node D. At Node D, a $20\Omega$ resistor connects to ground, and a $30\text{V}$ voltage source connects to ground.
+Here is the step-by-step solution to find the voltage $v(t)$ across the capacitor for $t > 0$.
 
-**1. Analysis for $t < 0$ (Steady State):**
-The switch is closed. The capacitor is fully charged and acts as an open circuit. 
-We can convert the 5A source and parallel $4\Omega$ resistor into a Thevenin equivalent: a $20\text{V}$ source in series with a $4\Omega$ resistor.
-Now we apply Nodal Analysis at Node C to find the initial capacitor voltage $v(0^-)$:
-$$ \frac{V_c - 20}{4} + \frac{V_c}{6} + \frac{V_c - 30}{5 + 20} = 0 $$
-$$ \frac{V_c}{4} - 5 + \frac{V_c}{6} + \frac{V_c}{25} - \frac{30}{25} = 0 $$
-$$ V_c \left( \frac{1}{4} + \frac{1}{6} + \frac{1}{25} \right) = 5 + 1.2 $$
-To find a common denominator (300):
-$$ V_c \left( \frac{75 + 50 + 12}{300} \right) = 6.2 \implies V_c \left( \frac{137}{300} \right) = 6.2 $$
-$$ V_c(0^-) = \frac{6.2 \times 300}{137} = \frac{1860}{137} \approx 13.577 \text{ V} $$
-Because capacitor voltage cannot change instantaneously, **$v(0^+) = 13.577 \text{ V}$**.
+#### **1. Circuit Parameters and Identification**
 
-**2. Analysis for $t > 0$:**
-The switch opens, disconnecting the left portion of the circuit. The capacitor now interacts with the rest of the circuit to its right. We find the Thevenin equivalent of the circuit connected to the capacitor.
-*   **Thevenin Resistance ($R_{th}$):** Looking from the capacitor's terminals with the 30V source turned off (shorted to ground):
-$$ R_{th} = 6\Omega \parallel (5\Omega + 20\Omega) = 6 \parallel 25 = \frac{6 \times 25}{6 + 25} = \frac{150}{31} \approx 4.839 \Omega $$
-*   **Thevenin Voltage ($V_{th}$):** The open-circuit steady-state voltage across the capacitor branch. Using a voltage divider from the 30V source:
-$$ v(\infty) = V_{th} = 30 \times \frac{6}{6 + 25} = \frac{180}{31} \approx 5.806 \text{ V} $$
-*   **Time Constant ($\tau$):** 
-$$ \tau = R_{th} C = \left(\frac{150}{31} \Omega \right) \times 0.1 \text{ F} = \frac{15}{31} \text{ s} \approx 0.484 \text{ s} $$
+- **Sources:**
+    
+    - Independent current source: $I_s = 6\text{ A}$ (on the far left)
+        
+    - Independent voltage source: $V_s = 30\text{ V}$ (on the far right)
+        
+- **Resistors:**
+    
+    - $R_a = 4\ \Omega$ (in parallel with the current source)
+        
+    - $R_b = 6\ \Omega$ (connected to the left terminal of the capacitor)
+        
+    - $R_c = 20\ \Omega$ (connected in parallel after the capacitor)
+        
+    - $R_d = 5\ \Omega$ (connected in series with the $30\text{ V}$ source)
+        
+- **Capacitor:**
+    
+    - $C = 100\text{ mF} = 0.1\text{ F}$
+        
+    - Voltage reference $v(t)$ across the capacitor (positive polarity on the left terminal, negative polarity on the right terminal).
+        
+- **Switch:** Opens at $t = 0$.
+    
 
-**3. Final Equation:**
-Using the general step response formula for a first-order RC circuit:
-$$ v(t) = v(\infty) + [v(0^+) - v(\infty)] e^{-t/\tau} $$
-$$ v(t) = \frac{180}{31} + \left( \frac{1860}{137} - \frac{180}{31} \right) e^{-\frac{31}{15}t} $$
-$$ \mathbf{v(t) \approx 5.806 + 7.77 e^{-2.067 t} \text{ V}} \quad \text{for } t > 0 $$
+#### **2. Analysis for $t < 0$ (DC Steady State)**
 
+- Before $t = 0$, the switch is **closed** and has been closed for a long time.
+    
+- In DC steady state, the capacitor acts as an **open circuit**.
+    
+
+#### **Finding $v(0^-)$:**
+
+- Let $v_{node1}$ be the voltage at the node to the left of the capacitor.
+    
+- Let $v_{node2}$ be the voltage at the node to the right of the capacitor.
+    
+
+1. **Left side of the circuit (to the left of the closed switch):**
+    
+    - $6\text{ A}$ current source is in parallel with $4\ \Omega$ and $6\ \Omega$ resistors.
+        
+    - Equivalent resistance on the left:
+        
+        $$R_{left} = 4\ \Omega \parallel 6\ \Omega = \frac{4 \times 6}{4 + 6} = \frac{24}{10} = 2.4\ \Omega$$
+        
+    - Therefore, the node voltage on the left terminal of the capacitor is:
+        
+        $$v_{node1} = I_s \times R_{left} = 6\text{ A} \times 2.4\ \Omega = 14.4\text{ V}$$
+        
+2. **Right side of the circuit (to the right of the open capacitor):**
+    
+    - Voltage source is $30\text{ V}$ in series with $5\ \Omega$, connected across $20\ \Omega$.
+        
+    - By voltage divider rule:
+        
+        $$v_{node2} = 30\text{ V} \times \frac{20\ \Omega}{20\ \Omega + 5\ \Omega} = 30 \times \frac{20}{25} = 24\text{ V}$$
+        
+3. **Capacitor Initial Voltage $v(0^-)$:**
+    
+    - $v(0^-) = v_{node1} - v_{node2} = 14.4\text{ V} - 24\text{ V} = -9.6\text{ V}$
+        
+
+#### **3. Analysis for $t > 0$ (Transient State)**
+
+When the switch **opens** at $t = 0$:
+
+- The left branch ($6\text{ A}$ source and $4\ \Omega$ resistor) is completely disconnected.
+    
+- The capacitor voltage cannot change instantaneously, so:
+    
+    $$v(0^+) = v(0^-) = -9.6\text{ V}$$
+    
+
+#### **A. Final Steady State Voltage $v(\infty)$ as $t \to \infty$:**
+
+- As $t \to \infty$, the capacitor again acts as an **open circuit**.
+    
+- Since the left side is isolated through the open switch, no current flows through the $6\ \Omega$ resistor:
+    
+    $$v_{node1}(\infty) = 0\text{ V}$$
+    
+- On the right side, the voltage remains determined by the $30\text{ V}$ source and voltage divider:
+    
+    $$v_{node2}(\infty) = 30 \times \frac{20}{20 + 5} = 24\text{ V}$$
+    
+- Thus, the final capacitor voltage is:
+    
+    $$v(\infty) = v_{node1}(\infty) - v_{node2}(\infty) = 0\text{ V} - 24\text{ V} = -24\text{ V}$$
+    
+
+#### **B. Equivalent Resistance ($R_{eq}$) and Time Constant ($\tau$):**
+
+To find the equivalent resistance $R_{eq}$ seen by the capacitor for $t > 0$:
+
+- Deactivate the independent voltage source (replace $30\text{ V}$ with a short circuit).
+    
+- Looking into the capacitor terminals:
+    
+    - Left terminal connects to ground through $R_b = 6\ \Omega$.
+        
+    - Right terminal sees $R_c = 20\ \Omega$ in parallel with $R_d = 5\ \Omega$:
+        
+        $$R_{right} = 20\ \Omega \parallel 5\ \Omega = \frac{20 \times 5}{20 + 5} = 4\ \Omega$$
+        
+- $R_{eq}$ is the series combination of the resistance on the left and the resistance on the right:
+    
+    $$R_{eq} = R_b + R_{right} = 6\ \Omega + 4\ \Omega = 10\ \Omega$$
+    
+- The time constant $\tau$ is:
+    
+    $$\tau = R_{eq} \times C = 10\ \Omega \times 0.1\text{ F} = 1\text{ s}$$
+    
+
+#### **4. Final Solution for $v(t)$**
+
+The standard response formula for a first-order circuit is:
+
+$$v(t) = v(\infty) + [v(0^+) - v(\infty)] e^{-t/\tau}$$
+
+Substitute the values:
+
+- $v(\infty) = -24\text{ V}$
+    
+- $v(0^+) = -9.6\text{ V}$
+    
+- $\tau = 1\text{ s}$
+    
+
+$$v(t) = -24 + [-9.6 - (-24)] e^{-t/1}$$
+
+$$v(t) = -24 + 14.4 e^{-t}\text{ V} \quad \text{for } t > 0$$
 ***
 
 ### 27. Page 11, Q.1(c): The switch of the circuit in the figure below is controlled electronically so that it closes when $v_c$ rises to 9V and opens when $v_c$ falls to 5V. Find and plot $v_c(t)$ for several switchings. Also find the frequency of the generating triangular waveform.
