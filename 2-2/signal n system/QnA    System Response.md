@@ -2365,49 +2365,165 @@ Based on the provided PDF, here are the detailed solutions for the 4 questions s
 
 **Solution:**
 
-**Step 1: Understand the Circuit and Parameters**
-From the given schematic, the circuit consists of a voltage source $v_s(t)$ in series with a $1\ \Omega$ resistor (fuse resistance), and a load consisting of a $2\ \Omega$ resistor and a $0.2\text{ H}$ inductor. 
-*   Total series resistance $R_{eq} = 1\ \Omega + 2\ \Omega = 3\ \Omega$.
-*   Inductance $L = 0.2\text{ H}$.
-*   Time constant $\tau = \frac{L}{R_{eq}} = \frac{0.2}{3} = \frac{1}{15}\text{ s}$.
+#### **1. Understanding the Circuit Parameters and Goal**
 
-**Step 2: Determine the Threshold Current**
-The fuse opens if the power absorbed by the load resistor $R$ ($2\ \Omega$) exceeds $10\text{ W}$ for $0.5\text{ s}$. 
-The threshold current $I_{th}$ that corresponds to $10\text{ W}$ is:
-$$P = I_{th}^2 R \implies 10 = I_{th}^2 (2) \implies I_{th}^2 = 5 \implies I_{th} = \sqrt{5} \approx 2.236\text{ A}$$
+The circuit is a series RL (Resistor-Inductor) circuit powered by a pulsed voltage source.
 
-**Step 3: Expressions for the Current $i(t)$**
-The voltage source is a pulse of amplitude $A$ and duration $0.75\text{ s}$.
-*   **During the pulse ($0 \le t \le 0.75\text{ s}$):**
-    $$i(t) = \frac{A}{R_{eq}} \left(1 - e^{-t/\tau}\right) = \frac{A}{3} \left(1 - e^{-15t}\right)$$
-*   **After the pulse ($t > 0.75\text{ s}$):**
-    The source turns off, and the current decays from its peak value at $t=0.75\text{ s}$:
-    $$i(t) = i(0.75) e^{-15(t - 0.75)}$$
-    *(Note: $e^{-15(0.75)} = e^{-11.25} \approx 1.3 \times 10^{-5}$, which is negligible. So $i(0.75) \approx A/3$.)*
+- **Voltage Source ($v_s$):** The source is a rectangular pulse defined by $v_s(t) = A[u(t) - u(t - 0.75)]\text{ V}$. This means the voltage is $A$ volts from $t = 0$ to $t = 0.75\text{ s}$, and $0\text{ V}$ everywhere else.
+    
+- **Total Resistance ($R_{eq}$):** The circuit contains a resistor inside the fuse block ($1\ \Omega$) and a load resistor ($2\ \Omega$) in series.
+    
+    - $R_{eq} = 1\ \Omega + 2\ \Omega = 3\ \Omega$
+        
+- **Inductance ($L$):** The load inductor has a value of $0.2\text{ H}$.
+    
+- **Time Constant ($\tau$):** The time constant of the RL circuit dictates how fast the current responds.
+    
+    - $\tau = \frac{L}{R_{eq}} = \frac{0.2}{3} = \frac{1}{15}\text{ s} \approx 0.0667\text{ s}$
+        
+- **The Goal:** Find the maximum amplitude $A$ of the voltage pulse such that the fuse _almost_ blows, but doesn't.
+    
 
-**Step 4: Formulate the Condition to Not Open the Fuse**
-The current must be above $I_{th} = \sqrt{5}\text{ A}$ for exactly $0.5\text{ s}$ to achieve maximum current without blowing the fuse. 
-Let $t_1$ be the time the current rises to $I_{th}$ and $t_2$ be the time it falls back down to $I_{th}$. We require $t_2 - t_1 = 0.5\text{ s} \implies t_2 = t_1 + 0.5$.
-*   At $t_1$ (during the pulse): $\sqrt{5} = \frac{A}{3} (1 - e^{-15t_1})$
-*   At $t_2$ (after the pulse): $\sqrt{5} = \frac{A}{3} (1 - e^{-15(0.75)}) e^{-15(t_2 - 0.75)} \approx \frac{A}{3} e^{-15(t_1 + 0.5 - 0.75)} = \frac{A}{3} e^{-15(t_1 - 0.25)}$
+#### **2. Analyzing the Fuse Condition**
 
-Equating the two expressions for $\sqrt{5}$:
-$$\frac{A}{3} (1 - e^{-15t_1}) = \frac{A}{3} e^{-15(t_1 - 0.25)}$$
-$$1 - e^{-15t_1} = e^{-15t_1} \cdot e^{3.75}$$
-$$1 = e^{-15t_1} (1 + e^{3.75}) \implies e^{-15t_1} = \frac{1}{1 + e^{3.75}}$$
-Since $e^{3.75} \approx 42.52$:
-$$e^{-15t_1} \approx \frac{1}{43.52} \approx 0.02298$$
-$$t_1 = -\frac{\ln(0.02298)}{15} \approx \frac{3.773}{15} \approx 0.2515\text{ s}$$
+The problem states that the fuse opens when the power absorbed by its resistor exceeds $10\text{ W}$ for exactly $0.5\text{ s}$.
 
-**Step 5: Calculate A**
-Substitute $t_1$ back to find the required source amplitude $A$:
-$$\sqrt{5} = \frac{A}{3} (1 - 0.02298) \implies A = \frac{3\sqrt{5}}{0.97702} \approx \frac{6.708}{0.97702} \approx 6.866\text{ V}$$
+- The power dissipated by the $1\ \Omega$ fuse resistor is given by Joule's Law: $P(t) = i(t)^2 \cdot R_{fuse}$.
+    
+- We can find the critical threshold current ($I_{th}$) that results in exactly $10\text{ W}$ of power dissipation:
+    
+    - $10 = i(t)^2 \cdot 1$
+        
+    - $I_{th} = \sqrt{10} \approx 3.162\text{ A}$
+        
+- To achieve the maximum current while keeping the circuit closed, the current $i(t)$ must stay above $\sqrt{10}\text{ A}$ for exactly $0.5\text{ s}$.
+    
 
-**Sketch of the Current Waveform:**
-*   The current starts at $0\text{ A}$ and rises exponentially, crossing the threshold of $2.236\text{ A}$ at $t = 0.25\text{ s}$. 
-*   It reaches a peak of approximately $2.288\text{ A}$ (which is $A/3$) at $t = 0.75\text{ s}$.
-*   It then decays exponentially, falling back below the $2.236\text{ A}$ threshold at exactly $t = 0.75\text{ s}$, satisfying the $0.5\text{ s}$ duration.
+#### **3. Deriving the Current Equations**
 
+We must analyze the circuit in two distinct time intervals due to the pulsed nature of the source.
+
+- **Interval 1: The Charging Phase ($0 \le t \le 0.75\text{ s}$)**
+    
+    - During this interval, $v_s(t) = A$. The differential equation for the circuit is:
+        
+        $$L \frac{di}{dt} + R_{eq}i = A \implies 0.2 \frac{di}{dt} + 3i = A$$
+        
+    - The general solution for a step response in an RL circuit with zero initial current ($i(0^-) = 0$) is:
+        
+        $$i(t) = \frac{A}{R_{eq}} \left(1 - e^{-t/\tau}\right)$$
+        
+    - Plugging in our specific values gives the current during the pulse:
+        
+        $$i(t) = \frac{A}{3} \left(1 - e^{-15t}\right)$$
+        
+    - At the end of this pulse ($t = 0.75\text{ s}$), the current reaches its peak value ($I_{peak}$):
+        
+        $$I_{peak} = i(0.75) = \frac{A}{3} \left(1 - e^{-15 \cdot 0.75}\right) = \frac{A}{3} \left(1 - e^{-11.25}\right)$$
+        
+- **Interval 2: The Discharging Phase ($t > 0.75\text{ s}$)**
+    
+    - The voltage source turns off, meaning $v_s(t) = 0$. The new differential equation is:
+        
+        $$0.2 \frac{di}{dt} + 3i = 0$$
+        
+    - The current will decay exponentially from the peak value it reached at $t = 0.75\text{ s}$. The solution is:
+        
+        $$i(t) = I_{peak} \cdot e^{-(t - 0.75)/\tau}$$
+        
+    - Substituting $I_{peak}$ and $\tau$ yields the equation for the discharging current:
+        
+        $$i(t) = \frac{A}{3} \left(1 - e^{-11.25}\right) e^{-15(t - 0.75)}$$
+        
+
+#### **4. Solving for Amplitude $A$**
+
+We know the current must be above the threshold ($I_{th} = \sqrt{10}$) for exactly $0.5\text{ s}$. Let $t_1$ be the moment the current rises past the threshold, and $t_2$ be the moment it falls back below it.
+
+- **Finding $t_1$ (Rising Edge):**
+    
+    - Set the charging equation equal to the threshold:
+        
+        $$\sqrt{10} = \frac{A}{3} \left(1 - e^{-15t_1}\right)$$
+        
+    - Solve for $t_1$:
+        
+        $$1 - e^{-15t_1} = \frac{3\sqrt{10}}{A} \implies e^{-15t_1} = 1 - \frac{3\sqrt{10}}{A}$$
+        
+        $$t_1 = -\frac{1}{15} \ln\left(1 - \frac{3\sqrt{10}}{A}\right)$$
+        
+- **Finding $t_2$ (Falling Edge):**
+    
+    - Set the discharging equation equal to the threshold:
+        
+        $$\sqrt{10} = \frac{A}{3} \left(1 - e^{-11.25}\right) e^{-15(t_2 - 0.75)}$$
+        
+    - Solve for $t_2$:
+        
+        $$e^{-15(t_2 - 0.75)} = \frac{3\sqrt{10}}{A \left(1 - e^{-11.25}\right)}$$
+        
+        $$t_2 = 0.75 - \frac{1}{15} \ln\left( \frac{3\sqrt{10}}{A \left(1 - e^{-11.25}\right)} \right)$$
+        
+- **Applying the Time Constraint ($t_2 - t_1 = 0.5\text{ s}$):**
+    
+    - Subtract $t_1$ from $t_2$ and set it equal to $0.5$:
+        
+        $$0.75 - \frac{1}{15} \ln\left( \frac{3\sqrt{10}}{A \left(1 - e^{-11.25}\right)} \right) - \left[ -\frac{1}{15} \ln\left(1 - \frac{3\sqrt{10}}{A}\right) \right] = 0.5$$
+        
+    - Isolate the natural logarithm terms:
+        
+        $$0.25 = \frac{1}{15} \left[ \ln\left( \frac{3\sqrt{10}}{A \left(1 - e^{-11.25}\right)} \right) - \ln\left(1 - \frac{3\sqrt{10}}{A}\right) \right]$$
+        
+    - Multiply both sides by $15$ and combine the logarithms using log rules:
+        
+        $$3.75 = \ln\left[ \frac{\frac{3\sqrt{10}}{A}}{\left(1 - e^{-11.25}\right) \left(1 - \frac{3\sqrt{10}}{A}\right)} \right]$$
+        
+    - Exponentiate both sides to eliminate the natural logarithm:
+        
+        $$e^{3.75} = \frac{\frac{3\sqrt{10}}{A}}{\left(1 - e^{-11.25}\right) \left(1 - \frac{3\sqrt{10}}{A}\right)}$$
+        
+- **Simplifying and Calculating:**
+    
+    - Because $e^{-11.25}$ is an extremely small number ($\approx 1.29 \times 10^{-5}$), the term $\left(1 - e^{-11.25}\right)$ is functionally equal to $1$. We can safely drop it to simplify the algebra.
+        
+    - Let's substitute $x = \frac{3\sqrt{10}}{A}$ to make the equation easier to read:
+        
+        $$e^{3.75} = \frac{x}{1 - x}$$
+        
+    - Rearrange to solve for $x$:
+        
+        $$42.521 \approx \frac{x}{1 - x}$$
+        
+        $$42.521 - 42.521x = x \implies 42.521 = 43.521x$$
+        
+        $$x = \frac{42.521}{43.521} \approx 0.97702$$
+        
+    - Finally, substitute back $x = \frac{3\sqrt{10}}{A}$ to find $A$:
+        
+        $$\frac{3\sqrt{10}}{A} = 0.97702$$
+        
+        $$A = \frac{3\sqrt{10}}{0.97702} = \frac{3 \cdot 3.162277}{0.97702} = \frac{9.4868}{0.97702} \approx 9.71\text{ V}$$
+        
+
+**Answer:** The appropriate value to achieve the maximum current while not opening the fuse is **$A = 9.71\text{ V}$**.
+
+#### **5. Sketch of the Current Waveform**
+
+To sketch the current waveform $i(t)$, set up a graph with Time ($t$ in seconds) on the X-axis and Current ($i(t)$ in Amperes) on the Y-axis.
+
+- **$t = 0\text{ s}$ to $t \approx 0.251\text{ s}$:** The curve starts at the origin $(0,0)$ and curves upwards exponentially.
+    
+- **$t \approx 0.251\text{ s}$:** Mark this point on the time axis as $t_1$. This is exactly where the current crosses the horizontal threshold line at $I_{th} = 3.16\text{ A}$ (which is $\sqrt{10}$).
+    
+- **$t \approx 0.251\text{ s}$ to $t = 0.75\text{ s}$:** The curve continues to rise exponentially, though the rate of increase slows down. It peaks at exactly $t = 0.75\text{ s}$. The absolute maximum value reached is $\approx 3.236\text{ A}$ (which is slightly above the $3.16\text{ A}$ threshold).
+    
+- **$t = 0.75\text{ s}$ to $t \approx 0.751\text{ s}$:** The voltage pulse turns off. The curve sharply begins an exponential decay downwards.
+    
+- **$t \approx 0.751\text{ s}$:** Mark this point as $t_2$. This is where the decaying current crosses back _down_ through the $3.16\text{ A}$ threshold line.
+    
+- **Highlighting the Goal:** The distance on the X-axis between $t_1$ and $t_2$ represents the time the circuit spent above the threshold. This gap is exactly $0.5\text{ s}$ ($0.751 - 0.251 = 0.5$). You can shade the region under the peak that sits above the $3.16\text{ A}$ horizontal line to visually indicate this duration.
+    
+- **$t > 0.751\text{ s}$:** The current simply decays exponentially back toward $0\text{ A}$.
 ***
 
 ### **48. Page 10, Q.4(c)**

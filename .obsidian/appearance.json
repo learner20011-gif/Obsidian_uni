@@ -1,3 +1,7 @@
 {
-  "cssTheme": "Things"
+  "cssTheme": "Things",
+  "theme": "moonstone",
+  "interfaceFontFamily": "",
+  "textFontFamily": "Arial,Microsoft YaHei UI",
+  "baseFontSize": 20
 }
