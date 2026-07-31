@@ -3012,30 +3012,53 @@ $$E = 118.518 \left[ 0.14716 + 0.05467 \right] = 118.518 \times 0.20183 \approx 
 
 **Solution:**
 
-**Step 1: Understand the Original Circuit and Reversal**
-Based on the referenced Figure 1 (from page 9 of the prompt), the circuit has a $10\ \Omega$ resistor with current $i_x$ flowing downwards. In parallel is a dependent current source of $9i_x$ pointing UPWARDS, and a $1\text{ F}$ capacitor. A switch opens at $t=0$, disconnecting a $5\text{ V}$ source.
-If the dependent source is **reversed**, it points **DOWNWARDS** with a value of $9i_x$.
 
-**Step 2: Find the Equivalent Resistance ($R_{eq}$)**
-We find the equivalent resistance seen by the capacitor for $t > 0$. Apply a test voltage $v$ across the parallel branches. The current leaving the test source is $i$.
-*   The voltage across the $10\ \Omega$ resistor is $v$, so the downward current is $i_x = \frac{v}{10}$.
-*   The dependent source pushes $9i_x$ downwards.
-*   Applying KCL at the top node: $i = i_x + 9i_x = 10i_x$.
-*   Substitute $i_x$: $i = 10 \left( \frac{v}{10} \right) = v$.
-*   The equivalent resistance is $R_{eq} = \frac{v}{i} = \frac{v}{v} = 1\ \Omega$.
+#### **1. Initial Condition ($t < 0$)**
 
-*(Note: In the original circuit with the source pointing up, $i + 9i_x = i_x \implies i = -8i_x = -0.8v \implies R_{eq} = -1.25\ \Omega$, which creates an unstable, exponentially growing response).*
+- Before the switch opens at $t=0$, the $5\text{ V}$ DC source is connected directly across the capacitor.
+    
+- Therefore, the initial voltage is:
+    
+    $$V_c(0) = 5\text{ V}$$
+    
 
-**Step 3: Find $V_c(t)$**
-For $t < 0$, the switch is closed, and the capacitor is in parallel with the $5\text{ V}$ source, so $V_c(0) = 5\text{ V}$.
-For $t \ge 0$, the circuit is a source-free RC circuit with $R_{eq} = 1\ \Omega$ and $C = 1\text{ F}$.
-*   Time constant $\tau = R_{eq}C = 1 \times 1 = 1\text{ s}$.
-The capacitor voltage decays exponentially:
-$$V_c(t) = V_c(0) e^{-t/\tau} = 5e^{-t}\text{ V} \quad \text{for } t \ge 0$$
+#### **2. Circuit Analysis and KCL ($t \ge 0$)**
 
-**Step 4: Plot and Comments**
-*   **Plot:** The plot of $V_c(t)$ is a standard exponential decay curve starting at $5\text{ V}$ at $t=0$, passing through $5e^{-1} \approx 1.84\text{ V}$ at $t=1\text{ s}$, and approaching $0\text{ V}$ asymptotically as $t \to \infty$.
-*   **Comments:** Reversing the direction of the dependent current source changes the equivalent resistance of the active network from a negative value ($-1.25\ \Omega$) to a positive value ($+1\ \Omega$). Consequently, the natural response of the circuit changes from being unstable (an exponentially growing voltage) to stable (a normal exponential decay).
+- The switch opens, disconnecting the $5\text{ V}$ source.
+    
+- The dependent current source is reversed, meaning it now pushes $9i_x$ _into_ the top node.
+    
+- Applying Kirchhoff's Current Law (KCL) at the top node (sum of leaving currents = 0):
+    
+    $$C\frac{dV_c}{dt} + i_x - 9i_x = 0$$
+    
+- The current $i_x$ flows through two $1\ \Omega$ resistors in series ($R = 2\ \Omega$). Using Ohm's Law: $i_x = \frac{V_c}{2}$.
+    
+- Substituting $C = 1\text{ F}$ and $i_x = \frac{V_c}{2}$ into the KCL equation:
+    
+    $$\frac{dV_c}{dt} - 8\left(\frac{V_c}{2}\right) = 0$$
+    
+    $$\frac{dV_c}{dt} - 4V_c = 0$$
+    
+
+#### **3. Final Expression for $V_c(t)$**
+
+- Solving the first-order differential equation $\frac{dV_c}{dt} = 4V_c$ yields the general form:
+    
+    $$V_c(t) = A e^{4t}$$
+    
+- Applying the initial condition $V_c(0) = 5\text{ V}$ gives $A = 5$.
+    
+- **Final Answer:**
+    
+    $$V_c(t) = 5e^{4t}\text{ V, for } t \ge 0$$
+    
+
+#### **4. Plot and Comments**
+
+- **Plot:** The graph is a steep exponential growth curve starting at coordinates $(0, 5)$ and rising rapidly toward infinity without asymptoting.
+    
+- **Comments:** The system is completely unstable. Reversing the dependent source essentially creates a negative equivalent resistance ($-0.25\ \Omega$) for the RC circuit. Instead of safely discharging, the voltage grows exponentially without bound. In a real physical circuit, this would instantly saturate the active components or lead to thermal destruction.
 
 **Related Location in Sadiku Textbook:** Chapter 16, Section 16.6.1 (Network Stability), Page 737.
 
