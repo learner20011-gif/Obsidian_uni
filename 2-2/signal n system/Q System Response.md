@@ -1,6 +1,4 @@
-* 2
-* 5
-* 7
+
 * 12
 * 13
 * 15
@@ -31,10 +29,7 @@
 * 61
 * 62
 * 64
-* 65
-* 68
-* 69
-* 72
+
 ### **Time domain and frequency domain analysis of LTI systems**
 
 1. **Page 14, Q.3(b):** Determine $i_o(t)$ for the following network using Fourier transform method. ![[Pasted image 20260727113934.png]][Figure Involved]
