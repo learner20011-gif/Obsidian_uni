@@ -553,6 +553,8 @@ $$v_a = V_c - V_1$$
 
 Apply Kirchhoff's Current Law (KCL) at node $V_1$:
 $$\frac{V_1}{2} - \beta v_a + \frac{V_1 - V_c}{1} = 0$$
+
+here +beta not neg. dependnt crnt src pointing downward not upward.
 Substitute $v_a = V_c - V_1$:
 $$\frac{V_1}{2} - \beta(V_c - V_1) + V_1 - V_c = 0$$
 $$0.5 V_1 - \beta V_c + \beta V_1 + V_1 - V_c = 0$$
