@@ -34,7 +34,7 @@ Find the output current $i_o(t)$ using the Fourier transform method for a circui
     Setting $s = -2$: $5 = A(4 - 4 + 2) \implies 2A = 5 \implies A = 2.5$
     Equating $s^2$ coefficients: $0 = A + B \implies B = -2.5$
     Equating constants: $5 = 2A + 2C \implies 5 = 5 + 2C \implies C = 0$
-    
+
     Substitute $A, B,$ and $C$ back:
     $$I_o(s) = \frac{2.5}{s+2} - \frac{2.5s}{s^2 + 2s + 2}$$
     Complete the square in the denominator of the second term ($s^2+2s+2 = (s+1)^2+1$):
@@ -105,7 +105,7 @@ From the figures:
     *   $n=4$: $\omega_4 \approx 25.13$ rad/s **(Passed)**
     *   $n=5$: $\omega_5 \approx 31.42$ rad/s **(Passed)**
     *   $n=6$: $\omega_6 \approx 37.70$ rad/s (Rejected)
-    
+
 3.  **Determine the Filter Output:**
     Only the 3rd, 4th, and 5th harmonics fall within the passband ($15 < \omega < 35$) and appear at the output. 
     $$v_o(t) = \sum_{n=3}^{5} -\frac{2}{n\pi} \sin(n 2\pi t)$$
@@ -145,11 +145,11 @@ A periodic rectangular pulse train $v_s(t)$ is applied to a circuit. Find the am
 
 3.  **Amplitude Spectrum Calculation:**
     The current amplitude for each harmonic $n$ is $|I_0(n\omega_0)| = |H(n\pi)| \cdot |V_{sn}|$.
-    
+
     *   **DC Component ($n=0$, $\omega = 0$):**
         $|H(0)| = \frac{1}{60}$
         $I_{0,0} = 5 \text{ V} \times \frac{1}{60} = \frac{1}{12} \text{ A} \approx 0.0833 \text{ A}$
-        
+
     *   **1st Harmonic ($n=1$, $\omega = \pi \approx 3.14$):**
         $|V_{s,1}| = \frac{10}{\pi} \approx 3.183$ V
         $|H(\pi)| = \frac{1}{\sqrt{(60 - 0.1\pi^2)^2 + (40.1\pi)^2}} = \frac{1}{\sqrt{59.01^2 + 125.98^2}} \approx \frac{1}{139.1} \approx 0.00719$
@@ -214,10 +214,7 @@ $$v_0(t) = 0.4(e^{-0.5t} - e^{-3t})u(t)\text{ V}$$
 
 ***
 
-### 6. Page 64, Q(c): If the sawtooth waveform shown in following Fig. is applied to an filter with the given transfer function...
-
-**(i) Find the Fourier series expansion of the sawtooth wave.**
-**(ii) Determine the output of the filter.**
+### 6. Page 64, Q(c): If the sawtooth waveform shown in following Fig. is applied to an filter with the given transfer function... (i) Find the Fourier series expansion of the sawtooth wave. (ii) Determine the output of the filter.
 
 **Solution for (i): Fourier Series of the Sawtooth Wave**
 From the graph $x(t)$, the sawtooth wave has a period of $T = 1\text{ s}$ and ranges from $-1$ to $1$. 
@@ -231,7 +228,7 @@ We find the trigonometric Fourier series coefficients ($a_0, a_n, b_n$):
 *   **Sine Coefficients ($b_n$):**
     $$b_n = \frac{2}{T}\int_{0}^{T} x(t)\sin(n\omega_0t)dt = 2\int_{0}^{1} (2t - 1)\sin(2\pi n t)dt$$
     Evaluating this integral using integration by parts gives $b_n = -\frac{2}{n\pi}$.
-    
+
 Therefore, the Fourier series expansion of the input is:
 $$x(t) = \sum_{n=1}^{\infty} \left(-\frac{2}{n\pi}\right) \sin(2n\pi t)$$
 
@@ -287,9 +284,7 @@ $$v_0(t) = -\frac{1}{2}\cos(t) + \frac{1}{2}\sin(t)\text{ V}$$
 
 ***
 
-### 8. Page 6, Q.3(b): Consider the following second-order circuit
-**(i) Find the value of R so that critically damped response is obtained.**
-**(ii) Determine the response $v_0(t)$ if $v_s(t) = 10u(t)$ and $R = 1\ \Omega$.**
+### 8. Page 6, Q.3(b): Consider the following second-order circuit (i) Find the value of R so that critically damped response is obtained. (ii) Determine the response $v_0(t)$ if $v_s(t) = 10u(t)$ and $R = 1\ \Omega$.
 
 **Problem Statement:**
 A series RLC circuit is driven by a voltage source $v_s(t)$. Components are $R$, $L = 2\text{ H}$, and $C = 1\text{ F}$. Output $v_0(t)$ is across the capacitor.
@@ -396,12 +391,7 @@ In a second-order circuit (like RLC circuits), the type of natural response is d
 
 ***
 
-### 11. Page 27, Q (Handwritten top): there is a parallel RLC circuit (without source) with $R = 1k\Omega$ & $v_c(t) = 10e^{-2000t} - 2000te^{-2000t} V$.
-**(i) find the type of damping.**
-**(ii) characteristic eqn.**
-**(iii) find the value of C & L.**
-**(iv) find the $i_R(t)$.**
-**(v) capacitor voltage.**
+### 11. Page 27, Q (Handwritten top): there is a parallel RLC circuit (without source) with $R = 1k\Omega$ & $v_c(t) = 10e^{-2000t} - 2000te^{-2000t} V$. (i) find the type of damping. (ii) characteristic eqn. (iii) find the value of C & L. (iv) find the $i_R(t)$. (v) capacitor voltage.
 
 **Solution:**
 **(i) Type of damping:**
@@ -439,10 +429,7 @@ $$v_c(t) = 10e^{-2000t} - 2000te^{-2000t} \text{ V}$$
 
 ***
 
-### 12. Page 44, Q2: For the following circuit, Find [Figure involved]
-**(i) Transfer function.**
-**(ii) Impulse response.**
-**(iii) Output $i_0(t)$ if $i_s(t) = e^{-2t}$.**
+### 12. Page 44, Q2: For the following circuit, Find [Figure involved] (i) Transfer function. (ii) Impulse response. (iii) Output $i_0(t)$ if $i_s(t) = e^{-2t}$.
 
 **Problem Statement:**
 A parallel RL circuit is driven by a current source $i_s(t)$. The resistor is $R=1\ \Omega$ and the inductor is $L=1\text{ H}$. The output is the current through the inductor, $i_0(t)$.
@@ -795,7 +782,6 @@ As calculated in part (ii), $\alpha = 1$ and $\omega_0 = 1$. Because $\alpha = \
 
 *Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.5 (Step Response of a Series RLC Circuit), pg. 331-336.*
 
-
 ### 21. Page 3, Q.5(a): For the following circuit (i) Draw the s-domain circuit considering $v_0(0) = 5V$. (ii) Find $v_0(t)$ (Figure Involved)
 
 **Solution:**
@@ -850,96 +836,86 @@ $$ v_0(t) = \left( 10e^{-t} + 5e^{-2t} \right) u(t) \text{ V} $$
 #### **Given Circuit Parameters**
 
 - **Resistors:** $R_1 = 1\ \Omega$, $R_2 = 1\ \Omega$
-    
+
 - **Inductor:** $L = 2\text{ H}$
-    
+
 - **Voltage Source:** $V_s(t) = 10u(-t)\text{ V}$
-    
+
     - For $t < 0$, $u(-t) = 1$, so $V_s(t) = 10\text{ V}$.
-        
+
     - For $t > 0$, $u(-t) = 0$, so $V_s(t) = 0\text{ V}$.
-        
+
 - **Switch:** Open for $t < 0$, closed at $t = 0\text{ s}$.
-    
 
 #### **Step-by-Step Solution**
 
 #### **1. Analysis for $t < 0$ (DC Steady State prior to $t = 0$)**
 
 - The switch is open, isolating $R_2$ from the circuit.
-    
+
 - The voltage source is $V_s = 10\text{ V}$ (since $t < 0$).
-    
+
 - Because the switch was open for a long period of time, the circuit reached a DC steady state.
-    
+
 - Under DC steady state, an ideal inductor acts as a **short circuit** ($v_L(0^-) = 0\text{ V}$).
-    
+
 - The current flowing through the inductor is:
-    
 
 $$i_L(0^-) = \frac{V_s}{R_1} = \frac{10\text{ V}}{1\ \Omega} = 10\text{ A}$$
 
 #### **2. Analysis at $t = 0\text{ s}$ ($t = 0^+$)**
 
 - **Inductor Current $i_L(0)$:**
-    
+
     - Since the current through an inductor cannot change instantaneously:
-        
-    
+
     $$i_L(0^+) = i_L(0^-) = 10\text{ A}$$
-    
+
 - **Inductor Voltage $v_L(0)$:**
-    
+
     - At $t = 0^+$, the voltage source becomes $V_s(0^+) = 0\text{ V}$ (shorted to ground).
-        
+
     - The switch closes, placing $R_2$ in parallel with the inductor $L$.
-        
+
     - The total effective resistance seen by the inductor $L$ is $R_{eq} = R_1 \parallel R_2$:
-        
-    
+
     $$R_{eq} = \frac{R_1 \cdot R_2}{R_1 + R_2} = \frac{1 \cdot 1}{1 + 1} = 0.5\ \Omega$$
-    
+
     - Using Kirchhoff's Current Law (KCL) or equivalent node analysis at $t = 0^+$:
-        
+
         - Current through $R_1$: $i_{R1} = \frac{v_L(0^+)}{R_1}$
-            
+
         - Current through $R_2$: $i_{R2} = \frac{v_L(0^+)}{R_2}$
-            
+
         - $i_{R1} + i_{R2} + i_L(0^+) = 0$
-            
+
         - $\frac{v_L(0^+)}{1} + \frac{v_L(0^+)}{1} + 10 = 0$
-            
+
         - $2 v_L(0^+) = -10 \implies v_L(0^+) = -5\text{ V}$
-            
 
 #### **3. Transient Response Analysis for $t > 0$**
 
 - For $t > 0$, the voltage source is $0\text{ V}$, making this a source-free $RL$ circuit with equivalent resistance $R_{eq} = 0.5\ \Omega$.
-    
+
 - The time constant $\tau$ of the circuit is:
-    
 
 $$\tau = \frac{L}{R_{eq}} = \frac{2\text{ H}}{0.5\ \Omega} = 4\text{ s}$$
 
 - The general expression for the inductor current $i_L(t)$ for $t \ge 0$ is:
-    
 
 $$i_L(t) = i_L(0^+) e^{-t/\tau} = 10 e^{-t/4}\text{ A}$$
 
 - The general expression for the inductor voltage $v_L(t)$ for $t > 0$ is:
-    
 
 $$v_L(t) = L \frac{di_L(t)}{dt} = 2 \cdot \left(- \frac{10}{4} e^{-t/4}\right) = -5 e^{-t/4}\text{ V}$$
 
 #### **4. Analysis at $t = 10\text{ s}$**
 
 - **Inductor Current $i_L(10\text{ s})$:**
-    
 
 $$i_L(10) = 10 e^{-10/4} = 10 e^{-2.5} \approx 10 \cdot 0.082085 = 0.821\text{ A}$$
 
 - **Inductor Voltage $v_L(10\text{ s})$:**
-    
 
 $$v_L(10) = -5 e^{-10/4} = -5 e^{-2.5} \approx -5 \cdot 0.082085 = -0.410\text{ V}$$
 
@@ -1055,10 +1031,10 @@ $$ i_L(t) = (-5.6 - 2.8t) e^{-t} u(t) \text{ A} $$
 
 *Reference: Fundamentals of Electric Circuits by Sadiku, Chapter 8 (Second-Order Circuits), Section 8.4 Source-Free Parallel RLC Circuit (Page 327).*
 
-
 Based on the document provided, here are the detailed step-by-step solutions for the next 4 questions (Questions 25 to 28).
 
 ### 25. Page 9, Q.3(b): Find $i(t)$ for $t > 0$ in the following circuit.
+
 *(Image shows a 20V source, a 10 $\Omega$ resistor, a switch opening at t=0, a 40 $\Omega$ resistor, a 60 $\Omega$ resistor, a 1 mF capacitor, and a 2.5 H inductor).*
 
 **Solution:**
@@ -1105,6 +1081,7 @@ $$ \mathbf{i(t) = -6.4 t e^{-20t} u(t) \text{ A}} $$
 ***
 
 ### 26. Page 11, Q.1(b): The switch in the following figure opens at t = 0. Determine v(t) for t > 0.
+
 *(Image shows a 6A source, 4 $\Omega$ resistor, switch, 6 $\Omega$ resistor, 100mF capacitor, 5 $\Omega$ resistor, 20 $\Omega$ resistor, 30V source).*
 
 **Solution:**
@@ -1113,119 +1090,112 @@ Here is the step-by-step solution to find the voltage $v(t)$ across the capacito
 #### **1. Circuit Parameters and Identification**
 
 - **Sources:**
-    
+
     - Independent current source: $I_s = 6\text{ A}$ (on the far left)
-        
+
     - Independent voltage source: $V_s = 30\text{ V}$ (on the far right)
-        
+
 - **Resistors:**
-    
+
     - $R_a = 4\ \Omega$ (in parallel with the current source)
-        
+
     - $R_b = 6\ \Omega$ (connected to the left terminal of the capacitor)
-        
+
     - $R_c = 20\ \Omega$ (connected in parallel after the capacitor)
-        
+
     - $R_d = 5\ \Omega$ (connected in series with the $30\text{ V}$ source)
-        
+
 - **Capacitor:**
-    
+
     - $C = 100\text{ mF} = 0.1\text{ F}$
-        
+
     - Voltage reference $v(t)$ across the capacitor (positive polarity on the left terminal, negative polarity on the right terminal).
-        
+
 - **Switch:** Opens at $t = 0$.
-    
 
 #### **2. Analysis for $t < 0$ (DC Steady State)**
 
 - Before $t = 0$, the switch is **closed** and has been closed for a long time.
-    
+
 - In DC steady state, the capacitor acts as an **open circuit**.
-    
 
 #### **Finding $v(0^-)$:**
 
 - Let $v_{node1}$ be the voltage at the node to the left of the capacitor.
-    
+
 - Let $v_{node2}$ be the voltage at the node to the right of the capacitor.
-    
 
 1. **Left side of the circuit (to the left of the closed switch):**
-    
+
     - $6\text{ A}$ current source is in parallel with $4\ \Omega$ and $6\ \Omega$ resistors.
-        
+
     - Equivalent resistance on the left:
-        
+
         $$R_{left} = 4\ \Omega \parallel 6\ \Omega = \frac{4 \times 6}{4 + 6} = \frac{24}{10} = 2.4\ \Omega$$
-        
+
     - Therefore, the node voltage on the left terminal of the capacitor is:
-        
+
         $$v_{node1} = I_s \times R_{left} = 6\text{ A} \times 2.4\ \Omega = 14.4\text{ V}$$
-        
+
 2. **Right side of the circuit (to the right of the open capacitor):**
-    
+
     - Voltage source is $30\text{ V}$ in series with $5\ \Omega$, connected across $20\ \Omega$.
-        
+
     - By voltage divider rule:
-        
+
         $$v_{node2} = 30\text{ V} \times \frac{20\ \Omega}{20\ \Omega + 5\ \Omega} = 30 \times \frac{20}{25} = 24\text{ V}$$
-        
+
 3. **Capacitor Initial Voltage $v(0^-)$:**
-    
+
     - $v(0^-) = v_{node1} - v_{node2} = 14.4\text{ V} - 24\text{ V} = -9.6\text{ V}$
-        
 
 #### **3. Analysis for $t > 0$ (Transient State)**
 
 When the switch **opens** at $t = 0$:
 
 - The left branch ($6\text{ A}$ source and $4\ \Omega$ resistor) is completely disconnected.
-    
+
 - The capacitor voltage cannot change instantaneously, so:
-    
+
     $$v(0^+) = v(0^-) = -9.6\text{ V}$$
-    
 
 #### **A. Final Steady State Voltage $v(\infty)$ as $t \to \infty$:**
 
 - As $t \to \infty$, the capacitor again acts as an **open circuit**.
-    
+
 - Since the left side is isolated through the open switch, no current flows through the $6\ \Omega$ resistor:
-    
+
     $$v_{node1}(\infty) = 0\text{ V}$$
-    
+
 - On the right side, the voltage remains determined by the $30\text{ V}$ source and voltage divider:
-    
+
     $$v_{node2}(\infty) = 30 \times \frac{20}{20 + 5} = 24\text{ V}$$
-    
+
 - Thus, the final capacitor voltage is:
-    
+
     $$v(\infty) = v_{node1}(\infty) - v_{node2}(\infty) = 0\text{ V} - 24\text{ V} = -24\text{ V}$$
-    
 
 #### **B. Equivalent Resistance ($R_{eq}$) and Time Constant ($\tau$):**
 
 To find the equivalent resistance $R_{eq}$ seen by the capacitor for $t > 0$:
 
 - Deactivate the independent voltage source (replace $30\text{ V}$ with a short circuit).
-    
+
 - Looking into the capacitor terminals:
-    
+
     - Left terminal connects to ground through $R_b = 6\ \Omega$.
-        
+
     - Right terminal sees $R_c = 20\ \Omega$ in parallel with $R_d = 5\ \Omega$:
-        
+
         $$R_{right} = 20\ \Omega \parallel 5\ \Omega = \frac{20 \times 5}{20 + 5} = 4\ \Omega$$
-        
+
 - $R_{eq}$ is the series combination of the resistance on the left and the resistance on the right:
-    
+
     $$R_{eq} = R_b + R_{right} = 6\ \Omega + 4\ \Omega = 10\ \Omega$$
-    
+
 - The time constant $\tau$ is:
-    
+
     $$\tau = R_{eq} \times C = 10\ \Omega \times 0.1\text{ F} = 1\text{ s}$$
-    
 
 #### **4. Final Solution for $v(t)$**
 
@@ -1236,11 +1206,10 @@ $$v(t) = v(\infty) + [v(0^+) - v(\infty)] e^{-t/\tau}$$
 Substitute the values:
 
 - $v(\infty) = -24\text{ V}$
-    
+
 - $v(0^+) = -9.6\text{ V}$
-    
+
 - $\tau = 1\text{ s}$
-    
 
 $$v(t) = -24 + [-9.6 - (-24)] e^{-t/1}$$
 
@@ -1255,175 +1224,163 @@ Here is the complete step-by-step mathematical analysis for the given electronic
 #### **1. Circuit Parameters and Operational Rules**
 
 - **Voltage Source:** $V_s(t) = 12u(t)\text{ V}$ (For $t \ge 0$, $V_s = 12\text{ V}$)
-    
+
 - **Resistor 1:** $R_1 = 6\text{ k}\Omega = 6000\ \Omega$
-    
+
 - **Resistor 2:** $R_2 = 3\text{ k}\Omega = 3000\ \Omega$ (in series with the switch)
-    
+
 - **Capacitor:** $C = 0.5\text{ mF} = 0.5 \times 10^{-3}\text{ F} = 500\ \mu\text{F}$
-    
+
 - **Switch Behavior:**
-    
+
     - **Closes** when $v_c(t)$ rises to **$9\text{ V}$**.
-        
+
     - **Opens** when $v_c(t)$ falls to **$5\text{ V}$**.
-        
 
 #### **2. Initial Phase: $t = 0$ to First Switching ($0 \le t \le t_1$)**
 
 - **Initial Condition:** At $t = 0^-$, the capacitor is uncharged, so $v_c(0) = 0\text{ V}$.
-    
+
 - **State of Switch:** Since $v_c(0) = 0\text{ V} < 9\text{ V}$, the switch is **OPEN**.
-    
 
 #### **A. Circuit Analysis (Switch Open)**
 
 - The $3\text{ k}\Omega$ resistor is disconnected.
-    
+
 - The source $V_s = 12\text{ V}$ charges the capacitor through $R_1 = 6\text{ k}\Omega$.
-    
+
 - **Final Voltage ($V_{\infty1}$):** $12\text{ V}$
-    
+
 - **Time Constant ($\tau_1$):**
-    
+
     $$\tau_1 = R_1 \times C = (6000\ \Omega) \times (0.5 \times 10^{-3}\text{ F}) = 3\text{ s}$$
-    
+
 - **Voltage Equation $v_c(t)$:**
-    
+
     $$v_c(t) = V_{\infty1} + [v_c(0) - V_{\infty1}]e^{-t/\tau_1} = 12 - (12 - 0)e^{-t/3} = 12(1 - e^{-t/3})\text{ V}$$
-    
 
 #### **B. Time to reach $9\text{ V}$ ($t_1$)**
 
 - The switch closes when $v_c(t_1) = 9\text{ V}$:
-    
+
     $$9 = 12(1 - e^{-t_1/3}) \implies 1 - e^{-t_1/3} = \frac{9}{12} = 0.75$$
-    
+
     $$e^{-t_1/3} = 0.25 \implies \frac{t_1}{3} = -\ln(0.25) = \ln(4) \approx 1.3863$$
-    
+
     $$t_1 = 3 \times \ln(4) \approx 4.159\text{ s}$$
-    
 
 #### **3. Phase 1: Discharging Cycle ($t_1 \le t \le t_2$)**
 
 - **Initial Condition:** $v_c(t_1) = 9\text{ V}$
-    
+
 - **State of Switch:** **CLOSED** (since $v_c$ reached $9\text{ V}$).
-    
 
 #### **A. Circuit Analysis (Switch Closed)**
 
 - The capacitor is now connected to both $R_1 = 6\text{ k}\Omega$ and $R_2 = 3\text{ k}\Omega$.
-    
+
 - **Thévenin Equivalent Resistance ($R_{eq}$):**
-    
+
     $$R_{eq} = R_1 \parallel R_2 = \frac{6\text{ k}\Omega \times 3\text{ k}\Omega}{6\text{ k}\Omega + 3\text{ k}\Omega} = 2\text{ k}\Omega = 2000\ \Omega$$
-    
+
 - **Thévenin Equivalent Voltage ($V_{\infty2}$):**
-    
+
     $$V_{\infty2} = V_s \times \frac{R_2}{R_1 + R_2} = 12\text{ V} \times \frac{3\text{ k}\Omega}{6\text{ k}\Omega + 3\text{ k}\Omega} = 4\text{ V}$$
-    
+
 - **Time Constant ($\tau_2$):**
-    
+
     $$\tau_2 = R_{eq} \times C = (2000\ \Omega) \times (0.5 \times 10^{-3}\text{ F}) = 1\text{ s}$$
-    
+
 - **Voltage Equation $v_c(t')$ (where $t' = t - t_1$):**
-    
+
     $$v_c(t') = V_{\infty2} + [v_c(t_1) - V_{\infty2}]e^{-t'/\tau_2} = 4 + (9 - 4)e^{-t'/1} = 4 + 5e^{-(t - t_1)}\text{ V}$$
-    
 
 #### **B. Duration of Discharging Phase ($T_{off} = t_2 - t_1$)**
 
 - The switch opens when $v_c$ falls to $5\text{ V}$:
-    
+
     $$5 = 4 + 5e^{-T_{off}/1} \implies 1 = 5e^{-T_{off}} \implies e^{-T_{off}} = 0.2$$
-    
+
     $$T_{off} = -\ln(0.2) = \ln(5) \approx 1.6094\text{ s}$$
-    
 
 #### **4. Phase 2: Steady Charging Cycle ($t_2 \le t \le t_3$)**
 
 - **Initial Condition:** $v_c(t_2) = 5\text{ V}$
-    
+
 - **State of Switch:** **OPEN** (since $v_c$ fell to $5\text{ V}$).
-    
 
 #### **A. Circuit Analysis (Switch Open Again)**
 
 - The circuit reverts to the charging configuration ($V_{\infty1} = 12\text{ V}$, $\tau_1 = 3\text{ s}$).
-    
+
 - **Voltage Equation $v_c(t'')$ (where $t'' = t - t_2$):**
-    
+
     $$v_c(t'') = V_{\infty1} + [5 - V_{\infty1}]e^{-t''/\tau_1} = 12 + (5 - 12)e^{-t''/3} = 12 - 7e^{-(t - t_2)/3}\text{ V}$$
-    
 
 #### **B. Duration of Charging Phase ($T_{on} = t_3 - t_2$)**
 
 - The switch closes again when $v_c$ reaches $9\text{ V}$:
-    
+
     $$9 = 12 - 7e^{-T_{on}/3} \implies 7e^{-T_{on}/3} = 3 \implies e^{-T_{on}/3} = \frac{3}{7}$$
-    
+
     $$\frac{T_{on}}{3} = -\ln\left(\frac{3}{7}\right) = \ln\left(\frac{7}{3}\right) \approx 0.8473$$
-    
+
     $$T_{on} = 3 \times \ln\left(\frac{7}{3}\right) \approx 2.5419\text{ s}$$
-    
 
 #### **5. Period and Frequency of the Triangular Waveform**
 
 Once the initial startup phase ($0 \le t \le t_1$) completes, the circuit enters a stable periodic oscillation between $5\text{ V}$ and $9\text{ V}$.
 
 - **Total Period ($T$):**
-    
+
     $$T = T_{on} + T_{off} = 3\ln\left(\frac{7}{3}\right) + \ln(5)$$
-    
+
     $$T \approx 2.5419\text{ s} + 1.6094\text{ s} = 4.1513\text{ s}$$
-    
+
 - **Frequency ($f$):**
-    
+
     $$f = \frac{1}{T} = \frac{1}{4.1513\text{ s}} \approx 0.2409\text{ Hz} \quad (\text{or } 240.9\text{ mHz})$$
-    
 
 #### **6. Mathematical Summary for $v_c(t)$ Across Cycles**
 
 1. **Initial Startup ($0 \le t \le 4.159\text{ s}$):**
-    
+
     $$v_c(t) = 12(1 - e^{-t/3})\text{ V}$$
-    
+
 2. **First Discharge ($4.159\text{ s} \le t \le 5.768\text{ s}$):**
-    
+
     $$v_c(t) = 4 + 5e^{-(t - 4.159)}\text{ V}$$
-    
+
 3. **Subsequent Periodic Cycles ($n \ge 1$):**
-    
+
     - **Charging Phase ($5\text{ V} \to 9\text{ V}$):**
-        
+
         $$v_c(t') = 12 - 7e^{-t'/3}\text{ V} \quad \text{for } 0 \le t' \le 2.542\text{ s}$$
-        
+
     - **Discharging Phase ($9\text{ V} \to 5\text{ V}$):**
-        
+
         $$v_c(t'') = 4 + 5e^{-t''/1}\text{ V} \quad \text{for } 0 \le t'' \le 1.609\text{ s}$$
-        
 
 #### **7. Waveform Plot Description**
 
 To sketch/plot $v_c(t)$:
 
 - **Vertical Axis:** $v_c(t)$ in Volts ($\text{V}$)
-    
+
 - **Horizontal Axis:** Time $t$ in seconds ($\text{s}$)
-    
+
 - **Key Landmarks:**
-    
+
     - **$t = 0\text{ s}$:** $v_c = 0\text{ V}$
-        
+
     - **$t = 4.16\text{ s}$:** $v_c$ exponentially rises to **$9\text{ V}$** (First peak).
-        
+
     - **$t = 5.77\text{ s}$:** $v_c$ exponentially drops to **$5\text{ V}$** (First trough).
-        
+
     - **$t = 8.31\text{ s}$:** $v_c$ rises back to **$9\text{ V}$** (Second peak).
-        
+
     - **$t = 9.92\text{ s}$:** $v_c$ drops back to **$5\text{ V}$** (Second trough).
-        
+
     - The waveform continuously oscillates between **$5\text{ V}$** and **$9\text{ V}$** with a period of **$4.15\text{ s}$**.
 
 ***
@@ -1481,7 +1438,9 @@ $$ \mathbf{i_L(t) = -2.066 e^{-0.5t} \sin(1.936t) \text{ A}} $$
 Based on the provided document, here are the full texts and detailed step-by-step solutions for the next 4 questions (Questions 29 to 32).
 
 ### 29. Page 14, Q.1(c): A relay has a resistance of $200 \Omega$ and an inductance of $500\text{ mH}$. The relay contacts close when the current through the coil reaches $350\text{ mA}$. What time elapses between the application of $110\text{ V}$ to the coil and contact closure.
+
 ![[Pasted image 20260731212230.png]]
+
 **Solution:**
 When a DC voltage is suddenly applied to an RL circuit (like a relay coil), it acts as a step response. The circuit consists of a voltage source $V_s = 110\text{ V}$, a resistor $R = 200 \Omega$, and an inductor $L = 500\text{ mH} = 0.5\text{ H}$ in series.
 
@@ -1711,25 +1670,19 @@ The inductor current for $t \ge 0$ is **$i(t) = 2.4 - 1.6 e^{-0.5t}\text{ A}$** 
 
 $$R_{p} = 40\ \Omega \parallel 10\ \Omega = \frac{40 \times 10}{40 + 10} = 8\ \Omega$$
 
-
 $$R_{\text{total}} = 16\ \Omega + R_p = 16 + 8 = 24\ \Omega$$
-
 
 * Calculate the total source current ($I_{\text{total}}$):
 
 $$I_{\text{total}} = \frac{24\text{ V}}{24\ \Omega} = 1\text{ A}$$
 
-
 * Use the current divider rule to find the current through the $10\ \Omega$ branch ($i(0^-)$):
 
 $$i(0^-) = I_{\text{total}} \times \left( \frac{40}{40 + 10} \right) = 1 \times 0.8 = 0.8\text{ A}$$
 
-
 * Since inductor current cannot change instantaneously:
 
 $$i(0^+) = i(0^-) = 0.8\text{ A}$$
-
-
 
 ---
 
@@ -1742,8 +1695,6 @@ $$i(0^+) = i(0^-) = 0.8\text{ A}$$
 
 $$i(\infty) = \frac{24\text{ V}}{10\ \Omega} = 2.4\text{ A}$$
 
-
-
 ---
 
 #### **3. Calculate the Time Constant ($\tau$)**
@@ -1754,12 +1705,9 @@ $$i(\infty) = \frac{24\text{ V}}{10\ \Omega} = 2.4\text{ A}$$
 
 $$R_{\text{Th}} = 10\ \Omega$$
 
-
 * Calculate the time constant ($\tau$):
 
 $$\tau = \frac{L}{R_{\text{Th}}} = \frac{20\text{ H}}{10\ \Omega} = 2\text{ s}$$
-
-
 
 ---
 
@@ -1769,11 +1717,9 @@ $$\tau = \frac{L}{R_{\text{Th}}} = \frac{20\text{ H}}{10\ \Omega} = 2\text{ s}$$
 
 $$i(t) = i(\infty) + \left[i(0^+) - i(\infty)\right] e^{-t / \tau}$$
 
-
 * Substitute the values into the equation:
 
 $$i(t) = 2.4 + (0.8 - 2.4) e^{-t / 2}$$
-
 
 $$i(t) = 2.4 - 1.6 e^{-0.5t}\text{ A} \quad \text{for } t \ge 0$$
 
@@ -1868,11 +1814,10 @@ $$ i_c(t) = C \frac{dV_c}{dt} = 1 \times (-10 e^{-t}) = -10 e^{-t} \text{ A} $$
 
 *(Related location: Sadiku textbook, Chapter 7, Section 7.2 Source-Free RC Circuit)*
 
-
-
 Based on the provided document, here are the full texts and detailed step-by-step solutions for the next 4 questions (Questions 37 to 40).
 
 ### 37. Page 34, Q.2: The switch of the following circuit was opened for long period of time, and is closed at t = 0s. Fill the table for the circuit parameters: R1=1$\Omega$, R2 = 1$\Omega$, C = 1F. The input is a step signal having magnitude of 10 V.
+
 *(Image shows a voltage source $V_s$ connected to $R_1$, then a node with a capacitor $C$ to ground and a switch to $R_2$ to ground. A table is provided to fill in values for $V_c(0^-)$, $V_c$ for $t>0$, $i_c(0^-)$, $i_c$ for $t>0$, $\tau$ for $t<0$, and $\tau$ for $t>0$.)*
 
 **Solution:**
@@ -1913,6 +1858,7 @@ The input is a step signal of $10\text{ V}$, which means $V_s(t) = 10u(t) \text{
 ***
 
 ### 38. Page 39, CT-02 Q.2: For the circuit in Fig. $v(t) = 90e^{-50t}V$ and $i(t) = 30e^{-50t}A$ at $t > 0$. (i) Find L and R. (ii) Determine the time constant. (iii) Calculate the initial energy in the inductor. (iv) What fraction of the initial energy is dissipated in 10 ms?
+
 *(Image shows a source-free RL circuit with a resistor R and an inductor L in a single closed loop. Current $i$ flows from R to L, and voltage $v$ is across L).*
 
 **Solution:**
@@ -1949,15 +1895,9 @@ The circuit is a source-free RL loop. The current $i(t)$ flows through both elem
 
 ***
 
-
-
 Here are the detailed solutions for the 4 questions starting from Question 39.
 
-### **39. Page 40, Q.2**
-**A switch has been in position 1 for a long time. At t = 0, it is moved to connect the circuit to the capacitor.**
-**(i) Draw the circuit in the S-domain (Laplace equivalent) after switching.**
-**(ii) Determine the expression of $v(t)$ for $t > 0$ and sketch the corresponding waveform.**
-**(iii) Identify the type of damping.**
+### 39. Page 40, Q.2: A switch has been in position 1 for a long time. At t = 0, it is moved to connect the circuit to the capacitor. (i) Draw the circuit in the S-domain (Laplace equivalent) after switching. (ii) Determine the expression of $v(t)$ for $t > 0$ and sketch the corresponding waveform. (iii) Identify the type of damping.
 
 **Solution:**
 
@@ -2010,8 +1950,7 @@ Since the roots are complex conjugate pairs, the system is **underdamped**.
 
 ***
 
-### **40. Page 42, CT-02 Q.2**
-**The switch of the following circuit has been in position 'a' for a long time and moved to the position 'b' at t=0 s. Calculate the followings: (i) Capacitor voltage, Vc at t = 0 s. (ii) The time constant, $\tau$ for t < 0. (iii) Capacitor voltage, Vc at t = 2 ms. (iv) Capacitor current, i at t = 2 ms.**
+### 40. Page 42, CT-02 Q.2: The switch of the following circuit has been in position 'a' for a long time and moved to the position 'b' at t=0 s. Calculate the followings: (i) Capacitor voltage, Vc at t = 0 s. (ii) The time constant, $\tau$ for t < 0. (iii) Capacitor voltage, Vc at t = 2 ms. (iv) Capacitor current, i at t = 2 ms.
 
 **Solution:**
 
@@ -2028,12 +1967,9 @@ Here are the step-by-step calculations for the given circuit:
 
 $$v_c(0^-) = 0\text{ V}$$
 
-
 * Because the voltage across a capacitor cannot change instantaneously:
 
 $$v_c(0) = v_c(0^-) = \mathbf{0\text{ V}}$$
-
-
 
 ---
 
@@ -2045,12 +1981,9 @@ $$v_c(0) = v_c(0^-) = \mathbf{0\text{ V}}$$
 * The remaining resistance between terminal **'a'** and ground is simply the series $2\text{ k}\Omega$ resistor.
 * Therefore, $R_{eq} = 2\text{ k}\Omega = 2000\ \Omega$.
 
-
 * Calculate the time constant $\tau$:
 
 $$\tau = R_{eq} \times C = 2000\ \Omega \times 1\ \mu\text{F} = 2000 \times 10^{-6}\text{ s} = \mathbf{2\text{ ms}}$$
-
-
 
 ---
 
@@ -2063,25 +1996,19 @@ $$\tau = R_{eq} \times C = 2000\ \Omega \times 1\ \mu\text{F} = 2000 \times 10^{
 
 $$v_c(\infty) = 0\text{ V}$$
 
-
 * The time constant for $t > 0$ is:
 
 $$\tau_{t>0} = R_{eq, t>0} \times C = 1\text{ k}\Omega \times 1\ \mu\text{F} = 1000\ \Omega \times 10^{-6}\text{ F} = 1\text{ ms}$$
-
 
 * The expression for capacitor voltage for $t \ge 0$ is:
 
 $$v_c(t) = v_c(\infty) + \left[v_c(0) - v_c(\infty)\right] e^{-t / \tau_{t>0}}$$
 
-
 $$v_c(t) = 0 + (0 - 0) e^{-t / 1\text{ ms}} = 0\text{ V}$$
-
 
 * Therefore, at $t = 2\text{ ms}$:
 
 $$v_c(2\text{ ms}) = \mathbf{0\text{ V}}$$
-
-
 
 ---
 
@@ -2091,11 +2018,9 @@ $$v_c(2\text{ ms}) = \mathbf{0\text{ V}}$$
 
 $$i(t) = C \frac{dv_c(t)}{dt}$$
 
-
 * Since $v_c(t) = 0\text{ V}$ for all $t \ge 0$:
 
 $$\frac{dv_c(t)}{dt} = 0$$
-
 
 * Therefore, at $t = 2\text{ ms}$:
 
@@ -2105,8 +2030,7 @@ $$i(2\text{ ms}) = \mathbf{0\text{ A}}$$
 
 ***
 
-### **41. Page 43, Q.1**
-**The switch in the following circuit has been closed for a long time and opened at t=0s. Find and Calculate: (i) Nature of the response (ii) i(0-) and v(0-) (iii) Current i(t), t>0.**
+### 41. Page 43, Q.1: The switch in the following circuit has been closed for a long time and opened at t=0s. Find and Calculate: (i) Nature of the response (ii) i(0-) and v(0-) (iii) Current i(t), t>0.
 
 **Solution:**
 
@@ -2146,8 +2070,7 @@ $$i(t) = e^{-4t} \left( 2 \cos(4.899t) + 1.633 \sin(4.899t) \right)\text{ A} \qu
 
 ***
 
-### **42. Page 45, Q.2**
-**The switch of the following circuit has been in position 1 for a long time and moved to the position 2 at t=0 s. Calculate the followings: (i) Capacitor voltage, Vc at t = 0 s. (ii) Capacitor voltage, Vc at t = 3 ms. (iii) The time constant ($\tau$) for t $\ge$ 0. (iv) Sketch capacitor voltage, Vc for all time.**
+### 42. Page 45, Q.2: The switch of the following circuit has been in position 1 for a long time and moved to the position 2 at t=0 s. Calculate the followings: (i) Capacitor voltage, Vc at t = 0 s. (ii) Capacitor voltage, Vc at t = 3 ms. (iii) The time constant ($\tau$) for t $\ge$ 0. (iv) Sketch capacitor voltage, Vc for all time.
 
 **Solution:**
 
@@ -2360,8 +2283,7 @@ $$v(t) = \left( 4e^{-10t} - 4\cos(20t) + 2\sin(20t) \right)\text{ V} \quad \text
 
 Based on the provided PDF, here are the detailed solutions for the 4 questions starting from Question 47.
 
-### **47. Page 9, Q.1(c)**
-**Fuses are used to open a circuit when excessive current flows. One fuse is to be designed to open when the power absorbed by R exceeds 10 w for 0.5s. The source represents the turn-on condition for the load where $v_s = A[u(t) - u(t - 0.75)]\text{V}$. Assume that $i_L(0^-) = 0$. The goal is to achieve the maximum current while not opening the fuse. Determine the appropriate value of A and sketch the current waveform.**
+### 47. Page 9, Q.1(c): Fuses are used to open a circuit when excessive current flows. One fuse is to be designed to open when the power absorbed by R exceeds 10 w for 0.5s. The source represents the turn-on condition for the load where $v_s = A[u(t) - u(t - 0.75)]\text{V}$. Assume that $i_L(0^-) = 0$. The goal is to achieve the maximum current while not opening the fuse. Determine the appropriate value of A and sketch the current waveform.
 
 **Solution:**
 
@@ -2370,140 +2292,136 @@ Based on the provided PDF, here are the detailed solutions for the 4 questions s
 The circuit is a series RL (Resistor-Inductor) circuit powered by a pulsed voltage source.
 
 - **Voltage Source ($v_s$):** The source is a rectangular pulse defined by $v_s(t) = A[u(t) - u(t - 0.75)]\text{ V}$. This means the voltage is $A$ volts from $t = 0$ to $t = 0.75\text{ s}$, and $0\text{ V}$ everywhere else.
-    
+
 - **Total Resistance ($R_{eq}$):** The circuit contains a resistor inside the fuse block ($1\ \Omega$) and a load resistor ($2\ \Omega$) in series.
-    
+
     - $R_{eq} = 1\ \Omega + 2\ \Omega = 3\ \Omega$
-        
+
 - **Inductance ($L$):** The load inductor has a value of $0.2\text{ H}$.
-    
+
 - **Time Constant ($\tau$):** The time constant of the RL circuit dictates how fast the current responds.
-    
+
     - $\tau = \frac{L}{R_{eq}} = \frac{0.2}{3} = \frac{1}{15}\text{ s} \approx 0.0667\text{ s}$
-        
+
 - **The Goal:** Find the maximum amplitude $A$ of the voltage pulse such that the fuse _almost_ blows, but doesn't.
-    
 
 #### **2. Analyzing the Fuse Condition**
 
 The problem states that the fuse opens when the power absorbed by its resistor exceeds $10\text{ W}$ for exactly $0.5\text{ s}$.
 
 - The power dissipated by the $1\ \Omega$ fuse resistor is given by Joule's Law: $P(t) = i(t)^2 \cdot R_{fuse}$.
-    
+
 - We can find the critical threshold current ($I_{th}$) that results in exactly $10\text{ W}$ of power dissipation:
-    
+
     - $10 = i(t)^2 \cdot 1$
-        
+
     - $I_{th} = \sqrt{10} \approx 3.162\text{ A}$
-        
+
 - To achieve the maximum current while keeping the circuit closed, the current $i(t)$ must stay above $\sqrt{10}\text{ A}$ for exactly $0.5\text{ s}$.
-    
 
 #### **3. Deriving the Current Equations**
 
 We must analyze the circuit in two distinct time intervals due to the pulsed nature of the source.
 
 - **Interval 1: The Charging Phase ($0 \le t \le 0.75\text{ s}$)**
-    
+
     - During this interval, $v_s(t) = A$. The differential equation for the circuit is:
-        
+
         $$L \frac{di}{dt} + R_{eq}i = A \implies 0.2 \frac{di}{dt} + 3i = A$$
-        
+
     - The general solution for a step response in an RL circuit with zero initial current ($i(0^-) = 0$) is:
-        
+
         $$i(t) = \frac{A}{R_{eq}} \left(1 - e^{-t/\tau}\right)$$
-        
+
     - Plugging in our specific values gives the current during the pulse:
-        
+
         $$i(t) = \frac{A}{3} \left(1 - e^{-15t}\right)$$
-        
+
     - At the end of this pulse ($t = 0.75\text{ s}$), the current reaches its peak value ($I_{peak}$):
-        
+
         $$I_{peak} = i(0.75) = \frac{A}{3} \left(1 - e^{-15 \cdot 0.75}\right) = \frac{A}{3} \left(1 - e^{-11.25}\right)$$
-        
+
 - **Interval 2: The Discharging Phase ($t > 0.75\text{ s}$)**
-    
+
     - The voltage source turns off, meaning $v_s(t) = 0$. The new differential equation is:
-        
+
         $$0.2 \frac{di}{dt} + 3i = 0$$
-        
+
     - The current will decay exponentially from the peak value it reached at $t = 0.75\text{ s}$. The solution is:
-        
+
         $$i(t) = I_{peak} \cdot e^{-(t - 0.75)/\tau}$$
-        
+
     - Substituting $I_{peak}$ and $\tau$ yields the equation for the discharging current:
-        
+
         $$i(t) = \frac{A}{3} \left(1 - e^{-11.25}\right) e^{-15(t - 0.75)}$$
-        
 
 #### **4. Solving for Amplitude $A$**
 
 We know the current must be above the threshold ($I_{th} = \sqrt{10}$) for exactly $0.5\text{ s}$. Let $t_1$ be the moment the current rises past the threshold, and $t_2$ be the moment it falls back below it.
 
 - **Finding $t_1$ (Rising Edge):**
-    
+
     - Set the charging equation equal to the threshold:
-        
+
         $$\sqrt{10} = \frac{A}{3} \left(1 - e^{-15t_1}\right)$$
-        
+
     - Solve for $t_1$:
-        
+
         $$1 - e^{-15t_1} = \frac{3\sqrt{10}}{A} \implies e^{-15t_1} = 1 - \frac{3\sqrt{10}}{A}$$
-        
+
         $$t_1 = -\frac{1}{15} \ln\left(1 - \frac{3\sqrt{10}}{A}\right)$$
-        
+
 - **Finding $t_2$ (Falling Edge):**
-    
+
     - Set the discharging equation equal to the threshold:
-        
+
         $$\sqrt{10} = \frac{A}{3} \left(1 - e^{-11.25}\right) e^{-15(t_2 - 0.75)}$$
-        
+
     - Solve for $t_2$:
-        
+
         $$e^{-15(t_2 - 0.75)} = \frac{3\sqrt{10}}{A \left(1 - e^{-11.25}\right)}$$
-        
+
         $$t_2 = 0.75 - \frac{1}{15} \ln\left( \frac{3\sqrt{10}}{A \left(1 - e^{-11.25}\right)} \right)$$
-        
+
 - **Applying the Time Constraint ($t_2 - t_1 = 0.5\text{ s}$):**
-    
+
     - Subtract $t_1$ from $t_2$ and set it equal to $0.5$:
-        
+
         $$0.75 - \frac{1}{15} \ln\left( \frac{3\sqrt{10}}{A \left(1 - e^{-11.25}\right)} \right) - \left[ -\frac{1}{15} \ln\left(1 - \frac{3\sqrt{10}}{A}\right) \right] = 0.5$$
-        
+
     - Isolate the natural logarithm terms:
-        
+
         $$0.25 = \frac{1}{15} \left[ \ln\left( \frac{3\sqrt{10}}{A \left(1 - e^{-11.25}\right)} \right) - \ln\left(1 - \frac{3\sqrt{10}}{A}\right) \right]$$
-        
+
     - Multiply both sides by $15$ and combine the logarithms using log rules:
-        
+
         $$3.75 = \ln\left[ \frac{\frac{3\sqrt{10}}{A}}{\left(1 - e^{-11.25}\right) \left(1 - \frac{3\sqrt{10}}{A}\right)} \right]$$
-        
+
     - Exponentiate both sides to eliminate the natural logarithm:
-        
+
         $$e^{3.75} = \frac{\frac{3\sqrt{10}}{A}}{\left(1 - e^{-11.25}\right) \left(1 - \frac{3\sqrt{10}}{A}\right)}$$
-        
+
 - **Simplifying and Calculating:**
-    
+
     - Because $e^{-11.25}$ is an extremely small number ($\approx 1.29 \times 10^{-5}$), the term $\left(1 - e^{-11.25}\right)$ is functionally equal to $1$. We can safely drop it to simplify the algebra.
-        
+
     - Let's substitute $x = \frac{3\sqrt{10}}{A}$ to make the equation easier to read:
-        
+
         $$e^{3.75} = \frac{x}{1 - x}$$
-        
+
     - Rearrange to solve for $x$:
-        
+
         $$42.521 \approx \frac{x}{1 - x}$$
-        
+
         $$42.521 - 42.521x = x \implies 42.521 = 43.521x$$
-        
+
         $$x = \frac{42.521}{43.521} \approx 0.97702$$
-        
+
     - Finally, substitute back $x = \frac{3\sqrt{10}}{A}$ to find $A$:
-        
+
         $$\frac{3\sqrt{10}}{A} = 0.97702$$
-        
+
         $$A = \frac{3\sqrt{10}}{0.97702} = \frac{3 \cdot 3.162277}{0.97702} = \frac{9.4868}{0.97702} \approx 9.71\text{ V}$$
-        
 
 **Answer:** The appropriate value to achieve the maximum current while not opening the fuse is **$A = 9.71\text{ V}$**.
 
@@ -2512,22 +2430,21 @@ We know the current must be above the threshold ($I_{th} = \sqrt{10}$) for exact
 To sketch the current waveform $i(t)$, set up a graph with Time ($t$ in seconds) on the X-axis and Current ($i(t)$ in Amperes) on the Y-axis.
 
 - **$t = 0\text{ s}$ to $t \approx 0.251\text{ s}$:** The curve starts at the origin $(0,0)$ and curves upwards exponentially.
-    
+
 - **$t \approx 0.251\text{ s}$:** Mark this point on the time axis as $t_1$. This is exactly where the current crosses the horizontal threshold line at $I_{th} = 3.16\text{ A}$ (which is $\sqrt{10}$).
-    
+
 - **$t \approx 0.251\text{ s}$ to $t = 0.75\text{ s}$:** The curve continues to rise exponentially, though the rate of increase slows down. It peaks at exactly $t = 0.75\text{ s}$. The absolute maximum value reached is $\approx 3.236\text{ A}$ (which is slightly above the $3.16\text{ A}$ threshold).
-    
+
 - **$t = 0.75\text{ s}$ to $t \approx 0.751\text{ s}$:** The voltage pulse turns off. The curve sharply begins an exponential decay downwards.
-    
+
 - **$t \approx 0.751\text{ s}$:** Mark this point as $t_2$. This is where the decaying current crosses back _down_ through the $3.16\text{ A}$ threshold line.
-    
+
 - **Highlighting the Goal:** The distance on the X-axis between $t_1$ and $t_2$ represents the time the circuit spent above the threshold. This gap is exactly $0.5\text{ s}$ ($0.751 - 0.251 = 0.5$). You can shade the region under the peak that sits above the $3.16\text{ A}$ horizontal line to visually indicate this duration.
-    
+
 - **$t > 0.751\text{ s}$:** The current simply decays exponentially back toward $0\text{ A}$.
 ***
 
-### **48. Page 10, Q.4(c)**
-**A model of a fluorescent light circuit for a bike is shown in the following figure. Select L so that the bulb current rapidly raises its steady-state value and only overshoots its final value by less than 10%.**
+### 48. Page 10, Q.4(c): A model of a fluorescent light circuit for a bike is shown in the following figure. Select L so that the bulb current rapidly raises its steady-state value and only overshoots its final value by less than 10%.
 
 **Solution:**
 
@@ -2569,8 +2486,7 @@ To ensure the overshoot is less than 10%, the inductance must be selected such t
 
 ***
 
-### **49. Page 12, Q.4(b)**
-**Draw the equivalent electrical circuit of an automobile ignition system. Prove that the maximum voltage appearing at the open circuited secondary is $|v_2(t)|_{max} = \frac{M}{L_1} \cdot Q \cdot E$; when the switch opens. Where, Q = quality factor, $L_1$ = inductance, M = mutual inductance, E = supply voltage.**
+### 49. Page 12, Q.4(b): Draw the equivalent electrical circuit of an automobile ignition system. Prove that the maximum voltage appearing at the open circuited secondary is $|v_2(t)|_{max} = \frac{M}{L_1} \cdot Q \cdot E$; when the switch opens. Where, Q = quality factor, $L_1$ = inductance, M = mutual inductance, E = supply voltage.
 
 **Solution:**
 
@@ -2601,8 +2517,7 @@ To ensure the overshoot is less than 10%, the inductance must be selected such t
 
 ***
 
-### **50. Page 18, Q.4(b)**
-**The following circuit is used by biology student to study "frog kick". She noticed that the frog kicked little then the switch was closed but kicked violently for 5 s when the switched was opened. Model the frog as a resistor and calculate its resistance. Assume that it takes 10 mA for the frog to kick violently.**
+### 50. Page 18, Q.4(b): The following circuit is used by biology student to study "frog kick". She noticed that the frog kicked little then the switch was closed but kicked violently for 5 s when the switched was opened. Model the frog as a resistor and calculate its resistance. Assume that it takes 10 mA for the frog to kick violently.
 
 **Solution:**
 
@@ -2644,8 +2559,7 @@ The resistance of the frog in this model is approximately $1.27\ \Omega$.
 
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 51 to 54).
 
-### **51. Page 30, Q.2**
-**An electric microphone and its associated circuit can be represented by the circuit shown in Figure. Determine the transfer function $H(s) = V_o(s)/V(s)$.**
+### 51. Page 30, Q.2: An electric microphone and its associated circuit can be represented by the circuit shown in Figure. Determine the transfer function $H(s) = V_o(s)/V(s)$.
 
 **Solution:**
 
@@ -2694,8 +2608,7 @@ $$H(s) = \frac{sRC}{s^2 R_1 R C^2 + sC(R + 2R_1) + 1}$$
 
 ***
 
-### **52. Page 42, CT-02 Q.1**
-**A first-order RC circuit is subjected to a 12 V DC voltage. Design the circuit by selecting the value of the capacitor C such that the voltage across the capacitor reaches 4 V at a time 6 ms. (Figure involved)**
+### 52. Page 42, CT-02 Q.1: A first-order RC circuit is subjected to a 12 V DC voltage. Design the circuit by selecting the value of the capacitor C such that the voltage across the capacitor reaches 4 V at a time 6 ms. (Figure involved)
 
 **Solution:**
 
@@ -2736,8 +2649,7 @@ $$C = 5.461\ \mu\text{F}$$
 
 ***
 
-### **53. Page 45, CT-02 Q.1**
-**For the given RC timing circuit connected in parallel with a neon lamp, design the resistance, R needed to make the lamp fire after 5 ms. The lamp triggers when the capacitor voltage reaches two-thirds of the supply voltage and can be treated as an open circuit (R = $\infty\Omega$) until it fires.**
+### 53. Page 45, CT-02 Q.1: For the given RC timing circuit connected in parallel with a neon lamp, design the resistance, R needed to make the lamp fire after 5 ms. The lamp triggers when the capacitor voltage reaches two-thirds of the supply voltage and can be treated as an open circuit (R = $\infty\Omega$) until it fires.
 
 **Solution:**
 
@@ -2773,8 +2685,7 @@ $$R \approx 4.55\text{ k}\Omega$$
 
 ***
 
-### **54. Page 51, Q(b) (Bottom)**
-**A practical example of a delay circuit is shown in Fig. 2(b). The neon bulb fires when its voltage reaches 70 V and turns off when its voltage drops to 30 V. Its resistance is $100\ \Omega$ when on and infinitely high when off. Determine the time interval between light flashes.**
+### 54. Page 51, Q(b) (Bottom): A practical example of a delay circuit is shown in Fig. 2(b). The neon bulb fires when its voltage reaches 70 V and turns off when its voltage drops to 30 V. Its resistance is $100\ \Omega$ when on and infinitely high when off. Determine the time interval between light flashes.
 
 **Solution:**
 
@@ -2818,8 +2729,7 @@ $$T = t_{charge} + t_{discharge} = 29.389\text{ s} + 0.000847\text{ s} \approx 2
 
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 55 to 58).
 
-### **55. Page 52, Q.2(a)**
-**How does a tank circuit produce sinusoidal oscillation? Explain in brief.**
+### 55. Page 52, Q.2(a): How does a tank circuit produce sinusoidal oscillation? Explain in brief.
 
 **Solution:**
 A "tank circuit" is a fundamental electrical circuit consisting of an inductor (L) and a capacitor (C) connected in parallel (or series). It produces sinusoidal oscillations through the continuous, lossless exchange of energy between the two components.
@@ -2835,8 +2745,7 @@ A "tank circuit" is a fundamental electrical circuit consisting of an inductor (
 
 ***
 
-### **56. Page 52, Q.2(b)**
-**Design an electronic photo flash unit using R-C circuit that should provide a short duration, high current pulse. Also, explain in brief.**
+### 56. Page 52, Q.2(b): Design an electronic photo flash unit using R-C circuit that should provide a short duration, high current pulse. Also, explain in brief.
 
 **Solution:**
 An electronic photoflash unit exploits the ability of a capacitor to store energy slowly over a long period and then release it almost instantaneously to create a high-current pulse.
@@ -2857,8 +2766,7 @@ The basic circuit consists of:
 
 ***
 
-### **57. Page 5, Q.2(c)**
-**Consider the following circuit. (i) Find the zero-state response (ii) Determine the time necessary for the capacitor to reach one-fourth of the final voltage.**
+### 57. Page 5, Q.2(c): Consider the following circuit. (i) Find the zero-state response (ii) Determine the time necessary for the capacitor to reach one-fourth of the final voltage.
 
 **Solution:**
 
@@ -2898,8 +2806,7 @@ It will take approximately **$0.288\text{ s}$** for the capacitor to reach one-f
 
 ***
 
-### **58. Page 11, Q.1(a)**
-**Define (i) transient response (ii) zero-state response (iii) time constant**
+### 58. Page 11, Q.1(a): Define (i) transient response (ii) zero-state response (iii) time constant
 
 **Solution:**
 
@@ -2913,7 +2820,7 @@ It will take approximately **$0.288\text{ s}$** for the capacitor to reach one-f
 * Time Constant: Chapter 7, Section 7.2, Page 256.
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 59 to 62).
 
-### **59. Page 14, Q.1(b): Write the input-output relationship for an ideal integrator. Determine the zero-input and zero-state components of the response.**
+### 59. Page 14, Q.1(b): Write the input-output relationship for an ideal integrator. Determine the zero-input and zero-state components of the response.
 
 **Solution:**
 
@@ -2943,7 +2850,7 @@ $$v_{zs}(t) = -\frac{1}{RC} \int_{0}^{t} v_{in}(\tau) d\tau$$
 
 ***
 
-### **60. Page 20, Q.2(a): Define zero-input response and zero-state response.**
+### 60. Page 20, Q.2(a): Define zero-input response and zero-state response.
 
 **Solution:**
 
@@ -2954,7 +2861,7 @@ $$v_{zs}(t) = -\frac{1}{RC} \int_{0}^{t} v_{in}(\tau) d\tau$$
 
 ***
 
-### **61. Page 52, Q.2(c): Determine zero state response for the circuit shown below using laplace transform. (Figure involved)**
+### 61. Page 52, Q.2(c): Determine zero state response for the circuit shown below using laplace transform. (Figure involved)
 
 **Solution:**
 
@@ -3006,7 +2913,7 @@ $$i(t) = \frac{V_m \omega L}{R^2 + (\omega L)^2} \left[ e^{-\frac{R}{L}t} - \cos
 
 ***
 
-### **62. Page 39, Q.1 (CT-02): Draw a first order RC or RL switching circuit to fulfil the following conditions: (i) The switching should be happened at time t = 0. (ii) Before switching, the circuit should be a first order circuit with DC source at reached at steady-state. (iii) After switching, the circuit should be a source-free first order circuit. (iv) The time constant before switching and after switching should be different. Find the expression and sketch capacitor voltage (for RC circuit) or inductor current (for RL circuit). [10]**
+### 62. Page 39, Q.1 (CT-02): Draw a first order RC or RL switching circuit to fulfil the following conditions: (i) The switching should be happened at time t = 0. (ii) Before switching, the circuit should be a first order circuit with DC source at reached at steady-state. (iii) After switching, the circuit should be a source-free first order circuit. (iv) The time constant before switching and after switching should be different. Find the expression and sketch capacitor voltage (for RC circuit) or inductor current (for RL circuit). [10]
 
 **Solution:**
 
@@ -3046,8 +2953,7 @@ We will design an RC circuit that meets all the criteria.
 **Related Location in Sadiku Textbook:** Chapter 7, Section 7.2 (The Source-Free RC Circuit), Page 254; Section 7.5 (Step Response of an RC Circuit), Page 273.
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 63 to 66).
 
-### **63. Page 20, Q.2(b)**
-**For the circuit of Fig. Q. 2(b), find $i(t)$ and $v_c(t)$ for $t \ge 0$ given that $i_L(0^-) = 10\text{A}$ and the switch $s$ closes at $t=0$. Then compute the energy dissipated in the $5\Omega$ resistor over the time interval $[0.4, \infty]$.**
+### 63. Page 20, Q.2(b): For the circuit of Fig. Q. 2(b), find $i(t)$ and $v_c(t)$ for $t \ge 0$ given that $i_L(0^-) = 10\text{A}$ and the switch $s$ closes at $t=0$. Then compute the energy dissipated in the $5\Omega$ resistor over the time interval $[0.4, \infty]$.
 
 **Solution:**
 
@@ -3102,8 +3008,7 @@ $$E = 118.518 \left[ 0.14716 + 0.05467 \right] = 118.518 \times 0.20183 \approx 
 
 ***
 
-### **64. Page 23, Q.2**
-**Express $V_c(t), t \ge 0$ if the direction of the dependent current source of Fig. 1 is reversed. Plot $V_c(t), t \ge 0$ and comments on your answer.**
+### 64. Page 23, Q.2: Express $V_c(t), t \ge 0$ if the direction of the dependent current source of Fig. 1 is reversed. Plot $V_c(t), t \ge 0$ and comments on your answer.
 
 **Solution:**
 
@@ -3136,8 +3041,7 @@ $$V_c(t) = V_c(0) e^{-t/\tau} = 5e^{-t}\text{ V} \quad \text{for } t \ge 0$$
 
 ***
 
-### **65. Page 36, Q.2**
-**For the following circuit, Find the impulse response. Also find $v_{out}(t)$ when (i) $v_{in}(t) = u(t)$ (ii) $v_{in}(t) = e^{-t}u(t)$, and (iii) $v_{in}(t) = tu(t)$. For all cases assume $\tau = 1\text{s}$.**
+### 65. Page 36, Q.2: For the following circuit, Find the impulse response. Also find $v_{out}(t)$ when (i) $v_{in}(t) = u(t)$ (ii) $v_{in}(t) = e^{-t}u(t)$, and (iii) $v_{in}(t) = tu(t)$. For all cases assume $\tau = 1\text{s}$.
 
 **Solution:**
 
@@ -3176,11 +3080,7 @@ $$h(t) = \mathcal{L}^{-1} \{ H(s) \} = \delta(t) - e^{-t} u(t)$$
 
 ***
 
-### **66. Page 41, Q.2**
-**The impulse response of a linear circuit is $h(t) = 10[u(t) - u(t - 2)]$.**
-**(i) Use the convolution to find the response due to an input $x(t) = e^{-t}u(t)$. [4 marks]**
-**(ii) Convert the impulse response into a transfer function and the input into the s domain. Solve the problem in the s domain and covert your answer back into the t domain. [4 Marks]**
-**(iii) Compare your result of (ii) with (i) and comment. [2 Marks]**
+### 66. Page 41, Q.2: The impulse response of a linear circuit is $h(t) = 10[u(t) - u(t - 2)]$. (i) Use the convolution to find the response due to an input $x(t) = e^{-t}u(t)$. [4 marks] (ii) Convert the impulse response into a transfer function and the input into the s domain. Solve the problem in the s domain and covert your answer back into the t domain. [4 Marks] (iii) Compare your result of (ii) with (i) and comment. [2 Marks]
 
 **Solution:**
 
@@ -3215,8 +3115,7 @@ Let's verify that the s-domain result matches the piecewise convolution result:
 **Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697; Chapter 16, Section 16.4 (Transfer Functions), Page 726.
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 67 to 70).
 
-### **67. Page 63, Q(c) (Middle)**
-**Determine the impulse response of the following circuit.**
+### 67. Page 63, Q(c) (Middle): Determine the impulse response of the following circuit.
 
 **Solution:**
 
@@ -3268,8 +3167,7 @@ $$h(t) = 0.8 \delta(t) + \left[ \left( \frac{0.8 s_1^2}{s_1 - s_2} \right) e^{s_
 
 ***
 
-### **68. Page 3, Q.6(b)**
-**Using convolution integral, find the response $v_0(t)$ of the following circuit.**
+### 68. Page 3, Q.6(b): Using convolution integral, find the response $v_0(t)$ of the following circuit.
 
 **Solution:**
 
@@ -3307,8 +3205,7 @@ $$v_0(t) = (1 - e^{-t})u(t) - (1 - e^{-(t-2)})u(t - 2)$$
 
 ***
 
-### **69. Page 7, Q.6(a)**
-**Using convolution integral, find the response of the following circuit.**
+### 69. Page 7, Q.6(a): Using convolution integral, find the response of the following circuit.
 
 **Solution:**
 
@@ -3338,8 +3235,7 @@ $$v_0(t) = e^{-t}(1 - t)u(t)\text{ V}$$
 
 ***
 
-### **70. Page 9, Q.2(c)**
-**Obtain the convolution of the pairs of signals in the figure below.**
+### 70. Page 9, Q.2(c): Obtain the convolution of the pairs of signals in the figure below.
 
 **Solution:**
 
@@ -3378,8 +3274,7 @@ To sketch or fully define the output, evaluate the sum of the ramp functions for
 
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 71 to 74).
 
-### **71. Page 14, Q.3(a)**
-**Define convolution integral. Compute the convolution of h(t)=u(t) with the function x(t) sketched in the following figure. (Figure shows a rectangular pulse from t=-1 to t=1 with amplitude 1).**
+### 71. Page 14, Q.3(a): Define convolution integral. Compute the convolution of h(t)=u(t) with the function x(t) sketched in the following figure. (Figure shows a rectangular pulse from t=-1 to t=1 with amplitude 1).
 
 **Solution:**
 
@@ -3418,8 +3313,7 @@ t + 1, & -1 \le t \le 1 \\
 
 ***
 
-### **72. Page 61, Q(c)**
-**For the RL circuit in the following figure, use the convolution integral to find the response $i_o(t)$ due to the excitation $i_s(t)$.**
+### 72. Page 61, Q(c): For the RL circuit in the following figure, use the convolution integral to find the response $i_o(t)$ due to the excitation $i_s(t)$.
 
 **Solution:**
 
@@ -3455,8 +3349,8 @@ $$i_o(t) = (1 - e^{-t})u(t) - (1 - e^{-(t-2)})u(t - 2) \text{ A}$$
 
 ***
 
-### **73. Page 62, Q(c)**
-**Obtain the convolution of the following pair of signals.**
+### 73. Page 62, Q(c): Obtain the convolution of the following pair of signals.
+
 *(Figure shows $f_1(t)$ as a ramp from (0,0) to (1,1) dropping to 0, and $f_2(t)$ as a rectangular pulse from t=1 to t=5 with amplitude 2).*
 
 **Solution:**
@@ -3503,8 +3397,8 @@ $$y(t) = \begin{cases}
 
 ***
 
-### **74. Page 63, Q(c) (Top)**
-**Obtain the Convolution of the pairs of signals in the figure below.**
+### 74. Page 63, Q(c) (Top): Obtain the Convolution of the pairs of signals in the figure below.
+
 *(Figure shows $x(t)$ as a rectangular pulse from t=0 to t=1 with amplitude 1, and $h(t)$ as a positive pulse from t=0 to t=1 with amp 1, followed by a negative pulse from t=1 to t=2 with amp -1).*
 
 **Solution:**
@@ -3549,8 +3443,7 @@ t - 3, & 2 < t \le 3 \\
 **Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697.
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 75 to 78).
 
-### **75. Page 63, Q.5(a)**
-**Find the convolution of the following signals. (Figure shows $x(t)$ as a rectangular pulse from t=0 to t=4 with amplitude 2, and $y(t)$ as a positive pulse from t=0 to t=2 with amp 4, followed by a negative pulse from t=2 to t=4 with amp -4).**
+### 75. Page 63, Q.5(a): Find the convolution of the following signals. (Figure shows $x(t)$ as a rectangular pulse from t=0 to t=4 with amplitude 2, and $y(t)$ as a positive pulse from t=0 to t=2 with amp 4, followed by a negative pulse from t=2 to t=4 with amp -4).
 
 **Solution:**
 
@@ -3601,8 +3494,7 @@ $$z(t) = \begin{cases}
 
 ***
 
-### **76. Page 3, Q.5(c)**
-**Given a transfer function $G(s) = \frac{s^2}{s^2+4s+10}$, synthesize the network. Assume L= 1H.**
+### 76. Page 3, Q.5(c): Given a transfer function $G(s) = \frac{s^2}{s^2+4s+10}$, synthesize the network. Assume L= 1H.
 
 **Solution:**
 
@@ -3645,8 +3537,7 @@ The output voltage $V_{out}$ is measured across the $1\text{ H}$ inductor.
 
 ***
 
-### **77. Page 18, Q.6(b)**
-**What is network synthesis? Synthesis the function $T(s) = \frac{V_0(s)}{V_i(s)} = \frac{-2s}{s^2+6s+10}$ using the topology in the following figure. (Figure shows an active bandpass filter topology using an op-amp with admittances $Y_1$ through $Y_4$).**
+### 77. Page 18, Q.6(b): What is network synthesis? Synthesis the function $T(s) = \frac{V_0(s)}{V_i(s)} = \frac{-2s}{s^2+6s+10}$ using the topology in the following figure. (Figure shows an active bandpass filter topology using an op-amp with admittances $Y_1$ through $Y_4$).
 
 **Solution:**
 
@@ -3756,10 +3647,7 @@ Now find $C_2$: $R_2 C_2 = 0.2 \implies 2000 \cdot C_2 = 0.2 \implies C_2 = \fra
 
 ***
 
-### **78. Page 69, Q(b)**
-**A given transfer function can be realized in many different ways. A transfer function can be realized by using integrators or differentiators along with adders and multipliers. Generally differentiator is avoided to realize a transfer function.**
-**(i) State the reason of preferring integrator over differentiator in system realization.**
-**(ii) Realize the following transfer function by any one of the following forms. Canonic direct, series and parallel forms. $H(s) = \frac{s(s+2)}{(s+1)(s+3)(s+4)}$**
+### 78. Page 69, Q(b): A given transfer function can be realized in many different ways. A transfer function can be realized by using integrators or differentiators along with adders and multipliers. Generally differentiator is avoided to realize a transfer function. (i) State the reason of preferring integrator over differentiator in system realization. (ii) Realize the following transfer function by any one of the following forms. Canonic direct, series and parallel forms. $H(s) = \frac{s(s+2)}{(s+1)(s+3)(s+4)}$
 
 **Solution:**
 
@@ -3809,7 +3697,7 @@ Taking the inverse Laplace, this represents an integrator whose input is a sum o
 **Related Location in Sadiku Textbook:** Chapter 16, Section 16.6.2 (Network Synthesis), Page 740; Section 6.6.3 (Analog Computer), Page 237.
 Based on the provided PDF, here are the detailed solutions for the final 2 questions (Questions 79 and 80) available in the document.
 
-### **79. Page 10, Q.8(c): Why it is not possible to find the Fourier transform of ramp signal? State and explain Parseval's theorem.**
+### 79. Page 10, Q.8(c): Why it is not possible to find the Fourier transform of ramp signal? State and explain Parseval's theorem.
 
 **Solution:**
 
@@ -3843,7 +3731,7 @@ $$W_{1\Omega} = \int_{-\infty}^{\infty} f^2(t) dt = \frac{1}{2\pi} \int_{-\infty
 
 ***
 
-### **80. Page 13, Q.8(c): State and explain Parseval's theorem.**
+### 80. Page 13, Q.8(c): State and explain Parseval's theorem.
 
 **Solution:**
 
@@ -3874,4 +3762,3 @@ $$W_{1\Omega} = \int_{-\infty}^{\infty} f^2(t) dt = \frac{1}{2\pi} \int_{-\infty
 **Ans related location pg number In sadiku textbook:** 
 * Parseval's Theorem for Fourier Series: Chapter 17, Section 17.5 (Average Power and RMS Values), Page 783.
 * Parseval's Theorem for Fourier Transform: Chapter 18, Section 18.5 (Parseval's Theorem), Page 836.
-
