@@ -2283,7 +2283,7 @@ $$v(t) = \left( 4e^{-10t} - 4\cos(20t) + 2\sin(20t) \right)\text{ V} \quad \text
 
 Based on the provided PDF, here are the detailed solutions for the 4 questions starting from Question 47.
 
-### 47. Page 9, Q.1(c): Fuses are used to open a circuit when excessive current flows. One fuse is to be designed to open when the power absorbed by R exceeds 10 w for 0.5s. The source represents the turn-on condition for the load where $v_s = A[u(t) - u(t - 0.75)]\text{V}$. Assume that $i_L(0^-) = 0$. The goal is to achieve the maximum current while not opening the fuse. Determine the appropriate value of A and sketch the current waveform.
+### 47. Page 9, Q.1(c)✅: Fuses are used to open a circuit when excessive current flows. One fuse is to be designed to open when the power absorbed by R exceeds 10 w for 0.5s. The source represents the turn-on condition for the load where $v_s = A[u(t) - u(t - 0.75)]\text{V}$. Assume that $i_L(0^-) = 0$. The goal is to achieve the maximum current while not opening the fuse. Determine the appropriate value of A and sketch the current waveform.
 
 **Solution:**
 
