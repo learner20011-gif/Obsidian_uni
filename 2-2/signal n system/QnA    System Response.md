@@ -1697,36 +1697,85 @@ The circuit consists of a **$50 \text{ V}$ DC voltage source** connected in seri
 ### 34. Page 26, Q (Handwritten 2): The switch closes at t>0. Find the inductor current when the switch is closed. [Figure Involved]
 
 **Solution:**
-Based on the handwritten circuit diagram, we have a $24\text{V}$ DC source, a switch that closes at $t=0$, a $16 \Omega$ resistor in series, and then a parallel combination of two branches: a $40 \Omega$ resistor branch and a branch with a $10 \Omega$ resistor in series with a $20 \text{ H}$ inductor. We need to find the current $i(t)$ flowing down through the inductor branch for $t > 0$.
+The inductor current for $t \ge 0$ is **$i(t) = 2.4 - 1.6 e^{-0.5t}\text{ A}$** (or $2.4 - 1.6e^{-t/2}\text{ A}$).
 
-**1. Initial Conditions ($t < 0$):**
-Before the switch closes, the circuit is open, and no power is supplied to the inductor. Assuming it has been in this state for a long time, the inductor is completely unenergized.
-$$ i(0^-) = 0 \text{ A} $$
-Because current through an inductor cannot change instantaneously, $i(0^+) = 0 \text{ A}$.
+---
 
-**2. Steady-State Conditions ($t \to \infty$):**
-When the switch has been closed for a long time, the circuit reaches DC steady state, and the $20 \text{ H}$ inductor acts as a short circuit ($0 \Omega$).
-The circuit simplifies to a $24\text{V}$ source in series with the $16 \Omega$ resistor, which then splits into a $40 \Omega$ resistor and a $10 \Omega$ resistor in parallel.
-*   Equivalent resistance of the parallel part: $R_p = 40 || 10 = \frac{40 \times 10}{40 + 10} = \frac{400}{50} = 8 \Omega$.
-*   Total circuit resistance: $R_{total} = 16 \Omega + 8 \Omega = 24 \Omega$.
-*   Total current from the source: $I_s = \frac{24\text{V}}{24\Omega} = 1 \text{ A}$.
-*   Using current division to find the current $i(\infty)$ through the $10 \Omega$ (inductor) branch:
-$$ i(\infty) = I_s \times \frac{40}{40 + 10} = 1 \times \frac{40}{50} = \mathbf{0.8 \text{ A}} $$
+#### **Step-by-Step Solution**
 
-**3. Thevenin Resistance and Time Constant ($t > 0$):**
-To find the time constant, we determine the Thevenin equivalent resistance $R_{th}$ seen by the inductor. 
-We turn off the $24\text{V}$ voltage source (replace with a short circuit) and look into the terminals where the inductor is connected.
-*   The $16 \Omega$ and $40 \Omega$ resistors are in parallel: $16 || 40 = \frac{16 \times 40}{16 + 40} = \frac{640}{56} = \frac{80}{7} \Omega \approx 11.43 \Omega$.
-*   This combination is in series with the $10 \Omega$ resistor in the inductor's branch.
-*   Total equivalent resistance seen by inductor: $R_{eq} = \frac{80}{7} + 10 = \frac{150}{7} \Omega$.
-*   The time constant is:
-$$ \tau = \frac{L}{R_{eq}} = \frac{20}{\frac{150}{7}} = \frac{140}{150} = \mathbf{\frac{14}{15} \text{ s}} \approx 0.933 \text{ s} $$
+#### **1. Find the Initial Condition ($t < 0$)**
 
-**4. Formulate the Final Equation:**
-Using the general step response formula for a first-order RL circuit:
-$$ i(t) = i(\infty) + [i(0) - i(\infty)] e^{-t/\tau} $$
-$$ i(t) = 0.8 + [0 - 0.8] e^{-\frac{15}{14}t} $$
-$$ \mathbf{i(t) = 0.8 \left( 1 - e^{-\frac{15}{14}t} \right) \text{ A}} \quad \text{for } t > 0 $$
+* Before $t = 0$, the switch is **open** and the circuit is in DC steady state.
+* Under DC steady state, the inductor acts as a **short circuit**.
+* Calculate the equivalent resistance seen by the 24V source:
+
+$$R_{p} = 40\ \Omega \parallel 10\ \Omega = \frac{40 \times 10}{40 + 10} = 8\ \Omega$$
+
+
+$$R_{\text{total}} = 16\ \Omega + R_p = 16 + 8 = 24\ \Omega$$
+
+
+* Calculate the total source current ($I_{\text{total}}$):
+
+$$I_{\text{total}} = \frac{24\text{ V}}{24\ \Omega} = 1\text{ A}$$
+
+
+* Use the current divider rule to find the current through the $10\ \Omega$ branch ($i(0^-)$):
+
+$$i(0^-) = I_{\text{total}} \times \left( \frac{40}{40 + 10} \right) = 1 \times 0.8 = 0.8\text{ A}$$
+
+
+* Since inductor current cannot change instantaneously:
+
+$$i(0^+) = i(0^-) = 0.8\text{ A}$$
+
+
+
+---
+
+#### **2. Find the Final Steady-State Current ($t \to \infty$)**
+
+* At $t \ge 0$, the switch **closes**, shorting out the $16\ \Omega$ resistor.
+* The $24\text{ V}$ source is now directly across the parallel branches.
+* Under DC steady state as $t \to \infty$, the inductor acts as a short circuit again.
+* Calculate the steady-state current $i(\infty)$:
+
+$$i(\infty) = \frac{24\text{ V}}{10\ \Omega} = 2.4\text{ A}$$
+
+
+
+---
+
+#### **3. Calculate the Time Constant ($\tau$)**
+
+* Deactivate the independent source (replace the 24V source with a short circuit) and look into the inductor terminals to find the Thévenin resistance ($R_{\text{Th}}$).
+* Because the switch is closed, the top node above the $40\ \Omega$ resistor is directly connected to ground through the shorted source, which shorts out the $40\ \Omega$ resistor as well.
+* The Thévenin resistance seen by the inductor is simply:
+
+$$R_{\text{Th}} = 10\ \Omega$$
+
+
+* Calculate the time constant ($\tau$):
+
+$$\tau = \frac{L}{R_{\text{Th}}} = \frac{20\text{ H}}{10\ \Omega} = 2\text{ s}$$
+
+
+
+---
+
+#### **4. Formulate the First-Order Response**
+
+* Use the general expression for first-order $RL$ circuits:
+
+$$i(t) = i(\infty) + \left[i(0^+) - i(\infty)\right] e^{-t / \tau}$$
+
+
+* Substitute the values into the equation:
+
+$$i(t) = 2.4 + (0.8 - 2.4) e^{-t / 2}$$
+
+
+$$i(t) = 2.4 - 1.6 e^{-0.5t}\text{ A} \quad \text{for } t \ge 0$$
 
 *(Related location: Sadiku textbook, Chapter 7, Section 7.6 Step Response of an RL Circuit)*
 
