@@ -1,6 +1,4 @@
-* 2
-* 5
-* 7
+
 * 12
 * 13
 * 15
@@ -31,10 +29,7 @@
 * 61
 * 62
 * 64
-* 65
-* 68
-* 69
-* 72
+
 ### **Time domain and frequency domain analysis of LTI systems**
 
 1. **Page 14, Q.3(b):** Determine $i_o(t)$ for the following network using Fourier transform method. ![[Pasted image 20260727113934.png]][Figure Involved]
@@ -144,7 +139,7 @@
 ### **Impulse and step responses**
 
 63. **Page 20, Q.2(b):** For the circuit of Fig. Q. 2(b), find $i(t)$ and $v_c(t)$ for $t \geq 0$ given that $i_L(0^-)=10A$ and the switch s closes at t=0. Then compute the energy dissipated in the $5\Omega$ resistor over the time interval $[0.4, \infty]$.![[Pasted image 20260727120325.png]]  [Figure Involved]
-64. **Page 23, Q.2:** Express $V_c(t)$, $t\geq0$ if the direction of the dependent current source of Fig. 1 is reversed. Plot $V_c(t)$, $t\geq0$ and comments on your answer.
+64. **Page 23, Q.2:** Express $V_c(t)$, $t\geq0$ if the direction of the dependent current source of Fig. 1 is reversed. Plot $V_c(t)$, $t\geq0$ and comments on your answer.![[Pasted image 20260801034217.png]]
 65. **Page 36, Q.2:** For the following circuit, Find the impulse response. Also find $v_{out}(t)$ when (i) $v_{in}(t) = u(t)$ (ii) $v_{in}(t) = e^{-t}u(t)$, and (iii) $v_{in}(t) = t u(t)$. For all cases assume $\tau = 1s$.![[Pasted image 20260727120345.png]]  [Figure Involved]
 66. **Page 41, Q.2:** The impulse response of a linear circuit is $h(t) = 10 [u(t)-u(t-2)]$. 
    - (i) Use the convolution to find the response due to an input $x(t) = e^{-t} u(t)$. [4 marks] 
