@@ -1,4 +1,4 @@
-Here are the full texts for all the questions related to **Electrical Measuring Instruments**, thoroughly organized by specific topics from the syllabus. Duplicate questions (with exactly the same wording) have been consolidated to keep the list clean, referencing their first occurrence.
+Q.1, Q.2, Q.3, Q.4, Q.5, Q.6, Q.7, Q.8, Q.9, Q.10, Q.11, Q.12, Q.13, Q.14, Q.15, Q.16, Q.17, Q.18, Q.19, Q.20, Q.21, Q.22, Q.23, Q.24, Q.25, Q.26, Q.27, Q.28, Q.29, Q.30, Q.31, Q.32, Q.33, Q.34, Q.35, Q.36, Q.37
 
 ### **1. Fundamentals, Torques, Damping & Galvanometers**
 
