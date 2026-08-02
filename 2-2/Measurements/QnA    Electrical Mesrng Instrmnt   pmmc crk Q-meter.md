@@ -1,5 +1,5 @@
 ### 1. Page 2, Q.2. (b): Suppose you are working with a gavanometer that has underdamped motion. How can you modify the instrument for critically damped motion if you cannot change the spring and inertia of the instrument? Provide mathematical reasoning.
-
+[watch this for galvanometer](https://youtu.be/7UCUGHBZXNQ?si=2C2TI95LoQr4VOpy)
 **Answer:**
 The dynamic behavior of a galvanometer is governed by its equation of motion, which balances the inertial, damping, and controlling torques against the deflecting torque: 
 $J \frac{d^2\theta}{dt^2} + D \frac{d\theta}{dt} + K\theta = Gi$
