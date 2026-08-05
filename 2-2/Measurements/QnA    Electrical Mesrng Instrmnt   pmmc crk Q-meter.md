@@ -1007,6 +1007,7 @@ Ans related location pg number in ak slide: 87, 88, 131, 132.
 **Answer:**
 **General Construction:**
 An electrodynamometer (or simply dynamometer) type instrument relies on the interaction between two magnetic fields produced by two separate coils, eliminating the need for permanent magnets. The main components are:
+![[1611942_e173da15-d215-4e29-ab4a-014d74939cc2_lg.avif]]
 1.  **Fixed Coils:** The instrument has two identical fixed coils placed close to each other. They are usually made of heavy wire and are designed to carry the main load current (acting as current coils). The split design ensures a uniform magnetic field is created in the central gap between them.
 2.  **Moving Coil:** A lightweight, multi-turn coil wound on a non-magnetic former is pivoted to rotate within the uniform magnetic field created by the fixed coils. This coil is typically connected across the voltage source (acting as a pressure/voltage coil) and carries a small current proportional to the voltage.
 3.  **Control & Damping:** Spring control provides the restoring torque. Since there is no permanent magnet, eddy current damping cannot be used effectively without distorting the operating fields; therefore, air friction damping (using aluminum vanes in air chambers) is commonly used.
