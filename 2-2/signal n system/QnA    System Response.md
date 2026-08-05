@@ -1,6 +1,6 @@
 Based on the provided document, here are the step-by-step solutions for the first four questions.
 
-### 3. 1. Page 14, Q.3(b): Determine $i_o(t)$ for the following network using Fourier transform method. [Figure involved.]
+### 3. 1. Page 14, Q.3(b): Determine $i_o(t)$ for the following network using Fourier transform method . [Figure involved.]
 
 **Problem Statement:**
 Find the output current $i_o(t)$ using the Fourier transform method for a circuit with a voltage source $v_s(t) = 5e^{-2t}u(t)$ V, a series resistor $R = 2 \Omega$, and a parallel combination of a capacitor $C = \frac{1}{4}$ F and an inductor $L = 2$ H. *(Assumption: Based on standard circuit diagrams, $i_o(t)$ is taken as the current through the final output branch, the 2 H inductor.)*
