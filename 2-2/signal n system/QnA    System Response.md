@@ -2,45 +2,8 @@ Based on the provided document, here are the step-by-step solutions for the firs
 
 ### 3. 1. Page 14, Q.3(b): Determine $i_o(t)$ for the following network using Fourier transform method . [Figure involved.]
 
-**Problem Statement:**
-Find the output current $i_o(t)$ using the Fourier transform method for a circuit with a voltage source $v_s(t) = 5e^{-2t}u(t)$ V, a series resistor $R = 2 \Omega$, and a parallel combination of a capacitor $C = \frac{1}{4}$ F and an inductor $L = 2$ H. *(Assumption: Based on standard circuit diagrams, $i_o(t)$ is taken as the current through the final output branch, the 2 H inductor.)*
 
-**Solution:**
-1.  **Transform to the Frequency Domain:**
-    The Fourier transform of the input voltage is:
-    $$V_s(\omega) = \mathcal{F}\{5e^{-2t}u(t)\} = \frac{5}{2 + j\omega}$$
-    The impedances of the circuit elements are:
-    $$Z_R = 2 \Omega$$
-    $$Z_C = \frac{1}{j\omega C} = \frac{1}{j\omega(1/4)} = \frac{4}{j\omega} \Omega$$
-    $$Z_L = j\omega L = j2\omega \Omega$$
 
-2.  **Find the Transfer Function $H(\omega) = \frac{I_o(\omega)}{V_s(\omega)}$:**
-    Let $V_x(\omega)$ be the voltage at the node above the parallel LC branches. Applying Nodal Analysis (KCL) at this node:
-    $$\frac{V_x(\omega) - V_s(\omega)}{2} + \frac{V_x(\omega)}{4/j\omega} + \frac{V_x(\omega)}{j2\omega} = 0$$
-    $$V_x(\omega) \left[ \frac{1}{2} + \frac{j\omega}{4} + \frac{1}{j2\omega} \right] = \frac{V_s(\omega)}{2}$$
-    Multiply by 4 to simplify:
-    $$V_x(\omega) \left[ 2 + j\omega + \frac{2}{j\omega} \right] = 2 V_s(\omega)$$
-    $$V_x(\omega) \left[ \frac{j2\omega + (j\omega)^2 + 2}{j\omega} \right] = 2 V_s(\omega)$$
-    $$V_x(\omega) = \frac{j2\omega}{(j\omega)^2 + j2\omega + 2} V_s(\omega)$$
-    The current through the inductor is $I_o(\omega) = \frac{V_x(\omega)}{Z_L}$:
-    $$I_o(\omega) = \frac{V_x(\omega)}{j2\omega} = \frac{1}{(j\omega)^2 + j2\omega + 2} V_s(\omega)$$
-
-3.  **Calculate $I_o(\omega)$ and perform Inverse Fourier Transform:**
-    Substitute $V_s(\omega)$ into the equation:
-    $$I_o(\omega) = \frac{5}{(2 + j\omega)((j\omega)^2 + j2\omega + 2)}$$
-    To find the inverse easily, we use partial fraction expansion. Let $s = j\omega$:
-    $$I_o(s) = \frac{5}{(s+2)(s^2 + 2s + 2)} = \frac{A}{s+2} + \frac{Bs + C}{s^2 + 2s + 2}$$
-    $$5 = A(s^2 + 2s + 2) + (Bs + C)(s + 2)$$
-    Setting $s = -2$: $5 = A(4 - 4 + 2) \implies 2A = 5 \implies A = 2.5$
-    Equating $s^2$ coefficients: $0 = A + B \implies B = -2.5$
-    Equating constants: $5 = 2A + 2C \implies 5 = 5 + 2C \implies C = 0$
-
-    Substitute $A, B,$ and $C$ back:
-    $$I_o(s) = \frac{2.5}{s+2} - \frac{2.5s}{s^2 + 2s + 2}$$
-    Complete the square in the denominator of the second term ($s^2+2s+2 = (s+1)^2+1$):
-    $$I_o(s) = \frac{2.5}{s+2} - 2.5 \left( \frac{s+1 - 1}{(s+1)^2 + 1} \right) = \frac{2.5}{s+2} - 2.5 \frac{s+1}{(s+1)^2 + 1} + 2.5 \frac{1}{(s+1)^2 + 1}$$
-    Now, converting back from $s = j\omega$ to the time domain using standard Fourier transform pairs:
-    $$i_o(t) = 2.5e^{-2t}u(t) - 2.5e^{-t}\cos(t)u(t) + 2.5e^{-t}\sin(t)u(t) \text{ A}$$
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform), Section 18.4 (Circuit Applications), pg. 833-835.*
 
