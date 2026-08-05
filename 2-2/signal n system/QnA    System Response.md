@@ -46,7 +46,7 @@ Find the output current $i_o(t)$ using the Fourier transform method for a circui
 
 ***
 
-### 3. 2. Page 15, Q.5(b): The square wave in the following waveform is applied to the following network. Find the Fourier series of $v_o(t)$. [Figure involved.]
+### 3. 2. Page 15, Q.5(b): The square wave in the following waveform is applied to the following network. Find the Fourier series of $v_o(t)$ . [Figure involved.]
 
 **Problem Statement:**
 A square wave voltage $v_i(t)$ with an amplitude of $\pm 10$ V and a period of $T = 2$ s is applied to an inverting ideal integrator op-amp circuit with $R = 10 \text{ k}\Omega$ and $C = 40 \mu\text{F}$ (using $\mu\text{F}$ as standard for such circuits). Find the Fourier series of the output $v_o(t)$.
