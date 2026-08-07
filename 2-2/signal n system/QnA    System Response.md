@@ -45,35 +45,76 @@ A square wave voltage $v_i(t)$ with an amplitude of $\pm 10$ V and a period of $
 
 ### 3. 3. Page 16, Q(b) (Top): If the following sawtooth waveform is applied to a band-pass filter with the transfer function shown below Determine the output. [Figure involved.]
 
-**Problem Statement:**
-A sawtooth waveform $v_i(t)$ is applied to an ideal band-pass filter. Find the output $v_o(t)$.
-From the figures:
-*   The sawtooth wave has a period $T = 1$ s and goes from $-1$ to $1$. The equation for one period is $v_i(t) = 2t - 1$ for $0 < t < 1$.
-*   The band-pass filter has a magnitude $|H(\omega)| = 1$ in the frequency range $15 < \omega < 35$ rad/s and $0$ elsewhere. (Assuming zero phase shift).
+    
 
-**Solution:**
-1.  **Fourier Series of the Sawtooth Wave:**
-    Period $T = 1 \text{ s} \implies \omega_0 = \frac{2\pi}{T} = 2\pi \text{ rad/s}$.
-    The waveform has a DC value $a_0 = 0$ (area above and below axis cancels).
-    Because $v_i(t) = 2t-1$ over $0 < t < 1$ acts as a shifted odd function, we calculate $b_n$:
-    $$b_n = \frac{2}{T} \int_{0}^{T} v_i(t) \sin(n\omega_0 t) dt = 2 \int_{0}^{1} (2t - 1) \sin(n 2\pi t) dt = -\frac{2}{n\pi}$$
-    $$v_i(t) = \sum_{n=1}^{\infty} \left(-\frac{2}{n\pi}\right) \sin(n 2\pi t)$$
+---
 
-2.  **Apply the Band-Pass Filter:**
-    The filter only allows angular frequencies $\omega_n$ between 15 rad/s and 35 rad/s to pass unmodified. 
-    Let's check the harmonic frequencies $\omega_n = n\omega_0 = n(2\pi) \approx 6.283n$ rad/s:
-    *   $n=1$: $\omega_1 \approx 6.28$ rad/s (Rejected)
-    *   $n=2$: $\omega_2 \approx 12.57$ rad/s (Rejected)
-    *   $n=3$: $\omega_3 \approx 18.85$ rad/s **(Passed)**
-    *   $n=4$: $\omega_4 \approx 25.13$ rad/s **(Passed)**
-    *   $n=5$: $\omega_5 \approx 31.42$ rad/s **(Passed)**
-    *   $n=6$: $\omega_6 \approx 37.70$ rad/s (Rejected)
+#### Detailed Step-by-Step Solution
 
-3.  **Determine the Filter Output:**
-    Only the 3rd, 4th, and 5th harmonics fall within the passband ($15 < \omega < 35$) and appear at the output. 
-    $$v_o(t) = \sum_{n=3}^{5} -\frac{2}{n\pi} \sin(n 2\pi t)$$
-    Expanded out:
-    $$v_o(t) = -\frac{2}{3\pi} \sin(6\pi t) - \frac{2}{4\pi} \sin(8\pi t) - \frac{2}{5\pi} \sin(10\pi t)$$
+#### 1. Analysis of the Input Sawtooth Waveform $x(t)$
+
+* **Period ($T$):** The waveform repeats every $T = 1\text{ s}$.
+* **Fundamental Angular Frequency ($\omega_0$):**
+
+$$\omega_0 = \frac{2\pi}{T} = 2\pi\text{ rad/s}$$
+
+
+* **Fourier Series Representation:**
+For a sawtooth wave defined as $x(t) = t$ over the interval $0 \le t < 1$ with amplitude $1$:
+* **DC Component ($a_0$):**
+
+$$a_0 = \frac{1}{T} \int_{0}^{1} t \, dt = \frac{1}{2}$$
+
+
+* **Cosine Coefficients ($a_n$):**
+
+$$a_n = 2 \int_{0}^{1} t \cos(2\pi n t) \, dt = 0 \quad \text{for } n \ge 1$$
+
+
+* **Sine Coefficients ($b_n$):**
+
+$$b_n = 2 \int_{0}^{1} t \sin(2\pi n t) \, dt = -\frac{1}{n\pi}$$
+
+
+
+
+* Thus, the Fourier series expansion of the input signal is:
+
+$$x(t) = \frac{1}{2} - \sum_{n=1}^{\infty} \frac{1}{n\pi} \sin(2\pi n t)$$
+
+
+
+---
+
+#### 2. Analysis of the Band-Pass Filter Transfer Function $H(\omega)$
+
+* **Passband Range:** The filter transfer function $\vert{}H(\omega)\vert{} = 1$ for frequencies in the range $15 < \omega < 35\text{ rad/s}$, and $0$ elsewhere.
+
+---
+
+#### 3. Determining the Passing Harmonics
+
+* We calculate the frequency $\omega_n = n \omega_0 = 2\pi n\text{ rad/s}$ for each harmonic $n$:
+* **$n = 1$:** $\omega_1 = 2\pi \approx 6.28\text{ rad/s}$ $\rightarrow$ **Blocked** ($\omega_1 < 15$)
+* **$n = 2$:** $\omega_2 = 4\pi \approx 12.57\text{ rad/s}$ $\rightarrow$ **Blocked** ($\omega_2 < 15$)
+* **$n = 3$:** $\omega_3 = 6\pi \approx 18.85\text{ rad/s}$ $\rightarrow$ **Passed** ($15 < \omega_3 < 35$)
+* **$n = 4$:** $\omega_4 = 8\pi \approx 25.13\text{ rad/s}$ $\rightarrow$ **Passed** ($15 < \omega_4 < 35$)
+* **$n = 5$:** $\omega_5 = 10\pi \approx 31.42\text{ rad/s}$ $\rightarrow$ **Passed** ($15 < \omega_5 < 35$)
+* **$n = 6$:** $\omega_6 = 12\pi \approx 37.70\text{ rad/s}$ $\rightarrow$ **Blocked** ($\omega_6 > 35$)
+
+
+
+---
+
+#### 4. Output Expression $y(t)$
+
+* Only the $n = 3$, $n = 4$, and $n = 5$ harmonics lie within the passband of the filter.
+* Substituting these components into the Fourier series yields:
+
+$$y(t) = b_3 \sin(6\pi t) + b_4 \sin(8\pi t) + b_5 \sin(10\pi t)$$
+
+
+$$y(t) = -\frac{1}{3\pi}\sin(6\pi t) - \frac{1}{4\pi}\sin(8\pi t) - \frac{1}{5\pi}\sin(10\pi t)$$
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series), Section 17.8.2 (Filters), pg. 797-799.*
 
