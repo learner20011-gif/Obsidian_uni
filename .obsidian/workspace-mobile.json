@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "2-2/Vlsi/QnA     Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -35,7 +35,8 @@
               "title": "Q   Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -196,10 +197,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b7213a151bd23984",
+  "active": "2b140e469eb511c9",
   "lastOpenFiles": [
-    "2-2/Vlsi/Q   Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
     "2-2/Vlsi/QnA     Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
+    "2-2/Vlsi/Q   Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
     "/2-2/Vlsi/QnA     Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
     "/2-2/Vlsi",
     "/2-2",
