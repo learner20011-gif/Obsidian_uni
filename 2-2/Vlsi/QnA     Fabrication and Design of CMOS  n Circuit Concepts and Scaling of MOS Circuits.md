@@ -2,6 +2,10 @@
     
 ### 1. "Describe the n-MOS fabrication process." (Page 6, Q.2(a))
 
+
+https://www.slideshare.net/slideshow/nmos-fabrication-process-92945475/92945475
+
+
 The fabrication of n-MOS (n-channel Metal-Oxide-Semiconductor) transistors involves a sequence of photographic and chemical steps to selectively pattern regions on a silicon wafer. The detailed steps are as follows:
 
 1.  **Wafer Preparation:** The process begins with a thin, moderately doped p-type silicon wafer, which serves as the substrate. 
