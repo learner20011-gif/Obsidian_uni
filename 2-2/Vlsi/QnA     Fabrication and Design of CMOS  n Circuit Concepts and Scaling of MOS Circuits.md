@@ -23,6 +23,8 @@ The fabrication of n-MOS (n-channel Metal-Oxide-Semiconductor) transistors invol
 
 ### 2. "What is n-well and p-well? Describe the different steps of forming n-well." (Page 8, Q.2(b))
 
+
+https://www.scribd.com/presentation/826316103/Fabrication-of-CMOS
 **n-well and p-well:**
 In CMOS (Complementary Metal-Oxide-Semiconductor) technology, both n-channel and p-channel transistors must be accommodated on the same physical chip. Since an n-channel transistor requires a p-type substrate and a p-channel transistor requires an n-type substrate, local regions of opposite doping must be created. 
 *   An **n-well** is a deep, lightly doped n-type region created in a p-type substrate. It serves as the local substrate for fabricating p-channel transistors.
