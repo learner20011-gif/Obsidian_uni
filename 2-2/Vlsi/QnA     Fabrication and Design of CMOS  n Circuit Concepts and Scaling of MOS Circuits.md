@@ -251,6 +251,7 @@ To sketch the final cross-sectional view of the n-well CMOS fabrication process 
 *Location: Pucknell Textbook Pg 33 (Figure 1.12), Rakib's Note Pg 108*
 
 ### 16. "Explain different steps involved in preparation of CMOS using twin tub process." (Page 9, Q.1(b))
+https://www.scribd.com/document/429852811/Twin-Tub-CMOS-Fabrication
 
 The Twin-Tub (or Twin-Well) process is a logical extension of single-well processes. Instead of relying on the native substrate for one type of transistor, it creates two separate, optimized wells for *both* types of transistors. The steps involved are:
 
