@@ -326,7 +326,9 @@ While a physical sketch cannot be rendered here, the standard $\lambda$ (lambda)
 ### 21. "Draw a comparison between contact cuts and via in VLSI physical design." (Page 4, Q.3(c))
 
 In VLSI physical design, both contact cuts and vias serve the purpose of establishing vertical electrical connections between different physical layers of the integrated circuit, but they are used for distinct layer transitions:
+![[Pasted image 20260819065532.png]]
 
+![[Pasted image 20260819065759.png]]
 **Contact Cuts:**
 *   **Definition:** A contact cut is an opening etched through the thick insulating dielectric layer (usually silicon dioxide) that separates the first metal routing layer (Metal 1) from the underlying semiconductor materials.
 *   **Layers Connected:** Contact cuts are specifically used to connect **Metal 1** to **Diffusion** (active area, either n+ or p+) or **Metal 1** to **Polysilicon** (the gate material).
