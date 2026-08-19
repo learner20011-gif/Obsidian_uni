@@ -343,7 +343,7 @@ In VLSI physical design, both contact cuts and vias serve the purpose of establi
 
 **Lambda ($\lambda$) Based Design Rules:**
 Lambda-based design rules, popularized by Mead and Conway, provide a highly effective, process-independent way of specifying the geometric layout of an integrated circuit. Instead of defining widths, lengths, and spacings in absolute microscopic units (like micrometers), all dimensions are specified as integer multiples of a single scalable parameter called **Lambda ($\lambda$)**. $\lambda$ is fundamentally related to the resolution of the manufacturing process (often defined as half the minimum feature size). By using $\lambda$-rules, a designer can create a layout that can be linearly scaled and fabricated on different manufacturing lines simply by changing the absolute value assigned to $\lambda$, extending the lifetime and portability of the design.
-
+![[Pasted image 20260819064059.png]]
 **Design Rules for Wires (Interconnects):**
 These rules prevent lines from breaking (minimum width) or short-circuiting with adjacent lines (minimum separation).
 *   **Polysilicon (Red):** Minimum width = 2$\lambda$, Minimum separation = 2$\lambda$.
