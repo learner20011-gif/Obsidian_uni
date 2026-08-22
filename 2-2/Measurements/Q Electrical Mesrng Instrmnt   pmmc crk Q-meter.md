@@ -1,5 +1,44 @@
 Q.1, Q.2, Q.3, Q.4, Q.5, Q.6, Q.7, Q.8, Q.9, Q.10, Q.11, Q.12, Q.13, Q.14, Q.15, Q.16, Q.17, Q.18, Q.19, Q.20, Q.21, Q.22, Q.23, Q.24, Q.25, Q.26, Q.27, Q.28, Q.29, Q.30, Q.31, Q.32, Q.33, Q.34, Q.35, Q.36, Q.37
 
+1. From Q Electrical Mesrng Instrmnt   pmmc crk Q-meter.md
+ * Q.28 (Page 18, Q.8(a)): Clamp-on ammeter and its function — Slide 03, Pages 94–95
+ * Q.36 (Page 4, Q.4 (c)): 3-phase power measurement using two-wattmeter method — Slide 03, Pages 54–56
+ * Q.37 (Page 12, Q.5. (a)): Expression for deflection of electrodynamometer type wattmeter — Slide 03, Pages 61–64
+ * Q.38 (Page 17, Q.5(b)): Creeping in energy meters & two-wattmeter method — Slide 03, Pages 54–56 & Pages 65–71
+ * Q.40 (Page 26, SEC- C CT-03 Q1): Measurement of power using three-ammeter method — Slide 03, Page 58
+ * Q.42 (Page 34, CT#03 SEC: A Q2(ii)): Splitting of the current coil into two parts in a wattmeter — Slide 03, Page 59
+ * Q.43 (Page 2, Q.4. (a)): Working principle of induction type energy meter — Slide 03, Pages 65–71
+ * Q.44 (Page 12, Q.8. (c)): Creeping and effect of voltage variations in energy meters — Slide 03, Pages 65–71
+ * Q.45 (Page 25, CT-03(B) Q1): Induction type energy meter flux/eddy current distribution, phasor diagram, and revolutions vs. energy relation — Slide 03, Pages 65–71
+ * Q.48 (Page 4, Q.4 (a)): Structure and operation of a frequency meter — Slide 03, Pages 83–90
+ * Q.49 (Page 6, Q.8 b): Construction and operation of Weston frequency meter — Slide 03, Page 83
+ * Q.50 (Page 9, Q.3. (c)): Electrical resonance (ferrodynamic type) frequency meter — Slide 03, Pages 84–90
+ * Q.51 (Page 9, Q.6. (a)): Single-phase electrodynamometer power factor meter (\theta = \phi) — Slide 03, Pages 79–83
+ * Q.52 (Page 11, Q.2. (a)): Power factor meter deflection as a measure of phase angle — Slide 03, Pages 79–83
+ * Q.53 (Page 12, Q.5. (c)): Operating principle of electrodynamometer frequency meter — Slide 03, Pages 83–90
+ * Q.55 (Page 25, CT-03(B) Q2): Ferrodynamic frequency meter schematic and phasor diagrams — Slide 03, Pages 84–90
+ * Q.56 (Page 26, SEC- C CT-03 Q2): Working principle of electrical resonance type frequency meter — Slide 03, Pages 84–90
+ * Q.57 (Page 34, CT#03 SEC: A Q1): Frequency meter operating on electrical resonance — Slide 03, Pages 84–90
+ * Q.58 (Page 2, Q.3. (c)): Operating principle of flux meter and proof that \Phi = (G/N)\theta — Slide 04, Pages 2–7
+ * Q.59 (Page 3, Q.7(c)): Separation of hysteresis and eddy current loss (mathematical problem) — Slide 04, Pages 13–18
+ * Q.60 (Page 6, Q.5 b): Flux density determination of a specimen using ballistic galvanometer — Slide 04, Pages 10–13
+ * Q.61 (Page 6, Q.6 a): Iron loss definition and method of separation of iron loss — Slide 04, Pages 13–18
+ * Q.62 (Page 7, Q.5 (a)): Proof of change in flux directly proportional to deflection in flux meter — Slide 04, Pages 2–7
+ * Q.63 (Page 7, Q.5 (c)): Importance of iron loss separation — Slide 04, Pages 13–14
+ * Q.64 (Page 11, Q.3. (b)): Measurement of flux density in ring specimen ballistic test (B = \frac{Rk_q\theta_1}{2NA_s}) — Slide 04, Pages 11–13
+ * Q.65 (Page 17, Q.8(a)): Separation of iron loss by variation of frequency — Slide 04, Pages 16–17
+ * Q.66 (Page 20, Q.5(c)): Calculation of flux density in mild steel ring specimen using ballistic galvanometer — Slide 04, Pages 11–13
+ * Q.67 (Page 23, CT-01 Q2): Proof that flux meter has a uniform scale — Slide 04, Pages 2–7
+ * Q.68 (Page 28, Q1): Proof that flux meter scale is uniform and deflection is independent of circuit inductance — Slide 04, Pages 2–7
+ * Q.80 [Sub-part] (Page 6, Q.7 (c)): Short note on clamp-on ammeter — Slide 03, Pages 94–95
+ * Q.87 [Sub-part] (Page 12, Q.6 (c)): Short note on clamp-on ammeter — Slide 03, Pages 94–95
+2. From Q intro static transducer.md
+ * Page 4, Q.3.(b): Measurement of high current using clamp-on ammeter — Slide 03, Pages 94–95
+ * Page 8, Q.8 (c) [Part (ii)]: Measurement of angular velocity/speed (DC Tachometer / Stroboscope) — Slide 03, Pages 72–79
+ * Page 23, Q.8 (b) [Middle Section]: Measurement of speed with necessary equations (Stroboscopic method / DC Tachometer) — Slide 03, Pages 72–79
+(Note: Q RLC.md contains questions strictly focused on Bridges, Resistances, Inductances, and Capacitances, none of which map to the contents of Slide 03 pp. 54–95 or Slide 04 pp. 1–18).
+
+
 ### **1. Fundamentals, Torques, Damping & Galvanometers**
 
 1. **Page 2, Q.2. (b):** Suppose you are working with a gavanometer that has underdamped motion. How can you modify the instrument for critically damped motion if you cannot change the spring and inertia of the instrument? Provide mathematical reasoning.
