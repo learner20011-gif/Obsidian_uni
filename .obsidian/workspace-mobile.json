@@ -4,35 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4ba9a25fc713d6fb",
+        "id": "e06c56dd99157528",
         "type": "tabs",
         "children": [
           {
-            "id": "b7213a151bd23984",
+            "id": "bc8a80ac0d2168cb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2-2/Measurements/Q Electrical Mesrng Instrmnt   pmmc crk Q-meter.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Q Electrical Mesrng Instrmnt   pmmc crk Q-meter"
-            }
-          },
-          {
-            "id": "2b140e469eb511c9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2-2/Vlsi/Q   Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Q   Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits"
+              "title": "New tab"
             }
           }
         ]
@@ -51,9 +33,7 @@
           "type": "file-explorer",
           "state": {
             "sortOrder": "alphabetical",
-            "autoReveal": false,
-            "showSearch": false,
-            "searchQuery": ""
+            "autoReveal": false
           },
           "icon": "lucide-folder-closed",
           "title": "Files"
@@ -196,43 +176,8 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b7213a151bd23984",
+  "active": "bc8a80ac0d2168cb",
   "lastOpenFiles": [
-    "2-2/Vlsi/QnA     Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
-    "2-2/Measurements/t.md",
-    "2-2/Vlsi/attachments/Pasted image 20260819071825.png",
-    "2-2/Vlsi/attachments/Pasted image 20260819065759.png",
-    "2-2/Vlsi/attachments/Pasted image 20260819065532.png",
-    "2-2/Vlsi/attachments/Pasted image 20260819064059.png",
-    "2-2/Vlsi/Q   Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
-    "/2-2/Vlsi/QnA     Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
-    "/2-2/Vlsi",
-    "/2-2",
-    "2-2/signal n system/Q System Response.md",
-    "/2-2/Vlsi/Q   Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
-    "2-2/signal n system/QnA    System Response.md",
-    "Recipe notes/Wok Hei.md",
-    "Recipe notes/High Heat Frying.md",
-    "/Recipe notes/Wok Hei.md",
-    "/Recipe notes/High Heat Frying.md",
-    "/Recipe notes/Perfectly Fluffy Japanese Fried Rice.md",
-    "Recipe notes/Perfectly Fluffy Japanese Fried Rice.md",
-    "/Recipe notes",
-    "2-2/Measurements/QnA    Electrical Mesrng Instrmnt   pmmc crk Q-meter.md",
-    "/2-2/Measurements/t.md",
-    "/2-2/Measurements/attachments/1611942_e173da15-d215-4e29-ab4a-014d74939cc2_lg.avif",
-    "2-2/Measurements/attachments/1611942_e173da15-d215-4e29-ab4a-014d74939cc2_lg.avif",
-    "/2-2/Measurements/attachments",
-    "/2-2/Measurements/QnA    Electrical Mesrng Instrmnt   pmmc crk Q-meter.md",
-    "/2-2/Measurements",
-    "2-2/Measurements/Q Electrical Mesrng Instrmnt   pmmc crk Q-meter.md",
-    "/2-2/signal n system/Q System Response.md",
-    "/2-2/signal n system/QnA    System Response.md",
-    "/2-2/Measurements/Q Electrical Mesrng Instrmnt   pmmc crk Q-meter.md",
-    "/2-2/signal n system/attachments/Pasted image 20260801034217.png",
-    "2-2/signal n system/attachments/Pasted image 20260801034217.png",
-    "/2-2/signal n system/attachments",
-    "/2-2/signal n system",
     "2-1/Mecha/Steam_Generation_Boilers_Questions.md",
     "/2-1/Mecha/Steam_Generation_Boilers_Questions.md",
     "/2-1/Math 3/Lagrange’s method.md",
@@ -240,9 +185,45 @@
     "/2-1/Math 3",
     "/2-1/Mecha",
     "2-1/Mecha",
+    "/2-1",
     "temp/Math Q.md",
+    "2-1/Math 3/Charpit method.md",
+    "2-1/Math 3/Formation of PDE.md",
+    "2-1/Math 3/Lagrange’s method.md",
+    "temp",
+    "2-1/Electronics 2/Op Amp QnA.md",
+    "Checklist/Learning list clovershield.md",
+    "/Checklist/Learning list clovershield.md",
+    "/2-1/Math 3/Charpit method.md",
+    "Checklist",
+    "2-1/Math 3",
+    "/Checklist",
+    "/2-1/Electronics 2",
+    "2-1/Electronics 2/Op Amp.md",
+    "2-1/Electronics 2/Test.md",
+    "/2-1/Electronics 2/Test.md",
     "2-1/Electronics 2/attachments/Pasted image 20260107051819.png",
     "2-1/Electronics 2/attachments/Pasted image 20260107051222.png",
-    "Untitled.canvas"
+    "2-1/Electronics 2/attachments/Pasted image 20260107045301.png",
+    "2-1/Electronics 2/attachments/Pasted image 20260107044952.png",
+    "/2-1/Electronics 2/attachments/Pasted image 20260107051819.png",
+    "/2-1/Electronics 2/attachments/Pasted image 20260107051222.png",
+    "/2-1/Electronics 2/attachments/Pasted image 20260107045301.png",
+    "/2-1/Electronics 2/attachments/Pasted image 20260107044952.png",
+    "/2-1/Electronics 2/attachments/Pasted image 20260107015603.png",
+    "2-1/Electronics 2/attachments/Pasted image 20260107015603.png",
+    "/2-1/Electronics 2/attachments",
+    "/2-1/Electronics 2/Op Amp QnA.md",
+    "Untitled.md",
+    "README.md",
+    "Untitled.canvas",
+    "capture_temp.md",
+    "/2-1/Electronics 2/Op Amp.md",
+    "2-1/EMF/EMF_Explanation_Full.md",
+    "2-1/EMF/EMF_Explanation_1_2.md",
+    "2-1/EMF/Untitled.md",
+    "2-1/EMF/Energy_and_Boundary_Conditions.md",
+    "/2-1/EMF/Energy_and_Boundary_Conditions.md",
+    "Academic Prompt.md"
   ]
 }

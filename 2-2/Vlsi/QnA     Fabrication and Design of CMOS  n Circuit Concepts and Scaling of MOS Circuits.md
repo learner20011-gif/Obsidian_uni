@@ -1,10 +1,6 @@
-20, 22, 25, 27, 31, 32, 36, 37, 38, 40, 41, 42, 44, 46
+[20, 22, 25, 27, 31, 32, 36, 37, 38, 40, 41, 42, 44, 46]
     
 ### 1. "Describe the n-MOS fabrication process." (Page 6, Q.2(a))
-
-
-https://www.slideshare.net/slideshow/nmos-fabrication-process-92945475/92945475
-
 
 The fabrication of n-MOS (n-channel Metal-Oxide-Semiconductor) transistors involves a sequence of photographic and chemical steps to selectively pattern regions on a silicon wafer. The detailed steps are as follows:
 
@@ -23,8 +19,6 @@ The fabrication of n-MOS (n-channel Metal-Oxide-Semiconductor) transistors invol
 
 ### 2. "What is n-well and p-well? Describe the different steps of forming n-well." (Page 8, Q.2(b))
 
-
-https://www.scribd.com/presentation/826316103/Fabrication-of-CMOS
 **n-well and p-well:**
 In CMOS (Complementary Metal-Oxide-Semiconductor) technology, both n-channel and p-channel transistors must be accommodated on the same physical chip. Since an n-channel transistor requires a p-type substrate and a p-channel transistor requires an n-type substrate, local regions of opposite doping must be created. 
 *   An **n-well** is a deep, lightly doped n-type region created in a p-type substrate. It serves as the local substrate for fabricating p-channel transistors.
@@ -251,7 +245,6 @@ To sketch the final cross-sectional view of the n-well CMOS fabrication process 
 *Location: Pucknell Textbook Pg 33 (Figure 1.12), Rakib's Note Pg 108*
 
 ### 16. "Explain different steps involved in preparation of CMOS using twin tub process." (Page 9, Q.1(b))
-https://www.scribd.com/document/429852811/Twin-Tub-CMOS-Fabrication
 
 The Twin-Tub (or Twin-Well) process is a logical extension of single-well processes. Instead of relying on the native substrate for one type of transistor, it creates two separate, optimized wells for *both* types of transistors. The steps involved are:
 
@@ -326,11 +319,7 @@ While a physical sketch cannot be rendered here, the standard $\lambda$ (lambda)
 ### 21. "Draw a comparison between contact cuts and via in VLSI physical design." (Page 4, Q.3(c))
 
 In VLSI physical design, both contact cuts and vias serve the purpose of establishing vertical electrical connections between different physical layers of the integrated circuit, but they are used for distinct layer transitions:
-![[Pasted image 20260819065532.png]]
 
-![[Pasted image 20260819065759.png]]
-
-![[Pasted image 20260819071825.png]]
 **Contact Cuts:**
 *   **Definition:** A contact cut is an opening etched through the thick insulating dielectric layer (usually silicon dioxide) that separates the first metal routing layer (Metal 1) from the underlying semiconductor materials.
 *   **Layers Connected:** Contact cuts are specifically used to connect **Metal 1** to **Diffusion** (active area, either n+ or p+) or **Metal 1** to **Polysilicon** (the gate material).
@@ -347,7 +336,7 @@ In VLSI physical design, both contact cuts and vias serve the purpose of establi
 
 **Lambda ($\lambda$) Based Design Rules:**
 Lambda-based design rules, popularized by Mead and Conway, provide a highly effective, process-independent way of specifying the geometric layout of an integrated circuit. Instead of defining widths, lengths, and spacings in absolute microscopic units (like micrometers), all dimensions are specified as integer multiples of a single scalable parameter called **Lambda ($\lambda$)**. $\lambda$ is fundamentally related to the resolution of the manufacturing process (often defined as half the minimum feature size). By using $\lambda$-rules, a designer can create a layout that can be linearly scaled and fabricated on different manufacturing lines simply by changing the absolute value assigned to $\lambda$, extending the lifetime and portability of the design.
-![[Pasted image 20260819064059.png]]
+
 **Design Rules for Wires (Interconnects):**
 These rules prevent lines from breaking (minimum width) or short-circuiting with adjacent lines (minimum separation).
 *   **Polysilicon (Red):** Minimum width = 2$\lambda$, Minimum separation = 2$\lambda$.
