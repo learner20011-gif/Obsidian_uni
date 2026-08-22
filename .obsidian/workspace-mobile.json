@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "2-2/Vlsi/QnA     Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -198,12 +198,13 @@
   },
   "active": "b7213a151bd23984",
   "lastOpenFiles": [
+    "2-2/Measurements/t.md",
+    "2-2/Vlsi/QnA     Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
     "2-2/Vlsi/attachments/Pasted image 20260819071825.png",
     "2-2/Vlsi/attachments/Pasted image 20260819065759.png",
     "2-2/Vlsi/attachments/Pasted image 20260819065532.png",
     "2-2/Vlsi/attachments/Pasted image 20260819064059.png",
     "2-2/Vlsi/Q   Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
-    "2-2/Vlsi/QnA     Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
     "/2-2/Vlsi/QnA     Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
     "/2-2/Vlsi",
     "/2-2",
@@ -218,7 +219,6 @@
     "Recipe notes/Perfectly Fluffy Japanese Fried Rice.md",
     "/Recipe notes",
     "2-2/Measurements/QnA    Electrical Mesrng Instrmnt   pmmc crk Q-meter.md",
-    "2-2/Measurements/t.md",
     "/2-2/Measurements/t.md",
     "/2-2/Measurements/attachments/1611942_e173da15-d215-4e29-ab4a-014d74939cc2_lg.avif",
     "2-2/Measurements/attachments/1611942_e173da15-d215-4e29-ab4a-014d74939cc2_lg.avif",
@@ -243,7 +243,6 @@
     "temp/Math Q.md",
     "2-1/Electronics 2/attachments/Pasted image 20260107051819.png",
     "2-1/Electronics 2/attachments/Pasted image 20260107051222.png",
-    "2-1/Electronics 2/attachments/Pasted image 20260107045301.png",
     "Untitled.canvas"
   ]
 }
