@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "db1692b0bde565cd",
+        "id": "61d8ca28ac358735",
         "type": "tabs",
         "children": [
           {
-            "id": "c2237931f65e8eb2",
+            "id": "f8751ee994fcc899",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -141,7 +141,6 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Untitled.base",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -149,19 +148,9 @@
           "icon": "lucide-list",
           "title": "Outline"
         }
-      },
-      {
-        "id": "e02bc37d6c4a010a",
-        "type": "leaf",
-        "state": {
-          "type": "git-view",
-          "state": {},
-          "icon": "git-pull-request",
-          "title": "Source Control"
-        }
       }
     ],
-    "currentTab": 3
+    "currentTab": 2
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -176,7 +165,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c2237931f65e8eb2",
+  "active": "f8751ee994fcc899",
   "lastOpenFiles": [
     "Recipe notes/Perfectly Fluffy Japanese Fried Rice.md",
     "Recipe notes/High Heat Frying.md",
