@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e06c56dd99157528",
+        "id": "db1692b0bde565cd",
         "type": "tabs",
         "children": [
           {
-            "id": "bc8a80ac0d2168cb",
+            "id": "c2237931f65e8eb2",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -176,8 +176,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bc8a80ac0d2168cb",
+  "active": "c2237931f65e8eb2",
   "lastOpenFiles": [
+    "Recipe notes/Perfectly Fluffy Japanese Fried Rice.md",
+    "Recipe notes/High Heat Frying.md",
+    "Recipe notes/Wok Hei.md",
+    "Recipe notes/Classic Caramel Pudding.md",
     "2-1/Mecha/Steam_Generation_Boilers_Questions.md",
     "/2-1/Mecha/Steam_Generation_Boilers_Questions.md",
     "/2-1/Math 3/Lagrange’s method.md",
@@ -220,10 +224,6 @@
     "capture_temp.md",
     "/2-1/Electronics 2/Op Amp.md",
     "2-1/EMF/EMF_Explanation_Full.md",
-    "2-1/EMF/EMF_Explanation_1_2.md",
-    "2-1/EMF/Untitled.md",
-    "2-1/EMF/Energy_and_Boundary_Conditions.md",
-    "/2-1/EMF/Energy_and_Boundary_Conditions.md",
-    "Academic Prompt.md"
+    "2-1/EMF/EMF_Explanation_1_2.md"
   ]
 }
