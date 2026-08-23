@@ -1057,7 +1057,7 @@ Ans related location pg number in ak slide: Not directly explicitly derived in s
 
 
 ### 37. Page 12, Q.5. (a): Derive the expression for the deflection of an electrodynamometer type wattmeter.
-
+![[Electrodynamometer-Wattmeter-Diagram.png]]
 **Answer:**
 An electrodynamometer wattmeter consists of fixed current coils (carrying load current $i_c$) and a moving pressure coil (connected across the load, carrying current $i_p$ proportional to voltage).
 Let:
