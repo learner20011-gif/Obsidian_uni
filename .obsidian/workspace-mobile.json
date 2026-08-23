@@ -35,8 +35,7 @@
               "title": "QnA    Electrical Mesrng Instrmnt   pmmc crk Q-meter"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -186,10 +185,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "714b10a8a4f187ea",
+  "active": "b7213a151bd23984",
   "lastOpenFiles": [
-    "2-2/Measurements/Q Electrical Mesrng Instrmnt   pmmc crk Q-meter.md",
     "2-2/Measurements/QnA    Electrical Mesrng Instrmnt   pmmc crk Q-meter.md",
+    "2-2/Measurements/Q Electrical Mesrng Instrmnt   pmmc crk Q-meter.md",
     "2-2/Measurements/t.md",
     "2-2/Vlsi/QnA     Fabrication and Design of CMOS  n Circuit Concepts and Scaling of MOS Circuits.md",
     "2-2/Vlsi/attachments/Pasted image 20260819071825.png",
