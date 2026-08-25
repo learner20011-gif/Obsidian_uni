@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2-2/signal n system/Q System Response.md",
+                "file": "2-2/signal n system/Q system, Application of Signals and Systems.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Q System Response"
+              "title": "Q system, Application of Signals and Systems"
             }
           }
         ],
@@ -188,10 +188,10 @@
   },
   "active": "714b10a8a4f187ea",
   "lastOpenFiles": [
+    "2-2/signal n system/Q System Response.md",
     "2-2/signal n system/Q system, Application of Signals and Systems.md",
     "2-2/signal n system/QnA  Signal.md",
     "2-2/signal n system/A.N signal.md",
-    "2-2/signal n system/Q System Response.md",
     "2-2/signal n system/Q signal.md",
     "2-2/Measurements/QnA    Electrical Mesrng Instrmnt   pmmc crk Q-meter.md",
     "2-2/Measurements/attachments/Electrodynamometer-Wattmeter-Diagram.png",
