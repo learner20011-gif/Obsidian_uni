@@ -1,5 +1,8 @@
 # 1. System Properties
-### The system relationship is given by: $$y(t) = \text{Re}\{x(t)\}$$To prove a system is linear, it must satisfy both **additivity** and **homogeneity**. Let's test each property..
+### 1.1. Linearity Test: $y(t) = \text{Re}\{x(t)\}$
+
+The system relationship is given by: $$y(t) = \text{Re}\{x(t)\}$$
+To prove a system is linear, it must satisfy both **additivity** and **homogeneity**. Let's test each property..
 
 #### **1. Testing the Additivity Property**
 
@@ -58,7 +61,7 @@ The homogeneity property states that scaling the input by an arbitrary constant 
         
 
 Clearly, $-x_i(t) \neq j \cdot x_r(t)$. Because the actual output does not equal the expected scaled output when $k$ is complex, the system **violates the homogeneity property**.
-### Q.1 (a) A system H has its input-output pairs given. Determine whether the system could be memoryless, causal, linear, and time invariant. For all cases justify your answers. (Figure involved)
+### 1.2. Q.1 (a) Input-Output Pairs: Memoryless, Causal, Linear, and Time-Invariant Analysis (Figure involved)
 ![[Pasted image 20260626191842.png]]
 **Solution:**
 
@@ -93,7 +96,7 @@ Location pg 98 In pdf
 
 ***
 
-### Q.1 (b) Consider the system shown in the following figure, determine is it (i) memory less (ii) Causal (iii) time-invariant ? Figure involved.
+### 1.3. Q.1 (b) Modulation System $y(t) = x(t)\cos(\omega_c t)$: Memoryless, Causal, Time-Invariant (Figure involved)
 ![[Pasted image 20260626191633.png]]
 
 **Solution:**
@@ -126,7 +129,7 @@ A system is time-invariant if a time shift in the input signal $x(t-T)$ results 
 
 Location pg 104 In pdf
 
-### Q.1 (c) Determine which of the following system is linear or non-linear? (i) $\frac{dy(t)}{dt} + t^2y(t) = (2t+3)x(t)$ (ii) $y(t)\frac{dy(t)}{dt} + 3y(t) = x(t)$
+### 1.4. Q.1 (c) Differential Equations Linearity: (i) $\frac{dy(t)}{dt} + t^2y(t) = (2t+3)x(t)$, (ii) $y(t)\frac{dy(t)}{dt} + 3y(t) = x(t)$
 
 **Solution:**
 
@@ -162,7 +165,7 @@ Since the LHS does not equal the RHS for a scaled input (unless $k=1$ or $k=0$),
 
 Location pg 101 In pdf
 
-### Q.1 (a) A system is specified by its input-output relationship as $y(t) = \frac{x^2(t)}{dx/dt}$. Show that the system satisfies the homogeneity property but not the additivity property.
+### 1.5. Q.1 (a) Homogeneity vs. Additivity for $y(t) = \frac{x^2(t)}{\frac{dx(t)}{dt}}$
 
 **Detailed Answer:**
 
@@ -208,53 +211,10 @@ always mention ans related location pg no. In pdf , at the end of every soln 1.7
 
 ***
 
-### Q.1 (a) A system is specified by its input-output relationship as $y(t) = \frac{x^2(t)}{dx/dt}$. Show that the system satisfies the homogeneity property but not the additivity property.
 
-**Detailed Answer:**
 
-To determine if a system is linear, it must satisfy the principle of superposition, which consists of two properties: homogeneity (scaling) and additivity.
+### 1.6. Q.2 (a) Piecewise Saturation System Invertibility & BIBO Stability
 
-Given the system equation:
-$$y(t) = \frac{x^2(t)}{\frac{dx(t)}{dt}}$$
-Let's denote the derivative of $x(t)$ as $\dot{x}(t)$ for simplicity. So, $y(t) = \frac{x^2(t)}{\dot{x}(t)}$.
-
-**1. Checking Homogeneity (Scaling Property):**
-The homogeneity property states that if an input $x(t)$ produces an output $y(t)$, then a scaled input $kx(t)$ (where $k$ is a constant) should produce a scaled output $k y(t)$.
-Let the new input be $x_k(t) = k x(t)$.
-The corresponding output $y_k(t)$ is:
-$$y_k(t) = \frac{(x_k(t))^2}{\frac{d x_k(t)}{dt}}$$
-Substitute $x_k(t) = k x(t)$:
-$$y_k(t) = \frac{(k x(t))^2}{\frac{d (k x(t))}{dt}}$$
-$$y_k(t) = \frac{k^2 x^2(t)}{k \frac{dx(t)}{dt}}$$
-$$y_k(t) = k \left( \frac{x^2(t)}{\dot{x}(t)} \right)$$
-$$y_k(t) = k y(t)$$
-Since the output is scaled by the same factor $k$ as the input, the system **satisfies the homogeneity property**.
-
-**2. Checking Additivity Property:**
-The additivity property states that if an input $x_1(t)$ produces $y_1(t)$ and an input $x_2(t)$ produces $y_2(t)$, then an input $x_1(t) + x_2(t)$ should produce an output $y_1(t) + y_2(t)$.
-
-Let the respective outputs for $x_1(t)$ and $x_2(t)$ be:
-$y_1(t) = \frac{x_1^2(t)}{\dot{x}_1(t)}$
-$y_2(t) = \frac{x_2^2(t)}{\dot{x}_2(t)}$
-
-The sum of the individual outputs is:
-$$y_1(t) + y_2(t) = \frac{x_1^2(t)}{\dot{x}_1(t)} + \frac{x_2^2(t)}{\dot{x}_2(t)} = \frac{x_1^2(t)\dot{x}_2(t) + x_2^2(t)\dot{x}_1(t)}{\dot{x}_1(t)\dot{x}_2(t)}$$
-
-Now, let's apply the combined input $x_{12}(t) = x_1(t) + x_2(t)$ to the system. The new output $y_{12}(t)$ is:
-$$y_{12}(t) = \frac{(x_1(t) + x_2(t))^2}{\frac{d}{dt}(x_1(t) + x_2(t))}$$
-$$y_{12}(t) = \frac{x_1^2(t) + 2x_1(t)x_2(t) + x_2^2(t)}{\dot{x}_1(t) + \dot{x}_2(t)}$$
-
-Comparing the two results:
-$$\frac{x_1^2(t) + 2x_1(t)x_2(t) + x_2^2(t)}{\dot{x}_1(t) + \dot{x}_2(t)} \neq \frac{x_1^2(t)\dot{x}_2(t) + x_2^2(t)\dot{x}_1(t)}{\dot{x}_1(t)\dot{x}_2(t)}$$
-Since $y_{12}(t) \neq y_1(t) + y_2(t)$, the system **does not satisfy the additivity property**.
-
-Because it fails the additivity condition, the system is non-linear.
-
-always mention ans related location pg no. In pdf , at the end of every soln 1.7-1 Linear and Nonlinear Systems, pg. 97-98
-
-***
-
-### Q.2 (a) The input-output relationship of a system is shown below.
 $y(t) = \begin{cases} V_{cc}, & x(t) > V_{ref} \\ -V_{cc}, & x(t) < -V_{ref} \\ 2x(t), & \text{otherwise} \end{cases}$
 Justify whether the system is (i) Invertible (ii) BIBO stable
 
@@ -285,9 +245,10 @@ Location pg 110-111 In pdf
 
 Hi
 
-### Q.2. (a) Briefly describe the following classifications of systems (i) a causal system, and (ii) a time invariant system.
-### A system has the following input-output relation: $y(t) = x(t) - 0.5(t + 1)$
-### Determine whether this system is time invariant and causal.
+### 1.7. Q.2 (a) System Classifications & Properties of $y(t) = x(t) - 0.5(t + 1)$
+
+**(i)** Briefly describe the following classifications of systems: (1) a causal system, and (2) a time-invariant system.
+**(ii)** A system has the following input-output relation: $y(t) = x(t) - 0.5(t + 1)$. Determine whether this system is time-invariant and causal.
 
 **Detailed Answer:**
 
@@ -328,7 +289,7 @@ Since $y_2(t) \neq y_1(t - t_0)$ (the terms differ by $0.5t_0$), the system does
 always mention ans related location pg no. In pdf , at the end of every soln 1.7-2 Time-Invariant and Time-Varying Systems, pg. 102 and 1.7-4 Causal and Noncausal Systems, pg. 104-105
 
 ***
-### **System (b): $y(t) = \frac{d}{dt}x(t)$**
+### 1.8. System $y(t) = \frac{d}{dt}x(t)$ Time-Invariance Proof
 
 - **Intuition:** The system simply calculates the derivative (slope) of the input. If you shift the input signal in time, its slope profile remains exactly the same, it just occurs later.
     
@@ -345,7 +306,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 1.7
 
 Comparing the two results, $y_1(t) = y_2(t)$. Because the delayed output is identical to the system's response to a delayed input, the system strictly commutes with time-shifting and is **Time-Invariant**.
 
-### **System Equation** $$y(t) = (\sin t)x(t-2)$$
+### 1.9. System Equation: $y(t) = (\sin t)x(t-2)$ Time-Varying Proof
 
 #### **Proof via Time-Shifting**
 
@@ -370,14 +331,16 @@ Comparing the two results, $y_1(t) = y_2(t)$. Because the delayed output is iden
 
 Because the delayed output does not equal the response to a delayed input, the system parameters depend on absolute time $t$. Therefore, it is a **time-varying-parameter system**.
 
-### **(a) $y(t - 1) = 2x(t - 1)$**
+### 1.10. Memoryless vs Dynamic (With Memory) Classifications
+
+#### **(a) $y(t - 1) = 2x(t - 1)$**
 
 - **Conclusion:** **Memoryless**
     
 - **Reason:** The output at time $t-1$ depends strictly on the strength of the input at that identical time $t-1$. Because it does not look backward or forward to other time instances, it requires no memory.
     
 
-### **(b) $y(t) = \frac{d}{dt}x(t)$**
+#### **(b) $y(t) = \frac{d}{dt}x(t)$**
 
 - **Conclusion:** **Dynamic (With Memory)**
     
@@ -388,12 +351,12 @@ Because the delayed output does not equal the response to a delayed input, the s
     Because the output at time $t$ relies on an infinitesimally past value $x(t-T)$, the system possesses memory.
     
 
-### **(c) $y(t) = (t - 1)x(t)$**
+#### **(c) $y(t) = (t - 1)x(t)$**
 
 - **Conclusion:** **Memoryless**
     
 - **Reason:** The output at time $t$ is simply the present input $x(t)$ multiplied by a time-varying coefficient $(t-1)$. Since the output at any instant relies purely on the input value at that same exact instant, the system is memoryless.
-### Analysis of $y(t) = x(-t)$ causal or non
+### 1.11. Causality Analysis of $y(t) = x(-t)$
 
 To test for causality, we can plug in specific values for time $t$ (both positive and negative) to see what inputs the system requires.
 
@@ -416,7 +379,10 @@ Because the output depends on future values of the input for any $t < 0$, the sy
 
 **Answer:** **Non-causal**
 
-### 1. Proof of Noncausality   :   A system is causal if the output $y(t)$ depends only on inputs $x(\tau)$ for $\tau \le t$. Given: $$y(t) = \int_{t-5}^{t+5} x(\tau) d\tau$$
+### 1.12. Integrator $y(t) = \int_{t-5}^{t+5} x(\tau) d\tau$ Causality & Realizability
+
+#### 1. Proof of Noncausality
+A system is causal if the output $y(t)$ depends only on inputs $x(\tau)$ for $\tau \le t$. Given: $$y(t) = \int_{t-5}^{t+5} x(\tau) d\tau$$
 
 The upper limit of integration is $\tau = t+5$. Because $t+5 > t$, the system depends on future inputs, making it **noncausal**.
 
@@ -430,7 +396,9 @@ $$y_d(t) = \int_{t-10}^{t} x(\tau) d\tau$$
 
 The upper limit of integration is now $\tau = t$. Because the system only requires past and present inputs ($\tau \le t$), it is **causal** and physically realizable.
 
-### (a) $y(t) = x(-t)$  **Status:** **Invertible**
+### 1.13. Invertibility Tests
+
+#### (a) $y(t) = x(-t)$  **Status:** **Invertible**
     
 - **Proof:** Substitute $-t$ into the system equation to find the inverse operation:
     
@@ -439,7 +407,7 @@ The upper limit of integration is now $\tau = t$. Because the system only requir
 - **Conclusion:** The input can be uniquely recovered using the inverse system $x(t) = y(-t)$.
     
 
-### (b) $y(t) = tx(t)$  **Status:** **Not Invertible**
+#### (b) $y(t) = tx(t)$  **Status:** **Not Invertible**
     
 - **Proof:** Attempting to isolate the input yields:
     
@@ -448,7 +416,7 @@ The upper limit of integration is now $\tau = t$. Because the system only requir
 - **Conclusion:** At $t = 0$, the equation becomes $y(0) = 0 \cdot x(0) = 0$. Because division by zero is undefined, the value of $x(0)$ is permanently lost and cannot be recovered.
     
 
-### (c) $y(t) = \frac{d}{dt}x(t)$  **Status:** **Not Invertible**
+#### (c) $y(t) = \frac{d}{dt}x(t)$  **Status:** **Not Invertible**
     
 - **Proof:** Consider two distinct inputs that differ only by a constant (DC component):
     
@@ -458,7 +426,7 @@ The upper limit of integration is now $\tau = t$. Because the system only requir
     
 - **Conclusion:** Since distinct inputs ($x_1(t) \neq x_2(t)$) map to the exact same output ($y_1(t) = y_2(t) = 0$), the unique original input cannot be recovered.
 
-### Worked Examples BIBO 
+### 1.14. Worked Examples on BIBO Stability 
 
 - **Example 1:** $y(t) = t \cdot x(t)$
     
@@ -507,7 +475,7 @@ The upper limit of integration is now $\tau = t$. Because the system only requir
     $$\vert{}y(t)\vert{} = \vert{}x^2(t)\vert{} = \vert{}x(t)\vert{}^2 \le M_x^2$$
     
 - **Conclusion:** Since $M_x^2 < \infty$, a bounded input always guarantees a bounded output.
-### (c) $y(t) = \frac{d}{dt}x(t)$ **Status:** **BIBO-Unstable**
+#### (c) $y(t) = \frac{d}{dt}x(t)$ **Status:** **BIBO-Unstable**
     
 - **Proof:** Test the system using the bounded input $x(t) = u(t)$ (unit step function). The derivative of a unit step function yields an impulse function:
     
@@ -517,7 +485,9 @@ The upper limit of integration is now $\tau = t$. Because the system only requir
 
 ---
 
-### 2. Pg 22, CT-1 Q2: A time limited rectangular pulse (left) is applied to a system produces an output as shown in the following figure (right). Express y(t) in terms of x(t). Also provide a mathematical justification whether the system is (i) Linear (ii) Time invariant and (iii) Causal. ![[Pasted image 20260712005359.png]]
+### 1.15. Pg 22, CT-1 Q2: Rectangular to Triangular Pulse System (Figure involved)
+
+A time limited rectangular pulse (left) is applied to a system produces an output as shown in the following figure (right). Express $y(t)$ in terms of $x(t)$. Also provide a mathematical justification whether the system is (i) Linear (ii) Time-invariant and (iii) Causal. ![[Pasted image 20260712005359.png]]
 
 **Figure Description:** 
 *   **Input $x(t)$:** A standard rectangular pulse of amplitude $1$ spanning from $t=0$ to $t=1$. Mathematically: $x(t) = u(t) - u(t-1)$.
@@ -563,8 +533,7 @@ Therefore, the system is **Causal**.
 
 ---
 
-### **6. Pg 28, CT-1 Q1: Consider a discrete-time system...**
-**System Equation:** $y[n] = \frac{1}{3} (x[n] + x[n-1] + x[n-2])$
+### 1.16. Pg 28, CT-1 Q1: 3-Point Causal Moving Average System $y[n] = \frac{1}{3} (x[n] + x[n-1] + x[n-2])$
 
 **Solution:**
 
@@ -595,7 +564,9 @@ Therefore, the system is **Causal**.
 
 ---
 
-### **13. Pg 33, CT-2 Q1: The input-output relationship of a system is shown in the following figure. Provide a mathematical justification whether the system is (i) Linear and (ii) Invertible. ![[Pasted image 20260712005701.png]]**
+### 1.17. Pg 33, CT-2 Q1: Saturation/Limiter Input-Output Characteristic (Figure involved)
+
+The input-output relationship of a system is shown in the following figure. Provide a mathematical justification whether the system is (i) Linear and (ii) Invertible. ![[Pasted image 20260712005701.png]]
 
 **Figure Description:** The figure displays an input-output characteristic curve for a system. The x-axis represents the input $x(t)$, and the y-axis represents the output $y(t)$.
 *   For $x(t) \le 0$, the output is $y(t) = 0$.
@@ -627,7 +598,9 @@ Because multiple different inputs can produce the exact same output, the mapping
 
 ---
 
-### **14. Pg 34, CT-2 Q1: The input-output relationship of two systems are shown the following figure. Provide a mathematical justification whether the system shown in figure (i) linear, and (ii) invertible. For both systems the slope is unity. ![[Pasted image 20260712005710.png]]**
+### 1.18. Pg 34, CT-2 Q1: Offset Line System $y(t) = x(t) + 4$ Linearity & Invertibility (Figure involved)
+
+The input-output relationship of two systems are shown in the following figure. Provide a mathematical justification whether the system shown in figure (i) is linear, and (ii) invertible. For both systems the slope is unity. ![[Pasted image 20260712005710.png]]
 
 **Figure Description:** 
 Two input-output characteristic graphs are shown. Both have $x(t)$ on the horizontal axis and $y(t)$ on the vertical axis.
@@ -664,8 +637,7 @@ We check if there is a unique one-to-one mapping between $x(t)$ and $y(t)$.
 
 ---
 
-### **17. Pg 39, CT-1 Q1: Consider a discrete-time system...**
-**System Equation:** $y[n] = \frac{1}{3} (x[n+1] + x[n] + x[n-1])$
+### 1.19. Pg 39, CT-1 Q1: Non-Causal Moving Average System $y[n] = \frac{1}{3} (x[n+1] + x[n] + x[n-1])$
 *(Note: This is a slightly different moving-average system compared to question 6, as it includes a future term $x[n+1]$.)*
 
 **Solution:**
@@ -715,7 +687,7 @@ We check if there is a unique one-to-one mapping between $x(t)$ and $y(t)$.
 
 ---
 
-### **21. Pg 41, CT-01 Q2: Determine whether the following systems are (i) Time-variant and (iii) Causal.**
+### 1.20. Pg 41, CT-01 Q2: Time-Variance and Causality for $y_1(t) = t \cdot x(t+1)$ and $y_2(t) = x(1-t)$
 
 **Solution:**
 
@@ -755,7 +727,9 @@ We check if there is a unique one-to-one mapping between $x(t)$ and $y(t)$.
 
 ---
 
-### **24. Pg 44, CT-01 Q2: The input and output relationship of a system is shown.** ![[Pasted image 20260712010339.png]]
+### 1.21. Pg 44, CT-01 Q2: Input-Output Relationship $y(t) = (1-t)x(t)$ (Figure involved)
+
+The input and output relationship of a system is shown in the figure. Express $y(t)$ in terms of $x(t)$ and determine system properties. ![[Pasted image 20260712010339.png]]
 
 **Figure Analysis:**
 *   **Input $x(t)$:** A standard rectangular pulse from $t=0$ to $t=1$ with amplitude $1$. Mathematically: $x(t) = 1$ for $0 \le t \le 1$.
@@ -799,7 +773,7 @@ To evaluate $y$ at any specific instant $t_1$ (e.g., $t=0.5$), we compute $y(0.5
 
 # 2. Energy and Power Signals
 
-### Q.1 (b) Provide a mathematical justification whether the following signals are energy or power signal or neither. (i) $e^{kt} u(-t)$, $k>0$ (ii) $u(t+2) - u(t-2)$. Also compute the energy and power of them.
+### 2.1. Q.1 (b) Energy/Power Justification & Computation: (i) $e^{kt} u(-t), k>0$, (ii) $u(t+2) - u(t-2)$
 
 **Solution:**
 
@@ -841,7 +815,7 @@ Location pg 66 In pdf
 
 ***
 
-### Q.1 (a) Define energy signal and power signal. Determine whether the following signals are energy signals, power signals or neither. (i) $x_1(t) = e^{-at} u(t)$ (ii) $x_2(t) = A\cos(\omega t+\theta)$ (iii) $x_3(t) = t u(t)$
+### 2.2. Q.1 (a) Energy and Power Definitions & Classification: (i) $e^{-at} u(t)$, (ii) $A\cos(\omega t+\theta)$, (iii) $t u(t)$
 
 **Solution:**
 
@@ -885,7 +859,9 @@ Since both energy and power are infinite, it falls into neither category.
 
 Location pg 65-66 In pdf
 
-### **Question Statement**For a complex exponential signal of the form $x(t) = D e^{j\omega_0 t}$ (where $D$ is a complex constant), compute the average power $P_x$ and find its root-mean-square (rms) value.
+### 2.3. Complex Exponential Average Power & RMS Value: $x(t) = D e^{j\omega_0 t}$
+
+For a complex exponential signal of the form $x(t) = D e^{j\omega_0 t}$ (where $D$ is a complex constant), compute the average power $P_x$ and find its root-mean-square (RMS) value.
 
  **Mathematical Steps**
 
@@ -948,7 +924,7 @@ $$x_{\text{rms}} = \sqrt{P_x}$$
 $$x_{\text{rms}} = \sqrt{\vert{}D\vert{}^2}$$
 $$\mathbf{x_{\text{rms}} = \vert{}D\vert{}}$$
 ------------------------------
-### 2. Constant / DC Signal (M-09 & M-01)
+### 2.4. Constant / DC Signal Energy & Power ($x(t) = A$)
 
 * Signal: $x(t) = A$
 * Type: Power Signal
@@ -963,7 +939,9 @@ $$\mathbf{x_{\text{rms}} = \vert{}D\vert{}}$$
 
 ---
 
-### 1. Pg 22, CT-1 Q1: For the following signal, sketch (i) y1(t)=x(t+1) and (ii) y2(t)=x(t+1)r(t−1). Justify whether y2(t) is energy signal or power signal or neither? Also computer the energy and power of y2(t). ![[Pasted image 20260712005325.png]]
+### 2.5. Pg 22, CT-1 Q1: Signal Sketching $y_1(t)=x(t+1), y_2(t)=x(t+1)r(t-1)$ & Energy/Power (Figure involved)
+
+For the following signal, sketch (i) $y_1(t)=x(t+1)$ and (ii) $y_2(t)=x(t+1)r(t-1)$. Justify whether $y_2(t)$ is an energy signal, power signal, or neither? Also compute the energy and power of $y_2(t)$. ![[Pasted image 20260712005325.png]]
 
 **Figure Description:** The figure shows a continuous-time signal $x(t)$ plotted against $t$. The signal is $0$ for $t < 0$, increases linearly from $0$ to $1$ between $t = 0$ and $t = 1$, remains constant at $1$ between $t = 1$ and $t = 3$, and drops abruptly to $0$ at $t = 3$. 
 Mathematically, $x(t)$ can be defined as:
@@ -1007,7 +985,7 @@ Since $y_2(t)$ is a time-limited signal (it only exists between $t=1$ and $t=2$)
 
 ---
 
-### **7. Pg 28, CT-1 Q2: Draw the following signal and comment whether...**
+### 2.6. Pg 28, CT-1 Q2: Draw and Classify Left-Sided Real Exponential $x_1(t) = e^{-at}u(-t)$
 
 **Solution:**
 
@@ -1029,7 +1007,7 @@ Since $y_2(t)$ is a time-limited signal (it only exists between $t=1$ and $t=2$)
 
 ---
 
-### **9. Pg 31, CT-1 Q1: Determine the energy and power of the following signals:**
+### 2.7. Pg 31, CT-1 Q1: Determine Energy and Power of $x(t)=ke^{\beta t}$ and $x(t)=\text{rect}(t/4)$
 
 **General Definitions:**
 *   **Energy ($E$):** $E = \int_{-\infty}^{\infty} |x(t)|^2 dt$
@@ -1062,7 +1040,7 @@ Since $y_2(t)$ is a time-limited signal (it only exists between $t=1$ and $t=2$)
 
 ---
 
-### **11. Pg 32, CT-1 Q1: Determine whether the following signals are energy signal, power signal or neither.**
+### 2.8. Pg 32, CT-1 Q1: Classify Energy/Power of $e^{\sigma t}u(-t)$ and $3\cos(5t+\pi/4)$
 
 **(i) $x(t) = e^{\sigma t}u(-t), \sigma > 0$**
 *   This signal exists only for $t \le 0$. As $t$ goes to $-\infty$, the exponent $\sigma t$ goes to $-\infty$ (since $\sigma > 0$), making the signal decay to $0$. It is a bounded, time-limited-like decaying exponential.
@@ -1086,7 +1064,7 @@ Since $y_2(t)$ is a time-limited signal (it only exists between $t=1$ and $t=2$)
 
 ---
 
-### **18. Pg 39, CT-1 Q2: Draw the following signal and comment whether the signal is energy, power or neither energy nor power signal. (i) $e^{-at} u(-t)$ and $a$ is real.**
+### 2.9. Pg 39, CT-1 Q2: Draw and Classify $x(t) = e^{-at} u(-t)$ for Real $a$
 
 **Analysis of the Signal:**
 The signal is $x(t) = e^{-at} u(-t)$.
@@ -1118,7 +1096,9 @@ Let $a = -b$, where $b > 0$. Then the signal is $x(t) = e^{bt} u(-t)$.
 
 ---
 
-### **20. Pg 42, CT-01 Q1: For the following signal, $x(t)$ sketch (i) $y_1(t)=x(2t-5)$ and (ii) $y_3(t)=x(t)r(t)$. Provide a mathematical justification whether $y_2(t)$ is an energy signal or power signal or neither? Also computer the energy and power of $y_2(t)$. ![[Pasted image 20260712010221.png]]**
+### 2.10. Pg 42, CT-01 Q1: Signal Transformations $x(2t-5)$, $x(t)r(t)$ & Energy/Power of $y_2(t)$ (Figure involved)
+
+For the following signal $x(t)$, sketch (i) $y_1(t)=x(2t-5)$ and (ii) $y_3(t)=x(t)r(t)$. Provide a mathematical justification whether $y_2(t)$ is an energy signal, power signal, or neither? Also compute the energy and power of $y_2(t)$. ![[Pasted image 20260712010221.png]]
 
 *(Note: There is a typo in the provided question text. It asks to sketch $y_1$ and $y_3$, but then asks to justify and compute for $y_2$. Let's assume the question intended to define $y_2(t)$ as one of the functions to be sketched, likely $y_2(t) = y_3(t) = x(t)r(t)$, which is a common pattern in these problem sets.)* Let's analyze $x(t)r(t)$.
 
@@ -1168,7 +1148,7 @@ Here are the detailed solutions for questions 21 through 24 from your list.
 
 ---
 
-### **23. Pg 44, CT-01 Q1: Sketch the signals and analytically determine if energy/power.**
+### 2.11. Pg 44, CT-01 Q1: Sketch $u(4-t)$, $5\cos(10\pi t - \pi/3)$ and Analytically Determine Energy/Power
 
 **Solution:**
 
@@ -1203,7 +1183,7 @@ Let $y(t) = u(t-4) - u(t-6)$. This is a rectangular pulse of amplitude $1$ exist
 
 # 3. Signal Fundamentals & Operations
 
-### Q.1 (c) The output y(t) of the following figure is obtained by the transformation y(t)= x(2t-4). (i) Sketch the input, x(t). (ii) Analytically express, x(t). (Figure involved)
+### 3.1. Q.1 (c) Inverse Transformation & Expression for $y(t) = x(2t-4)$ (Figure involved)
 ![[Pasted image 20260626191823.png]]
 **Solution:**
 
@@ -1249,7 +1229,7 @@ Based on the analytical expression, $x(t)$ is a trapezoid. It starts at $t = -2$
 
 Location pg 78 In pdf
 
-### Q.1. (a) What is impulse function? Draw the following function $f(t) = 5\delta(t+2) + 10\delta(t) - 4\delta(t-3)$.
+### 3.2. Q.1 (a) Impulse Function Definition & Sketch $f(t) = 5\delta(t+2) + 10\delta(t) - 4\delta(t-3)$
 
 **Detailed Answer:**
 
@@ -1283,7 +1263,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 1.4
 
 ***
 
-### (c) Define gate function. Express the following signal in terms of switching functions. (figure involved.)
+### 3.3. Define Gate Function & Express Trapezoidal Signal in Terms of Switching Functions (Figure involved)
 ![[Pasted image 20260628100238.png]]
 **Detailed Answer:**
 
@@ -1319,7 +1299,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 1.4
 
 ***
 
-### (c) Define gate function. Express the following signal in terms of switching functions. (figure involved.)
+### 3.4. Define Gate Function & Express Ramp Signal in Terms of Switching Functions (Figure involved)
 ![[Pasted image 20260628171225.png]]
 **Detailed Answer:**
 
@@ -1355,9 +1335,11 @@ always mention ans related location pg no. In pdf , at the end of every soln 1.4
 
 ***
 
-### (c) Find the first derivatives of the following signals and sketch the signals and their derivatives
-### (i) Express the $sgn(t)$ function in terms of the step function
-### Q.3. (a) Define switching functions with examples. Express the following signals interms of switching functions. (figure involved)
+### 3.5. Derivatives of Standard Signals, Signum Function, and Switching Functions (Figure involved)
+
+**(i)** Express the $\text{sgn}(t)$ function in terms of the step function $u(t)$.
+**(ii)** Find the first derivatives of the standard signals and sketch them.
+**(iii)** Define switching functions with examples and express signals $v_1(t)$ and $v_2(t)$ in terms of switching functions.
 ![[Pasted image 20260628170559.png]]
 **Detailed Answer:**
 
@@ -1410,7 +1392,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 1.4
 
 ***
 
-### (c) Express the current pulse given in Fig. Q. 3(c) in terms of unit step and find its integral.
+### 3.6. Express Current Pulse in Terms of Unit Step and Find its Integral (Figure involved)
 ![[Pasted image 20260628170939.png]]
 **Detailed Answer:**
 **1. Expressing the current pulse $i(t)$:**
@@ -1443,7 +1425,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 1.4
 
 ***
 
-### **(c) Show that $\int_{-\infty}^{\infty} e^{-2(x-t)}\delta(2 - t) dt = e^{-2(x-2)}$**
+### 3.7. Sifting Property Proof: $\int_{-\infty}^{\infty} e^{-2(x-t)}\delta(2 - t) dt = e^{-2(x-2)}$
 
 First, note that the impulse function is even, meaning $\delta(2 - t) = \delta(-(t - 2)) = \delta(t - 2)$. The impulse is located at $t_0 = 2$, which lies within the integration limits $(-\infty, \infty)$.
 
@@ -1459,7 +1441,8 @@ First, note that the impulse function is even, meaning $\delta(2 - t) = \delta(-
 
 ---
 
-### **8. Pg 29, CT-1 Q3: Given the signal... Sketch the following signals derived from x(t)** ![[Pasted image 20260712005603.png]]
+### 3.8. Pg 29, CT-1 Q3: Sketch Derived Signals $x(t-2), x(2t), x(-t+1), x(2t+3)$ (Figure involved)
+![[Pasted image 20260712005603.png]]
 
 **Figure Analysis of Base Signal $x(t)$:**
 The given signal $x(t)$ is:
@@ -1515,7 +1498,7 @@ Here are the detailed solutions for questions 9 through 12 from the provided lis
 
 ---
 
-### **10. Pg 31, CT-1 Q2: Sketch the following signal and transformations.**
+### 3.9. Pg 31, CT-1 Q2: Sketch Base Signal and Transformations $x(t-2), x(2t), x(-t)$
 
 **Base Signal $x(t)$ Analysis:**
 *   $x(t) = e^{2t}$ for $-4 \le t \le -2$ (A tiny exponential tail rising from left to right)
@@ -1551,7 +1534,7 @@ When applying transformations, we follow the order: $x(\alpha t + \beta) = x(\al
 
 ---
 
-### **12. Pg 32, CT-1 Q2: For the following signal $x(t)$, sketch the transformations.**
+### 3.10. Pg 32, CT-1 Q2: Sketch Transformations $x(t/2), x(2-t), x(2t+1)$ for Ramp-Flat Signal
 
 **Base Signal $x(t)$ Analysis:**
 *   $x(t) = t$ for $0 \le t \le 2$ (A linear ramp starting from $(0,0)$ up to coordinate $(2,2)$).
@@ -1595,7 +1578,8 @@ Here are the detailed solutions for questions 13 through 16 from the provided li
 
 ---
 
-### **19. Pg 39, CT-1 Q3: Given the signal $x(t)$ in the following figure. Sketch the following signals derived from $x(t)$. ![[Pasted image 20260712005941.png]]**
+### 3.11. Pg 39, CT-1 Q3: Sketch Derived Signals $x(t+2), x(2t), x(-t-1), x(-2t+1)$ (Figure involved)
+![[Pasted image 20260712005941.png]]
 
 **Base Signal $x(t)$ Analysis:**
 The image shows a pulse waveform $x(t)$:
@@ -1669,7 +1653,7 @@ It is a staircase-like pulse composed of two rectangular segments.
 
 # 4. Laplace Transform
 
-### (b) Find the Laplace transform of the following function $h(t)$. (figure involved.)
+### 4.1. Laplace Transform of Piecewise Linear Ramp $h(t) = 2t[u(t)-u(t-1)]$ (Figure involved)
 ![[Pasted image 20260628100212.png]]
 **Detailed Answer:**
 
@@ -1715,7 +1699,7 @@ $$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})}{s^2(1 + e^{-s})}$$
 always mention ans related location pg no. In pdf , at the end of every soln 4.2-1 Time Shifting, pg. 349-351
 
 
-### (b) Find the Laplace transform of the following function $h(t)$. (figure involved.)
+### 4.2. Laplace Transform of Triangular Waveform $h(t)$ (Figure involved)
 ![[Pasted image 20260628171238.png]]
 **Detailed Answer:**
 
@@ -1761,7 +1745,7 @@ $$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})}{s^2(1 + e^{-s})}$$
 always mention ans related location pg no. In pdf , at the end of every soln 4.2-1 Time Shifting, pg. 349-351
 
 
-### (b) Find the Laplace transform of the following signal using the properties of Laplace transform. (figure involved.)
+### 4.3. Laplace Transform of Triangular Signal Using Properties (Figure involved)
 ![[Pasted image 20260628100524.png]]
 **Detailed Answer:**
 
@@ -1792,7 +1776,7 @@ $$F(s) = \frac{5[1 - e^{-s}(1+s)]}{s^2(1 - e^{-2s})}$$
 
 ***
 
-### Q.2. (a) Explain the following properties of the Laplace transform: (i) Scaling (ii) Time shift (iii) Frequency shift.
+### 4.4. Q.2 (a) Laplace Transform Properties: (i) Scaling, (ii) Time Shift, (iii) Frequency Shift
 
 **Detailed Answer:**
 
@@ -1820,7 +1804,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 4.2
 
 ***
 
-### Q.2. (b) Find the Laplace transform of the function h(t) in the figure below. (figure involved.)
+### 4.5. Q.2 (b) Laplace Transform of Multi-Step Waveform $h(t)$ (Figure involved)
 ![[Pasted image 20260628100445.png]]
 **Detailed Answer:**
 
@@ -1856,7 +1840,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 4.2
 
 ***
 
-### Q.3. (a) Calculate the Laplace transform of the following function. (figure involved.)
+### 4.6. Q.3 (a) Laplace Transform of Periodic Sawtooth Waveform (Figure involved)
 ![[Pasted image 20260628100339.png]]
 **Detailed Answer:**
 
@@ -1893,7 +1877,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 4.2
 
 ***
 
-### Q.4 (a) Sketch the ROC of each of the following signals and also identify whether they are Laplace transformable or not? (i) $e^{at} u(-t)$ (ii) $e^{-at} u(-t)+ e^{bt} u(t)$
+### 4.7. Q.4 (a) Sketch ROC and Identify Laplace Transformability: (i) $e^{at} u(-t)$, (ii) $e^{-at} u(-t) + e^{bt} u(t)$
 
 **Solution:**
 
@@ -1942,7 +1926,7 @@ Location pg 448 In pdf
 
 ---
 
-### **15. Pg 35, CT-3 Q1: Find the Laplace transform of (i) $e^{3t} u(-t)$ and (ii) $e^{-3t} u(t) + e^{3t} u(-t)$. Also sketch ROC of them.**
+### 4.8. Pg 35, CT-3 Q1: Find Laplace Transform & Sketch ROC: (i) $e^{3t} u(-t)$, (ii) $e^{-3t} u(t) + e^{3t} u(-t)$
 
 **General Definition:** The bilateral Laplace transform is defined as $X(s) = \int_{-\infty}^{\infty} x(t) e^{-st} dt$.
 
@@ -1985,7 +1969,8 @@ Location pg 448 In pdf
 
 ---
 
-### **16. Pg 36, CT-3 Q1: Using the differentiation property, find the Laplace transform of the following function. ![[Pasted image 20260712005827.png]]**
+### 4.9. Pg 36, CT-3 Q1: Laplace Transform of Trapezoidal Pulse via Differentiation Property (Figure involved)
+![[Pasted image 20260712005827.png]]
 
 **Figure Description:**
 The figure shows a rectangular pulse $f(t)$ centered at the origin.
@@ -2032,7 +2017,7 @@ Here are the detailed solutions for questions 17 through 20 from the provided li
 
 ---
 
-### **22. Pg 42, CT-3 Q2: Sketch the Region of Convergence (ROC) in the complex s-plane of the following signals.**
+### 4.10. Pg 42, CT-3 Q2: Sketch Region of Convergence (ROC) in Complex s-Plane for Bilateral Signals
 
 **Solution:**
 
@@ -2064,8 +2049,9 @@ We analyze the left-sided and right-sided portions separately.
 
 # 5. Fourier Transform
 
-### (c) Given that the Fourier Transform of $x(t)$ is $X(\omega)$, the differentiation property of the Fourier transform states that: $\frac{dx(t)}{dt} \Leftrightarrow j\omega X(\omega)$. The signum function, $sgn(t)$ is defined as: $sgn(t) = \begin{cases} 1 & ; \quad t > 0 \\ -1 & ; \quad t < 0 \end{cases}$
-### (ii) By applying the differentiation property, or otherwise, show that the Fourier transform of $sgn(t)$ is: $sgn(t) \Leftrightarrow \frac{2}{j\omega}$
+### 5.1. Differentiation Property & Fourier Transform of $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$
+
+Given that $\frac{dx(t)}{dt} \Leftrightarrow j\omega X(\omega)$ and $\text{sgn}(t) = \begin{cases} 1, & t > 0 \\ -1, & t < 0 \end{cases}$, show that $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$.$
 
 **Detailed Answer:**
 
@@ -2102,7 +2088,7 @@ always mention ans related location pg no. In pdf , at the end of every soln Exa
 
 ***
 
-### (b) Determine the Fourier transform of $i_o(t)$ in the following network. (figure involved.)
+### 5.2. Determine Fourier Transform of $i_o(t)$ in Network (Figure involved)
 ![[Pasted image 20260628170652.png]]
 **Detailed Answer:**
 
@@ -2157,7 +2143,7 @@ Rearranging the real and imaginary parts in the numerator and denominator gives 
 
 always mention ans related location pg no. In pdf , at the end of every soln 4.4 Analysis of Electrical Networks: The Transformed Network, pg. 373-375
 
-### Q.4 (c) Using differentiation property, find the Fourier transform of the following function. Figure involved.
+### 5.3. Q.4 (c) Fourier Transform of Trapezoidal Function via Differentiation Property (Figure involved)
 ![[Pasted image 20260626191754.png]]
 **Solution:**
 
@@ -2204,7 +2190,7 @@ Location pg 718 In pdf
 
 ***
 
-### Q.6. (b) Why a time limited signal is band unlimited in frequency domain? Explain
+### 5.4. Q.6 (b) Why a Time-Limited Signal is Band-Unlimited in Frequency Domain? Explain
 
 **Detailed Answer:**
 
@@ -2223,7 +2209,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 8.2
 
 ***
 
-### (b) Find and draw the Fourier transform of the following sine-wave pulse. (figure involved.)
+### 5.5. Find and Draw Fourier Transform of Truncated Sine-Wave Pulse (Figure involved)
 ![[Pasted image 20260628100321.png]]
 **Detailed Answer:**
 
@@ -2283,7 +2269,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 7.2
 
 ***
 
-### (c) State and explain Parseval's theorem.
+### 5.6. State and Explain Parseval's Theorem
 
 **Detailed Answer:**
 
@@ -2302,7 +2288,7 @@ $$E_x = \int_{-\infty}^{\infty} |x(t)|^2 dt = \frac{1}{2\pi} \int_{-\infty}^{\in
 
 always mention ans related location pg no. In pdf , at the end of every soln 7.6 Signal Energy, pg. 734
 
-### Q.7. (a) Determine the Fourier transform of the function in the following figure. (figure involved.)
+### 5.7. Q.7 (a) Determine Fourier Transform of Asymmetric Waveform (Figure involved)
 ![[Pasted image 20260628100406.png]]
 **Detailed Answer:**
 
@@ -2348,7 +2334,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 7.3
 
 ***
 
-### (c) Find the Fourier transform of the following functions: (i) $\delta(t)$, (ii) $e^{j\omega_0 t}$, (iii) $\text{sgn}(t)$
+### 5.8. Find Fourier Transform of Elementary Functions: (i) $\delta(t)$, (ii) $e^{j\omega_0 t}$, (iii) $\text{sgn}(t)$
 
 **Detailed Answer:**
 
@@ -2389,7 +2375,7 @@ always mention ans related location pg no. In pdf , at the end of every soln Exa
 
 ***
 
-### (c) Why it is not possible to find the Fourier transform of ramp signal? State and explain Parseval's theorem.
+### 5.9. Non-Transformability of Ramp Signal & Parseval's Theorem Explanation
 
 **Detailed Answer:**
 
@@ -2417,7 +2403,8 @@ always mention ans related location pg no. In pdf , at the end of every soln 7.1
 
 ---
 
-### 3. Pg 25, CT-4 Q2: Using differentiation property, find the Fourier transform of the following function. ![[Pasted image 20260712005508.png]]
+### 5.10. Pg 25, CT-4 Q2: Fourier Transform of Trapezoidal Pulse via Differentiation Property (Figure involved)
+![[Pasted image 20260712005508.png]]
 
 **Figure Description:** The figure shows a rectangular pulse $f(t)$ centered at the origin. It has an amplitude of $A$ and spans from $t = -2$ to $t = 2$.
 Mathematically, $f(t)$ can be represented using unit step functions:
@@ -2455,7 +2442,8 @@ $\mathbf{F(\omega) = \frac{2A \sin(2\omega)}{\omega}}$
 
 ---
 
-### **5. Pg 27, CT-3 Q3: Use the time-differentiation property to find the Fourier transform of the triangle pulse illustrated in Fig.** ![[Pasted image 20260712005539.png]]
+### 5.11. Pg 27, CT-3 Q3: Fourier Transform of Triangle Pulse via Time-Differentiation Property (Figure involved)
+![[Pasted image 20260712005539.png]]
 
 **Figure Analysis:** 
 The image shows a triangular pulse $x(t)$ centered at $t = 0$. It rises from $0$ at $t = -T/2$ to a peak amplitude of $1$ at $t = 0$, and then falls back to $0$ at $t = T/2$.
@@ -2502,7 +2490,7 @@ $\mathbf{X(\omega) = \frac{8}{\omega^2 T} \sin^2\left(\frac{\omega T}{4}\right)}
 
 # 6. Fourier Series & Spectrums
 
-### (b) The square wave in the following waveform is applied to the following network. Find the Fourier series of $v_o(t)$.
+### 6.1. Fourier Series of $v_o(t)$ in Active Filter Circuit for Square Wave Input (Figure involved)
 ![[Pasted image 20260628170311.png]]
 **Detailed Answer:**
 
@@ -2587,7 +2575,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 6.1
 
 Based on the images provided, here are the detailed solutions to the questions.
 
-### (c) Find the exponential series of the following signal. Also draw the spectrum of that signal. (figure involved.)
+### 6.2. Exponential Fourier Series ($D_n$) & Line Spectrum of Rectangular Pulse Train (Figure involved)
 ![[Pasted image 20260628170514.png]]
 **Detailed Answer:**
 
@@ -2636,7 +2624,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 6.3
 
 ***
 
-### (c) A full wave rectified signal having the following Fourier series expansion is used as the input of the circuit shown below. (figure involved.)
+### 6.3. Full-Wave Rectified Signal Fed to RL Filter: $v_o(t)$ Expression & Average Power (Figure involved)
 **$e(t) = \frac{2\times100}{\pi}(1 + \frac{2}{3}\cos 2\omega t - \frac{2}{15}\cos 4\omega t + \frac{2}{35}\cos 6\omega t \dots)$**
 **where $\omega = 377$.**
 **Find**
@@ -2707,7 +2695,7 @@ $P \approx 0 + 0.00325 + 0.00300 = 0.00625 \text{ W}$
 
 ***
 
-### (b) Determine the Fourier series for the half wave rectified cosine function of period 4 and amplitude 1.
+### 6.4. Trigonometric Fourier Series for Half-Wave Rectified Cosine Function (Period 4, Amplitude 1)
 
 **Detailed Answer:**
 
@@ -2768,7 +2756,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 6.1
 
 ***
 
-### (b) Find the trigonometric Fourier series for the square wave signal of Fig. Q. 4(b).
+### 6.5. Trigonometric Fourier Series for Bipolar Square Wave (Figure involved)
 ![[Pasted image 20260628170926.png]]
 **Detailed Answer:**
 **1. Analyze the Signal Parameters:**
@@ -2814,7 +2802,7 @@ Writing out the first few non-zero terms explicitly gives the final expression:
 always mention ans related location pg no. In pdf , at the end of every soln 6.1 Periodic Signal Representation by Trigonometric Fourier Series, pg. 593-605
 
 
-### Q.5. (a) Obtain and draw the frequency spectrum of the following waveform. (figure involved.)
+### 6.6. Q.5 (a) Obtain and Draw Frequency Spectrum of Periodic Sawtooth Waveform (Figure involved)
 ![[Pasted image 20260628100434.png]]
 **Detailed Answer:**
 
@@ -2875,8 +2863,11 @@ To draw the frequency spectrum, we separate this into an amplitude spectrum $|D_
 
 always mention ans related location pg no. In pdf , at the end of every soln 6.3 Exponential Fourier Series, pg. 621-625
 
-### Q.5 (a) A certain band-limited periodic current has only three frequencies in its Fourier series representation: dc, 50 Hz, and 100 Hz. The current may be represented as $i(t) = 4 + 6\sin(100\pi t) + 8\cos(100\pi t) - 3\sin(200\pi t) - 4\cos(200\pi t)$ A.
-### (ii) If $i(t)$ flows through a 2 $\Omega$ resistor, how many watt of average power will be dissipated?
+### 6.7. Q.5 (a) Multitone Periodic Current: Amplitude-Phase Form & Power in $2\,\Omega$ Resistor
+
+A certain band-limited periodic current has only three frequencies in its Fourier series representation: dc, 50 Hz, and 100 Hz: $i(t) = 4 + 6\sin(100\pi t) + 8\cos(100\pi t) - 3\sin(200\pi t) - 4\cos(200\pi t)$ A.
+- (i) Express $i(t)$ in amplitude-phase form.
+- (ii) If $i(t)$ flows through a $2\,\Omega$ resistor, how many watts of average power will be dissipated?
 
 **Detailed Answer:**
 
@@ -2936,7 +2927,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 6.1
 
 Based on the images provided, here are the solutions to the requested questions.
 
-### Q.6. (a) Define the following terms: (i) Amplitude spectrum, (ii) Phase spectrum, and (iii) Ladder network.
+### 6.8. Q.6 (a) Definitions: (i) Amplitude Spectrum, (ii) Phase Spectrum, and (iii) Ladder Network
 
 **Detailed Answer:**
 
@@ -2958,7 +2949,7 @@ always mention ans related location pg no. In pdf , at the end of every soln 6.1
 
 ***
 
-### Q.7 (c) If the sawtooth waveform shown in following Fig. is applied to an filter with the given transfer function (i) Find the Fourier series expansion of the sawtooth wave. (ii) Determine the output of the filter. Figure involved.
+### 6.9. Q.7 (c) Sawtooth Waveform Applied to Filter: (i) Fourier Series, (ii) Filter Output (Figure involved)
 ![[Pasted image 20260626191714.png]]
 **Solution:**
 
@@ -3028,7 +3019,8 @@ Location pg 638 In pdf
 
 ---
 
-### 4. Pg 27, CT-3 Q2: Find the Fourier series of the square wave in following Fig. Plot the amplitude and phase spectra. ![[Pasted image 20260712005529.png]]
+### 6.10. Pg 27, CT-3 Q2: Fourier Series and Amplitude/Phase Spectra of Square Wave (Figure involved)
+![[Pasted image 20260712005529.png]]
 
 **Figure Description:** The figure shows a periodic square wave $f(t)$. The signal alternates between an amplitude of $1$ and $-1$. Analyzing the axis, one complete cycle occurs between $t = 0$ and $t = 2$.
 *   $f(t) = 1$ for $0 < t < 1$
@@ -3083,7 +3075,7 @@ Here are the detailed solutions for the next 4 questions (Questions 5 to 8) from
 
 # 7. Sampling and Modulation
 
-### (b) Discuss amplitude modulation and sampling as the application scenarios of Fourier transform.
+### 7.1. Discuss Amplitude Modulation (AM) and Sampling as Applications of Fourier Transform
 
 **Detailed Answer:**
 
@@ -3109,7 +3101,7 @@ The Fourier Transform is a fundamental mathematical tool that allows us to move 
 
 """always mention ans related location pg no. In pdf , at the end of every soln 7.7 Application to Communications: Amplitude Modulation, pg. 736 and 8.1 The Sampling Theorem, pg. 776"""
 
-### Q.7 (a) Consider a band limited signal x(t) with a Fourier transform X($\omega$) shown in the following figure. Draw the Fourier transform of the sampled signal if the sampling frequency is (i) 5 KHz (ii) 10 kHz (iii) 20 kHz. Figure involved.
+### 7.2. Q.7 (a) Sampling of Triangular Baseband Spectrum at 5 kHz, 10 kHz, and 20 kHz (Figure involved)
 ![[Pasted image 20260626191739.png]]
 **Solution:**
 
@@ -3164,7 +3156,7 @@ Location pg 537 In pdf
 
 # 8. Z-Transform
 
-### (b) The Z-transform of discrete time signal , x(n) must be represented by , X(Z) with its ROC - Explain.
+### 8.1. Significance of Region of Convergence (ROC) in Z-Transform Representation
 
 **Detailed Answer:**
 
@@ -3200,7 +3192,7 @@ However, if you are given both $X(z) = \frac{z}{z - a}$ *and* the ROC $|z| > |a|
 
 always mention ans related location pg no. In pdf , at the end of every soln 5.8 The Bilateral z-Transform, pg. 554-555
 
-### (c) For a discrete time signa as shown in the Fig. 8(c), show that $X(Z) = \frac{1-z^{-m}}{1-z^{-1}}$
+### 8.2. Z-Transform of Finite Discrete Pulse Train: $X(z) = \frac{1-z^{-m}}{1-z^{-1}}$
 ![[Pasted image 20260628170808.png]]
 **Detailed Answer:**
 
@@ -3252,8 +3244,7 @@ Based on the provided images, here are the detailed solutions to a selection of 
 
 # 9. Miscellaneous
 
-### (i) $x(t) = u(t) - u(t - a), \quad a > 0$
-### (ii) $y(t) = t[u(t) - u(t - a)], \quad a > 0$
+### 9.1. Signal Derivatives and Sketches for Windowed Signals: (i) $u(t)-u(t-a)$, (ii) $t[u(t)-u(t-a)]$
 
 **Detailed Answer:**
 
@@ -3292,5 +3283,5 @@ always mention ans related location pg no. In pdf , at the end of every soln 1.4
 
 Based on the provided images, here are the detailed solutions for the two questions.
 
-### (i) Express $i(t)$ in amplitude-phase form.
+### 9.2. Compact Amplitude-Phase Form Expression for Periodic Current $i(t)$
 
