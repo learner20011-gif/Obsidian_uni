@@ -1,7 +1,11 @@
-temp
-.obsidian
-.trash
-.obsidian/plugins/
-.obsidian/workspace
-.obsidian/workspace.json
-.obsidian/cache/
+# Obsidian configuration folder
+.obsidian/
+
+# Obsidian trash and temp folders
+.trash/
+temp/
+
+# OS-specific metadata
+.DS_Store
+Thumbs.db
+desktop.ini
