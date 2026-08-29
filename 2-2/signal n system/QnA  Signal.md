@@ -65,6 +65,8 @@ Clearly, $-x_i(t) \neq j \cdot x_r(t)$. Because the actual output does not equal
 
 *Ans related location: Sadiku Textbook, Chapter 4 (Circuit Theorems) – Section 4.2: Linearity Property, pg. 128.*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.7-1: Linear and Nonlinear Systems, pp. 97–102.*
+
 ***
 
 ### 1.2. Q.1 (a) Input-Output Pairs: Memoryless, Causal, Linear, and Time-Invariant Analysis (Figure involved)
@@ -100,6 +102,8 @@ Let's analyze the system properties based on the provided input-output pairs.
 
 *Ans related location: Sadiku Textbook, Chapter 4 (Circuit Theorems) – Section 4.2: Linearity Property (pg. 128), and Chapter 16 (Applications of the Laplace Transform) – Section 16.4: Transfer Functions (pg. 726) for causal and stable system properties.*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.7: Classification of Systems, pp. 97–110.*
+
 ***
 
 ### 1.3. Q.1 (b) Modulation System $y(t) = x(t)\cos(\omega_c t)$: Memoryless, Causal, Time-Invariant (Figure involved)
@@ -134,6 +138,8 @@ A system is time-invariant if a time shift in the input signal $x(t-T)$ results 
 **Conclusion:** The system is **time-variant** (not time-invariant).
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.7.1: Amplitude Modulation, pg. 840.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.7: Classification of Systems, pp. 97–110.*
 
 ***
 
@@ -172,6 +178,8 @@ Since the LHS does not equal the RHS for a scaled input (unless $k=1$ or $k=0$),
 **Conclusion:** System (ii) is **Non-linear**.
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.6: Application to Integrodifferential Equations (pg. 705) & Chapter 7 (First-Order Circuits).*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.7-1 & Section 1.8: System Model Description, pp. 97–102, 111–114.*
 
 ***
 
@@ -219,6 +227,8 @@ Because it fails the additivity condition, the system is non-linear.
 
 *Ans related location: Sadiku Textbook, Chapter 4 (Circuit Theorems) – Section 4.2: Linearity Property (additivity and homogeneity properties), pg. 128.*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.7-1 (Problem 1.7-12), p. 101, p. 146.*
+
 ***
 
 ### 1.6. Q.2 (a) Piecewise Saturation System Invertibility & BIBO Stability
@@ -250,6 +260,8 @@ Since every bounded input guarantees a bounded output, the stability criterion i
 **Conclusion:** The system is **BIBO stable**.
 
 *Ans related location: Sadiku Textbook, Chapter 16 (Applications of the Laplace Transform) – Section 16.6.1: Network Stability (evaluating system bounds and stability), pg. 737.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.7-7 (Invertible Systems) & Section 1.7-8 (Stable Systems), pp. 109–111.*
 
 ***
 
@@ -296,6 +308,8 @@ Since $y_2(t) \neq y_1(t - t_0)$ (the terms differ by $0.5t_0$), the system does
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) & Chapter 15 (Introduction to the Laplace Transform) (defining causal vs. non-causal systems).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.7-2 (Time-Invariant) & Section 1.7-4 (Causal), pp. 102–106.*
+
 ***
 
 ### 1.8. System $y(t) = \frac{d}{dt}x(t)$ Time-Invariance Proof
@@ -316,6 +330,8 @@ Since $y_2(t) \neq y_1(t - t_0)$ (the terms differ by $0.5t_0$), the system does
 Comparing the two results, $y_1(t) = y_2(t)$. Because the delayed output is identical to the system's response to a delayed input, the system strictly commutes with time-shifting and is **Time-Invariant**.
 
 *Ans related location: Sadiku Textbook, Chapter 6 (Capacitors and Inductors) – Section 6.6.2: Differentiator, pg. 235.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.7-2: Time-Invariant and Time-Varying Systems, pp. 102–103.*
 
 ***
 
@@ -345,6 +361,8 @@ Comparing the two results, $y_1(t) = y_2(t)$. Because the delayed output is iden
 Because the delayed output does not equal the response to a delayed input, the system parameters depend on absolute time $t$. Therefore, it is a **time-varying-parameter system**.
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform (Time Shift property), pg. 680-681.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.7-2: Time-Invariant and Time-Varying Systems, pp. 102–103.*
 
 ***
 
@@ -376,6 +394,8 @@ Because the delayed output does not equal the response to a delayed input, the s
 
 *Ans related location: Sadiku Textbook, Chapter 6 (Capacitors and Inductors) – Section 6.1: Introduction (defining storage elements like capacitors and inductors that hold "memory" or energy), pg. 216.*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.7-3: Instantaneous and Dynamic Systems, pp. 103–104.*
+
 ***
 
 ### 1.11. Causality Analysis of $y(t) = x(-t)$
@@ -403,6 +423,8 @@ Because the output depends on future values of the input for any $t < 0$, the sy
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.2: Definition of the Laplace Transform (utilizing one-sided transforms for causal/non-causal signals), pg. 677.*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.7-4: Causal and Noncausal Systems, pp. 104–106.*
+
 ***
 
 ### 1.12. Integrator $y(t) = \int_{t-5}^{t+5} x(\tau) d\tau$ Causality & Realizability
@@ -423,6 +445,8 @@ $$y_d(t) = \int_{t-10}^{t} x(\tau) d\tau$$
 The upper limit of integration is now $\tau = t$. Because the system only requires past and present inputs ($\tau \le t$), it is **causal** and physically realizable.
 
 *Ans related location: Sadiku Textbook, Chapter 6 (Capacitors and Inductors) – Section 6.6.1: Integrator (pg. 234) & Chapter 7 (First-Order Circuits) – Section 7.9.1: Delay Circuits (pg. 293).*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.7-4: Causal and Noncausal Systems, pp. 104–106.*
 
 ***
 
@@ -457,6 +481,8 @@ The upper limit of integration is now $\tau = t$. Because the system only requir
 - **Conclusion:** Since distinct inputs ($x_1(t) \neq x_2(t)$) map to the exact same output ($y_1(t) = y_2(t) = 0$), the unique original input cannot be recovered.
 
 *Ans related location: Sadiku Textbook, Chapter 16 (Applications of the Laplace Transform) – Section 16.4: Transfer Functions (pg. 726) & Chapter 15 (Introduction to the Laplace Transform) – Section 15.4: Inverse Laplace Transform (pg. 690).*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.7-7: Invertible and Noninvertible Systems, pp. 109–110.*
 
 ***
 
@@ -519,6 +545,8 @@ The upper limit of integration is now $\tau = t$. Because the system only requir
 
 *Ans related location: Sadiku Textbook, Chapter 16 (Applications of the Laplace Transform) – Section 16.6.1: Network Stability (system stability requirements), pg. 737.*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.7-8: Stable and Unstable Systems, pp. 110–111.*
+
 ***
 
 ### 1.15. Pg 22, CT-1 Q2: Rectangular to Triangular Pulse System (Figure involved)
@@ -569,6 +597,8 @@ Therefore, the system is **Causal**.
 
 *Ans related location: Sadiku Textbook, Chapter 4 (Circuit Theorems) – Section 4.2: Linearity Property, and Chapter 7 (First-Order Circuits) (handling step-response and time-invariance).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.2 (Operations) & Section 1.7 (Classifications), pp. 71–78, 97–110.*
+
 ***
 
 ### 1.16. Pg 28, CT-1 Q1: 3-Point Causal Moving Average System $y[n] = \frac{1}{3} (x[n] + x[n-1] + x[n-2])$
@@ -601,6 +631,8 @@ Therefore, the system is **Causal**.
     **Conclusion: Stable.**
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.7.2: Sampling (discrete system representation), pg. 842.*
+
+*BP Lathi Topic Location: Chapter 3, Section 3.4 & Section 3.4-1: Discrete-Time Systems & Classification, pp. 253–265.*
 
 ***
 
@@ -637,6 +669,8 @@ Because multiple different inputs can produce the exact same output, the mapping
 *Reference: Lathi Chapter 1 / Class Notes Pg 29-30 (System Classification).*
 
 *Ans related location: Sadiku Textbook, Chapter 4 (Circuit Theorems) – Section 4.2: Linearity Property.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.7-1 (Linearity) & Section 1.7-7 (Invertibility), pp. 97–102, 109–110.*
 
 ***
 
@@ -678,6 +712,8 @@ We check if there is a unique one-to-one mapping between $x(t)$ and $y(t)$.
 *Reference: Lathi Chapter 1 / Class Notes Pg 29-30 (System Classification).*
 
 *Ans related location: Sadiku Textbook, Chapter 4 (Circuit Theorems) – Section 4.2: Linearity Property.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.7-1 (Linearity) & Section 1.7-7 (Invertibility), pp. 97–102, 109–110.*
 
 ***
 
@@ -731,6 +767,8 @@ We check if there is a unique one-to-one mapping between $x(t)$ and $y(t)$.
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.7.2: Sampling.*
 
+*BP Lathi Topic Location: Chapter 3, Section 3.4-1: Classification of Discrete-Time Systems, pp. 262–265.*
+
 ***
 
 ### 1.20. Pg 41, CT-01 Q2: Time-Variance and Causality for $y_1(t) = t \cdot x(t+1)$ and $y_2(t) = x(1-t)$
@@ -772,6 +810,8 @@ We check if there is a unique one-to-one mapping between $x(t)$ and $y(t)$.
     **Conclusion: The system is Non-Causal.**
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) & Chapter 15 (Introduction to the Laplace Transform).*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.7-2 (Time-Invariant) & Section 1.7-4 (Causal), pp. 102–106.*
 
 ***
 
@@ -821,6 +861,8 @@ To evaluate $y$ at any specific instant $t_1$ (e.g., $t=0.5$), we compute $y(0.5
 
 *Ans related location: Sadiku Textbook, Chapter 4 (Circuit Theorems) – Section 4.2: Linearity Property.*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.2 (Operations) & Section 1.7 (Classifications), pp. 71–78, 97–110.*
+
 ***
 
 # 2. Energy and Power Signals
@@ -864,6 +906,8 @@ $x_2(t) = 1$ for $-2 < t < 2$, and $0$ elsewhere.
 *   **Conclusion:** Because the signal has finite energy ($E = 4$) and zero power, it is an **Energy Signal**.
 
 *Ans related location: Sadiku Textbook, Chapter 1 (Basic Concepts) – Section 1.5: Power and Energy (pg. 10) & Chapter 11 (AC Power Analysis) – Section 11.2: Instantaneous and Average Power (pg. 458-459).*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.1 (Signal Size) & Section 1.3-4 (Energy/Power), pp. 64–70, 82.*
 
 ***
 
@@ -910,6 +954,8 @@ Since both energy and power are infinite, it falls into neither category.
 **Conclusion:** $x_3(t)$ is **neither an energy signal nor a power signal**.
 
 *Ans related location: Sadiku Textbook, Chapter 1 (Basic Concepts) – Section 1.5: Power and Energy (pg. 10) & Chapter 11 (AC Power Analysis) – Section 11.2: Instantaneous and Average Power.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.1 & Section 1.3-4, pp. 64–70, 82.*
 
 ***
 
@@ -980,6 +1026,8 @@ $$\mathbf{x_{\text{rms}} = \vert{}D\vert{}}$$
 
 *Ans related location: Sadiku Textbook, Chapter 11 (AC Power Analysis) – Section 11.4: Effective or RMS Value (pg. 467) & Chapter 17 (The Fourier Series) – Section 17.5: Average Power and RMS Values (pg. 782).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.1-2 (Signal Power) & Drill 1.1, Drill 1.6, pp. 65–70, 82.*
+
 ***
 
 ### 2.4. Constant / DC Signal Energy & Power ($x(t) = A$)
@@ -996,6 +1044,8 @@ $$\mathbf{x_{\text{rms}} = \vert{}D\vert{}}$$
    * Conclusion: Since $E = \infty$ and $P = A^2$, it is a power signal..
 
 *Ans related location: Sadiku Textbook, Chapter 1 (Basic Concepts) – Section 1.5: Power and Energy, pg. 10.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.1-1 (Signal Energy) & Section 1.1-2 (Signal Power), pp. 65–70.*
 
 ***
 
@@ -1045,6 +1095,8 @@ Since $y_2(t)$ is a time-limited signal (it only exists between $t=1$ and $t=2$)
 
 *Ans related location: Sadiku Textbook, Chapter 1 (Basic Concepts) – Section 1.5: Power and Energy (pg. 10) & Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions (signal sketching).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.1 (Size) & Section 1.2 (Signal Operations), pp. 64–78.*
+
 ***
 
 ### 2.6. Pg 28, CT-1 Q2: Draw and Classify Left-Sided Real Exponential $x_1(t) = e^{-at}u(-t)$
@@ -1068,6 +1120,8 @@ Since $y_2(t)$ is a time-limited signal (it only exists between $t=1$ and $t=2$)
     Since both energy and power are infinite, it is **Neither an energy nor a power signal**.
 
 *Ans related location: Sadiku Textbook, Chapter 1 (Basic Concepts) – Section 1.5: Power and Energy (pg. 10) & Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.1, Section 1.3-4, Drill 1.6, Drill 1.7, pp. 65–70, 82, 85–86.*
 
 ***
 
@@ -1104,6 +1158,8 @@ Since $y_2(t)$ is a time-limited signal (it only exists between $t=1$ and $t=2$)
 
 *Ans related location: Sadiku Textbook, Chapter 1 (Basic Concepts) – Section 1.5: Power and Energy & Chapter 11 (AC Power Analysis) – Section 11.2: Instantaneous and Average Power (calculating power of sinusoids and exponential decays).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.1-1 & Section 1.1-2 (Problem 1.1-6), pp. 65–70, 136–137.*
+
 ***
 
 ### 2.8. Pg 32, CT-1 Q1: Classify Energy/Power of $e^{\sigma t}u(-t)$ and $3\cos(5t+\pi/4)$
@@ -1129,6 +1185,8 @@ Since $y_2(t)$ is a time-limited signal (it only exists between $t=1$ and $t=2$)
 *   **Conclusion:** It is an **Energy Signal**.
 
 *Ans related location: Sadiku Textbook, Chapter 1 (Basic Concepts) – Section 1.5: Power and Energy & Chapter 11 (AC Power Analysis) – Section 11.2: Instantaneous and Average Power.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.1-1, Section 1.1-2, & Section 1.3-4, pp. 65–70, 82.*
 
 ***
 
@@ -1163,6 +1221,8 @@ Let $a = -b$, where $b > 0$. Then the signal is $x(t) = e^{bt} u(-t)$.
 *Reference: Class Notes Pg 5-6, 9-10 (Energy & Power Signal).*
 
 *Ans related location: Sadiku Textbook, Chapter 1 (Basic Concepts) – Section 1.5: Power and Energy & Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.1 & Section 1.3-4, pp. 65–70, 82.*
 
 ***
 
@@ -1216,6 +1276,8 @@ The figure shows a triangular pulse.
 
 *Ans related location: Sadiku Textbook, Chapter 1 (Basic Concepts) – Section 1.5: Power and Energy & Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions.*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.1 & Section 1.2 (Signal Operations), pp. 64–78.*
+
 ***
 
 ### 2.11. Pg 44, CT-01 Q1: Sketch $u(4-t)$, $5\cos(10\pi t - \pi/3)$ and Analytically Determine Energy/Power
@@ -1252,6 +1314,8 @@ Let $y(t) = u(t-4) - u(t-6)$. This is a rectangular pulse of amplitude $1$ exist
 *   **Conclusion:** Because the signal has finite energy ($0 < E < \infty$) and zero average power, it is an **Energy Signal**.
 
 *Ans related location: Sadiku Textbook, Chapter 1 (Basic Concepts) – Section 1.5: Power and Energy & Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions (unit step boundaries, pg. 265).*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.1, Section 1.2, & Section 1.4 (Models), pp. 65–89.*
 
 ***
 
@@ -1302,6 +1366,8 @@ $$x(t) = \left(\frac{t}{2} + 1\right)[u(t+2) - u(t)] + 1[u(t) - u(t-2)]$$
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform (Time Scaling, pg. 680-681).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.2-4: Combined Operations, pp. 77–78.*
+
 ***
 
 ### 3.2. Q.1 (a) Impulse Function Definition & Sketch $f(t) = 5\delta(t+2) + 10\delta(t) - 4\delta(t-3)$
@@ -1335,6 +1401,8 @@ This function consists of three separate scaled and time-shifted impulses:
 *   At $t = 3$, draw a downward-pointing arrow and label it with strength -4.
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions (defining unit impulse $\delta(t)$, pg. 265).*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.4-2: The Unit Impulse Function $\delta(t)$, pp. 86–89.*
 
 ***
 
@@ -1372,6 +1440,8 @@ $$f(t) = E\left(1 - \frac{2t}{T}\right)u(t) - E\left(1 - \frac{2t}{T}\right)u(t-
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions (Gate/unit step combinations, pg. 269).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.4-1: The Unit Step Function (t)$, pp. 83–86.*
+
 ***
 
 ### 3.4. Define Gate Function & Express Ramp Signal in Terms of Switching Functions (Figure involved)
@@ -1407,6 +1477,8 @@ Expanding this expression gives the final answer in terms of switching functions
 $$f(t) = E\left(1 - \frac{2t}{T}\right)u(t) - E\left(1 - \frac{2t}{T}\right)u(t-T)$$
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions (Gate/unit step combinations, pg. 269).*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.4-1: The Unit Step Function (t)$, pp. 83–86.*
 
 ***
 
@@ -1465,6 +1537,8 @@ $$v_2(t) = (-2t + 2)u(t) + [2t - 2 + 2t - 6]u(t - 2) - (2t - 6)u(t - 3)$$
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions (derivatives of step and ramp waveforms, pg. 269).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.4-1 & Section 1.4-2 (Problem 1.4-8), pp. 83–89, 142.*
+
 ***
 
 ### 3.6. Express Current Pulse in Terms of Unit Step and Find its Integral (Figure involved)
@@ -1498,6 +1572,8 @@ The integral forms a single triangular pulse that exists between $t=0$ and $t=4$
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions (integrals of singularity functions, pg. 269).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.4-1 & Problem 1.4-9, pp. 83–86, 142.*
+
 ***
 
 ### 3.7. Sifting Property Proof: $\int_{-\infty}^{\infty} e^{-2(x-t)}\delta(2 - t) dt = e^{-2(x-2)}$
@@ -1515,6 +1591,8 @@ First, note that the impulse function is even, meaning $\delta(2 - t) = \delta(-
     $$\int_{-\infty}^{\infty} e^{-2(x-t)}\delta(2 - t) dt = \mathbf{e^{-2(x-2)}}$$
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions (Sifting Property, pg. 268).*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.4-2: Sifting Property, Eq. (1.10), pp. 86–88.*
 
 ***
 
@@ -1572,6 +1650,8 @@ The given signal $x(t)$ is:
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions (shifting and folding singularity waveforms, pg. 265).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.2 (Operations) & Section 1.4 (Models), pp. 71–89.*
+
 ***
 
 ### 3.9. Pg 31, CT-1 Q2: Sketch Base Signal and Transformations $x(t-2), x(2t), x(-t)$
@@ -1609,6 +1689,8 @@ When applying transformations, we follow the order: $x(\alpha t + \beta) = x(\al
 *   **Sketch Description:** The signal is time-reversed (which looks identical to the original due to symmetry) and shifted right by 4. The left tail is from $t = 0$ to $t = 2$. The flat top (amplitude 2) is from $t = 2$ to $t = 6$. The right tail is from $t = 6$ to $t = 8$.
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions & Chapter 14 (Frequency Response) – Section 14.9: Scaling.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.2-4: Combined Operations, pp. 77–78.*
 
 ***
 
@@ -1652,6 +1734,8 @@ When applying transformations, we follow the order: $x(\alpha t + \beta) = x(\al
 *   **Sketch Description:** The entire signal is compressed and sits entirely on the negative axis. It starts with a ramp from $(-3, 0)$ up to $(-2, 2)$. It is followed by a flat top at amplitude $2$ from $t = -2$ to $t = -1$, dropping to zero at $t = -1$.
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions & Chapter 14 (Frequency Response) – Section 14.9: Scaling.*
+
+*BP Lathi Topic Location: Chapter 1, Section 1.2: Some Useful Signal Operations, pp. 71–78.*
 
 ***
 
@@ -1730,6 +1814,8 @@ It is a staircase-like pulse composed of two rectangular segments.
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions & Chapter 14 (Frequency Response) – Section 14.9: Scaling.*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.2 (Operations) & Section 1.4 (Models), pp. 71–89.*
+
 ***
 
 # 4. Laplace Transform
@@ -1779,6 +1865,8 @@ $$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})}{s^2(1 + e^{-s})}$$
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform, pg. 679.*
 
+*BP Lathi Topic Location: Chapter 4, Section 4.1 (Laplace Transform) & Table 4.1, pp. 350–361.*
+
 ***
 
 ### 4.2. Laplace Transform of Triangular Waveform $h(t)$ (Figure involved)
@@ -1826,6 +1914,8 @@ $$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})}{s^2(1 + e^{-s})}$$
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform, pg. 679.*
 
+*BP Lathi Topic Location: Chapter 4, Section 4.1 & Table 4.1 Pair 19, pp. 350–361.*
+
 ***
 
 ### 4.3. Laplace Transform of Triangular Signal Using Properties (Figure involved)
@@ -1857,6 +1947,8 @@ $$F(s) = \frac{5[1 - e^{-s}(1+s)]}{s^2(1 - e^{-2s})}$$
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform, pg. 679.*
 
+*BP Lathi Topic Location: Chapter 4, Section 4.2: Laplace Transform Properties, pp. 356–361.*
+
 ***
 
 ### 4.4. Q.2 (a) Laplace Transform Properties: (i) Scaling, (ii) Time Shift, (iii) Frequency Shift
@@ -1884,6 +1976,8 @@ $$\mathcal{L}[x(t)e^{s_0 t}] = X(s - s_0)$$
 *Explanation:* If a signal is multiplied by $e^{s_0 t}$, the entire Laplace spectrum of that signal is shifted in the $s$-plane by the amount $s_0$. If $s_0$ is purely imaginary (e.g., $j\omega_0$), this represents a shift along the frequency axis, which forms the basis for modulation.
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform (Scaling, Time shift, and Frequency shift, pg. 679-681).*
+
+*BP Lathi Topic Location: Chapter 4, Section 4.2 & Table 4.2: Transform Properties, pp. 356–361.*
 
 ***
 
@@ -1921,6 +2015,8 @@ $H(s) = \frac{5}{s} \left( 2 - e^{-2s} - e^{-4s} \right)$
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform, pg. 679-681.*
 
+*BP Lathi Topic Location: Chapter 4, Section 4.1 & Section 4.2, pp. 350–361.*
+
 ***
 
 ### 4.6. Q.3 (a) Laplace Transform of Periodic Sawtooth Waveform (Figure involved)
@@ -1957,6 +2053,8 @@ $$F(s) = \frac{\frac{2 - 2e^{-s} - 2se^{-s}}{s^2}}{1 - e^{-2s}}$$
 $$F(s) = \frac{2[1 - e^{-s} - se^{-s}]}{s^2(1 - e^{-2s})}$$
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform (Time Periodicity property, pg. 684-685).*
+
+*BP Lathi Topic Location: Chapter 4, Section 4.2 (Periodic Signals Transform), pp. 356–361.*
 
 ***
 
@@ -2005,6 +2103,8 @@ This intersection represents a vertical strip in the s-plane between $\sigma = b
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.2: Definition of the Laplace Transform (evaluating ROC boundaries, pg. 677).*
 
+*BP Lathi Topic Location: Chapter 4, Section 4.11: Bilateral Laplace Transform & ROC, pp. 470–475.*
+
 ***
 
 ### 4.8. Pg 35, CT-3 Q1: Find Laplace Transform & Sketch ROC: (i) $e^{3t} u(-t)$, (ii) $e^{-3t} u(t) + e^{3t} u(-t)$
@@ -2049,6 +2149,8 @@ This intersection represents a vertical strip in the s-plane between $\sigma = b
 *Reference: Class Notes Pg 58-61 (Laplace Transform and ROC).*
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.2: Definition of the Laplace Transform (evaluating ROC boundaries, pg. 677).*
+
+*BP Lathi Topic Location: Chapter 4, Section 4.11: Bilateral Laplace Transform & ROC, pp. 470–475.*
 
 ***
 
@@ -2096,6 +2198,8 @@ $\mathbf{F(s) = \frac{A}{s} \left( e^{sT/2} - e^{-sT/2} \right)}$
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform (Time Differentiation, pg. 682).*
 
+*BP Lathi Topic Location: Chapter 4, Section 4.2 & Table 4.2 (Time Differentiation), pp. 356–361.*
+
 ***
 
 ### 4.10. Pg 42, CT-3 Q2: Sketch Region of Convergence (ROC) in Complex s-Plane for Bilateral Signals
@@ -2129,6 +2233,8 @@ We analyze the left-sided and right-sided portions separately.
 *   **Sketch Description:** Draw the complex s-plane. Mark a pole ($\times$) at $\sigma = a$ and a pole ($\times$) at $\sigma = b$. Draw vertical dashed lines through both poles. **Shade the rectangular strip lying strictly between the line $\sigma = a$ and the line $\sigma = b$**.
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.2: Definition & Section 15.4: The Inverse Laplace Transform, pg. 690.*
+
+*BP Lathi Topic Location: Chapter 4, Section 4.11: Bilateral Laplace Transform & ROC, pp. 470–475.*
 
 ***
 
@@ -2170,6 +2276,8 @@ Finally, solving for $X(\omega)$ yields the desired Fourier transform:
 Therefore, **$sgn(t) \Leftrightarrow \frac{2}{j\omega}$**.
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.3: Properties of the Fourier Transform (Time Differentiation property, pg. 823-824).*
+
+*BP Lathi Topic Location: Chapter 7, Section 7.3 (Properties) & Table 7.1 Pair 12, pp. 700–710.*
 
 ***
 
@@ -2228,6 +2336,8 @@ Rearranging the real and imaginary parts in the numerator and denominator gives 
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.4: Circuit Applications, pg. 833-835.*
 
+*BP Lathi Topic Location: Chapter 7, Section 7.4: LTI Circuit Analysis by Fourier Transform, pp. 715–725.*
+
 ***
 
 ### 5.3. Q.4 (c) Fourier Transform of Trapezoidal Function via Differentiation Property (Figure involved)
@@ -2275,6 +2385,8 @@ $$F(\omega) = \frac{2\cos(\omega) - 2\cos(2\omega)}{\omega^2}$$
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.3: Properties of the Fourier Transform (Time Differentiation, pg. 823-824).*
 
+*BP Lathi Topic Location: Chapter 7, Section 7.3: Time Differentiation Property, pp. 710–712.*
+
 ***
 
 ### 5.4. Q.6 (b) Why a Time-Limited Signal is Band-Unlimited in Frequency Domain? Explain
@@ -2293,6 +2405,8 @@ A fundamental principle in signal processing, rooted in the properties of the Fo
 In practical terms, whenever we truncate a signal in time (applying a window), we cause its frequency spectrum to spread out (spectral leakage), ensuring it contains high-frequency components that theoretically stretch to infinity.
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.3: Properties of the Fourier Transform (pg. 820) & Section 18.5: Parseval's Theorem (pg. 836).*
+
+*BP Lathi Topic Location: Chapter 7, Section 7.3 & Section 7.9 (Essential Bandwidth), pp. 700–715, 755–760.*
 
 ***
 
@@ -2354,6 +2468,8 @@ $|F(\omega)| = \left| \text{sinc}(\omega - \pi) - \text{sinc}(\omega + \pi) \rig
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.2: Definition of the Fourier Transform & Section 18.3: Properties of the Fourier Transform (Frequency Shifting property, pg. 822-823).*
 
+*BP Lathi Topic Location: Chapter 7, Section 7.2 & Section 7.3 (Frequency Shifting), pp. 690–705.*
+
 ***
 
 ### 5.6. State and Explain Parseval's Theorem
@@ -2374,6 +2490,8 @@ $$E_x = \int_{-\infty}^{\infty} |x(t)|^2 dt = \frac{1}{2\pi} \int_{-\infty}^{\in
 4.  **Conservation of Energy:** Conceptually, Parseval's theorem is a statement of the conservation of energy. It mathematically guarantees that representing a signal in the frequency domain (via the Fourier transform) does not create or destroy energy; the total energy of the physical signal remains constant regardless of the domain in which it is analyzed.
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.5: Parseval's Theorem, pg. 836-839.*
+
+*BP Lathi Topic Location: Chapter 7, Section 7.6: Signal Energy and Parseval's Theorem, pp. 733–735.*
 
 ***
 
@@ -2421,6 +2539,8 @@ $F(\omega) = 4\text{sinc}^2\left(\frac{\omega}{2}\right)\cos(3\omega)$
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.2: Definition of the Fourier Transform, pg. 814.*
 
+*BP Lathi Topic Location: Chapter 7, Section 7.1 & Section 7.3, pp. 680–710.*
+
 ***
 
 ### 5.8. Find Fourier Transform of Elementary Functions: (i) $\delta(t)$, (ii) $e^{j\omega_0 t}$, (iii) $\text{sgn}(t)$
@@ -2462,6 +2582,8 @@ Therefore, **$\text{sgn}(t) \Longleftrightarrow \frac{2}{j\omega}$**.
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.2: Definition & Section 18.3: Properties of the Fourier Transform.*
 
+*BP Lathi Topic Location: Chapter 7, Section 7.2 & Table 7.1 (Pairs 6, 8, 12), pp. 685–695.*
+
 ***
 
 ### 5.9. Non-Transformability of Ramp Signal & Parseval's Theorem Explanation
@@ -2489,6 +2611,8 @@ $$E_x = \int_{-\infty}^{\infty} |x(t)|^2 dt = \frac{1}{2\pi} \int_{-\infty}^{\in
 4.  Essentially, the theorem demonstrates the principle of conservation of energy: the total energy of a signal remains the same regardless of whether it is measured in the time domain or the frequency domain.
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.2: Definition (discussing Dirichlet/absolute integrability criteria) & Section 18.5: Parseval's Theorem, pg. 836-839.*
+
+*BP Lathi Topic Location: Chapter 7, Section 7.1 (Existence) & Section 7.6 (Parseval's Theorem), pp. 682–684, 733–735.*
 
 ***
 
@@ -2528,6 +2652,8 @@ $\mathbf{F(\omega) = \frac{2A \sin(2\omega)}{\omega}}$
 *(Optional: This can also be expressed using the sinc function where $\text{sinc}(x) = \frac{\sin(x)}{x}$. Multiply numerator and denominator by 2: $F(\omega) = 4A \frac{\sin(2\omega)}{2\omega} = 4A \text{sinc}(2\omega)$).*
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.3: Properties of the Fourier Transform (Time Differentiation, pg. 823-824).*
+
+*BP Lathi Topic Location: Chapter 7, Section 7.3: Time Differentiation Property, pp. 710–712.*
 
 ***
 
@@ -2578,6 +2704,8 @@ $X(\omega) = \frac{4}{\omega^2 T} \left[ 2\sin^2\left(\frac{\omega T}{4}\right) 
 $\mathbf{X(\omega) = \frac{8}{\omega^2 T} \sin^2\left(\frac{\omega T}{4}\right)}$
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.3: Properties of the Fourier Transform (Time Differentiation, pg. 823-824).*
+
+*BP Lathi Topic Location: Chapter 7, Section 7.3: Time Differentiation Property (Fig. 7.27), p. 712.*
 
 ***
 
@@ -2666,6 +2794,8 @@ The final Fourier series for the output voltage $v_o(t)$ consists only of cosine
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.4: Circuit Applications (pg. 778-781) & Chapter 14 (Frequency Response) – Section 14.8: Active Filters (pg. 642).*
 
+*BP Lathi Topic Location: Chapter 6, Section 6.4: LTIC System Response to Periodic Inputs, pp. 637–640.*
+
 ***
 
 ### 6.2. Exponential Fourier Series ($D_n$) & Line Spectrum of Rectangular Pulse Train (Figure involved)
@@ -2714,6 +2844,8 @@ Let's find some key values for $D_n$:
 The spectrum plot is a series of discrete lines following a "sinc" shaped envelope. The central peak is at $D_0=2$. The lines are spaced apart by $\omega_0 = \pi/5$. Every 5th line is exactly zero.
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.6: Exponential Fourier Series, pg. 785-791.*
+
+*BP Lathi Topic Location: Chapter 6, Section 6.3: Exponential Fourier Series, pp. 621–631.*
 
 ***
 
@@ -2786,6 +2918,8 @@ $P \approx 0 + 0.00325 + 0.00300 = 0.00625 \text{ W}$
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.4: Circuit Applications (pg. 778) & Section 17.5: Average Power and RMS Values (pg. 782).*
 
+*BP Lathi Topic Location: Chapter 6, Section 6.4: LTIC System Response to Periodic Inputs, pp. 637–640.*
+
 ***
 
 ### 6.4. Trigonometric Fourier Series for Half-Wave Rectified Cosine Function (Period 4, Amplitude 1)
@@ -2847,6 +2981,8 @@ $$f(t) = a_0 + a_1\cos(\omega_0 t) + \sum_{k=1}^{\infty} a_{2k} \cos(2k\omega_0 
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.2: Trigonometric Fourier Series, pg. 760.*
 
+*BP Lathi Topic Location: Chapter 6, Section 6.1 (Trigonometric Series) & Section 6.1-2 (Symmetry), pp. 593–608.*
+
 ***
 
 ### 6.5. Trigonometric Fourier Series for Bipolar Square Wave (Figure involved)
@@ -2893,6 +3029,8 @@ Writing out the first few non-zero terms explicitly gives the final expression:
 **$$f(t) = \frac{A}{2} + \frac{2A}{\pi} \left[ \cos\left(\frac{2\pi}{T} t\right) - \frac{1}{3}\cos\left(\frac{6\pi}{T} t\right) + \frac{1}{5}\cos\left(\frac{10\pi}{T} t\right) - \dots \right]$$**
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.2: Trigonometric Fourier Series (pg. 760) & Section 17.3: Symmetry Considerations (pg. 768).*
+
+*BP Lathi Topic Location: Chapter 6, Section 6.1: Trigonometric Fourier Series, pp. 593–608.*
 
 ***
 
@@ -2956,6 +3094,8 @@ To draw the frequency spectrum, we separate this into an amplitude spectrum $|D_
     The phase spectrum is an odd function, with lines at $-\pi/2$ for negative frequencies and lines at $\pi/2$ for positive frequencies.
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.2: Trigonometric Fourier Series (constructing line spectrums, pg. 764).*
+
+*BP Lathi Topic Location: Chapter 6, Section 6.1-1 & Section 6.3-1 (Spectra), pp. 598–606, 624–631.*
 
 ***
 
@@ -3021,6 +3161,8 @@ $$P_{avg} = 78.5 \times 2$$
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.5: Average Power and RMS Values, pg. 782-785.*
 
+*BP Lathi Topic Location: Chapter 6, Section 6.1 (Compact Form) & Section 6.3-2 (Parseval's Theorem), pp. 593–598, 632–634.*
+
 ***
 
 ### 6.8. Q.6 (a) Definitions: (i) Amplitude Spectrum, (ii) Phase Spectrum, and (iii) Ladder Network
@@ -3042,6 +3184,8 @@ Together with the amplitude spectrum, the phase spectrum provides a complete fre
 A **ladder network** is a specific type of electrical circuit topology consisting of alternating series and parallel components (typically resistors, capacitors, or inductors) connected in a cascading manner. When drawn on a schematic, the repeating "L" sections make the circuit look like a ladder, where series components form the "rails" and parallel components form the "rungs." They are widely used in electrical engineering for applications such as passive filter design, attenuators, and digital-to-analog converters (like the R-2R ladder).
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.2 & 17.6: Amplitude/Phase Spectrum (pg. 764, 786), and Chapter 19 (Two-Port Networks) – Section 19.9.2: Ladder Network Synthesis (pg. 884-889).*
+
+*BP Lathi Topic Location: Chapter 6, Section 6.1-1: The Fourier Spectrum, pp. 598–606.*
 
 ***
 
@@ -3113,6 +3257,8 @@ $$y(t) = x(t) - 0.5 + \frac{1}{\pi} \sin(2\pi t)$$
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.4: Circuit Applications (pg. 778) & Section 17.8.2: Filters (pg. 797-798).*
 
+*BP Lathi Topic Location: Chapter 6, Section 6.1 & Section 6.4 (System Response), pp. 593–608, 637–640.*
+
 ***
 
 ### 6.10. Pg 27, CT-3 Q2: Fourier Series and Amplitude/Phase Spectra of Square Wave (Figure involved)
@@ -3167,6 +3313,8 @@ Therefore, the $n$-th harmonic is: $\frac{4}{n\pi} \cos(n\pi t - 90^\circ)$ (for
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.2: Trigonometric Fourier Series, pg. 760.*
 
+*BP Lathi Topic Location: Chapter 6, Section 6.1 & Section 6.3, pp. 593–608, 621–631.*
+
 ***
 
 # 7. Sampling and Modulation
@@ -3196,6 +3344,8 @@ The Fourier Transform is a fundamental mathematical tool that allows us to move 
     *   To prevent overlap (a phenomenon known as **aliasing**, where high frequencies masquerade as low frequencies and corrupt the data), the sampling frequency $\omega_s$ must be strictly greater than twice the highest frequency component present in the original signal ($B$). Thus, the Fourier Transform provides the exact mathematical proof for the requirement $f_s > 2B$.
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.7.1: Amplitude Modulation (pg. 840) & Section 18.7.2: Sampling (pg. 842).*
+
+*BP Lathi Topic Location: Chapter 7, Section 7.7: Amplitude Modulation, pp. 740–749 & Chapter 8, Section 8.1: The Sampling Theorem, pp. 785–795.*
 
 ***
 
@@ -3250,6 +3400,8 @@ The Nyquist rate for this signal is $2f_m = 2(5 \text{ kHz}) = 10 \text{ kHz}$.
 
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform) – Section 18.7.2: Sampling (Nyquist rate and spectrum folding, pg. 842-843).*
 
+*BP Lathi Topic Location: Chapter 8, Section 8.1: The Sampling Theorem (Sampling of Baseband Signals), pp. 785–795.*
+
 ***
 
 # 8. Z-Transform
@@ -3289,6 +3441,8 @@ Both $x_1(n)$ and $x_2(n)$ result in the identical algebraic function $X(z) = \f
 However, if you are given both $X(z) = \frac{z}{z - a}$ *and* the ROC $|z| > |a|$, the ambiguity is resolved, and you know the inverse is definitively the causal sequence $a^n u(n)$. Therefore, specifying the ROC is strictly required for a complete and unique Z-domain representation of a discrete-time signal.
 
 *Ans related location: Sadiku Textbook (Analogous Concept), Chapter 15 (Introduction to the Laplace Transform) – Section 15.2: Definition of the Laplace Transform, pg. 677 (Note: Discrete-time Z-transforms are not directly covered in Sadiku 5th Ed., but ROC s-plane properties are analyzed here).*
+
+*BP Lathi Topic Location: Chapter 5, Section 5.1 (ROC) & Section 5.8 (Bilateral z-Transform), pp. 489–492, 555–562.*
 
 ***
 
@@ -3340,6 +3494,8 @@ Therefore, the Region of Convergence (ROC) for this finite-duration right-sided 
 
 *Ans related location: Sadiku Textbook (Analogous Concept), Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform (Time Periodicity property, pg. 684-685) (Note: Discrete-time counterpart to Laplace transform of a continuous periodic pulse train).*
 
+*BP Lathi Topic Location: Chapter 5, Section 5.2 (Properties) & Problem 5.2-1, p. 505, p. 577.*
+
 ***
 
 # 9. Miscellaneous
@@ -3381,6 +3537,8 @@ Substituting these values back:
 
 *Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits) – Section 7.4: Singularity Functions (derivatives of step and ramp waveforms, pg. 269).*
 
+*BP Lathi Topic Location: Chapter 1, Section 1.4-1 & Section 1.4-2 (Problem 1.4-8), pp. 83–89, 142.*
+
 ***
 
 ### 9.2. Compact Amplitude-Phase Form Expression for Periodic Current $i(t)$
@@ -3392,5 +3550,7 @@ $$i(t) = C_0 + \sum_{n=1}^{2} C_n \cos(n\omega_0 t + \theta_n)$$
 $$i(t) = 4 + 10\cos(100\pi t - 36.87^\circ) + 5\cos(200\pi t + 143.13^\circ) \text{ A}$$
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.2: Trigonometric Fourier Series & Section 17.5: Average Power and RMS Values, pg. 782-785.*
+
+*BP Lathi Topic Location: Chapter 6, Section 6.1: Trigonometric Fourier Series (Compact Form), pp. 593–598.*
 
 ***
