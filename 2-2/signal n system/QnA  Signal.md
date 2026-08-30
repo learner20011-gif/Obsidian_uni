@@ -313,7 +313,7 @@ Since $y_2(t) \neq y_1(t - t_0)$ (the terms differ by $0.5t_0$), the system does
 
 ***
 
-### 1.8. System $y(t) = \frac{d}{dt}x(t)$ Time-Invariance Proof
+### 1.8.✅ System $y(t) = \frac{d}{dt}x(t)$ Time-Invariance Proof
 
 - **Intuition:** The system simply calculates the derivative (slope) of the input. If you shift the input signal in time, its slope profile remains exactly the same, it just occurs later.
     
@@ -399,7 +399,7 @@ Because the delayed output does not equal the response to a delayed input, the s
 
 ***
 
-### 1.11. Causality Analysis of $y(t) = x(-t)$
+### 1.11.✅ Causality Analysis of $y(t) = x(-t)$
 
 To test for causality, we can plug in specific values for time $t$ (both positive and negative) to see what inputs the system requires.
 
@@ -451,7 +451,7 @@ The upper limit of integration is now $\tau = t$. Because the system only requir
 
 ***
 
-### 1.13. Invertibility Tests
+### 1.13. ✅Invertibility Tests
 
 #### (a) $y(t) = x(-t)$  **Status:** **Invertible**
     
