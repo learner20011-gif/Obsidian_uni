@@ -772,7 +772,7 @@ We check if there is a unique one-to-one mapping between $x(t)$ and $y(t)$.
 
 ***
 
-### 1.20. Pg 41, CT-01 Q2: Time-Variance and Causality for $y_1(t) = t \cdot x(t+1)$ and $y_2(t) = x(1-t)$
+### 1.20. Pg 41, CT-01 Q2: Time-Variance and Causality for $y_1(t) = t \cdot x(t+1)$ and✅ $y_2(t) = x(1-t)$
 
 **Solution:**
 
