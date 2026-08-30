@@ -960,7 +960,7 @@ Since both energy and power are infinite, it falls into neither category.
 
 ***
 
-### 2.3. Complex Exponential Average Power & RMS Value: $x(t) = D e^{j\omega_0 t}$
+### 2.3. ✅Complex Exponential Average Power & RMS Value: $x(t) = D e^{j\omega_0 t}$
 
 For a complex exponential signal of the form $x(t) = D e^{j\omega_0 t}$ (where $D$ is a complex constant), compute the average power $P_x$ and find its root-mean-square (RMS) value.
 
@@ -1050,7 +1050,7 @@ $$\mathbf{x_{\text{rms}} = \vert{}D\vert{}}$$
 
 ***
 
-### 2.5. Pg 22, CT-1 Q1: Signal Sketching $y_1(t)=x(t+1), y_2(t)=x(t+1)r(t-1)$ & Energy/Power (Figure involved)
+### 2.5. Pg 22, CT-1 Q1: Signal Sketching $y_1(t)=x(t+1), ✅y_2(t)=x(t+1)r(t-1)$ & Energy/Power (Figure involved)
 
 For the following signal, sketch (i) $y_1(t)=x(t+1)$ and (ii) $y_2(t)=x(t+1)r(t-1)$. Justify whether $y_2(t)$ is an energy signal, power signal, or neither? Also compute the energy and power of $y_2(t)$. ![[Pasted image 20260712005325.png]]
 
