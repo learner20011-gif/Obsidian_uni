@@ -1599,7 +1599,7 @@ First, note that the impulse function is even, meaning $\delta(2 - t) = \delta(-
 
 ***
 
-### 3.8. Pg 29, CT-1 Q3: Sketch Derived Signals $x(t-2), x(2t), x(-t+1), x(2t+3)$ (Figure involved)
+### 3.8. Pg 29, CT-1 Q3: Sketch Derived Signals $x(t-2), x(2t),✅ x(-t+1), x(2t+3)$ (Figure involved)
 ![[Pasted image 20260712005603.png]]
 
 **Figure Analysis of Base Signal $x(t)$:**
