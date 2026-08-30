@@ -2,6 +2,7 @@
 
 ### 1.1. Linearity Test: $y(t) = \text{Re}\{x(t)\}$
 
+![[Pasted image 20260830100955.png]]
 The system relationship is given by: $$y(t) = \text{Re}\{x(t)\}$$
 To prove a system is linear, it must satisfy both **additivity** and **homogeneity**. Let's test each property..
 
