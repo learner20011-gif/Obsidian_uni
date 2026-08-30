@@ -1,6 +1,6 @@
 # 1. System Properties
 
-### 1.1. Linearity Test: $y(t) = \text{Re}\{x(t)\}$
+### 1.1. ✅Linearity Test: $y(t) = \text{Re}\{x(t)\}$
 
 ![[Pasted image 20260830100955.png]]
 The system relationship is given by: $$y(t) = \text{Re}\{x(t)\}$$
@@ -70,7 +70,7 @@ Clearly, $-x_i(t) \neq j \cdot x_r(t)$. Because the actual output does not equal
 
 ***
 
-### 1.2. Q.1 (a) Input-Output Pairs: Memoryless, Causal, Linear, and Time-Invariant Analysis (Figure involved)
+### 1.2. Q.1 (a)✅ Input-Output Pairs: Memoryless, Causal, Linear, and Time-Invariant Analysis (Figure involved)
 ![[Pasted image 20260626191842.png]]
 **Solution:**
 
@@ -550,7 +550,7 @@ The upper limit of integration is now $\tau = t$. Because the system only requir
 
 ***
 
-### 1.15. Pg 22, CT-1 Q2: Rectangular to Triangular Pulse System (Figure involved)
+### 1.15. ✅Pg 22, CT-1 Q2: Rectangular to Triangular Pulse System (Figure involved)
 
 A time limited rectangular pulse (left) is applied to a system produces an output as shown in the following figure (right). Express $y(t)$ in terms of $x(t)$. Also provide a mathematical justification whether the system is (i) Linear (ii) Time-invariant and (iii) Causal. ![[Pasted image 20260712005359.png]]
 
