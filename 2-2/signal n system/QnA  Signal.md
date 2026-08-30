@@ -1322,7 +1322,7 @@ Let $y(t) = u(t-4) - u(t-6)$. This is a rectangular pulse of amplitude $1$ exist
 
 # 3. Signal Fundamentals & Operations
 
-### 3.1. Q.1 (c) Inverse Transformation & Expression for $y(t) = x(2t-4)$ (Figure involved)
+### 3.1.✅ Q.1 (c) Inverse Transformation & Expression for $y(t) = x(2t-4)$ (Figure involved)
 ![[Pasted image 20260626191823.png]]
 **Solution:**
 
@@ -1486,7 +1486,9 @@ $$f(t) = E\left(1 - \frac{2t}{T}\right)u(t) - E\left(1 - \frac{2t}{T}\right)u(t-
 ### 3.5. Derivatives of Standard Signals, Signum Function, and Switching Functions (Figure involved)
 
 **(i)** Express the $\text{sgn}(t)$ function in terms of the step function $u(t)$.
-**(ii)** Find the first derivatives of the standard signals and sketch them.
+- (ii) Find the first derivatives of the following signals and sketch the signals and their derivatives:
+      - (1) $x(t) = u(t) - u(t - a), \quad a > 0$
+      - (2) $y(t) = t[u(t) - u(t - a)], \quad a > 0$
 **(iii)** Define switching functions with examples and express signals $v_1(t)$ and $v_2(t)$ in terms of switching functions.
 ![[Pasted image 20260628170559.png]]
 **Detailed Answer:**
