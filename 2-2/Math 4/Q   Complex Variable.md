@@ -1,4 +1,4 @@
-### Math complex variable class note (L).pdf
+
 
 
 - **Page 1:** Q5, Q25, Q26, Q51, Q74
