@@ -3141,3 +3141,385 @@ Notice the circuit acts as a strong low-pass filter, significantly attenuating t
 
 *Related concept location in Sadiku textbook: Calculating steady-state circuit responses to non-sinusoidal periodic inputs via Fourier Series and phasor analysis is formally detailed in Chapter 17, Section 17.4 (Circuit Applications), pgs. 778-781.*
 
+### 76. Page 18, Q.4(b): A spectrum analyzer indicates that a signal made up of three components only: 640 kHz at 2 V, 644 kHz at 1 V, 636kHz at 1 V. If the signal is applied across a 10 Ω resistor, what is the average power absorbed by the resistor.
+
+**Detailed Solution:**
+To find the average power of a signal made up of multiple distinct sinusoidal components, we use the principle derived from Parseval's theorem. When a signal contains multiple distinct frequency components, the total average power absorbed by a linear resistor is simply the sum of the average powers of each individual frequency component. 
+
+The average power $P$ absorbed by a resistor $R$ for a single sinusoidal voltage $V(t) = V_{m} \cos(\omega t + \theta)$ is given by:
+$P = \frac{V_{rms}^2}{R} = \frac{V_{m}^2}{2R}$
+where $V_m$ is the peak voltage.
+
+Given the three components:
+1.  **Component 1:** Frequency $f_1 = 640 \text{ kHz}$, Peak Voltage $V_{m1} = 2 \text{ V}$
+    $P_1 = \frac{V_{m1}^2}{2R} = \frac{2^2}{2(10)} = \frac{4}{20} = 0.2 \text{ W}$
+
+2.  **Component 2:** Frequency $f_2 = 644 \text{ kHz}$, Peak Voltage $V_{m2} = 1 \text{ V}$
+    $P_2 = \frac{V_{m2}^2}{2R} = \frac{1^2}{2(10)} = \frac{1}{20} = 0.05 \text{ W}$
+
+3.  **Component 3:** Frequency $f_3 = 636 \text{ kHz}$, Peak Voltage $V_{m3} = 1 \text{ V}$
+    $P_3 = \frac{V_{m3}^2}{2R} = \frac{1^2}{2(10)} = \frac{1}{20} = 0.05 \text{ W}$
+
+The total average power is the sum of the individual powers:
+$P_{total} = P_1 + P_2 + P_3$
+$P_{total} = 0.2 \text{ W} + 0.05 \text{ W} + 0.05 \text{ W} = 0.3 \text{ W} = 300 \text{ mW}$
+
+*Related location pg number In sadiku textbook: Chapter 17, Section 17.5 "Average Power and RMS Values", pg. 782-783.*
+
+***
+
+### 77. Page 27, Q2: Find the Fourier series of the square wave in following Fig. Plot the amplitude and phase spectra. [Figure involved.]
+
+**Detailed Solution:**
+Based on the figure of the square wave, let's extract the signal properties:
+*   The wave alternates between an amplitude of $1$ and $-1$.
+*   Observing the x-axis ($t$), one complete cycle happens between $t = -1$ and $t = 1$, or $t = 0$ to $t = 2$. Therefore, the period $T = 2$ seconds.
+*   The fundamental frequency $\omega_0 = \frac{2\pi}{T} = \frac{2\pi}{2} = \pi \text{ rad/s}$.
+*   The mathematical definition over one period ($t \in [0, 2]$) is:
+    $f(t) = \begin{cases} 1, & 0 < t < 1 \\ -1, & 1 < t < 2 \end{cases}$
+
+**1. Calculate the Fourier Coefficients:**
+First, check for symmetry. The function satisfies $f(-t) = -f(t)$ (it is mirrored and inverted across the origin). Because the function has **odd symmetry**, the DC component $a_0 = 0$ and the cosine coefficients $a_n = 0$. We only need to calculate the sine coefficients $b_n$:
+$b_n = \frac{4}{T} \int_{0}^{T/2} f(t) \sin(n\omega_0 t) dt$
+$b_n = \frac{4}{2} \int_{0}^{1} (1) \sin(n \pi t) dt$
+$b_n = 2 \left[ \frac{-\cos(n \pi t)}{n \pi} \right]_0^1 = \frac{2}{n \pi} [-\cos(n\pi) - (-\cos(0))]$
+$b_n = \frac{2}{n \pi} [1 - \cos(n\pi)] = \frac{2}{n \pi} [1 - (-1)^n]$
+
+Evaluating this for even and odd $n$:
+*   For even $n$ ($n = 2, 4, 6...$): $b_n = \frac{2}{n\pi} (1 - 1) = 0$
+*   For odd $n$ ($n = 1, 3, 5...$): $b_n = \frac{2}{n\pi} (1 - (-1)) = \frac{4}{n\pi}$
+
+**2. Form the Fourier Series:**
+$f(t) = \sum_{n=1,3,5...}^{\infty} \frac{4}{n \pi} \sin(n \pi t)$
+Letting $n = 2k - 1$ to represent only odd integers:
+$f(t) = \sum_{k=1}^{\infty} \frac{4}{(2k-1)\pi} \sin((2k-1)\pi t)$
+
+**3. Amplitude and Phase Spectra:**
+For plotting the spectra in standard form $A_n \cos(n\omega_0 t + \phi_n)$:
+Since $a_n = 0$ and $b_n = \frac{4}{n\pi}$ (for odd $n$), the amplitude $A_n$ is:
+$A_n = \sqrt{a_n^2 + b_n^2} = |b_n| = \frac{4}{n\pi}$  (for $n$ odd, else $0$)
+The phase $\phi_n$ is:
+$\phi_n = \tan^{-1}\left(\frac{-b_n}{a_n}\right) = -90^\circ$ (since $b_n$ is positive and $a_n = 0$)
+
+*   **Amplitude Spectrum Plot:** Discrete vertical lines at $\omega = \pi, 3\pi, 5\pi...$ with heights $\frac{4}{\pi}, \frac{4}{3\pi}, \frac{4}{5\pi}...$ respectively.
+*   **Phase Spectrum Plot:** Discrete vertical lines at $\omega = \pi, 3\pi, 5\pi...$ all going down to $-90^\circ$.
+
+*Related location pg number In sadiku textbook: Chapter 17, Section 17.2 "Trigonometric Fourier Series", pg. 760-766, and Section 17.3 "Symmetry Considerations", pg. 770.*
+
+***
+
+### 78. Page 37, Q1: The following input signal is applied to an ideal band pass filer with gain, |H| = 1 and lower cutoff frequency, ω1 = 6 rad/s and upper cutoff frequency, ω2 = 12 rad/s. (a) Determine the output signal. (b) What would be the range of bandwidth and the corner frequency so that the filter allows only the fundamental component. [Figure involved.]
+
+**Detailed Solution:**
+**Part (a): Determine the output signal.**
+Let's define the input square wave $x(t)$ from the figure. 
+*   It alternates between $1$ and $-1$.
+*   One period spans from $t=0$ to $t=4$, so $T = 4$ seconds.
+*   The fundamental frequency $\omega_0 = \frac{2\pi}{T} = \frac{2\pi}{4} = \frac{\pi}{2} \text{ rad/s} \approx 1.57 \text{ rad/s}$.
+
+Since this is an odd-symmetric square wave (shifted version of a standard square wave), its Fourier series will consist exclusively of odd harmonics. Its Fourier series expansion is:
+$x(t) = \sum_{n=1,3,5...}^{\infty} \frac{4}{n\pi} \sin(n \omega_0 t) = \sum_{n=1,3,5...}^{\infty} \frac{4}{n\pi} \sin\left(\frac{n\pi}{2} t\right)$
+
+Let's calculate the frequencies of the first few harmonics $\omega_n = n\omega_0 = n \frac{\pi}{2}$:
+*   $n=1$ (Fundamental): $\omega_1 \approx 1.57 \text{ rad/s}$
+*   $n=3$ (3rd harmonic): $\omega_3 \approx 4.71 \text{ rad/s}$
+*   $n=5$ (5th harmonic): $\omega_5 \approx 7.85 \text{ rad/s}$
+*   $n=7$ (7th harmonic): $\omega_7 \approx 11.00 \text{ rad/s}$
+*   $n=9$ (9th harmonic): $\omega_9 \approx 14.14 \text{ rad/s}$
+
+The ideal bandpass filter has a passband from $\omega_{low} = 6 \text{ rad/s}$ to $\omega_{high} = 12 \text{ rad/s}$. 
+We check which harmonics fall into the interval $[6, 12]$:
+*   $\omega_1 \approx 1.57$ (Reject)
+*   $\omega_3 \approx 4.71$ (Reject)
+*   $\omega_5 \approx 7.85$ (Pass)
+*   $\omega_7 \approx 11.00$ (Pass)
+*   $\omega_9 \approx 14.14$ (Reject)
+
+The output $y(t)$ will only contain the 5th and 7th harmonics multiplied by the gain $|H| = 1$:
+$y(t) = \frac{4}{5\pi} \sin\left(\frac{5\pi}{2} t\right) + \frac{4}{7\pi} \sin\left(\frac{7\pi}{2} t\right)$
+
+**Part (b): Range of bandwidth and corner frequency to pass ONLY the fundamental component.**
+To extract *only* the fundamental component ($n=1$), the filter's passband must include $\omega_1 = \pi/2 \approx 1.57 \text{ rad/s}$ and completely exclude the next non-zero harmonic, which is the 3rd harmonic $\omega_3 = 3\pi/2 \approx 4.71 \text{ rad/s}$. It must also exclude DC (0 rad/s).
+
+*   **Corner Frequencies Constraint:** 
+    The lower cutoff $\omega_{L}$ must be greater than $0$ and less than or equal to $\omega_1$.
+    The upper cutoff $\omega_{H}$ must be strictly greater than or equal to $\omega_1$ but strictly less than $\omega_3$.
+    Therefore: $0 < \omega_{L} \le \frac{\pi}{2} \le \omega_{H} < \frac{3\pi}{2}$
+
+*   **Bandwidth ($BW = \omega_{H} - \omega_{L}$) Constraint:**
+    The maximum possible bandwidth occurs if $\omega_{L}$ approaches $0$ and $\omega_{H}$ approaches $\frac{3\pi}{2}$.
+    Thus, the strict range for the bandwidth is $0 < BW < \frac{3\pi}{2} \text{ rad/s}$ (or $0 < BW < 4.71 \text{ rad/s}$).
+
+*Related location pg number In sadiku textbook: Chapter 14, Section 14.7.3 "Bandpass Filter", pg. 639 and Chapter 17, Section 17.8.2 "Filters", pg. 797-798.*
+
+***
+
+### 79. Page 65, Q(a) (Top): Show that the energy associated with a non-periodic signal is spread over the entire frequency spectrum, whereas the energy of a periodic signal is concentrated at the frequencies of its harmonic components.
+
+**Detailed Solution:**
+To show this fundamental distinction, we analyze the energy distribution formulations using Parseval’s Theorem for both periodic and non-periodic signals.
+
+**1. Periodic Signals:**
+A periodic signal $f(t)$ with period $T$ and fundamental frequency $\omega_0$ can be expressed as a Fourier series. Its energy characteristics are dictated by Parseval's theorem for Fourier series, which relates the average power (or energy per period) in the time domain to the discrete coefficients $c_n$ in the frequency domain:
+$P = \frac{1}{T} \int_{0}^{T} |f(t)|^2 dt = \sum_{n=-\infty}^{\infty} |c_n|^2$
+Here, $|c_n|^2$ represents the power contributed by the $n$-th harmonic. 
+Because $n$ takes on integer values, the energy (and power) is inherently concentrated *only* at discrete frequencies $\omega = n\omega_0$. If you plot the power spectrum, it results in a discrete "line spectrum." There is absolutely zero energy at frequencies between the harmonics.
+
+**2. Non-Periodic Signals:**
+A non-periodic signal does not repeat itself, meaning its period mathematically approaches infinity ($T \to \infty$). Consequently, the fundamental frequency $\Delta\omega = 2\pi/T \to d\omega$, transforming the discrete harmonic steps into a continuous frequency variable $\omega$. 
+Instead of a Fourier series, it is represented by the continuous Fourier Transform $F(\omega)$. Parseval's theorem for non-periodic signals states that the total energy $W$ is:
+$W = \int_{-\infty}^{\infty} |f(t)|^2 dt = \frac{1}{2\pi} \int_{-\infty}^{\infty} |F(\omega)|^2 d\omega$
+Here, $|F(\omega)|^2$ acts as an Energy Spectral Density function (Energy per unit bandwidth). Because we integrate a continuous function $|F(\omega)|^2$ over the differential $d\omega$ across all $\omega$ from $-\infty$ to $\infty$, it definitively shows that the signal's energy is smeared or spread continuously over the entire frequency spectrum, rather than being located at discrete points.
+
+**Conclusion:**
+By comparing the discrete summation $\sum |c_n|^2$ to the continuous integral $\int |F(\omega)|^2 d\omega$, it is proven mathematically that periodic signals concentrate energy purely at harmonic intervals, while non-periodic signals distribute energy across a continuous frequency spectrum.
+
+*Related location pg number In sadiku textbook: Chapter 18, Section 18.5 "Parseval's Theorem", pg. 836-837 and Chapter 17, Section 17.5 "Average Power and RMS Values", pg. 783.*
+
+### 80. Page 65, Q.6(b): Draw the amplitude spectrum of the following waveform. [Figure Involved]
+
+**Detailed Solution:**
+Based on the provided figure, the waveform is a periodic sawtooth wave. Let's assume the peak amplitude of the waveform is $A$. 
+*   The waveform repeats every $1$ unit of time, so the period $T = 1$.
+*   The fundamental frequency is $\omega_0 = \frac{2\pi}{T} = 2\pi \text{ rad/s}$.
+*   Over one period (from $t = 0$ to $t = 1$), the function can be described by the equation of a straight line: $f(t) = A t$.
+
+To draw the amplitude spectrum, we must first find the Trigonometric Fourier series coefficients ($a_0, a_n, b_n$):
+
+1.  **DC Component ($a_0$):**
+    $a_0 = \frac{1}{T} \int_{0}^{T} f(t) dt = \frac{1}{1} \int_{0}^{1} A t dt = A \left[ \frac{t^2}{2} \right]_0^1 = \frac{A}{2}$
+
+2.  **Cosine Coefficients ($a_n$):**
+    $a_n = \frac{2}{T} \int_{0}^{T} f(t) \cos(n\omega_0 t) dt = 2 \int_{0}^{1} A t \cos(2\pi n t) dt$
+    Using integration by parts ($\int u dv = uv - \int v du$ where $u=t, dv=\cos(2\pi n t)dt$):
+    $a_n = 2A \left[ t \frac{\sin(2\pi n t)}{2\pi n} \right]_0^1 - 2A \int_{0}^{1} \frac{\sin(2\pi n t)}{2\pi n} dt$
+    Since $\sin(2\pi n) = 0$ and $\sin(0) = 0$, the first term is zero. The integral of sine over a full period is also zero. Thus, $a_n = 0$.
+
+3.  **Sine Coefficients ($b_n$):**
+    $b_n = \frac{2}{T} \int_{0}^{T} f(t) \sin(n\omega_0 t) dt = 2 \int_{0}^{1} A t \sin(2\pi n t) dt$
+    Using integration by parts ($u=t, dv=\sin(2\pi n t)dt$):
+    $b_n = 2A \left[ t \frac{-\cos(2\pi n t)}{2\pi n} \right]_0^1 - 2A \int_{0}^{1} \frac{-\cos(2\pi n t)}{2\pi n} dt$
+    The second integral evaluates to zero. Evaluating the first term:
+    $b_n = 2A \left[ 1 \cdot \frac{-\cos(2\pi n)}{2\pi n} - 0 \right] = 2A \left( \frac{-1}{2\pi n} \right) = -\frac{A}{n\pi}$
+
+**Amplitude Spectrum ($A_n$):**
+The amplitude of each harmonic is given by $A_n = \sqrt{a_n^2 + b_n^2}$.
+*   $A_0 = a_0 = \frac{A}{2}$ (at $\omega = 0$)
+*   $A_n = \sqrt{0^2 + \left(-\frac{A}{n\pi}\right)^2} = \frac{A}{n\pi}$ (at $\omega = n\omega_0 = 2\pi n$)
+
+**Drawing the Spectrum:**
+The amplitude spectrum consists of discrete vertical lines at integer multiples of $2\pi$:
+*   At $\omega = 0$, height is $0.5 A$
+*   At $\omega = 2\pi$, height is $A / \pi \approx 0.318 A$
+*   At $\omega = 4\pi$, height is $A / 2\pi \approx 0.159 A$
+*   At $\omega = 6\pi$, height is $A / 3\pi \approx 0.106 A$
+The envelope of the spectrum decays proportionally to $1/n$.
+
+*Related location pg number In sadiku textbook: Chapter 17, Section 17.2 "Trigonometric Fourier Series", pg. 760-766.*
+
+***
+
+### 81. Page 66, Q(b) (Middle): Plot the amplitude and phase spectra of the following waveform. [Figure Involved]
+
+**Detailed Solution:**
+Based on the figure, the waveform is a periodic square wave.
+*   The amplitude alternates between $15$ and $-15$.
+*   One full cycle occurs between $t = -1$ and $t = 1$ (or $t=0$ to $t=2$). Thus, the period $T = 2$.
+*   The fundamental frequency is $\omega_0 = \frac{2\pi}{T} = \frac{2\pi}{2} = \pi \text{ rad/s}$.
+*   Between $t = 0$ and $t = 1$, the function has a value of $-15$. Between $t = 1$ and $t = 2$, it has a value of $15$. 
+*   Notice that $f(-0.5) = 15$ and $f(0.5) = -15$, so $f(-t) = -f(t)$. The function has **odd symmetry**.
+
+Because of odd symmetry, the DC component $a_0 = 0$ and all cosine coefficients $a_n = 0$. We only need to calculate $b_n$:
+$b_n = \frac{4}{T} \int_{0}^{T/2} f(t) \sin(n\omega_0 t) dt = \frac{4}{2} \int_{0}^{1} (-15) \sin(n\pi t) dt$
+$b_n = -30 \left[ \frac{-\cos(n\pi t)}{n\pi} \right]_0^1 = \frac{30}{n\pi} [\cos(n\pi) - \cos(0)]$
+$b_n = \frac{30}{n\pi} [(-1)^n - 1]$
+
+Evaluating for even and odd $n$:
+*   If $n$ is even, $(-1)^n - 1 = 1 - 1 = 0 \implies b_n = 0$.
+*   If $n$ is odd, $(-1)^n - 1 = -1 - 1 = -2 \implies b_n = \frac{-60}{n\pi}$.
+
+**Amplitude and Phase Spectra Formulation:**
+The standard amplitude-phase form is $f(t) = A_0 + \sum A_n \cos(n\omega_0 t + \phi_n)$.
+We have the terms $b_n \sin(n\pi t) = -\frac{60}{n\pi} \sin(n\pi t)$ for odd $n$.
+Using the identity $-\sin(x) = \cos(x + 90^\circ)$, we get:
+$-\frac{60}{n\pi} \sin(n\pi t) = \frac{60}{n\pi} \cos(n\pi t + 90^\circ)$
+
+*   **Amplitude Spectrum ($A_n$):**
+    $A_n = \frac{60}{n\pi}$ for odd $n$ (and $0$ for even $n$).
+    At $\omega = \pi$ ($n=1$), $A_1 = 60/\pi \approx 19.10$
+    At $\omega = 3\pi$ ($n=3$), $A_3 = 20/\pi \approx 6.37$
+    At $\omega = 5\pi$ ($n=5$), $A_5 = 12/\pi \approx 3.82$
+
+*   **Phase Spectrum ($\phi_n$):**
+    $\phi_n = 90^\circ$ for all odd $n$.
+
+**Plot Description:**
+1.  **Amplitude Spectrum:** Discrete vertical lines at $\omega = \pi, 3\pi, 5\pi, \dots$ with monotonically decreasing heights of $19.10, 6.37, 3.82, \dots$
+2.  **Phase Spectrum:** Discrete vertical lines at $\omega = \pi, 3\pi, 5\pi, \dots$ all extending upwards to a constant positive phase value of $+90^\circ$.
+
+*Related location pg number In sadiku textbook: Chapter 17, Section 17.2 "Trigonometric Fourier Series", pg. 763-764 and Section 17.3 "Symmetry Considerations", pg. 770.*
+
+***
+
+### 82. Page 68, Q(c) (Middle): Derive the Fourier transform of the rectangular pulse as shown in the figure below. Also graphically illustrate that with increasing pulse width, the amplitude spectrum is congested. [Figure Involved]
+
+**Detailed Solution:**
+**1. Derivation of the Fourier Transform:**
+Based on the figure, the signal $f(t)$ is a non-periodic rectangular pulse that starts at $t = 0$ and ends at $t = T$ with a constant amplitude $A$.
+Mathematically:
+$f(t) = \begin{cases} A, & 0 < t < T \\ 0, & \text{otherwise} \end{cases}$
+
+The Fourier transform $F(\omega)$ is defined as:
+$F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-j\omega t} dt$
+
+Substitute the definition of the pulse:
+$F(\omega) = \int_{0}^{T} A e^{-j\omega t} dt = A \left[ \frac{e^{-j\omega t}}{-j\omega} \right]_0^T$
+$F(\omega) = \frac{A}{-j\omega} (e^{-j\omega T} - e^0) = \frac{A}{j\omega} (1 - e^{-j\omega T})$
+
+To express this in terms of a real sine function, we factor out $e^{-j\omega T/2}$:
+$F(\omega) = \frac{A}{j\omega} e^{-j\omega T/2} \left( e^{j\omega T/2} - e^{-j\omega T/2} \right)$
+Using Euler's identity $(e^{j\theta} - e^{-j\theta}) = 2j\sin(\theta)$:
+$F(\omega) = \frac{A}{j\omega} e^{-j\omega T/2} \left[ 2j \sin\left(\frac{\omega T}{2}\right) \right] = \frac{2A}{\omega} \sin\left(\frac{\omega T}{2}\right) e^{-j\omega T/2}$
+
+Multiply the numerator and denominator by $T/2$:
+$F(\omega) = A T \frac{\sin(\omega T/2)}{\omega T/2} e^{-j\omega T/2} = A T \text{sinc}\left(\frac{\omega T}{2}\right) e^{-j\omega T/2}$
+
+The amplitude spectrum is the magnitude of $F(\omega)$:
+$|F(\omega)| = A T \left| \text{sinc}\left(\frac{\omega T}{2}\right) \right|$
+
+**2. Graphical Illustration of Congestion:**
+The amplitude spectrum follows a $|\text{sinc}(x)|$ envelope. The zeros (where the amplitude drops to $0$) occur when the argument of the sine function is an integer multiple of $\pi$:
+$\frac{\omega T}{2} = n\pi \implies \omega = \frac{2n\pi}{T} \quad (\text{for } n = \pm 1, \pm 2, \dots)$
+
+*   **Relationship:** The distance between consecutive zero-crossings in the frequency domain is $\Delta\omega = \frac{2\pi}{T}$. 
+*   **Effect of increasing width:** As the time-domain pulse width $T$ *increases*, the spacing between zero-crossings $\Delta\omega$ *decreases*. The main lobe and side lobes of the sinc function become narrower and squeeze closer to the origin $\omega = 0$. This squeezing represents the spectrum becoming "congested." This is a direct manifestation of the Time-Scaling Property: spreading a signal in time compresses it in frequency.
+
+*Related location pg number In sadiku textbook: Chapter 18, Section 18.2 "Definition of the Fourier Transform" (Example 18.2), pg. 818-819, and Section 18.3 "Time Scaling", pg. 820-821.*
+
+***
+
+### 83. Page 68, Q(b) (Bottom): Draw the frequency spectrum for the following signal. [Figure Involved]
+
+**Detailed Solution:**
+Based on the figure provided, the signal $f(t)$ is a periodic square wave centered around the horizontal axis.
+*   The amplitude alternates between $A = 2$ and $-2$.
+*   A full cycle consists of a positive pulse from $t=0$ to $t=1$ and a negative pulse from $t=1$ to $t=2$. Thus, the period $T = 2$.
+*   The fundamental frequency is $\omega_0 = \frac{2\pi}{T} = \frac{2\pi}{2} = \pi \text{ rad/s}$.
+*   The function is defined as: $f(t) = \begin{cases} 2, & 0 < t < 1 \\ -2, & 1 < t < 2 \end{cases}$
+
+Observe the symmetry: $f(-0.5) = -2$ and $f(0.5) = 2$. Therefore $f(-t) = -f(t)$. The waveform possesses **odd symmetry**, meaning its Fourier series will consist entirely of sine terms ($a_0 = 0$ and $a_n = 0$).
+
+Calculate the sine coefficients $b_n$:
+$b_n = \frac{4}{T} \int_{0}^{T/2} f(t) \sin(n\omega_0 t) dt = \frac{4}{2} \int_{0}^{1} (2) \sin(n\pi t) dt$
+$b_n = 4 \left[ \frac{-\cos(n\pi t)}{n\pi} \right]_0^1 = \frac{4}{n\pi} [-\cos(n\pi) - (-\cos(0))]$
+$b_n = \frac{4}{n\pi} [1 - \cos(n\pi)] = \frac{4}{n\pi} [1 - (-1)^n]$
+
+Evaluating for even and odd harmonics:
+*   For even $n$ ($n = 2, 4, 6...$): $b_n = \frac{4}{n\pi} (1 - 1) = 0$
+*   For odd $n$ ($n = 1, 3, 5...$): $b_n = \frac{4}{n\pi} (1 - (-1)) = \frac{8}{n\pi}$
+
+**Amplitude Spectrum:**
+The amplitude of each harmonic is $A_n = \sqrt{a_n^2 + b_n^2} = |b_n|$.
+Since $b_n$ is positive for all odd $n$, $A_n = \frac{8}{n\pi}$.
+*   At fundamental frequency $\omega = \pi$ ($n=1$): $A_1 = \frac{8}{\pi} \approx 2.55$
+*   At 3rd harmonic $\omega = 3\pi$ ($n=3$): $A_3 = \frac{8}{3\pi} \approx 0.85$
+*   At 5th harmonic $\omega = 5\pi$ ($n=5$): $A_5 = \frac{8}{5\pi} \approx 0.51$
+*   At 7th harmonic $\omega = 7\pi$ ($n=7$): $A_7 = \frac{8}{7\pi} \approx 0.36$
+
+**Drawing the Frequency Spectrum:**
+To draw the amplitude spectrum, create a graph with frequency $\omega$ on the horizontal axis and Amplitude $A_n$ on the vertical axis.
+1.  Draw a discrete vertical line at $\omega = \pi$ extending up to $2.55$.
+2.  Draw a discrete vertical line at $\omega = 3\pi$ extending up to $0.85$.
+3.  Draw a discrete vertical line at $\omega = 5\pi$ extending up to $0.51$.
+4.  Draw a discrete vertical line at $\omega = 7\pi$ extending up to $0.36$.
+5.  All even multiples ($\omega = 0, 2\pi, 4\pi, 6\pi...$) will have a height of $0$.
+The outline connecting the tips of these lines curves downwards like a $1/n$ relationship.
+
+*Related location pg number In sadiku textbook: Chapter 17, Section 17.2 "Trigonometric Fourier Series", pg. 760-766, and Section 17.3 "Symmetry Considerations", pg. 770.*
+
+### 84. Page 8, Q.7(b): Discuss amplitude modulation and sampling as the application scenarios of Fourier transform.
+
+**Detailed Solution:**
+The Fourier transform is a critical mathematical tool in telecommunications because it allows us to analyze signals in the frequency domain. Amplitude Modulation (AM) and Sampling are two fundamental applications that rely heavily on the principles of the Fourier transform.
+
+**1. Amplitude Modulation (AM) as an Application:**
+*   **The Problem:** Low-frequency audio or baseband signals (like human voice, 20 Hz to 20 kHz) cannot be efficiently transmitted wirelessly over long distances. The required antenna size (proportional to wavelength) would be kilometers long, and multiple signals transmitted simultaneously would heavily interfere with each other.
+*   **The Solution via Fourier Transform:** AM uses the "Frequency Shifting" (or Modulation) property of the Fourier transform. If you multiply a low-frequency message signal $m(t)$ by a high-frequency carrier signal $\cos(\omega_c t)$, the Fourier transform dictates that the spectrum of the message signal is shifted up to be centered around the carrier frequency $\omega_c$. 
+    Mathematically: $\mathcal{F}[m(t)\cos(\omega_c t)] = \frac{1}{2}[M(\omega - \omega_c) + M(\omega + \omega_c)]$
+*   **Result:** The low-frequency spectrum $M(\omega)$ is shifted to a high-frequency range (forming upper and lower sidebands), allowing for practical antenna sizes and long-distance transmission. It also allows multiple signals to be transmitted simultaneously by shifting them to different, non-overlapping carrier frequencies.
+
+**2. Sampling as an Application:**
+*   **The Problem:** Modern digital systems (like computers and digital phones) cannot process continuous analog signals. The continuous signal must be digitized.
+*   **The Solution via Fourier Transform:** Sampling involves multiplying the continuous-time signal $f(t)$ by a train of periodic impulses (Dirac delta functions) spaced at interval $T_s$. Using Fourier analysis, multiplying by an impulse train in the time domain corresponds to convolving the signal's spectrum with an impulse train in the frequency domain. 
+*   **Result:** This convolution creates infinite, periodically shifted replicas of the original signal's frequency spectrum, centered at integer multiples of the sampling frequency $\omega_s = 2\pi/T_s$. The Fourier transform reveals the **Nyquist Criterion**: as long as the sampling frequency $\omega_s$ is at least twice the maximum frequency component of the original signal ($2\omega_{max}$), the spectral replicas will not overlap (no aliasing), and the original analog signal can be perfectly reconstructed using a lowpass filter.
+
+*Related location pg number In sadiku textbook: Chapter 18, Section 18.7.1 "Amplitude Modulation", pg. 840-842, and Section 18.7.2 "Sampling", pg. 842-843.*
+
+***
+
+### 85. Page 21, Q.5(b): What is modulation? Explain amplitude modulation. What are the demerits of amplitude modulation?
+
+**Detailed Solution:**
+**1. What is Modulation?**
+Modulation is the process of deliberately varying one or more properties (such as amplitude, frequency, or phase) of a high-frequency periodic waveform, called the *carrier signal*, in accordance with the instantaneous variations of a lower-frequency information-bearing signal, called the *modulating signal* (or baseband signal). It is used to translate low-frequency signals into higher frequency bands for efficient wireless transmission and channel multiplexing.
+
+**2. Explanation of Amplitude Modulation (AM):**
+In Amplitude Modulation, the frequency and phase of the carrier remain constant, but its **amplitude** is varied directly in proportion to the instantaneous amplitude of the message signal. 
+If the baseband message signal is $m(t)$ and the high-frequency carrier is $A_c \cos(\omega_c t)$, the AM signal $f(t)$ can be represented as:
+$f(t) = [A_c + m(t)] \cos(\omega_c t) = A_c \left[1 + \frac{m(t)}{A_c}\right] \cos(\omega_c t)$
+In the frequency domain, AM takes the baseband spectrum $M(\omega)$ and shifts it, creating a pair of sidebands—an upper sideband (USB) and a lower sideband (LSB)—symmetrical around the carrier frequency $\omega_c$. The envelope (the outline) of the resulting high-frequency modulated wave directly traces the shape of the original low-frequency message signal, which makes demodulation very simple (e.g., using a basic envelope detector).
+
+**3. Demerits of Amplitude Modulation:**
+*   **Power Inefficiency:** In standard AM (which transmits the carrier along with both sidebands), the carrier component contains no actual information but consumes the vast majority of the transmitted power (up to 66.6% or more of total power). Only the sidebands carry the message.
+*   **Bandwidth Inefficiency:** AM requires a transmission bandwidth that is exactly twice the maximum frequency of the original message signal ($BW = 2f_m$). This uses up valuable and limited frequency spectrum.
+*   **High Susceptibility to Noise:** Noise in transmission channels typically manifests as amplitude variations. Because AM encodes its information in the amplitude of the signal, any noise directly corrupts the information. AM receivers cannot easily distinguish between intended amplitude variations (the signal) and unintended ones (noise/static).
+
+*Related location pg number In sadiku textbook: Chapter 18, Section 18.7.1 "Amplitude Modulation", pg. 840-842.*
+
+***
+
+### 86. Page 67, Q.5(c): Explain the amplitude modulation property of Fourier transform.
+
+**Detailed Solution:**
+The amplitude modulation property of the Fourier transform, also widely known as the **Frequency Shifting Property**, describes what happens in the frequency domain when a time-domain signal is multiplied by a complex exponential or a sinusoidal carrier wave. 
+
+**Statement of the Property:**
+If a time-domain signal $f(t)$ has a Fourier transform $F(\omega)$, then multiplying $f(t)$ by a complex exponential $e^{j\omega_0 t}$ shifts the entire frequency spectrum by $\omega_0$. 
+Mathematically: 
+$\mathcal{F}[f(t)e^{j\omega_0 t}] = F(\omega - \omega_0)$
+This signifies that a frequency shift in the frequency domain corresponds to adding a phase shift (or modulating) in the time domain.
+
+**Application to Amplitude Modulation:**
+In physical communication systems, we use real sinusoids (like cosine waves) rather than complex exponentials for carriers. Euler's identity allows us to express a cosine carrier as the sum of two complex exponentials:
+$\cos(\omega_c t) = \frac{1}{2}\left(e^{j\omega_c t} + e^{-j\omega_c t}\right)$
+
+If we modulate a baseband signal $f(t)$ by multiplying it by this carrier, we apply the frequency shifting property to both exponential terms:
+$\mathcal{F}[f(t)\cos(\omega_c t)] = \mathcal{F}\left[ f(t) \cdot \frac{1}{2} (e^{j\omega_c t} + e^{-j\omega_c t}) \right]$
+By linearity and the frequency shifting property, this evaluates to:
+$\mathcal{F}[f(t)\cos(\omega_c t)] = \frac{1}{2} [F(\omega - \omega_c) + F(\omega + \omega_c)]$
+
+**Explanation:**
+This property mathematically proves that amplitude modulation takes the original frequency spectrum of the signal, $F(\omega)$ (which is centered at DC, $\omega = 0$), cuts its amplitude in half, and places one exact replica centered at the positive carrier frequency $+\omega_c$ and another replica centered at the negative carrier frequency $-\omega_c$. This translation of the spectrum is the foundational principle behind all radio and TV broadcasting.
+
+*Related location pg number In sadiku textbook: Chapter 18, Section 18.3 "Properties of the Fourier Transform" (Frequency Shifting), pg. 822-823, and Section 18.7.1 "Amplitude Modulation", pg. 840-841.*
+
+***
+
+### 87. Page 21, Q.5(a): Define and explain frequency division multiplexing and time division multiplexing.
+
+**Detailed Solution:**
+Multiplexing is the process of combining multiple distinct information signals into a single complex signal so they can be transmitted simultaneously over a single shared physical medium (such as a fiber optic cable, coaxial cable, or wireless radio band) without interfering with each other. Two primary techniques for doing this are Frequency Division Multiplexing (FDM) and Time Division Multiplexing (TDM).
+
+**1. Frequency Division Multiplexing (FDM):**
+*   **Definition:** FDM is an analog multiplexing technique where the total available bandwidth of a communication medium is divided into several smaller, non-overlapping frequency bands (or channels). Each individual user or signal is assigned its own dedicated frequency band for continuous transmission.
+*   **Explanation:** FDM relies directly on the Amplitude Modulation property of the Fourier Transform. Different baseband signals are modulated using different, widely spaced carrier frequencies ($\omega_{c1}, \omega_{c2}, \omega_{c3}, \dots$). As a result, the spectrum of each signal is shifted to a different location in the frequency domain. Guard bands (small, unused frequency gaps) are placed between adjacent channels to prevent cross-talk or interference. 
+*   **Example:** AM and FM radio broadcasting, as well as traditional broadcast television, use FDM. Multiple stations broadcast through the same air simultaneously, but you select a specific station by tuning your receiver's bandpass filter to that station's specific carrier frequency.
+
+**2. Time Division Multiplexing (TDM):**
+*   **Definition:** TDM is a digital (or analog) multiplexing technique where a single communication channel is shared by assigning each user or signal a completely different, very short, non-overlapping time slot. The signals take turns using the full bandwidth of the channel.
+*   **Explanation:** TDM relies on the Sampling Theorem. Instead of transmitting continuous analog waves, the system takes discrete samples of each signal at a rapid rate. The multiplexer acts as a high-speed rotary switch, grabbing one sample from Signal 1, then one sample from Signal 2, then Signal 3, and so on, placing them back-to-back in a sequential "frame" for transmission. Because the sampling occurs very fast (at or above the Nyquist rate), the receiver can easily separate the interleaved samples and reconstruct the original continuous signals flawlessly using lowpass filters.
+*   **Example:** The modern digital telephone network uses TDM to send dozens of phone calls simultaneously over a single trunk line. 
+
+*Related location pg number In sadiku textbook: Concepts are an application extension of Chapter 18, Section 18.7.1 "Amplitude Modulation" (FDM basis), pg. 840, and Section 18.7.2 "Sampling" (TDM basis), pg. 842-843.*
+
+
