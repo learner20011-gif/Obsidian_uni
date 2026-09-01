@@ -10792,24 +10792,61 @@ $$I = 2\pi i$$
 
 *(Note: This is identical to Q281).*
 
-**Solution:**
+#### **Problem:**
+Evaluate from first principles (definition of integral as limit of a sum):
+1. $\int_C z\,dz$
+2. $\int_C dz$
+along a curve $C$ connecting initial point $a$ to final point $b$.
 
-We can prove all three parts simultaneously using **Cauchy's Integral Theorem**.
+---
 
-**Theorem Statement Review:**
-Cauchy's Integral Theorem states that if a function $f(z)$ is analytic everywhere inside and on a simple closed contour $C$, then $\oint_C f(z) dz = 0$.
+#### **Solution:**
 
-**Proof for (i): $\oint_C dz=0$**
-1.  The integrand is $f(z) = 1$.
-2.  The constant function $f(z) = 1$ is a polynomial of degree 0. All polynomials are entire functions, meaning they are analytic everywhere in the complex plane.
-3.  Since $f(z)=1$ is analytic everywhere inside and on $C$, by Cauchy's Integral Theorem, its integral around $C$ is strictly zero.
-$$\oint_C 1 dz = 0$$ **(Proved)**
+**Definition:**
+Let $C$ be a smooth curve with initial point $z_0 = a$ and terminal point $z_n = b$. Subdivide $C$ by points $z_0, z_1, z_2, \dots, z_n$.
+The contour integral is defined as the limit of the Riemann sum:
+$$\int_C f(z)\,dz = \lim_{n \to \infty, \vert \Delta z_k \vert \to 0} \sum_{k=1}^n f(\zeta_k) \Delta z_k$$
+where $\Delta z_k = z_k - z_{k-1}$ and $\zeta_k$ is any point on the arc between $z_{k-1}$ and $z_k$.
 
-**Proof for (ii): $\oint_C z dz=0$**
-1.  The integrand is $f(z) = z$.
-2.  The function $f(z) = z$ is a polynomial of degree 1. It is an entire function, analytic everywhere in the complex plane.
-3.  Since $f(z)=z$ is analytic everywhere inside and on $C$, by Cauchy's Integral Theorem, its integral around $C$ is strictly zero.
-$$\oint_C z dz = 0$$ **(Proved)**
+---
+
+#### **(i) Evaluation of $\int_C z\,dz$:**
+
+1. **Choice 1:** Choose the right-endpoint $\zeta_k = z_k$:
+   $$S_1 = \sum_{k=1}^n z_k (z_k - z_{k-1}) \xrightarrow{n \to \infty} \int_C z\,dz \quad \text{--- (1)}$$
+
+2. **Choice 2:** Choose the left-endpoint $\zeta_k = z_{k-1}$:
+   $$S_2 = \sum_{k=1}^n z_{k-1} (z_k - z_{k-1}) \xrightarrow{n \to \infty} \int_C z\,dz \quad \text{--- (2)}$$
+
+3. **Add equations (1) and (2):**
+   $$2 \int_C z\,dz = \lim_{n \to \infty} \sum_{k=1}^n (z_k + z_{k-1})(z_k - z_{k-1})$$
+   Using algebraic identity $(A+B)(A-B) = A^2 - B^2$:
+   $$2 \int_C z\,dz = \lim_{n \to \infty} \sum_{k=1}^n (z_k^2 - z_{k-1}^2)$$
+
+4. **Expand the Telescoping Sum:**
+   $$\sum_{k=1}^n (z_k^2 - z_{k-1}^2) = (z_1^2 - z_0^2) + (z_2^2 - z_1^2) + (z_3^2 - z_2^2) + \dots + (z_n^2 - z_{n-1}^2) = z_n^2 - z_0^2$$
+   Since $z_0 = a$ and $z_n = b$:
+   $$2 \int_C z\,dz = b^2 - a^2 \implies \int_C z\,dz = \frac{1}{2}(b^2 - a^2)$$
+
+5. **Closed Contour:**
+   If $C$ is a closed curve, the start and end points coincide ($a = b$):
+   $$\oint_C z\,dz = \frac{1}{2}(a^2 - a^2) = 0$$
+
+---
+
+#### **(ii) Evaluation of $\int_C dz$:**
+
+1. Here $f(z) = 1$. The Riemann sum is:
+   $$\int_C dz = \lim_{n \to \infty} \sum_{k=1}^n 1 \cdot (z_k - z_{k-1})$$
+
+2. **Expand the Telescoping Sum:**
+   $$\sum_{k=1}^n (z_k - z_{k-1}) = (z_1 - z_0) + (z_2 - z_1) + \dots + (z_n - z_{n-1}) = z_n - z_0$$
+
+3. **Substitute endpoints $z_0 = a$ and $z_n = b$:**
+   $$\int_C dz = b - a$$
+
+4. **Closed Contour:**
+   If $C$ is closed, $a = b \implies \oint_C dz = 0$.
 
 **Proof for (iii): $\oint_C (z-z_0)dz=0$**
 1.  The integrand is $f(z) = z - z_0$.
