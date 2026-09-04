@@ -2340,52 +2340,136 @@ Ans related location pg number in ak slide: 127, 128, 129, 130.
 ### 73. Page 9, Q.5. (b): Derive the expression of ration error of a CT by sketching the vector diagram clearly. [figure Involved - note reference to vector diagram]
 
 **Answer:**
-**Derivation of Ratio Error:**
+- In an **ideal transformer**, the ratio of currents would strictly match the turns ratio:
+    
+    $$I_p = n \cdot I_s \quad \text{where } n = \frac{N_s}{N_p}$$
+    
+- In a **real CT**, some primary current is "stolen" to magnetize the iron core ($I_0$).
+    
+- Therefore, the primary current is the vector sum:
+    
+    $$\vec{I_p} = n\vec{I_s} + \vec{I_0}$$
+    
+- Because of this addition:
+    
+    - The actual current ratio departs from the ideal turns ratio $\rightarrow$ **Ratio Error**.
+        
+    - The reversed secondary vector is shifted slightly out of phase with the primary vector by an angle $\theta$ $\rightarrow$ **Phase Angle Error**.
+        
 
-**1. Reference to Vector Diagram [figure Involved]:**
-*(Note: Please refer to the phasor diagram on slide 128/129 for the visual representation).*
-*   The main magnetic flux ($\Phi$) is taken as the horizontal reference vector.
-*   The primary induced EMF ($E_p$) and secondary induced EMF ($E_s$) lag the flux by $90^\circ$ (pointing downwards).
-*   The secondary current ($I_s$) lags $E_s$ by the secondary phase angle $\delta$ (determined by the burden and internal impedance).
-*   The reversed secondary current ($nI_s$ or $I_s'$) is drawn in the second quadrant, leading $\Phi$ by $(90^\circ - \delta)$.
-*   The exciting current ($I_o$) is composed of the magnetizing component ($I_m$ in phase with $\Phi$) and the core loss component ($I_c$ leading $\Phi$ by $90^\circ$). $I_o$ leads $\Phi$ by angle $\alpha$.
-*   The total primary current ($I_p$) is the vector sum of $I_o$ and $nI_s$.
+#### 3. Phasor Diagram Breakdown
 
-**2. Derivation of Primary Current ($I_p$):**
-To find the magnitude of $I_p$, we project $nI_s$ and $I_o$ onto a common horizontal and vertical axis (taking $nI_s$ as the primary reference is mathematically easier).
-The angle between $nI_s$ and $I_o$ is $(90^\circ - \alpha - \delta)$.
-Using the geometric projection method from the phasor diagram (slide 129):
-Let's define the components parallel and perpendicular to $nI_s$:
-*   Component of $I_o$ parallel to $nI_s$: $I_o \cos(90^\circ - \alpha - \delta) = I_o \sin(\alpha + \delta)$
-*   Component of $I_o$ perpendicular to $nI_s$: $I_o \sin(90^\circ - \alpha - \delta) = I_o \cos(\alpha + \delta)$
+- **Reference Vector ($\Phi$):**
+    
+    - The horizontal axis is chosen along the core magnetic flux $\Phi$.
+        
+- **Secondary Quantities:**
+    
+    - Induced EMF $E_s$ lags magnetic flux $\Phi$ by $90^\circ$.
+        
+    - The secondary current $I_s$ lags $E_s$ by a small angle $\delta$, depending on the total impedance (winding plus burden: $r_s + r_e + j(x_s + x_e)$).
+        
+    - When reversed to the primary side, the vector $n I_s$ points upward and to the left/right depending on the orientation. In the diagram's convention:
+        
+        - The angle between $n I_s$ and the vertical axis is $\delta$.
+            
+- **Exciting Current ($I_0$):**
+    
+    - $I_m$ is in phase with the flux $\Phi$.
+        
+    - $I_c$ leads flux by $90^\circ$ (in phase with the primary back-EMF $-E_p$).
+        
+    - The angle between $I_0$ and the flux $\Phi$ (or vertical component) is defined such that $\alpha$ represents the core loss component angle.
+        
+- **Triangle Geometry ($obc$):**
+    
+    - Vector $Oa$ represents $n I_s$.
+        
+    - Vector $ac$ represents the excitation current $I_0$.
+        
+    - Vector $Oc$ represents the resultant primary current $I_p$.
+        
+    - The angle between $I_0$ and the line extending $n I_s$ is $(90^\circ - \alpha - \delta)$.
+        
 
-We know from the diagram that $I_o \sin\alpha = I_c$ and $I_o \cos\alpha = I_m$.
-Expanding the parallel term:
-$I_o \sin(\alpha + \delta) = I_o (\sin\alpha \cos\delta + \cos\alpha \sin\delta) = I_c \cos\delta + I_m \sin\delta$
-Expanding the perpendicular term:
-$I_o \cos(\alpha + \delta) = I_o (\cos\alpha \cos\delta - \sin\alpha \sin\delta) = I_m \cos\delta - I_c \sin\delta$
+#### 4. Derivation of Transformation Ratio ($R$)
 
-The magnitude of $I_p$ is:
-$I_p = \sqrt{[nI_s + I_o \sin(\alpha + \delta)]^2 + [I_o \cos(\alpha + \delta)]^2}$
+- **Vector Geometry:**
+    
+    - Using the law of cosines / vector resolution on the triangle:
+        
+        $$I_p = \sqrt{(n I_s)^2 + I_0^2 + 2 n I_s I_0 \cos(90^\circ - (\alpha + \delta))}$$
+        
+    - Using the trigonometric identity $\cos(90^\circ - \phi) = \sin(\phi)$:
+        
+        $$I_p = \sqrt{(n I_s)^2 + I_0^2 + 2 n I_s I_0 \sin(\alpha + \delta)}$$
+        
+- **Actual Transformation Ratio ($R$):**
+    
+    - The ratio of primary to secondary current is defined as $R = \frac{I_p}{I_s}$:
+        
+        $$R = \frac{\sqrt{(n I_s)^2 + I_0^2 + 2 n I_s I_0 \sin(\alpha + \delta)}}{I_s}$$
+        
+- **Approximation:**
+    
+    - In a well-designed CT, the excitation current $I_0$ is tiny compared to $n I_s$.
+        
+    - Adding the negligible term $[I_0 \sin(\alpha + \delta)]^2$ inside the root creates a perfect square:
+        
+        $$I_p \approx \sqrt{\left[ n I_s + I_0 \sin(\alpha + \delta) \right]^2} = n I_s + I_0 \sin(\alpha + \delta)$$
+        
+    - Dividing by $I_s$:
+        
+        $$R \approx n + \frac{I_0}{I_s}\sin(\alpha + \delta)$$
+        
+    - Expanding the sine term:
+        
+        $$R \approx n + \frac{I_0 \sin\alpha \cos\delta + I_0 \cos\alpha \sin\delta}{I_s}$$
+        
+    - Since $I_c = I_0 \sin\alpha$ (or core loss component) and $I_m = I_0 \cos\alpha$:
+        
+        $$R \approx n + \frac{I_m \sin\delta + I_c \cos\delta}{I_s}$$
+        
 
-**3. Approximation for Actual Ratio ($R$):**
-Since the exciting current $I_o$ is very small compared to the primary current $I_p$, the perpendicular component $[I_o \cos(\alpha + \delta)]^2$ is negligible.
-Therefore, $I_p \approx nI_s + I_o \sin(\alpha + \delta)$
-$I_p \approx nI_s + I_m \sin\delta + I_c \cos\delta$
+#### 5. Derivation of Phase Angle Error ($\theta$)
 
-The actual transformation ratio $R = \frac{I_p}{I_s}$:
-**$R = \frac{nI_s + I_m \sin\delta + I_c \cos\delta}{I_s} = n + \frac{I_m \sin\delta + I_c \cos\delta}{I_s}$**
-
-**4. Defining Ratio Error:**
-Ratio Error is defined as the deviation of the actual ratio ($R$) from the nominal ratio ($K_n$, which is typically the turn ratio $n$), expressed as a percentage of the actual ratio.
-Ratio Error (%) $= \left( \frac{K_n - R}{R} \right) \times 100\%$
-
-Substituting the approximate value of $R$:
-Since $R \approx K_n$, the denominator is often just taken as $R$ or $n$ for practical percentage calculations. 
-The absolute error is $(K_n - R) \approx n - (n + \frac{I_m \sin\delta + I_c \cos\delta}{I_s}) = - \left(\frac{I_m \sin\delta + I_c \cos\delta}{I_s}\right)$.
-Therefore, the Ratio Error formula becomes:
-**Ratio Error (%) $\approx - \frac{I_m \sin\delta + I_c \cos\delta}{I_s \cdot R} \times 100\%$**
-
+- **Right Triangle $obc$ Analysis:**
+    
+    - $\tan\theta = \frac{bc}{ob} = \frac{bc}{oa + ab}$
+        
+    - From resolving the vector $ac = I_0$:
+        
+        - Perpendicular opposite side: $bc = I_0 \sin(90^\circ - (\alpha + \delta)) = I_0 \cos(\alpha + \delta)$
+            
+        - Adjacent segment: $ab = I_0 \cos(90^\circ - (\alpha + \delta)) = I_0 \sin(\alpha + \delta)$
+            
+    - Therefore:
+        
+        $$\tan\theta = \frac{I_0 \cos(\alpha + \delta)}{n I_s + I_0 \sin(\alpha + \delta)}$$
+        
+- **Approximations:**
+    
+    - Because $\theta$ is very small, $\tan\theta \approx \theta$ (in radians).
+        
+    - Because $n I_s \gg I_0 \sin(\alpha + \delta)$, we can ignore the small second term in the denominator:
+        
+        $$\theta \approx \frac{I_0 \cos(\alpha + \delta)}{n I_s} \text{ radians}$$
+        
+- **Decomposition using Components:**
+    
+    - Expanding $\cos(\alpha + \delta) = \cos\alpha \cos\delta - \sin\alpha \sin\delta$:
+        
+        $$\theta \approx \frac{I_0 \cos\alpha \cos\delta - I_0 \sin\alpha \sin\delta}{n I_s}$$
+        
+    - Substituting $I_m = I_0 \cos\alpha$ and $I_c = I_0 \sin\alpha$:
+        
+        $$\theta \approx \frac{I_m \cos\delta - I_c \sin\delta}{n I_s} \text{ radians}$$
+        
+- **Conversion to Degrees:**
+    
+    - Multiply radians by $\frac{180}{\pi}$:
+        
+        $$\theta \approx \frac{180}{\pi} \left( \frac{I_m \cos\delta - I_c \sin\delta}{n I_s} \right)^\circ$$
 Ans related location pg number in ak slide: 128, 129.
 
 ***
