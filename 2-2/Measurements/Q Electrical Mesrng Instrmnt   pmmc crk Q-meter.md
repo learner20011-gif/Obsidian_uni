@@ -1,5 +1,102 @@
+### **Lecture 5 (CT-PT) — `L05_EEE_2211_Instrumentation_ak.pdf`**
 
+#### **From `Q Electrical Mesrng Instrmnt pmmc crk Q-meter.md`**
 
+- **Q.69** — Ratio and phase angle errors in CT $\rightarrow$ _Lecture 5, Pages 8, 10–12_
+    
+      
+    
+- **Q.70** — Ratio and phase angle errors in PT $\rightarrow$ _Lecture 5, Pages 10, 14–15_
+    
+      
+    
+- **Q.71** — Definition of instrument transformer & why the secondary of a CT should never be opened $\rightarrow$ _Lecture 5, Pages 2, 13_
+    
+      
+    
+- **Q.72** — Transformation ratio and phase angle of CT $\rightarrow$ _Lecture 5, Pages 8–9, 11–12_
+    
+      
+    
+- **Q.73** — Derivation of CT ratio error with phasor diagram $\rightarrow$ _Lecture 5, Pages 7–8, 11–12_
+    
+      
+    
+- **Q.74** — Advantages of instrument transformers & secondary open-circuit hazard of CT $\rightarrow$ _Lecture 5, Pages 2, 13_
+    
+      
+    
+
+### **Lecture 6 (up to Page 35) — `L06_EEE_2211_Electronic Meas. Instrument_ak.pdf`**
+
+_(Covers: Digital Instruments/DVMs [Pages 2–10], Microphones [Pages 11–15], Camera [Pages 16–27], and Q-Meter [Pages 28–35])_
+
+  
+
+  
+
+#### **From `Q Electrical Mesrng Instrmnt pmmc crk Q-meter.md`**
+
+- **Q.94** — Digital vs. analog instruments and advantages of digital instruments $\rightarrow$ _Lecture 6, Page 2_
+    
+      
+    
+- **Q.95** — Block diagram and working principle of potentiometric type DVM $\rightarrow$ _Lecture 6, Pages 6–7_
+    
+      
+    
+- **Q.96** — Block diagram and working principle of ramp type DVM $\rightarrow$ _Lecture 6, Pages 4–5_
+    
+      
+    
+- **Q.98** — Ramp type DVM and advantages over analog instruments $\rightarrow$ _Lecture 6, Pages 2, 4–5_
+    
+      
+    
+- **Q.99** — Classification of digital instruments $\rightarrow$ _Lecture 6, Page 3_
+    
+      
+    
+- **Q.100** — Operating principle of potentiometric DVM $\rightarrow$ _Lecture 6, Pages 6–7_
+    
+      
+    
+- **Q.101** — Source of error in Q-measurement (distributed capacitance) and its measurement $\rightarrow$ _Lecture 6, Pages 34–35_
+    
+      
+    
+- **Q.102** — Resonance and source of error in Q-measurement $\rightarrow$ _Lecture 6, Pages 29, 34–35_
+    
+      
+    
+- **Q.103** — Q-meter measurement of low impedance components in series connection $\rightarrow$ _Lecture 6, Pages 31–32_
+    
+      
+    
+- **Q.104** — Q-meter direct measurement mode and insertion resistance error $\rightarrow$ _Lecture 6, Page 30_
+    
+      
+    
+- **Q.105** — Definition of distributed capacitance in a Q-meter circuit $\rightarrow$ _Lecture 6, Page 34_
+    
+      
+    
+- **Q.106** — Effective inductance and resistance determination using Q-meter $\rightarrow$ _Lecture 6, Pages 28–32_
+    
+      
+    
+- **Q.107** — Importance of Q-meter and two-frequency calculation of self-capacitance ($C_d$) $\rightarrow$ _Lecture 6, Pages 28, 34–35_
+    
+      
+    
+
+#### **From `Q intro static transducer.md`**
+
+- **Page 10, Q.8. (a)** — Sensitivity of piezoelectric element/transducer (related to piezoelectric microphone) $\rightarrow$ _Lecture 6, Page 15_
+    
+      
+    
+- **Page 12, Q.7. (a)** — Applications of piezoelectric transducer (piezoelectric microphone application) $\rightarrow$ _Lecture 6, Page 15_
 ### **1. Fundamentals, Torques, Damping & Galvanometers**
 
 1. **Page 2, Q.2. (b):** Suppose you are working with a gavanometer that has underdamped motion. How can you modify the instrument for critically damped motion if you cannot change the spring and inertia of the instrument? Provide mathematical reasoning.
