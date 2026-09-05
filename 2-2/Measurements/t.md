@@ -1,3 +1,8 @@
+
+![[Pasted image 20260905234213.png]]
+![[Pasted image 20260905234152.png]]
+![[Pasted image 20260905233856.png]]
+![[Pasted image 20260905233837.png]]![[Pasted image 20260905233951.png]]
 ## Microphones
 
 - **Definition:** Pressure transducer converting acoustic energy (sound waves) $\to$ electrical energy.
@@ -283,25 +288,3 @@ $$\text{Subject} \xrightarrow{\text{Light}} \text{Lens} \xrightarrow{\text{Apert
           
         
 
-## Q-Meter
-
-- **Definition:** Specialized instrument designed to directly measure quality factor ($Q$), plus characteristics of coils and capacitors.
-    
-      
-    
-- **$Q$ Formulae:**
-    
-      
-    - **Inductive Load:**
-        
-          
-        
-        $$Q = \frac{X_L}{R} = \frac{\omega L}{R}$$
-        
-          
-        
-    - **Capacitive Load:**
-        
-          
-        
-        $$Q = \frac{X_C}{R} = \frac{1}{\omega C R}$$
