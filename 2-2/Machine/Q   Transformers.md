@@ -1,4 +1,75 @@
-Based on the syllabus provided for **Transformers**, here are all the related questions extracted from the document. The questions have been transcribed exactly as they appear in the text and organized by the matching syllabus topics. Exact word-for-word duplicates have been skipped, keeping only one instance. 
+ 1. Page 17, Q.1(a) — PDF Pages: 8, 9, 11
+ 2. Page 17, Q.1(c) — PDF Pages: 2, 19, 21
+ 3. Page 17, Q.1(d) — PDF Pages: 12, 43, 44
+ 4. Page 18, Q.1(b) — PDF Pages: 12, 18
+ 5. Page 19, Q.1(a) — PDF Pages: 16, 17
+ 6. Page 23, Q.9 — PDF Pages: 8, 12
+ 7. Page 23, Q.10 — PDF Pages: 16, 17
+ 8. Page 23, Q.11 — PDF Pages: 12, 14
+ 9. Page 23, Q.12 — PDF Pages: 43, 44
+ 10. Page 36, Q.1(b) — PDF Pages: 2, 19, 21
+ 11. Page 36, Q.1(c) — PDF Pages: 43, 44
+ 12. Page 40, Q.1(a) — PDF Pages: 16, 17, 22
+ 13. Page 40, Q.1(c) — PDF Pages: 18, 24, 25
+ 14. Page 7, Q.1(a) — PDF Pages: 16, 17, 18, 34
+ 15. Page 17, Q.2(b) — PDF Page: 34
+ 16. Page 18, Q.1(c) — PDF Pages: 17, 18, 34
+ 17. Page 23, Q.8 — PDF Pages: 16, 17
+ 18. Page 23, Q.13 — PDF Page: 33
+ 19. Page 23, Q.14 — PDF Pages: 18, 25
+ 20. Page 23, Q.15 — PDF Page: 34
+ 21. Page 28, Q.No.1 — PDF Page: 34
+ 22. Page 36, Q.2(a) — PDF Pages: 18, 34
+ 23. Page 7, Q.2(a) — PDF Pages: 14, 31, 32
+ 24. Page 9, Q.2(c) — PDF Pages: 32, 35
+ 25. Page 17, Q.3(a) — PDF Page: 32
+ 26. Page 17, Q.3(b) — PDF Pages: 14, 31, 32
+ 27. Page 17, Q.2(a) (lower half) — PDF Pages: 18, 25
+ 28. Page 23, Q.16 — PDF Pages: 14, 31
+ 29. Page 23, Q.17 — PDF Pages: 14, 31
+ 30. Page 23, Q.18 — PDF Pages: 30, 31
+ 31. Page 23, Q.19 — PDF Pages: 31, 32
+ 32. Page 23, Q.20 — PDF Page: 32
+ 33. Page 26, CT-04 Q.1 — PDF Pages: 19, 20, 22, 24, 27, 28, 29
+ 34. Page 32, Q.1(b) — PDF Pages: 18, 25
+ 35. Page 41, Q.3(a) — PDF Pages: 18, 25
+ 36. Page 9, Q.1(d) — PDF Pages: 41, 42
+ 37. Page 19, Q.2(d) — PDF Pages: 41, 42
+ 38. Page 23, Q.21 — PDF Page: 42
+ 39. Page 23, Q.22 — PDF Page: 41
+ 40. Page 27, CT-04 Q.2 — PDF Pages: 41, 42
+ 41. Page 33, Q.2(c) — PDF Pages: 41, 43, 44
+ 42. Page 41, Q.4(a) — PDF Page: 41
+ 43. Page 7, Q.1(c) — PDF Pages: 36, 37, 38, 41, 43
+ 44. Page 7, Q.1(d) — PDF Pages: 37, 38
+ 45. Page 17, Q.2(a) (upper half) — PDF Pages: 36, 37, 38
+ 46. Page 17, Q.2(b) — PDF Pages: 36, 38
+ 47. Page 17, Q.2(c) (upper half) — PDF Pages: 36, 37, 38
+ 48. Page 17, Q.2(c) (lower half) — PDF Pages: 37, 38
+ 49. Page 17, Q.2(d) — PDF Pages: 31, 32, 37
+ 50. Page 17, Q.4(a) — PDF Page: 47
+ 51. Page 17, Q.4(c) — PDF Pages: 44, 47
+ 52. Page 18, Q.1(a) — PDF Pages: 8, 43, 44
+ 53. Page 18, Q.1(c) — PDF Pages: 36, 37, 38, 44, 45
+ 54. Page 18, Q.3(c) — PDF Pages: 31, 36, 37, 38
+ 55. Page 19, Q.2(b) — PDF Pages: 18, 43
+ 56. Page 19, Q.2(c) — PDF Pages: 37, 38
+ 57. Page 19, Q.2(d) — PDF Pages: 36, 37, 38, 41, 43
+ 58. Page 23, Q.23-28 — PDF Pages: 36, 37, 38
+ 59. Page 24, Q.29-35 — PDF Pages: 43, 44, 45, 47
+ 60. Page 26, CT-04 Q.2 — PDF Pages: 36, 37, 38, 44, 45
+ 61. Page 28, Q.No.2 — PDF Page: 44
+ 62. Page 28, Q.No.3 (second one) — PDF Pages: 44, 47
+ 63. Page 28, Q.No.3 — PDF Pages: 18, 24, 25
+ 64. Page 28, Q.No.4 — PDF Pages: 18, 24, 25
+ 65. Page 40, Q.2(a) — PDF Pages: 6, 7, 27, 43, 44
+ 66. Page 40, Q.2(c) — PDF Pages: 44, 47
+ 67. Page 44, Q.1(c) — PDF Pages: 18, 24, 25
+ 68. Page 4, Q.53 — PDF Pages: 2, 28, 29
+ 69. Page 2, Q.2 — PDF Pages: 2, 19
+ 70. Page 2, Q.15 — PDF Pages: 7, 9
+ 71. Page 25, CT#1 Q.1 — PDF Pages: 2, 19
+ 
 
 ### **1. Ideal transformer - transformation ratio**
 1.   **Page 17, Q.1(a):** What is transformer? Briefly describe the basic construction and working principle of a transformer.
