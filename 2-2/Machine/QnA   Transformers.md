@@ -1022,7 +1022,7 @@ $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2' = \vec{I}_0 + (-K \vec{I}_2)$$
 $$\vec{V}_1 = -\vec{E}_1 + \vec{I}_1(R_1 + jX_1)$$
 
 ### 18. Page 23, Q.8: Sketch the phasor diagram of an ideal transformer with no-load conditions. [Figure Involved]
-
+![[Pasted image 20260908234257.png]]
 #### **Characteristics of an Ideal Transformer on No-Load:**
 An ideal transformer possesses the following ideal properties:
 1. **Zero Winding Resistance:** The primary and secondary coils have zero resistance ($R_1 = 0, R_2 = 0$), meaning there are no copper losses ($I^2R = 0$).
