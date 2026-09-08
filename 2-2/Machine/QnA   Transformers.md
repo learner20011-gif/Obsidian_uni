@@ -810,7 +810,13 @@ $$\cos\phi_1 = \frac{I_{1x}}{I_1} = \frac{45.40}{58.28} \approx 0.779\text{ lagg
 
 ### 15. Page 7, Q.1(a): Draw the vector diagram of a 1-φ transformer connected with unity p.f., lagging p.f., and leading p.f load. [Figure Involved]
 
+
 When a single-phase transformer is loaded, the secondary current $I_2$ flows and sets up a demagnetizing m.m.f. $N_2 I_2$. To neutralize this, the primary draws an additional load current $I_2' = K I_2$ in exact phase opposition to $I_2$. The total primary current is $\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$.
+![[Pasted image 20260908231027.png]]
+![[Pasted image 20260908231224.png]]
+![[Pasted image 20260908231042.png]]
+![[Pasted image 20260908231137.png]]
+
 
 ---
 
