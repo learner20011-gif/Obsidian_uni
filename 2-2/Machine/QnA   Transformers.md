@@ -2090,7 +2090,8 @@ $$\mu = (1.0 \times 0.8) - (5.0 \times 0.6) = 0.8 - 3.0 = \mathbf{-2.2\%}$$
 
 #### **1. Definition of Voltage Regulation:**
 The **voltage regulation** of a transformer is defined as the change in secondary terminal voltage when the rated full load at a given power factor is thrown off (reduced to zero/no-load), keeping the primary supply voltage constant, expressed as a fraction or percentage of the rated terminal voltage.
-
+![[Pasted image 20260909024726.png]]
+![[Pasted image 20260909024750.png]]
 - **Percentage Regulation 'Down':**
   $$\% \text{ Regulation (Down)} = \frac{{}_0V_2 - V_2}{{}_0V_2} \times 100$$
 
