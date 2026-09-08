@@ -2809,4 +2809,176 @@ $$\mathbf{\text{Variable Copper Loss } (W_{\text{Cu}}) = \text{Constant Iron Los
    $$x = \sqrt{\frac{\text{Iron Loss}}{\text{Full-Load Copper Loss}}} = \sqrt{\frac{W_i}{W_{\text{Cu(FL)}}}}$$
 3. **kVA Load at Maximum Efficiency:**
    $$\text{kVA}_{\max} = \text{Rated Full-Load kVA} \times \sqrt{\frac{W_i}{W_{\text{Cu(FL)}}}}$$
+### 57. Page 18, Q.1(c): A 10 kVA, 2200/220 V, 50 Hz transformer is tested on open and short circuit tests. If the following readings are obtained, determine the values of maximum power and the loads at which they occur for unity pf. Open circuit test – high side open: v = 220 V, i = 1.5 A, w = 153 W; Short circuit test – low side shorted: v = 115 V, i = rated, w = 224 W.
+
+#### **Given Data:**
+- Transformer Rating $= 10\text{ kVA} = 10,000\text{ VA}$
+- Primary Voltage (H.V.), $V_1 = 2200\text{ V}$
+- Secondary Voltage (L.V.), $V_2 = 220\text{ V}$
+- Frequency, $f = 50\text{ Hz}$
+- **O.C. Test (L.V. side, H.V. open):** $V_0 = 220\text{ V}, I_0 = 1.5\text{ A}, W_0 = 153\text{ W}$
+  $$\implies \text{Constant Core/Iron Loss } (W_i) = 153\text{ W} = 0.153\text{ kW}$$
+- **S.C. Test (H.V. side, L.V. shorted at rated current):** $V_{sc} = 115\text{ V}, I_{sc} = I_{\text{rated}}, W_{sc} = 224\text{ W}$
+  $$\implies \text{Full-Load Copper Loss } (W_{\text{Cu(FL)}}) = 224\text{ W} = 0.224\text{ kW}$$
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **1. Fractional Load ($x$) for Maximum Efficiency:**
+Maximum efficiency occurs when the variable copper loss equals the constant iron loss:
+$$x^2 \times W_{\text{Cu(FL)}} = W_i$$
+$$x = \sqrt{\frac{W_i}{W_{\text{Cu(FL)}}}} = \sqrt{\frac{153}{224}} = \sqrt{0.68304} = \mathbf{0.8265} \quad (82.65\% \text{ of Full-Load})$$
+
+---
+
+#### **2. Load (kVA) at which Maximum Efficiency Occurs:**
+$$\text{kVA at } \eta_{\max} = x \times \text{Rated kVA} = 0.8265 \times 10\text{ kVA} = \mathbf{8.265\text{ kVA}}$$
+
+---
+
+#### **3. Maximum Power Output at Unity Power Factor ($\cos \phi = 1.0$):**
+$$\text{Output Power } (P_{\text{out}}) = \text{kVA at } \eta_{\max} \times \cos \phi = 8.265 \times 1.0 = \mathbf{8.265\text{ kW}} = \mathbf{8,265\text{ W}}$$
+
+---
+
+#### **4. Maximum Efficiency Value ($\eta_{\max}$):**
+At maximum efficiency:
+$$\text{Total Losses} = 2 \times W_i = 2 \times 153\text{ W} = 306\text{ W} = 0.306\text{ kW}$$
+$$\text{Total Input Power} = P_{\text{out}} + \text{Total Losses} = 8.265 + 0.306 = 8.571\text{ kW}$$
+
+$$\eta_{\max} = \frac{P_{\text{out}}}{\text{Input}} \times 100 = \frac{8.265}{8.571} \times 100 = \mathbf{96.43\%}$$
+
+---
+
+### 58. Page 18, Q.3(c): Obtain the equivalent circuit of a 200/400 V, 50 Hz, 1-phase transformer from the following test data: O.C. Test: 200 V, 0.7 A, 70 W – on L.V. side S.C. Test: 15 V, 10 A, 85 W – on H.V. side Calculate the secondary voltage when delivering 5 kW at 0.8 pf. Lagging, the primary voltage being 200 V.
+
+#### **Given Data:**
+- Primary Voltage (L.V.), $V_1 = 200\text{ V}$
+- Secondary Voltage (H.V.), $V_2 = 400\text{ V}$
+- Frequency, $f = 50\text{ Hz}$
+- Transformation ratio, $K = \frac{V_2}{V_1} = \frac{400}{200} = 2$
+- **O.C. Test (L.V. Primary Side):** $V_0 = 200\text{ V}, I_0 = 0.7\text{ A}, W_0 = 70\text{ W}$
+- **S.C. Test (H.V. Secondary Side):** $V_{sc} = 15\text{ V}, I_{sc} = 10\text{ A}, W_{sc} = 85\text{ W}$
+
+---
+
+#### **Step 1: Shunt Branch Parameters from O.C. Test (Primary L.V. Side)**
+- No-load power factor:
+  $$\cos \phi_0 = \frac{W_0}{V_0 I_0} = \frac{70}{200 \times 0.7} = \frac{70}{140} = 0.5$$
+- $\sin \phi_0 = \sqrt{1 - (0.5)^2} = 0.866$
+- Core loss current component:
+  $$I_w = I_0 \cos \phi_0 = 0.7 \times 0.5 = 0.35\text{ A}$$
+- Magnetizing current component:
+  $$I_\mu = I_0 \sin \phi_0 = 0.7 \times 0.866 = 0.606\text{ A}$$
+- Core loss resistance:
+  $$R_0 = \frac{V_0}{I_w} = \frac{200}{0.35} = \mathbf{571.4\,\Omega}$$
+- Magnetizing reactance:
+  $$X_0 = \frac{V_0}{I_\mu} = \frac{200}{0.606} = \mathbf{330\,\Omega}$$
+
+---
+
+#### **Step 2: Series Parameters from S.C. Test (Secondary H.V. Side)**
+Since S.C. test was conducted on H.V. (secondary), parameters are directly obtained referred to secondary:
+- Total secondary impedance:
+  $$Z_{02} = \frac{V_{sc}}{I_{sc}} = \frac{15}{10} = \mathbf{1.5\,\Omega}$$
+- Total secondary resistance:
+  $$R_{02} = \frac{W_{sc}}{I_{sc}^2} = \frac{85}{(10)^2} = \mathbf{0.85\,\Omega}$$
+- Total secondary reactance:
+  $$X_{02} = \sqrt{Z_{02}^2 - R_{02}^2} = \sqrt{(1.5)^2 - (0.85)^2} = \sqrt{2.25 - 0.7225} = \sqrt{1.5275} = \mathbf{1.24\,\Omega}$$
+
+**Series Parameters Referred to Primary (L.V.) Side ($K=2$):**
+- $R_{01} = \frac{R_{02}}{K^2} = \frac{0.85}{4} = \mathbf{0.21\,\Omega}$
+- $X_{01} = \frac{X_{02}}{K^2} = \frac{1.24}{4} = \mathbf{0.31\,\Omega}$
+- $Z_{01} = \frac{Z_{02}}{K^2} = \frac{1.5}{4} = \mathbf{0.375\,\Omega}$
+
+---
+
+#### **Equivalent Circuit Diagram (Referred to Primary L.V. Side):**
+
+```
+     I₁ ──►                                    R₀₁ = 0.21 Ω     X₀₁ = 0.31 Ω        I₂' ──►
+      ──────────────┬────────────────────────────████████─────────UUUUUUUU─────────────┬──────
+                    │                                                                   │
+                    │   I₀                                                            ┌─┴─┐
+                    ├───►──┐                                                          │   │
+                    │      │                                                          │Z'L│
+               V₁   │   ┌──┴──┐                                                       │   │ V₂'
+             200 V  │  [R₀]  [X₀]                                                     └─┬─┘
+               ~    │ 571.4Ω 330 Ω                                                      │
+                    │   └──┬──┘                                                         │
+                    │      │                                                            │
+      ──────────────┴──────┴────────────────────────────────────────────────────────────┴──────
+```
+
+---
+
+#### **Step 3: Calculation of Secondary Terminal Voltage ($V_2$)**
+- Load Delivered $= 5\text{ kW}$ at $\cos \phi_2 = 0.8\text{ lagging}$ ($\sin \phi_2 = 0.6$)
+- Apparent Load Power $= \frac{5\text{ kW}}{0.8} = 6.25\text{ kVA} = 6,250\text{ VA}$
+- Secondary Load Current:
+  $$I_2 \approx \frac{\text{Load VA}}{V_2} = \frac{6,250}{400} = 15.625\text{ A} \approx 15.6\text{ A}$$
+- Secondary Voltage Drop:
+  $$\Delta V_2 = I_2 (R_{02} \cos \phi_2 + X_{02} \sin \phi_2)$$
+  $$\Delta V_2 = 15.6 \times (0.85 \times 0.8 + 1.24 \times 0.6) = 15.6 \times (0.68 + 0.744) = 15.6 \times 1.424 = \mathbf{22.2\text{ V}}$$
+- Secondary Terminal Voltage on Load:
+  $$V_2 = {}_0V_2 - \Delta V_2 = 400 - 22.2 = \mathbf{377.8\text{ V}}$$
+
+---
+
+### 59. Page 19, Q.2(b): Why are iron losses constant at all loads in a transformer?
+
+#### **Physical and Mathematical Explanation:**
+
+The iron loss (core loss) in a transformer is composed of **hysteresis loss ($W_h$)** and **eddy current loss ($W_e$)**:
+
+1. **Hysteresis Loss:**
+   $$W_h = \eta B_m^{1.6} f V_{\text{core}}$$
+2. **Eddy Current Loss:**
+   $$W_e = K_e B_m^2 f^2 t^2 V_{\text{core}}$$
+
+Both components depend exclusively on:
+- Maximum core flux density ($B_m$) or peak mutual flux ($\Phi_m$)
+- Supply frequency ($f$)
+- Core volume and magnetic material properties
+
+---
+
+#### **Why Flux Density ($B_m$) Remains Constant with Load:**
+From the e.m.f. equation, the peak core flux is determined by the applied voltage and frequency:
+$$V_1 \approx E_1 = 4.44 f N_1 \Phi_m \implies \Phi_m \approx \frac{V_1}{4.44 f N_1}$$
+
+1. **Constant Grid Supply:** The transformer is connected to a supply of constant voltage $V_1$ and constant frequency $f$.
+2. **Self-Balancing M.M.F. Action:** When a secondary load current $I_2$ flows, it sets up an opposing secondary m.m.f. $N_2 I_2$ that momentarily reduces the core flux. The primary back e.m.f. $E_1$ falls slightly, causing the primary winding to immediately draw a balancing current $I_2'$ from the supply such that:
+   $$N_1 I_2' = N_2 I_2$$
+   The primary load m.m.f. neutralizes the secondary demagnetizing m.m.f. at every instant.
+3. **Negligible Flux Variation:** The mutual core flux $\Phi_m$ is maintained at its original value, varying by only **$1\%\text{ to }3\%$** from no-load to full-load due to minor primary winding impedance drop.
+
+**Conclusion:** Because the core flux density $B_m$ and supply frequency $f$ remain practically constant under all loading conditions, **iron losses remain constant at all loads**.
+
+---
+
+### 60. Page 19, Q.2(c): “Transformer full load test is performed only for copper loss, while low voltage side is shorted” - why? Comment on your answer.
+
+#### **Comment on the Statement:**
+The statement is **entirely correct and describes standard engineering practice**. The short-circuit test (often called the impedance or copper-loss test) is specifically designed to determine the full-load copper loss and series leakage parameters while keeping the low-voltage winding shorted.
+
+---
+
+#### **Detailed Justifications:**
+
+#### **1. Why the Test Measures Only Copper Loss:**
+- **Full-Load Currents Circulate:** The applied voltage is adjusted until rated full-load currents flow through both primary and secondary windings ($I_1 = I_{\text{1(FL)}}, I_2 = I_{\text{2(FL)}}$). Therefore, the total full-load ohmic $I^2R$ copper loss of both windings is fully developed:
+  $$W_{\text{Cu}} = I_1^2 R_1 + I_2^2 R_2 = I_1^2 R_{01}$$
+- **Negligible Core Loss:** Because the windings are short-circuited, the voltage $V_{sc}$ required to drive rated current is very small—only **$5\%\text{ to }10\%$ of rated voltage**. Since core flux is directly proportional to applied voltage ($\Phi \propto V_{sc}$), core flux is reduced to $1/10\text{th}\text{ to }1/20\text{th}$ of normal value. Since iron loss varies as $\Phi^2$, the iron loss during the test is:
+  $$W_{i(sc)} \approx (0.05)^2 \times W_i \approx 0.0025 \times W_i \approx 0$$
+  Hence, the wattmeter reading represents **purely the full-load copper loss**.
+
+---
+
+#### **2. Why the Low-Voltage (L.V.) Side is Short-Circuited:**
+1. **Manageable Meter Currents:** The high-voltage (H.V.) winding has a much smaller rated current ($I_{\text{HV}} = K \cdot I_{\text{LV}}$). Placing the instruments on the H.V. side allows standard laboratory meters (e.g., $5\text{ A}$ to $20\text{ A}$) to be used directly without requiring bulky current transformers (C.T.s).
+2. **Accurate and Controllable Test Voltage:** $5\%\text{ to }10\%$ of the H.V. rated voltage (e.g., $5\%\text{ of } 2200\text{ V} = 110\text{ V}$) is easily provided and finely adjusted using a standard laboratory auto-transformer (variac). If performed on the L.V. side, $5\%$ of $220\text{ V} = 11\text{ V}$ would be too low to regulate and measure with high precision.
+3. **Safety:** Shorting the low-voltage terminals with a thick copper bar is safe, robust, and maintains zero potential across the short-circuit terminals.
+
 
