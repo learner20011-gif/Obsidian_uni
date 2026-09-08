@@ -1,0 +1,197 @@
+### 1. Page 17, Q.1(a): What is transformer? Briefly describe the basic construction and working principle of a transformer.
+
+#### **Definition of a Transformer**
+A **transformer** is a static (or stationary) piece of electrical apparatus by means of which electric power in one circuit is transformed into electric power of the same frequency in another circuit. It can raise or lower the voltage in an alternating current (a.c.) circuit with a corresponding decrease or increase in current. 
+
+In brief, a transformer is a device that:
+1. Transfers electrical energy from one electrical circuit to another.
+2. Accomplishes energy transfer without a change in frequency.
+3. Operates on the principle of electromagnetic induction (mutual induction).
+4. Links two electrical circuits that are not conductively connected, but are under mutual inductive influence of each other.
+
+---
+
+#### **Working Principle of a Transformer**
+The physical basis of a transformer is **mutual induction** between two magnetically coupled coils:
+
+```
+          Alternating Flux Φ
+       ┌──────────────────────┐
+       │   Laminated Core     │
+       │  ┌────────────────┐  │
+       │  │                │  │
+Primary│  │                │  │ Secondary
+Winding│  │                │  │ Winding
+  (N₁) ╞══╡                ╞══╡ (N₂)
+       │  │                │  │
+  V₁ ~ ╞══╡                ╞══╡ ~ V₂ (Load)
+       │  │                │  │
+       │  └────────────────┘  │
+       └──────────────────────┘
+```
+
+1. **Primary Excitation:** When the primary winding is connected to an alternating voltage source $V_1$, an alternating current flows through it, establishing an alternating magnetic flux $\Phi$ in the laminated steel core.
+2. **Mutual Flux Linkage:** Most of this flux is confined within the high-permeability, low-reluctance magnetic path provided by the core and links with both the primary and secondary windings.
+3. **Induced EMF:** According to **Faraday's Law of Electromagnetic Induction**, the rate of change of flux linkages induces:
+   - A self-induced electromotive force (e.m.f.) $E_1$ in the primary winding:
+     $$e_1 = -N_1 \frac{d\Phi}{dt}$$
+   - A mutually-induced electromotive force $E_2$ in the secondary winding:
+     $$e_2 = -N_2 \frac{d\Phi}{dt}$$
+4. **Energy Transfer:** If the secondary circuit is closed across a load, the induced e.m.f. $E_2$ causes a secondary current $I_2$ to flow, thereby delivering electrical energy to the load entirely magnetically without any physical electrical contact between primary and secondary circuits.
+
+---
+
+#### **Basic Construction of a Transformer**
+A transformer consists of the following primary parts:
+
+1. **Magnetic Core:**
+   - Built of high-grade silicon steel laminations (typically $0.35\text{ mm}$ to $0.5\text{ mm}$ thick) insulated from each other by varnish or oxide coating to reduce **eddy current losses**.
+   - Made of cold-rolled grain-oriented (CRGO) silicon steel to ensure high permeability and low **hysteresis loss**.
+   - Depending on core arrangement, transformers are classified as:
+     - **Core-Type:** The windings surround a considerable part of the core.
+     - **Shell-Type:** The core surrounds a considerable portion of the windings.
+
+2. **Windings:**
+   - Composed of high-conductivity electrolytic copper conductors, insulated with paper, enamel, or cloth tape.
+   - The winding connected to the higher voltage supply is the **High-Voltage (H.V.) winding**, and the one connected to the lower voltage is the **Low-Voltage (L.V.) winding**. The L.V. winding is placed closest to the core to minimize insulation requirements.
+
+3. **Insulation Medium and Tank:**
+   - The core and coil assembly is placed inside a sheet-steel container filled with purified **transformer insulating oil**, which serves two vital purposes:
+     - Providing high dielectric insulation between windings and tank.
+     - Dissipating heat generated inside the core and windings by natural convection/circulation to the tank walls and cooling tubes.
+
+4. **Bushings and Terminals:**
+   - Porcelain or capacitor-type bushings are mounted on the tank cover to bring out the winding leads safely without flashover to the grounded tank body.
+
+---
+
+### 2. Page 17, Q.1(c): By mistake, you have connected a DC supply to a transformer. What will be the effects on transformer in that condition?
+
+Connecting a continuous direct current (D.C.) supply across the primary winding of a transformer leads to serious destructive consequences:
+
+#### **1. Absence of Counter E.M.F. (Back E.M.F.)**
+In normal A.C. operation, the alternating magnetic flux induces a back e.m.f. $E_1$ that opposes the applied voltage $V_1$, limiting the primary current to a very small magnetizing value:
+$$I_1 = \frac{V_1 - E_1}{Z_1}$$
+When a D.C. voltage $V_{\text{dc}}$ is applied, the resulting current is steady and unidirectional. Since direct current has zero frequency ($f = 0$), the magnetic flux produced in the core is constant:
+$$\frac{d\Phi}{dt} = 0 \implies E_1 = -N_1 \frac{d\Phi}{dt} = 0$$
+No self-induced back e.m.f. is developed to oppose the applied voltage.
+
+#### **2. Abnormally High Primary Current**
+In the absence of inductive reactance ($X_L = 2\pi f L = 0$), the primary current is limited solely by the very small ohmic resistance $R_1$ of the primary winding:
+$$I_{\text{dc}} = \frac{V_{\text{dc}}}{R_1}$$
+Because $R_1$ is intentionally designed to be extremely small (typically a fraction of an ohm or a few ohms), this current will be **many times (20 to 50 times) higher** than the normal rated full-load alternating current.
+
+#### **3. Overheating and Burnout of Winding**
+The excessive current causes tremendous $I^2R$ copper losses in the primary winding:
+- Severe and rapid heat generation occurs.
+- The winding insulation chars and breaks down completely.
+- The transformer gets permanently damaged or burns out within seconds unless cleared instantly by protection fuses or circuit breakers.
+
+#### **4. Core Saturation and Zero Secondary Output**
+- The high direct current drives the iron core deep into heavy magnetic saturation.
+- Because the flux is stationary ($\frac{d\Phi}{dt} = 0$), no e.m.f. is induced in the secondary winding ($E_2 = 0$). Hence, no electrical power is transferred to the secondary side.
+
+---
+
+### 3. Page 17, Q.1(d): Define voltage transformation ratio. What will happen if 60 Hz transformer is connected to 50 Hz supply.
+
+#### **Definition of Voltage Transformation Ratio ($K$)**
+The **voltage transformation ratio** (denoted by $K$) is defined as the ratio of the secondary induced e.m.f. to the primary induced e.m.f. (or the ratio of secondary turns to primary turns):
+
+$$K = \frac{E_2}{E_1} = \frac{N_2}{N_1}$$
+
+On no-load, assuming negligible internal voltage drops ($V_1 \approx E_1$ and $V_2 \approx E_2$):
+$$K = \frac{V_2}{V_1} = \frac{N_2}{N_1}$$
+
+- **Step-up Transformer:** If $N_2 > N_1$ ($K > 1$), then $V_2 > V_1$, and the transformer steps up the voltage.
+- **Step-down Transformer:** If $N_2 < N_1$ ($K < 1$), then $V_2 < V_1$, and the transformer steps down the voltage.
+
+---
+
+#### **Effects of Operating a 60 Hz Transformer on a 50 Hz Supply**
+When a transformer designed for rated operation at $60\text{ Hz}$ is connected to a $50\text{ Hz}$ supply at the same rated voltage ($V$):
+
+1. **Increase in Core Flux Density ($B_m$):**
+   From the transformer e.m.f. equation, $V \approx E = 4.44 f N B_m A$, meaning:
+   $$B_m \propto \frac{V}{f}$$
+   Since frequency decreases from $60\text{ Hz}$ to $50\text{ Hz}$ while voltage remains constant, the maximum flux density increases:
+   $$B_{m(50)} = B_{m(60)} \times \left(\frac{60}{50}\right) = 1.20 \, B_{m(60)}$$
+   The core flux density increases by **$20\%$**.
+
+2. **Heavy Core Saturation & Excessive Magnetizing Current ($I_\mu$):**
+   Standard transformer cores are operated near the knee of their $B\text{-}H$ magnetization curve. A $20\%$ increase pushes the core deep into saturation, resulting in a disproportionately large surge in the no-load magnetizing current $I_\mu$ (often increasing several-fold) and causing poor no-load power factor.
+
+3. **Increase in Core Losses:**
+   - **Hysteresis Loss ($W_h$):**
+     $$W_h \propto B_m^{1.6} f \propto \left(\frac{V}{f}\right)^{1.6} f \propto V^{1.6} f^{-0.6}$$
+     $$W_{h(50)} = W_{h(60)} \times \left(\frac{60}{50}\right)^{0.6} \approx 1.115 \, W_{h(60)} \quad (\approx 11.5\% \text{ increase})$$
+   - **Eddy Current Loss ($W_e$):**
+     $$W_e \propto B_m^2 f^2 \propto \left(\frac{V}{f}\right)^2 f^2 \propto V^2 \quad (\text{remains practically constant})$$
+   - Consequently, the total iron loss ($W_i = W_h + W_e$) increases, leading to excessive core heating.
+
+4. **Reduction in kVA Rating:**
+   Because of higher core losses and higher no-load copper heating, the allowable full-load current must be reduced to keep the overall temperature rise within permissible limits. Hence, the safe output kVA rating of the transformer decreases by roughly $1/1.2 \approx 17\% - 20\%$.
+
+5. **Poorer Voltage Regulation:**
+   The higher magnetizing current causes larger internal voltage drops, leading to poorer voltage regulation.
+
+---
+
+### 4. Page 18, Q.1(b): Prove that, v1/v2 = N1/N2 = I2/I1 where symbols have their usual meanings.
+
+#### **Derivation:**
+
+Let:
+- $V_1, V_2 =$ Primary and secondary terminal voltages respectively
+- $E_1, E_2 =$ Induced e.m.f. in primary and secondary windings respectively
+- $N_1, N_2 =$ Number of turns on primary and secondary windings respectively
+- $I_1, I_2 =$ Primary and secondary full-load currents respectively
+- $\Phi_m =$ Maximum value of core flux in Webers
+- $f =$ Frequency of the A.C. supply in Hz
+
+---
+
+#### **Step 1: Relation between Induced E.M.F. and Turns Ratio**
+During each cycle of an alternating sine wave of frequency $f$, the magnetic flux $\Phi$ changes from $0$ to its peak value $\Phi_m$ in one quarter of a time period, i.e., in $t = \frac{T}{4} = \frac{1}{4f}\text{ second}$.
+
+The average rate of change of flux per turn is:
+$$\text{Average rate of change of flux} = \frac{\Phi_m}{1/(4f)} = 4 f \Phi_m \text{ Wb/s (or Volts)}$$
+
+Since form factor for a sinusoidal wave is:
+$$\text{Form Factor} = \frac{\text{R.M.S. Value}}{\text{Average Value}} = 1.11$$
+
+The R.M.S. value of induced e.m.f. per turn is:
+$$\text{R.M.S. e.m.f. per turn} = 1.11 \times 4 f \Phi_m = 4.44 f \Phi_m \text{ Volts}$$
+
+Thus, the total induced e.m.f. in primary and secondary windings are:
+$$E_1 = 4.44 f N_1 \Phi_m \tag{1}$$
+$$E_2 = 4.44 f N_2 \Phi_m \tag{2}$$
+
+Dividing Equation (1) by Equation (2):
+$$\frac{E_1}{E_2} = \frac{4.44 f N_1 \Phi_m}{4.44 f N_2 \Phi_m} = \frac{N_1}{N_2} \tag{3}$$
+
+For an ideal transformer (or on no-load condition where winding resistance and magnetic leakage are negligible):
+$$V_1 = E_1 \quad \text{and} \quad V_2 = E_2$$
+
+Therefore:
+$$\frac{V_1}{V_2} = \frac{N_1}{N_2} \tag{4}$$
+
+---
+
+#### **Step 2: Relation between Voltages and Currents**
+For an ideal transformer, there are no core or copper losses, meaning efficiency is $100\%$. Therefore, the total input apparent power in volt-amperes ($\text{VA}$) is equal to the output apparent power:
+
+$$\text{Input Volt-Amperes} = \text{Output Volt-Amperes}$$
+$$V_1 I_1 = V_2 I_2$$
+
+Rearranging the terms:
+$$\frac{V_1}{V_2} = \frac{I_2}{I_1} \tag{5}$$
+
+---
+
+#### **Conclusion:**
+Equating Equations (4) and (5):
+$$\frac{V_1}{V_2} = \frac{N_1}{N_2} = \frac{I_2}{I_1}$$
+
+*(Hence proved.)*
+
