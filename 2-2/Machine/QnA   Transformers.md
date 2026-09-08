@@ -195,3 +195,239 @@ $$\frac{V_1}{V_2} = \frac{N_1}{N_2} = \frac{I_2}{I_1}$$
 
 *(Hence proved.)*
 
+### 5. Page 19, Q.1(a): Show that the emf induced in the secondary winding of a transformer is E2 = 4.44 f N2 φm, where symbols have their usual meanings.
+
+#### **Derivation:**
+
+Let:
+- $N_2 =$ Number of turns in the secondary winding
+- $\Phi_m =$ Maximum value of the alternating core flux in Webers ($\text{Wb}$)
+- $f =$ Frequency of the alternating input supply in Hertz ($\text{Hz}$)
+- $T =$ Time period of the alternating supply wave in seconds $= \frac{1}{f}$
+- $E_2 =$ R.M.S. value of the e.m.f. induced in the secondary winding (in Volts)
+
+---
+
+#### **Step 1: Flux Variation over a Cycle**
+Assuming a sinusoidal alternating voltage applied to the primary, the magnetic flux $\Phi$ established in the core varies sinusoidally with time:
+$$\Phi = \Phi_m \sin(\omega t) = \Phi_m \sin(2\pi f t)$$
+
+As shown below, the core flux increases from its zero value to its maximum value $\Phi_m$ in **one-quarter of a cycle**:
+
+```
+        Flux (Φ)
+          ▲
+      +Φm ┼           ┌───┐
+          │         /       \
+          │       /           \
+        0 ┼──────┼─────────────┼──────────────► Time (t)
+          │    T/4 = 1/(4f)     \            /
+          │                       \        /
+      -Φm ┼                         └───┘
+          │◄──────────────── T = 1/f ────────►│
+```
+
+$$\text{Time taken to reach peak flux } \Phi_m = \frac{T}{4} = \frac{1}{4f} \text{ second}$$
+
+---
+
+#### **Step 2: Average Rate of Change of Flux**
+According to Faraday's Law of Electromagnetic Induction, the e.m.f. induced per turn is equal to the rate of change of flux linkages.
+
+$$\text{Average rate of change of flux} = \frac{\text{Change in flux}}{\text{Time taken}} = \frac{\Phi_m - 0}{1/(4f)} = 4 f \Phi_m \text{ Wb/s (or Volts)}$$
+
+Therefore, the **average e.m.f. induced per turn** is:
+$$\text{Average e.m.f./turn} = 4 f \Phi_m \text{ Volts}$$
+
+---
+
+#### **Step 3: R.M.S. Value of Induced E.M.F. per Turn**
+For a purely sinusoidal wave, the **Form Factor** is given by:
+$$\text{Form Factor} = \frac{\text{R.M.S. Value}}{\text{Average Value}} = 1.11$$
+
+$$\text{R.M.S. value of e.m.f./turn} = 1.11 \times \text{Average e.m.f./turn}$$
+$$\text{R.M.S. value of e.m.f./turn} = 1.11 \times 4 f \Phi_m = 4.44 f \Phi_m \text{ Volts}$$
+
+---
+
+#### **Step 4: Total Induced E.M.F. in Secondary Winding ($E_2$)**
+Since the secondary winding consists of $N_2$ turns connected in series, the total R.M.S. e.m.f. induced in the secondary winding is:
+
+$$E_2 = (\text{R.M.S. e.m.f./turn}) \times N_2$$
+$$E_2 = 4.44 f N_2 \Phi_m \text{ Volts}$$
+
+If $B_m$ is the maximum flux density in $\text{Wb/m}^2$ (or Tesla) and $A$ is the effective cross-sectional area of the core in $\text{m}^2$, then $\Phi_m = B_m \times A$. The equation can also be written as:
+$$E_2 = 4.44 f N_2 B_m A \text{ Volts}$$
+
+*(Hence proved.)*
+
+---
+
+### 6. Page 23, Q.9: Define step-up and step-down transformer.
+
+#### **1. Step-Up Transformer**
+A **step-up transformer** is a transformer that increases (steps up) the alternating voltage from the primary winding to the secondary winding while decreasing the current proportionately to keep the apparent power constant.
+
+```
+       Primary (Low V, High I)         Secondary (High V, Low I)
+            ┌──┐                             ┌──┐
+            │  │ (Fewer Turns, N₁)           │  │ (More Turns, N₂)
+       V₁ ~ │  │ ───►                  V₂ ~  │  │ (V₂ > V₁)
+            │  │      Magnetic Core          │  │
+            └──┘                             └──┘
+```
+
+- **Key Characteristics:**
+  - Secondary voltage is greater than primary voltage: $V_2 > V_1$ ($E_2 > E_1$).
+  - Secondary turns are greater than primary turns: $N_2 > N_1$.
+  - Voltage transformation ratio: $K = \frac{N_2}{N_1} > 1$.
+  - Secondary current is less than primary current: $I_2 < I_1$.
+  - The low-voltage winding (primary) has fewer turns of thicker conductor, while the high-voltage winding (secondary) has more turns of thinner conductor.
+- **Application:** Used at generating power stations to raise generated voltage (e.g., $11\text{ kV}$ to $132\text{ kV}, 275\text{ kV}, 400\text{ kV}$) to minimize transmission line $I^2R$ losses over long distances.
+
+---
+
+#### **2. Step-Down Transformer**
+A **step-down transformer** is a transformer that decreases (steps down) the alternating voltage from the primary winding to the secondary winding while increasing the current proportionately.
+
+```
+       Primary (High V, Low I)         Secondary (Low V, High I)
+            ┌──┐                             ┌──┐
+            │  │ (More Turns, N₁)            │  │ (Fewer Turns, N₂)
+       V₁ ~ │  │ ───►                  V₂ ~  │  │ (V₂ < V₁)
+            │  │      Magnetic Core          │  │
+            └──┘                             └──┘
+```
+
+- **Key Characteristics:**
+  - Secondary voltage is less than primary voltage: $V_2 < V_1$ ($E_2 < E_1$).
+  - Secondary turns are fewer than primary turns: $N_2 < N_1$.
+  - Voltage transformation ratio: $K = \frac{N_2}{N_1} < 1$.
+  - Secondary current is greater than primary current: $I_2 > I_1$.
+  - The high-voltage winding (primary) consists of many turns of thin wire, while the low-voltage winding (secondary) consists of fewer turns of thick wire.
+- **Application:** Used at distribution substations and consumer service entrances to step down high transmission voltages to standard safe utilization levels (e.g., $11\text{ kV}$ to $400\text{ V} / 230\text{ V}$) for domestic, commercial, and industrial loads.
+
+---
+
+### 7. Page 23, Q.10: Derive the equation of induced e.m.f. in the whole of primary winding of a transformer with net diagram. [Figure Involved]
+
+#### **Derivation of Primary Induced E.M.F. ($E_1$):**
+
+Let:
+- $N_1 =$ Number of turns in the primary winding
+- $\Phi_m =$ Peak value of core flux in Webers ($\text{Wb}$)
+- $f =$ Supply frequency in Hertz ($\text{Hz}$)
+- $B_m =$ Maximum flux density in Tesla ($\text{Wb/m}^2$)
+- $A =$ Effective cross-sectional area of the magnetic core in $\text{m}^2$
+
+---
+
+#### **Diagrams:**
+
+**1. Transformer Core & Primary Circuit:**
+```
+            Alternating Flux Φ
+         ┌───────────────────────┐
+         │     Laminated Core    │
+         │   ┌───────────────┐   │
+         │   │               │   │
+  Primary│   │               │   │
+  Winding│   │               │   │
+    (N₁) ╞═══╡               │   │
+         │   │               │   │
+   V₁  ~ ╞═══╡               │   │
+ (Applied│   │               │   │
+ Voltage)│   │               │   │
+         │   └───────────────┘   │
+         └───────────────────────┘
+```
+
+**2. Flux Waveform and Time Relations:**
+```
+     Core Flux (Φ)
+         ▲
+     +Φm ┼           ┌─────┐
+         │         /    |    \
+         │       /      |      \
+       0 ┼──────┼───────┼───────┼───────► Time (t)
+         │      │  T/4  │  T/2  │   T
+         │      │◄─────►│       │
+     -Φm ┼      │       │       │ ┌─────┐
+         │      │       │       │/       \
+         └──────┴───────┴───────┴─────────►
+```
+
+---
+
+#### **Step-by-Step Derivation:**
+
+1. **Change of Flux in One-Quarter Cycle:**
+   The flux is alternating sinusoidally at frequency $f$. In every cycle, the flux starts from zero and reaches its maximum value $\Phi_m$ in one-fourth of the time period ($T/4$):
+   $$\Delta t = \frac{T}{4} = \frac{1}{4f} \text{ seconds}$$
+   $$\Delta \Phi = \Phi_m - 0 = \Phi_m \text{ Wb}$$
+
+2. **Average Induced E.M.F. per Turn:**
+   From Faraday's Law, the magnitude of average induced e.m.f. per turn is:
+   $$\text{Average e.m.f./turn} = \frac{\Delta \Phi}{\Delta t} = \frac{\Phi_m}{1/(4f)} = 4 f \Phi_m \text{ Volts}$$
+
+3. **R.M.S. Value of Induced E.M.F. per Turn:**
+   For a sinusoidal waveform, the relation between R.M.S. value and average value is defined by the Form Factor:
+   $$\text{Form Factor} = \frac{\text{R.M.S. Value}}{\text{Average Value}} = 1.11$$
+   $$\text{R.M.S. e.m.f./turn} = 1.11 \times 4 f \Phi_m = 4.44 f \Phi_m \text{ Volts}$$
+
+4. **Total Induced E.M.F. in the Whole Primary Winding ($E_1$):**
+   The total induced e.m.f. in the entire primary winding is obtained by multiplying the R.M.S. e.m.f. per turn by the total primary turns $N_1$:
+   $$E_1 = (\text{R.M.S. e.m.f./turn}) \times N_1$$
+   $$E_1 = 4.44 f N_1 \Phi_m \text{ Volts}$$
+
+Substituting $\Phi_m = B_m \times A$:
+$$E_1 = 4.44 f N_1 B_m A \text{ Volts}$$
+
+*(Hence derived.)*
+
+---
+
+### 8. Page 23, Q.11: What is voltage transformation ratio or turns ratio? Why it is important?
+
+#### **1. Voltage Transformation Ratio ($K$)**
+The **voltage transformation ratio** (denoted by $K$) is defined as the ratio of the secondary induced electromotive force to the primary induced electromotive force:
+
+$$K = \frac{E_2}{E_1} = \frac{N_2}{N_1}$$
+
+Under ideal or no-load conditions where internal winding drops are negligible ($V_1 \approx E_1$ and $V_2 \approx E_2$):
+$$K = \frac{V_2}{V_1} = \frac{N_2}{N_1} = \frac{I_1}{I_2}$$
+
+---
+
+#### **2. Turns Ratio**
+The **turns ratio** of a transformer is defined as the ratio of the number of turns in the primary winding to the number of turns in the secondary winding:
+
+$$\text{Turns Ratio} = \frac{N_1}{N_2} = \frac{1}{K}$$
+
+*(Note: Depending on context, turns ratio is sometimes defined as $N_1/N_2$ and transformation ratio as $N_2/N_1$.)*
+
+---
+
+#### **3. Importance of Transformation / Turns Ratio**
+The transformation ratio is a fundamental design and operating parameter of a transformer for the following reasons:
+
+1. **Classification of Transformer Action:**
+   - If $K > 1$ ($N_2 > N_1$), the unit functions as a **step-up transformer**.
+   - If $K < 1$ ($N_2 < N_1$), the unit functions as a **step-down transformer**.
+   - If $K = 1$ ($N_2 = N_1$), it acts as a **$1:1$ isolation transformer**.
+
+2. **Impedance Transformation (Parameter Shifting):**
+   It allows resistances, reactances, and load impedances on one side to be transferred to the other side for simplified network analysis and equivalent circuit representation:
+   - Secondary resistance referred to primary: $R_2' = \frac{R_2}{K^2}$
+   - Primary resistance referred to secondary: $R_1' = K^2 R_1$
+   - Load impedance referred to primary: $Z_L' = \frac{Z_L}{K^2}$
+
+3. **Current and Power Ratings Determination:**
+   It defines the inverse scaling of line and phase currents ($I_1 = K I_2$), allowing proper sizing of conductor cross-sectional areas and protection switchgear.
+
+4. **Essential Requirement for Parallel Operation:**
+   For two or more transformers to operate in parallel successfully without destructive circulating currents on no-load, their voltage transformation ratios must be strictly equal.
+
+5. **Design of Core and Windings:**
+   It allows the designer to fix the number of primary and secondary turns for a specified volt-per-turn value dictated by core flux and magnetic flux density limits.
+
