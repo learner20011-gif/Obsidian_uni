@@ -3176,3 +3176,2572 @@ $$\text{Total Losses} = 2 \times W_i = 2 \times 65\text{ W} = 130\text{ W} = \ma
 - Maximum Efficiency at **Unity Power Factor:** **$97.77\%$**
 - Maximum Efficiency at **$0.8$ Lagging Power Factor:** **$97.23\%$**
 
+
+### 65. Page 28, Q.No.2: If P1 and P2 be the iron and copper losses of a transformer on full load, find the ratio of P1 and P2 such that maximum efficiency occurs at 75% full load.
+
+#### **Given Data:**
+- Full-load iron loss $= P_1$ (constant at all load levels)
+- Full-load copper loss $= P_2$
+- Fractional load for maximum efficiency, $x = 75\% = 0.75 = \frac{3}{4}$
+
+---
+
+#### **Step-by-Step Derivation:**
+
+1. **Copper Loss at Fractional Load ($x$):**
+   Copper loss varies as the square of the fractional loading:
+   $$\text{Copper loss at } 75\% \text{ full-load} = x^2 P_2 = (0.75)^2 P_2 = \left(\frac{3}{4}\right)^2 P_2 = \frac{9}{16} P_2$$
+
+2. **Condition for Maximum Efficiency:**
+   Maximum efficiency occurs at the specific load where the variable copper loss becomes equal to the constant iron loss:
+   $$\text{Copper loss at } 75\% \text{ load} = \text{Iron loss } (P_1)$$
+   $$\frac{9}{16} P_2 = P_1$$
+
+3. **Ratio of $P_1$ to $P_2$:**
+   $$\frac{P_1}{P_2} = \frac{9}{16} = \mathbf{0.5625}$$
+
+#### **Conclusion:**
+The ratio of iron loss ($P_1$) to full-load copper loss ($P_2$) must be **$\frac{9}{16}$ (or $0.5625$)**.
+
+---
+
+### 66. Page 28, Q.No.3 (second one): A 40kVA distribution transformer has a total losses of 800W at maximum efficiency. The transformer is supplying a lighting load (unity p.f.). The load cycle is as under: Full-load for 4 hrs, half-load for 8 hrs and no-load for 12 hrs. Calculate all day efficiency.
+
+#### **Given Data:**
+- Transformer Rating $= 40\text{ kVA}$
+- Total losses at maximum efficiency $= 800\text{ W} = 0.8\text{ kW}$
+- Lighting load power factor, $\cos \phi = 1.0$ (unity)
+- **24-Hour Daily Load Cycle:**
+  - Full-load ($x_1 = 1.0$) for $4\text{ hours}$
+  - Half-load ($x_2 = 0.5$) for $8\text{ hours}$
+  - No-load ($x_3 = 0$) for $12\text{ hours}$
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **1. Determination of Individual Losses:**
+At maximum efficiency, the constant iron loss equals the variable copper loss:
+$$W_i = W_{\text{Cu}} = \frac{\text{Total Losses at } \eta_{\max}}{2} = \frac{800\text{ W}}{2} = 400\text{ W} = 0.4\text{ kW}$$
+
+- Constant core loss, $W_i = 0.4\text{ kW}$
+- Full-load copper loss, $W_{\text{Cu(FL)}} = 0.4\text{ kW}$
+
+---
+
+#### **2. Core (Iron) Loss Energy in 24 Hours:**
+Because the transformer primary is energized all day:
+$$\text{Iron Loss Energy in 24 hrs} = W_i \times 24 = 0.4\text{ kW} \times 24\text{ h} = \mathbf{9.6\text{ kWh}}$$
+
+---
+
+#### **3. Energy Output and Copper Loss for Each Load Interval:**
+
+- **Interval 1: Full-load ($x = 1.0$) for $4\text{ hours}$:**
+  - $\text{Output Power} = 40\text{ kVA} \times 1.0 \times 1.0 = 40\text{ kW}$
+  - $\text{Energy Output}_1 = 40\text{ kW} \times 4\text{ h} = 160\text{ kWh}$
+  - $\text{Cu Loss Rate} = (1.0)^2 \times 0.4\text{ kW} = 0.4\text{ kW}$
+  - $\text{Cu Loss Energy}_1 = 0.4\text{ kW} \times 4\text{ h} = 1.6\text{ kWh}$
+
+- **Interval 2: Half-load ($x = 0.5$) for $8\text{ hours}$:**
+  - $\text{Output Power} = 40\text{ kVA} \times 0.5 \times 1.0 = 20\text{ kW}$
+  - $\text{Energy Output}_2 = 20\text{ kW} \times 8\text{ h} = 160\text{ kWh}$
+  - $\text{Cu Loss Rate} = (0.5)^2 \times 0.4\text{ kW} = 0.25 \times 0.4 = 0.1\text{ kW}$
+  - $\text{Cu Loss Energy}_2 = 0.1\text{ kW} \times 8\text{ h} = 0.8\text{ kWh}$
+
+- **Interval 3: No-load for $12\text{ hours}$:**
+  - $\text{Energy Output}_3 = 0\text{ kWh}$
+  - $\text{Cu Loss Energy}_3 = 0\text{ kWh}$
+
+---
+
+#### **4. Daily Totals:**
+- **Total Energy Output in 24 Hours:**
+  $$\text{Total Output} = 160 + 160 + 0 = \mathbf{320\text{ kWh}}$$
+
+- **Total Copper Loss Energy in 24 Hours:**
+  $$\text{Total Copper Loss} = 1.6 + 0.8 + 0 = \mathbf{2.4\text{ kWh}}$$
+
+- **Total Energy Losses in 24 Hours:**
+  $$\text{Total Energy Loss} = 9.6\text{ (Iron)} + 2.4\text{ (Copper)} = \mathbf{12.0\text{ kWh}}$$
+
+- **Total Energy Input in 24 Hours:**
+  $$\text{Total Input} = \text{Total Output} + \text{Total Losses} = 320 + 12.0 = \mathbf{332.0\text{ kWh}}$$
+
+---
+
+#### **5. All-Day Efficiency ($\eta_{\text{all-day}}$):**
+$$\eta_{\text{all-day}} = \frac{\text{Total Output (kWh)}}{\text{Total Input (kWh)}} \times 100 = \frac{320}{332.0} \times 100 = \mathbf{96.39\%}$$
+
+---
+
+### 67. Page 28, Q.No.3: A single-phase transformer with a ratio of 400/100 takes a no load current of 5A at 0.25 power factor lagging. If the secondary supplies a current of 120 A at a p.f. of 0.8 lagging, determine the current taken by the primary.
+
+#### **Given Data:**
+- Primary Voltage, $V_1 = 400\text{ V}$
+- Secondary Voltage, $V_2 = 100\text{ V}$
+- Transformation ratio, $K = \frac{V_2}{V_1} = \frac{100}{400} = 0.25 = \frac{1}{4}$
+- No-load current, $I_0 = 5\text{ A}$ at $\cos \phi_0 = 0.25\text{ lagging}$
+- Secondary current, $I_2 = 120\text{ A}$ at $\cos \phi_2 = 0.80\text{ lagging}$
+
+---
+
+#### **Step-by-Step Solution:**
+
+1. **Secondary Current Reflected to Primary ($I_2'$):**
+   $$I_2' = K \times I_2 = \frac{1}{4} \times 120 = 30\text{ A}$$
+
+2. **Phase Angle Calculations:**
+   - For no-load current:
+     $$\cos \phi_0 = 0.25 \implies \sin \phi_0 = \sqrt{1 - (0.25)^2} = \sqrt{1 - 0.0625} = \sqrt{0.9375} = 0.9682$$
+   - For secondary load current:
+     $$\cos \phi_2 = 0.80 \implies \sin \phi_2 = \sqrt{1 - (0.80)^2} = 0.60$$
+
+3. **Phasor Representation (Taking Voltage as Reference):**
+   - **No-load current phasor ($\vec{I}_0$):**
+     $$\vec{I}_0 = I_0 \cos \phi_0 - j I_0 \sin \phi_0 = 5(0.25) - j 5(0.9682) = 1.25 - j 4.841\text{ A}$$
+   
+   - **Reflected load current phasor ($\vec{I}_2'$):**
+     $$\vec{I}_2' = I_2' \cos \phi_2 - j I_2' \sin \phi_2 = 30(0.80) - j 30(0.60) = 24.0 - j 18.0\text{ A}$$
+
+4. **Total Primary Current ($\vec{I}_1$):**
+   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$$
+   $$\vec{I}_1 = (1.25 + 24.0) - j (4.841 + 18.0) = \mathbf{25.25 - j 22.841\text{ A}}$$
+
+5. **Magnitude of Primary Current ($I_1$):**
+   $$I_1 = \sqrt{(25.25)^2 + (-22.841)^2} = \sqrt{637.56 + 521.71} = \sqrt{1159.27} = \mathbf{34.05\text{ A}}$$
+
+6. **Primary Power Factor ($\cos \phi_1$):**
+   $$\tan \phi_1 = \frac{22.841}{25.25} = 0.9046 \implies \phi_1 = \tan^{-1}(0.9046) = 42.13^\circ$$
+   $$\text{Primary Power Factor} = \cos(42.13^\circ) = \mathbf{0.742\text{ lagging}}$$
+
+---
+
+### 68. Page 28, Q.No.4: A 1-φ transformer with a ratio of 400/100 takes a no load current of 5A at 0.2 p.f. lagging. If the secondary supplies a current of 100A at a p.f. of 0.8 lagging, estimate the current taken by the primary.
+
+#### **Given Data:**
+- Primary Voltage, $V_1 = 400\text{ V}$
+- Secondary Voltage, $V_2 = 100\text{ V}$
+- Transformation ratio, $K = \frac{V_2}{V_1} = \frac{100}{400} = 0.25 = \frac{1}{4}$
+- No-load current, $I_0 = 5\text{ A}$ at $\cos \phi_0 = 0.20\text{ lagging}$
+- Secondary current, $I_2 = 100\text{ A}$ at $\cos \phi_2 = 0.80\text{ lagging}$
+
+---
+
+#### **Step-by-Step Solution:**
+
+1. **Secondary Current Reflected to Primary ($I_2'$):**
+   $$I_2' = K \times I_2 = \frac{1}{4} \times 100 = 25\text{ A}$$
+
+2. **Phase Angle Calculations:**
+   - For no-load current:
+     $$\cos \phi_0 = 0.20 \implies \sin \phi_0 = \sqrt{1 - (0.20)^2} = \sqrt{1 - 0.04} = \sqrt{0.96} = 0.9798$$
+   - For secondary load current:
+     $$\cos \phi_2 = 0.80 \implies \sin \phi_2 = 0.60$$
+
+3. **Phasor Representation:**
+   - **No-load current phasor ($\vec{I}_0$):**
+     $$\vec{I}_0 = I_0 \cos \phi_0 - j I_0 \sin \phi_0 = 5(0.20) - j 5(0.9798) = 1.0 - j 4.899\text{ A}$$
+   
+   - **Reflected load current phasor ($\vec{I}_2'$):**
+     $$\vec{I}_2' = I_2' \cos \phi_2 - j I_2' \sin \phi_2 = 25(0.80) - j 25(0.60) = 20.0 - j 15.0\text{ A}$$
+
+4. **Total Primary Current ($\vec{I}_1$):**
+   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$$
+   $$\vec{I}_1 = (1.0 + 20.0) - j (4.899 + 15.0) = \mathbf{21.0 - j 19.899\text{ A}}$$
+
+5. **Magnitude of Primary Current ($I_1$):**
+   $$I_1 = \sqrt{(21.0)^2 + (-19.899)^2} = \sqrt{441.0 + 395.97} = \sqrt{836.97} = \mathbf{28.93\text{ A}}$$
+
+6. **Primary Power Factor ($\cos \phi_1$):**
+   $$\tan \phi_1 = \frac{19.899}{21.0} = 0.9476 \implies \phi_1 = \tan^{-1}(0.9476) = 43.46^\circ$$
+   $$\text{Primary Power Factor} = \cos(43.46^\circ) = \mathbf{0.726\text{ lagging}}$$
+### 69. Page 40, Q.2(a): What are the different losses occurring in a transformer? Derive the condition for maximum efficiency in a transformer.
+
+#### **Part 1: Losses Occurring in a Transformer**
+
+Because a transformer is a static electromagnetic device with no rotating parts, it has **zero friction and windage losses**. The internal power losses occurring in a transformer are classified as follows:
+
+```
+                          TRANSFORMER LOSSES
+                ┌──────────────────┴──────────────────┐
+                ▼                                     ▼
+        1. Core / Iron Losses                 2. Copper (I²R) Losses
+           (Constant with Load)                  (Variable with Load)
+         ┌───────┴───────┐
+         ▼               ▼
+    Hysteresis      Eddy Current
+       Loss             Loss
+```
+
+---
+
+#### **1. Core Losses or Iron Losses ($W_i$):**
+Core losses occur in the magnetic iron core due to the continuous alternation of the magnetic flux. They are **constant at all load levels** because the core flux $\Phi_m$ remains virtually constant from no-load to full-load.
+
+- **(a) Hysteresis Loss ($W_h$):**
+  Caused by the continuous reversal of magnetic domains in the core material during each A.C. cycle. Given by Steinmetz's empirical formula:
+  $$W_h = \eta B_m^{1.6} f V_{\text{core}} \text{ Watts}$$
+  *(Minimized by using high-grade silicon alloy steel / CRGO steel).*
+
+- **(b) Eddy Current Loss ($W_e$):**
+  Caused by circulating induced currents (eddy currents) set up in the magnetic core by the alternating flux:
+  $$W_e = K_e B_m^2 f^2 t^2 V_{\text{core}} \text{ Watts}$$
+  *(Minimized by building the core from thin, varnished laminations of thickness $0.35\text{ mm to }0.5\text{ mm}$).*
+
+---
+
+#### **2. Copper Losses ($W_{\text{Cu}}$):**
+Copper losses are the ohmic $I^2R$ power losses dissipated as heat in the resistance of primary and secondary windings:
+$$W_{\text{Cu}} = I_1^2 R_1 + I_2^2 R_2 = I_1^2 R_{01} = I_2^2 R_{02}$$
+- Copper loss varies directly with the **square of the load current** (or square of fractional loading $x^2 W_{\text{Cu(FL)}}$).
+
+---
+
+#### **3. Minor Stray and Dielectric Losses:**
+- **Stray Load Losses:** Caused by leakage magnetic flux inducing eddy currents in the transformer tank walls, core clamps, and structural metal parts.
+- **Dielectric Losses:** Occur within the solid insulating materials and transformer oil due to dielectric stress.
+
+---
+
+#### **Part 2: Derivation of the Condition for Maximum Efficiency**
+
+Let:
+- $V_1 =$ Primary supply voltage
+- $I_1 =$ Primary line current
+- $\cos \phi_1 =$ Load power factor
+- $R_{01} =$ Total equivalent resistance referred to the primary side
+- $W_i =$ Constant core (iron) loss
+- $W_{\text{Cu}} = I_1^2 R_{01} =$ Variable copper loss
+
+$$\text{Efficiency } (\eta) = \frac{\text{Output Power}}{\text{Input Power}} = \frac{V_1 I_1 \cos \phi_1 - I_1^2 R_{01} - W_i}{V_1 I_1 \cos \phi_1}$$
+$$\eta = 1 - \frac{I_1 R_{01}}{V_1 \cos \phi_1} - \frac{W_i}{V_1 I_1 \cos \phi_1}$$
+
+To determine the condition for maximum efficiency, differentiate $\eta$ with respect to the variable load current $I_1$ and equate the derivative to zero:
+
+$$\frac{d\eta}{dI_1} = 0 - \frac{R_{01}}{V_1 \cos \phi_1} + \frac{W_i}{V_1 I_1^2 \cos \phi_1} = 0$$
+
+$$\frac{R_{01}}{V_1 \cos \phi_1} = \frac{W_i}{V_1 I_1^2 \cos \phi_1}$$
+
+Multiplying both sides by $V_1 I_1^2 \cos \phi_1$:
+$$I_1^2 R_{01} = W_i$$
+
+$$\mathbf{\text{Variable Copper Loss } (W_{\text{Cu}}) = \text{Constant Iron Loss } (W_i)}$$
+
+*(Hence proved.)*
+
+---
+
+### 70. Page 40, Q.2(c): Find the all day efficiency of a 500kVA, distribution transformer whose iron loss and full load copper loss are 1.5kW and 6kW respectively. In a day it is loaded as follows: Duration(h) 6, 10, 4, 4; Output(KW) 400, 300, 100, 0; Power factor 0.80, 0.75, 0.80, #.
+
+#### **Given Data:**
+- Transformer Rating $= 500\text{ kVA}$
+- Constant Iron Loss, $W_i = 1.5\text{ kW}$
+- Full-Load Copper Loss, $W_{\text{Cu(FL)}} = 6.0\text{ kW}$
+
+---
+
+#### **24-Hour Loading Analysis Table:**
+
+| Period | Duration ($t$) | Output ($P$) | Power Factor ($\cos \phi$) | Load $\text{kVA} = \frac{P}{\cos \phi}$ | Fractional Load ($x = \frac{\text{kVA}}{500}$) | Energy Output ($P \times t$) | Copper Loss Rate ($x^2 \times 6\text{ kW}$) | Copper Loss Energy ($P_{\text{Cu}} \times t$) |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **1** | $6\text{ h}$ | $400\text{ kW}$ | $0.80$ | $\frac{400}{0.80} = 500\text{ kVA}$ | $x_1 = \frac{500}{500} = 1.0$ | $400 \times 6 = 2400\text{ kWh}$ | $(1.0)^2 \times 6 = 6.0\text{ kW}$ | $6.0 \times 6 = 36.0\text{ kWh}$ |
+| **2** | $10\text{ h}$ | $300\text{ kW}$ | $0.75$ | $\frac{300}{0.75} = 400\text{ kVA}$ | $x_2 = \frac{400}{500} = 0.8$ | $300 \times 10 = 3000\text{ kWh}$ | $(0.8)^2 \times 6 = 3.84\text{ kW}$ | $3.84 \times 10 = 38.4\text{ kWh}$ |
+| **3** | $4\text{ h}$ | $100\text{ kW}$ | $0.80$ | $\frac{100}{0.80} = 125\text{ kVA}$ | $x_3 = \frac{125}{500} = 0.25$ | $100 \times 4 = 400\text{ kWh}$ | $(0.25)^2 \times 6 = 0.375\text{ kW}$ | $0.375 \times 4 = 1.5\text{ kWh}$ |
+| **4** | $4\text{ h}$ | $0\text{ kW}$ | — | $0\text{ kVA}$ | $x_4 = 0$ | $0\text{ kWh}$ | $0\text{ kW}$ | $0\text{ kWh}$ |
+
+---
+
+#### **Daily Energy Totals:**
+
+1. **Total Output Energy in 24 Hours:**
+   $$\text{Total Output Energy} = 2400 + 3000 + 400 + 0 = \mathbf{5800\text{ kWh}}$$
+
+2. **Total Copper Loss Energy in 24 Hours:**
+   $$\text{Total Copper Loss Energy} = 36.0 + 38.4 + 1.5 + 0 = \mathbf{75.9\text{ kWh}}$$
+
+3. **Total Iron Loss Energy in 24 Hours:**
+   $$\text{Total Iron Loss Energy} = W_i \times 24\text{ h} = 1.5\text{ kW} \times 24\text{ h} = \mathbf{36.0\text{ kWh}}$$
+
+4. **Total Daily Losses:**
+   $$\text{Total Losses} = 75.9 + 36.0 = \mathbf{111.9\text{ kWh}}$$
+
+5. **Total Input Energy in 24 Hours:**
+   $$\text{Total Input Energy} = \text{Total Output} + \text{Total Losses} = 5800 + 111.9 = \mathbf{5911.9\text{ kWh}}$$
+
+---
+
+#### **All-Day Efficiency Calculation:**
+$$\eta_{\text{all-day}} = \frac{\text{Total Output (kWh)}}{\text{Total Input (kWh)}} \times 100 = \frac{5800}{5911.9} \times 100 = \mathbf{98.11\%}$$
+
+---
+
+### 71. Page 44, Q.1(c): A 400/200V, 1-Φ transformer is supplying a load of 0.25A at a p.f. of 0.866 lagging. On no load the current and power factor are 2A and 0.208 respectively. Calculate the current taken from the supply line.
+
+#### **Given Data:**
+- Primary Voltage, $V_1 = 400\text{ V}$
+- Secondary Voltage, $V_2 = 200\text{ V}$
+- Transformation ratio, $K = \frac{V_2}{V_1} = \frac{200}{400} = 0.5 = \frac{1}{2}$
+- Secondary load current, $I_2 = 0.25\text{ A}$ at $\cos \phi_2 = 0.866\text{ lagging}$
+- No-load current, $I_0 = 2\text{ A}$ at $\cos \phi_0 = 0.208\text{ lagging}$
+
+---
+
+#### **Step-by-Step Solution:**
+
+1. **Secondary Current Referred to Primary ($I_2'$):**
+   $$I_2' = K \times I_2 = 0.5 \times 0.25 = 0.125\text{ A}$$
+
+2. **Phase Angle Calculations:**
+   - For secondary load current:
+     $$\cos \phi_2 = 0.866 \implies \phi_2 = 30^\circ, \quad \sin \phi_2 = 0.50$$
+   - For no-load current:
+     $$\cos \phi_0 = 0.208 \implies \sin \phi_0 = \sqrt{1 - (0.208)^2} = \sqrt{1 - 0.043264} = \sqrt{0.956736} = 0.9781$$
+
+3. **Phasor Representation (Taking Voltage as Reference):**
+   - **No-load current phasor ($\vec{I}_0$):**
+     $$\vec{I}_0 = I_0 \cos \phi_0 - j I_0 \sin \phi_0 = 2(0.208) - j 2(0.9781) = 0.416 - j 1.9562\text{ A}$$
+   
+   - **Reflected load current phasor ($\vec{I}_2'$):**
+     $$\vec{I}_2' = I_2' \cos \phi_2 - j I_2' \sin \phi_2 = 0.125(0.866) - j 0.125(0.50) = 0.10825 - j 0.0625\text{ A}$$
+
+4. **Total Primary Supply Current ($\vec{I}_1$):**
+   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$$
+   $$\vec{I}_1 = (0.416 + 0.10825) - j (1.9562 + 0.0625) = \mathbf{0.52425 - j 2.0187\text{ A}}$$
+
+5. **Magnitude of Supply Current ($I_1$):**
+   $$I_1 = \sqrt{(0.52425)^2 + (-2.0187)^2} = \sqrt{0.27484 + 4.07515} = \sqrt{4.350} = \mathbf{2.086\text{ A}}$$
+
+*(Note: If the problem intended a load current of $I_2 = 25\text{ A}$, then $I_2' = 12.5\text{ A}$, resulting in $\vec{I}_1 = 11.24 - j 8.21\text{ A} \implies I_1 = 13.92\text{ A}$ at $\text{p.f.} = 0.808\text{ lag}$).*
+
+---
+
+### 73. Page 9, Q.2(a): Explain how autotransformer can provide better efficiency and kVA capacity compared to same size two-winding transformer.
+
+#### **1. Mechanism of Power Transfer in an Auto-Transformer:**
+Unlike a two-winding transformer where power is transferred solely by electromagnetic induction, an **auto-transformer** transfers power through two distinct mechanisms:
+
+```
+                      TOTAL POWER TRANSFER
+                ┌───────────────┴───────────────┐
+                ▼                               ▼
+       Inductive Transfer             Conductive Transfer
+     (Through Magnetic Flux)       (Direct Electrical Link)
+     P_ind = Input × (1 - K)         P_cond = Input × K
+```
+
+- **Transformation Ratio:** $K = \frac{V_2}{V_1}$ (for step-down, $K < 1$)
+- **Inductively Transferred Power:** $\text{Power}_{\text{ind}} = \text{Input} \times (1 - K)$
+- **Conductively Transferred Power:** $\text{Power}_{\text{cond}} = \text{Input} \times K$
+
+---
+
+#### **2. Why an Auto-Transformer Provides Higher kVA Capacity:**
+When a two-winding transformer of rating $(\text{kVA})_{\text{2-wdg}}$ is reconnected as an auto-transformer:
+- The inductive rating of the core and windings handles only the fraction $(1 - K)$ of the total throughput power:
+  $$(\text{kVA})_{\text{2-wdg}} = (\text{kVA})_{\text{auto}} \times (1 - K)$$
+- Therefore, the throughput rating as an auto-transformer becomes:
+  $$(\text{kVA})_{\text{auto}} = \frac{(\text{kVA})_{\text{2-wdg}}}{1 - K}$$
+
+**Advantage:** When the transformation ratio $K$ is close to unity (e.g., $K = 0.9$ or $K = 0.8$):
+- For $K = 0.9$: $(\text{kVA})_{\text{auto}} = \frac{(\text{kVA})_{\text{2-wdg}}}{1 - 0.9} = 10 \times (\text{kVA})_{\text{2-wdg}}$
+- The same physical core and copper size can output **$10\text{ times}$ more power**.
+
+---
+
+#### **3. Why an Auto-Transformer Provides Better Efficiency:**
+1. **Reduced Copper Losses:**
+   - In the common portion of the winding, the primary and secondary currents flow in opposite directions.
+   - The common winding carries only the difference current $(I_2 - I_1)$, dramatically reducing total copper $I^2R$ loss:
+     $$\text{Saving in Copper} = K \times (\text{Total Copper in Two-Winding Transformer})$$
+2. **Conductive Transfer has Zero Magnetic Loss:**
+   - The conductively transferred power ($K \times \text{Input}$) passes straight through the electrical connection without experiencing core hysteresis or eddy current losses.
+3. **Higher Efficiency Formulation:**
+   - Since total internal losses are smaller while total power transferred is significantly larger, the efficiency of an auto-transformer is always higher:
+     $$\eta_{\text{auto}} > \eta_{\text{2-wdg}}$$
+
+### 74. Page 9, Q.2(b): For auto-transformer prove that power transferred inductively = input (1-k), whereas power transferred conductively = k× input; where k is the transformation ratio.
+
+#### **Derivation:**
+
+Consider a step-down auto-transformer:
+- Input Voltage $= V_1$
+- Input Current $= I_1$
+- Output Terminal Voltage $= V_2$
+- Output Load Current $= I_2$
+- Voltage Transformation Ratio, $K = \frac{V_2}{V_1} = \frac{I_1}{I_2} < 1$
+- Total Input Power (at unity power factor or in apparent power) $= V_1 I_1$
+
+```
+                   I₁ ──► A
+                          │
+                          │   (N₁ - N₂) Turns
+             V₁           │   Voltage = (V₁ - V₂)
+                          │
+                          ├──────────► I₂ ──►
+                   (I₂-I₁)│
+                          │   N₂ Turns           V₂ (Load)
+             V₂           │   Voltage = V₂
+                          │
+                          ┴──────────┴───────
+                          B
+```
+
+---
+
+#### **1. Proof: Power Transferred Inductively $= \text{Input} \times (1 - K)$**
+
+In an auto-transformer, the winding consists of two functional sections:
+- **Upper / Series Section (between terminals A and C):** Has $(N_1 - N_2)$ turns, across which the voltage is $(V_1 - V_2)$ and through which the primary line current $I_1$ flows.
+- **Lower / Common Section (between terminals C and B):** Has $N_2$ turns, across which the voltage is $V_2$ and through which the difference current $(I_2 - I_1)$ flows.
+
+The power transferred **inductively** (by transformer action via mutual magnetic flux linkage) is the power handled by the series section:
+
+$$\text{Power}_{\text{ind}} = (\text{Voltage across series section}) \times (\text{Current through series section})$$
+$$\text{Power}_{\text{ind}} = (V_1 - V_2) \times I_1$$
+
+Factoring out $V_1$:
+$$\text{Power}_{\text{ind}} = V_1 I_1 \left(1 - \frac{V_2}{V_1}\right)$$
+
+Since $\text{Input Power} = V_1 I_1$ and transformation ratio $K = \frac{V_2}{V_1}$:
+
+$$\mathbf{\text{Power Transferred Inductively} = \text{Input} \times (1 - K)}$$
+
+*(Alternatively, considering the common section: $\text{Power}_{\text{ind}} = V_2 (I_2 - I_1) = V_2 I_2 \left(1 - \frac{I_1}{I_2}\right) = \text{Input} \times (1 - K)$).*
+
+---
+
+#### **2. Proof: Power Transferred Conductively $= K \times \text{Input}$**
+
+The total electrical power delivered to the output is the sum of inductively transferred power and conductively transferred power:
+
+$$\text{Total Power Transferred} = \text{Power}_{\text{ind}} + \text{Power}_{\text{cond}}$$
+$$\text{Power}_{\text{cond}} = \text{Total Power Input} - \text{Power}_{\text{ind}}$$
+$$\text{Power}_{\text{cond}} = \text{Input} - \text{Input}(1 - K)$$
+$$\text{Power}_{\text{cond}} = \text{Input} \times [1 - (1 - K)]$$
+
+$$\mathbf{\text{Power Transferred Conductively} = K \times \text{Input}}$$
+
+*(Hence proved.)*
+
+---
+
+### 75. Page 17, Q.3(c): What is auto-transformer? Suppose you have a 20kVA, 2400/240 V, 2-winding transformer. Convert it into a step-up auto transformer with neat connection diagram. [Figure Involved]
+
+#### **1. Definition of Auto-Transformer:**
+An **auto-transformer** is a transformer that consists of only a single continuous winding wound on a laminated magnetic core, where a portion of the winding is shared in common by both the primary and secondary circuits. Electrical energy is transferred from primary to secondary partly by **electromagnetic induction** and partly by **direct electrical conduction**.
+
+---
+
+#### **2. Ratings of the Given Two-Winding Transformer:**
+- Rating $= 20\text{ kVA} = 20,000\text{ VA}$
+- High-voltage winding voltage, $V_{\text{HV}} = 2400\text{ V}$
+- Low-voltage winding voltage, $V_{\text{LV}} = 240\text{ V}$
+- Rated current of H.V. winding:
+  $$I_{\text{HV}} = \frac{20,000}{2400} = 8.33\text{ A}$$
+- Rated current of L.V. winding:
+  $$I_{\text{LV}} = \frac{20,000}{240} = 83.33\text{ A}$$
+
+---
+
+#### **3. Conversion into a Step-Up Auto-Transformer (Additive Polarity):**
+To convert the two-winding transformer into a **step-up auto-transformer**:
+1. Connect the $2400\text{ V}$ winding in series with the $240\text{ V}$ winding with **additive polarity**.
+2. Apply the input voltage across the $2400\text{ V}$ winding ($V_{\text{in}} = 2400\text{ V}$).
+3. Take the output across the entire series combination of both windings ($V_{\text{out}} = 2400\text{ V} + 240\text{ V} = 2640\text{ V}$).
+4. The output load current $I_2$ is limited by the rated current capacity of the $240\text{ V}$ winding, which is $I_2 = 83.33\text{ A}$.
+
+---
+
+#### **Connection Diagram (Step-Up Auto-Transformer):**
+
+```
+                       I_in = 91.67 A ──►
+                      ─────────────────────┬──────────────┐
+                                           │              │
+                                           │           ┌──┴──┐
+                                           │           │     │
+                                           │    2400 V │     │
+                              V_in = 2400V │   Winding │     │
+                                           │ (8.34 A)  │     │
+                                           │           └──┬──┘
+                                           │              │  I₂ = 83.33 A ──►
+                                           │              ├───────────────────┐
+                                           │              │                   │
+                                           │           ┌──┴──┐              ┌─┴─┐
+                                           │     240 V │     │  V_out =     │   │
+                                           │   Winding │     │   2640 V     │ ZL│ (Load)
+                                           │  (83.33 A)│     │              │   │
+                                           │           └──┬──┘              └─┬─┘
+                                           │              │                   │
+                      ─────────────────────┴──────────────┴───────────────────┘
+```
+
+---
+
+#### **4. Calculations of Output kVA Capacity:**
+- **Output Voltage:** $V_{\text{out}} = 2400 + 240 = 2640\text{ V}$
+- **Permissible Output Current:** $I_{\text{out}} = I_{\text{LV}} = 83.33\text{ A}$
+- **New kVA Capacity as Auto-Transformer:**
+  $$\text{kVA Rating} = V_{\text{out}} \times I_{\text{out}} \times 10^{-3} = 2640\text{ V} \times 83.33\text{ A} \times 10^{-3} = \mathbf{220\text{ kVA}}$$
+- **Input Current:**
+  $$I_{\text{in}} = \frac{220\text{ kVA}}{2.4\text{ kV}} = 91.67\text{ A}$$
+- **Current in Common Winding:**
+  $$I_{\text{common}} = I_{\text{in}} - I_{\text{out}} = 91.67 - 83.33 = 8.34\text{ A} \quad (\text{equal to rated } I_{\text{HV}})$$
+- **Percentage Increase in Capacity:**
+  $$\% \text{ Increase} = \frac{220 - 20}{20} \times 100 = \mathbf{1000\% \text{ increase (11 times original rating)}}$$
+
+---
+
+### 76. Page 17, Q.3(d): Explain the dangers of using auto-transformer for the transformation ratio of K << 1.
+
+When the transformation ratio $K = \frac{V_2}{V_1}$ is very small ($K \ll 1$), such as stepping down high transmission voltages ($11\text{ kV}$ or $33\text{ kV}$) to low utilization voltages ($230\text{ V}$ or $110\text{ V}$), using an auto-transformer introduces severe technical and safety hazards:
+
+---
+
+#### **1. Direct Electrical Connection and Electrocution Hazard:**
+- In an auto-transformer, the primary and secondary circuits share a **direct metallic conductive path** (no galvanic electrical isolation).
+- If the low-voltage neutral or common winding section becomes accidentally open-circuited (e.g., due to a burnout, broken connection, or loose terminal), the **full high voltage of the primary system ($11\text{ kV}$) appears directly across the secondary terminals**.
+- This creates an immediate, lethal electrocution risk for human operators and completely destroys connected low-voltage consumer equipment.
+
+```
+       Primary (11 kV) ────┐
+                           │   Accidental OPEN CIRCUIT here!
+                           │         ▼
+                           ├─── x ───►  Lethal 11 kV appears directly
+                           │            across 230 V consumer load!
+                           │
+       Ground / Neutral ───┴───────────────────────────────────────
+```
+
+---
+
+#### **2. Negligible Economy and Copper Savings:**
+- The copper savings in an auto-transformer are given by:
+  $$\text{Saving in Copper} = K \times (\text{Copper in Two-Winding Transformer})$$
+- When $K \ll 1$ (e.g., $K = \frac{230}{11000} \approx 0.02$), the saving in copper is only **$2\%$**. 
+- Thus, the auto-transformer loses its primary economic and size advantages over conventional two-winding transformers.
+
+---
+
+#### **3. Dangerously High Short-Circuit Currents:**
+- Because of the small number of turns in the common section, the equivalent leakage impedance of an auto-transformer with $K \ll 1$ is very low.
+- A fault on the secondary side results in catastrophic short-circuit currents that can mechanically destroy the windings.
+
+---
+
+### 77. Page 18, Q.2(a): Define auto-transformer. Prove that less copper is used in auto-transformer than in an ordinary transformer.
+
+#### **1. Definition of Auto-Transformer:**
+An **auto-transformer** is a transformer that employs a single continuous winding on an iron core, a part of which acts as both primary and secondary windings. It operates on both electromagnetic induction and direct electrical conduction.
+
+---
+
+#### **2. Proof: Saving of Copper in Auto-Transformer:**
+
+The volume and weight of copper required in any transformer winding is directly proportional to:
+1. The length of the conductor (which is proportional to the number of turns $N$).
+2. The cross-sectional area of the conductor (which is proportional to the rated current $I$).
+
+$$\text{Weight of Copper } (W) \propto N \times I$$
+
+---
+
+#### **(A) Weight of Copper in Ordinary Two-Winding Transformer ($W_o$):**
+- Primary copper weight $\propto N_1 I_1$
+- Secondary copper weight $\propto N_2 I_2$
+
+$$\text{Total Weight, } W_o \propto N_1 I_1 + N_2 I_2$$
+
+Since $N_1 I_1 = N_2 I_2$ (neglecting no-load magnetizing current):
+$$W_o \propto 2 N_1 I_1 \tag{1}$$
+
+---
+
+#### **(B) Weight of Copper in Auto-Transformer ($W_a$):**
+Consider a step-down auto-transformer where $N_1 > N_2$ and $I_2 > I_1$:
+
+```
+                   A ──► I₁
+                     │
+                     │  Section AC: (N₁ - N₂) Turns, Current = I₁
+                     │
+                   C ┼──────────► I₂
+                     │
+                     │  Section CB: N₂ Turns, Current = (I₂ - I₁)
+                     │
+                   B ┴──────────┴
+```
+
+- **Section AC (Unshared part):** Has $(N_1 - N_2)$ turns carrying current $I_1$.
+  $$\text{Cu Weight of Section AC} \propto (N_1 - N_2) I_1$$
+- **Section CB (Common part):** Has $N_2$ turns carrying difference current $(I_2 - I_1)$.
+  $$\text{Cu Weight of Section CB} \propto N_2 (I_2 - I_1)$$
+
+Total copper weight in auto-transformer ($W_a$):
+$$W_a \propto (N_1 - N_2) I_1 + N_2 (I_2 - I_1)$$
+$$W_a \propto N_1 I_1 - N_2 I_1 + N_2 I_2 - N_2 I_1$$
+
+Substituting $N_2 I_2 = N_1 I_1$:
+$$W_a \propto 2 N_1 I_1 - 2 N_2 I_1 = 2 N_1 I_1 \left(1 - \frac{N_2}{N_1}\right)$$
+
+Since $K = \frac{N_2}{N_1}$:
+$$W_a \propto 2 N_1 I_1 (1 - K) \tag{2}$$
+
+---
+
+#### **(C) Ratio of Copper Weights:**
+Dividing Equation (2) by Equation (1):
+$$\frac{W_a}{W_o} = \frac{2 N_1 I_1 (1 - K)}{2 N_1 I_1} = (1 - K)$$
+
+$$W_a = (1 - K) W_o$$
+
+---
+
+#### **(D) Saving in Copper:**
+$$\text{Weight of Copper Saved} = W_o - W_a = W_o - (1 - K) W_o = K W_o$$
+
+$$\mathbf{\text{Saving in Copper} = K \times (\text{Weight of Copper in Two-Winding Transformer})}$$
+
+*(Hence proved.)*
+### 78. Page 18, Q.2(b): With the help of additive and subtracting polarity of transformer, show that KVA capacity of auto-transformer increases compared to two winding transformer with same voltage rating.
+
+#### **1. Analysis of a Two-Winding Transformer:**
+Consider a two-winding transformer with:
+- High-voltage winding rating: $V_H, I_H$
+- Low-voltage winding rating: $V_L, I_L$
+- Two-winding rated capacity: $S_{\text{2-wdg}} = V_H I_H = V_L I_L$
+
+When reconnected as an auto-transformer, electrical power is transferred partly **inductively** and partly **conductively**, increasing the overall throughput kVA capacity.
+
+---
+
+#### **2. Case 1: Additive Polarity Connection**
+In an additive polarity connection, the two windings are connected in series aiding such that their induced voltages add together:
+
+```
+                  ADDITIVE POLARITY AUTO-TRANSFORMER
+            ┌─────────────────────────────────────────┐
+            │                                         │
+     V_in = │                              ┌──────────┴──────────┐
+      VH    │                              │  VH Winding (IH)    │
+            │                              └──────────┬──────────┘
+            │                                         ├──────────► I_out = IL
+            │                                         │
+            │                              ┌──────────┴──────────┐
+            │                              │  VL Winding (IL)    │ V_out = (VH + VL)
+            │                              └──────────┬──────────┘
+            └─────────────────────────────────────────┴──────────►
+```
+
+- **Output Voltage:** $V_{\text{out}} = V_H + V_L$
+- **Permissible Output Current:** $I_{\text{out}} = I_L$ (limited by L.V. winding current rating)
+- **Auto-Transformer kVA Capacity ($S_{\text{add}}$):**
+  $$S_{\text{add}} = (V_H + V_L) I_L = V_H I_L + V_L I_L$$
+  Since $V_H I_L = V_H \left(\frac{V_H}{V_L} I_H\right) = S_{\text{2-wdg}} \left(\frac{V_H}{V_L}\right)$ and $V_L I_L = S_{\text{2-wdg}}$:
+  $$S_{\text{add}} = S_{\text{2-wdg}} \left(1 + \frac{V_H}{V_L}\right)$$
+
+*Example ($2400/240\text{ V}, 20\text{ kVA}$):*
+$$S_{\text{add}} = 20\text{ kVA} \times \left(1 + \frac{2400}{240}\right) = 20 \times (1 + 10) = \mathbf{220\text{ kVA}} \quad (\mathbf{1100\% \text{ of original rating}})$$
+
+---
+
+#### **3. Case 2: Subtractive Polarity Connection**
+In a subtractive polarity connection, the windings are connected in series opposition such that their voltages oppose:
+
+```
+                 SUBTRACTIVE POLARITY AUTO-TRANSFORMER
+            ┌─────────────────────────────────────────┐
+            │                                         │
+     V_in = │                              ┌──────────┴──────────┐
+      VH    │                              │  VH Winding (IH)    │
+            │                              └──────────┬──────────┘
+            │                                         ├──────────► I_out = IL
+            │                                         │
+            │                              ┌──────────┴──────────┐
+            │                              │  VL Winding (IL)    │ V_out = (VH - VL)
+            │                              └──────────┬──────────┘ (Opposing)
+            └─────────────────────────────────────────┴──────────►
+```
+
+- **Output Voltage:** $V_{\text{out}} = V_H - V_L$
+- **Permissible Output Current:** $I_{\text{out}} = I_L$
+- **Auto-Transformer kVA Capacity ($S_{\text{sub}}$):**
+  $$S_{\text{sub}} = (V_H - V_L) I_L = V_H I_L - V_L I_L = S_{\text{2-wdg}} \left(\frac{V_H}{V_L} - 1\right)$$
+
+*Example ($2400/240\text{ V}, 20\text{ kVA}$):*
+$$S_{\text{sub}} = 20\text{ kVA} \times \left(\frac{2400}{240} - 1\right) = 20 \times (10 - 1) = \mathbf{180\text{ kVA}} \quad (\mathbf{900\% \text{ of original rating}})$$
+
+---
+
+#### **Conclusion:**
+In both additive and subtractive configurations, the kVA throughput capacity of the auto-transformer is **substantially higher** than that of the original two-winding transformer of the same physical dimensions.
+
+---
+
+### 79. Page 18, Q.2(c): What should be the problem of personnel for using high voltage step-down auto-transformer, when transformation ratio K<<1.
+
+When an auto-transformer is used for stepping down high voltages with a very small transformation ratio ($K \ll 1$, e.g., stepping down $11\text{ kV}$ or $33\text{ kV}$ to $230\text{ V}$ or $110\text{ V}$), it creates grave safety and operational hazards for operating personnel:
+
+---
+
+```
+                       HIGH-VOLTAGE HAZARD SCENARIO
+       11 kV Primary ──────┬───────────────────────────────
+                           │
+                           │  H.V. Section (Many Turns)
+                           │
+             ACCIDENTAL ──►├── x ─── OPEN CIRCUIT AT COMMON TAP!
+             BREAK HERE    │
+                           │  L.V. Section (Few Turns)
+                           │        │
+                           │        ▼
+       Neutral / Earth ────┴────────► Full 11 kV appears on 230 V consumer line!
+                                      (Lethal shock hazard to personnel)
+```
+
+1. **Lack of Galvanic / Electrical Isolation:**
+   - Unlike a two-winding transformer where the primary and secondary circuits are isolated by insulation, the auto-transformer shares a **direct conductive path** between high-voltage and low-voltage terminals.
+
+2. **Lethal Open-Circuit Potential on the Low-Voltage Side:**
+   - If an accidental disconnection, fault, or open-circuit occurs in the common winding section (between the secondary tap and ground), the path to ground is broken.
+   - Under this condition, the **full primary high-voltage potential ($11\text{ kV}$)** appears directly on the secondary low-voltage terminals and connected consumer appliances.
+
+3. **Danger to Human Life (Electrocution):**
+   - Operating personnel touching the low-voltage switchboards, instrument casings, neutral wires, or appliances will be subjected to the lethal primary transmission voltage, resulting in fatal electric shock.
+
+4. **Explosive Breakdown and Fire:**
+   - Standard low-voltage equipment insulated for $230\text{ V}$ / $1.1\text{ kV}$ breaks down instantly under $11\text{ kV}$, creating catastrophic arc-flashes, explosions, and electrical fires.
+
+---
+
+### 80. Page 19, Q.4(a): Define the term autotransformer. A two winding 440/110 V transformer is to be connected as a step down transformer, (i) show all possible connections for accomplishing this, and (ii) give the actual high side and low side voltages as well as the voltage ratio for each connection. [Figure Involved]
+
+#### **1. Definition of Auto-Transformer:**
+An **auto-transformer** is an electrical transformer in which primary and secondary windings are combined into a single continuous winding on a magnetic core. Power is transferred between circuits by both electromagnetic induction and direct electrical conduction.
+
+---
+
+#### **2. Possible Step-Down Auto-Transformer Connections (440/110 V Two-Winding Unit):**
+
+The two individual coils have voltage ratings of $440\text{ V}$ and $110\text{ V}$. They can be interconnected to form four possible step-down configurations:
+
+```
+  Connection 1: 550 V / 440 V             Connection 2: 550 V / 110 V
+   Input 550 V ──┬───────────┐             Input 550 V ──┬───────────┐
+                 │           │                           │           │
+              ┌──┴──┐        │                        ┌──┴──┐        │
+        110 V │     │        │                  440 V │     │        │
+              └──┬──┘        │                        └──┬──┘        │
+                 ├───────────┼──► Output                 ├───────────┼──► Output
+              ┌──┴──┐        │    440 V               ┌──┴──┐        │    110 V
+        440 V │     │        │                  110 V │     │        │
+              └──┬──┘        │                        └──┬──┘        │
+   Neutral ──────┴───────────┴──►          Neutral ──────┴───────────┴──►
+
+  Connection 3: 440 V / 330 V             Connection 4: 440 V / 110 V
+   Input 440 V ──┬───────────┐             Input 440 V ──┬───────────┐
+                 │           │                           │           │
+              ┌──┴──┐ (Sub-  │                        ┌──┴──┐        │
+        110 V │     │  tractive)                330 V │     │        │
+              └──┬──┘        │                        └──┬──┘        │
+                 ├───────────┼──► Output                 ├───────────┼──► Output
+              ┌──┴──┐        │    330 V               ┌──┴──┐        │    110 V
+        330 V │     │        │                  110 V │     │        │
+              └──┬──┘        │                        └──┬──┘        │
+   Neutral ──────┴───────────┴──►          Neutral ──────┴───────────┴──►
+```
+
+---
+
+#### **3. Summary of Voltage Ratios:**
+
+| Connection No. | Connection Type | High-Side Voltage ($V_{\text{high}}$) | Low-Side Voltage ($V_{\text{low}}$) | Voltage Ratio ($K = \frac{V_{\text{low}}}{V_{\text{high}}}$) |
+| :---: | :---: | :---: | :---: | :---: |
+| **1** | Additive Series, $440\text{ V}$ Output | $440 + 110 = \mathbf{550\text{ V}}$ | $\mathbf{440\text{ V}}$ | $\frac{440}{550} = \mathbf{0.80}$ |
+| **2** | Additive Series, $110\text{ V}$ Output | $440 + 110 = \mathbf{550\text{ V}}$ | $\mathbf{110\text{ V}}$ | $\frac{110}{550} = \mathbf{0.20}$ |
+| **3** | Subtractive Series, $330\text{ V}$ Output | $\mathbf{440\text{ V}}$ | $440 - 110 = \mathbf{330\text{ V}}$ | $\frac{330}{440} = \mathbf{0.75}$ |
+| **4** | Direct Tap, $110\text{ V}$ Output | $\mathbf{440\text{ V}}$ | $\mathbf{110\text{ V}}$ | $\frac{110}{440} = \mathbf{0.25}$ |
+
+---
+
+### 81. Page 19, Q.4(b): Draw the connection diagrams of instrument transformer to measure (i) voltage, (ii) current and (iii) power of high voltage-high current system with laboratory meters. [Figure Involved]
+
+#### **Description:**
+In high-voltage, high-current A.C. power systems, standard low-range laboratory instruments ($110\text{ V}$ voltmeters, $5\text{ A}$ ammeters, and standard wattmeters) are safely operated using **Instrument Transformers**:
+- **Current Transformer (C.T.):** Steps down the high line current to a standard $5\text{ A}$ (or $1\text{ A}$) level and isolates instruments from the high-voltage line.
+- **Potential Transformer (P.T.):** Steps down the high line voltage to a safe standard $110\text{ V}$ (or $100\text{ V}$) level.
+
+---
+
+#### **Complete Integrated Connection Diagram:**
+
+```
+     HIGH VOLTAGE TRANSMISSION LINE
+     ═════════════╤═══════════════════════════════════════════════════════════
+                  │
+                  │   C.T. Primary (Few Heavy Turns in Series)
+                  └───████████───┐
+                                 │
+     ────────────────────────────┼───────────────────────────┬───────────────► LOAD
+                                 │                           │
+                                ┌┴┐ P.T. Primary             │
+                                │ │ (High Voltage,           │
+                                │ │  Many Turns)             │
+                                └┬┘                          │
+     ────────────────────────────┼───────────────────────────┴───────────────► LOAD
+                                 │
+     ════════════════════════════╧═══════════════════════════════════════════
+     NEUTRAL / RETURN LINE
+
+                 SECONDARY INSTRUMENTATION CIRCUIT (SAFE LOW VOLTAGE)
+     ─────────────────────────────────────────────────────────────────────────
+             C.T. Secondary (Fine Wire)
+               ┌──UUUUUU──┐
+               │          │
+              (A)        [CC] Wattmeter Current Coil
+               │          │
+               └───┬──────┘
+                   │
+                  _│_ Ground
+
+             P.T. Secondary (110 V)
+               ┌──UUUUUU──┐
+               │          │
+              (V)        [PC] Wattmeter Pressure Coil
+               │          │
+               └───┬──────┘
+                   │
+                  _│_ Ground
+```
+
+---
+
+#### **Formulas for Actual System Values:**
+
+1. **Actual Line Voltage ($V_L$):**
+   $$V_L = (\text{Voltmeter Reading } V) \times \left(\frac{V_{\text{primary}}}{V_{\text{secondary}}}\right)_{\text{P.T.}}$$
+
+2. **Actual Line Current ($I_L$):**
+   $$I_L = (\text{Ammeter Reading } I) \times \left(\frac{I_{\text{primary}}}{I_{\text{secondary}}}\right)_{\text{C.T.}}$$
+
+3. **Actual Real Power ($P$):**
+   $$P = (\text{Wattmeter Reading } W) \times (\text{P.T. Ratio}) \times (\text{C.T. Ratio})$$
+
+
+### 82. Page 19, Q.4(c): Why secondary of a current transformer can never be opened?
+
+#### **1. Physical Nature of Current Transformers (C.T.):**
+In an ordinary power or distribution transformer, the primary current is determined by the load drawn from the secondary winding. In contrast, the primary winding of a **Current Transformer (C.T.)** is connected in series with the main high-voltage transmission line or feeder. Therefore, the primary current ($I_1$) is determined **solely by the load on the power system**, completely independent of the secondary circuit conditions.
+
+---
+
+#### **2. Normal Operation (Secondary Closed through Ammeter):**
+Under normal operation, the secondary winding is closed through the very low impedance of an ammeter or relay coil:
+- The secondary current $I_2$ creates a strong demagnetizing m.m.f. ($N_2 I_2$).
+- This opposes the large primary m.m.f. ($N_1 I_1$).
+- The net magnetizing m.m.f. is extremely small:
+  $$\text{Net M.M.F.} = N_1 I_1 - N_2 I_2 = N_1 I_0$$
+- This maintains a small, safe mutual working flux $\Phi$ in the core.
+
+```
+ NORMAL OPERATION (Secondary Closed):
+ Primary M.M.F. (N₁ I₁) ◄──OPPOSED BY──► Secondary M.M.F. (N₂ I₂)
+                              │
+                              ▼
+        Net Core M.M.F. is VERY SMALL ──► Safe Core Flux Φ
+```
+
+---
+
+#### **3. What Happens When the Secondary Circuit is Opened ($I_2 = 0$):**
+
+```
+ SECONDARY OPENED (I₂ = 0):
+ Secondary Opposing M.M.F. Drops to ZERO (N₂ I₂ = 0)
+                              │
+                              ▼
+ Entire Line Current I₁ Acts as Magnetizing Current
+                              │
+                              ▼
+ Core Driven into DEEP MAGNETIC SATURATION (Abnormally Huge Flux Φ_peak)
+                ┌─────────────┴─────────────┐
+                ▼                           ▼
+ Extremely High Secondary Voltage       Excessive Core Losses (Wi)
+    (Several Kilovolts, 2-10 kV)       Severe Overheating & Insulation Burnout
+                │                           │
+                ▼                           ▼
+   LETHAL SHOCK TO PERSONNEL           PERMANENT TRANSFORMER DESTRUCTION
+```
+
+1. **Severe Core Saturation:**
+   The entire primary line current acts unopposed to magnetize the core. The core is driven deep into saturation, producing an abnormally high, peaky core flux.
+2. **Dangerously High Induced Voltage:**
+   Because the secondary winding has a very large number of turns ($N_2 \gg N_1$), the steep rate of change of flux ($\frac{d\Phi}{dt}$) induces an **extremely high voltage (often several thousand volts, $2\text{ kV to }10\text{ kV}$)** across the open secondary terminals.
+3. **Lethal Personnel Hazard:**
+   This high voltage creates an immediate, fatal electrocution risk for any technician or operator working near the instrument panel.
+4. **Thermal Destruction and Permanent Magnetization:**
+   The massive flux causes extreme hysteresis and eddy current heating, destroying the insulation. Furthermore, the core acquires severe residual magnetism, permanently ruining the accuracy of the C.T.
+
+**Safety Rule:** The secondary of a C.T. must **always be short-circuited** with a dedicated shorting switch before removing or replacing an ammeter.
+
+---
+
+### 83. Page 21, Q.4(c): What are the instrument transformers? Explain how they operate? Where are they used? A transformer that is used to measure electrical quantities like current, voltage is known as an instrument transformer.
+
+#### **1. Definition of Instrument Transformers:**
+An **instrument transformer** is a specially constructed, high-precision transformer used in alternating-current (A.C.) power systems to step down high voltages and high currents to standardized, safe, low values ($110\text{ V}$ and $5\text{ A}$ / $1\text{ A}$) for measurement by standard laboratory meters and for operating protective relays.
+
+---
+
+#### **2. Types and Principle of Operation:**
+
+#### **(A) Current Transformer (C.T.):**
+- **Operation:** The primary winding consists of one or few turns of heavy conductor connected in **series** with the power line. The secondary consists of many turns of fine wire connected across a low-resistance ammeter or current coil.
+- **Function:** Steps down large line currents ($100\text{ A to }10,000\text{ A}$) to a standard $5\text{ A}$ (or $1\text{ A}$) secondary current:
+  $$I_{\text{line}} = I_{\text{meter}} \times \left(\frac{N_2}{N_1}\right)$$
+
+#### **(B) Potential Transformer (P.T. / Voltage Transformer):**
+- **Operation:** A high-precision step-down transformer connected in **parallel** across the high-voltage lines. Its secondary is connected across a standard $110\text{ V}$ voltmeter or wattmeter voltage coil.
+- **Function:** Steps down high transmission voltages ($3.3\text{ kV to }765\text{ kV}$) to a safe standard $110\text{ V}$:
+  $$V_{\text{line}} = V_{\text{meter}} \times \left(\frac{N_1}{N_2}\right)$$
+
+---
+
+#### **3. Where They Are Used (Applications):**
+1. **High-Voltage Substations & Generating Stations:** For measuring voltage, current, active power, reactive power, and power factor on grid feeders.
+2. **Revenue Energy Metering:** For billing commercial and industrial power consumption accurately.
+3. **Protective Relaying Systems:** To actuate overcurrent, differential, distance, and earth-fault protection relays to trip circuit breakers during faults.
+4. **Control and Synchroscopes:** In automated control panels and grid synchronization systems.
+
+---
+
+#### **4. Advantages of Instrument Transformers:**
+- **Standardization:** All meters and relays are manufactured for standard ratings ($5\text{ A}$ and $110\text{ V}$).
+- **Personnel Safety:** Galvanically isolates measuring instruments from lethal high-voltage lines.
+- **Low Power Loss:** Far more efficient than resistive shunts and multipliers in high-voltage A.C. circuits.
+
+---
+
+### 84. Page 24, Q.36-40: (List covers theory of step-down and step-up auto-transformer, math validation of copper saving, advantages/disadvantages, applications, and conversion technique of two-winding to auto-transformer).
+
+#### **1. Theory of Step-Down and Step-Up Auto-Transformers:**
+- **Step-Down:** The input voltage $V_1$ is applied across the total winding ($N_1$ turns), and the load is tapped across a section ($N_2$ turns, where $N_2 < N_1$). The common section carries the difference current $(I_2 - I_1)$.
+- **Step-Up:** The input voltage $V_1$ is connected across the tapped section ($N_1$ turns), and the load is taken across the complete winding ($N_2$ turns, where $N_2 > N_1$).
+
+---
+
+#### **2. Mathematical Validation of Copper Saving:**
+- In an ordinary two-winding transformer:
+  $$W_o \propto N_1 I_1 + N_2 I_2 = 2 N_1 I_1$$
+- In an auto-transformer (step-down, $K = N_2/N_1$):
+  $$W_a \propto (N_1 - N_2) I_1 + N_2 (I_2 - I_1) = 2 N_1 I_1 (1 - K) = W_o (1 - K)$$
+- **Copper Saved:**
+  $$\mathbf{\text{Saving in Copper} = W_o - W_a = K W_o}$$
+  The copper saving is directly proportional to the transformation ratio $K$.
+
+---
+
+#### **3. Advantages and Disadvantages:**
+
+| Advantages | Disadvantages |
+| :--- | :--- |
+| 1. Substantial saving in copper and core material. | 1. Direct metallic connection (loss of electrical isolation). |
+| 2. Higher efficiency due to lower $I^2R$ and core losses. | 2. Dangerous high voltage appears on secondary if common tap opens when $K \ll 1$. |
+| 3. Higher kVA throughput capacity for the same physical size. | 3. Lower internal impedance leads to larger short-circuit fault currents. |
+| 4. Superior voltage regulation due to smaller impedance drop. | |
+
+---
+
+#### **4. Practical Applications:**
+1. **Variable A.C. Supplies (Variacs):** For laboratory testing and smooth voltage control ($0\text{ to }270\text{ V}$).
+2. **Induction Motor Starters:** Providing $50\%, 65\%, \text{or } 80\%$ voltage taps for smooth reduced-voltage starting.
+3. **Transmission Interconnections:** Linking grid systems of similar voltage levels (e.g., $400\text{ kV} / 220\text{ kV}$ or $132\text{ kV} / 66\text{ kV}$).
+4. **Feeder Boosters:** Compensating for line voltage drops in long distribution lines.
+
+---
+
+#### **5. Conversion Technique (2-Winding to Auto-Transformer):**
+- **Additive Polarity:** Windings connected in series aiding ($V_{\text{out}} = V_H + V_L$).
+  $$S_{\text{auto(add)}} = S_{\text{2-wdg}} \left(1 + \frac{V_H}{V_L}\right)$$
+- **Subtractive Polarity:** Windings connected in series opposition ($V_{\text{out}} = V_H - V_L$).
+  $$S_{\text{auto(sub)}} = S_{\text{2-wdg}} \left(\frac{V_H}{V_L} - 1\right)$$
+
+---
+
+### 85. Page 28, Q.No.1: How efficiency and kVA capacity of two-winding transformer can be increased by an auto-transformer connection? Explain with suitable example.
+
+#### **1. Mechanism of Increase in kVA Capacity and Efficiency:**
+
+```
+                    TWO-WINDING TRANSFORMER ──► AUTO-TRANSFORMER
+ ┌────────────────────────────────────────────────────────────────────────────┐
+ │  Power Transfer: 100% INDUCTIVE  ──►  INDUCTIVE + CONDUCTIVE TRANSFER     │
+ │                                                                            │
+ │  Throughput kVA Capacity:         ──►  Multiplied by factor [1 / (1 - K)]  │
+ │  Winding Copper Loss:             ──►  Reduced (common part carries I₂-I₁) │
+ │  Operating Efficiency:            ──►  Significantly Higher (η_auto > η_2w)│
+ └────────────────────────────────────────────────────────────────────────────┘
+```
+
+1. **Dual Power Transfer:** In an auto-transformer, only a fraction $(1 - K)$ of the total power is transferred inductively through the magnetic field. The remaining fraction ($K$) is transferred **conductively through direct metallic connection**.
+2. **Capacity Multiplication:** The physical core and windings only need to handle the inductive power:
+   $$\text{kVA}_{\text{auto}} = \frac{\text{kVA}_{\text{2-wdg}}}{1 - K}$$
+3. **Higher Efficiency:** Because conductive power incurs no core loss and minimal winding losses, total losses relative to the transferred power are much smaller, raising the efficiency.
+
+---
+
+#### **2. Illustrative Numerical Example:**
+
+Consider a **$10\text{ kVA}, 2000/200\text{ V}, 50\text{ Hz}$** two-winding transformer:
+- Rated H.V. current, $I_1 = \frac{10,000}{2000} = 5\text{ A}$
+- Rated L.V. current, $I_2 = \frac{10,000}{200} = 50\text{ A}$
+- Operating losses at full load: Iron loss $W_i = 100\text{ W}$, Copper loss $W_{\text{Cu}} = 400\text{ W}$ (Total $= 500\text{ W}$)
+- Efficiency as 2-winding transformer at unity p.f.:
+  $$\eta_{\text{2-wdg}} = \frac{10,000}{10,000 + 500} \times 100 = \mathbf{95.24\%}$$
+
+---
+
+#### **Reconnected as a Step-Up Auto-Transformer ($2000\text{ V} \to 2200\text{ V}$):**
+- Input applied to $2000\text{ V}$ winding ($V_{\text{in}} = 2000\text{ V}$).
+- Output taken across both windings in additive series:
+  $$V_{\text{out}} = 2000 + 200 = 2200\text{ V}$$
+- Transformation ratio, $K = \frac{2000}{2200} = \frac{10}{11} \approx 0.909$.
+- Allowable output current $= I_{\text{LV}} = 50\text{ A}$.
+
+---
+
+#### **Performance Comparison:**
+
+1. **New kVA Throughput Capacity:**
+   $$\text{kVA}_{\text{auto}} = V_{\text{out}} \times I_{\text{out}} \times 10^{-3} = 2200\text{ V} \times 50\text{ A} \times 10^{-3} = \mathbf{110\text{ kVA}}$$
+   $$\text{Capacity Increase Factor} = \frac{110\text{ kVA}}{10\text{ kVA}} = \mathbf{11\text{ times (1100\%)}}$$
+
+2. **New Efficiency at Full Load (Unity p.f.):**
+   - Output Power $= 110\text{ kVA} \times 1.0 = 110\text{ kW} = 110,000\text{ W}$
+   - Total losses remain practically unchanged at $\approx 500\text{ W} = 0.5\text{ kW}$
+   $$\eta_{\text{auto}} = \frac{110,000}{110,000 + 500} \times 100 = \mathbf{99.55\%}$$
+
+**Conclusion:** By converting the two-winding transformer into an auto-transformer, the **kVA capacity increased from $10\text{ kVA}$ to $110\text{ kVA}$ (an 11-fold increase)** and the **efficiency rose from $95.24\%$ to $99.55\%$**.
+
+### 86. Page 44, Q.4(b): Define auto transformer? Why are single winding auto transformer not normally used in high voltage transformation with transformation ratio K<<1?
+
+#### **1. Definition of Auto-Transformer:**
+An **auto-transformer** is an electrical transformer that has only one continuous winding wound on a laminated magnetic core. Part of this single winding is common to both the primary and secondary circuits. It transfers electrical power between circuits through a combination of **electromagnetic induction** and **direct metallic conduction**.
+
+---
+
+#### **2. Why Single-Winding Auto-Transformers are Not Used for High-Voltage Transformation with $K \ll 1$:**
+
+When the voltage transformation ratio $K = \frac{V_2}{V_1}$ is very small (such as stepping down high transmission voltages of $11\text{ kV}, 33\text{ kV}, \text{or } 66\text{ kV}$ to consumer utilization voltages like $230\text{ V}$ or $110\text{ V}$), auto-transformers are strictly avoided due to the following critical reasons:
+
+```
+                  HIGH-VOLTAGE STEP-DOWN DANGER (K << 1)
+       11 kV Primary ──────┬────────────────────────────────
+                           │
+                           │  H.V. Series Section (Many Turns)
+                           │
+             ACCIDENTAL ──►├── x ─── OPEN-CIRCUIT AT COMMON NEUTRAL!
+             BREAK HERE    │
+                           │  L.V. Common Section (Few Turns)
+                           │        │
+                           │        ▼
+       Earth / Return ─────┴────────► FULL 11 kV APPEARS DIRECTLY
+                                      ON 230 V CONSUMER EQUIPMENT!
+                                      (Lethal Electrocution Hazard)
+```
+
+1. **Absence of Galvanic Electrical Isolation:**
+   - In a conventional two-winding transformer, primary and secondary circuits are electrically isolated by high-grade insulation. An auto-transformer has a direct metallic connection between the high-voltage and low-voltage systems.
+
+2. **Lethal High-Voltage Hazard on Common Winding Failure:**
+   - If an open-circuit, burn-out, or accidental disconnection occurs in the common neutral portion of the winding, the low-voltage ground reference is instantly lost.
+   - The **full primary transmission voltage (e.g., $11\text{ kV}$)** appears directly across the low-voltage output terminals and connected appliances.
+   - This creates an immediate, fatal electrocution risk for operating personnel and consumers, along with catastrophic explosive destruction and electrical fires.
+
+3. **Negligible Copper and Cost Savings:**
+   - The economic saving in copper is given by:
+     $$\text{Saving in Copper} = K \times (\text{Copper in Two-Winding Transformer})$$
+   - When $K \ll 1$ (e.g., $K = \frac{230}{11000} \approx 0.02$), the saving in copper is only **$2\%$**. 
+   - The negligible material saving does not justify the immense safety risks.
+
+4. **Excessive Short-Circuit Fault Current:**
+   - Because the common winding has very few turns compared to the series section, the internal leakage impedance is extremely low, resulting in destructively high short-circuit currents during downstream faults.
+
+---
+
+### 88. Page 7, Q.1(b): What are the conditions to be fulfilled to operate transformers successfully in parallel with proper division of load?
+
+To connect two or more single-phase transformers in parallel to share a common load safely and economically, certain conditions must be satisfied:
+
+```
+                     CONDITIONS FOR PARALLEL OPERATION
+          ┌──────────────────────────┴──────────────────────────┐
+          ▼                                                     ▼
+  ESSENTIAL CONDITIONS                                  DESIRABLE CONDITIONS
+  (Strictly Mandatory for Safety)                       (For Ideal Load Sharing)
+  1. Identical Polarity                                 1. % Impedance inversely
+  2. Equal Voltage Ratings / Turns Ratio                   proportional to kVA rating
+  3. Same Frequency & Waveform                          2. Equal X/R Ratios
+```
+
+---
+
+#### **I. Essential Conditions (Mandatory):**
+
+1. **Proper and Identical Polarity:**
+   - The secondary terminals of all transformers must be connected to the load busbars with identical polarities (positive to positive, negative to negative).
+   - **Consequence of Violation:** If connected with incorrect polarity, the secondary induced e.m.f.s add together ($2E$) across the local loop of negligible impedance, causing a **dead short-circuit** that will destroy the transformers.
+
+2. **Equal Voltage Ratings and Same Transformation (Turns) Ratio:**
+   - The primary and secondary voltage ratings of all transformers must be identical ($E_{2A} = E_{2B}$).
+   - **Consequence of Violation:** Any difference in secondary induced e.m.f.s produces a continuous circulating current ($\vec{I}_c = \frac{\vec{E}_A - \vec{E}_B}{\vec{Z}_A + \vec{Z}_B}$) even on no-load, causing unnecessary heating, higher copper losses, and premature overload.
+
+3. **Same Frequency and Waveform:**
+   - All transformers must operate from the same supply frequency and have identical sinusoidal voltage waveforms.
+
+---
+
+#### **II. Desirable Conditions (For Proportionate Load Division):**
+
+4. **Percentage (or Per-Unit) Impedances Inversely Proportional to kVA Ratings:**
+   $$\% Z_A \times S_A = \% Z_B \times S_B \quad (\text{or } \% Z_A = \% Z_B \text{ for equal ratings})$$
+   - This ensures that the load shared by each transformer is strictly proportional to its rated kVA capacity, preventing any transformer from being overloaded while others are underloaded.
+
+5. **Equal Ratio of Equivalent Leakage Reactance to Resistance ($X/R$ Ratio):**
+   $$\frac{X_{01A}}{R_{01A}} = \frac{X_{01B}}{R_{01B}} \implies \theta_A = \theta_B$$
+   - This ensures that the secondary currents of all transformers are in phase with each other and operate at the same power factor as the combined load, maximizing total active power delivery.
+
+---
+
+### 89. Page 7, Q.2(c): Two 1-φ transformers A and B are connected in parallel. They have same kVA rating but their resistances are respectively 0.005 and 0.01 p.u. and their leakage reactances are 0.05 and 0.04 p.u. If A is operated on full-load at a p.f of 0.75 lagging, what will be the load and p.f. of B?
+
+#### **Given Data:**
+- Both transformers have the same kVA rating: Let rated kVA $= S$
+- **Transformer A:**
+  $$r_A = 0.005\text{ p.u.}, \quad x_A = 0.05\text{ p.u.}$$
+  $$\vec{Z}_A = 0.005 + j 0.05\text{ p.u.}$$
+- **Transformer B:**
+  $$r_B = 0.01\text{ p.u.}, \quad x_B = 0.04\text{ p.u.}$$
+  $$\vec{Z}_B = 0.01 + j 0.04\text{ p.u.}$$
+- Transformer A operates at rated full-load at $\cos \phi_A = 0.75\text{ lagging}$:
+  $$\phi_A = \cos^{-1}(0.75) = 41.41^\circ\text{ lagging}$$
+  $$\vec{S}_A = S \angle -41.41^\circ$$
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **1. Impedances in Polar Form:**
+- Magnitude and angle of $\vec{Z}_A$:
+  $$|\vec{Z}_A| = \sqrt{(0.005)^2 + (0.05)^2} = \sqrt{0.000025 + 0.0025} = \sqrt{0.002525} = 0.05025\text{ p.u.}$$
+  $$\theta_A = \tan^{-1}\left(\frac{0.05}{0.005}\right) = \tan^{-1}(10) = 84.29^\circ$$
+  $$\vec{Z}_A = 0.05025 \angle 84.29^\circ\text{ p.u.}$$
+
+- Magnitude and angle of $\vec{Z}_B$:
+  $$|\vec{Z}_B| = \sqrt{(0.01)^2 + (0.04)^2} = \sqrt{0.0001 + 0.0016} = \sqrt{0.0017} = 0.04123\text{ p.u.}$$
+  $$\theta_B = \tan^{-1}\left(\frac{0.04}{0.01}\right) = \tan^{-1}(4) = 75.96^\circ$$
+  $$\vec{Z}_B = 0.04123 \angle 75.96^\circ\text{ p.u.}$$
+
+---
+
+#### **2. Load Sharing Formula for Equal Voltage Ratios:**
+$$\frac{\vec{S}_B}{\vec{S}_A} = \frac{\vec{Z}_A}{\vec{Z}_B}$$
+$$\vec{S}_B = \vec{S}_A \times \frac{\vec{Z}_A}{\vec{Z}_B}$$
+
+---
+
+#### **3. Calculating Load and Power Factor of Transformer B:**
+$$\frac{\vec{Z}_A}{\vec{Z}_B} = \frac{0.05025 \angle 84.29^\circ}{0.04123 \angle 75.96^\circ} = 1.2188 \angle (84.29^\circ - 75.96^\circ) = 1.2188 \angle 8.33^\circ$$
+
+$$\vec{S}_B = (S \angle -41.41^\circ) \times (1.2188 \angle 8.33^\circ)$$
+$$\vec{S}_B = 1.2188 \, S \angle (-41.41^\circ + 8.33^\circ) = \mathbf{1.219 \, S \angle -33.08^\circ}$$
+
+---
+
+#### **Results:**
+1. **Load on Transformer B:**
+   $$S_B = 1.219 \times (\text{Rated Full-Load kVA of A}) = \mathbf{121.9\% \text{ of full-load rating (21.9\% Overload)}}$$
+2. **Power Factor of Transformer B:**
+   $$\phi_B = 33.08^\circ \implies \text{p.f.}_B = \cos(33.08^\circ) = \mathbf{0.838\text{ lagging}}$$
+
+---
+
+### 90. Page 9, Q.4(a): Explain the condition of parallel operation of 3- transformers.
+
+When three-phase transformers or banks of three-phase transformers are operated in parallel, all the conditions required for single-phase transformers must be met, along with **three additional mandatory conditions specific to polyphase systems**:
+
+---
+
+#### **1. Same Line Voltage Ratio (Equal Voltage Ratings):**
+- The ratio of primary to secondary **terminal line-to-line voltages** must be identical for all transformers.
+- *(Note: The line voltage transformation ratio depends on the connection type, e.g., in $Y\text{-}\Delta$, line ratio is $\sqrt{3} \times \text{turn ratio}$).*
+
+---
+
+#### **2. Same Phase Sequence (Strictly Mandatory):**
+- The phase sequence of the secondary line voltages of all transformers must be identical ($R\text{-}Y\text{-}B$).
+- **Consequence of Violation:** If the phase sequence is reversed on one transformer (e.g., $R\text{-}B\text{-}Y$), connecting them in parallel creates a dead short-circuit across two phases, resulting in explosive failure.
+
+---
+
+#### **3. Identical Polarities and Zero Relative Phase Displacement (Same Vector Group):**
+- There must be **zero phase angle difference** between the secondary line terminal voltages of the transformers being paralleled.
+- Transformers are classified into compatible vector groups:
+  - **Group 1 ($0^\circ$ Phase Shift):** $Y\text{-}Y$, $\Delta\text{-}\Delta$, $V\text{-}V$.
+  - **Group 2 ($180^\circ$ Phase Shift):** $Y\text{-}Y$, $\Delta\text{-}\Delta$ with reversed connections.
+  - **Group 3 ($+30^\circ$ or $-30^\circ$ Phase Shift):** $Y\text{-}\Delta$, $\Delta\text{-}Y$.
+- **Rule:** A transformer belonging to Group 1 ($0^\circ$ shift) can **never** be operated in parallel with a transformer from Group 3 ($30^\circ$ shift), because a permanent voltage difference $\Delta V = 2V \sin(30^\circ/2) = 0.518 V$ will exist across terminals, driving massive circulating currents.
+
+---
+
+#### **4. Percentage Impedance Inversely Proportional to kVA Ratings:**
+- To ensure load is shared strictly in proportion to their respective kVA ratings:
+  $$\% Z_A \times S_A = \% Z_B \times S_B$$
+
+---
+
+#### **5. Equal $X/R$ Ratios:**
+- Ensures the power factors of both transformers are identical to the load power factor, preventing circulating reactive currents between the parallel banks.
+
+---
+
+#### **6. Same Constructional Type (Core-type or Shell-type):**
+- Recommended so that magnetic saturation characteristics, third-harmonic waveforms, and transient behaviors match identically.
+
+### 91. Page 19, Q.2(a): Why is parallel operation required for transformers? Write down the conditions of connecting two transformers in parallel.
+
+#### **Part 1: Reasons for Connecting Transformers in Parallel**
+
+In modern power generation, transmission, and distribution systems, transformers are rarely operated as single isolated units. Paralleling two or more transformers offers several vital operational and economic benefits:
+
+---
+
+1. **Handling Increasing Load Demand (Load Growth):**
+   - When consumer load demands exceed the capacity of an existing transformer, an additional transformer can be connected in parallel with it. This avoids replacing the original transformer with an expensive, larger-capacity unit.
+
+2. **Maximizing Operating Efficiency:**
+   - Transformers achieve their highest efficiency when loaded near $70\%\text{ to }100\%$ of their rated capacity. 
+   - During light-load periods (such as late at night), one or more transformers can be switched off. The remaining units operate near full-load, minimizing continuous core losses and optimizing overall energy efficiency.
+
+3. **High Reliability and Continuity of Power Supply:**
+   - If one transformer fails or undergoes routine maintenance, repair, or testing, it can be disconnected from the busbars while the remaining parallel transformers maintain an uninterrupted supply to essential loads.
+
+4. **Economy in Spare / Standby Capacity:**
+   - Maintaining a spare unit of smaller standard rating (e.g., $500\text{ kVA}$) to back up several parallel $500\text{ kVA}$ transformers is much more economical than keeping a huge single spare unit (e.g., $2000\text{ kVA}$).
+
+5. **Overcoming Transportation and Installation Limits:**
+   - Single giant transformers (e.g., $500\text{ MVA}$) are extremely heavy, bulky, and difficult to transport and install. Paralleling two or more smaller units resolves site and transport constraints.
+
+---
+
+#### **Part 2: Conditions for Connecting Two Transformers in Parallel**
+
+```
+                     CONDITIONS FOR PARALLEL OPERATION
+          ┌──────────────────────────┴──────────────────────────┐
+          ▼                                                     ▼
+  ESSENTIAL CONDITIONS                                  DESIRABLE CONDITIONS
+  (Strictly Mandatory for Safety)                       (For Ideal Load Sharing)
+  1. Identical Polarity                                 1. % Impedances inversely
+  2. Same Voltage Ratio / Turns Ratio                      proportional to kVA rating
+  3. Same Frequency & Waveform                          2. Equal X/R Ratios
+```
+
+#### **I. Essential Conditions (Mandatory):**
+1. **Identical Polarity:** Secondary terminal polarities must be identical to avoid a dead short-circuit across the busbars.
+2. **Equal Voltage Ratings / Same Turns Ratio:** Voltage ratios of both primary and secondary must be identical ($E_{2A} = E_{2B}$) to prevent no-load circulating currents.
+3. **Same Frequency and Waveform:** Both units must operate on the same supply frequency.
+
+#### **II. Desirable Conditions (For Proper Load Division):**
+4. **Percentage Impedances Inversely Proportional to Ratings:**
+   $$\% Z_A \times S_A = \% Z_B \times S_B$$
+   Ensures that transformers share the total load strictly in proportion to their kVA ratings without either unit becoming overloaded.
+5. **Equal $X/R$ Ratios:**
+   $$\frac{X_{01A}}{R_{01A}} = \frac{X_{01B}}{R_{01B}}$$
+   Ensures that secondary load currents are in phase with each other and operate at the same power factor as the common load.
+
+---
+
+### 92. Page 19, Q.2(b): Two single-phase transformer A and B of equal voltage ratio are running in parallel and supply a load of 1000 A at 0.8 p.f. lagging. The equivalent impedance of the two transformers are (2 + j3) and (2.5 + j5) ohms, respectively. Calculate the current supplied by each transformer and the ratio of the kW output of the two transformers.
+
+#### **Given Data:**
+- Equal voltage ratios: $E_A = E_B = E$
+- Total Load Current, $I = 1000\text{ A}$ at $\cos \phi = 0.8\text{ lagging}$ ($\sin \phi = 0.6$)
+- **Equivalent Impedance of Transformer A:**
+  $$\vec{Z}_A = (2 + j3)\,\Omega$$
+- **Equivalent Impedance of Transformer B:**
+  $$\vec{Z}_B = (2.5 + j5)\,\Omega$$
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **1. Total Load Current in Phasor Form (Using Terminal Voltage as Reference):**
+$$\vec{I} = 1000 (\cos \phi - j \sin \phi) = 1000 (0.8 - j 0.6) = \mathbf{800 - j 600\text{ A}} = 200(4 - j 3)\text{ A}$$
+
+---
+
+#### **2. Ratio of Currents ($\vec{I}_A / \vec{I}_B$):**
+Since voltage ratios are equal, terminal voltage drops are identical:
+$$\vec{I}_A \vec{Z}_A = \vec{I}_B \vec{Z}_B \implies \frac{\vec{I}_A}{\vec{I}_B} = \frac{\vec{Z}_B}{\vec{Z}_A}$$
+
+$$\frac{\vec{Z}_B}{\vec{Z}_A} = \frac{2.5 + j5}{2 + j3} = \frac{(2.5 + j5)(2 - j3)}{(2)^2 + (3)^2} = \frac{5 - j7.5 + j10 + 15}{4 + 9} = \frac{20 + j2.5}{13} = \mathbf{1.54 + j0.20}$$
+
+$$\vec{I}_A = \vec{I}_B (1.54 + j0.20)$$
+
+---
+
+#### **3. Calculating Current Supplied by Transformer B ($\vec{I}_B$):**
+$$\vec{I} = \vec{I}_A + \vec{I}_B = \vec{I}_B (1.54 + j0.20) + \vec{I}_B = \vec{I}_B (2.54 + j0.20)$$
+
+$$\vec{I}_B = \frac{\vec{I}}{2.54 + j0.20} = \frac{800 - j600}{2.54 + j0.20}$$
+
+Rationalizing the denominator:
+$$\vec{I}_B = \frac{(800 - j600)(2.54 - j0.20)}{(2.54)^2 + (0.20)^2} = \frac{2032 - j160 - j1524 - 120}{6.4516 + 0.04} = \frac{1912 - j1684}{6.4916}$$
+$$\vec{I}_B = \mathbf{294.6 - j 259.5\text{ A}}$$
+
+- **Magnitude of $I_B$:**
+  $$I_B = \sqrt{(294.6)^2 + (-259.5)^2} = \sqrt{86789.16 + 67340.25} = \sqrt{154129.41} = \mathbf{392.6\text{ A}}$$
+  $$\text{Phase angle } \phi_B = \tan^{-1}\left(\frac{-259.5}{294.6}\right) = -41.37^\circ \quad (\cos \phi_B = 0.75\text{ lag})$$
+
+---
+
+#### **4. Calculating Current Supplied by Transformer A ($\vec{I}_A$):**
+$$\vec{I}_A = \vec{I} - \vec{I}_B = (800 - j 600) - (294.6 - j 259.5)$$
+$$\vec{I}_A = (800 - 294.6) - j (600 - 259.5) = \mathbf{505.6 - j 340.7\text{ A}}$$
+
+- **Magnitude of $I_A$:**
+  $$I_A = \sqrt{(505.6)^2 + (-340.7)^2} = \sqrt{255631.36 + 116076.49} = \sqrt{371707.85} = \mathbf{609.7\text{ A}}$$
+  $$\text{Phase angle } \phi_A = \tan^{-1}\left(\frac{-340.7}{505.6}\right) = -33.95^\circ \quad (\cos \phi_A = 0.83\text{ lag})$$
+
+---
+
+#### **5. Ratio of kW Outputs:**
+Since both transformers are connected in parallel across the same terminal voltage $V$, the active real power output (in kW) is directly proportional to the in-phase (real) components of their currents:
+
+$$\frac{\text{kW Output of Transformer A}}{\text{kW Output of Transformer B}} = \frac{V \cdot I_{Ax}}{V \cdot I_{Bx}} = \frac{I_{Ax}}{I_{Bx}}$$
+$$\frac{\text{kW Output of Transformer A}}{\text{kW Output of Transformer B}} = \frac{505.6}{294.6} = \mathbf{\frac{1.71}{1} \approx 1.71}$$
+
+---
+
+### 93. Page 19, Q.3(b): If two transformers are connected in parallel, show that the loads are divided between them in inverse proportion to their equivalent impedances when their turn’s ratios are equal.
+
+#### **Mathematical Derivation:**
+
+```
+                  PARALLEL OPERATION (EQUAL VOLTAGE RATIO)
+            ┌──────────────┬──████████──┬──────────────┐
+            │              │     ZA     │              │
+            │              │    IA ──►  │              │
+            │             ┌┴┐          ┌┴┐             │
+            │          EA │ │       EB │ │             │
+     V₁ ~   │             └┬┘          └┬┘             │
+            │              │     ZB     │              │
+            │              │    IB ──►  │              │
+            │              └──████████──┘              │
+            │                                        ┌─┴─┐
+            │                                        │ZL │ V₂ (Load)
+            │                                        │   │
+            │                                        └─┬─┘
+            └──────────────────────────────────────────┴────────────────►
+```
+
+Let:
+- $E_A = E_B = E =$ No-load secondary induced e.m.f.s (since turns ratios are equal)
+- $V_2 =$ Common secondary terminal voltage across load
+- $\vec{Z}_A, \vec{Z}_B =$ Equivalent internal impedances of transformers A and B referred to secondary
+- $\vec{I}_A, \vec{I}_B =$ Load currents delivered by transformers A and B
+- $\vec{I} = \vec{I}_A + \vec{I}_B =$ Total load current
+
+---
+
+#### **Step 1: Equal Internal Impedance Voltage Drops**
+From the equivalent circuit, the secondary terminal voltage for each transformer is:
+$$V_2 = E - \vec{I}_A \vec{Z}_A$$
+$$V_2 = E - \vec{I}_B \vec{Z}_B$$
+
+Since $E$ and $V_2$ are identical for both transformers:
+$$E - V_2 = \vec{I}_A \vec{Z}_A = \vec{I}_B \vec{Z}_B$$
+
+$$\vec{I}_A \vec{Z}_A = \vec{I}_B \vec{Z}_B \implies \frac{\vec{I}_A}{\vec{I}_B} = \frac{\vec{Z}_B}{\vec{Z}_A} = \frac{1/\vec{Z}_A}{1/\vec{Z}_B} \tag{1}$$
+
+---
+
+#### **Step 2: Relation with Total Load Current**
+From parallel current divider:
+$$\vec{I}_A = \vec{I} \frac{\vec{Z}_B}{\vec{Z}_A + \vec{Z}_B}$$
+$$\vec{I}_B = \vec{I} \frac{\vec{Z}_A}{\vec{Z}_A + \vec{Z}_B}$$
+
+---
+
+#### **Step 3: Conversion to Apparent Power (kVA Loads)**
+Multiplying both sides of Equation (1) by the common terminal voltage $V_2 \times 10^{-3}$:
+
+$$\frac{V_2 \vec{I}_A \times 10^{-3}}{V_2 \vec{I}_B \times 10^{-3}} = \frac{\vec{S}_A}{\vec{S}_B} = \frac{\vec{Z}_B}{\vec{Z}_A}$$
+
+$$\frac{\vec{S}_A}{\vec{S}_B} = \frac{1/\vec{Z}_A}{1/\vec{Z}_B}$$
+
+In terms of the combined load $\vec{S}$:
+$$\vec{S}_A = \vec{S} \left( \frac{\vec{Z}_B}{\vec{Z}_A + \vec{Z}_B} \right) = \vec{S} \left( \frac{1/\vec{Z}_A}{1/\vec{Z}_A + 1/\vec{Z}_B} \right)$$
+$$\vec{S}_B = \vec{S} \left( \frac{\vec{Z}_A}{\vec{Z}_A + \vec{Z}_B} \right) = \vec{S} \left( \frac{1/\vec{Z}_B}{1/\vec{Z}_A + 1/\vec{Z}_B} \right)$$
+
+#### **Conclusion:**
+The load shared by each parallel transformer ($\vec{S}_A, \vec{S}_B$) is **inversely proportional to its internal equivalent impedance** ($\vec{S} \propto \frac{1}{\vec{Z}}$).
+
+*(Hence proved.)*
+
+---
+
+### 94. Page 24, Q.41: What are the reasons for connecting transformers in parallel? Mention the conditions for satisfactory parallel operation.
+
+#### **1. Reasons for Connecting Transformers in Parallel:**
+1. **Expansion of System Capacity:** Accommodates growing system demand by adding standard units incrementally without replacing existing infrastructure.
+2. **Maximum Operational Efficiency:** Allows switching off surplus transformers during low-load periods, keeping operating units near their peak efficiency.
+3. **Continuity of Service and Reliability:** Guarantees uninterrupted power supply to critical consumers during routine servicing, repair, or accidental breakdown of any one unit.
+4. **Reduction in Spare Investment:** Standardized lower-kVA spare units can serve as backup for multiple transformer banks, reducing capital lockup.
+5. **Overcoming Transportation Constraints:** Enables large substation capacities to be met using manageable, easily transportable physical units.
+
+---
+
+#### **2. Conditions for Satisfactory Parallel Operation:**
+
+#### **(A) Strictly Essential Conditions (Safety & Integrity):**
+1. **Identical Terminal Polarity:** Terminals of identical polarity must be connected together to prevent catastrophic dead short-circuits.
+2. **Equal Transformation Ratios (Turns Ratios):** Voltage ratings on both primary and secondary sides must match identically to prevent continuous no-load circulating currents.
+3. **Same Operating Frequency:** All parallel units must be rated for the same grid frequency.
+
+#### **(B) Desirable Conditions (Optimal Load Sharing):**
+4. **Percentage Impedances Inversely Proportional to kVA Ratings:**
+   $$\% Z_A \times S_A = \% Z_B \times S_B$$
+   Ensures that every transformer shares load strictly according to its rated power capacity without any unit getting overloaded.
+5. **Identical $X/R$ Ratios:**
+   $$\left(\frac{X}{R}\right)_A = \left(\frac{X}{R}\right)_B$$
+   Ensures that individual transformer current phasors are in phase with each other and operate at the same power factor as the combined load.
+
+#### **(C) Additional Conditions for Three-Phase Systems:**
+6. **Same Phase Sequence ($R\text{-}Y\text{-}B$).**
+7. **Zero Relative Phase Displacement (Same Vector Group / Grouping Angle).**
+### 96. Page 7, Q.2(b): What will happen if one winding of a 3-φ transformer is not connected properly in regard to polarity? Show with corresponding vector diagram. [Figure Involved]
+
+Connecting one winding of a three-phase transformer with reversed polarity produces severe voltage imbalance or destructive short-circuit currents depending on whether the connection is **Star ($Y$)** or **Delta ($\Delta$)**:
+
+---
+
+#### **1. Case 1: Polarity Reversal in Star ($Y$) Connection**
+In a star connection, if the secondary winding of phase $C$ has its polarity reversed (connected as $-E_C$ instead of $+E_C$):
+
+```
+     NORMAL STAR CONNECTION                  REVERSED PHASE-C POLARITY
+             EA                                      EA
+             ▲                                       ▲
+             │                                       │
+             │                                       │
+     ────────┼────────                               ────────┼────────
+            / \                                     /│\
+           /   \                                   / │ \
+          /     \                                 /  │  \
+         ▼       ▼                               ▼   ▼   ▼
+        EB       EC                             EB  -EC   (EC reversed 180°)
+```
+
+- **Phase Voltages:** $\vec{E}_A = E_{\text{ph}} \angle 0^\circ, \quad \vec{E}_B = E_{\text{ph}} \angle -120^\circ, \quad \vec{E}_C' = -\vec{E}_C = E_{\text{ph}} \angle 60^\circ$.
+- **Line Voltages:**
+  - $V_{AB} = |\vec{E}_A - \vec{E}_B| = \sqrt{3} E_{\text{ph}} = \mathbf{1.732 \, E_{\text{ph}}}$
+  - $V_{BC} = |\vec{E}_B - (-\vec{E}_C)| = |\vec{E}_B + \vec{E}_C| = \mathbf{1.0 \, E_{\text{ph}}}$
+  - $V_{CA} = |(-\vec{E}_C) - \vec{E}_A| = |-(\vec{E}_C + \vec{E}_A)| = \mathbf{1.0 \, E_{\text{ph}}}$
+- **Consequence:** The three line voltages become severely unbalanced ($1.732 E_{\text{ph}}, 1.0 E_{\text{ph}}, 1.0 E_{\text{ph}}$), leading to high neutral shifts and failure to supply symmetrical 3-phase loads.
+
+---
+
+#### **2. Case 2: Polarity Reversal in Delta ($\Delta$) Connection**
+In a closed delta connection, the three windings form a closed series loop.
+
+```
+       NORMAL DELTA (CLOSED)                 ONE WINDING REVERSED (PHASE C)
+                 A                                         A
+                / \                                       / \
+            EA /   \ EC                               EA /   \ -EC (Opposing)
+              /     \                                   /     \
+             B───────C                                 B───────C
+                 EB                                        EB
+       Net EMF around loop = 0                  Net EMF around loop = 2·E_ph!
+```
+
+- **Under Correct Polarity:**
+  $$\vec{E}_{\text{loop}} = \vec{E}_A + \vec{E}_B + \vec{E}_C = 0\text{ V}$$
+  No circulating current flows in the closed delta.
+- **When Phase $C$ is Reversed:**
+  $$\vec{E}_{\text{loop}} = \vec{E}_A + \vec{E}_B - \vec{E}_C$$
+  Since for a balanced system $\vec{E}_A + \vec{E}_B = -\vec{E}_C$:
+  $$\vec{E}_{\text{loop}} = (-\vec{E}_C) - \vec{E}_C = \mathbf{-2\vec{E}_C} \implies |\vec{E}_{\text{loop}}| = \mathbf{2 E_{\text{ph}}}$$
+- **Consequence:** A massive resultant voltage equal to **twice the phase voltage ($2 E_{\text{ph}}$)** acts around the closed delta loop of negligible internal winding impedance ($3 Z_{\text{ph}}$). This causes a **catastrophic dead short-circuit circulating current**:
+  $$I_{\text{circulating}} = \frac{2 E_{\text{ph}}}{3 Z_{\text{ph}}}$$
+  This current is $20\text{ to }40\text{ times}$ the rated full-load current and will **instantly burn out the transformer windings**.
+
+---
+
+### 97. Page 9, Q.1(b): Explain with the help of vector diagram how three 1-φ transformers can be used to design a 3-φ transformer. [Figure Involved]
+
+#### **1. Operating Principle and Flux Relations:**
+When three identical single-phase transformers have their primaries connected to a balanced 3-phase supply, the exciting currents produce three alternating magnetic fluxes displaced in time phase by $120^\circ$:
+
+$$\Phi_A = \Phi_m \sin(\omega t)$$
+$$\Phi_B = \Phi_m \sin(\omega t - 120^\circ)$$
+$$\Phi_C = \Phi_m \sin(\omega t - 240^\circ)$$
+
+---
+
+#### **Vector Diagram of 3-Phase Core Fluxes:**
+
+```
+                            ΦA
+                             ▲
+                             │
+                             │
+                  120°       │       120°
+                             │
+            ΦC ◄─────────────┼─────────────► ΦB
+                      \      │      /
+                       \     │     /
+                        \   120°  /
+                         ▼       ▼
+```
+
+At any instant, the algebraic/vector sum of the three fluxes is zero:
+$$\Phi_A + \Phi_B + \Phi_C = 0$$
+
+---
+
+#### **2. Elimination of the Central Core Leg:**
+
+```
+    THREE 1-PHASE CORES MERGED                 CENTRAL LEG REMOVED (3-LIMB CORE)
+     ┌─────┐   ┌─────┐   ┌─────┐                    ┌─────────────────────────┐
+     │  A  │   │  B  │   │  C  │                    │   Top Core Yoke         │
+     │     │   │     │   │     │                    ├────────┬────────┬───────┤
+     │  ΦA │   │  ΦB │   │  ΦC │                    │        │        │       │
+     └──┬──┘   └──┬──┘   └──┬──┘                    │ Phase A│ Phase B│Phase C│
+        │         │         │                       │ Winding│ Winding│Winding│
+        └────┬────┴────┬────┘                       │        │        │       │
+             ▼         ▼                            ├────────┼────────┼───────┤
+      Common Central Return Leg                     │   Bottom Core Yoke      │
+      Φ_net = ΦA + ΦB + ΦC = 0                      └─────────────────────────┘
+      (Can be safely eliminated!)
+```
+
+1. **Common Return Leg:** If the three separate single-phase magnetic cores are placed $120^\circ$ apart with their return legs joined together in the center, the central common leg carries the sum $(\Phi_A + \Phi_B + \Phi_C) = 0$.
+2. **Core Simplification:** Because the net flux in the central leg is always zero, this leg is completely redundant and can be removed without disturbing the magnetic circuit. Any two outer limbs serve as the return path for the flux of the third limb.
+3. **Planar 3-Limb Construction:** For ease of manufacturing and transport, the three vertical core limbs are placed in a single plane connected by top and bottom horizontal yokes, creating the standard **3-phase 3-limb core-type transformer**.
+
+---
+
+### 98. Page 9, Q.1(c): What will happen if one winding of a 3-φ, Δ-connected transformer is not connected properly in regard to polarity?
+
+#### **Mathematical Analysis of Incorrect Delta Polarity:**
+
+In a correctly connected closed delta ($\Delta$) secondary winding, the three phase windings are connected in series aiding ($a_1\text{-}a_2$ to $b_1\text{-}b_2$ to $c_1\text{-}c_2$):
+
+$$\vec{E}_A = E_{\text{ph}} \angle 0^\circ$$
+$$\vec{E}_B = E_{\text{ph}} \angle -120^\circ$$
+$$\vec{E}_C = E_{\text{ph}} \angle +120^\circ$$
+
+```
+   CORRECT CLOSED DELTA:                INCORRECT DELTA (PHASE C REVERSED):
+           a                                     a
+          / \                                   / \
+      EA /   \ EC                           EA /   \ -EC
+        /     \                               /     \
+       b───────c                             b───────c
+           EB                                    EB
+     E_loop = EA + EB + EC = 0             E_loop = EA + EB - EC = -2·EC ≠ 0
+```
+
+---
+
+#### **1. Resultant Voltage Around the Closed Mesh:**
+- **Under Normal Polarity:**
+  $$\sum \vec{E} = \vec{E}_A + \vec{E}_B + \vec{E}_C = 0\text{ V}$$
+  No circulating current flows in the closed delta loop.
+
+- **When One Phase (e.g., Phase $C$) is Reversed:**
+  The e.m.f. of phase $C$ is reversed by $180^\circ$ ($-\vec{E}_C$). The net resultant e.m.f. driving current around the closed loop is:
+  $$\vec{E}_{\text{resultant}} = \vec{E}_A + \vec{E}_B - (-\vec{E}_C) = \vec{E}_A + \vec{E}_B - \vec{E}_C$$
+
+  Since for balanced three-phase phasors, $\vec{E}_A + \vec{E}_B = -\vec{E}_C$:
+  $$\vec{E}_{\text{resultant}} = (-\vec{E}_C) - \vec{E}_C = \mathbf{-2\vec{E}_C}$$
+  $$|\vec{E}_{\text{resultant}}| = \mathbf{2 E_{\text{ph}}}$$
+
+---
+
+#### **2. Consequence on the Transformer:**
+1. **Dead Short-Circuit:** The resultant voltage of $2 E_{\text{ph}}$ (twice the rated phase voltage) acts directly around the closed loop whose impedance consists only of the internal winding impedances ($Z_{\text{loop}} = 3 Z_{\text{ph}}$).
+2. **Destructive Circulating Current:**
+   $$I_{\text{circulating}} = \frac{2 E_{\text{ph}}}{3 Z_{\text{ph}}}$$
+   Since internal impedance $Z_{\text{ph}}$ is only $3\%\text{ to }5\%$ ($0.03\text{ to }0.05\text{ p.u.}$), this circulating current will be **$20\text{ to }35\text{ times}$ the rated full-load current**.
+3. **Catastrophic Failure:** The transformer will experience extreme mechanical forces, massive thermal overheating, and insulation burnout within a fraction of a second unless disconnected by high-speed protective breakers.
+
+---
+
+### 99. Page 9, Q.4(b): Suppose one winding of Δ-connected transformer is suddenly burnout during operation (i) Does it possible to operate using remaining two windings. (ii) Is it possible to supply balanced load, if yes show with corresponding vector diagram. [Figure Involved]
+
+#### **(i) Possibility of Operation with Two Windings:**
+**YES.** If one transformer/phase of a delta-delta ($\Delta\text{-}\Delta$) bank burns out or is removed for repairs, the remaining two transformers can continue to operate in **Open-Delta or V-V Connection**.
+- The bank continues to supply three-phase power without interruption, but its total power delivering capacity is reduced to **$57.7\%$ of the original closed-delta bank capacity** ($86.6\%$ of the combined rating of the two remaining transformers).
+
+---
+
+#### **(ii) Ability to Supply a Balanced 3-Phase Load and Vector Proof:**
+**YES, it supplies a perfectly balanced three-phase symmetrical voltage to the load.**
+
+#### **Proof using Kirchhoff's Voltage Law:**
+Let the two healthy secondary windings be connected between lines $a\text{-}b$ and $b\text{-}c$. The induced phase voltages across them are:
+$$\vec{V}_{ab} = V \angle 0^\circ$$
+$$\vec{V}_{bc} = V \angle -120^\circ$$
+
+```
+        OPEN-DELTA (V-V) CONNECTION             BALANCED VOLTAGE PHASOR
+               A ──► a                                    Vab
+              ┌┴┐   ┌┴┐                                    ▲
+              │ │   │ │ Vab                                │
+              └┬┘   └┬┘                                    │
+               B ──► b                              ───────┼───────►
+              ┌┴┐   ┌┴┐                                   / \
+              │ │   │ │ Vbc                              /   \
+              └┬┘   └┬┘                                 /     \
+               C ──► c                                 ▼       ▼
+              (Open Terminal)                         Vca     Vbc
+```
+
+The terminal voltage across the open terminals $c\text{-}a$ ($\vec{V}_{ca}$) is obtained by summing voltages around the delta loop:
+$$\vec{V}_{ab} + \vec{V}_{bc} + \vec{V}_{ca} = 0$$
+$$\vec{V}_{ca} = -(\vec{V}_{ab} + \vec{V}_{bc})$$
+
+Substituting the phasor values:
+$$\vec{V}_{ab} + \vec{V}_{bc} = V \angle 0^\circ + V \angle -120^\circ = V (1 + \cos(-120^\circ) + j\sin(-120^\circ))$$
+$$\vec{V}_{ab} + \vec{V}_{bc} = V \left(1 - 0.5 - j\frac{\sqrt{3}}{2}\right) = V \left(0.5 - j\frac{\sqrt{3}}{2}\right) = V \angle -60^\circ$$
+
+Therefore:
+$$\vec{V}_{ca} = -V \angle -60^\circ = V \angle (-60^\circ + 180^\circ) = \mathbf{V \angle +120^\circ}$$
+
+#### **Conclusion:**
+The three secondary terminal line voltages are:
+$$\vec{V}_{ab} = V \angle 0^\circ, \quad \vec{V}_{bc} = V \angle -120^\circ, \quad \vec{V}_{ca} = V \angle 120^\circ$$
+
+All three voltages have **equal magnitude ($V$) and are displaced from each other by $120^\circ$**, forming a fully symmetrical, balanced three-phase system.
+
+### 100. Page 9, Q.4(c): Two T-connected transformer are used to supply a 440 V, 33 kVA balanced load from a balanced 3- supply of 3300 V. Calculate (i) Voltage and current rating of each coil (ii) kVA ratting of the main and teaser transformer (iii) Find the position of neutral point in teaser winding.
+
+#### **Given Data:**
+- 3-Phase Supply Line Voltage, $V_{L1} = 3300\text{ V}$
+- Secondary Load Line Voltage, $V_{L2} = 440\text{ V}$
+- Balanced Load Power $= 33\text{ kVA} = 33,000\text{ VA}$
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **1. Full-Load Line Currents:**
+- **Primary Line Current ($I_{L1}$):**
+  $$I_{L1} = \frac{\text{Load VA}}{\sqrt{3} \times V_{L1}} = \frac{33,000}{\sqrt{3} \times 3300} = \frac{10}{\sqrt{3}} = \mathbf{5.77\text{ A}}$$
+- **Secondary Line Current ($I_{L2}$):**
+  $$I_{L2} = \frac{\text{Load VA}}{\sqrt{3} \times V_{L2}} = \frac{33,000}{\sqrt{3} \times 440} = \frac{75}{\sqrt{3}} = \mathbf{43.3\text{ A}}$$
+
+---
+
+#### **(i) Voltage and Current Rating of Each Coil:**
+
+1. **Main Transformer:**
+   - Primary Voltage Rating $= V_{L1} = \mathbf{3300\text{ V}}$
+   - Primary Current Rating $= I_{L1} = \mathbf{5.77\text{ A}}$
+   - Secondary Voltage Rating $= V_{L2} = \mathbf{440\text{ V}}$
+   - Secondary Current Rating $= I_{L2} = \mathbf{43.3\text{ A}}$
+
+2. **Teaser Transformer:**
+   - Primary Voltage Rating $= \frac{\sqrt{3}}{2} \times V_{L1} = 0.866 \times 3300\text{ V} = \mathbf{2858\text{ V}}$
+   - Primary Current Rating $= I_{L1} = \mathbf{5.77\text{ A}}$
+   - Secondary Voltage Rating $= \frac{\sqrt{3}}{2} \times V_{L2} = 0.866 \times 440\text{ V} = \mathbf{381\text{ V}}$
+   - Secondary Current Rating $= I_{L2} = \mathbf{43.3\text{ A}}$
+
+---
+
+#### **(ii) kVA Rating of Main and Teaser Transformers:**
+
+- **Rating of Main Transformer:**
+  $$\text{Rating}_{\text{Main}} = V_{\text{main(pri)}} \times I_{\text{main(pri)}} \times 10^{-3} = 3300\text{ V} \times 5.77\text{ A} \times 10^{-3} = \mathbf{19.05\text{ kVA} \approx 19.0\text{ kVA}}$$
+
+- **Rating of Teaser Transformer:**
+  $$\text{Rating}_{\text{Teaser}} = V_{\text{teaser(pri)}} \times I_{\text{teaser(pri)}} \times 10^{-3} = 2858\text{ V} \times 5.77\text{ A} \times 10^{-3} = \mathbf{16.5\text{ kVA}}$$
+  *(Note: $\text{Rating}_{\text{Teaser}} = 0.866 \times \text{Rating}_{\text{Main}} = 0.866 \times 19.05 = 16.5\text{ kVA}$)*
+
+---
+
+#### **(iii) Position of the Neutral Point ($N$) in the Teaser Winding:**
+
+```
+                            Apex Terminal A
+                                  ▲
+                                  │
+                                  │  2/3 of Total Turns (1905 V)
+                                  │
+                     Neutral (N) ─┼─
+                                  │  1/3 of Total Turns (953 V)
+                                  ▼
+                         Tapping Point D (50% of Main)
+```
+
+- In a $T\text{-}T$ (Scott) connection, the neutral point $N$ divides the teaser primary winding in the ratio **$2 : 1$** from apex $A$ to base tapping $D$.
+- Voltage from Line Terminal $A$ to Neutral $N$:
+  $$V_{AN} = \frac{V_{L1}}{\sqrt{3}} = \frac{3300}{\sqrt{3}} = \mathbf{1905.3\text{ V}} \quad \left(\frac{2}{3} \text{ of total teaser voltage}\right)$$
+- Voltage from Tapping Point $D$ to Neutral $N$:
+  $$V_{ND} = V_{\text{Teaser}} - V_{AN} = 2858 - 1905.3 = \mathbf{952.7\text{ V}} \quad \left(\frac{1}{3} \text{ of total teaser voltage}\right)$$
+- **Conclusion:** The neutral point $N$ is located at **$\frac{1}{3}$ of the total turns up from the center tap $D$** (or $\frac{2}{3}$ of the turns down from line terminal $A$).
+
+---
+
+### 101. Page 11, Q.4(a) (lower): What are the disadvantages in a three phase Y-Y connected transformer without the neutral grounding?
+
+Operating a three-phase star-star ($Y\text{-}Y$) connected transformer bank without grounding the primary and secondary neutral points leads to two severe operational disadvantages:
+
+---
+
+#### **1. Floating Neutral (Neutral Inversion) under Unbalanced Loads:**
+- If an unbalanced load (or a single-phase load from line-to-neutral) is connected to the ungrounded secondary, the load current must be supplied by the corresponding primary phase winding.
+- On the primary side, this phase winding is in series with the other two primary phase windings whose secondaries are open-circuited or lightly loaded.
+- Because these two unloaded primary windings present very high magnetizing impedances, they restrict current flow to the loaded primary coil.
+- Consequently, the **neutral point shifts (floats)** drastically toward the loaded phase:
+  - The voltage of the **loaded phase collapses toward zero**.
+  - The phase voltages across the **unloaded phases rise up to $\sqrt{3}$ times their normal value (approaching line voltage)**, causing severe overvoltage and insulation breakdown.
+
+```
+       UNLOADED (BALANCED)                     UNBALANCED LOAD (NEUTRAL SHIFT)
+               A                                       A
+               ▲                                       ▲
+               │                                       │
+               │                                       │
+               ┼ N (Center)                            │
+              / \                                      │
+             /   \                                     │  Neutral Pulled Down!
+            /     \                                    ▼ N
+           ▼       ▼                                  / \
+          B         C                                ▼   ▼
+                                                    B     C
+```
+
+---
+
+#### **2. Third-Harmonic Voltage Distortion and Oscillating Neutral:**
+- Due to the non-linear $B\text{-}H$ magnetization characteristics of the core steel, producing a sinusoidal magnetic flux requires a **third-harmonic component** in the magnetizing current.
+- Third-harmonic currents in all three phases are identical in magnitude and in-phase with each other ($3 \times 120^\circ = 360^\circ \equiv 0^\circ$). They all flow simultaneously toward or away from the neutral point.
+- With an isolated (ungrounded) neutral, there is **no return path for third-harmonic currents**.
+- In the absence of third-harmonic exciting currents:
+  - The core flux becomes flat-topped (distorted).
+  - A large **third-harmonic e.m.f.** (up to $50\%\text{ to }60\%$ of fundamental) is induced in each phase.
+  - The ungrounded neutral point oscillates at triple frequency ($150\text{ Hz}$ on a $50\text{ Hz}$ system) relative to ground (**"Oscillating Neutral"**), creating dangerous dielectric overstresses on the winding insulation and generating electromagnetic interference in nearby telephone lines.
+
+---
+
+### 102. Page 11, Q.4(b) (bottom): Explain why Δ-Δ connected three-phase transformer is rerated to 57.7% of its power rating when one of the phases is damaged and removed.
+
+#### **Mathematical Proof:**
+
+Consider a bank of three single-phase transformers connected in closed delta ($\Delta\text{-}\Delta$):
+- Let rated secondary phase voltage $= V_{\text{ph}}$
+- Let rated secondary phase current $= I_{\text{ph}}$
+
+```
+     CLOSED DELTA-DELTA (3 TRANSFORMERS)       OPEN DELTA (V-V) (2 TRANSFORMERS)
+                  a                                         a
+                 / \                                       /
+             Vph/   \Vph                               Vph/
+               /     \                                   /
+              b───────c                                 b───────c
+                 Vph                                       Vph
+      Total Capacity = 3 · Vph · Iph            Total Capacity = √3 · Vph · Iph
+```
+
+---
+
+#### **1. Capacity of Closed Delta-Delta ($\Delta\text{-}\Delta$) Bank:**
+In a closed delta connection:
+- Line Voltage, $V_L = V_{\text{ph}}$
+- Line Current, $I_L = \sqrt{3} I_{\text{ph}}$
+
+$$\text{Total 3-Phase Capacity } (S_{\Delta\Delta}) = \sqrt{3} V_L I_L = \sqrt{3} \times V_{\text{ph}} \times (\sqrt{3} I_{\text{ph}}) = \mathbf{3 \, V_{\text{ph}} I_{\text{ph}}}$$
+
+---
+
+#### **2. Capacity of Open-Delta ($V\text{-}V$) Bank:**
+When one transformer is damaged and removed, the remaining two transformers operate in open-delta ($V\text{-}V$):
+- The secondary line current $I_L$ now flows directly through the remaining transformer phase windings.
+- Therefore, the secondary line current is strictly limited to the rated phase current of each transformer to avoid overheating:
+  $$I_{L\text{(max)}} = I_{\text{ph}}$$
+- The total 3-phase capacity delivered by the two open-delta transformers is:
+  $$\text{Total 3-Phase Capacity } (S_{VV}) = \sqrt{3} V_L I_{L\text{(max)}} = \mathbf{\sqrt{3} \, V_{\text{ph}} I_{\text{ph}}}$$
+
+---
+
+#### **3. Ratio of Open-Delta to Closed-Delta Capacity:**
+$$\frac{S_{VV}}{S_{\Delta\Delta}} = \frac{\sqrt{3} \, V_{\text{ph}} I_{\text{ph}}}{3 \, V_{\text{ph}} I_{\text{ph}}} = \frac{\sqrt{3}}{3} = \frac{1}{\sqrt{3}} \approx \mathbf{0.577 = 57.7\%}$$
+
+---
+
+#### **4. Utility Factor of the Remaining Two Units:**
+- Combined nameplate rating of the 2 remaining transformers $= 2 \, V_{\text{ph}} I_{\text{ph}}$.
+- Actual power delivered in $V\text{-}V$ bank $= \sqrt{3} \, V_{\text{ph}} I_{\text{ph}}$.
+$$\text{Utility Factor} = \frac{\sqrt{3} \, V_{\text{ph}} I_{\text{ph}}}{2 \, V_{\text{ph}} I_{\text{ph}}} = \frac{\sqrt{3}}{2} = \mathbf{0.866 \quad (86.6\%)}$$
+
+#### **Conclusion:**
+The capacity of the open-delta bank is not two-thirds ($66.7\%$) of the original capacity, but is reduced to **$57.7\%$** because the line currents and phase currents are equal in $V\text{-}V$, operating the transformers at an internal power factor of $\cos 30^\circ = 0.866$.
+
+---
+
+### 103. Page 11, Q.4(a) (bottom): What are problems in a three phase Y-Y connected transformer, without the neutral grounding? Draw the connection and wiring diagrams of Y-Δ three phase transformer. [Figure Involved]
+
+#### **Part 1: Problems in Ungrounded Y-Y Transformer (Summary)**
+1. **Neutral Point Instability (Floating Neutral):** Unbalanced loads between line and neutral cause the neutral point to drift, resulting in voltage collapse on the loaded phase and overvoltage on unloaded phases.
+2. **Third-Harmonic Voltage Distortion:** Lack of a closed path for in-phase third-harmonic magnetizing currents causes core flux distortion and induces large $150\text{ Hz}$ third-harmonic voltages, leading to **oscillating neutral** and electromagnetic interference.
+
+---
+
+#### **Part 2: Connection and Wiring Diagrams of Wye-Delta ($Y\text{-}\Delta$) Transformer**
+
+In a **$Y\text{-}\Delta$ (Wye-Delta)** connection:
+- The primary is connected in **Star ($Y$)** with a grounded neutral, making it suitable for high-voltage transmission substation step-down applications.
+- The secondary is connected in **Delta ($\Delta$)**, providing a natural closed path for third-harmonic circulating currents and ensuring a perfectly sinusoidal secondary output voltage without neutral shift.
+
+---
+
+#### **Wiring and Connection Diagram ($Y\text{-}\Delta$ Transformer):**
+
+```
+     PRIMARY WINDING (STAR / Y CONNECTED)        SECONDARY WINDING (DELTA / Δ CONNECTED)
+     
+        Phase A ────████████────┐                    Phase a ────┬────████████────┐
+                                │                                │     Coil a     │
+        Phase B ────████████────┼───► Neutral (N)    Phase b ────┼────████████────┼───► To 3-Phase
+                                │                    (Grounded)  │     Coil b     │    Load
+        Phase C ────████████────┘                    Phase c ────┴────████████────┘
+                                                                       Coil c
+```
+
+---
+
+#### **Phasor Diagram Showing $30^\circ$ Phase Displacement:**
+
+```
+         PRIMARY (STAR) PHASE VOLTAGES            SECONDARY (DELTA) LINE VOLTAGES
+                     VAN                                        Vab
+                      ▲                                          ▲
+                      │                                         / \
+                      │                                        /   \
+                      ┼                                       /  30°\
+                     / \                                     /       \
+                    /   \                                   /         \
+                   /     \                                 ▼           ▼
+                  ▼       ▼                               Vca         Vbc
+                 VBN      VCN
+```
+
+- **Voltage Transformation:**
+  $$\frac{V_{L2}}{V_{L1}} = \frac{V_{\text{ph2}}}{\sqrt{3} V_{\text{ph1}}} = \frac{1}{\sqrt{3}} K_{\text{ph}}$$
+- **Phase Shift:** The secondary line voltage lags (or leads) the primary line voltage by **$30^\circ$**.
+### 104. Page 12, Q.3(b): Explain how a third harmonic voltage affects a Y-Y transformer bank? Why is grounding the neutral of a Y-Y transformer bank desirable?
+
+#### **Part 1: Effect of Third Harmonic Voltage on a Y-Y Transformer Bank**
+
+Due to the non-linear magnetic saturation ($B\text{-}H$ characteristic) of the transformer core, establishing a sinusoidal core flux $\Phi$ requires an exciting current containing a strong **third-harmonic component** ($150\text{ Hz}$ on a $50\text{ Hz}$ fundamental).
+
+---
+
+```
+                       THIRD-HARMONIC CURRENT SUPPRESSION
+       Phase A (i₃) ──►───┐
+                          │
+       Phase B (i₃) ──►───┼───► IN AN UNGROUNDED STAR:
+                          │     i_3A + i_3B + i_3C = 3·i₃ ≠ 0
+       Phase C (i₃) ──►───┘     NO RETURN PATH EXISTS ──► i₃ CANNOT FLOW!
+                                              │
+                                              ▼
+                               Core Flux Becomes Flat-Topped
+                                              │
+                                              ▼
+                         Induces Large 3rd Harmonic Voltages (e₃)
+                                              │
+                                              ▼
+                         OSCILLATING NEUTRAL & DIELECTRIC STRESS
+```
+
+1. **In-Phase Third Harmonics:**
+   Third-harmonic currents in a balanced 3-phase system are shifted by $3 \times 120^\circ = 360^\circ \equiv 0^\circ$. They are **all in-phase with each other** and attempt to flow simultaneously toward or away from the neutral point.
+
+2. **Absence of Neutral Return Path:**
+   In an isolated (ungrounded) 3-wire $Y\text{-}Y$ connection, the sum of the line currents at the neutral point must be zero. Since third-harmonic currents cannot sum to zero, **they are completely suppressed from flowing**.
+
+3. **Core Flux and Voltage Distortion:**
+   Without the third-harmonic current, the core magnetic flux becomes **flat-topped** (non-sinusoidal). This flat-topped flux induces large **third-harmonic e.m.f.s** (up to $50\%\text{ to }60\%$ of fundamental) in each phase winding.
+
+4. **Oscillating Neutral and Dielectric Overstress:**
+   While third-harmonic voltages cancel between line terminals ($e_{3A} - e_{3B} = 0$), they appear directly between each line terminal and neutral:
+   - The ungrounded neutral point oscillates at triple frequency ($150\text{ Hz}$) relative to earth (**"Oscillating Neutral"**).
+   - This increases the peak voltage between winding insulation and ground to $\sqrt{3} \times$ normal, causing severe insulation breakdown and heavy telecommunication noise interference.
+
+---
+
+#### **Part 2: Why Grounding the Neutral of a Y-Y Transformer Bank is Desirable**
+
+Connecting the primary neutral solidly to the generator neutral (or to earth):
+1. **Provides a Closed Path for 3rd Harmonic Currents:** Allows the third-harmonic exciting currents to circulate back through the neutral, restoring a purely sinusoidal core flux $\Phi$.
+2. **Eliminates 3rd Harmonic Voltages & Oscillating Neutral:** Prevents third-harmonic voltage buildup, eliminating insulation overstress and telecommunication interference.
+3. **Prevents Neutral Shift:** Stabilizes the neutral potential so that single-phase line-to-neutral loads can be supplied without causing phase voltage collapse.
+
+---
+
+### 105. Page 24, Q.42-57: (Comprehensive list asking to describe construction, advantages of 3-phase over three 1-phase, various connections like Y-Y, Δ-Δ, Y-Δ, Δ-Y, V-V, T-T, their applications, and power handling capacity).
+
+#### **1. Construction of Three-Phase Transformers:**
+- **Core-Type:** Built with three vertical laminated silicon-steel limbs joined by top and bottom horizontal yokes in a single plane. Each limb carries the low-voltage and high-voltage concentric windings of one phase.
+- **Shell-Type:** The magnetic core surrounds the windings, providing independent magnetic circuits for each phase with lower leakage reactance.
+
+---
+
+#### **2. Advantages of a Single 3-Phase Transformer vs. Three 1-Phase Units:**
+1. **Floor Space:** Occupies about **$30\%$ less floor space**.
+2. **Weight:** Weighs approximately **$15\%$ less**.
+3. **Capital Cost:** Costs about **$15\%$ less** to manufacture and install.
+4. **Efficiency:** Offers higher operating efficiency due to reduced core iron material.
+5. **Simplicity:** Requires only one tank, one set of bushings, and simpler switchgear connections.
+
+---
+
+#### **3. Comparison of Standard Three-Phase Connections:**
+
+```
+                               3-PHASE TRANSFORMER CONNECTIONS
+ ┌───────────────┬─────────────────────────────┬────────────────────────────────────────────────────────┐
+ │ Connection    │ Voltage / Phase Shift       │ Primary Applications & Characteristics                 │
+ ├───────────────┼─────────────────────────────┼────────────────────────────────────────────────────────┤
+ │ Star-Star     │ V_L2 / V_L1 = K             │ High-voltage, low-current systems; requires grounded   │
+ │ (Y-Y)         │ Phase shift = 0°            │ neutral or tertiary Δ winding to avoid 3rd harmonics.  │
+ ├───────────────┼─────────────────────────────┼────────────────────────────────────────────────────────┤
+ │ Delta-Delta   │ V_L2 / V_L1 = K             │ Large low-voltage power systems; suppresses harmonics; │
+ │ (Δ-Δ)         │ Phase shift = 0°            │ operates in open-delta (V-V) if one phase fails.       │
+ ├───────────────┼─────────────────────────────┼────────────────────────────────────────────────────────┤
+ │ Star-Delta    │ V_L2 / V_L1 = K / √3        │ Substation step-down transformers; stable neutral;     │
+ │ (Y-Δ)         │ Phase shift = ±30°          │ eliminates 3rd harmonics on secondary.                 │
+ ├───────────────┼─────────────────────────────┼────────────────────────────────────────────────────────┤
+ │ Delta-Star    │ V_L2 / V_L1 = √3 · K        │ Generating station step-up and 3-phase 4-wire          │
+ │ (Δ-Y)         │ Phase shift = ±30°          │ distribution (supplies 400 V power & 230 V lighting).  │
+ ├───────────────┼─────────────────────────────┼────────────────────────────────────────────────────────┤
+ │ Open-Delta    │ V_L2 / V_L1 = K             │ Emergency 2-transformer operation; power handling      │
+ │ (V-V)         │ Capacity = 57.7% of Δ-Δ     │ capacity is 57.7% of closed delta bank.                │
+ ├───────────────┼─────────────────────────────┼────────────────────────────────────────────────────────┤
+ │ Scott (T-T)   │ Uses Main & Teaser          │ 3-phase to 2-phase conversion (furnaces) and 3-phase   │
+ │ Connection    │ Capacity = 92.8% of rating  │ transformations using only 2 transformers.             │
+ └───────────────┴─────────────────────────────┴────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 106. Page 41, Q.3(b): How can three phase power transform be accomplished using only two single phase transformers? What type of connections can be used?
+
+Three-phase electrical power can be transformed using only **two single-phase transformers** by employing either of the following two standard connection configurations:
+
+---
+
+#### **1. Open-Delta or V-V Connection:**
+- **Arrangement:** Formed by taking a standard $\Delta\text{-}\Delta$ bank and omitting one transformer. The primaries and secondaries of the two remaining transformers are connected across two phases of the 3-phase supply.
+
+```
+       3-Phase Supply ──► [Transformer 1] ──► a
+                      ──► [Transformer 2] ──► b ──► Balanced 3-Phase Load
+                      ──────────────────────► c
+```
+
+- **Output:** Delivers a symmetrical balanced 3-phase voltage ($\vec{V}_{ab}, \vec{V}_{bc}, \vec{V}_{ca}$) across its three output terminals.
+- **Power Handling Capacity:**
+  $$S_{VV} = \sqrt{3} V_{\text{ph}} I_{\text{ph}} = \mathbf{57.7\% \text{ of closed } \Delta\text{-}\Delta \text{ bank rating}}$$
+- **Utility Factor:** Each transformer operates at an internal power factor of $\cos(30^\circ \pm \phi)$, utilizing **$86.6\%$** of its combined nameplate kVA rating.
+
+---
+
+#### **2. Scott Connection or T-T Connection:**
+- **Arrangement:** Uses two single-phase transformers with special taps:
+  1. **Main Transformer:** Connected directly across two supply lines ($B\text{-}C$), center-tapped at $50\%$ on both primary and secondary.
+  2. **Teaser Transformer:** Tapped at $\frac{\sqrt{3}}{2} = 86.6\%$ turns. One end is joined to the $50\%$ center tap of the main transformer; the other end connects to supply line $A$.
+
+```
+                            Teaser (86.6% Tap)
+                                   ▲ Terminal A
+                                   │
+                                   │
+                    Terminal B ────┴──── Terminal C
+                         Main Transformer (50% Center Tap)
+```
+
+- **Output:** Produces balanced, symmetrical 3-phase output voltages with equal phase angles.
+- **Power Handling Capacity:** Achieves a utilization factor of **$92.8\%$** when windings are specifically designed for teaser voltages ($86.6\text{ V}$).
+
+---
+
+#### **Practical Use Cases:**
+- **Emergency Service:** Continued supply when one unit of a $\Delta\text{-}\Delta$ bank is damaged.
+- **Low Initial Load:** Rural distribution lines where initial load is small, with provision to convert to closed-delta in the future.
+- **Industrial Electric Furnaces:** Scott connection provides balanced 2-phase or 3-phase supplies to heavy industrial loads.
+
+---
+
+### 108. Page 7, Q.3(a): With neat diagram show that the power handing capacity of a V-V circuit is 57.7% of the capacity of a complete Δ-Δ circuit of the same transformer. [Figure Involved]
+
+#### **1. Circuit Diagrams:**
+
+```
+   (a) CLOSED DELTA-DELTA (Δ-Δ) BANK           (b) OPEN-DELTA (V-V) BANK
+                 IL                                          IL
+        A ───────┬────────────► a                   A ───────┬────────────► a
+                ┌┴┐                                         ┌┴┐
+            Iph │ │ Vph                                 Iph │ │ Vph
+                └┬┘                                         └┬┘
+        B ───────┼────────────► b                   B ───────┼────────────► b
+                ┌┴┐                                         ┌┴┐
+            Iph │ │ Vph                                 Iph │ │ Vph
+                └┬┘                                         └┬┘
+        C ───────┴────────────► c                   C ───────┴────────────► c
+                ┌┴┐                                        (No Transformer)
+            Iph │ │ Vph
+                └┬┘
+                 └────────────┘
+```
+
+---
+
+#### **2. Mathematical Derivation:**
+
+Let:
+- $V_{\text{ph}} =$ Rated secondary phase voltage of each transformer
+- $I_{\text{ph}} =$ Rated secondary phase current (maximum allowable continuous current) of each transformer
+
+---
+
+#### **(A) Capacity of Closed Delta-Delta ($\Delta\text{-}\Delta$) Bank (3 Transformers):**
+In a closed delta connection:
+- Secondary Line Voltage, $V_L = V_{\text{ph}}$
+- Secondary Line Current, $I_L = \sqrt{3} I_{\text{ph}}$
+
+The total three-phase power handling capacity of the complete $\Delta\text{-}\Delta$ bank is:
+$$S_{\Delta\Delta} = \sqrt{3} V_L I_L = \sqrt{3} \times V_{\text{ph}} \times (\sqrt{3} I_{\text{ph}})$$
+$$S_{\Delta\Delta} = \mathbf{3 \, V_{\text{ph}} I_{\text{ph}}} \tag{1}$$
+
+---
+
+#### **(B) Capacity of Open-Delta ($V\text{-}V$) Bank (2 Transformers):**
+When one transformer is removed:
+- Secondary Line Voltage, $V_L = V_{\text{ph}}$
+- Because the line conductor is now in direct series with each transformer phase winding, the line current equals the phase current:
+  $$I_L = I_{\text{ph}}$$
+- To ensure neither transformer is overloaded beyond its rated thermal limit, the maximum allowable line current is $I_L = I_{\text{ph}}$.
+
+The total three-phase power handling capacity of the $V\text{-}V$ bank is:
+$$S_{VV} = \sqrt{3} V_L I_L = \mathbf{\sqrt{3} \, V_{\text{ph}} I_{\text{ph}}} \tag{2}$$
+
+---
+
+#### **(C) Ratio of Capacities:**
+Dividing Equation (2) by Equation (1):
+
+$$\frac{S_{VV}}{S_{\Delta\Delta}} = \frac{\sqrt{3} \, V_{\text{ph}} I_{\text{ph}}}{3 \, V_{\text{ph}} I_{\text{ph}}} = \frac{\sqrt{3}}{3} = \frac{1}{\sqrt{3}}$$
+
+$$\frac{S_{VV}}{S_{\Delta\Delta}} = \frac{1}{1.732} = \mathbf{0.57735 \approx 57.7\%}$$
+
+$$S_{VV} = \mathbf{57.7\% \text{ of } S_{\Delta\Delta}}$$
+
+*(Hence proved.)*
+
+### 109. Page 7, Q.3(b): How 3-φ, 4 wire connection can be obtained from scoot-connection? Explain with necessary circuit diagram. [Figure Involved]
+
+#### **1. Principle of Obtaining a 3-Phase 4-Wire System:**
+A symmetrical **3-phase 4-wire distribution system** (providing three line conductors $a, b, c$ and one neutral conductor $n$) can be obtained from a Scott (T-T) connection by locating and bringing out the **neutral tapping point ($n$)** from the secondary teaser winding.
+
+---
+
+#### **2. Circuit and Wiring Diagram:**
+
+```
+     PRIMARY (3-PHASE OR 2-PHASE SUPPLY)         SECONDARY (3-PHASE 4-WIRE SYSTEM)
+                                                        Line a
+                                                          o
+                                                          │
+                                                          │   Teaser Secondary
+                                                          │   (0.866 VL)
+                                                          │
+                                         Neutral (n) o────┼── (2/3 from apex a, 0.577 VL)
+                                                          │
+                                                          │   (1/3 from tap d, 0.288 VL)
+                                                          ▼
+                                            Center Tap d  ├───┐
+                                                          │   │
+                                                          │   │   Main Secondary (VL)
+                                              Line b o────┴───┴────o Line c
+```
+
+---
+
+#### **3. Location and Mathematical Derivation of the Neutral Point ($n$):**
+
+Let the desired secondary line-to-line voltage be $V_L$.
+
+1. **Main Transformer Secondary:**
+   - Connected between line terminals $b$ and $c$, so $V_{bc} = V_L$.
+   - Center tap $d$ is at $50\%$ of the turns:
+     $$V_{db} = V_{dc} = \frac{V_L}{2} = 0.5 V_L$$
+
+2. **Teaser Transformer Secondary:**
+   - Connected between apex terminal $a$ and center tap $d$.
+   - Total teaser secondary voltage is:
+     $$V_{ad} = \frac{\sqrt{3}}{2} V_L = 0.866 V_L$$
+
+3. **Neutral Point ($n$) Coordinates:**
+   For a balanced 3-phase 4-wire system, the phase voltage from each line to neutral must be equal to:
+   $$V_{an} = V_{bn} = V_{cn} = \frac{V_L}{\sqrt{3}} = 0.577 V_L$$
+
+   - Distance from apex terminal $a$ to neutral $n$:
+     $$V_{an} = \frac{2}{3} \times V_{ad} = \frac{2}{3} \times \left(\frac{\sqrt{3}}{2} V_L\right) = \mathbf{\frac{V_L}{\sqrt{3}} = 0.577 V_L}$$
+   - Distance from center tap $d$ to neutral $n$:
+     $$V_{nd} = \frac{1}{3} \times V_{ad} = \frac{1}{3} \times \left(\frac{\sqrt{3}}{2} V_L\right) = \mathbf{\frac{V_L}{2\sqrt{3}} = 0.2887 V_L}$$
+
+#### **Conclusion:**
+By providing a tap at **$\frac{1}{3}$ of the turns from the center-tap $d$** (or $\frac{2}{3}$ of the turns from apex $a$) on the teaser secondary winding, a true neutral terminal $n$ is obtained. This system can supply standard three-phase balanced industrial motor loads ($V_L$) and single-phase lighting loads ($V_{\text{ph}} = V_L/\sqrt{3}$).
+
+---
+
+### 110. Page 11, Q.4(b) (lower): Show with connection diagram how 3-φ 4-wire connection can be achieved for T-connection. [Figure Involved]
+
+#### **Connection Diagram of 3-Phase 4-Wire T-Connection:**
+
+```
+                                  Terminal a
+                                      o
+                                      │
+                                      │
+                                      │
+                               ┌──────┴──────┐
+                               │   Teaser    │
+                               │  Secondary  │ (0.577 VL)
+                               │   Winding   │
+                               └──────┬──────┘
+                                      │
+                        Neutral (n) ──┼───o NEUTRAL WIRE
+                                      │
+                               ┌──────┴──────┐
+                               │ (1/3 Turns) │ (0.2887 VL)
+                               └──────┬──────┘
+                                      │
+                                Center Tap d
+                                      │
+                  ┌───────────────────┴───────────────────┐
+                  │                                       │
+           ┌──────┴──────┐                         ┌──────┴──────┐
+           │  Main Sec.  │                         │  Main Sec.  │
+           │  (Left Half)│ (0.5 VL)                │ (Right Half)│ (0.5 VL)
+           └──────┬──────┘                         └──────┬──────┘
+                  │                                       │
+                  o───────────────────────────────────────o
+              Terminal b                              Terminal c
+```
+
+---
+
+#### **Secondary Voltage Specifications:**
+
+1. **Line-to-Line Voltages (3-Phase Power Loads):**
+   $$V_{ab} = V_{bc} = V_{ca} = \mathbf{V_L}$$
+
+2. **Line-to-Neutral Voltages (Single-Phase Lighting Loads):**
+   $$V_{an} = V_{bn} = V_{cn} = \mathbf{\frac{V_L}{\sqrt{3}} = 0.577 V_L}$$
+
+3. **Winding Tap Coordinates:**
+   - Main transformer center tap $d$ is located at exactly $50\%$ of the main secondary turns.
+   - Neutral tap $n$ is located at **$\frac{1}{3}$ of the teaser winding length from tap $d$** (which corresponds to $28.87\%$ of the full line voltage $V_L$).
+
+---
+
+### 111. Page 12, Q.4(b): Prove that closed – Δ kVA is √3 times higher that open – Δ kVA.
+
+#### **Mathematical Proof:**
+
+Let:
+- $V_{\text{ph}} =$ Rated phase voltage of each transformer winding
+- $I_{\text{ph}} =$ Rated continuous phase current carrying capacity of each transformer winding
+
+---
+
+#### **1. Full-Load kVA of Closed-Delta ($\Delta\text{-}\Delta$) Bank (3 Transformers):**
+In a closed delta connection:
+- Line Voltage: $V_L = V_{\text{ph}}$
+- Line Current: $I_L = \sqrt{3} I_{\text{ph}}$
+
+$$\text{Closed-Delta Capacity } (S_{\text{closed-}\Delta}) = \sqrt{3} V_L I_L = \sqrt{3} \times V_{\text{ph}} \times (\sqrt{3} I_{\text{ph}})$$
+$$S_{\text{closed-}\Delta} = \mathbf{3 \, V_{\text{ph}} I_{\text{ph}}} \tag{1}$$
+
+---
+
+#### **2. Full-Load kVA of Open-Delta ($V\text{-}V$) Bank (2 Transformers):**
+In an open-delta connection, with one transformer removed:
+- Line Voltage: $V_L = V_{\text{ph}}$
+- The line current flows directly through the individual phase windings: $I_L = I_{\text{ph}}$.
+- To prevent thermal overload of the remaining two transformers, the maximum allowable line current is limited to $I_{\text{ph}}$.
+
+$$\text{Open-Delta Capacity } (S_{\text{open-}\Delta}) = \sqrt{3} V_L I_L = \mathbf{\sqrt{3} \, V_{\text{ph}} I_{\text{ph}}} \tag{2}$$
+
+---
+
+#### **3. Ratio of Capacities:**
+Dividing Equation (1) by Equation (2):
+
+$$\frac{S_{\text{closed-}\Delta}}{S_{\text{open-}\Delta}} = \frac{3 \, V_{\text{ph}} I_{\text{ph}}}{\sqrt{3} \, V_{\text{ph}} I_{\text{ph}}} = \frac{3}{\sqrt{3}} = \mathbf{\sqrt{3}}$$
+
+$$S_{\text{closed-}\Delta} = \mathbf{\sqrt{3} \times S_{\text{open-}\Delta} \approx 1.732 \times S_{\text{open-}\Delta}}$$
+
+$$\mathbf{S_{\text{open-}\Delta} = \frac{1}{\sqrt{3}} \times S_{\text{closed-}\Delta} = 0.577 \times S_{\text{closed-}\Delta} \quad (57.7\%)}$$
+
+*(Hence proved.)*
+
+---
+
+### 112. Page 12, Q.4(c): Two transformers connected in open – Δ, supply a 400 kVA balanced load operating at 0.866 p.f. (lagging). The load voltage is 440 V. What is the (i) kVA supplied by each transformer? (ii) kW supplied by each transformer?
+
+#### **Given Data:**
+- Total 3-Phase Balanced Load $= 400\text{ kVA}$
+- Load Power Factor, $\cos \phi = 0.866\text{ lagging} \implies \phi = \cos^{-1}(0.866) = 30^\circ$
+- Load Terminal Line Voltage, $V_L = 440\text{ V}$
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **(i) kVA Supplied by Each Transformer:**
+In an open-delta ($V\text{-}V$) connection, the total kVA capacity is related to individual transformer kVA by the factor $\sqrt{3}$:
+
+$$\text{Total Load kVA} = \sqrt{3} \times (\text{kVA supplied by each transformer})$$
+
+$$\text{kVA of each transformer} = \frac{\text{Total Load kVA}}{\sqrt{3}} = \frac{400}{\sqrt{3}} = \frac{400}{1.732} = \mathbf{230.94\text{ kVA} \approx 231\text{ kVA}}$$
+
+---
+
+#### **(ii) kW Supplied by Each Transformer:**
+In an open-delta bank supplying a balanced load of power factor $\cos \phi$, the two transformers operate at different internal power factors:
+- **Transformer 1 Power Factor:** $\cos(30^\circ - \phi)$
+- **Transformer 2 Power Factor:** $\cos(30^\circ + \phi)$
+
+Since $\phi = 30^\circ$:
+1. **Operating Power Factor of Transformer 1:**
+   $$\text{p.f.}_1 = \cos(30^\circ - 30^\circ) = \cos(0^\circ) = \mathbf{1.0 \quad (\text{Unity Power Factor})}$$
+
+2. **Operating Power Factor of Transformer 2:**
+   $$\text{p.f.}_2 = \cos(30^\circ + 30^\circ) = \cos(60^\circ) = \mathbf{0.50 \quad (\text{Lagging})}$$
+
+---
+
+#### **Calculations of Real Power Output (kW):**
+
+- **Real Power Supplied by Transformer 1 ($P_1$):**
+  $$P_1 = S_1 \times \text{p.f.}_1 = 230.94\text{ kVA} \times 1.0 = \mathbf{230.94\text{ kW} \approx 231\text{ kW}}$$
+
+- **Real Power Supplied by Transformer 2 ($P_2$):**
+  $$P_2 = S_2 \times \text{p.f.}_2 = 230.94\text{ kVA} \times 0.50 = \mathbf{115.47\text{ kW} \approx 115.5\text{ kW}}$$
+
+---
+
+#### **Verification:**
+$$\text{Total Real Power } P_{\text{total}} = P_1 + P_2 = 230.94 + 115.47 = \mathbf{346.41\text{ kW}}$$
+$$\text{Total Load kW} = 400\text{ kVA} \times 0.866 = \mathbf{346.4\text{ kW}} \quad (\text{Checks out correctly})$$
+
+### 113. Page 12, Q.3(c): Two 20 kVA transformers are connected in open - Δ to supply 230 V balanced 3-φ load. (i) what is the total load that can be supplied without overloading either transformer? (ii) when the Δ is closed by the addition of a third 20 kVA transformer, what total load can now be supplied?
+
+#### **Given Data:**
+- Individual transformer rating $= 20\text{ kVA}$
+- Secondary line voltage, $V_L = 230\text{ V}$ (balanced 3-phase load)
+
+---
+
+#### **(i) Total Load Supplied in Open-Delta ($V\text{-}V$) Without Overloading:**
+
+In an open-delta connection, the total balanced three-phase load that can be delivered without exceeding the rated current (and thermal heating limit) of either transformer is:
+
+$$S_{VV} = \sqrt{3} \times (\text{kVA rating of one transformer})$$
+$$S_{VV} = \sqrt{3} \times 20\text{ kVA} = 1.732 \times 20 = \mathbf{34.64\text{ kVA}}$$
+
+*(Alternatively, using the utility factor of $0.866$ on the combined two-transformer rating of $40\text{ kVA}$: $S_{VV} = 2 \times 20 \times 0.866 = \mathbf{34.64\text{ kVA}}$).*
+
+---
+
+#### **(ii) Total Load Supplied When Delta is Closed with a Third 20 kVA Unit:**
+
+When a third identical $20\text{ kVA}$ transformer is added, the bank operates as a complete closed-delta ($\Delta\text{-}\Delta$) transformer bank:
+
+$$S_{\Delta\Delta} = 3 \times (\text{kVA rating of one transformer})$$
+$$S_{\Delta\Delta} = 3 \times 20\text{ kVA} = \mathbf{60.0\text{ kVA}}$$
+
+---
+
+#### **Summary of Results:**
+1. **Load supplied in Open-Delta ($V\text{-}V$):** **$34.64\text{ kVA}$**
+2. **Load supplied in Closed-Delta ($\Delta\text{-}\Delta$):** **$60.0\text{ kVA}$**
+3. *(Percentage increase achieved by adding the 3rd transformer $= \frac{60 - 34.64}{34.64} \times 100 = \mathbf{73.2\%}$).*
+
+---
+
+### 114. Page 12, Q.5(a): Explain with necessary diagram, How 3-Φ, 4-wire connection can be used in T-connection. [Figure Involved]
+
+#### **1. Principle of 3-Phase 4-Wire T-Connection:**
+A symmetrical 3-phase 4-wire service (providing three line conductors $a, b, c$ and one neutral conductor $n$) is obtained in a T-connection (Scott connection) by creating a **neutral tap point ($n$)** on the secondary teaser winding.
+
+---
+
+#### **2. Schematic Connection Diagram:**
+
+```
+                                  Terminal a
+                                      o
+                                      │
+                                      │
+                               ┌──────┴──────┐
+                               │   Teaser    │
+                               │  Secondary  │ (0.577 VL)
+                               │   Winding   │
+                               └──────┬──────┘
+                                      │
+                        Neutral (n) ──┼───o NEUTRAL WIRE (n)
+                                      │
+                               ┌──────┴──────┐
+                               │ (1/3 Turns) │ (0.2887 VL)
+                               └──────┬──────┘
+                                      │
+                                Center Tap d
+                                      │
+                  ┌───────────────────┴───────────────────┐
+                  │                                       │
+           ┌──────┴──────┐                         ┌──────┴──────┐
+           │  Main Sec.  │                         │  Main Sec.  │
+           │  (Left Half)│ (0.5 VL)                │ (Right Half)│ (0.5 VL)
+           └──────┬──────┘                         └──────┬──────┘
+                  │                                       │
+                  o───────────────────────────────────────o
+              Terminal b                              Terminal c
+```
+
+---
+
+#### **3. Voltage Relations and Neutral Tapping Point Location:**
+
+Let $V_L$ be the desired line-to-line secondary voltage:
+
+1. **Main Transformer Secondary:**
+   - Spans line terminals $b$ and $c$, giving $V_{bc} = V_L$.
+   - Has a center tap $d$ located at $50\%$ turns:
+     $$V_{db} = V_{dc} = \frac{V_L}{2} = 0.5 V_L$$
+
+2. **Teaser Transformer Secondary:**
+   - Connected between apex terminal $a$ and center tap $d$.
+   - Total induced voltage is:
+     $$V_{ad} = \frac{\sqrt{3}}{2} V_L = 0.866 V_L$$
+
+3. **Position of Neutral Point ($n$):**
+   In a balanced 3-phase 4-wire system, the voltage between any line and neutral must equal the phase voltage:
+   $$V_{an} = V_{bn} = V_{cn} = \frac{V_L}{\sqrt{3}} = 0.577 V_L$$
+   
+   - The neutral point $n$ is tapped along the teaser winding such that:
+     $$V_{an} = \frac{2}{3} V_{ad} = \frac{2}{3} \times \left(\frac{\sqrt{3}}{2} V_L\right) = \mathbf{\frac{V_L}{\sqrt{3}} = 0.577 V_L}$$
+     $$V_{nd} = \frac{1}{3} V_{ad} = \frac{1}{3} \times \left(\frac{\sqrt{3}}{2} V_L\right) = \mathbf{\frac{V_L}{2\sqrt{3}} = 0.2887 V_L}$$
+
+**Conclusion:** Neutral $n$ is located at **$\frac{1}{3}$ of the teaser turns from center tap $d$** (or $\frac{2}{3}$ of the turns from terminal $a$). It provides balanced $V_L$ for 3-phase motor loads and $V_L/\sqrt{3}$ for single-phase lighting circuits.
+
+---
+
+### 115. Page 40, Q.2(b): Prove that open-delta connection of transformer can be used for balanced 3-Φ supply, but capacity reduced to 57.7% compared to close-Δ connection.
+
+#### **Part 1: Proof that Open-Delta Delivers Balanced 3-Phase Symmetrical Voltages**
+
+Consider two single-phase transformers connected in open-delta ($V\text{-}V$) across lines $a, b, c$:
+- Winding 1 is connected between lines $a$ and $b$: $\vec{V}_{ab} = V \angle 0^\circ$
+- Winding 2 is connected between lines $b$ and $c$: $\vec{V}_{bc} = V \angle -120^\circ$
+
+```
+          OPEN-DELTA CONNECTION                   SECONDARY VOLTAGE TRIANGLE
+                 a                                            Vab
+                ┌┴┐                                            ▲
+            Vab │ │                                            │
+                └┬┘                                            │
+                 b                                    ─────────┼─────────►
+                ┌┴┐                                           / \
+            Vbc │ │                                          /   \
+                └┬┘                                         /     \
+                 c                                         ▼       ▼
+              (Open)                                      Vca     Vbc
+```
+
+The voltage across the open terminals $c$ and $a$ ($\vec{V}_{ca}$) is obtained by applying Kirchhoff’s Voltage Law around the delta loop:
+$$\vec{V}_{ab} + \vec{V}_{bc} + \vec{V}_{ca} = 0 \implies \vec{V}_{ca} = -(\vec{V}_{ab} + \vec{V}_{bc})$$
+
+Expressing in polar/rectangular form:
+$$\vec{V}_{ab} + \vec{V}_{bc} = V \angle 0^\circ + V \angle -120^\circ$$
+$$\vec{V}_{ab} + \vec{V}_{bc} = V \left[ (1 + j0) + \left(-0.5 - j\frac{\sqrt{3}}{2}\right) \right] = V \left( 0.5 - j\frac{\sqrt{3}}{2} \right) = V \angle -60^\circ$$
+
+Substituting back:
+$$\vec{V}_{ca} = -V \angle -60^\circ = V \angle (-60^\circ + 180^\circ) = \mathbf{V \angle +120^\circ}$$
+
+**Result:** All three line voltages ($\vec{V}_{ab}, \vec{V}_{bc}, \vec{V}_{ca}$) have equal magnitude $V$ and are displaced from each other by $120^\circ$. Thus, the open-delta connection delivers a **symmetrical, balanced 3-phase supply**.
+
+---
+
+#### **Part 2: Proof that Capacity is Reduced to 57.7%**
+
+Let $V_{\text{ph}}$ and $I_{\text{ph}}$ be the rated phase voltage and phase current of each transformer.
+
+1. **Capacity of Closed-Delta ($\Delta\text{-}\Delta$) Bank (3 Units):**
+   $$S_{\Delta\Delta} = \sqrt{3} V_L I_L = \sqrt{3} \times V_{\text{ph}} \times (\sqrt{3} I_{\text{ph}}) = \mathbf{3 \, V_{\text{ph}} I_{\text{ph}}} \tag{1}$$
+
+2. **Capacity of Open-Delta ($V\text{-}V$) Bank (2 Units):**
+   In open-delta, the line conductor is in series with the winding, so $I_L = I_{\text{ph}}$. To prevent thermal overload:
+   $$S_{VV} = \sqrt{3} V_L I_L = \mathbf{\sqrt{3} \, V_{\text{ph}} I_{\text{ph}}} \tag{2}$$
+
+3. **Ratio of Capacities:**
+   $$\frac{S_{VV}}{S_{\Delta\Delta}} = \frac{\sqrt{3} \, V_{\text{ph}} I_{\text{ph}}}{3 \, V_{\text{ph}} I_{\text{ph}}} = \frac{\sqrt{3}}{3} = \frac{1}{\sqrt{3}}$$
+   $$\frac{S_{VV}}{S_{\Delta\Delta}} = \frac{1}{1.732} = \mathbf{0.577 = 57.7\%}$$
+
+$$\mathbf{S_{VV} = 57.7\% \text{ of } S_{\Delta\Delta}}$$
+
+*(Hence proved.)*
+
+---
+
+### 116. Page 44, Q.2(c): Two transformers are required for a Scott connection operating from a 400V,3-Φ supply for supplying two 1-Φ furnaces at 220V on the 2-Φ side. If the total output is 150kVA.Calculate the secondary to primary turn ratio and the winding currents of each transformer.
+
+#### **Given Data:**
+- 3-Phase Primary Line Voltage, $V_{L1} = 400\text{ V}$
+- 2-Phase Secondary Furnace Voltage, $V_2 = 220\text{ V}$
+- Total Balanced Output Power $= 150\text{ kVA}$
+- Power delivered to each 1-phase furnace $= \frac{150\text{ kVA}}{2} = 75\text{ kVA}$
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **1. Secondary Current of Each Transformer ($I_2$):**
+$$I_2 = \frac{\text{Output per furnace}}{V_2} = \frac{75,000\text{ VA}}{220\text{ V}} = \mathbf{340.91\text{ A}}$$
+
+---
+
+#### **2. Primary Line Current from 3-Phase Supply ($I_{L1}$):**
+$$I_{L1} = \frac{\text{Total kVA} \times 10^3}{\sqrt{3} \times V_{L1}} = \frac{150,000}{\sqrt{3} \times 400} = \frac{375}{\sqrt{3}} = \mathbf{216.51\text{ A}}$$
+
+---
+
+#### **3. Main Transformer Calculations:**
+
+- **Primary Voltage:** $V_{1\text{M}} = V_{L1} = \mathbf{400\text{ V}}$
+- **Secondary Voltage:** $V_{2\text{M}} = \mathbf{220\text{ V}}$
+- **Secondary to Primary Turn Ratio of Main Transformer ($K_{\text{Main}}$):**
+  $$K_{\text{Main}} = \frac{N_{2\text{M}}}{N_{1\text{M}}} = \frac{V_{2\text{M}}}{V_{1\text{M}}} = \frac{220}{400} = \mathbf{0.55}$$
+- **Secondary Winding Current of Main Transformer:**
+  $$I_{2\text{M}} = \mathbf{340.91\text{ A}}$$
+- **Primary Winding Current of Main Transformer ($I_{1\text{M}}$):**
+  The current in each half of the main primary is the vector sum of the active load component ($K_{\text{Main}} I_2$) and half of the teaser primary current ($\frac{I_{1\text{T}}}{2}$):
+  $$I_{1\text{M}} = \sqrt{(K_{\text{Main}} I_2)^2 + \left(\frac{I_{1\text{T}}}{2}\right)^2} = \sqrt{(0.55 \times 340.91)^2 + \left(\frac{216.51}{2}\right)^2}$$
+  $$I_{1\text{M}} = \sqrt{(187.5)^2 + (108.255)^2} = \sqrt{35156.25 + 11719.14} = \sqrt{46875.39} = \mathbf{216.51\text{ A}}$$
+
+---
+
+#### **4. Teaser Transformer Calculations:**
+
+- **Primary Voltage:**
+  $$V_{1\text{T}} = \frac{\sqrt{3}}{2} \times V_{L1} = 0.866 \times 400\text{ V} = \mathbf{346.41\text{ V}}$$
+- **Secondary Voltage:** $V_{2\text{T}} = \mathbf{220\text{ V}}$
+- **Secondary to Primary Turn Ratio of Teaser Transformer ($K_{\text{Teaser}}$):**
+  $$K_{\text{Teaser}} = \frac{N_{2\text{T}}}{N_{1\text{T}}} = \frac{V_{2\text{T}}}{V_{1\text{T}}} = \frac{220}{346.41} = \frac{220}{400 \times \frac{\sqrt{3}}{2}} = \frac{0.55}{0.866} = \mathbf{0.635}$$
+  *(or $K_{\text{Teaser}} = \frac{2}{\sqrt{3}} K_{\text{Main}} = 1.1547 \times 0.55 = \mathbf{0.635}$)*
+- **Primary Winding Current of Teaser Transformer ($I_{1\text{T}}$):**
+  $$I_{1\text{T}} = I_{L1} = \mathbf{216.51\text{ A}}$$
+- **Secondary Winding Current of Teaser Transformer ($I_{2\text{T}}$):**
+  $$I_{2\text{T}} = I_2 = \mathbf{340.91\text{ A}}$$
+
+---
+
+#### **Summary of Final Results:**
+- **Main Transformer:**
+  - Turn Ratio ($\frac{N_2}{N_1}$): **$0.55$**
+  - Primary Winding Current: **$216.51\text{ A}$**
+  - Secondary Winding Current: **$340.91\text{ A}$**
+- **Teaser Transformer:**
+  - Turn Ratio ($\frac{N_2}{N_1}$): **$0.635$**
+  - Primary Winding Current: **$216.51\text{ A}$**
+  - Secondary Winding Current: **$340.91\text{ A}$**
+
+### 117. Page 45, Q.4(c): Two 25 kVA transformer are connected in open-Δ to supply a 220V balanced 3-Φ load. (i) What is the total load that can be supplied without overloading either transformer? (ii) When the Δ is closed by the addition of a third 25 kVA transformer, what total load can now be supplied?
+
+#### **Given Data:**
+- Individual transformer rating $= 25\text{ kVA}$
+- Secondary line voltage, $V_L = 220\text{ V}$ (balanced 3-phase load)
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **(i) Total Load That Can Be Supplied in Open-Delta ($V\text{-}V$) Without Overloading:**
+
+In an open-delta ($V\text{-}V$) bank of two single-phase transformers:
+- The secondary line current $I_L$ flows directly through each transformer winding:
+  $$I_L = I_{\text{ph}}$$
+- To prevent thermal overload and damage to the insulation of either transformer, the maximum allowable line current must not exceed the rated phase current carrying capacity ($I_{\text{ph}}$) of a single unit:
+  $$I_{\text{ph}} = \frac{25\text{ kVA}}{220\text{ V}} = \frac{25,000}{220} = 113.64\text{ A}$$
+
+The total three-phase apparent power ($S_{VV}$) that can be delivered without overloading either transformer is:
+$$S_{VV} = \sqrt{3} \times V_L \times I_L = \sqrt{3} \times V_L \times I_{\text{ph}}$$
+
+Since the kVA rating of a single transformer is $S_1 = V_L \times I_{\text{ph}} = 25\text{ kVA}$:
+$$S_{VV} = \sqrt{3} \times S_1$$
+$$S_{VV} = \sqrt{3} \times 25\text{ kVA} = 1.73205 \times 25 = \mathbf{43.30\text{ kVA}}$$
+
+*(Alternatively, using the utility factor of $0.866$ on the combined nameplate rating of the two transformers: $S_{VV} = 2 \times 25\text{ kVA} \times 0.866 = \mathbf{43.30\text{ kVA}}$).*
+
+---
+
+#### **(ii) Total Load That Can Be Supplied When the Delta is Closed:**
+
+When the open delta is closed by installing an identical third $25\text{ kVA}$ transformer, the bank operates as a complete closed-delta ($\Delta\text{-}\Delta$) system:
+- In closed-delta, the line current is $\sqrt{3}$ times the phase current:
+  $$I_L = \sqrt{3} I_{\text{ph}}$$
+
+The total three-phase load that can now be supplied is:
+$$S_{\Delta\Delta} = \sqrt{3} \times V_L \times I_L = \sqrt{3} \times V_L \times (\sqrt{3} I_{\text{ph}}) = 3 \times (V_L I_{\text{ph}})$$
+$$S_{\Delta\Delta} = 3 \times (\text{kVA rating of one transformer})$$
+$$S_{\Delta\Delta} = 3 \times 25\text{ kVA} = \mathbf{75.0\text{ kVA}}$$
+
+---
+
+#### **Comparison and Increase in System Capacity:**
+- **Open-Delta Capacity ($S_{VV}$):** **$43.30\text{ kVA}$**
+- **Closed-Delta Capacity ($S_{\Delta\Delta}$):** **$75.0\text{ kVA}$**
+- **Capacity Ratio:**
+  $$\frac{S_{VV}}{S_{\Delta\Delta}} = \frac{43.30}{75.0} = 0.5773 \quad (\mathbf{57.7\%})$$
+- **Percentage Increase in Capacity upon Closing the Delta:**
+  $$\% \text{ Increase} = \frac{S_{\Delta\Delta} - S_{VV}}{S_{VV}} \times 100 = \frac{75.0 - 43.30}{43.30} \times 100 = \mathbf{73.2\%}$$
+
+---
+
+### **Note: Completion of the Question Document**
+
+**Question 117 is the final question of the provided 7-page examination compilation.** Every single question from **Q.1 through Q.117** across all sections has now been fully solved in complete detail:
+
+1. **Ideal Transformer & Transformation Ratio:** (Q.1 – Q.13)
+2. **No-Load and Load Vector Diagrams:** (Q.15 – Q.23)
+3. **Actual Transformer & Equivalent Circuit:** (Q.25 – Q.37)
+4. **Regulation:** (Q.39 – Q.45)
+5. **Short-Circuit and Open-Circuit Tests:** (Q.47 – Q.71)
+6. **Auto-Transformer and Instrument Transformers (C.T. & P.T.):** (Q.73 – Q.86)
+7. **Parallel Operation of Transformers:** (Q.88 – Q.94)
+8. **Three-Phase Transformer Connections:** (Q.96 – Q.106)
+9. **Phase Conversion & Open-Delta Operation:** (Q.108 – Q.117)
+
+All questions from the document are complete.
+
