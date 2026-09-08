@@ -1814,3 +1814,172 @@ $$X_{02} = X_2 + K^2 X_1$$
 $$Z_{02} = R_{02} + jX_{02} = \sqrt{R_{02}^2 + X_{02}^2}$$
 $$R_{02} = K^2 R_{01}, \quad X_{02} = K^2 X_{01}, \quad Z_{02} = K^2 Z_{01}$$
 
+### 35. Page 26, CT-04 Q.1: Define-(i) leakage reactance, (ii) magnetizing current, (iii) leakage flux, (iv) mutual flux, (v) core loss current.
+
+#### **(i) Leakage Reactance ($X_1, X_2$)**
+**Leakage reactance** is the inductive reactance associated with the magnetic leakage flux in a transformer winding. Since the leakage flux passes mostly through air, it sets up a self-induced e.m.f. that behaves as if an inductive coil were connected in series with the winding:
+- **Primary Leakage Reactance:** $X_1 = \frac{e_{L1}}{I_1} = 2\pi f L_1$
+- **Secondary Leakage Reactance:** $X_2 = \frac{e_{L2}}{I_2} = 2\pi f L_2$
+It causes an internal reactive voltage drop ($I_1 X_1$ in primary, $I_2 X_2$ in secondary) which affects the transformer's voltage regulation.
+
+---
+
+#### **(ii) Magnetizing Current ($I_\mu$ or $I_m$)**
+**Magnetizing current** is the purely reactive (wattless) component of the primary no-load current. 
+- It is in phase with the mutual magnetic flux $\Phi$ and lags behind the applied primary voltage $V_1$ by $90^\circ$.
+- Its sole function is to establish and sustain the alternating magnetic flux in the ferromagnetic core:
+  $$I_\mu = I_0 \sin \phi_0$$
+  where $I_0$ is the no-load current and $\phi_0$ is the no-load power factor angle.
+
+---
+
+#### **(iii) Leakage Flux ($\Phi_{L1}, \Phi_{L2}$)**
+**Leakage flux** is that portion of the magnetic flux produced by a winding that completes its magnetic circuit through the surrounding air, insulation, or oil and links **only with that winding itself**, without linking the other winding.
+- **Primary Leakage Flux ($\Phi_{L1}$):** Links only the primary winding.
+- **Secondary Leakage Flux ($\Phi_{L2}$):** Links only the secondary winding.
+Leakage flux does not contribute to the transfer of power between primary and secondary circuits.
+
+---
+
+#### **(iv) Mutual Flux ($\Phi$)**
+**Mutual flux** (or working flux) is the common magnetic flux that is confined within the high-permeability laminated steel core and links **both the primary and secondary windings simultaneously**.
+- It is established by the primary magnetizing m.m.f. and serves as the medium for transferring electrical energy from the primary to the secondary winding through electromagnetic mutual induction.
+
+---
+
+#### **(v) Core Loss Current ($I_w$ or $I_c$)**
+**Core loss current** (also known as the active or working component of no-load current) is the in-phase component of the primary no-load current:
+- It is in phase with the applied primary voltage $V_1$.
+- It accounts for the real active power drawn by the transformer at no-load to supply the core losses (hysteresis and eddy current losses) in the iron core along with a negligible primary copper loss:
+  $$I_w = I_0 \cos \phi_0$$
+  $$\text{Core Loss, } W_i \approx V_1 I_w = V_1 I_0 \cos \phi_0$$
+
+---
+
+### 36. Page 32, Q.1(b): Briefly describe the effect of variation of load on core flux and primary current of a transformer.
+
+#### **1. Effect of Load Variation on Core Flux ($\Phi$):**
+The mutual core flux $\Phi$ in a transformer remains **practically constant from no-load to full-load** (varying by only $1\%\text{ to }3\%$):
+
+```
+ Load Increases (I₂ ↑) ──► Secondary Demagnetizing M.M.F. (N₂ I₂ ↑)
+                                    │
+                                    ▼
+                     Core Flux Momentarily Weakens (Φ ↓)
+                                    │
+                                    ▼
+                     Primary Back E.M.F. Drops (E₁ ↓)
+                                    │
+                                    ▼
+                 Primary Draws Balancing Current (I₂' = K I₂ ↑)
+                                    │
+                                    ▼
+             Balancing M.M.F. (N₁ I₂' = N₂ I₂) Restores Core Flux
+                                    │
+                                    ▼
+                      Net Core Flux Φ = CONSTANT
+```
+
+- **Explanation:** When the secondary load increases, the secondary current $I_2$ sets up an opposing demagnetizing m.m.f. $N_2 I_2$. This momentarily weakens the core flux $\Phi$, which reduces the primary induced back e.m.f. $E_1$. 
+- The resulting voltage difference $(V_1 - E_1)$ immediately causes the primary to draw an extra current $I_2'$ from the supply. This sets up a compensating m.m.f. $N_1 I_2'$ that exactly cancels the secondary m.m.f. ($N_1 I_2' = N_2 I_2$).
+- Thus, the net magnetizing m.m.f. in the core remains unchanged, keeping the mutual core flux practically constant across all load levels.
+
+---
+
+#### **2. Effect of Load Variation on Primary Current ($I_1$):**
+The total primary current is the phasor sum of the no-load exciting current and the reflected load current:
+$$\vec{I}_1 = \vec{I}_0 + \vec{I}_2' = \vec{I}_0 + K \vec{I}_2$$
+
+- **At No-Load ($I_2 = 0$):** The primary draws only the small no-load current $I_0$ ($2\%\text{ to }10\%$ of rated current) at a very low power factor ($\cos \phi_0 \approx 0.2\text{ lagging}$).
+- **As Load Increases ($I_2 > 0$):** The reflected load component $I_2' = K I_2$ increases in direct proportion to the secondary current. Since $I_2'$ is much larger than $I_0$, the total primary current $I_1$ increases almost linearly with the load.
+- **Power Factor Shift:** The phase angle $\phi_1$ of the primary current shifts from the no-load angle $\phi_0$ towards the load power factor angle $\phi_2$.
+
+---
+
+### 37. Page 41, Q.3(a): Why is current increase in primary with the load increase in secondary? Explain.
+
+#### **Physical and Magnetic Reason:**
+
+A transformer is a self-regulating electrical machine that maintains an automatic energy balance between its primary input and secondary output. The primary current increases with secondary load through the following sequence of events:
+
+---
+
+1. **Equilibrium at No-Load:**
+   On no-load, the primary current is restricted to a small no-load current $I_0$. This current establishes the working flux $\Phi$ in the core. The flux induces a primary back e.m.f. $E_1$ that almost completely opposes and balances the applied terminal voltage $V_1$:
+   $$V_1 \approx -E_1$$
+
+2. **Demagnetizing M.M.F. Produced by Secondary:**
+   When the secondary load is increased, a larger secondary current $I_2$ flows through the $N_2$ secondary turns. According to Lenz's law, this sets up a **demagnetizing magnetomotive force (m.m.f.)** $N_2 I_2$ that directly opposes the main magnetic flux $\Phi$.
+
+3. **Reduction in Induced Back E.M.F. ($E_1$):**
+   The demagnetizing effect of $N_2 I_2$ momentarily reduces the mutual core flux $\Phi$. Because the primary induced back e.m.f. is directly proportional to flux ($E_1 = 4.44 f N_1 \Phi$), $E_1$ decreases slightly.
+
+4. **Surge in Primary Current ($I_2'$):**
+   The net voltage driving current into the primary winding is $(\vec{V}_1 - \vec{E}_1)$. The primary current is given by:
+   $$\vec{I}_1 = \frac{\vec{V}_1 - \vec{E}_1}{\vec{Z}_1}$$
+   Because the internal primary impedance $\vec{Z}_1$ is very small, even a minute drop in $E_1$ produces a large voltage difference, prompting the primary winding to immediately draw an additional load current $I_2'$ from the supply.
+
+5. **M.M.F. Cancellation and Flux Restoration:**
+   This additional primary current $I_2'$ creates a primary neutralizing m.m.f. $N_1 I_2'$ that perfectly counterbalances the secondary demagnetizing m.m.f.:
+   $$N_1 I_2' = N_2 I_2 \implies I_2' = \left(\frac{N_2}{N_1}\right) I_2 = K I_2$$
+   This restores the net core flux $\Phi$ back to its constant working level.
+
+6. **Conclusion:**
+   The total primary current is:
+   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$$
+   Therefore, whenever the secondary load current $I_2$ increases, the primary winding must draw a proportionally larger current $I_1$ to supply the required energy and maintain magnetic equilibrium.
+
+---
+
+### 39. Page 9, Q.1(d): Calculate the percentage of voltage regulation of a transformer in which the percentage resistance drop is 1% and percentage reactance drop is 5% when p.f. is (i) 0.8 lagging (ii) unity and (iii) 0.8 leading.
+
+#### **Given Data:**
+- Percentage resistance drop, $v_r = 1.0\%$
+- Percentage reactance drop, $v_x = 5.0\%$
+
+---
+
+#### **Formula:**
+The approximate percentage voltage regulation ($\mu$) is given by:
+$$\% \text{ Voltage Regulation } (\mu) = v_r \cos \phi \pm v_x \sin \phi$$
+- Use **$+$ sign** for **lagging power factor**
+- Use **$-$ sign** for **leading power factor**
+
+---
+
+#### **Calculations:**
+
+#### **(i) At $0.8$ Power Factor Lagging:**
+- $\cos \phi = 0.8$
+- $\sin \phi = \sqrt{1 - (0.8)^2} = 0.6$
+
+$$\mu = v_r \cos \phi + v_x \sin \phi$$
+$$\mu = (1.0 \times 0.8) + (5.0 \times 0.6) = 0.8 + 3.0 = \mathbf{+3.8\%}$$
+
+---
+
+#### **(ii) At Unity Power Factor ($\text{u.p.f.}$):**
+- $\cos \phi = 1.0$
+- $\sin \phi = 0.0$
+
+$$\mu = v_r \cos \phi \pm v_x \sin \phi$$
+$$\mu = (1.0 \times 1.0) + (5.0 \times 0.0) = \mathbf{+1.0\%}$$
+
+---
+
+#### **(iii) At $0.8$ Power Factor Leading:**
+- $\cos \phi = 0.8$
+- $\sin \phi = 0.6$
+
+$$\mu = v_r \cos \phi - v_x \sin \phi$$
+$$\mu = (1.0 \times 0.8) - (5.0 \times 0.6) = 0.8 - 3.0 = \mathbf{-2.2\%}$$
+
+*(Note: The negative regulation sign indicates a voltage rise at full load under leading power factor conditions).*
+
+---
+
+#### **Summary of Results:**
+1. At **$0.8$ p.f. lagging:** **$+3.8\%$**
+2. At **Unity p.f.:** **$+1.0\%$**
+3. At **$0.8$ p.f. leading:** **$-2.2\%$**
+
