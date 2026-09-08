@@ -2367,4 +2367,225 @@ In performing the **short-circuit (impedance) test** of a transformer, the low-v
 
 4. **Measurement Accuracy:**
    - Placing instruments on the H.V. side ensures that the measured impedance and loss values fall well within the optimal scale deflection ranges of voltmeters and wattmeters, minimizing instrument reading errors.
+### 49. Page 17, Q.2(a) (upper half): Why the open-circuit test of transformer gives core loss, while the short-circuit test of a transformer gives copper loss?
+
+#### **1. Why the Open-Circuit (O.C.) Test Gives Core Loss:**
+In an open-circuit test, rated normal alternating voltage at rated frequency is applied to one winding (usually the low-voltage winding), while the other winding is kept open-circuited ($I_2 = 0$).
+
+```
+ Open-Circuit Test:
+ Applied Voltage = Rated V₁ ──► Rated Core Flux Density Bm ──► FULL Core Loss (Wi) Occurs
+ Primary Current = I₀ (2% to 10% of FL) ──► Cu Loss = I₀² R₁ ≈ 0 (NEGLIGIBLE)
+ ════════════════════════════════════════════════════════════════════════════════════════
+ Wattmeter Reading (W₀) = Wi (Core Loss Only)
+```
+
+- **Rated Core Flux:** Since rated voltage is applied, the mutual magnetic flux in the core attains its full normal rated peak value ($\Phi_m \propto \frac{V_1}{f}$). Therefore, the full normal **core losses (hysteresis and eddy current losses)** take place in the iron core.
+- **Negligible Copper Loss:** The secondary current is zero, producing zero secondary copper loss. The primary winding draws only the tiny no-load current $I_0$ ($2\%\text{ to }10\%$ of full-load current). The primary copper loss is:
+  $$P_{\text{Cu(no-load)}} = I_0^2 R_1 \approx (0.05)^2 \times P_{\text{Cu(FL)}} \approx 0.0025 \times P_{\text{Cu(FL)}}$$
+  This is entirely negligible (less than a fraction of $1\%$ of the wattmeter reading).
+- **Conclusion:** The wattmeter reading $W_0$ in the O.C. test measures **practically only the core (iron) loss ($W_i$)**.
+
+---
+
+#### **2. Why the Short-Circuit (S.C.) Test Gives Copper Loss:**
+In a short-circuit test, the secondary (usually L.V.) winding is solidly shorted with a thick copper bar, and a very small reduced voltage ($5\%\text{ to }10\%$ of rated voltage) is applied to the primary (H.V.) winding to circulate full rated currents in both windings.
+
+```
+ Short-Circuit Test:
+ Applied Voltage = Vsc (5% to 10% of Rated V₁) ──► Core Flux Φsc ≈ 0 ──► Core Loss Wi ≈ 0 (NEGLIGIBLE)
+ Winding Currents = Rated Full-Load Currents ──► FULL Copper Loss (Wcu = I₁² R₀₁) Occurs
+ ════════════════════════════════════════════════════════════════════════════════════════
+ Wattmeter Reading (Wsc) = Wcu (Full-Load Copper Loss Only)
+```
+
+- **Rated Copper Loss:** Because rated full-load currents $I_1$ and $I_2$ circulate through the primary and secondary windings, the total full-load ohmic copper loss occurs:
+  $$W_{\text{Cu}} = I_1^2 R_1 + I_2^2 R_2 = I_1^2 R_{01}$$
+- **Negligible Core Loss:** The voltage $V_{sc}$ required to circulate full-load current under short-circuit is extremely low (only $5\%\text{ to }10\%$ of rated voltage). Since core flux is directly proportional to applied voltage ($\Phi \propto V_{sc}$), the core flux is only a fraction ($1/10\text{th}\text{ to }1/20\text{th}$) of its normal operating value. Because core losses vary approximately as $\Phi^2$, the iron loss in this test is:
+  $$W_{i(sc)} \propto V_{sc}^2 \approx (0.05)^2 \times W_i \approx 0.0025 \times W_i$$
+  This is completely negligible.
+- **Conclusion:** The wattmeter reading $W_{sc}$ in the S.C. test measures **practically only the full-load copper loss ($W_{\text{Cu}}$)**.
+
+---
+
+### 50. Page 17, Q.2(b): Describe the open-circuit test of a transformer with suitable connection diagram. Why high voltage winding is usually left open in this test? [Figure Involved]
+
+#### **1. Description and Purpose of the Test:**
+The **open-circuit (O.C.) or no-load test** is conducted on a transformer to determine:
+- The constant **core/iron loss ($W_i$)**
+- The **no-load current ($I_0$)** and **no-load power factor ($\cos \phi_0$)**
+- The shunt exciting branch parameters: **core-loss resistance ($R_0$)** and **magnetizing reactance ($X_0$)**
+- The voltage transformation ratio ($K$)
+
+---
+
+#### **2. Connection Diagram:**
+
+```
+     A.C. Supply           W (Wattmeter)
+     (Rated V & f)     ┌────[CC]────┐
+       o───────────────┤            ├─────────────┬───────────┐
+                       │            │             │           │
+                       │    [PC]    │             │           │
+                      (V)    │     (A)            │           │
+                       │     │      │            ┌┴┐         ┌┴┐
+                       │     └──────┤        L.V.│ │     H.V.│ │ (Open
+                       │            │     Winding│ │  Winding│ │  Circuited)
+       o───────────────┴────────────┴────────────┴┬┘         └┬┘
+                                                  │           │
+                                                  └───────────┘
+```
+
+---
+
+#### **3. Test Procedure:**
+1. The low-voltage (L.V.) winding is connected to its rated voltage and frequency supply through an ammeter ($A$), a wattmeter ($W$), and a voltmeter ($V$).
+2. The high-voltage (H.V.) winding is kept open-circuited.
+3. The applied voltage is adjusted to the rated voltage of the L.V. winding.
+4. The voltmeter reading ($V_1$), ammeter reading ($I_0$), and wattmeter reading ($W_0$) are recorded.
+
+---
+
+#### **4. Parameter Determination:**
+- **No-load Power Factor:**
+  $$\cos \phi_0 = \frac{W_0}{V_1 I_0}$$
+- **Core-Loss (Working) Component:**
+  $$I_w = I_0 \cos \phi_0 = \frac{W_0}{V_1}$$
+- **Magnetizing Component:**
+  $$I_\mu = \sqrt{I_0^2 - I_w^2} = I_0 \sin \phi_0$$
+- **Core-Loss Resistance:**
+  $$R_0 = \frac{V_1}{I_w} = \frac{V_1^2}{W_0}$$
+- **Magnetizing Reactance:**
+  $$X_0 = \frac{V_1}{I_\mu}$$
+
+---
+
+#### **5. Why the High-Voltage (H.V.) Winding is Usually Left Open:**
+1. **Convenience of Supply Voltage:** The L.V. winding rated voltage (e.g., $110\text{ V}, 230\text{ V}, 400\text{ V}$) is readily available in testing laboratories, whereas the high voltage (e.g., $6.6\text{ kV}, 11\text{ kV}, 33\text{ kV}$) requires special step-up sources.
+2. **Measurement Accuracy:** On the L.V. side, the no-load current $I_0$ ($2\%\text{ to }10\%$ of rated current) is large enough to be accurately read on standard laboratory ammeters. On the H.V. side, $I_0$ would be extremely small (often in milliamperes) and difficult to measure accurately.
+3. **Personnel and Equipment Safety:** Keeping the high-voltage winding open and de-energized minimizes insulation stress and eliminates the risk of high-voltage shock hazard during instrument adjustments.
+
+---
+
+### 51. Page 17, Q.2(c) (upper half): Obtain the equivalent circuit of a 10kVA, 450/120 V, 50Hz transformer from the following test data: O.C. Test: 120V, 4.2A, 80W – on L.V. side S.C. Test: 9.65V, 22.2A, 120W – on H.V. side.
+
+#### **Given Data:**
+- Rating $= 10\text{ kVA} = 10,000\text{ VA}$
+- High-Voltage (Primary), $V_1 = 450\text{ V}$
+- Low-Voltage (Secondary), $V_2 = 120\text{ V}$
+- Frequency, $f = 50\text{ Hz}$
+- **O.C. Test (on L.V. side):** $V_0 = 120\text{ V}, I_0 = 4.2\text{ A}, W_0 = 80\text{ W}$
+- **S.C. Test (on H.V. side):** $V_{sc} = 9.65\text{ V}, I_{sc} = 22.2\text{ A}, W_{sc} = 120\text{ W}$
+
+---
+
+#### **Step-by-Step Calculation:**
+
+#### **1. Transformation Ratio ($K$):**
+$$K = \frac{V_{\text{LV}}}{V_{\text{HV}}} = \frac{120}{450} = \frac{4}{15} \approx 0.2667$$
+
+---
+
+#### **2. Shunt Branch Parameters from O.C. Test (L.V. Side):**
+- No-load power factor on L.V. side:
+  $$\cos \phi_0 = \frac{W_0}{V_0 I_0} = \frac{80}{120 \times 4.2} = \frac{80}{504} = 0.1587 \approx 0.159$$
+- $\sin \phi_0$:
+  $$\sin \phi_0 = \sqrt{1 - (0.1587)^2} = \sqrt{1 - 0.0252} = 0.9873$$
+- Core-loss component of current on L.V. side:
+  $$I_{w\text{(LV)}} = I_0 \cos \phi_0 = 4.2 \times 0.1587 = 0.6667\text{ A}$$
+- Magnetizing component of current on L.V. side:
+  $$I_{\mu\text{(LV)}} = I_0 \sin \phi_0 = 4.2 \times 0.9873 = 4.147\text{ A}$$
+- Shunt resistance on L.V. side:
+  $$R_{0\text{(LV)}} = \frac{V_0}{I_{w\text{(LV)}}} = \frac{120}{0.6667} = 180\,\Omega$$
+- Shunt reactance on L.V. side:
+  $$X_{0\text{(LV)}} = \frac{V_0}{I_{\mu\text{(LV)}}} = \frac{120}{4.147} = 28.94\,\Omega$$
+
+**Referring Shunt Parameters to H.V. (Primary) Side:**
+$$R_0 = \frac{R_{0\text{(LV)}}}{K^2} = \frac{180}{(4/15)^2} = 180 \times \frac{225}{16} = \mathbf{2531.25\,\Omega \approx 2530\,\Omega}$$
+$$X_0 = \frac{X_{0\text{(LV)}}}{K^2} = \frac{28.94}{(4/15)^2} = 28.94 \times \frac{225}{16} = \mathbf{406.97\,\Omega \approx 409\,\Omega}$$
+
+---
+
+#### **3. Series Parameters from S.C. Test (H.V. Side):**
+Since S.C. test was conducted directly on the H.V. side, all calculated parameters are directly referred to the primary:
+- Total Equivalent Impedance referred to Primary ($Z_{01}$):
+  $$Z_{01} = \frac{V_{sc}}{I_{sc}} = \frac{9.65}{22.2} = \mathbf{0.4347\,\Omega \approx 0.435\,\Omega}$$
+- Total Equivalent Resistance referred to Primary ($R_{01}$):
+  $$R_{01} = \frac{W_{sc}}{I_{sc}^2} = \frac{120}{(22.2)^2} = \frac{120}{492.84} = \mathbf{0.2435\,\Omega \approx 0.243\,\Omega}$$
+- Total Equivalent Leakage Reactance referred to Primary ($X_{01}$):
+  $$X_{01} = \sqrt{Z_{01}^2 - R_{01}^2} = \sqrt{(0.4347)^2 - (0.2435)^2} = \sqrt{0.1890 - 0.0593} = \sqrt{0.1297} = \mathbf{0.3601\,\Omega \approx 0.361\,\Omega}$$
+
+---
+
+#### **4. Equivalent Circuit Diagram (Referred to H.V. Primary Side):**
+
+```
+     I₁ ──►                                    R₀₁ = 0.243 Ω    X₀₁ = 0.361 Ω       I₂' ──►
+      ──────────────┬────────────────────────────████████─────────UUUUUUUU─────────────┬──────
+                    │                                                                   │
+                    │   I₀                                                            ┌─┴─┐
+                    ├───►──┐                                                          │   │
+                    │      │                                                          │Z'L│
+               V₁   │   ┌──┴──┐                                                       │   │ V₂'
+             450 V  │  [R₀]  [X₀]                                                     └─┬─┘
+               ~    │ 2530 Ω 409 Ω                                                      │
+                    │   └──┬──┘                                                         │
+                    │      │                                                            │
+      ──────────────┴──────┴────────────────────────────────────────────────────────────┴──────
+```
+
+---
+
+### 52. Page 17, Q.2(c) (lower half): What are the objectives of short circuit test? Describe the short circuit test with suitable diagram. [Figure Involved]
+
+#### **1. Objectives of the Short-Circuit (S.C.) Test:**
+The primary objectives of conducting the short-circuit (or impedance) test on a transformer are:
+1. **Determination of Full-Load Copper Loss ($W_{\text{Cu}}$):** To measure the ohmic $I^2R$ power loss of both primary and secondary windings combined under full-load condition.
+2. **Determination of Equivalent Series Resistance ($R_{01}$ or $R_{02}$):** To calculate the lumped winding resistance referred to either side.
+3. **Determination of Equivalent Leakage Reactance ($X_{01}$ or $X_{02}$):** To find the total leakage reactance of the transformer.
+4. **Determination of Equivalent Impedance ($Z_{01}$ or $Z_{02}$):** To find total impedance for short-circuit fault current calculations.
+5. **Predetermination of Voltage Regulation:** To calculate the percentage voltage drop and regulation at any desired load current and power factor without actually loading the transformer.
+6. **Efficiency Calculation:** To compute the overall efficiency of the transformer at any fractional load.
+
+---
+
+#### **2. Connection Diagram:**
+
+```
+     Variable A.C.         W (Wattmeter)
+     Supply (0-10% V)  ┌────[CC]────┐
+       o───────────────┤            ├─────────────┬───────────┐
+                       │            │             │           │
+                       │    [PC]    │             │           │
+                      (V)    │     (A)            │           │
+                       │     │      │            ┌┴┐         ┌┴┐
+                       │     └──────┤        H.V.│ │     L.V.│ │ Solid Short
+                       │            │     Winding│ │  Winding│ │ Circuit
+       o───────────────┴────────────┴────────────┴┬┘         └┬┘ (Thick Link)
+                                                  │           │
+                                                  └───────────┘
+```
+
+---
+
+#### **3. Description of the Test:**
+1. The low-voltage (L.V.) winding is solidly short-circuited using a thick copper strip or bar.
+2. Measuring instruments (voltmeter, ammeter, and wattmeter) are connected to the high-voltage (H.V.) winding.
+3. A low alternating voltage (typically $5\%\text{ to }10\%$ of rated H.V. voltage) at rated frequency is applied to the H.V. winding using a variable auto-transformer (variac).
+4. The applied voltage is gradually increased from zero until the ammeter indicates the rated full-load current of the H.V. winding ($I_{sc} = I_{1\text{(FL)}}$).
+5. The readings of the short-circuit voltage ($V_{sc}$), short-circuit current ($I_{sc}$), and short-circuit power input ($W_{sc}$) are noted.
+
+---
+
+#### **4. Mathematical Relations (Referred to H.V. Side):**
+- **Total Full-Load Copper Loss:**
+  $$W_{\text{Cu(FL)}} = W_{sc}$$
+- **Equivalent Impedance:**
+  $$Z_{01} = \frac{V_{sc}}{I_{sc}}$$
+- **Equivalent Resistance:**
+  $$R_{01} = \frac{W_{sc}}{I_{sc}^2}$$
+- **Equivalent Leakage Reactance:**
+  $$X_{01} = \sqrt{Z_{01}^2 - R_{01}^2}$$
+- **Short-Circuit Power Factor:**
+  $$\cos \phi_{sc} = \frac{R_{01}}{Z_{01}} = \frac{W_{sc}}{V_{sc} I_{sc}}$$
 
