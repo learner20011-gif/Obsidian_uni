@@ -1391,3 +1391,226 @@ This simplification is justified because the no-load current $I_0$ is very small
 ```
 
 
+### 27. Page 17, Q.3(a): Construct the simplified equivalent circuit diagram of a 1-φ transformer. [Figure Involved]
+
+#### **Explanation:**
+In an exact equivalent circuit of a transformer, the parallel exciting branch (comprising core-loss resistance $R_0$ and magnetizing reactance $X_0$) is located between the primary and secondary series impedances. 
+
+However, because the no-load current $I_0$ is very small (only $1\%\text{ to }3\%$ of the full-load primary current), the voltage drop across the primary series impedance $(R_1 + jX_1)$ caused by $I_0$ is negligible. Therefore, without introducing any serious error, the exciting branch can be shifted directly across the input supply terminals $V_1$. 
+
+Furthermore, if the small no-load current $I_0$ is omitted entirely, the circuit simplifies into a single series impedance loop connected to the load.
+
+---
+
+#### **1. Approximate Equivalent Circuit (Referred to Primary):**
+
+```
+     I₁ ──►      R₀₁ = R₁ + R₂/K²     X₀₁ = X₁ + X₂/K²       I₂' ──►
+      ───────┬────██████████───────────UUUUUUUU──────────────┬────────
+             │                                               │
+             │   I₀                                          │
+             ├───►──┐                                        │
+             │      │                                        │
+             │   ┌──┴──┐                                   ┌─┴─┐
+             │   │     │                                   │   │
+        V₁   │  [R₀]  [X₀]                                 │Z'L│ V₂' = V₂/K
+        ~    │   │     │                                   │   │
+             │   └──┬──┘                                   └─┬─┘
+             │      │                                        │
+             │      │                                        │
+      ───────┴──────┴────────────────────────────────────────┴────────
+```
+
+---
+
+#### **2. Further Simplified Equivalent Circuit (Neglecting $I_0$):**
+
+When no-load current $I_0$ is neglected ($I_1 \approx I_2'$):
+
+```
+     I₁ ≈ I₂' ──►       R₀₁                X₀₁
+      ───────────────██████████──────────UUUUUUUU────────────┬────────
+                                                             │
+                                                           ┌─┴─┐
+                                                           │   │
+        V₁ ~                                               │Z'L│ V₂' = V₂/K
+                                                           │   │
+                                                           └─┬─┘
+                                                             │
+      ───────────────────────────────────────────────────────┴────────
+```
+
+---
+
+#### **Key Circuit Parameter Formulas:**
+- **Equivalent Primary Resistance:** $R_{01} = R_1 + R_2' = R_1 + \frac{R_2}{K^2}$
+- **Equivalent Primary Leakage Reactance:** $X_{01} = X_1 + X_2' = X_1 + \frac{X_2}{K^2}$
+- **Total Equivalent Primary Impedance:** $Z_{01} = \sqrt{R_{01}^2 + X_{01}^2}$
+- **Referred Secondary Voltage:** $V_2' = \frac{V_2}{K}$
+- **Referred Secondary Current:** $I_2' = K I_2$
+- **Referred Load Impedance:** $Z_L' = \frac{Z_L}{K^2}$
+
+---
+
+### 28. Page 17, Q.3(b): Show that R01 = R1 + R2/k^2 and R02 = R2 + K^2R1 where the symbols have their usual meanings.
+
+#### **Derivation:**
+
+Let:
+- $R_1 =$ Ohmic resistance of the primary winding
+- $R_2 =$ Ohmic resistance of the secondary winding
+- $I_1 =$ Primary full-load current
+- $I_2 =$ Secondary full-load current
+- $K =$ Voltage transformation ratio $= \frac{N_2}{N_1} \approx \frac{I_1}{I_2}$
+- $R_2' =$ Secondary resistance referred to the primary side
+- $R_1' =$ Primary resistance referred to the secondary side
+- $R_{01} =$ Total equivalent resistance of the transformer referred to primary
+- $R_{02} =$ Total equivalent resistance of the transformer referred to secondary
+
+---
+
+#### **Part 1: Proof for $R_{01} = R_1 + \frac{R_2}{K^2}$**
+When the secondary winding resistance $R_2$ is transferred to the primary side, its equivalent resistance $R_2'$ must produce the same copper loss when carrying the primary current $I_1$ as the actual resistance $R_2$ produces when carrying the secondary current $I_2$:
+
+$$\text{Copper loss in primary by } R_2' = \text{Copper loss in secondary by } R_2$$
+$$I_1^2 R_2' = I_2^2 R_2$$
+
+Solving for $R_2'$:
+$$R_2' = \left(\frac{I_2}{I_1}\right)^2 R_2$$
+
+Since $\frac{I_1}{I_2} = K \implies \frac{I_2}{I_1} = \frac{1}{K}$:
+$$R_2' = \left(\frac{1}{K}\right)^2 R_2 = \frac{R_2}{K^2}$$
+
+The total equivalent resistance referred to the primary side ($R_{01}$) is:
+$$R_{01} = R_1 + R_2' = R_1 + \frac{R_2}{K^2}$$
+
+*(Hence proved.)*
+
+---
+
+#### **Part 2: Proof for $R_{02} = R_2 + K^2 R_1$**
+When the primary winding resistance $R_1$ is transferred to the secondary side, its equivalent resistance $R_1'$ must produce the same copper loss when carrying the secondary current $I_2$ as the actual resistance $R_1$ produces when carrying the primary current $I_1$:
+
+$$\text{Copper loss in secondary by } R_1' = \text{Copper loss in primary by } R_1$$
+$$I_2^2 R_1' = I_1^2 R_1$$
+
+Solving for $R_1'$:
+$$R_1' = \left(\frac{I_1}{I_2}\right)^2 R_1$$
+
+Substituting $\frac{I_1}{I_2} = K$:
+$$R_1' = K^2 R_1$$
+
+The total equivalent resistance referred to the secondary side ($R_{02}$) is:
+$$R_{02} = R_2 + R_1' = R_2 + K^2 R_1$$
+
+*(Hence proved.)*
+
+---
+
+#### **Relation Between $R_{01}$ and $R_{02}$:**
+$$R_{02} = K^2 \left(R_1 + \frac{R_2}{K^2}\right) = K^2 R_{01}$$
+
+---
+
+### 29. Page 17, Q.2(a) (lower half): Explain why an increase in secondary current causes an increase in primary current in a transformer.
+
+A transformer operates on the principle of magnetic balance, which automatically maintains a constant working core flux $\Phi$ irrespective of load variations. The physical mechanism operates through the following steps:
+
+```
+ Secondary Current Increases (I₂ ↑)
+               │
+               ▼
+ Opposing M.M.F. Produced: (N₂ I₂)
+               │
+               ▼
+ Main Core Flux Momentarily Decreases (Φ ↓)
+               │
+               ▼
+ Primary Induced Back E.M.F. Decreases (E₁ ↓)
+               │
+               ▼
+ Voltage Difference (V₁ - E₁) Increases
+               │
+               ▼
+ Primary Draws Counter-Balancing Current: I₂' = (N₂/N₁) · I₂ = K I₂
+               │
+               ▼
+ Opposing M.M.F.s Cancel: (N₁ I₂' = N₂ I₂) ──► Flux Φ Restored
+               │
+               ▼
+ Total Primary Current Increases: Ī₁ = Ī₀ + Ī₂'
+```
+
+---
+
+#### **Step-by-Step Explanation:**
+
+1. **Equilibrium at No-Load:**
+   On no-load ($I_2 = 0$), the primary winding draws only the small no-load current $I_0$. This current establishes the mutual magnetic flux $\Phi$ in the core. The flux induces a primary back e.m.f. $E_1$ that almost completely opposes and balances the applied supply voltage $V_1$ ($V_1 \approx -E_1$).
+
+2. **Demagnetizing M.M.F. of the Load Current:**
+   When a load is connected across the secondary, a secondary current $I_2$ begins to flow through the secondary winding of $N_2$ turns. This sets up a **demagnetizing magnetomotive force (m.m.f.)** equal to $N_2 I_2$. By Lenz’s law, this m.m.f. opposes the main magnetic flux $\Phi$.
+
+3. **Reduction of Primary Back E.M.F. ($E_1$):**
+   The demagnetizing m.m.f. momentarily weakens the core flux $\Phi$. Because the primary induced back e.m.f. is directly proportional to flux ($E_1 = 4.44 f N_1 \Phi$), $E_1$ drops slightly.
+
+4. **Primary Current Surge:**
+   The primary current is given by:
+   $$\vec{I}_1 = \frac{\vec{V}_1 - \vec{E}_1}{\vec{Z}_1}$$
+   Because the internal impedance $\vec{Z}_1$ of the primary winding is very small, even a fractional decrease in $E_1$ causes a large net driving voltage $(V_1 - E_1)$, prompting the primary winding to draw an additional load current $I_2'$ from the supply mains.
+
+5. **Restoration of Core Flux:**
+   This additional primary current $I_2'$ creates a neutralizing primary m.m.f. $N_1 I_2'$ that exactly opposes and cancels the secondary demagnetizing m.m.f. $N_2 I_2$:
+   $$N_1 I_2' = N_2 I_2 \implies I_2' = \left(\frac{N_2}{N_1}\right) I_2 = K I_2$$
+   As a result, the net core flux $\Phi$ is immediately restored to its constant rated value.
+
+6. **Conclusion:**
+   The total primary current is the phasor sum of the no-load current and this reflected load current:
+   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$$
+   Therefore, any increase in the secondary load current $I_2$ directly causes a proportional increase in the primary current $I_1$.
+
+---
+
+### 30. Page 23, Q.16: What is impedance ratio? How impedances in a transformer can be shifted with referred to primary or with referred to secondary?
+
+#### **1. Impedance Ratio**
+The **impedance ratio** of a transformer is defined as the ratio of the impedance of the secondary winding (or circuit) to the impedance of the primary winding (or circuit), or vice-versa. 
+
+It is equal to the **square of the voltage transformation ratio ($K^2$)**:
+
+$$\text{Impedance Ratio} = \frac{Z_2}{Z_1} = K^2 = \left(\frac{N_2}{N_1}\right)^2 = \left(\frac{V_2}{V_1}\right)^2$$
+
+---
+
+#### **2. Shifting Impedances from Secondary to Primary:**
+To transfer any secondary resistance, leakage reactance, or external load impedance ($R_2, X_2, Z_2, Z_L$) to the primary side:
+
+- **Rule:** **Divide by $K^2$** (or multiply by $(N_1/N_2)^2$).
+
+$$\text{Secondary Resistance referred to Primary: } R_2' = \frac{R_2}{K^2} = R_2 \left(\frac{N_1}{N_2}\right)^2$$
+$$\text{Secondary Reactance referred to Primary: } X_2' = \frac{X_2}{K^2} = X_2 \left(\frac{N_1}{N_2}\right)^2$$
+$$\text{Secondary Impedance referred to Primary: } Z_2' = \frac{Z_2}{K^2} = Z_2 \left(\frac{N_1}{N_2}\right)^2$$
+$$\text{Load Impedance referred to Primary: } Z_L' = \frac{Z_L}{K^2} = Z_L \left(\frac{N_1}{N_2}\right)^2$$
+
+---
+
+#### **3. Shifting Impedances from Primary to Secondary:**
+To transfer any primary resistance, leakage reactance, or impedance ($R_1, X_1, Z_1$) to the secondary side:
+
+- **Rule:** **Multiply by $K^2$** (or multiply by $(N_2/N_1)^2$).
+
+$$\text{Primary Resistance referred to Secondary: } R_1' = K^2 R_1 = R_1 \left(\frac{N_2}{N_1}\right)^2$$
+$$\text{Primary Reactance referred to Secondary: } X_1' = K^2 X_1 = X_1 \left(\frac{N_2}{N_1}\right)^2$$
+$$\text{Primary Impedance referred to Secondary: } Z_1' = K^2 Z_1 = Z_1 \left(\frac{N_2}{N_1}\right)^2$$
+
+---
+
+#### **4. Summary of Shifting Rules:**
+
+| Parameter Shifted | Mathematical Operation | Justification / Physical Basis |
+| :--- | :--- | :--- |
+| **Primary $\to$ Secondary** | **Multiply by $K^2$** | Preserves copper loss: $I_2^2 (K^2 R_1) = I_1^2 R_1$ |
+| **Secondary $\to$ Primary** | **Divide by $K^2$** | Preserves copper loss: $I_1^2 \left(\frac{R_2}{K^2}\right) = I_2^2 R_2$ |
+| **Voltage $\to$ Other side** | Multiply / Divide by $K$ | Follows $V_2 = K V_1$ |
+| **Current $\to$ Other side** | Divide / Multiply by $K$ | Follows $I_2 = \frac{I_1}{K}$ |
+
