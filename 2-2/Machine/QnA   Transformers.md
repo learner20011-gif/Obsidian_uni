@@ -2981,4 +2981,198 @@ The statement is **entirely correct and describes standard engineering practice*
 2. **Accurate and Controllable Test Voltage:** $5\%\text{ to }10\%$ of the H.V. rated voltage (e.g., $5\%\text{ of } 2200\text{ V} = 110\text{ V}$) is easily provided and finely adjusted using a standard laboratory auto-transformer (variac). If performed on the L.V. side, $5\%$ of $220\text{ V} = 11\text{ V}$ would be too low to regulate and measure with high precision.
 3. **Safety:** Shorting the low-voltage terminals with a thick copper bar is safe, robust, and maintains zero potential across the short-circuit terminals.
 
+### 61. Page 19, Q.2(d): The corrected instrument readings obtained from open-circuit and short circuit tests on 10 kVA, 450/120 V, 50 Hz transformer are: O.C. Test: V1 = 120V, I1 = 4.2A, W1 = 80W; S.C. Test: Vsc = 9.65V, Isc = 22.2A, Wsc = 120W; with low-voltage winding short circuited. Compute: (i) the equivalent circuit constants, (ii) the efficiency and voltage regulation for 80% lagging p.f. load.
+
+#### **Given Data:**
+- Transformer Rating $= 10\text{ kVA} = 10,000\text{ VA}$
+- Primary Voltage (H.V.), $V_1 = 450\text{ V}$
+- Secondary Voltage (L.V.), $V_2 = 120\text{ V}$
+- Supply Frequency, $f = 50\text{ Hz}$
+- **O.C. Test (L.V. side):** $V_0 = 120\text{ V}, I_0 = 4.2\text{ A}, W_0 = 80\text{ W} = W_i$
+- **S.C. Test (H.V. side, L.V. shorted):** $V_{sc} = 9.65\text{ V}, I_{sc} = 22.2\text{ A}, W_{sc} = 120\text{ W}$
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **1. Transformation Ratio ($K$) and Rated Current:**
+$$K = \frac{V_2}{V_1} = \frac{120}{450} = \frac{4}{15}$$
+$$\text{Rated Primary Full-Load Current, } I_{1\text{(FL)}} = \frac{10,000}{450} = 22.22\text{ A} \approx 22.2\text{ A}$$
+*(Note: The S.C. test current $I_{sc} = 22.2\text{ A}$ is equal to full-load current, so $W_{sc} = 120\text{ W}$ is the full-load copper loss $W_{\text{Cu(FL)}}$.)*
+
+---
+
+#### **(i) Computation of Equivalent Circuit Constants (Referred to H.V. Primary Side):**
+
+- **Shunt Parameters from O.C. Test:**
+  - O.C. test no-load power factor on L.V. side:
+    $$\cos \phi_0 = \frac{W_0}{V_0 I_0} = \frac{80}{120 \times 4.2} = 0.1587 \implies \sin \phi_0 = \sqrt{1 - (0.1587)^2} = 0.9873$$
+  - Core-loss resistance on L.V. side:
+    $$R_{0\text{(LV)}} = \frac{V_0^2}{W_0} = \frac{120^2}{80} = 180\,\Omega$$
+  - Magnetizing current on L.V. side:
+    $$I_{\mu\text{(LV)}} = I_0 \sin \phi_0 = 4.2 \times 0.9873 = 4.147\text{ A}$$
+  - Magnetizing reactance on L.V. side:
+    $$X_{0\text{(LV)}} = \frac{V_0}{I_{\mu\text{(LV)}}} = \frac{120}{4.147} = 28.94\,\Omega$$
+
+  **Referred to H.V. (Primary) side:**
+  $$R_0 = \frac{R_{0\text{(LV)}}}{K^2} = \frac{180}{(4/15)^2} = 180 \times \frac{225}{16} = \mathbf{2530\,\Omega}$$
+  $$X_0 = \frac{X_{0\text{(LV)}}}{K^2} = \frac{28.94}{(4/15)^2} = 28.94 \times \frac{225}{16} = \mathbf{409\,\Omega}$$
+
+- **Series Parameters from S.C. Test (Directly on H.V. side):**
+  $$Z_{01} = \frac{V_{sc}}{I_{sc}} = \frac{9.65}{22.2} = \mathbf{0.435\,\Omega}$$
+  $$R_{01} = \frac{W_{sc}}{I_{sc}^2} = \frac{120}{(22.2)^2} = \mathbf{0.243\,\Omega}$$
+  $$X_{01} = \sqrt{Z_{01}^2 - R_{01}^2} = \sqrt{(0.435)^2 - (0.243)^2} = \sqrt{0.1892 - 0.0590} = \mathbf{0.361\,\Omega}$$
+
+---
+
+#### **(ii) Efficiency and Voltage Regulation at Full-Load, 80% (0.8) Lagging p.f.:**
+
+1. **Efficiency ($\eta$):**
+   - Output power $= 10\text{ kVA} \times 0.8 = 8\text{ kW} = 8000\text{ W}$
+   - Total losses $= W_i + W_{\text{Cu(FL)}} = 80 + 120 = 200\text{ W}$
+   - Input power $= 8000 + 200 = 8200\text{ W}$
+   $$\eta = \frac{8000}{8200} \times 100 = \mathbf{97.56\%}$$
+
+2. **Voltage Regulation:**
+   - For $\cos \phi = 0.8\text{ lagging}$, $\sin \phi = 0.6$:
+   - Total primary voltage drop:
+     $$\Delta V_1 = I_{1\text{(FL)}} (R_{01} \cos \phi + X_{01} \sin \phi)$$
+     $$\Delta V_1 = 22.2 \times (0.243 \times 0.8 + 0.361 \times 0.6) = 22.2 \times (0.1944 + 0.2166) = 22.2 \times 0.411 = 9.124\text{ V}$$
+   - Percentage Voltage Regulation:
+     $$\% \text{ Regulation} = \frac{\Delta V_1}{V_1} \times 100 = \frac{9.124}{450} \times 100 = \mathbf{2.03\%} \approx \mathbf{2.04\%}$$
+
+---
+
+### 62. Page 23, Q.23-28: (List covers objectives of tests, separation of core losses, and why HV side is left open in OC test).
+
+#### **1. Objectives of Open-Circuit (O.C.) and Short-Circuit (S.C.) Tests:**
+- To determine the constant core loss ($W_i$) and full-load variable copper loss ($W_{\text{Cu}}$) without actually loading the transformer.
+- To compute the efficiency of the transformer at any desired load and power factor.
+- To determine the equivalent circuit parameters ($R_0, X_0, R_{01}, X_{01}, Z_{01}$).
+- To calculate the voltage regulation under all types of load (unity, lagging, and leading).
+
+---
+
+#### **2. Why H.V. Side is Kept Open in the O.C. Test:**
+- **Safety and Voltage Availability:** The rated voltage of the L.V. winding (e.g., $110\text{ V}, 230\text{ V}$) is readily available in laboratories, whereas rated H.V. voltage presents severe insulation and shock hazards.
+- **Meter Sensitivity:** On the L.V. side, the no-load current $I_0$ ($2\%\text{ to }10\%$ of rated current) is of sufficient magnitude to provide a precise, accurate deflection on standard laboratory ammeters and wattmeters.
+
+---
+
+#### **3. Separation of Core Losses (Hysteresis and Eddy Current Losses):**
+Core loss is expressed as:
+$$W_i = W_h + W_e = A f + B f^2 \quad (\text{at constant core flux density } B_m \propto V/f)$$
+
+Dividing the entire equation by frequency $f$:
+$$\frac{W_i}{f} = A + B f$$
+
+```
+       Wi / f
+         ▲
+         │             / (Slope = B)
+         │           /
+         │         /
+         │       /
+       A ┼─────/
+         │   /
+         │ /
+       0 ┼───────────────► Frequency (f)
+```
+
+- **Method:**
+  1. The transformer is energized at different frequencies, with applied voltage adjusted in each run to keep $\frac{V}{f} = \text{constant}$ (ensuring constant $B_m$).
+  2. The total iron loss $W_i$ is recorded for each frequency.
+  3. A graph of $\frac{W_i}{f}$ versus $f$ is plotted:
+     - The **vertical intercept** on the y-axis gives constant $A$.
+     - The **slope of the straight line** gives constant $B$.
+  4. At normal frequency $f_n$:
+     $$\text{Hysteresis Loss, } W_h = A f_n$$
+     $$\text{Eddy Current Loss, } W_e = B f_n^2$$
+
+---
+
+### 63. Page 24, Q.29-35: (List covers transformer rating in kVA, efficiency, output equation for max efficiency, all-day efficiency, and cooling).
+
+#### **1. Why a Transformer is Rated in kVA (Not in kW):**
+- Copper loss ($I^2 R$) depends strictly on the **current** ($I$).
+- Iron loss ($W_i$) depends strictly on the **voltage** ($V$).
+- Neither loss depends on the power factor ($\cos \phi$) of the load.
+- Because total internal loss and thermal heating depend entirely on the product of voltage and current ($\text{Volt-Amperes}$), and because the transformer manufacturer cannot foresee the power factor of the load that the user will connect, transformers are rated in **kVA**.
+
+---
+
+#### **2. Maximum Efficiency and Output Equation:**
+- Condition for maximum efficiency:
+  $$\mathbf{\text{Variable Copper Loss } (W_{\text{Cu}}) = \text{Constant Iron Loss } (W_i)}$$
+- Load kVA corresponding to maximum efficiency:
+  $$\text{kVA}_{\max} = \text{Rated kVA} \times \sqrt{\frac{W_i}{W_{\text{Cu(FL)}}}}$$
+
+---
+
+#### **3. All-Day Efficiency:**
+- For distribution transformers whose primaries are energized 24 hours a day with fluctuating loads:
+  $$\eta_{\text{all-day}} = \frac{\text{Total Energy Output in 24 Hours (kWh)}}{\text{Total Energy Input in 24 Hours (kWh)}} \times 100$$
+
+---
+
+#### **4. Methods of Transformer Cooling:**
+- **Dry-Type Transformers:**
+  - Air Natural (AN)
+  - Air Blast (AB)
+- **Oil-Immersed Transformers:**
+  - Oil Natural Air Natural (ONAN)
+  - Oil Natural Air Forced (ONAF)
+  - Oil Forced Air Forced (OFAF)
+  - Oil Forced Water Forced (OFWF)
+
+---
+
+### 64. Page 26, CT-04 Q.2: The following are the readings taken for the short circuit and open circuit test of a 10-kVA, 600/240V, and 50Hz transformer. SC: V = 22.5V, I = rated, W=200 W. O.C. V = 240V, I = 1.8 A, W = 65W Calculate the maximum efficiency at unity p..f load and at 0.8 lagging p.f. load.
+
+#### **Given Data:**
+- Transformer Rating $= 10\text{ kVA}$
+- Primary Voltage, $V_1 = 600\text{ V}$
+- Secondary Voltage, $V_2 = 240\text{ V}$
+- Frequency, $f = 50\text{ Hz}$
+- **From O.C. Test (rated 240 V):** Core/Iron Loss, $W_i = 65\text{ W} = 0.065\text{ kW}$
+- **From S.C. Test (at rated current):** Full-Load Copper Loss, $W_{\text{Cu(FL)}} = 200\text{ W} = 0.200\text{ kW}$
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **1. Fractional Load ($x$) at Maximum Efficiency:**
+$$x = \sqrt{\frac{W_i}{W_{\text{Cu(FL)}}}} = \sqrt{\frac{65}{200}} = \sqrt{0.325} = \mathbf{0.5701} \quad (57.01\% \text{ of Full-Load})$$
+
+#### **2. Load kVA at Maximum Efficiency:**
+$$\text{kVA at } \eta_{\max} = x \times 10\text{ kVA} = 0.5701 \times 10 = \mathbf{5.701\text{ kVA}}$$
+
+#### **3. Total Losses at Maximum Efficiency:**
+$$\text{Total Losses} = 2 \times W_i = 2 \times 65\text{ W} = 130\text{ W} = \mathbf{0.130\text{ kW}}$$
+
+---
+
+#### **4. Maximum Efficiency at Unity Power Factor ($\cos \phi = 1.0$):**
+- Output Power:
+  $$P_{\text{out}} = \text{kVA}_{\max} \times \cos \phi = 5.701 \times 1.0 = 5.701\text{ kW}$$
+- Input Power:
+  $$P_{\text{in}} = P_{\text{out}} + \text{Total Losses} = 5.701 + 0.130 = 5.831\text{ kW}$$
+- Maximum Efficiency ($\eta_{\max}$):
+  $$\eta_{\max\text{(u.p.f.)}} = \frac{5.701}{5.831} \times 100 = \mathbf{97.77\%}$$
+
+---
+
+#### **5. Maximum Efficiency at $0.8$ Lagging Power Factor ($\cos \phi = 0.8$):**
+- Output Power:
+  $$P_{\text{out}} = \text{kVA}_{\max} \times \cos \phi = 5.701 \times 0.8 = 4.5608\text{ kW}$$
+- Input Power:
+  $$P_{\text{in}} = P_{\text{out}} + \text{Total Losses} = 4.5608 + 0.130 = 4.6908\text{ kW}$$
+- Maximum Efficiency ($\eta_{\max}$):
+  $$\eta_{\max\text{(0.8 lag)}} = \frac{4.5608}{4.6908} \times 100 = \mathbf{97.23\%}$$
+
+---
+
+#### **Summary of Results:**
+- Maximum Efficiency at **Unity Power Factor:** **$97.77\%$**
+- Maximum Efficiency at **$0.8$ Lagging Power Factor:** **$97.23\%$**
 
