@@ -2195,3 +2195,176 @@ When the transformer operates as a step-down transformer delivering rated full-l
 #### **Conclusion:**
 When the full load at unity power factor is removed, the secondary open-circuit voltage will be **$1.01\text{ times}$ the rated full-load voltage (i.e., $101\%$ of rated secondary voltage $V_2$)**.
 
+### 44. Page 33, Q.2(c): Discuss the effect of change in frequency on transformer’s (i) core loss, (ii) Cu loss, and (iii) voltage regulation.
+
+When the supply frequency ($f$) of a transformer changes while the applied terminal voltage ($V$) is maintained constant, its performance parameters are affected as follows:
+
+---
+
+#### **(i) Effect on Core Loss (Iron Loss):**
+From the transformer e.m.f. equation, the maximum core flux density is inversely proportional to frequency:
+$$V \approx 4.44 f N B_m A \implies B_m \propto \frac{V}{f}$$
+
+The total core loss comprises two parts:
+1. **Hysteresis Loss ($W_h$):**
+   $$W_h = \eta B_m^{1.6} f \propto \left(\frac{V}{f}\right)^{1.6} f \propto V^{1.6} f^{-0.6}$$
+   - Hysteresis loss is inversely proportional to $f^{0.6}$. 
+   - A **decrease in frequency** increases hysteresis loss (e.g., at $50\text{ Hz}$, $W_h$ is about $11\%$ higher than at $60\text{ Hz}$).
+   - An **increase in frequency** decreases hysteresis loss.
+
+2. **Eddy Current Loss ($W_e$):**
+   $$W_e = K_e B_m^2 f^2 \propto \left(\frac{V}{f}\right)^2 f^2 \propto V^2$$
+   - Eddy current loss is **independent of frequency** when voltage is held constant.
+
+**Conclusion:** Total core loss ($W_i = W_h + W_e$) **increases as frequency decreases**, causing the transformer to run hotter at lower frequencies.
+
+---
+
+#### **(ii) Effect on Copper Loss (Cu Loss):**
+Full-load copper loss is determined by the winding currents and their ohmic resistances:
+$$W_{\text{Cu}} = I_1^2 R_1 + I_2^2 R_2$$
+- The ohmic resistance of copper conductors depends only on temperature and geometry.
+- Neglecting minor skin effect at standard power frequencies ($50\text{ Hz}$ / $60\text{ Hz}$), the winding resistance remains constant.
+
+**Conclusion:** For a given load current, **copper loss is independent of supply frequency**.
+
+---
+
+#### **(iii) Effect on Voltage Regulation:**
+The approximate voltage drop in a transformer is:
+$$\Delta V = I (R \cos \phi \pm X \sin \phi)$$
+
+The leakage reactance $X$ is directly proportional to frequency:
+$$X = 2\pi f L \propto f$$
+
+1. **At Unity Power Factor ($\cos \phi = 1, \sin \phi = 0$):**
+   - Voltage drop depends solely on resistive drop ($I R$).
+   - Voltage regulation is **unaffected by changes in frequency**.
+
+2. **At Lagging/Leading Power Factor:**
+   - As frequency **increases**, leakage reactance $X$ increases, increasing the reactive drop ($I X \sin \phi$). This results in a **poorer (larger) voltage regulation** for lagging loads.
+   - As frequency **decreases**, leakage reactance $X$ decreases, leading to a smaller reactive drop and **improved (smaller) voltage regulation** for lagging loads.
+
+---
+
+### 45. Page 41, Q.4(a): What is meant by regulation of a transformer? Which transformer is better when regulation of one transformer is 0.04% and another is 0.05% and why?
+
+#### **1. Meaning of Voltage Regulation:**
+The **voltage regulation** of a transformer represents the change in secondary terminal voltage when rated full-load is removed (i.e., from full-load to no-load condition) while maintaining the primary supply voltage constant. It is expressed as a percentage of the secondary terminal voltage:
+
+$$\% \text{ Voltage Regulation} = \frac{{}_0V_2 - V_2}{{}_0V_2} \times 100$$
+
+where:
+- ${}_0V_2 =$ Secondary terminal voltage on no-load ($= E_2 = K V_1$)
+- $V_2 =$ Secondary terminal voltage at rated full-load
+
+---
+
+#### **2. Comparison of Transformers ($0.04\%$ vs $0.05\%$):**
+Between the two transformers:
+- Transformer 1: Voltage Regulation $= 0.04\%$
+- Transformer 2: Voltage Regulation $= 0.05\%$
+
+**The transformer with $0.04\%$ voltage regulation is BETTER.**
+
+---
+
+#### **Why?**
+1. **Closer to Ideal Performance:** An ideal transformer has $0\%$ voltage regulation (constant terminal voltage under all load conditions). A regulation of $0.04\%$ is closer to zero than $0.05\%$.
+2. **Superior Voltage Stability:** A smaller voltage regulation value indicates smaller internal impedance drops ($I R_{02}$ and $I X_{02}$). The secondary terminal voltage will remain substantially more stable from no-load to full-load.
+3. **Protection of Connected Loads:** Industrial and domestic equipment, lighting systems, and electronic appliances perform more efficiently and have longer lifespans when supplied with a steady voltage free from noticeable voltage sags under load changes.
+
+---
+
+### 47. Page 7, Q.1(c): A 10 kVA, 1-φ, 50 Hz 400/200 V transformer gave the following test results: O.C. Test (LV side) 200 V 3.0 A 200 W. S.C. Test (HV side) 15 V 30 A 300 W. Calculate efficiency and regulation at full load, 0.8 p.f lagging.
+
+#### **Given Data:**
+- Transformer Rating $= 10\text{ kVA} = 10,000\text{ VA}$
+- Primary Voltage (H.V.), $V_1 = 400\text{ V}$
+- Secondary Voltage (L.V.), $V_2 = 200\text{ V}$
+- Frequency, $f = 50\text{ Hz}$
+- O.C. Test (L.V. side): $V_0 = 200\text{ V}, I_0 = 3.0\text{ A}, W_0 = 200\text{ W}$
+- S.C. Test (H.V. side): $V_{sc} = 15\text{ V}, I_{sc} = 30\text{ A}, W_{sc} = 300\text{ W}$
+- Load Power Factor, $\cos \phi = 0.8\text{ lagging}$ ($\sin \phi = 0.6$)
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **1. Rated Currents:**
+- Rated H.V. (Primary) Current:
+  $$I_{1\text{(FL)}} = \frac{\text{kVA} \times 1000}{V_1} = \frac{10,000}{400} = 25\text{ A}$$
+- Rated L.V. (Secondary) Current:
+  $$I_{2\text{(FL)}} = \frac{10,000}{200} = 50\text{ A}$$
+
+---
+
+#### **2. Losses Determination:**
+- **Constant Iron Loss ($W_i$):**
+  From the Open-Circuit (O.C.) test at rated voltage:
+  $$W_i = W_0 = 200\text{ W}$$
+
+- **Full-Load Copper Loss ($W_{\text{Cu(FL)}}$):**
+  The S.C. test was conducted at $I_{sc} = 30\text{ A}$, which is higher than rated current ($25\text{ A}$).
+  Equivalent resistance referred to H.V. side:
+  $$R_{01} = \frac{W_{sc}}{I_{sc}^2} = \frac{300}{(30)^2} = \frac{300}{900} = \frac{1}{3}\,\Omega = 0.3333\,\Omega$$
+
+  Full-load copper loss at rated primary current ($I_{1\text{(FL)}} = 25\text{ A}$):
+  $$W_{\text{Cu(FL)}} = I_{1\text{(FL)}}^2 R_{01} = (25)^2 \times \frac{1}{3} = \frac{625}{3} = 208.33\text{ W}$$
+
+---
+
+#### **3. Efficiency at Full-Load, 0.8 p.f. Lagging:**
+- Full-load Output Power:
+  $$P_{\text{out}} = \text{kVA} \times \cos \phi = 10 \times 0.8 = 8\text{ kW} = 8,000\text{ W}$$
+
+- Total Full-load Losses:
+  $$\text{Total Losses} = W_i + W_{\text{Cu(FL)}} = 200 + 208.33 = 408.33\text{ W}$$
+
+- Full-load Input Power:
+  $$P_{\text{in}} = P_{\text{out}} + \text{Total Losses} = 8,000 + 408.33 = 8,408.33\text{ W}$$
+
+- Efficiency ($\eta$):
+  $$\eta = \frac{P_{\text{out}}}{P_{\text{in}}} \times 100 = \frac{8,000}{8,408.33} \times 100 = \mathbf{95.14\%}$$
+
+---
+
+#### **4. Voltage Regulation at Full-Load, 0.8 p.f. Lagging:**
+From S.C. test parameters referred to H.V. side:
+- Total Equivalent Impedance:
+  $$Z_{01} = \frac{V_{sc}}{I_{sc}} = \frac{15}{30} = 0.5\,\Omega$$
+
+- Total Equivalent Reactance:
+  $$X_{01} = \sqrt{Z_{01}^2 - R_{01}^2} = \sqrt{(0.5)^2 - (0.3333)^2} = \sqrt{0.25 - 0.1111} = \sqrt{0.1389} = 0.3727\,\Omega$$
+
+- Total Voltage Drop referred to Primary:
+  $$\Delta V_1 = I_{1\text{(FL)}} (R_{01} \cos \phi + X_{01} \sin \phi)$$
+  $$\Delta V_1 = 25 \times (0.3333 \times 0.8 + 0.3727 \times 0.6) = 25 \times (0.2667 + 0.2236) = 25 \times 0.4903 = 12.26\text{ V}$$
+
+- Percentage Voltage Regulation:
+  $$\% \text{ Regulation} = \frac{\Delta V_1}{V_1} \times 100 = \frac{12.26}{400} \times 100 = \mathbf{3.065\%} \approx \mathbf{3.07\%}$$
+
+---
+
+### 48. Page 7, Q.1(d): Why is generally low voltage side shorted for short-circuit test of a transformer?
+
+In performing the **short-circuit (impedance) test** of a transformer, the low-voltage (L.V.) side is solidly short-circuited while all measuring instruments (voltmeter, ammeter, wattmeter) and the variable power source are connected to the high-voltage (H.V.) side for the following major technical and practical reasons:
+
+---
+
+1. **Lower Rated Current on H.V. Side (Standard Metering Range):**
+   - The rated current on the high-voltage side is small ($I_{\text{HV}} = K \cdot I_{\text{LV}}$).
+   - Standard laboratory ammeters, wattmeters, and variacs (typically rated for $5\text{ A}$ to $20\text{ A}$) can be connected directly into the circuit without requiring expensive, high-current instrument transformers (C.T.s).
+
+2. **Availability and Control of Test Voltage:**
+   - To circulate full-load current under short-circuit conditions, only about **$5\%\text{ to }10\%$ of rated voltage** is required.
+   - When energized from the H.V. side, this required voltage (e.g., $5\%\text{ of } 3300\text{ V} = 165\text{ V}$) is within an easily controllable and measurable range on standard laboratory variable a.c. supplies.
+   - If energized from the L.V. side, $5\%$ of a low voltage (e.g., $5\%\text{ of } 220\text{ V} = 11\text{ V}$) would be very difficult to regulate and measure accurately with standard meters.
+
+3. **Ease and Safety of Short-Circuiting the L.V. Side:**
+   - Shorting the low-voltage terminals with a thick copper link or bar is simple, safe, and mechanically robust.
+   - The voltage across the shorted L.V. terminals is zero, eliminating insulation breakdown and shock hazards on the secondary side during the test.
+
+4. **Measurement Accuracy:**
+   - Placing instruments on the H.V. side ensures that the measured impedance and loss values fall well within the optimal scale deflection ranges of voltmeters and wattmeters, minimizing instrument reading errors.
+
