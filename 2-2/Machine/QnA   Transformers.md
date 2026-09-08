@@ -2588,4 +2588,225 @@ The primary objectives of conducting the short-circuit (or impedance) test on a 
   $$X_{01} = \sqrt{Z_{01}^2 - R_{01}^2}$$
 - **Short-Circuit Power Factor:**
   $$\cos \phi_{sc} = \frac{R_{01}}{Z_{01}} = \frac{W_{sc}}{V_{sc} I_{sc}}$$
+### 53. Page 17, Q.2(d): Find the equivalent winding resistance, reactance and impedance referred to the (i) high voltage side and (ii) the low voltage side. (from a 30 KVA, 2400/120 V, 50 Hz transformer).
+
+#### **Given Data:**
+- Transformer Rating $= 30\text{ kVA}$
+- Primary High-Voltage (H.V.), $V_1 = 2400\text{ V}$
+- Secondary Low-Voltage (L.V.), $V_2 = 120\text{ V}$
+- Frequency, $f = 50\text{ Hz}$
+- High-voltage winding resistance, $R_1 = 0.1\,\Omega$
+- High-voltage winding leakage reactance, $X_1 = 0.22\,\Omega$
+- Low-voltage winding resistance, $R_2 = 0.035\,\Omega$
+- Low-voltage winding leakage reactance, $X_2 = 0.012\,\Omega$
+
+---
+
+#### **Step-by-Step Calculations:**
+
+#### **1. Transformation Ratio ($K$):**
+$$K = \frac{V_2}{V_1} = \frac{120}{2400} = \frac{1}{20} = 0.05$$
+$$K^2 = \left(\frac{1}{20}\right)^2 = \frac{1}{400} = 0.0025$$
+
+---
+
+#### **(i) Values Referred to High-Voltage (H.V. / Primary) Side:**
+
+1. **Equivalent Resistance ($R_{01}$):**
+   $$R_{01} = R_1 + R_2' = R_1 + \frac{R_2}{K^2}$$
+   $$R_{01} = 0.1 + \frac{0.035}{(1/20)^2} = 0.1 + (0.035 \times 400) = 0.1 + 14.0 = \mathbf{14.1\,\Omega}$$
+
+2. **Equivalent Leakage Reactance ($X_{01}$):**
+   $$X_{01} = X_1 + X_2' = X_1 + \frac{X_2}{K^2}$$
+   $$X_{01} = 0.22 + \frac{0.012}{(1/20)^2} = 0.22 + (0.012 \times 400) = 0.22 + 4.80 = \mathbf{5.02\,\Omega}$$
+
+3. **Equivalent Impedance ($Z_{01}$):**
+   $$Z_{01} = \sqrt{R_{01}^2 + X_{01}^2} = \sqrt{(14.1)^2 + (5.02)^2} = \sqrt{198.81 + 25.2004} = \sqrt{224.01} = \mathbf{14.97\,\Omega \approx 15.0\,\Omega}$$
+
+---
+
+#### **(ii) Values Referred to Low-Voltage (L.V. / Secondary) Side:**
+
+1. **Equivalent Resistance ($R_{02}$):**
+   $$R_{02} = R_2 + R_1' = R_2 + K^2 R_1$$
+   $$R_{02} = 0.035 + \left(\frac{1}{400}\right) \times 0.1 = 0.035 + 0.00025 = \mathbf{0.03525\,\Omega}$$
+   *(Alternatively: $R_{02} = K^2 R_{01} = \frac{14.1}{400} = 0.03525\,\Omega$)*
+
+2. **Equivalent Leakage Reactance ($X_{02}$):**
+   $$X_{02} = X_2 + X_1' = X_2 + K^2 X_1$$
+   $$X_{02} = 0.012 + \left(\frac{1}{400}\right) \times 0.22 = 0.012 + 0.00055 = \mathbf{0.01255\,\Omega}$$
+   *(Alternatively: $X_{02} = K^2 X_{01} = \frac{5.02}{400} = 0.01255\,\Omega$)*
+
+3. **Equivalent Impedance ($Z_{02}$):**
+   $$Z_{02} = \sqrt{R_{02}^2 + X_{02}^2} = \sqrt{(0.03525)^2 + (0.01255)^2} = \sqrt{0.00124256 + 0.00015750} = \mathbf{0.0374\,\Omega}$$
+   *(Alternatively: $Z_{02} = K^2 Z_{01} = \frac{14.97}{400} = 0.0374\,\Omega$)*
+
+---
+
+### 54. Page 17, Q.4(a): Why is all-day efficiency preferred rather than commercial efficiency?
+
+#### **1. Commercial / Ordinary Efficiency vs. Real Operating Conditions:**
+**Commercial efficiency** is defined at an instantaneous point in time under a steady power level:
+$$\text{Commercial Efficiency} = \frac{\text{Output Power in Watts}}{\text{Input Power in Watts}}$$
+
+While commercial efficiency is suitable for **power transformers** (which operate near full load continuously at power stations), it does not accurately measure the performance of **distribution transformers** because of their distinct operating cycle:
+
+```
+                  DISTRIBUTION TRANSFORMER 24-HOUR CYCLE
+ ┌────────────────────────────────────────────────────────────────────────┐
+ │ Primary connected to grid 24 hrs ──► Core Loss occurs CONTINUOUSLY     │
+ │                                                                        │
+ │ Secondary load varies wildly:                                          │
+ │   - Peak load for only 4-6 evening hours                               │
+ │   - Light / No-load for remaining 18-20 hours                          │
+ │   ──► Copper Loss (I²R) occurs ONLY when load flows                    │
+ └────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+#### **2. Why All-Day Efficiency is Preferred:**
+
+1. **Continuous Core Loss vs. Intermittent Copper Loss:**
+   - The primary winding remains energized for all $24\text{ hours}$ of the day, so **core/iron loss ($W_i$) is dissipated continuously**.
+   - The secondary load fluctuates (e.g., heavy during evening residential peak, nearly zero after midnight). Therefore, **copper loss ($I^2R$) varies with the square of the fractional load ($x^2 W_{\text{Cu}}$)**.
+
+2. **True Measure of Energy Consumption:**
+   - Commercial efficiency calculated at full load suggests high performance (e.g., $98\%$), but in reality, if the transformer sits lightly loaded for most of the day, total daily energy loss will be dominated by continuous iron losses.
+   - **All-day efficiency (or energy efficiency)** computes the true energy balance over a complete 24-hour cycle:
+     $$\eta_{\text{all-day}} = \frac{\text{Energy Output in 24 Hours (kWh)}}{\text{Energy Input in 24 Hours (kWh)}} = \frac{\text{Output (kWh)}}{\text{Output (kWh)} + W_i\text{-energy (kWh)} + W_{\text{Cu}}\text{-energy (kWh)}}$$
+
+3. **Optimal Design Criterion for Distribution Transformers:**
+   - Distribution transformers are intentionally engineered with a very high iron-to-copper ratio to make **core losses extremely low**, placing their maximum efficiency point at around $50\%\text{ to }70\%$ of full load to maximize the 24-hour all-day energy efficiency.
+
+---
+
+### 55. Page 17, Q.4(c): Find ‘all-day’ efficiency of a transformer having maximum efficiency of 98% at 15kVA at unity p.f and loaded as follows: 12 Hrs – 2kW at 0.5 p.f lagging; 6 hrs – 12kW at 0.8 p.f lagging; 6 hrs – at no load.
+
+#### **Given Data:**
+- Maximum efficiency, $\eta_{\max} = 98\% = 0.98$ at $15\text{ kVA}$ at unity power factor ($\cos \phi = 1.0$)
+- 24-hour load cycle:
+  - **Period 1 (12 hours):** $2\text{ kW}$ at $0.5\text{ p.f. lagging}$
+  - **Period 2 (6 hours):** $12\text{ kW}$ at $0.8\text{ p.f. lagging}$
+  - **Period 3 (6 hours):** No load
+
+---
+
+#### **Step-by-Step Solution:**
+
+#### **1. Loss Evaluation at Maximum Efficiency:**
+- Output power at $\eta_{\max} = 15\text{ kVA} \times 1.0 = 15\text{ kW}$
+- Input power $= \frac{\text{Output}}{\eta_{\max}} = \frac{15}{0.98} = 15.3061\text{ kW}$
+- Total losses $= \text{Input} - \text{Output} = 15.3061 - 15 = 0.3061\text{ kW} = 306.1\text{ W}$
+
+At maximum efficiency:
+$$\text{Copper Loss } (W_{\text{Cu}}) = \text{Iron Loss } (W_i) = \frac{306.1}{2} = 153.06\text{ W} = 0.1531\text{ kW}$$
+
+- Full-load copper loss at $15\text{ kVA}$, $W_{\text{Cu(FL)}} = 0.1531\text{ kW}$
+- Constant core loss, $W_i = 0.1531\text{ kW}$
+
+---
+
+#### **2. Core Loss Energy in 24 Hours:**
+Since the core loss is continuous:
+$$\text{Core loss in 24 hours} = 24 \times 0.1531\text{ kW} = \mathbf{3.6744\text{ kWh}}$$
+
+---
+
+#### **3. Load Energy Output and Copper Losses for Each Period:**
+
+- **Period 1 ($12\text{ hours}$):**
+  - $\text{kVA}_1 = \frac{2\text{ kW}}{0.5} = 4\text{ kVA}$
+  - Load fraction, $x_1 = \frac{4}{15}$
+  - Output energy $= 2\text{ kW} \times 12\text{ h} = 24\text{ kWh}$
+  - Copper loss rate $= x_1^2 \times W_{\text{Cu(FL)}} = \left(\frac{4}{15}\right)^2 \times 0.1531 = 0.010887\text{ kW}$
+  - Copper loss energy $= 0.010887\text{ kW} \times 12\text{ h} = \mathbf{0.1306\text{ kWh}}$
+
+- **Period 2 ($6\text{ hours}$):**
+  - $\text{kVA}_2 = \frac{12\text{ kW}}{0.8} = 15\text{ kVA}$
+  - Load fraction, $x_2 = \frac{15}{15} = 1.0$ (Full load)
+  - Output energy $= 12\text{ kW} \times 6\text{ h} = 72\text{ kWh}$
+  - Copper loss rate $= (1.0)^2 \times 0.1531 = 0.1531\text{ kW}$
+  - Copper loss energy $= 0.1531\text{ kW} \times 6\text{ h} = \mathbf{0.9186\text{ kWh}}$
+
+- **Period 3 ($6\text{ hours}$ at No-Load):**
+  - Output energy $= 0\text{ kWh}$
+  - Copper loss energy $= 0\text{ kWh}$
+
+---
+
+#### **4. Daily Totals:**
+- **Total Output Energy:**
+  $$\text{Total Output (kWh)} = 24 + 72 + 0 = \mathbf{96\text{ kWh}}$$
+
+- **Total Copper Loss Energy:**
+  $$\text{Total } W_{\text{Cu}}\text{ (kWh)} = 0.1306 + 0.9186 + 0 = \mathbf{1.0492\text{ kWh}}$$
+
+- **Total Energy Losses:**
+  $$\text{Total Losses} = 3.6744\text{ (Iron)} + 1.0492\text{ (Copper)} = \mathbf{4.7236\text{ kWh}}$$
+
+- **Total Input Energy:**
+  $$\text{Total Input (kWh)} = 96 + 4.7236 = \mathbf{100.7236\text{ kWh}}$$
+
+---
+
+#### **5. All-Day Efficiency ($\eta_{\text{all-day}}$):**
+$$\eta_{\text{all-day}} = \frac{\text{Total Output (kWh)}}{\text{Total Input (kWh)}} \times 100 = \frac{96}{100.7236} \times 100 = \mathbf{95.31\%}$$
+
+---
+
+### 56. Page 18, Q.1(a): What is a transformer? Prove that the efficiency of a transformer will be maximum when copper loss is equal to iron loss.
+
+#### **1. Definition of a Transformer:**
+A **transformer** is a static piece of electrical equipment that transfers alternating-current electric energy from one circuit to another at the same frequency through electromagnetic mutual induction, usually changing the values of voltage and current.
+
+---
+
+#### **2. Proof: Condition for Maximum Efficiency ($\text{Copper Loss} = \text{Iron Loss}$):**
+
+Let:
+- $V_1 =$ Primary applied voltage
+- $I_1 =$ Primary current
+- $\cos \phi_1 =$ Primary load power factor
+- $R_{01} =$ Total equivalent resistance referred to the primary side
+- $W_i =$ Total core (iron) loss (constant with load)
+- $W_{\text{Cu}} = I_1^2 R_{01} =$ Total copper loss (variable with load)
+
+---
+
+#### **Efficiency Expression:**
+$$\text{Efficiency } (\eta) = \frac{\text{Output Power}}{\text{Input Power}} = \frac{\text{Input Power} - \text{Total Losses}}{\text{Input Power}}$$
+$$\eta = \frac{V_1 I_1 \cos \phi_1 - I_1^2 R_{01} - W_i}{V_1 I_1 \cos \phi_1}$$
+
+Dividing numerator terms individually by $V_1 I_1 \cos \phi_1$:
+$$\eta = 1 - \frac{I_1 R_{01}}{V_1 \cos \phi_1} - \frac{W_i}{V_1 I_1 \cos \phi_1}$$
+
+---
+
+#### **Differentiating with Respect to Load Current ($I_1$):**
+For a given terminal voltage and load power factor, efficiency $\eta$ is a function of the variable load current $I_1$. To find the condition for maximum efficiency, differentiate $\eta$ with respect to $I_1$ and equate the derivative to zero:
+
+$$\frac{d\eta}{dI_1} = 0 - \frac{R_{01}}{V_1 \cos \phi_1} - \left( -\frac{W_i}{V_1 I_1^2 \cos \phi_1} \right) = 0$$
+
+$$\frac{R_{01}}{V_1 \cos \phi_1} = \frac{W_i}{V_1 I_1^2 \cos \phi_1}$$
+
+Cancelling $(V_1 \cos \phi_1)$ from both denominators:
+$$R_{01} = \frac{W_i}{I_1^2}$$
+
+Multiplying both sides by $I_1^2$:
+$$I_1^2 R_{01} = W_i$$
+
+$$\mathbf{\text{Variable Copper Loss } (W_{\text{Cu}}) = \text{Constant Iron Loss } (W_i)}$$
+
+*(Hence proved.)*
+
+---
+
+#### **Corollaries:**
+1. **Load Current at Maximum Efficiency ($I_{2m}$):**
+   $$I_{2m} = \sqrt{\frac{W_i}{R_{02}}}$$
+2. **Fractional Load ($x$) for Maximum Efficiency:**
+   $$x = \sqrt{\frac{\text{Iron Loss}}{\text{Full-Load Copper Loss}}} = \sqrt{\frac{W_i}{W_{\text{Cu(FL)}}}}$$
+3. **kVA Load at Maximum Efficiency:**
+   $$\text{kVA}_{\max} = \text{Rated Full-Load kVA} \times \sqrt{\frac{W_i}{W_{\text{Cu(FL)}}}}$$
 
