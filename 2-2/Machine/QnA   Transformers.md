@@ -2145,7 +2145,7 @@ Let all quantities be referred to the secondary side:
 - $I_2 =$ Secondary full-load current lagging behind $V_2$ by angle $\phi_2$
 - $R_{02} =$ Total equivalent resistance referred to secondary $= R_2 + K^2 R_1$
 - $X_{02} =$ Total equivalent leakage reactance referred to secondary $= X_2 + K^2 X_1$
-
+![[Pasted image 20260909021932.png]]
 ---
 
 #### **Phasor Diagram for Lagging Power Factor:**
