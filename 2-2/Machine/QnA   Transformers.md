@@ -1984,3 +1984,214 @@ $$\mu = (1.0 \times 0.8) - (5.0 \times 0.6) = 0.8 - 3.0 = \mathbf{-2.2\%}$$
 3. At **$0.8$ p.f. leading:** **$-2.2\%$**
 
 
+### 40. Page 19, Q.2(d): Define voltage regulation. Is it possible to have negative voltage regulation of a transformer?
+
+#### **1. Definition of Voltage Regulation:**
+The **voltage regulation** of a transformer is defined as the change in secondary terminal voltage when the rated full load at a given power factor is thrown off (reduced to zero/no-load), keeping the primary supply voltage constant, expressed as a fraction or percentage of the rated terminal voltage.
+
+- **Percentage Regulation 'Down':**
+  $$\% \text{ Regulation (Down)} = \frac{{}_0V_2 - V_2}{{}_0V_2} \times 100$$
+
+- **Percentage Regulation 'Up':**
+  $$\% \text{ Regulation (Up)} = \frac{{}_0V_2 - V_2}{V_2} \times 100$$
+
+where:
+- ${}_0V_2 =$ Secondary terminal voltage on no-load ($= E_2 = K V_1$)
+- $V_2 =$ Secondary terminal voltage on full-load
+
+Using the percentage resistive drop ($v_r$) and reactive drop ($v_x$):
+$$\% \text{ Regulation } \approx v_r \cos \phi_2 \pm v_x \sin \phi_2$$
+
+---
+
+#### **2. Is it possible to have Negative Voltage Regulation?**
+**Yes, it is entirely possible to have negative voltage regulation.**
+
+#### **Reason and Explanation:**
+Negative voltage regulation occurs when the transformer is connected to a **leading power factor (capacitive) load**.
+
+```
+ Under Leading Power Factor (Capacitive Load):
+ Voltage Drop = I₂ R₀₂ cos φ₂ - I₂ X₀₂ sin φ₂
+ If (I₂ X₀₂ sin φ₂ > I₂ R₀₂ cos φ₂) ──► Net Voltage Drop is NEGATIVE
+                                       │
+                                       ▼
+                       Full-Load Voltage V₂ > No-Load Voltage ₀V₂
+                                       │
+                                       ▼
+               % Regulation = [(₀V₂ - V₂)/₀V₂] × 100  < 0  (NEGATIVE)
+```
+
+1. **Mathematical Condition:**
+   For a leading power factor load, the voltage drop expression contains a negative sign:
+   $$\text{Voltage Drop} = I_2 R_{02} \cos \phi_2 - I_2 X_{02} \sin \phi_2$$
+   Whenever the reactive voltage boost term ($I_2 X_{02} \sin \phi_2$) exceeds the resistive voltage drop term ($I_2 R_{02} \cos \phi_2$), the net voltage drop becomes negative:
+   $$I_2 X_{02} \sin \phi_2 > I_2 R_{02} \cos \phi_2 \implies \tan \phi_2 > \frac{R_{02}}{X_{02}}$$
+
+2. **Physical Meaning:**
+   A negative voltage regulation means that the **secondary terminal voltage on full-load ($V_2$) is actually greater than the secondary terminal voltage on no-load (${}_0V_2$)**. The terminal voltage rises as the capacitive load is applied due to the leading current providing capacitive voltage boosting across the leakage reactance.
+
+---
+
+### 41. Page 23, Q.21: Find the approximate voltage drop in a transformer with net phasor diagram. [Figure Involved]
+
+#### **Derivation of Approximate Voltage Drop:**
+
+Let all quantities be referred to the secondary side:
+- $V_2 =$ Secondary terminal voltage on full-load
+- ${}_0V_2 = E_2 =$ Secondary no-load terminal voltage ($= K V_1$)
+- $I_2 =$ Secondary full-load current lagging behind $V_2$ by angle $\phi_2$
+- $R_{02} =$ Total equivalent resistance referred to secondary $= R_2 + K^2 R_1$
+- $X_{02} =$ Total equivalent leakage reactance referred to secondary $= X_2 + K^2 X_1$
+
+---
+
+#### **Phasor Diagram for Lagging Power Factor:**
+
+```
+                                               C
+                                             / │
+                                 I₂Z₀₂     /   │
+                                         /     │
+                                       /       │
+                                     /         │ I₂X₀₂
+                       ₀V₂ = E₂    /           │
+                                 /             │
+                               /   I₂R₀₂       │
+                             /  ┌──────────────B
+                           /    │             /│
+                         /      │           /  │
+                       /        │         /    │
+                     /          │       /      │
+                   /     φ₂     │     /        │
+                 O──────────────A───D──────────N
+                       V₂        I₂ (Reference)
+```
+
+---
+
+#### **Geometric Analysis:**
+1. From the origin $O$, draw vector $OA = V_2$ along the horizontal axis.
+2. Draw the current phasor $I_2$ lagging $V_2$ by angle $\phi_2$.
+3. From point $A$, draw $AB = I_2 R_{02}$ parallel to $I_2$.
+4. From point $B$, draw $BC = I_2 X_{02}$ perpendicular to $AB$ (leading $I_2$ by $90^\circ$).
+5. Join $OC$ to represent the no-load voltage ${}_0V_2 = E_2$.
+6. With $O$ as center and radius $OC$, draw an arc cutting $OA$ produced at $M$. The total voltage drop is:
+   $$\text{Exact Drop} = OC - OA = AM$$
+7. Draw $BD \perp OA$ produced, and $CN \perp OA$ produced. Since the angle between $OC$ and $OA$ is very small in practice, $AM \approx AN$.
+
+---
+
+#### **Mathematical Expression:**
+From the geometry of the figure:
+$$\text{Approximate Voltage Drop} = AN = AD + DN$$
+
+- From right-angled triangle $ABD$:
+  $$AD = AB \cos \phi_2 = I_2 R_{02} \cos \phi_2$$
+
+- From right-angled triangle $BCN$ (or by projecting $BC$ onto $OA$):
+  $$DN = BC \sin \phi_2 = I_2 X_{02} \sin \phi_2$$
+
+Substituting these components:
+$$\text{Approximate Voltage Drop (Lagging p.f.)} = I_2 R_{02} \cos \phi_2 + I_2 X_{02} \sin \phi_2$$
+
+For a general load (lagging or leading):
+$$\text{Approximate Voltage Drop} = I_2 (R_{02} \cos \phi_2 \pm X_{02} \sin \phi_2)$$
+*(use $+$ for lagging p.f. and $-$ for leading p.f.)*
+
+Similarly, when referred to the primary side:
+$$\text{Approximate Voltage Drop} = I_1 (R_{01} \cos \phi_1 \pm X_{01} \sin \phi_1)$$
+
+---
+
+### 42. Page 23, Q.22: Define voltage regulation of a transformer?
+
+#### **Definition:**
+The **voltage regulation** of a transformer is defined as the arithmetic difference between the secondary no-load terminal voltage (${}_0V_2$) and the secondary full-load terminal voltage ($V_2$) at a specified power factor, expressed as a percentage of the no-load (or full-load) secondary voltage, while the primary applied voltage is maintained constant.
+
+---
+
+#### **Mathematical Formulas:**
+
+1. **Percentage Voltage Regulation:**
+   $$\% \text{ Regulation} = \frac{{}_0V_2 - V_2}{{}_0V_2} \times 100$$
+
+2. **In Terms of Equivalent Circuit Constants:**
+   $$\% \text{ Regulation} = \frac{I_2 R_{02} \cos \phi \pm I_2 X_{02} \sin \phi}{{}_0V_2} \times 100$$
+   $$\% \text{ Regulation} = v_r \cos \phi \pm v_x \sin \phi$$
+
+where:
+- $v_r = \frac{I_2 R_{02}}{{}_0V_2} \times 100 = \text{Percentage resistive drop}$
+- $v_x = \frac{I_2 X_{02}}{{}_0V_2} \times 100 = \text{Percentage reactive drop}$
+- Use **$+$ sign** for **lagging power factor**
+- Use **$-$ sign** for **leading power factor**
+
+---
+
+#### **Important Operating Conditions:**
+
+1. **Condition for Maximum Voltage Regulation (Worst Regulation):**
+   Occurs at a lagging power factor when:
+   $$\frac{d(\% \text{ regn})}{d\phi} = 0 \implies \tan \phi = \frac{v_x}{v_r} = \frac{X_{02}}{R_{02}}$$
+   $$\text{Maximum } \% \text{ Regulation} = \sqrt{v_r^2 + v_x^2} = \% Z$$
+
+2. **Condition for Zero Voltage Regulation (Perfect Regulation):**
+   Occurs only at a leading power factor when:
+   $$v_r \cos \phi - v_x \sin \phi = 0 \implies \tan \phi = \frac{v_r}{v_x} = \frac{R_{02}}{X_{02}}$$
+
+---
+
+### 43. Page 27, CT-04 Q.2: Calculate voltage regulation at (i) unity pf, (ii) 0.8 leading pf, (iii) 0.7 lagging pf. If the transformer is operated as step-down one, giving rated voltage at full load, unity power factor, what is the secondary open-circuit voltage when the load is removed?
+
+#### **Given Parameters:**
+- Percentage resistance drop, $v_r = 1.0\%$
+- Percentage reactance drop, $v_x = 5.0\%$
+
+---
+
+#### **Part 1: Voltage Regulation Calculations**
+
+The formula for percentage voltage regulation is:
+$$\% \text{ Regulation } (\mu) = v_r \cos \phi \pm v_x \sin \phi$$
+
+---
+
+#### **(i) At Unity Power Factor ($\text{u.p.f.}$):**
+- $\cos \phi = 1.0$
+- $\sin \phi = 0.0$
+
+$$\mu = (1.0 \times 1.0) + (5.0 \times 0.0) = \mathbf{+1.0\%}$$
+
+---
+
+#### **(ii) At $0.8$ Power Factor Leading:**
+- $\cos \phi = 0.8$
+- $\sin \phi = \sqrt{1 - (0.8)^2} = 0.6$
+
+$$\mu = v_r \cos \phi - v_x \sin \phi$$
+$$\mu = (1.0 \times 0.8) - (5.0 \times 0.6) = 0.8 - 3.0 = \mathbf{-2.2\%}$$
+
+---
+
+#### **(iii) At $0.7$ Power Factor Lagging:**
+- $\cos \phi = 0.7$
+- $\sin \phi = \sqrt{1 - (0.7)^2} = \sqrt{1 - 0.49} = \sqrt{0.51} \approx 0.7141$
+
+$$\mu = v_r \cos \phi + v_x \sin \phi$$
+$$\mu = (1.0 \times 0.7) + (5.0 \times 0.7141) = 0.7 + 3.5705 = \mathbf{+4.27\%}$$
+
+---
+
+#### **Part 2: Secondary Open-Circuit Voltage on Removal of Load**
+
+When the transformer operates as a step-down transformer delivering rated full-load voltage $V_2$ at unity power factor:
+- At unity p.f., the percentage regulation is:
+  $$\% \text{ Regulation} = \frac{{}_0V_2 - V_2}{V_2} \times 100 = 1.0\%$$
+
+- Solving for secondary open-circuit voltage (${}_0V_2$):
+  $${}_0V_2 - V_2 = 0.01 \, V_2$$
+  $${}_0V_2 = V_2 + 0.01 \, V_2 = \mathbf{1.01 \, V_2}$$
+
+#### **Conclusion:**
+When the full load at unity power factor is removed, the secondary open-circuit voltage will be **$1.01\text{ times}$ the rated full-load voltage (i.e., $101\%$ of rated secondary voltage $V_2$)**.
+
