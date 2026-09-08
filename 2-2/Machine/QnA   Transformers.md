@@ -1173,4 +1173,221 @@ In an actual practical transformer, the windings possess both finite ohmic resis
                   E₂ ──┼─/──────┴────┘ (j I₂X₂)
                        ▼       (I₂R₂)
 ```
+### 22. Page 28, Q.No.1: Draw the vector diagram of a loaded transformer with resistance and magnetic leakage, assuming lagging p.f. [Figure Involved]
+
+#### **Description:**
+When a practical transformer supplies an inductive load (lagging power factor $\cos \phi_2$), the secondary current $I_2$ lags behind the secondary terminal voltage $V_2$ by the phase angle $\phi_2$. 
+
+The transformer has:
+- Primary winding resistance $R_1$ and primary leakage reactance $X_1$
+- Secondary winding resistance $R_2$ and secondary leakage reactance $X_2$
+- Core-loss resistance $R_0$ and magnetizing reactance $X_0$
+
+---
+
+#### **Vector Equations:**
+1. **Secondary Induced E.M.F. ($\vec{E}_2$):**
+   $$\vec{E}_2 = \vec{V}_2 + \vec{I}_2 R_2 + j\vec{I}_2 X_2$$
+   - $\vec{I}_2 R_2$ is the resistive voltage drop in phase with $\vec{I}_2$.
+   - $j\vec{I}_2 X_2$ is the reactive voltage drop leading $\vec{I}_2$ by $90^\circ$.
+
+2. **Primary Current ($\vec{I}_1$):**
+   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$$
+   - $\vec{I}_0 = \vec{I}_w + \vec{I}_\mu$ (no-load current).
+   - $\vec{I}_2' = -K\vec{I}_2$ (secondary load current reflected onto primary, drawn $180^\circ$ out of phase with $\vec{I}_2$).
+
+3. **Primary Applied Voltage ($\vec{V}_1$):**
+   $$\vec{V}_1 = -\vec{E}_1 + \vec{I}_1 R_1 + j\vec{I}_1 X_1$$
+   - $-\vec{E}_1$ is the voltage required to overcome the primary counter e.m.f.
+   - $\vec{I}_1 R_1$ is the primary resistive drop drawn parallel to $\vec{I}_1$.
+   - $j\vec{I}_1 X_1$ is the primary reactive drop drawn perpendicular (leading $\vec{I}_1$ by $90^\circ$).
+
+---
+
+#### **Vector Diagram (Lagging Power Factor):**
+
+```
+                            V₁ ◄────────────────┐ (j I₁X₁)
+                            ▲                  /
+                            │                 / (I₁R₁)
+                            │   / I₁         /
+                     -E₁ ───┼──/────────────┘
+                            │ /
+                      I₂' ◄─┼/────► I₀
+                       \    │
+     ───────────────────\───┼────────────────► Φ (Mutual Core Flux)
+                         \  │
+                          \ │   ▲ V₂
+                       E₂ ─\┼──/  (Lags by φ₂)
+                            ▼ /
+                             ▼ I₂ ────► I₂R₂ ────► j I₂X₂
+```
+
+---
+
+### 23. Page 36, Q.2(a): Draw the full load phasor diagram and explain why an increase in load current causes an increase in primary current in a transformer. [Figure Involved]
+
+#### **1. Full Load Phasor Diagram (Lagging Load):**
+
+```
+                            V₁ ◄────────────────┐ (j I₁X₁)
+                            ▲                  /
+                            │                 / (I₁R₁)
+                            │   / I₁         /
+                     -E₁ ───┼──/────────────┘
+                            │ /
+                      I₂' ◄─┼/────► I₀
+                       \    │
+     ───────────────────\───┼────────────────► Φ (Core Flux)
+                         \  │
+                          \ │   ▲ V₂
+                       E₂ ─\┼──/  (Lags by φ₂)
+                            ▼ /
+                             ▼ I₂ ────► I₂R₂ ────► j I₂X₂
+```
+
+---
+
+#### **2. Why an Increase in Load Current Causes an Increase in Primary Current:**
+
+A transformer operates as a self-regulating magnetic device that automatically balances primary power input with secondary power demand. The step-by-step physical process occurs as follows:
+
+```
+ Load Demand Increases (I₂ ↑)
+           │
+           ▼
+ Demagnetizing M.M.F. Produced (N₂ I₂ ↑)
+           │
+           ▼
+ Mutual Core Flux Momentarily Reduced (Φ ↓)
+           │
+           ▼
+ Primary Back E.M.F. Decreases Slightly (E₁ ↓)
+           │
+           ▼
+ Net Primary Driving Voltage Increases (V₁ - E₁ ↑)
+           │
+           ▼
+ Primary Draws Additional Current (I₂' = K I₂ ↑)
+           │
+           ▼
+ Balancing M.M.F. Created (N₁ I₂' = N₂ I₂), Flux Restored (Φ = Constant)
+           │
+           ▼
+ Total Primary Current Increases: Ī₁ = Ī₀ + Ī₂'
+```
+
+1. **Initial Steady State on No-Load:**
+   With the secondary circuit open, the primary draws only the small no-load current $I_0$. This current sets up the working core flux $\Phi$, which induces a primary back e.m.f. $E_1$ almost exactly equal and opposite to the applied voltage $V_1$ ($V_1 \approx -E_1$).
+
+2. **Demagnetizing Effect of Load Current:**
+   When a load is connected across the secondary terminals, secondary current $I_2$ flows through the $N_2$ secondary turns, setting up a **secondary demagnetizing m.m.f.** ($N_2 I_2$). According to Lenz's law, this m.m.f. directly opposes the main core flux $\Phi$.
+
+3. **Momentary Reduction of Core Flux ($\Phi$) and Back E.M.F. ($E_1$):**
+   The opposing m.m.f. momentarily weakens the mutual core flux $\Phi$. Since primary induced back e.m.f. is proportional to flux ($E_1 = 4.44 f N_1 \Phi$), $E_1$ decreases slightly.
+
+4. **Surge in Primary Current ($I_2'$):**
+   The primary current is governed by:
+   $$\vec{I}_1 = \frac{\vec{V}_1 - \vec{E}_1}{\vec{Z}_1}$$
+   Because the internal impedance $Z_1$ is very small, even a minute reduction in $E_1$ creates a significant net voltage difference $(V_1 - E_1)$, causing the primary winding to immediately draw an additional load component current $I_2'$ from the supply.
+
+5. **Restoration of Mutual Flux Equilibrium:**
+   This additional primary current $I_2'$ produces a primary m.m.f. ($N_1 I_2'$) that is equal in magnitude and opposite in direction to the secondary m.m.f. ($N_2 I_2$):
+   $$N_1 I_2' = N_2 I_2 \implies I_2' = \left(\frac{N_2}{N_1}\right) I_2 = K I_2$$
+   The primary load m.m.f. completely cancels out the demagnetizing secondary m.m.f., thereby maintaining the main core flux $\Phi$ virtually constant at all load levels.
+
+6. **Conclusion:**
+   As the secondary load current $I_2$ increases, $I_2'$ increases proportionately, which in turn increases the total primary current $\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$.
+
+---
+
+### 25. Page 7, Q.2(a): Prove that R02 = R2 + k^2 R1, where the symbols have their usual meaning.
+
+#### **Proof:**
+
+Let:
+- $R_1 =$ Resistance of the primary winding
+- $R_2 =$ Resistance of the secondary winding
+- $I_1 =$ Primary full-load current
+- $I_2 =$ Secondary full-load current
+- $K =$ Voltage transformation ratio $= \frac{N_2}{N_1} \approx \frac{E_2}{E_1} \approx \frac{I_1}{I_2}$
+- $R_1' =$ Equivalent primary resistance referred to the secondary side
+- $R_{02} =$ Total equivalent resistance of the transformer referred to the secondary side
+
+---
+
+#### **Step 1: Equating Copper Losses**
+When the primary resistance $R_1$ is transferred to the secondary side, its equivalent value $R_1'$ must cause the exact same copper loss when carrying the secondary current $I_2$ as the actual resistance $R_1$ causes when carrying the primary current $I_1$.
+
+$$\text{Copper loss produced by } R_1' \text{ in secondary} = \text{Copper loss produced by } R_1 \text{ in primary}$$
+$$I_2^2 R_1' = I_1^2 R_1$$
+
+Solving for $R_1'$:
+$$R_1' = \left(\frac{I_1}{I_2}\right)^2 R_1 \tag{1}$$
+
+---
+
+#### **Step 2: Substituting Transformation Ratio ($K$)**
+Neglecting the small no-load current $I_0$, the current transformation relation gives:
+$$\frac{I_1}{I_2} = K$$
+
+Substituting this into Equation (1):
+$$R_1' = K^2 R_1 \tag{2}$$
+
+---
+
+#### **Step 3: Total Equivalent Resistance Referred to Secondary ($R_{02}$)**
+The total equivalent resistance referred to the secondary side ($R_{02}$) is the sum of the actual secondary winding resistance $R_2$ and the transferred primary resistance $R_1'$:
+
+$$R_{02} = R_2 + R_1'$$
+$$R_{02} = R_2 + K^2 R_1$$
+
+*(Hence proved.)*
+
+---
+
+### 26. Page 9, Q.2(c): Draw the approximate equivalent circuit of a loaded transformer referred to primary. [Figure Involved]
+
+#### **Description:**
+In the **approximate equivalent circuit referred to the primary**, the parallel exciting branch (comprising core-loss resistance $R_0$ and magnetizing reactance $X_0$) is shifted across the input supply terminals $V_1$. 
+
+This simplification is justified because the no-load current $I_0$ is very small ($2\%\text{ to }10\%$ of full-load current), so the voltage drop produced by $I_0$ across primary impedance $(R_1 + jX_1)$ is negligible.
+
+---
+
+#### **Parameters Referred to Primary Side:**
+1. **Equivalent Resistance referred to Primary ($R_{01}$):**
+   $$R_{01} = R_1 + R_2' = R_1 + \frac{R_2}{K^2}$$
+2. **Equivalent Leakage Reactance referred to Primary ($X_{01}$):**
+   $$X_{01} = X_1 + X_2' = X_1 + \frac{X_2}{K^2}$$
+3. **Total Equivalent Impedance referred to Primary ($Z_{01}$):**
+   $$Z_{01} = \sqrt{R_{01}^2 + X_{01}^2}$$
+4. **Reflected Secondary Load Current ($I_2'$):**
+   $$I_2' = K I_2$$
+5. **Reflected Secondary Terminal Voltage ($V_2'$):**
+   $$V_2' = \frac{V_2}{K}$$
+6. **Reflected Load Impedance ($Z_L'$):**
+   $$Z_L' = \frac{Z_L}{K^2}$$
+
+---
+
+#### **Approximate Equivalent Circuit Diagram (Referred to Primary):**
+
+```
+     I₁ ──►      R₀₁ = R₁ + R₂/K²     X₀₁ = X₁ + X₂/K²       I₂' ──►
+      ───────┬────██████████───────────UUUUUUUU──────────────┬────────
+             │                                               │
+             │   I₀                                          │
+             ├───►──┐                                        │
+             │      │                                        │
+             │   ┌──┴──┐                                   ┌─┴─┐
+             │   │     │                                   │   │
+        V₁   │  [R₀]  [X₀]                                 │Z'L│ V₂' = V₂/K
+        ~    │   │     │                                   │   │
+             │   └──┬──┘                                   └─┬─┘
+             │      │                                        │
+             │      │                                        │
+      ───────┴──────┴────────────────────────────────────────┴────────
+```
+
 
