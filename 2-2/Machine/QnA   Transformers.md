@@ -652,65 +652,161 @@ This is the standard **E.M.F. Equation of a Transformer**.
 
 ### 13. Page 40, Q.1(c): A single phase transformer has 1000 turns on the primary and 200 turns on the secondary. The no load current is 3 amp at a pf of 0.2 lagging. Calculate the primary current and power factor when the secondary current is 280 amp at a p.f of 0.80 lagging.
 
-#### **Given Data:**
-- Primary turns, $N_1 = 1000$
-- Secondary turns, $N_2 = 200$
-- No-load current, $I_0 = 3\text{ A}$
-- No-load power factor, $\cos \phi_0 = 0.2\text{ lagging}$
-- Secondary load current, $I_2 = 280\text{ A}$
-- Secondary load power factor, $\cos \phi_2 = 0.80\text{ lagging}$
+#### Given Data
 
----
+- **Primary turns ($N_1$):** $1000$
+    
+      
+    
+- **Secondary turns ($N_2$):** $200$
+    
+      
+    
+- **No-load current ($I_0$):** $3\text{ A}$
+    
+      
+    
+- **No-load power factor ($\cos\phi_0$):** $0.20\text{ lagging}$
+    
+      
+    
+- **Secondary load current ($I_2$):** $280\text{ A}$
+    
+      
+    
+- **Secondary load power factor ($\cos\phi_2$):** $0.80\text{ lagging}$
+    
+      
+    
 
-#### **Step-by-Step Solution:**
+#### Step 1: Transformation Ratio ($K$)
 
-1. **Transformation Ratio ($K$):**
-   $$K = \frac{N_2}{N_1} = \frac{200}{1000} = 0.2 = \frac{1}{5}$$
+The turn ratio and voltage transformation ratio $K$ is given by:
 
-2. **Secondary Current Referred to Primary ($I_2'$):**
-   $$I_2' = K \times I_2 = \frac{1}{5} \times 280 = 56\text{ A}$$
+  
 
-3. **Phase Angles:**
-   - For no-load current:
-     $$\phi_0 = \cos^{-1}(0.2) = 78.46^\circ \approx 78.5^\circ$$
-     $$\sin \phi_0 = \sqrt{1 - (0.2)^2} = \sqrt{1 - 0.04} = \sqrt{0.96} \approx 0.9798$$
-   
-   - For secondary load current:
-     $$\phi_2 = \cos^{-1}(0.80) = 36.87^\circ$$
-     $$\sin \phi_2 = \sqrt{1 - (0.8)^2} = 0.60$$
+$$K = \frac{N_2}{N_1} = \frac{200}{1000} = 0.2$$
 
----
+#### Step 2: Secondary Current Referred to Primary ($I_2'$)
 
-4. **Resolution into Rectangular Components (Taking Voltage Vector as Reference):**
+The secondary current reflected onto the primary side to counteract secondary demagnetizing ampere-turns is:
 
-   - **No-load current phasor ($\vec{I}_0$):**
-     $$\vec{I}_0 = I_0 \cos \phi_0 - j I_0 \sin \phi_0$$
-     $$\vec{I}_0 = 3(0.2) - j 3(0.9798) = 0.6 - j 2.94\text{ A}$$
+  
 
-   - **Reflected load current phasor ($\vec{I}_2'$):**
-     $$\vec{I}_2' = I_2' \cos \phi_2 - j I_2' \sin \phi_2$$
-     $$\vec{I}_2' = 56(0.80) - j 56(0.60) = 44.8 - j 33.6\text{ A}$$
+$$I_2' = K \cdot I_2 = \frac{N_2}{N_1} \cdot I_2$$
 
----
+$$I_2' = 0.2 \times 280\text{ A} = 56\text{ A}$$
 
-5. **Total Primary Current ($\vec{I}_1$):**
-   The total primary current is the phasor sum of the no-load current and the reflected secondary load current:
-   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$$
-   $$\vec{I}_1 = (0.6 - j 2.94) + (44.8 - j 33.6)$$
-   $$\vec{I}_1 = (0.6 + 44.8) - j (2.94 + 33.6) = 45.4 - j 36.54\text{ A}$$
+- Since the load has a lagging power factor of $\cos\phi_2 = 0.80$, the reflected current $I_2'$ also lags the applied primary voltage $V_1$ by an angle $\phi_2$.
+    
+      
+    
+- The corresponding reactive factor is:
+    
+      
+    
+    $$\sin\phi_2 = \sqrt{1 - \cos^2\phi_2} = \sqrt{1 - (0.80)^2} = \sqrt{0.36} = 0.60$$
+    
 
----
+#### Step 3: Components of No-Load Current ($I_0$)
 
-6. **Magnitude of Primary Current ($I_1$):**
-   $$I_1 = \sqrt{(45.4)^2 + (-36.54)^2} = \sqrt{2061.16 + 1335.17} = \sqrt{3396.33} \approx \mathbf{58.28\text{ A}}$$
+For the no-load current:
 
----
+  
 
-7. **Primary Power Factor ($\cos \phi_1$):**
-   $$\tan \phi_1 = \frac{36.54}{45.4} = 0.8048 \implies \phi_1 = \tan^{-1}(0.8048) = 38.83^\circ$$
-   $$\text{Primary Power Factor} = \cos \phi_1 = \cos(38.83^\circ) = \mathbf{0.779\text{ lagging (or } 0.78\text{ lagging)}}$$
+- **Power factor:** $\cos\phi_0 = 0.20$
+    
+      
+    
+- **Reactive factor:**
+    
+      
+    
+    $$\sin\phi_0 = \sqrt{1 - \cos^2\phi_0} = \sqrt{1 - (0.20)^2} = \sqrt{1 - 0.04} = \sqrt{0.96} \approx 0.9798$$
+    
 
----
+Resolving $I_0$ into working (active) and magnetizing (reactive) components:
+
+  
+
+- **Active component ($I_w$ or $I_{0x}$):**
+    
+      
+    
+    $$I_{0x} = I_0 \cos\phi_0 = 3 \times 0.20 = 0.60\text{ A}$$
+    
+- **Reactive component ($I_\mu$ or $I_{0y}$):**
+    
+      
+    
+    $$I_{0y} = I_0 \sin\phi_0 = 3 \times 0.9798 \approx 2.94\text{ A}$$
+    
+
+#### Step 4: Components of Secondary Current Referred to Primary ($I_2'$)
+
+Resolving $I_2'$ along and perpendicular to the primary reference voltage axis ($V_1$):
+
+  
+
+- **Active component ($I_{2x}'$):**
+    
+      
+    
+    $$I_{2x}' = I_2' \cos\phi_2 = 56 \times 0.80 = 44.80\text{ A}$$
+    
+- **Reactive component ($I_{2y}'$):**
+    
+      
+    
+    $$I_{2y}' = I_2' \sin\phi_2 = 56 \times 0.60 = 33.60\text{ A}$$
+    
+
+#### Step 5: Total Primary Current ($\vec{I}_1$)
+
+The total primary current $\vec{I}_1$ is the phasor sum of the no-load current $\vec{I}_0$ and the reflected load current $\vec{I}_2'$:
+
+  
+
+$$\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$$
+
+#### Total In-Phase (Active) Component ($I_{1x}$):
+
+$$I_{1x} = I_{0x} + I_{2x}' = 0.60\text{ A} + 44.80\text{ A} = 45.40\text{ A}$$
+
+#### Total Quadrature (Reactive Lagging) Component ($I_{1y}$):
+
+$$I_{1y} = I_{0y} + I_{2y}' = 2.94\text{ A} + 33.60\text{ A} = 36.54\text{ A}$$
+
+#### Magnitude of Primary Current ($I_1$):
+
+$$I_1 = \sqrt{I_{1x}^2 + I_{1y}^2}$$
+
+$$I_1 = \sqrt{(45.40)^2 + (36.54)^2}$$
+
+$$I_1 = \sqrt{2061.16 + 1335.17} = \sqrt{3396.33} \approx 58.28\text{ A}$$
+
+#### Step 6: Primary Power Factor ($\cos\phi_1$)
+
+The overall operating power factor of the primary winding is:
+
+  
+
+$$\cos\phi_1 = \frac{I_{1x}}{I_1} = \frac{45.40}{58.28} \approx 0.779\text{ lagging}$$
+
+- **Phase angle ($\phi_1$):**
+    
+      
+    
+    $$\phi_1 = \arccos(0.779) \approx 38.83^\circ\text{ lagging}$$
+    
+
+#### Final Results
+
+- **Primary current ($I_1$):** **$58.28\text{ A}$**
+    
+      
+    
+- **Primary power factor ($\cos\phi_1$):** **$0.779\text{ lagging}$** (or approximately **$0.78\text{ lagging}$**)
 
 ### 15. Page 7, Q.1(a): Draw the vector diagram of a 1-φ transformer connected with unity p.f., lagging p.f., and leading p.f load. [Figure Involved]
 
