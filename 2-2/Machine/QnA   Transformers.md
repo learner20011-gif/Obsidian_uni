@@ -1614,3 +1614,203 @@ $$\text{Primary Impedance referred to Secondary: } Z_1' = K^2 Z_1 = Z_1 \left(\f
 | **Voltage $\to$ Other side** | Multiply / Divide by $K$ | Follows $V_2 = K V_1$ |
 | **Current $\to$ Other side** | Divide / Multiply by $K$ | Follows $I_2 = \frac{I_1}{K}$ |
 
+### 31. Page 23, Q.17: What is the importance of shifting impedances?
+
+#### **Importance and Advantages of Shifting Impedances:**
+
+In an actual transformer, the primary and secondary windings are electrically isolated and operate at different voltage and current levels. Shifting (or transferring) the resistances and reactances from one winding to another offers several critical practical advantages:
+
+---
+
+1. **Elimination of Magnetic Coupling in Analysis:**
+   - Shifting impedances eliminates the magnetic link (mutual induction) and allows the two isolated electrical circuits to be combined into a **single, continuous, equivalent electrical circuit**.
+
+2. **Great Simplification of Calculations:**
+   - Instead of solving simultaneous coupled differential/phasor equations for both sides, all resistances are combined into a single total equivalent resistance ($R_{01}$ or $R_{02}$) and all reactances into a single equivalent reactance ($X_{01}$ or $X_{02}$).
+   - The engineer only needs to perform calculations on one winding side.
+
+3. **Direct Evaluation of Total Copper Loss:**
+   - The total full-load copper loss of the entire transformer can be calculated directly in one step using the current of a single winding:
+     $$\text{Total Cu Loss} = I_1^2 R_{01} = I_2^2 R_{02}$$
+
+4. **Simplified Calculation of Voltage Drop and Voltage Regulation:**
+   - Total approximate voltage drop can be computed using a single formula:
+     $$\text{Voltage Drop (referred to secondary)} = I_2(R_{02} \cos \phi_2 \pm X_{02} \sin \phi_2)$$
+     $$\text{Voltage Drop (referred to primary)} = I_1(R_{01} \cos \phi_1 \pm X_{01} \sin \phi_1)$$
+
+5. **Power System and Fault Modeling:**
+   - In large power network studies, transmission lines, transformers, and generators must all be represented on a common reference voltage base. Shifting impedances makes per-unit and impedance-based system protection calculations straightforward.
+
+6. **Invariance of Physical Power and Voltage Drops:**
+   - Because impedances are scaled by $K^2 = (N_2/N_1)^2$, the actual power losses ($I^2 R$), reactive energy stored ($I^2 X$), and percentage impedance drops remain completely invariant regardless of which side they are referred to.
+
+---
+
+### 32. Page 23, Q.18: Draw the exact equivalent circuit of a loaded transformer, where the symbols have their usual meanings. [Figure Involved]
+
+#### **Description:**
+In the **exact equivalent circuit**, the primary winding impedance ($R_1 + jX_1$) and secondary winding impedance ($R_2 + jX_2$) are shown separately, with the shunt exciting branch placed between them across the primary induced e.m.f. $E_1$.
+
+---
+
+#### **1. Exact Equivalent Circuit with Ideal Transformer:**
+
+```
+     I₁ ──►      R₁          X₁              I₂' ──►         R₂          X₂          I₂ ──►
+      ────────████████────UUUUUUUU────┬───────────────────████████────UUUUUUUU────┬────────
+                                      │        ││   ││                            │
+                                      │        ││   ││                            │
+                                  I₀  │        ││   ││                          ┌─┴─┐
+                                  ├───►        ││   ││                          │   │
+                                  │   │        ││   ││                          │   │
+        V₁                        │ ┌─┴─┐      ││   ││                     V₂   │ZL │ (Load)
+        ~                        [R₀] [X₀]  E₁ ││ : ││ E₂                   ~   │   │
+                                  │ └─┬─┘      ││   ││                          │   │
+                                  │   │        ││   ││                          └─┬─┘
+                                  └───┴────────││───││────────────────────────────┴────────
+                                          Ideal Transformer (N₁ : N₂)
+```
+
+---
+
+#### **2. Exact Equivalent Circuit (Referred to Primary Side):**
+When the secondary parameters and load impedance are transferred to the primary side, the ideal transformer is removed:
+
+```
+     I₁ ──►      R₁          X₁              I₂' ──►      R₂' = R₂/K²   X₂' = X₂/K²
+      ────────████████────UUUUUUUU────┬───────────────────████████────UUUUUUUU────┬────────
+                                      │                                           │
+                                  I₀  │                                         ┌─┴─┐
+                                  ├───►                                         │   │
+                                  │   │                                         │Z'L│
+        V₁                        │ ┌─┴─┐                                       │   │ V₂' = V₂/K
+        ~                        [R₀] [X₀]  E₁                                  │   │
+                                  │ └─┬─┘                                       └─┬─┘
+                                  │   │                                           │
+      ────────────────────────────┴───┴───────────────────────────────────────────┴────────
+```
+
+---
+
+#### **Definition of Symbols:**
+- $V_1 =$ Primary supply terminal voltage
+- $I_1 =$ Total primary line current
+- $R_1, X_1 =$ Primary winding resistance and leakage reactance
+- $I_0 =$ No-load current
+- $R_0, X_0 =$ Core-loss resistance and magnetizing reactance representing the shunt exciting branch
+- $E_1, E_2 =$ Induced e.m.f. in primary and secondary windings
+- $I_2' =$ Secondary load current referred to primary ($I_2' = K I_2$)
+- $R_2', X_2' =$ Secondary resistance and reactance referred to primary ($R_2' = R_2/K^2, X_2' = X_2/K^2$)
+- $Z_L' =$ Load impedance referred to primary ($Z_L' = Z_L/K^2$)
+- $V_2' =$ Secondary terminal voltage referred to primary ($V_2' = V_2/K$)
+
+---
+
+### 33. Page 23, Q.19: Simplify the equivalent circuit of a loaded transformer (i) referred to primary (ii) referred to secondary, with suitable equations and net diagram. [Figure Involved]
+
+#### **Reason for Simplification:**
+Because the no-load current $I_0$ is only $1\%\text{ to }3\%$ of the full-load current, the voltage drop produced by $I_0$ in the primary impedance $(R_1 + jX_1)$ is extremely small. Hence, negligible error is introduced by shifting the shunt exciting branch directly across the input supply terminals.
+
+---
+
+#### **(i) Simplified Equivalent Circuit Referred to Primary:**
+
+```
+     I₁ ──►      R₀₁ = R₁ + R₂/K²     X₀₁ = X₁ + X₂/K²       I₂' ──►
+      ───────┬────██████████───────────UUUUUUUU──────────────┬────────
+             │                                               │
+             │   I₀                                        ┌─┴─┐
+             ├───►──┐                                      │   │
+             │      │                                      │Z'L│ V₂' = V₂/K
+        V₁   │   ┌──┴──┐                                   │   │
+        ~    │  [R₀]  [X₀]                                 └─┬─┘
+             │   └──┬──┘                                     │
+             │      │                                        │
+      ───────┴──────┴────────────────────────────────────────┴────────
+```
+
+**Governing Equations:**
+- **Equivalent Primary Resistance:** $R_{01} = R_1 + R_2' = R_1 + \frac{R_2}{K^2}$
+- **Equivalent Primary Leakage Reactance:** $X_{01} = X_1 + X_2' = X_1 + \frac{X_2}{K^2}$
+- **Equivalent Primary Impedance:** $Z_{01} = \sqrt{R_{01}^2 + X_{01}^2}$
+- **Total Primary Current:** $\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$
+- **Primary Applied Voltage:** $\vec{V}_1 = \vec{V}_2' + \vec{I}_2'(R_{01} + jX_{01})$
+
+---
+
+#### **(ii) Simplified Equivalent Circuit Referred to Secondary:**
+
+```
+     I₁' ──►     R₀₂ = R₂ + K²R₁      X₀₂ = X₂ + K²X₁        I₂ ──►
+      ───────┬────██████████───────────UUUUUUUU──────────────┬────────
+             │                                               │
+             │   I₀'                                       ┌─┴─┐
+             ├───►──┐                                      │   │
+             │      │                                      │ZL │ V₂ (Terminal Voltage)
+      K·V₁   │   ┌──┴──┐                                   │   │
+        ~    │ [R₀']  [X₀']                                └─┬─┘
+             │   └──┬──┘                                     │
+             │      │                                        │
+      ───────┴──────┴────────────────────────────────────────┴────────
+```
+
+**Governing Equations:**
+- **Equivalent Secondary Resistance:** $R_{02} = R_2 + R_1' = R_2 + K^2 R_1$
+- **Equivalent Secondary Leakage Reactance:** $X_{02} = X_2 + X_1' = X_2 + K^2 X_1$
+- **Equivalent Secondary Impedance:** $Z_{02} = \sqrt{R_{02}^2 + X_{02}^2}$
+- **Shunt Parameters referred to Secondary:** $R_0' = K^2 R_0$, $X_0' = K^2 X_0$
+- **Secondary Voltage Equation:** $K\vec{V}_1 = \vec{V}_2 + \vec{I}_2(R_{02} + jX_{02})$
+
+---
+
+### 34. Page 23, Q.20: Draw the approximate equivalent circuit of a loaded transformer (i) referred to primary (ii) referred to secondary. [Figure Involved]
+
+#### **Description:**
+For standard load and voltage drop calculations, the small no-load exciting current is omitted altogether. The transformer is modeled as a lumped series impedance connected between the supply and the load.
+
+---
+
+#### **(i) Approximate Equivalent Circuit (Referred to Primary):**
+
+```
+     I₁ ≈ I₂' ──►       R₀₁                X₀₁
+      ───────────────██████████──────────UUUUUUUU────────────┬────────
+                                                             │
+                                                           ┌─┴─┐
+                                                           │   │
+        V₁ ~                                               │Z'L│ V₂' = V₂/K
+                                                           │   │
+                                                           └─┬─┘
+                                                             │
+      ───────────────────────────────────────────────────────┴────────
+```
+
+**Formulas (Referred to Primary):**
+$$R_{01} = R_1 + \frac{R_2}{K^2}$$
+$$X_{01} = X_1 + \frac{X_2}{K^2}$$
+$$Z_{01} = R_{01} + jX_{01} = \sqrt{R_{01}^2 + X_{01}^2}$$
+$$V_2' = \frac{V_2}{K}, \quad I_2' = K I_2, \quad Z_L' = \frac{Z_L}{K^2}$$
+
+---
+
+#### **(ii) Approximate Equivalent Circuit (Referred to Secondary):**
+
+```
+     I₂ ──►             R₀₂                X₀₂
+      ───────────────██████████──────────UUUUUUUU────────────┬────────
+                                                             │
+                                                           ┌─┴─┐
+                                                           │   │
+       K·V₁ ~                                              │ZL │ V₂ (Load Voltage)
+                                                           │   │
+                                                           └─┬─┘
+                                                             │
+      ───────────────────────────────────────────────────────┴────────
+```
+
+**Formulas (Referred to Secondary):**
+$$R_{02} = R_2 + K^2 R_1$$
+$$X_{02} = X_2 + K^2 X_1$$
+$$Z_{02} = R_{02} + jX_{02} = \sqrt{R_{02}^2 + X_{02}^2}$$
+$$R_{02} = K^2 R_{01}, \quad X_{02} = K^2 X_{01}, \quad Z_{02} = K^2 Z_{01}$$
+
