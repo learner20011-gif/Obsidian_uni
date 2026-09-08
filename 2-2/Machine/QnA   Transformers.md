@@ -650,3 +650,527 @@ $$\text{R.M.S. value of e.m.f. per turn} = 1.11 \times 4 f \Phi_m = 4.44 f \Phi_
 
 This is the standard **E.M.F. Equation of a Transformer**.
 
+### 13. Page 40, Q.1(c): A single phase transformer has 1000 turns on the primary and 200 turns on the secondary. The no load current is 3 amp at a pf of 0.2 lagging. Calculate the primary current and power factor when the secondary current is 280 amp at a p.f of 0.80 lagging.
+
+#### **Given Data:**
+- Primary turns, $N_1 = 1000$
+- Secondary turns, $N_2 = 200$
+- No-load current, $I_0 = 3\text{ A}$
+- No-load power factor, $\cos \phi_0 = 0.2\text{ lagging}$
+- Secondary load current, $I_2 = 280\text{ A}$
+- Secondary load power factor, $\cos \phi_2 = 0.80\text{ lagging}$
+
+---
+
+#### **Step-by-Step Solution:**
+
+1. **Transformation Ratio ($K$):**
+   $$K = \frac{N_2}{N_1} = \frac{200}{1000} = 0.2 = \frac{1}{5}$$
+
+2. **Secondary Current Referred to Primary ($I_2'$):**
+   $$I_2' = K \times I_2 = \frac{1}{5} \times 280 = 56\text{ A}$$
+
+3. **Phase Angles:**
+   - For no-load current:
+     $$\phi_0 = \cos^{-1}(0.2) = 78.46^\circ \approx 78.5^\circ$$
+     $$\sin \phi_0 = \sqrt{1 - (0.2)^2} = \sqrt{1 - 0.04} = \sqrt{0.96} \approx 0.9798$$
+   
+   - For secondary load current:
+     $$\phi_2 = \cos^{-1}(0.80) = 36.87^\circ$$
+     $$\sin \phi_2 = \sqrt{1 - (0.8)^2} = 0.60$$
+
+---
+
+4. **Resolution into Rectangular Components (Taking Voltage Vector as Reference):**
+
+   - **No-load current phasor ($\vec{I}_0$):**
+     $$\vec{I}_0 = I_0 \cos \phi_0 - j I_0 \sin \phi_0$$
+     $$\vec{I}_0 = 3(0.2) - j 3(0.9798) = 0.6 - j 2.94\text{ A}$$
+
+   - **Reflected load current phasor ($\vec{I}_2'$):**
+     $$\vec{I}_2' = I_2' \cos \phi_2 - j I_2' \sin \phi_2$$
+     $$\vec{I}_2' = 56(0.80) - j 56(0.60) = 44.8 - j 33.6\text{ A}$$
+
+---
+
+5. **Total Primary Current ($\vec{I}_1$):**
+   The total primary current is the phasor sum of the no-load current and the reflected secondary load current:
+   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$$
+   $$\vec{I}_1 = (0.6 - j 2.94) + (44.8 - j 33.6)$$
+   $$\vec{I}_1 = (0.6 + 44.8) - j (2.94 + 33.6) = 45.4 - j 36.54\text{ A}$$
+
+---
+
+6. **Magnitude of Primary Current ($I_1$):**
+   $$I_1 = \sqrt{(45.4)^2 + (-36.54)^2} = \sqrt{2061.16 + 1335.17} = \sqrt{3396.33} \approx \mathbf{58.28\text{ A}}$$
+
+---
+
+7. **Primary Power Factor ($\cos \phi_1$):**
+   $$\tan \phi_1 = \frac{36.54}{45.4} = 0.8048 \implies \phi_1 = \tan^{-1}(0.8048) = 38.83^\circ$$
+   $$\text{Primary Power Factor} = \cos \phi_1 = \cos(38.83^\circ) = \mathbf{0.779\text{ lagging (or } 0.78\text{ lagging)}}$$
+
+---
+
+### 15. Page 7, Q.1(a): Draw the vector diagram of a 1-φ transformer connected with unity p.f., lagging p.f., and leading p.f load. [Figure Involved]
+
+When a single-phase transformer is loaded, the secondary current $I_2$ flows and sets up a demagnetizing m.m.f. $N_2 I_2$. To neutralize this, the primary draws an additional load current $I_2' = K I_2$ in exact phase opposition to $I_2$. The total primary current is $\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$.
+
+---
+
+#### **1. Phasor Diagram for Unity Power Factor Load ($\cos \phi_2 = 1$):**
+- Secondary current $I_2$ is in phase with secondary terminal voltage $V_2$ ($\phi_2 = 0^\circ$).
+
+```
+                 V₁ (Applied Voltage)
+                  ▲
+                  │  / I₁ (Primary Current)
+           -E₁ ───┼─/
+                  │/
+            I₂' ◄─┼───► I₀ (No-load current)
+                  │
+        ──────────┼──────────► Φ (Mutual Core Flux)
+                  │
+                  │
+             E₂ ──┼──► V₂, I₂ (Secondary side in phase)
+                  ▼
+```
+
+---
+
+#### **2. Phasor Diagram for Lagging Power Factor Load ($\cos \phi_2\text{ lagging, Inductive Load}$):**
+- Secondary current $I_2$ lags secondary voltage $V_2$ by angle $\phi_2$.
+- Primary reflected current $I_2'$ is in anti-phase to $I_2$.
+
+```
+                 V₁
+                  ▲
+                  │   / I₁
+           -E₁ ───┼──/
+                  │ /
+            I₂' ◄─┼/───► I₀
+             \    │
+              \   │
+        ───────\──┼──────────► Φ
+                \ │
+                 \│  ▲ V₂
+             E₂ ──┼─/
+                  │/  (Lags by φ₂)
+                  ▼ I₂
+```
+
+---
+
+#### **3. Phasor Diagram for Leading Power Factor Load ($\cos \phi_2\text{ leading, Capacitive Load}$):**
+- Secondary current $I_2$ leads secondary voltage $V_2$ by angle $\phi_2$.
+- Primary reflected current $I_2'$ leads in anti-phase.
+
+```
+                 V₁
+                  ▲
+             I₂'  │  / I₁
+              \   │ /
+               \──┼/───► I₀
+           -E₁ ───┼
+                  │
+        ──────────┼──────────► Φ
+                  │   / I₂ (Leads by φ₂)
+                  │  /
+             E₂ ──┼─/──► V₂
+                  ▼
+```
+
+---
+
+### 16. Page 17, Q.2(b): Draw the on-load phasor diagram of a practical transformer with capacitive load. [Figure Involved]
+
+For a **practical transformer** supplying a **capacitive (leading p.f.) load**, the effects of primary winding resistance $R_1$, primary leakage reactance $X_1$, secondary winding resistance $R_2$, and secondary leakage reactance $X_2$ are fully taken into account.
+
+---
+
+#### **Phasor Equations:**
+1. **Secondary Side:**
+   $$\vec{E}_2 = \vec{V}_2 + \vec{I}_2 R_2 + j \vec{I}_2 X_2 = \vec{V}_2 + \vec{I}_2 Z_2$$
+   *(Since $I_2$ leads $V_2$, the reactive drop $j I_2 X_2$ can cause the terminal voltage $V_2$ to be higher than induced e.m.f. $E_2$.)*
+
+2. **Primary Current:**
+   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2' \quad \text{where } \vec{I}_2' = -K \vec{I}_2$$
+
+3. **Primary Applied Voltage:**
+   $$\vec{V}_1 = -\vec{E}_1 + \vec{I}_1 R_1 + j \vec{I}_1 X_1 = -\vec{E}_1 + \vec{I}_1 Z_1$$
+
+---
+
+#### **Complete On-Load Phasor Diagram (Capacitive / Leading Load):**
+
+```
+                         V₁ ◄────────────────┐ (j I₁X₁)
+                         ▲                  /
+                         │                 / (I₁R₁)
+                         │  / I₁          /
+                  -E₁ ───┼─/─────────────┘
+                    \    │/
+                I₂'  \   ┼────► I₀
+                      \  │
+        ───────────────\─┼──────────────► Φ (Core Flux)
+                        \│       / I₂ (Leads V₂ by φ₂)
+                         │      /
+                         │     /
+                         │    /   ┌────► V₂
+                         │   /   /    /
+                         │  /   /    / (j I₂X₂)
+                    E₂ ──┼─/───┴────┘ (I₂R₂)
+                         ▼
+```
+
+---
+
+#### **Description of Phasor Quantities:**
+- $\Phi =$ Mutual magnetic flux vector chosen along the horizontal axis.
+- $E_1, E_2 =$ Induced e.m.f. in primary and secondary windings, both lagging the flux $\Phi$ by $90^\circ$.
+- $-E_1 =$ Equal and opposite counter e.m.f. vector required on the primary side.
+- $V_2 =$ Secondary terminal voltage.
+- $I_2 =$ Secondary load current leading $V_2$ by angle $\phi_2$.
+- $I_2 R_2 =$ Resistive voltage drop in secondary in phase with $I_2$.
+- $I_2 X_2 =$ Reactive voltage drop in secondary leading $I_2$ by $90^\circ$.
+- $I_0 =$ No-load current comprising magnetizing current $I_\mu$ (in phase with $\Phi$) and core loss current $I_w$ (in phase with $-E_1$).
+- $I_2' =$ Secondary current reflected to primary, drawn $180^\circ$ out of phase with $I_2$.
+- $I_1 =$ Vector sum of $I_0$ and $I_2'$.
+- $I_1 R_1 =$ Resistive voltage drop in primary in phase with $I_1$.
+- $I_1 X_1 =$ Reactive voltage drop in primary leading $I_1$ by $90^\circ$.
+- $V_1 =$ Total primary applied voltage obtained by adding drops $I_1 R_1$ and $j I_1 X_1$ to $-E_1$.
+
+---
+
+### 17. Page 18, Q.1(c): Draw the possible vector diagrams of a transformer for different types of load. [Figure Involved]
+
+A practical transformer on load has internal winding resistances ($R_1, R_2$) and leakage reactances ($X_1, X_2$). The phasor relationships differ depending on the type of load connected to the secondary:
+
+---
+
+#### **Case 1: Non-Inductive Load (Resistive Load, Unity Power Factor, $\cos \phi_2 = 1$)**
+- $\vec{I}_2$ is in phase with $\vec{V}_2$.
+- Drop $\vec{I}_2 R_2$ is parallel to $\vec{I}_2$, and $\vec{I}_2 X_2$ leads $\vec{I}_2$ by $90^\circ$.
+
+```
+                       V₁ ◄─────────────┐ (j I₁X₁)
+                       ▲               / (I₁R₁)
+                       │  / I₁        /
+                -E₁ ───┼─/───────────┘
+                       │/
+                 I₂' ◄─┼───► I₀
+                       │
+      ─────────────────┼────────────────► Φ
+                       │
+                       │          ┌─────► V₂
+                       │          │    / (j I₂X₂)
+                  E₂ ──┼──────────┴───┘ (I₂R₂)
+                       ▼           ► I₂ (In phase with V₂)
+```
+
+---
+
+#### **Case 2: Inductive Load (Lagging Power Factor, $\cos \phi_2\text{ lagging}$)**
+- $\vec{I}_2$ lags secondary terminal voltage $\vec{V}_2$ by phase angle $\phi_2$.
+- The secondary terminal voltage $V_2$ drops significantly below $E_2$ due to both $I_2 R_2$ and $I_2 X_2$.
+
+```
+                       V₁ ◄─────────────┐ (j I₁X₁)
+                       ▲               / (I₁R₁)
+                       │   / I₁       /
+                -E₁ ───┼──/──────────┘
+                       │ /
+                 I₂' ◄─┼/────► I₀
+                  \    │
+      ─────────────\───┼────────────────► Φ
+                    \  │
+                     \ │   ▲ V₂
+                  E₂ ─\┼──/  (Lags by φ₂)
+                       ▼ /
+                        ▼ I₂ ──► I₂R₂ ──► j I₂X₂
+```
+
+---
+
+#### **Case 3: Capacitive Load (Leading Power Factor, $\cos \phi_2\text{ leading}$)**
+- $\vec{I}_2$ leads secondary terminal voltage $\vec{V}_2$ by phase angle $\phi_2$.
+- The reactive drop $j I_2 X_2$ is directed such that $V_2$ can exceed the induced e.m.f. $E_2$ (negative voltage regulation).
+
+```
+                       V₁ ◄─────────────┐ (j I₁X₁)
+                       ▲               / (I₁R₁)
+                  I₂'  │  / I₁        /
+                   \   │ /           /
+                    \──┼/───────────┘
+                -E₁ ───┼─────► I₀
+                       │
+      ─────────────────┼────────────────► Φ
+                       │    / I₂ (Leads V₂ by φ₂)
+                       │   /
+                       │  /     ┌─────► V₂
+                  E₂ ──┼─/──────┴────┘ (j I₂X₂)
+                       ▼       (I₂R₂)
+```
+
+---
+
+#### **Summary of Mathematical Phasor Relationships for all cases:**
+$$\vec{E}_2 = \vec{V}_2 + \vec{I}_2(R_2 + jX_2)$$
+$$\vec{I}_1 = \vec{I}_0 + \vec{I}_2' = \vec{I}_0 + (-K \vec{I}_2)$$
+$$\vec{V}_1 = -\vec{E}_1 + \vec{I}_1(R_1 + jX_1)$$
+
+### 18. Page 23, Q.8: Sketch the phasor diagram of an ideal transformer with no-load conditions. [Figure Involved]
+
+#### **Characteristics of an Ideal Transformer on No-Load:**
+An ideal transformer possesses the following ideal properties:
+1. **Zero Winding Resistance:** The primary and secondary coils have zero resistance ($R_1 = 0, R_2 = 0$), meaning there are no copper losses ($I^2R = 0$).
+2. **Lossless Magnetic Core:** The core has infinite permeability ($\mu \to \infty$) and zero core loss (zero hysteresis and eddy current losses).
+3. **Zero Magnetic Leakage:** All magnetic flux $\Phi$ is completely confined within the core and links both windings ($X_1 = 0, X_2 = 0$).
+4. **Purely Inductive Behavior:** Because the secondary is open-circuited ($I_2 = 0$), the primary winding acts as a pure inductance. It draws only a wattless **magnetizing current ($I_\mu$)** to establish the core flux $\Phi$.
+
+---
+
+#### **Phasor Relationships:**
+- The magnetizing current $I_\mu$ lags the applied primary voltage $V_1$ by exactly $90^\circ$.
+- The alternating flux $\Phi$ is in phase with the magnetizing current $I_\mu$.
+- The induced e.m.f. in the primary winding ($E_1$) and secondary winding ($E_2$) lag behind the core flux $\Phi$ by $90^\circ$ (by Faraday's Law: $e = -N \frac{d\Phi}{dt}$).
+- Hence, $E_1$ and $E_2$ are in phase with each other and are directly $180^\circ$ out of phase with the applied voltage $V_1$ (i.e., $V_1 = -E_1$).
+- On no-load, the secondary terminal voltage $V_2$ is equal to $E_2$.
+
+---
+
+#### **Phasor Diagram of an Ideal Transformer on No-Load:**
+
+```
+                        V₁ (Applied Voltage)
+                         ▲
+                         │
+                         │
+                         │
+                         │       90°
+     ────────────────────┼────────────────► Φ (Mutual Core Flux), Iμ (Magnetizing Current)
+                         │
+                         │       90°
+                         │
+                         │
+                         ▼ E₁ (Primary Induced EMF)
+                         ▼ E₂, V₂ (Secondary Induced EMF & Terminal Voltage)
+```
+
+---
+
+### 19. Page 23, Q.13: Describe a practical transformer on no-load with net phasor diagram. [Figure Involved]
+
+#### **Description of Practical Transformer on No-Load:**
+When a practical transformer is on no-load (secondary winding open-circuited), its primary current is not purely reactive because real power is required to supply the internal core losses.
+
+The primary draws a small **no-load current ($I_0$)**, which usually ranges between **$2\%\text{ to }10\%$** of the rated full-load current. This current lags the applied primary voltage $V_1$ by an angle $\phi_0 < 90^\circ$ (typical no-load power factor $\cos \phi_0 \approx 0.2\text{ to }0.35$).
+
+---
+
+#### **Components of No-Load Current ($I_0$):**
+
+```
+                 V₁ (Primary Voltage)
+                  ▲
+                  │\
+                  │ \
+               Iw ┼──\ I₀ (No-load Current)
+                  │ φ₀\
+                  │    \
+    ──────────────┴─────┼─────────────► Φ (Core Flux)
+                        │
+                        │ Iμ
+                        │
+                        ▼ E₁
+                        ▼ E₂
+```
+
+The no-load primary current $I_0$ is resolved into two mutually perpendicular components:
+
+1. **Active / Working / Core-Loss Component ($I_w$ or $I_c$):**
+   - It is in phase with the applied primary voltage $V_1$.
+   - It supplies the **iron losses** (hysteresis and eddy current losses) in the core and a negligible primary copper loss:
+     $$I_w = I_0 \cos \phi_0$$
+     $$\text{No-load power input, } W_0 = V_1 I_0 \cos \phi_0 \approx \text{Iron Loss } W_i$$
+
+2. **Magnetizing Component ($I_\mu$ or $I_m$):**
+   - It is in phase with the core magnetic flux $\Phi$ and in quadrature ($90^\circ$ lagging) with the applied voltage $V_1$.
+   - It sustains the alternating magnetic flux in the core:
+     $$I_\mu = I_0 \sin \phi_0$$
+
+The total no-load current is the vector sum:
+$$\vec{I}_0 = \vec{I}_w + \vec{I}_\mu \implies I_0 = \sqrt{I_w^2 + I_\mu^2}$$
+$$\text{No-load power factor, } \cos \phi_0 = \frac{I_w}{I_0} = \frac{W_0}{V_1 I_0}$$
+
+---
+
+### 20. Page 23, Q.14: Describe a practical transformer on load with no winding resistance and leakage flux. Also draw the phasor diagrams with resistive load, inductive load and capacitive load on those conditions. [Figure Involved]
+
+#### **Description:**
+Here, we consider a transformer that has magnetic core losses and magnetizing current ($I_0 \neq 0$), but its winding resistances and magnetic leakage reactances are assumed to be zero ($R_1 = R_2 = 0$ and $X_1 = X_2 = 0$).
+
+1. **Core Action Under Load:**
+   - When a load is connected to the secondary, a secondary current $I_2$ flows, creating a demagnetizing secondary m.m.f. $N_2 I_2$.
+   - This tends to reduce the mutual core flux $\Phi$.
+   - To counteract this demagnetizing effect and keep the main core flux constant at its no-load value, the primary winding immediately draws an additional load current $I_2'$ (reflected secondary current) from the supply such that:
+     $$N_1 I_2' = N_2 I_2 \implies I_2' = \left(\frac{N_2}{N_1}\right) I_2 = K I_2$$
+   - This current $I_2'$ is in direct phase opposition ($180^\circ$ out of phase) to $I_2$.
+2. **Total Primary Current:**
+   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$$
+3. **Terminal Voltages:**
+   Because internal resistance and leakage drops are zero:
+   $$V_1 = -E_1 \quad \text{and} \quad V_2 = E_2$$
+
+---
+
+#### **Phasor Diagrams Under Different Load Conditions:**
+
+#### **(a) Resistive Load (Unity Power Factor, $\cos \phi_2 = 1$):**
+- Secondary current $I_2$ is in phase with $V_2$ ($E_2$).
+- Reflected current $I_2'$ is in phase with $-E_1$ ($V_1$).
+
+```
+                 V₁ = -E₁
+                  ▲
+                  │  / I₁ = I₀ + I₂'
+            I₂' ◄─┼─/
+                  │/
+                  ┼────► I₀
+                  │
+     ─────────────┼──────────────► Φ
+                  │
+                  │
+                  ▼ E₂ = V₂, I₂
+```
+
+---
+
+#### **(b) Inductive Load (Lagging Power Factor, $\cos \phi_2\text{ lagging}$):**
+- $I_2$ lags $V_2$ ($E_2$) by load angle $\phi_2$.
+- $I_2'$ leads in anti-phase to $I_2$.
+
+```
+                 V₁ = -E₁
+                  ▲
+                  │   / I₁
+            I₂' ◄─┼──/
+             \    │ /
+              \   ┼/────► I₀
+               \  │
+     ───────────\─┼──────────────► Φ
+                 \│  ▲ V₂ = E₂
+                  │ /
+                  ▼/  (Lags by φ₂)
+                   I₂
+```
+
+---
+
+#### **(c) Capacitive Load (Leading Power Factor, $\cos \phi_2\text{ leading}$):**
+- $I_2$ leads $V_2$ ($E_2$) by load angle $\phi_2$.
+- $I_2'$ is reflected in anti-phase.
+
+```
+                 V₁ = -E₁
+                  ▲
+             I₂'  │  / I₁
+              \   │ /
+               \──┼/────► I₀
+                  │
+     ─────────────┼──────────────► Φ
+                  │   / I₂ (Leads by φ₂)
+                  │  /
+                  ▼─/──► V₂ = E₂
+```
+
+---
+
+### 21. Page 23, Q.15: Describe a practical transformer on load with winding resistance and leakage flux. Also draw the phasor diagrams with resistive load, inductive load and capacitive load on those conditions. [Figure Involved]
+
+#### **Description:**
+In an actual practical transformer, the windings possess both finite ohmic resistance and magnetic leakage flux:
+- **Primary Resistance ($R_1$) and Leakage Reactance ($X_1$):** Cause a primary voltage drop $\vec{I}_1(R_1 + jX_1) = \vec{I}_1 Z_1$.
+- **Secondary Resistance ($R_2$) and Leakage Reactance ($X_2$):** Cause a secondary internal voltage drop $\vec{I}_2(R_2 + jX_2) = \vec{I}_2 Z_2$.
+
+---
+
+#### **Governing Vector Equations:**
+1. **Secondary Terminal Voltage:**
+   $$\vec{E}_2 = \vec{V}_2 + \vec{I}_2 R_2 + j \vec{I}_2 X_2 = \vec{V}_2 + \vec{I}_2 Z_2$$
+   $$\vec{V}_2 = \vec{E}_2 - \vec{I}_2 R_2 - j \vec{I}_2 X_2$$
+
+2. **Primary Line Current:**
+   $$\vec{I}_1 = \vec{I}_0 + \vec{I}_2' \quad \text{where } \vec{I}_2' = -K \vec{I}_2$$
+
+3. **Primary Applied Voltage:**
+   $$\vec{V}_1 = -\vec{E}_1 + \vec{I}_1 R_1 + j \vec{I}_1 X_1 = -\vec{E}_1 + \vec{I}_1 Z_1$$
+
+---
+
+#### **Phasor Diagrams:**
+
+#### **1. Non-Inductive Load (Resistive, Unity Power Factor):**
+- $I_2$ is drawn in phase with terminal voltage $V_2$.
+- Secondary drop $I_2 R_2$ is parallel to $I_2$, and $I_2 X_2$ leads $I_2$ by $90^\circ$.
+
+```
+                       V₁ ◄─────────────┐ (j I₁X₁)
+                       ▲               / (I₁R₁)
+                       │  / I₁        /
+                -E₁ ───┼─/───────────┘
+                       │/
+                 I₂' ◄─┼───► I₀
+                       │
+      ─────────────────┼────────────────► Φ
+                       │
+                       │          ┌─────► V₂
+                       │          │    / (j I₂X₂)
+                  E₂ ──┼──────────┴───┘ (I₂R₂)
+                       ▼           ► I₂ (In phase with V₂)
+```
+
+---
+
+#### **2. Inductive Load (Lagging Power Factor):**
+- $I_2$ lags $V_2$ by $\phi_2$.
+- $I_2 R_2$ is parallel to $I_2$, $j I_2 X_2$ is perpendicular (leading $I_2$ by $90^\circ$).
+
+```
+                       V₁ ◄─────────────┐ (j I₁X₁)
+                       ▲               / (I₁R₁)
+                       │   / I₁       /
+                -E₁ ───┼──/──────────┘
+                       │ /
+                 I₂' ◄─┼/────► I₀
+                  \    │
+      ─────────────\───┼────────────────► Φ
+                    \  │
+                     \ │   ▲ V₂
+                  E₂ ─\┼──/  (Lags by φ₂)
+                       ▼ /
+                        ▼ I₂ ──► I₂R₂ ──► j I₂X₂
+```
+
+---
+
+#### **3. Capacitive Load (Leading Power Factor):**
+- $I_2$ leads $V_2$ by $\phi_2$.
+- The reactive drop vector adds such that the terminal voltage $V_2$ may exceed induced e.m.f. $E_2$.
+
+```
+                       V₁ ◄─────────────┐ (j I₁X₁)
+                       ▲               / (I₁R₁)
+                  I₂'  │  / I₁        /
+                   \   │ /           /
+                    \──┼/───────────┘
+                -E₁ ───┼─────► I₀
+                       │
+      ─────────────────┼────────────────► Φ
+                       │    / I₂ (Leads V₂ by φ₂)
+                       │   /
+                       │  /     ┌─────► V₂
+                  E₂ ──┼─/──────┴────┘ (j I₂X₂)
+                       ▼       (I₂R₂)
+```
+
