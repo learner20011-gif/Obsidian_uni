@@ -431,3 +431,222 @@ The transformation ratio is a fundamental design and operating parameter of a tr
 5. **Design of Core and Windings:**
    It allows the designer to fix the number of primary and secondary turns for a specified volt-per-turn value dictated by core flux and magnetic flux density limits.
 
+### 9. Page 23, Q.12: What will happen if a 60 Hz transformer is connected to 50 Hz supply?
+
+When a transformer designed and rated for **$60\text{ Hz}$** operation is connected to a **$50\text{ Hz}$** supply at the same rated primary voltage ($V$), several critical operational changes occur:
+
+---
+
+#### **1. Increase in Maximum Core Flux Density ($B_m$)**
+From the transformer e.m.f. equation:
+$$V \approx E = 4.44 f N B_m A \implies B_m = \frac{V}{4.44 f N A} \propto \frac{V}{f}$$
+
+Since the applied voltage $V$ remains constant while frequency $f$ decreases from $60\text{ Hz}$ to $50\text{ Hz}$:
+$$B_{m(50)} = B_{m(60)} \times \left(\frac{60}{50}\right) = 1.20 \, B_{m(60)}$$
+
+The peak magnetic flux density in the iron core increases by **$20\%$**.
+
+---
+
+#### **2. Core Saturation and Surge in Magnetizing Current ($I_\mu$)**
+- Standard commercial transformers are designed to operate near the knee point of the magnetic saturation curve ($B\text{-}H$ curve).
+- A $20\%$ increase in $B_m$ drives the core deep into the non-linear saturation region.
+- Consequently, the **magnetizing current ($I_\mu$)** shoots up drastically (often by several hundred percent), resulting in a heavily distorted, non-sinusoidal primary current waveform and a very poor no-load power factor.
+
+---
+
+#### **3. Increase in Core Losses (Iron Losses)**
+The total iron loss consists of hysteresis and eddy current losses:
+- **Hysteresis Loss ($W_h$):**
+  $$W_h = \eta B_m^{1.6} f V_{\text{core}} \propto \left(\frac{V}{f}\right)^{1.6} f \propto V^{1.6} f^{-0.6}$$
+  $$W_{h(50)} = W_{h(60)} \times \left(\frac{60}{50}\right)^{0.6} = 1.115 \, W_{h(60)}$$
+  Hysteresis loss increases by **$11.5\%$**.
+- **Eddy Current Loss ($W_e$):**
+  $$W_e = K_e B_m^2 f^2 t^2 V_{\text{core}} \propto \left(\frac{V}{f}\right)^2 f^2 \propto V^2$$
+  Eddy current loss depends purely on voltage magnitude and remains practically unchanged.
+- **Total Iron Loss ($W_i$):** Increases, causing higher steady-state core temperatures.
+
+---
+
+#### **4. Derating of Output kVA Capacity**
+To avoid overheating caused by higher core losses and large no-load currents:
+- The permissible load current must be reduced.
+- The transformer's safe continuous power delivery capacity must be derated by approximately **$15\%\text{ to }20\%$**:
+  $$\text{Safe kVA at } 50\text{ Hz} \approx \frac{50}{60} \times (\text{Rated kVA at } 60\text{ Hz}) = 0.833 \times \text{kVA}_{60}$$
+
+---
+
+#### **5. Voltage Regulation**
+Due to higher magnetizing current and increased primary winding resistive drops, the voltage regulation becomes poorer (higher percentage voltage drop under load).
+
+---
+
+### 10. Page 36, Q.1(b): What will happen if a dc source of rated value is applied across the primary coil of a transformer?
+
+Applying a continuous direct current (D.C.) supply of rated voltage magnitude across the primary coil of a transformer produces catastrophic effects:
+
+---
+
+#### **1. Absence of Counter E.M.F. (Back E.M.F.)**
+Under alternating current (A.C.) operation, the alternating magnetic flux induces a back e.m.f. $E_1$ in the primary according to Faraday’s law:
+$$E_1 = -N_1 \frac{d\Phi}{dt}$$
+This back e.m.f. opposes the applied voltage $V_1$ at every instant and limits the primary current to a small safe value.
+
+When a steady D.C. voltage $V_{\text{dc}}$ is applied:
+- The current produces a stationary (time-invariant) magnetic flux in the core.
+- The rate of change of flux is zero:
+  $$\frac{d\Phi}{dt} = 0 \implies E_1 = 0$$
+- No opposing counter e.m.f. is established.
+
+---
+
+#### **2. Abnormally High Current Flow**
+With zero frequency ($f = 0$), the inductive reactance is zero ($X_L = 2\pi f L = 0$). The current drawn by the primary is limited strictly by its internal ohmic resistance $R_1$:
+$$I_{\text{dc}} = \frac{V_{\text{dc}}}{R_1}$$
+
+Because primary windings are constructed with thick, highly conductive copper to keep resistance very low (often less than $1\,\Omega$), the resulting D.C. current will be **$20\text{ to }50\text{ times}$ greater** than the rated full-load current.
+
+---
+
+#### **3. Severe Overheating and Destruction (Burnout)**
+- The primary copper loss increases as the square of the current ($P_{\text{Cu}} = I_{\text{dc}}^2 R_1$).
+- Extreme heat is released almost instantaneously.
+- The winding insulation chars, smokes, and melts, leading to an inter-turn short-circuit and complete burnout of the transformer within seconds.
+
+---
+
+#### **4. Zero Energy Transfer to Secondary**
+Because the magnetic flux in the core is constant ($\frac{d\Phi}{dt} = 0$), no mutual e.m.f. is induced in the secondary winding:
+$$E_2 = -N_2 \frac{d\Phi}{dt} = 0\text{ V}$$
+Thus, no voltage or electric power appears across the secondary terminals.
+
+---
+
+### 11. Page 36, Q.1(c): What will happen if a transformer rated at 50 Hz is operated on 60 Hz supply line?
+
+Operating a transformer designed for **$50\text{ Hz}$** on a **$60\text{ Hz}$** system at its rated voltage is generally safe and offers several operating advantages:
+
+---
+
+#### **1. Reduction in Maximum Core Flux Density ($B_m$)**
+From $B_m \propto \frac{V}{f}$, with voltage $V$ held constant and frequency increased from $50\text{ Hz}$ to $60\text{ Hz}$:
+$$B_{m(60)} = B_{m(50)} \times \left(\frac{50}{60}\right) = 0.833 \, B_{m(50)}$$
+The maximum core flux density decreases by **$16.7\%$**.
+
+---
+
+#### **2. Substantial Decrease in Magnetizing Current ($I_\mu$)**
+- Because the core flux density $B_m$ is reduced, the core operates well below its magnetic saturation knee, well into the linear region of the magnetization curve.
+- The magnetizing current $I_\mu$ drops noticeably, improving the no-load power factor.
+
+---
+
+#### **3. Reduction in Total Core (Iron) Losses**
+- **Hysteresis Loss ($W_h$):**
+  $$W_h \propto B_m^{1.6} f \propto \left(\frac{V}{f}\right)^{1.6} f \propto V^{1.6} f^{-0.6}$$
+  $$W_{h(60)} = W_{h(50)} \times \left(\frac{50}{60}\right)^{0.6} = 0.896 \, W_{h(50)}$$
+  Hysteresis loss decreases by about **$10.4\%$**.
+- **Eddy Current Loss ($W_e$):**
+  $$W_e \propto B_m^2 f^2 \propto \left(\frac{V}{f}\right)^2 f^2 \propto V^2$$
+  Eddy current loss remains constant since applied voltage is unchanged.
+- **Total Iron Loss ($W_i = W_h + W_e$):** Decreases overall, meaning the transformer operates **cooler** at no-load.
+
+---
+
+#### **4. Output kVA Rating and Efficiency**
+- Lower core losses and reduced magnetizing current result in higher overall operational efficiency.
+- Because of lower total thermal stress, the transformer can safely carry its full rated kVA without overheating (and can even deliver up to $10\%\text{ to }15\%$ higher kVA capacity if secondary voltage is adjusted proportionately).
+
+---
+
+#### **5. Increase in Leakage Reactance & Voltage Drop**
+- The leakage reactance of the windings increases linearly with frequency:
+  $$X_L = 2\pi f L \propto f$$
+  $$X_{L(60)} = 1.20 \, X_{L(50)}$$
+- The inductive reactance increases by **$20\%$**, causing a slightly larger internal reactive voltage drop ($I X_L$) under lagging power factor loads, which results in slightly higher percentage voltage regulation.
+
+---
+
+### 12. Page 40, Q.1(a): Does transformer draw any current when secondary is open? Why? Derive the emf equation of single phase transformer
+
+#### **Part 1: Current Drawn on No-Load and Reason**
+**Yes**, a transformer draws a small current when its secondary winding is open-circuited. This current is known as the **No-Load Primary Current ($I_0$)**, and it typically constitutes about **$2\%\text{ to }10\%$** of the rated full-load primary current.
+
+---
+
+#### **Why does it draw current?**
+Even with the secondary circuit open (secondary current $I_2 = 0$), the primary winding remains connected across the alternating voltage supply $V_1$. The primary must draw $I_0$ to perform two functions:
+
+1. **Magnetizing Component ($I_\mu$):**
+   - It sets up and sustains the required alternating magnetic flux $\Phi$ in the high-permeability iron core.
+   - It is in phase with the core flux $\Phi$ and lags behind the applied voltage $V_1$ by $90^\circ$ (wattless or reactive component):
+     $$I_\mu = I_0 \sin \phi_0$$
+
+2. **Active or Working Component ($I_w$ or $I_c$):**
+   - It supplies the power needed to overcome **iron/core losses** (hysteresis loss and eddy current loss in the laminated core) along with a negligible amount of no-load primary copper loss ($I_0^2 R_1$).
+   - It is in phase with the applied voltage $V_1$ (wattful component):
+     $$I_w = I_0 \cos \phi_0$$
+
+The total no-load current is the phasor sum of these two perpendicular components:
+$$I_0 = \sqrt{I_w^2 + I_\mu^2}$$
+
+```
+                V₁ (Applied Voltage)
+                 ▲
+                 │
+                 │ \
+                 │  \
+              Iw ┼───\ I₀
+                 │ θ₀ \
+                 │     \
+                 └──────┼──────────► Φ (Core Flux)
+                        │
+                        │ Iμ
+```
+
+---
+
+#### **Part 2: Derivation of the E.M.F. Equation of a Single-Phase Transformer**
+
+Let:
+- $N_1 =$ Number of primary turns
+- $N_2 =$ Number of secondary turns
+- $\Phi_m =$ Maximum value of magnetic flux in the core in Webers ($\text{Wb}$)
+- $f =$ Frequency of the A.C. supply in Hertz ($\text{Hz}$)
+- $B_m =$ Peak magnetic flux density in $\text{Wb/m}^2$
+- $A =$ Net cross-sectional area of the core in $\text{m}^2$ ($\Phi_m = B_m \times A$)
+
+---
+
+#### **1. Rate of Change of Flux:**
+In a sinusoidal wave of frequency $f$, the time period of one complete cycle is $T = \frac{1}{f}\text{ seconds}$.
+
+The flux changes from zero to its maximum positive value $\Phi_m$ in **one quarter of a cycle**:
+$$\text{Time taken, } \Delta t = \frac{T}{4} = \frac{1}{4f}\text{ s}$$
+
+$$\text{Average rate of change of flux} = \frac{\Delta \Phi}{\Delta t} = \frac{\Phi_m}{1/(4f)} = 4 f \Phi_m \text{ Wb/s (or Volts)}$$
+
+---
+
+#### **2. Induced E.M.F. per Turn:**
+By Faraday's Law, the average e.m.f. induced in each turn is equal to the average rate of change of flux:
+$$\text{Average e.m.f. per turn} = 4 f \Phi_m \text{ Volts}$$
+
+For a sinusoidal alternating waveform, the Form Factor is:
+$$\text{Form Factor} = \frac{\text{R.M.S. Value}}{\text{Average Value}} = 1.11$$
+
+$$\text{R.M.S. value of e.m.f. per turn} = 1.11 \times 4 f \Phi_m = 4.44 f \Phi_m \text{ Volts}$$
+
+---
+
+#### **3. Total Induced E.M.F. in Primary and Secondary Windings:**
+- **In Primary Winding ($N_1$ turns):**
+  $$E_1 = (\text{R.M.S. e.m.f./turn}) \times N_1$$
+  $$E_1 = 4.44 f N_1 \Phi_m = 4.44 f N_1 B_m A \text{ Volts}$$
+
+- **In Secondary Winding ($N_2$ turns):**
+  $$E_2 = (\text{R.M.S. e.m.f./turn}) \times N_2$$
+  $$E_2 = 4.44 f N_2 \Phi_m = 4.44 f N_2 B_m A \text{ Volts}$$
+
+This is the standard **E.M.F. Equation of a Transformer**.
+
