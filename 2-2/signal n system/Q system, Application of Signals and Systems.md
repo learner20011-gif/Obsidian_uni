@@ -1,3 +1,5 @@
+71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86
+
 ### **Classifications of system**
 
 1. **Page 1, Q1(a):** A system H has its input-output pairs given. Determine whether the system could be memoryless, causal, linear, and time invariant. For all cases justify your answers. ![[Pasted image 20260829104628.png]] [Figure Involved]

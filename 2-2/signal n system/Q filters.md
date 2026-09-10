@@ -1,5 +1,4 @@
-Based on the provided PDF, here are the full texts of the questions related to the requested topics under **Filters**, organized accordingly. Exact word-for-word duplicates have been filtered to keep only one instance.
-
+19, 20, 21, 23
 ### **Analog filter design**
 
 1. **Page 8, Q.8(b):** Design a Butterworth low pass filter which has the following transfer characteristics.![[Pasted image 20260829111056.png]] [Figure Involved]
