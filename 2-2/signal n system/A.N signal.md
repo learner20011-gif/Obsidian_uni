@@ -1,12 +1,12 @@
 ## Atomic Notes: Periodicity of Continuous-Time Signals
  
 ## Periodicity of Summed Signals
-When adding multiple periodic signals ($x(t) = x_1(t) + x_2(t) + \dots + x_N(t)$):
+When [[2-2/signal n system/Q signal|adding multiple periodic signals]] ($x(t) = x_1(t) + x_2(t) + \dots + x_N(t)$):
 ## 1. Condition for Periodicity
-The combined signal is periodic if and only if the ratio of any two individual periods is a rational number (a fraction of integers).
+The combined signal is periodic if and only if the ratio of [[2-1/Mecha/IC engine Ai studio qna|any two individual periods]] is a rational number (a fraction of integers).
 $$\frac{T_1}{T_2} = \frac{m}{n} \quad (\text{where } m, n \in \mathbb{Z}^+)$$ 
 ## 2. Finding the Combined Fundamental Period ($T_0$)
-Once the ratio is simplified to its lowest terms ($\frac{m}{n}$), calculate $T_0$ using cross-multiplication:
+Once the ratio is simplified to [[2-1/Math 3/3d Geometry QnA|its lowest terms]] ($\frac{m}{n}$), calculate $T_0$ using cross-multiplication:
 $$T_0 = n T_1 = m T_2$$ 
 
 * Alternatively, $T_0$ is the Least Common Multiple (LCM) of the individual periods:
