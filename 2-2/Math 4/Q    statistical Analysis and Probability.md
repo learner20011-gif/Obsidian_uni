@@ -1,4 +1,5 @@
 # Statistical Analysis and Probability - Comprehensive Question Bank
+62, 66, 69, 73, 76, 77, 78, 79, 86, 88
 
 This document compiles all Statistical Analysis and Probability questions from **Past Exam Papers / Class Tests** and the **MHU Lecture Sheet (EEE/Math-2201)**, organized strictly by syllabus topics.
 
