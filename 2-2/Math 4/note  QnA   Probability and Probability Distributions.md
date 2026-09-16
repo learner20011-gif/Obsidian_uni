@@ -1582,7 +1582,7 @@ $$\mathbf{\text{Ans: (a) } f(x) = 2e^{-2x} \; (x > 0), \quad \text{(b) } e^{-4} 
      $$\mu_r' = E(X^r) = \int_{a}^{b} x^r f(x) \, dx$$
    - **$r$-th Central Moment (about mean $\mu$):**
      $$\mu_r = E[(X - \mu)^r] = \int_{a}^{b} (x - \mu)^r f(x) \, dx$$
-
+**Variance using  2nd Raw Moment and mean:**  $\text{Var}(X) = E(X^2) - [E(X)]^2$:
 ---
 
 ### Problem 8.2: Comprehensive Calculation on $f(x) = cx(2-x)$
