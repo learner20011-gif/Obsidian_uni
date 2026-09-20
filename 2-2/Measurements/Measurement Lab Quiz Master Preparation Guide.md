@@ -464,7 +464,7 @@ An energy meter has 4 standard screw terminals:
 - **Terminal 3:** Neutral **OUT** (to load)
 - **Terminal 4:** Phase / Line **OUT** (to load)
 - **Internal Wiring:** Current Coil (CC) is connected in series between Terminal 1 and Terminal 4. Potential Coil (PC) is connected in parallel between Line (Terminal 1) and Neutral (Terminal 2/3).
-
+![[Pasted image 20260920080851.png]]
 #### The 4 Mechanical Systems Inside the Meter:
 1. **Driving System:**
    - **Shunt Magnet (Voltage Coil):** Wound with many turns of thin wire, highly inductive. Connected directly across line voltage $V$. Its magnetic flux $\Phi_{sh}$ is proportional to $V$ and lags $V$ by nearly $90^\circ$.
