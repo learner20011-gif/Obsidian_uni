@@ -99,6 +99,7 @@
 ### Core Concepts & Circuit Setup
 ![Wheatstone Bridge](attachments/meas_exp02_wheatstone_bridge.png)
 
+![[Pasted image 20260920055829.png]]
 1. **Working Principle:** Null-deflection method based on balance of a bridge loop.
 2. **Balance Condition:** Current through galvanometer is zero ($I_g = 0$) when the potential at opposite nodes is identical:
    $$P \cdot R = Q \cdot S \implies R = \frac{Q}{P} \cdot S$$
