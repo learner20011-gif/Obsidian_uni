@@ -9,18 +9,18 @@
 
 ## Quick Navigation Table
 
-| Exp # | Experiment Title | Core Focus / Concept | Key Result / Formula |
-| :---: | :--- | :--- | :--- |
-| **01** | [Study & Ratings of DC Machines & Transformers](#exp-01) | Nameplate data, construction, operating principles | $E = k \Phi \omega_m$, $\tau = k \Phi I_a$ |
-| **02** | [No-Load Magnetization Curve (OCC) of Separately Excited DC Generator](#exp-02) | Magnetic saturation, residual flux, critical resistance | $E_g \propto \Phi \propto I_f$ (prior to saturation) |
-| **03** | [External Characteristics of Self-Excited DC Shunt Generator](#exp-03) | Voltage droop under load, 3 causes of drop | $V_T = E_g - I_a R_a$, $I_f = V_T / R_{sh}$ |
-| **04** | [External Characteristics of DC Compound Generators](#exp-04) | Cumulative vs Differential compounding | $\Phi_{net} = \Phi_{sh} \pm \Phi_{se}$ |
-| **05** | [Starting of DC Shunt Motor using 3-Point Starter](#exp-05) | Limiting starting current, NVC & OLR protection | $I_{a,\text{start}} = V / R_a \gg I_{\text{rated}}$ |
-| **06** | [Speed Control of DC Shunt Motor](#exp-06) | Armature resistance vs Field flux control | $N \propto \frac{V - I_a R_a}{\Phi}$ |
-| **07** | [Torque & Speed Characteristics of DC Motors](#exp-07) | Shunt, Cumulative, Differential motor behavior | $\tau \propto \Phi I_a$, $N \propto (V - I_a R_a)/\Phi$ |
-| **08** | [Transformer Parameter Determination (OC & SC Tests)](#exp-08) | Equivalent circuit parameters: $R_c, X_m, R_{eq}, X_{eq}$ | Core loss via OC; Copper loss via SC |
-| **09** | [Voltage Regulation for Different Load Types](#exp-09) | Resistive, Inductive (lagging), Capacitive (leading) | $\%VR = \frac{E_2 - V_s}{V_s} \times 100\%$ |
-| **10** | [Open-Delta (V-V) 3-Phase Transformer Construction](#exp-10) | Emergency 3-phase supply using 2 single-phase units | $S_{V-V} = \frac{1}{\sqrt{3}} S_{\Delta-\Delta} \approx 57.7\%$ |
+| Exp #  | Experiment Title                                                                | Core Focus / Concept                                      | Key Result / Formula                                            |
+| :----: | :------------------------------------------------------------------------------ | :-------------------------------------------------------- | :-------------------------------------------------------------- |
+| **01** | [Study & Ratings of DC Machines & Transformers](#exp-01)                        | Nameplate data, construction, operating principles        | $E = k \Phi \omega_m$, $\tau = k \Phi I_a$                      |
+| **02** | [No-Load Magnetization Curve (OCC) of Separately Excited DC Generator](#exp-02) | Magnetic saturation, residual flux, critical resistance   | $E_g \propto \Phi \propto I_f$ (prior to saturation)            |
+| **03** | [External Characteristics of Self-Excited DC Shunt Generator](#exp-03)          | Voltage droop under load, 3 causes of drop                | $V_T = E_g - I_a R_a$, $I_f = V_T / R_{sh}$                     |
+| **04** | [External Characteristics of DC Compound Generators](#exp-04)                   | Cumulative vs Differential compounding                    | $\Phi_{net} = \Phi_{sh} \pm \Phi_{se}$                          |
+| **05** | [Starting of DC Shunt Motor using 3-Point Starter](#exp-05)                     | Limiting starting current, NVC & OLR protection           | $I_{a,\text{start}} = V / R_a \gg I_{\text{rated}}$             |
+| **06** | [Speed Control of DC Shunt Motor](#exp-06)                                      | Armature resistance vs Field flux control                 | $N \propto \frac{V - I_a R_a}{\Phi}$                            |
+| **07** | [Torque & Speed Characteristics of DC Motors](#exp-07)                          | Shunt, Cumulative, Differential motor behavior            | $\tau \propto \Phi I_a$, $N \propto (V - I_a R_a)/\Phi$         |
+| **08** | [Transformer Parameter Determination (OC & SC Tests)](#exp-08)                  | Equivalent circuit parameters: $R_c, X_m, R_{eq}, X_{eq}$ | Core loss via OC; Copper loss via SC                            |
+| **09** | [Voltage Regulation for Different Load Types](#exp-09)                          | Resistive, Inductive (lagging), Capacitive (leading)      | $\%VR = \frac{E_2 - V_s}{V_s} \times 100\%$                     |
+| **10** | [Open-Delta (V-V) 3-Phase Transformer Construction](#exp-10)                    | Emergency 3-phase supply using 2 single-phase units       | $S_{V-V} = \frac{1}{\sqrt{3}} S_{\Delta-\Delta} \approx 57.7\%$ |
 
 ---
 
