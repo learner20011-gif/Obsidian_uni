@@ -412,6 +412,7 @@ To measure large currents or large voltages, we modify the circuit around the mo
 - **Concept:** Connect a very **high resistance (Multiplier, $R_s$)** in **series** with the meter movement ($R_m$).
 - **Voltage Division:** The total voltage $V$ is shared between the multiplier and the coil. The multiplier drops almost the entire line voltage, leaving only a tiny millivolt drop ($V_m = I_m R_m$) across the fragile meter coil.
 - **Mathematical Derivation:**
+- ![[Pasted image 20260920074543.png]]
   The same full-scale current $I_m$ passes through both series elements:
   $$V = I_m (R_m + R_s)$$
   $$\frac{V}{I_m} = R_m + R_s \implies R_s = \frac{V}{I_m} - R_m = \left(\frac{V}{I_m R_m} - 1\right) R_m$$
