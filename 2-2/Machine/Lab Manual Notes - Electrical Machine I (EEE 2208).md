@@ -556,7 +556,7 @@ Imagine an industrial plant running on a 3-phase Delta-Delta ($\Delta-\Delta$) b
 
 ### 2. Circuit Diagram & Connections
 
-![Circuit Diagram for Open-Delta Connection](attachments/fig10_2_circuit_open_delta.png)
+![[Pasted image 20260921103619.png]]
 
 *   Two identical single-phase transformers are used.
 *   The primary windings are connected across lines $A-B$ and $B-C$. Line $C-A$ is left open.
