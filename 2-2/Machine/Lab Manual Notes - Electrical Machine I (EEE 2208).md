@@ -216,7 +216,7 @@ $$V_T = E_g - I_a (R_a + R_{se}) - V_{\text{brush}}$$
 ### 4. Graph & Performance Classification
 
 ![External Characteristics Curve of Compound DC Generator](attachments/fig4_3_external_char_compound.png)
-
+![[Pasted image 20260921075301.jpg]]
 1.  **Over-Compounded Generator (Cumulative):**
     *   Series turns are abundant. At full load, series flux boost exceeds total internal voltage drops: **$V_{\text{full-load}} > V_{\text{no-load}}$**.
     *   **Voltage Regulation is NEGATIVE:** $\%VR = \frac{V_{NL} - V_{FL}}{V_{FL}} \times 100\% < 0$.
