@@ -5,7 +5,7 @@
 > **Course Teachers:** Md. Ruhul Amin Sir (Ratul Sir), Md. Shafiqul Islam Sir  
 > **Credit:** 1.50 | **Total Marks:** 100  
 > **Evaluation Rubric:** Lab Performance (40%) + Lab Report (20%) + Lab Final (20%) + Lab Viva (20%)  
-> **Core Focus:** DC Generators & Motors (Construction, Windings, OCC, External Characteristics, 3-Point/4-Point Starting, Rheostatic/Field Speed Control, Compounding) and Transformers (OC/SC Parameter Extraction, Voltage Regulation for R-L-C Loads, Open-Delta / V-V Banks, Instrument Transformers).
+> **Core Focus:** DC Generators & Motors (Construction, Windings, OCC, External Characteristics, 3-Point/4-Point Starting, Rheostatic/Field Speed Control, Compounding) and Transformers (OC/SC Parameter Extraction, Voltage Regulation for R-L-C Loads, Open-Delta / V-V Banks, Scott Connection, Parallel Operation, Instrument Transformers).
 
 ---
 
@@ -23,8 +23,10 @@
 | **08** | [Transformer Parameter Determination (OC & SC Tests)](#exp-08) | Core loss via OC (LV side), Copper loss via SC (HV side), equivalent circuit parameters | $R_c = \frac{V_0^2}{W_0}$, $X_m = \frac{V_0}{I_m}$, $R_{eq} = \frac{W_{sc}}{I_{sc}^2}$, $X_{eq} = \sqrt{Z_{eq}^2 - R_{eq}^2}$ |
 | **09** | [Voltage Regulation for Different Load Types](#exp-09) | Resistive (unity PF), Inductive (lagging PF), Capacitive (leading PF & negative VR) | $E_2 \approx V_s + I_s R_{eq}\cos\phi \pm I_s X_{eq}\sin\phi$ ($+$ lag, $-$ lead) |
 | **10** | [Open-Delta (V-V) 3-Phase Transformer Construction](#exp-10) | Emergency 3-phase supply using 2 transformers, 57.7% bank capacity, 86.6% utilization factor | $\frac{S_{V-V}}{S_{\Delta-\Delta}} = \frac{1}{\sqrt{3}} \approx 57.7\%$, $\frac{S_{V-V}}{2VI} = \frac{\sqrt{3}}{2} \approx 86.6\%$ |
-| **—** | [Supplemental High-Yield Machine Concepts](#supplemental-concepts) | Instrument Transformers (CT & PT), Burden Resistance, Single-Phase & Synchronous Motors | Double revolving field theory, CT open secondary hazard, Alternator construction |
-| **—** | [Comprehensive Board Viva Voce & Quiz Master Bank](#master-viva-voce) | 35+ Categorized rapid-fire interview questions, derivations, and tricky examiner checks | Grouped across DC machines, starters, transformers, and AC principles |
+| **11** | [Scott Connection (T-Connection) for 3-Phase to 2-Phase Conversion](#exp-11) | Main (50% tap) & Teaser (86.6% tap) transformers, electric furnaces, balanced loading | $V_{AD} = \frac{\sqrt{3}}{2} V_L \approx 0.866 V_L$, $V_{2M} = V_{2T} \angle 90^\circ$ |
+| **12** | [Parallel Operation of Two Single-Phase Transformers](#exp-12) | Polarity verification, circulating current mitigation, proportional kVA load sharing | $I_c = \frac{E_A - E_B}{Z_A + Z_B}$, $I_A = I_L \frac{Z_B}{Z_A + Z_B}$, $\%Z_A = \%Z_B$ |
+| **—** | [Supplemental High-Yield Machine Concepts](#supplemental-concepts) | Universal Motor (AC/DC operation), Instrument Transformers (CT & PT), Single-Phase & Synchronous Motors | Double revolving field theory, CT open secondary hazard, Alternator construction |
+| **—** | [Comprehensive Board Viva Voce & Quiz Master Bank](#master-viva-voce) | 42 Categorized rapid-fire interview questions, derivations, and tricky examiner checks | Grouped across DC machines, starters, transformers, and AC principles |
 
 ---
 
@@ -47,7 +49,6 @@ Every electrical machine carries a nameplate that defines its safe thermal, elec
     *   **Back EMF ($E_b$):** By **Lenz's Law**, as the motor armature rotates, conductors cut the main field flux, inducing a counter-EMF ($E_b = k \Phi N$) that opposes the applied terminal voltage $V$. Back EMF acts as an automatic governor that regulates armature current to match shaft load.
 
 *   **Essential Components:**
-* ![[Pasted image 20260921063615.jpg]]
     1.  **Stator (Stationary Frame):**
         *   *Yoke (Frame):* Cast iron (small machines) or cast steel (large machines). Protects internal parts and provides the return path for magnetic flux.
         *   *Main Field Poles & Pole Shoes:* Laminated sheet steel. Pole shoes spread magnetic flux uniformly across the air gap and support field coils.
@@ -66,6 +67,8 @@ Every electrical machine carries a nameplate that defines its safe thermal, elec
             *   Self-lubricating property reduces commutator ring wear.
             *   High contact resistance aids smooth current reversal (sparkless commutation).
             *   Negative temperature coefficient of resistance (contact resistance decreases as temperature stabilizes).
+
+![[Pasted image 20260921063615.jpg]]
 
 #### B. Armature Winding Configurations: Lap vs. Wave Winding
 
@@ -134,7 +137,10 @@ $$E_g = \frac{P \Phi Z N}{60 A} = k \Phi \omega_m$$
 ### 4. Graph & Physical Zone Analysis
 
 ![No-Load Magnetization Curve (OCC)](attachments/fig2_4_occ_curve.png)
-![[Pasted image 20260921070002.jpg]]![[Pasted image 20260921070011.png]]
+
+![[Pasted image 20260921070002.jpg]]
+![[Pasted image 20260921070011.png]]
+
 1.  **Residual Voltage Region ($I_f = 0$):**  
     At zero field current ($I_f = 0$), the generator still produces a small voltage ($E_{g,\text{res}} \approx 6\text{ V} - 15\text{ V}$). This is induced because ferromagnetic pole cores retain **residual magnetic flux** ($\Phi_{\text{res}}$) from previous magnetization.
 2.  **Air-Gap Line (Linear Zone):**  
@@ -148,7 +154,9 @@ $$E_g = \frac{P \Phi Z N}{60 A} = k \Phi \omega_m$$
 6.  **Critical Speed ($N_c$):**  
     The lowest speed at which a self-excited DC generator can build up voltage with its field resistance fixed at rated value. At $N_c$, the OCC curve becomes tangent to the field resistance line.
 
-### 5. The 5 Essential Conditions for Voltage Buildup in Self-Excited Generators![[Pasted image 20260921071012.jpg]]
+### 5. The 5 Essential Conditions for Voltage Buildup in Self-Excited Generators
+
+![[Pasted image 20260921071012.jpg]]
 For a self-excited shunt generator to successfully build up voltage, all five conditions must be met simultaneously:
 1.  **Presence of Residual Magnetism:** The pole cores must retain residual flux $\Phi_{\text{res}}$ to induce the initial bootstrap voltage ($E_{\text{res}}$).
 2.  **Aiding Polarity Connection:** The field coil connections must be phased so that initial field current ($I_f = E_{\text{res}} / R_f$) creates magnetic flux that **aids** residual flux, rather than opposes it.
@@ -174,14 +182,17 @@ The shunt field circuit is connected in parallel with the armature terminals thr
 
 ### 3. Governing Equations
 $$I_a = I_L + I_f \approx I_L \quad (\text{since } I_f \ll I_L)$$
-$$V_T = E_g - I_a R_a $$
+$$V_T = E_g - I_a R_a - V_{\text{brush}}$$
 $$I_f = \frac{V_T}{R_{sh}}$$
 $$\%VR = \frac{V_{\text{no-load}} - V_{\text{full-load}}}{V_{\text{full-load}}} \times 100\%$$
 
 ### 4. The 4 Compounding Causes of Voltage Droop Under Load
 
 ![External Characteristics Curve of Shunt DC Generator](attachments/fig3_4_external_char_shunt.png)
+
 ![[Pasted image 20260921072920.jpg]]
+![[Pasted image 20260921073646.jpg]]
+
 As load current ($I_L$) increases, terminal voltage ($V_T$) drops due to four factors:
 1.  **Armature Ohmic Resistance Drop ($I_a R_a$):** The armature winding possesses internal copper resistance ($R_a$). As current increases, internal ohmic voltage drop ($I_a R_a$) increases linearly.
 2.  **Brush Contact Voltage Drop ($V_{\text{brush}}$):** Contact resistance between carbon brushes and copper commutator segments introduces a relatively constant $1\text{ V} - 2\text{ V}$ drop across the brush pairs.
@@ -189,7 +200,6 @@ As load current ($I_L$) increases, terminal voltage ($V_T$) drops due to four fa
 4.  **Cumulative Drop in Field Excitation Current ($I_f = V_T / R_{sh}$):** Because the field winding is connected across the output terminals, any drop in terminal voltage caused by (1), (2), and (3) reduces field current ($I_f$). This weakens the main field flux further, causing an accelerated downward drop in $V_T$.
 
 ### 5. Breakdown / Turn-Around Phenomenon
-![[Pasted image 20260921073646.jpg]]
 If external load resistance ($R_L$) is reduced beyond a critical breakdown point, the severe collapse in $V_T$ chokes field current $I_f$. The generator enters an unstable region where both terminal voltage and load current decrease simultaneously, hooking the curve back toward zero. This behavior provides inherent short-circuit self-protection in shunt generators.
 
 ---
@@ -216,7 +226,9 @@ $$V_T = E_g - I_a (R_a + R_{se}) - V_{\text{brush}}$$
 ### 4. Graph & Performance Classification
 
 ![External Characteristics Curve of Compound DC Generator](attachments/fig4_3_external_char_compound.png)
+
 ![[Pasted image 20260921075301.jpg]]
+
 1.  **Over-Compounded Generator (Cumulative):**
     *   Series turns are abundant. At full load, series flux boost exceeds total internal voltage drops: **$V_{\text{full-load}} > V_{\text{no-load}}$**.
     *   **Voltage Regulation is NEGATIVE:** $\%VR = \frac{V_{NL} - V_{FL}}{V_{FL}} \times 100\% < 0$.
@@ -244,6 +256,8 @@ At standstill, a DC motor generates zero back EMF ($E_b = 0$). Because the armat
 
 ![Circuit Diagram for 3-Point Starter](attachments/fig5_1_circuit_3point_starter.png)
 
+![[Three-Point-Starter.-3-Point-Starter.webp]]
+
 *   **Terminals of a 3-Point Starter:**
     *   **L (Line):** Connects to the incoming positive DC supply.
     *   **A (Armature):** Connects to the motor armature winding.
@@ -269,6 +283,9 @@ $$E_b = k \Phi N$$
     *   Shorting the NVC drops its magnetic hold, allowing the return spring to snap the handle to OFF, protecting the motor from thermal burnout.
 
 ### 5. Limitation of 3-Point Starter & The 4-Point Starter Solution
+
+![[Four-Point-Starter.-4-Point-Starter.webp]]
+![[Pasted image 20260921081553.jpg]]
 
 > [!IMPORTANT]
 > **Why is a 4-Point Starter Preferred for Wide Speed Control?**
@@ -313,11 +330,12 @@ When field rheostat resistance increases, field current drops ($I_f \downarrow \
 
 ### 6. Characteristic Curves
 
-| Field Control Curve ($N$ vs. $I_f$) | Armature Control Curve ($N$ vs. $I_a$) |
-| :---: | :---: |
-| ![Speed vs Field Current Curve](attachments/fig6_2_speed_vs_if.png) | ![Speed vs Armature Current Curve](attachments/fig6_3_speed_vs_ia.png) |
-| Speed rises inversely with field current ($N \propto 1/\Phi$). | Added armature resistance increases voltage drop, lowering speed. |
 
+|                 Field Control Curve ($N$ vs. $I_f$)                 |              Armature Control Curve ($N$ vs. $I_a$)               |     |
+| :-----------------------------------------------------------------: | :---------------------------------------------------------------: | --- |
+| ![Speed vs Field Current Curve](attachments/fig6_2_speed_vs_if.png) |                         ![[image-2.webp]]                         |     |
+|   Speed rises inversely with field current ($N \propto 1/\Phi$).    | Added armature resistance increases voltage drop, lowering speed. |     |
+![[Pasted image 20260921084401.jpg]]
 > [!CAUTION]
 > **Field Runaway Hazard:** Never open the shunt field circuit of an unloaded running DC motor! If $I_f \to 0$, flux collapses to the tiny residual value ($\Phi \to \Phi_{\text{res}}$). The motor will accelerate uncontrollably toward dangerous speeds ($N \to \infty$), resulting in mechanical failure from centrifugal forces.
 
@@ -496,10 +514,142 @@ When one transformer is removed:
 
 ---
 
+<a id="exp-11"></a>
+## Experiment 11: Scott Connection (T-Connection) of Two Single-Phase Transformers for Three-Phase to Two-Phase Conversion
+
+### 1. Intuitive Summary in Plain Words
+Electric power transmission is overwhelmingly three-phase, but certain industrial equipment—most notably **electric arc furnaces**, railway traction substations, and induction heating equipment—requires heavy **two-phase** or single-phase power. Drawing large single-phase or two-phase loads directly from a three-phase line would severely unbalance the utility grid voltages. 
+The **Scott Connection (Scott-T Connection)** ingeniously solves this by using two standard single-phase transformers with specific winding taps to transform a balanced 3-phase supply into a balanced 2-phase supply (or vice-versa), while drawing **completely balanced currents from the 3-phase grid**.
+
+### 2. Circuit Diagram & Tapping Architecture
+
+![Scott Connection Circuit Diagram](attachments/fig11_1_scott_connection.png)
+
+![Scott-T Transformer Schematic](attachments/fig11_2_scott_t_schematic.jpg)
+
+The Scott-T configuration consists of two transformers:
+1.  **Main Transformer ($M$):**
+    *   Connected directly across two lines of the 3-phase supply (lines $B$ and $C$).
+    *   Its primary winding has $N_1$ turns and is equipped with an exact **$50\%$ center tap ($D$)**, dividing the winding into two equal halves of $N_1 / 2$ turns each.
+2.  **Teaser Transformer ($T$):**
+    *   Connected between the third supply phase (line $A$) and the center tap ($D$) of the main transformer.
+    *   Its primary winding is tapped at **$\frac{\sqrt{3}}{2} \approx 86.6\%$** of the main transformer turns ($N_T = 0.866 N_1$).
+
+### 3. Phasor Geometry & Mathematical Proof of Balanced 2-Phase Output
+
+Consider balanced 3-phase line voltages of magnitude $V_L$ represented by an equilateral triangle $ABC$:
+*   The voltage across the main transformer primary is the line voltage $V_{BC}$:
+    $$\vec{V}_{BC} = V_L \angle 0^\circ$$
+*   The center tap $D$ splits $V_{BC}$ into two halves:
+    $$V_{BD} = V_{DC} = \frac{V_L}{2}$$
+*   The voltage applied across the teaser transformer is the vector from apex $A$ to the center point $D$ ($\vec{V}_{AD}$).
+*   From equilateral triangle geometry, the altitude $AD$ is strictly perpendicular ($90^\circ$) to base $BC$:
+    $$V_{AD} = \sqrt{V_{AB}^2 - V_{BD}^2} = \sqrt{V_L^2 - \left(\frac{V_L}{2}\right)^2} = \sqrt{\frac{3}{4} V_L^2} = \frac{\sqrt{3}}{2} V_L \approx \mathbf{0.866 V_L}$$
+*   Therefore, the two primary voltages are:
+    $$\vec{V}_{BC} = V_L \angle 0^\circ$$
+    $$\vec{V}_{AD} = 0.866 V_L \angle 90^\circ$$
+    *(Notice: $\vec{V}_{AD}$ leads $\vec{V}_{BC}$ by exactly $90^\circ$).*
+
+#### Achieving Equal Secondary Voltages ($V_{2M} = V_{2T}$):
+*   To produce equal output voltages on the secondaries ($V_2$), the induced EMF per turn in both transformers must be matched:
+    *   **Main Transformer Secondary:** With turns ratio $N_2 / N_1$, secondary voltage is:
+        $$V_{2M} = V_L \times \left(\frac{N_2}{N_1}\right)$$
+    *   **Teaser Transformer Secondary:** With primary turns reduced to $0.866 N_1$ and secondary turns $N_2$:
+        $$V_{2T} = V_{AD} \times \left(\frac{N_2}{N_T}\right) = (0.866 V_L) \times \left(\frac{N_2}{0.866 N_1}\right) = V_L \times \left(\frac{N_2}{N_1}\right)$$
+*   **Conclusion:** The two secondary voltages have **identical magnitudes** ($|V_{2M}| = |V_{2T}|$) and are **displaced in time phase by exactly $90^\circ$**, forming a pristine, balanced two-phase system!
+
+### 4. Balanced 3-Phase Loading
+When balanced two-phase loads are connected across the secondaries ($I_{2M} = I_{2T} = I_2$ at power factor $\cos\theta$):
+*   The teaser primary draws line current $I_A$ from phase $A$:
+    $$I_A = \frac{N_2}{0.866 N_1} I_2 = 1.15 \left(\frac{N_2}{N_1}\right) I_2$$
+*   This current enters tap $D$ and splits equally in opposite directions through the two halves of the main transformer ($I_A/2$ towards $B$ and $I_A/2$ towards $C$). Because these currents flow in opposite directions, their magnetic ampere-turns cancel each other in the main core, preventing any magnetic interference!
+*   Vector summation shows that all three supply line currents ($I_A, I_B, I_C$) have **identical magnitudes** and are **$120^\circ$ apart in phase**, ensuring completely balanced 3-phase grid loading.
+
+### 5. Practical Engineering Applications
+1.  **Electric Arc Furnaces:** Industrial melting furnaces operate smoothly on two single-phase electrodes supplied by Scott-T banks without causing voltage unbalance on the utility grid.
+2.  **AC Electric Railway Traction:** Alternating track sections can be fed by the two phases of a Scott-T connection from a high-voltage 3-phase transmission line.
+3.  **Legacy Power Interconnections:** Interconnecting existing two-phase distribution networks with modern three-phase grids.
+
+---
+
+<a id="exp-12"></a>
+## Experiment 12: Parallel Operation of Two Single-Phase Transformers (Polarity Determination, Conditions & Load Sharing)
+
+### 1. Intuitive Summary in Plain Words
+In power engineering, it is rarely economical or reliable to install a single massive transformer to supply a facility. If that single unit fails, the entire plant loses power. Instead, utilities install two or more smaller transformers operated in **parallel** (primaries connected to the same source bus; secondaries connected to the same load bus).
+Operating transformers in parallel provides:
+*   **Redundancy & Reliability:** If one transformer needs maintenance, it can be isolated while the other keeps essential loads energized.
+*   **Scalability & Cost-Efficiency:** Additional units can be installed incrementally as consumer power demand grows over years.
+*   **Maximum Efficiency:** During periods of light load (e.g., nighttime), one transformer can be switched off, eliminating its core iron losses completely.
+
+### 2. Circuit Diagram & Laboratory Setup
+
+![Circuit Diagram for Parallel Operation of Two Single-Phase Transformers](attachments/fig12_1_parallel_transformers.jpg)
+
+### 3. The 4 Essential Conditions for Safe Parallel Operation
+
+To operate two single-phase transformers ($A$ and $B$) in parallel safely and avoid destructive circulating currents, four conditions must be satisfied:
+
+| Condition | Requirement | Consequence if Violated |
+| :--- | :--- | :--- |
+| **1. Identical Polarity** | **Strict / Mandatory:** Terminals of identical instantaneous polarity must be tied together. | **Catastrophic Short Circuit:** Connecting in opposite polarity causes secondary voltages to add in series ($E_A + E_B \approx 2E$), resulting in a massive short-circuit current that destroys windings within cycles. |
+| **2. Equal Voltage Ratios ($V_1 / V_2$)** | Open-circuit secondary voltages must be identical ($E_A = E_B$). | **Circulating Currents at No-Load:** Any difference $\Delta E = E_A - E_B$ drives continuous circulating current ($I_c = \frac{E_A - E_B}{Z_A + Z_B}$) through low winding impedances, causing excessive heating and wasting capacity. |
+| **3. Equal Percentage Impedance ($\%Z$)** | Per-unit or percentage internal impedances must be equal on their respective kVA bases ($\%Z_A = \%Z_B$). | **Improper Load Sharing:** Load will not be shared in proportion to kVA ratings. The transformer with lower $\%Z$ will draw disproportionate current and overheat before the bank reaches full load. |
+| **4. Equal $X/R$ Ratio** | The ratio of equivalent leakage reactance to resistance must be equal ($\frac{X_A}{R_A} = \frac{X_B}{R_B}$). | **Phase Displacement:** The two transformers will operate at different internal power factors, degrading combined efficiency and causing internal phase-angle circulating current. |
+
+### 4. Mathematical Derivations for Load Sharing
+
+Consider two transformers $A$ and $B$ connected in parallel across a common load impedance $Z_L$. Let their secondary equivalent internal impedances referenced to secondary be $Z_A$ and $Z_B$.
+
+#### Case 1: Equal Voltage Ratios ($E_A = E_B = E$)
+When secondary voltages are identical, no circulating current exists at no load. The total load current $I_L$ splits according to current division:
+$$I_A = I_L \times \frac{Z_B}{Z_A + Z_B}$$
+$$I_B = I_L \times \frac{Z_A}{Z_A + Z_B}$$
+In terms of complex apparent power (kVA load sharing):
+$$S_A = S_L \times \frac{Z_B^*}{Z_A^* + Z_B^*}$$
+$$S_B = S_L \times \frac{Z_A^*}{Z_A^* + Z_B^*}$$
+*(Notice: The transformer with the **smaller internal impedance** carries the **larger share** of the total load).*
+
+#### Case 2: Unequal Voltage Ratios ($E_A \neq E_B$)
+If induced voltages differ by $\Delta E = E_A - E_B$, a circulating current ($I_c$) circulates in the local loop:
+$$I_c = \frac{E_A - E_B}{Z_A + Z_B}$$
+When loaded, the individual transformer currents become:
+$$I_A = I_{LA} + I_c = I_L \frac{Z_B}{Z_A + Z_B} + \frac{E_A - E_B}{Z_A + Z_B}$$
+$$I_B = I_{LB} - I_c = I_L \frac{Z_A}{Z_A + Z_B} - \frac{E_A - E_B}{Z_A + Z_B}$$
+The circulating current adds vectorially to transformer $A$ (higher voltage) and subtracts from transformer $B$ (lower voltage), causing transformer $A$ to run hot even before rated bank load is reached.
+
+### 5. Polarity Test Procedure (Additive vs. Subtractive Polarity)
+
+Before connecting two transformers in parallel, their terminal polarities must be definitively verified using a standard **Polarity Test**:
+1.  Identify the high-voltage winding ($H_1, H_2$) and low-voltage winding ($X_1, X_2$).
+2.  Connect a temporary jumper wire between terminal $H_1$ and terminal $X_1$.
+3.  Apply a safe reduced AC voltage ($V_1$) across $H_1$ and $H_2$.
+4.  Connect an AC voltmeter between the open remaining terminals $H_2$ and $X_2$ to measure voltage $V_x$:
+    *   **Subtractive Polarity (Standard in Power Transformers):**
+        $$V_x = V_1 - V_2$$
+        *(The secondary voltage opposes the primary voltage. Terminals $H_1$ and $X_1$ share identical instantaneous polarity).*
+    *   **Additive Polarity:**
+        $$V_x = V_1 + V_2$$
+        *(The secondary voltage adds to the primary voltage. Terminals $H_1$ and $X_2$ share identical instantaneous polarity).*
+
+---
+
 <a id="supplemental-concepts"></a>
 ## Supplemental High-Yield Machine Concepts (From Board Viva & Probable Questions)
 
-### 1. Instrument Transformers: Current Transformer (CT) & Potential Transformer (PT)
+### 1. The Universal Motor (Single-Phase AC Series Motor)
+*   **Operating Concept:** A series-wound motor designed to operate efficiently on either **direct current (DC)** or **single-phase alternating current (AC)** at approximately the same speed and output.
+*   **Why It Runs on AC:** Because field and armature windings are connected in series, when AC supply voltage alternates, the field current and armature current reverse direction simultaneously. Since torque is proportional to their product ($\tau \propto \Phi I_a$), the mechanical torque remains **strictly unidirectional**, pulsating at twice the line frequency ($2f$).
+*   **AC vs. DC Performance Differences:**
+    *   *Lower Speed & Torque on AC:* On AC, the high inductive reactance ($X_L = 2\pi f L$) of the armature and field windings causes significant internal reactive voltage drop ($I X$). Consequently, the effective voltage across the armature is lower than on DC, resulting in lower speed, lower torque, and reduced power factor ($\cos\phi \approx 0.7 - 0.9$).
+    *   *Sparking & Commutation:* Alternating flux induces transformer voltages in coils short-circuited by brushes, increasing brush sparking on AC.
+*   **Design Modifications for AC Operation:**
+    1.  Both stator yoke and rotor are thoroughly laminated to suppress eddy current heating.
+    2.  Fewer field turns and larger air gaps are used to minimize field inductive reactance.
+    3.  A **compensating winding** is added to neutralize armature inductive reactance and cross-magnetization.
+*   **Applications:** Portable hand drills, vacuum cleaners, food blenders, sewing machines, high-speed hair dryers (operating at $3,000 - 15,000\text{ rpm}$).
+
+### 2. Instrument Transformers: Current Transformer (CT) & Potential Transformer (PT)
 *   **What is Burden Resistance?**  
     The total impedance (in ohms or VA at rated secondary current) connected across the secondary terminals of an instrument transformer (relays, meters, connecting leads).
 *   **Critical Safety Rule: Why Must the Secondary of an Energized CT NEVER Be Opened?**
@@ -508,14 +658,14 @@ When one transformer is removed:
     *   If the secondary is opened ($I_2 = 0$), opposing MMF collapses. The entire primary current becomes magnetizing current, driving the core into deep saturation.
     *   The sharp rate of change of flux ($d\Phi/dt$) induces **thousands of volts** across open secondary terminals, presenting a lethal shock hazard, causing insulation breakdown, and overheating the iron core.
 
-### 2. Single-Phase Induction Motors: Starting Principles
+### 3. Single-Phase Induction Motors: Starting Principles
 *   **Why is a Single-Phase Induction Motor Not Self-Starting?**  
     According to **Double Revolving Field Theory**, an alternating single-phase pulsating magnetic flux can be resolved into two equal magnetic fields rotating in opposite directions at synchronous speed ($+N_s$ and $-N_s$). At standstill ($N = 0$), both fields produce equal and opposite torques, resulting in zero net starting torque.
 *   **Starting Techniques:**
     *   *Split-Phase:* Uses an auxiliary winding with higher resistance/reactance ratio to create a spatial phase shift (approaching $90^\circ$) between main and auxiliary winding currents.
     *   *Capacitor-Start:* Places a capacitor in series with the auxiliary winding to create a $90^\circ$ phase displacement, generating a rotating magnetic field for high starting torque. A centrifugal switch disconnects the auxiliary winding once the motor reaches $\approx 75\%$ of rated speed.
 
-### 3. Synchronous Machines & Alternators
+### 4. Synchronous Machines & Alternators
 *   **Synchronous Speed Formula:**
     $$N_s = \frac{120 f}{P}$$
 *   **Why Synchronous Motors Are Not Self-Starting:**  
@@ -644,19 +794,35 @@ When one transformer is removed:
 
 ---
 
-### Category E: AC Machines, Instrument Transformers & Electrical Safety
+### Category E: Advanced Transformer Connections & Parallel Operation (Exp 11 & 12)
 
-34. **Q: Why must the secondary of an energized Current Transformer (CT) never be opened?**  
-    *A:* In a CT, primary current is determined by power system load. Opening the secondary drops secondary opposing ampere-turns to zero. The entire primary current becomes magnetizing current, saturating the core and inducing lethal voltage spikes (thousands of volts) across the open secondary terminals.
+34. **Q: What is the primary objective of the Scott (T-Connection) transformer bank?**  
+    *A:* To convert a balanced 3-phase AC supply into a balanced 2-phase AC supply (or vice-versa), while drawing completely balanced currents from the 3-phase supply lines.
 
-35. **Q: Why is a single-phase induction motor not self-starting, and how is starting torque achieved?**  
-    *A:* Double revolving field theory shows that single-phase pulsating flux resolves into two equal, counter-rotating fields producing zero net torque at rest. Starting torque is achieved by adding a spatial auxiliary winding with a capacitor or high resistance to produce a two-phase rotating magnetic field.
+35. **Q: Why is the teaser transformer tapped at $86.6\%$ turns rather than $100\%$ turns?**  
+    *A:* In an equilateral triangle of 3-phase line voltages $V_L$, the altitude perpendicular to the base has a length of $\frac{\sqrt{3}}{2} V_L \approx 0.866 V_L$. By tapping the teaser primary at $86.6\%$ of the main transformer turns, the induced voltage per turn is identical in both units, yielding identical secondary output voltage magnitudes ($|V_{2M}| = |V_{2T}|$) in $90^\circ$ time quadrature.
 
-36. **Q: What is Synchronous Speed, and why can't a 3-phase induction motor ever run at synchronous speed?**  
-    *A:* $N_s = 120f / P$. If an induction motor rotor reached $N_s$, rotor conductors would be stationary relative to the rotating magnetic field, cutting zero flux. Induced rotor EMF, current, and torque would drop to zero, and the rotor would slow down to slip speed.
+36. **Q: What happens if two transformers are connected in parallel with opposite polarity?**  
+    *A:* The secondary induced EMFs add in series instead of opposing each other ($E_{\text{net}} = E_A + E_B \approx 2E$). This induces a massive short-circuit current through the low internal winding impedances, causing destructive thermal and mechanical damage within milliseconds.
 
-37. **Q: What is Burden in Instrument Transformers?**  
-    *A:* The total electrical load connected across the secondary terminals of a CT or PT, expressed in ohms impedance or volt-amperes (VA) at rated secondary current.
+37. **Q: Why must transformers operating in parallel have identical percentage (per-unit) impedances on their own bases?**  
+    *A:* Equal percentage impedances guarantee that the transformers share the total load current strictly in direct proportion to their rated kVA capacities ($S_A / S_B = S_{\text{rated},A} / S_{\text{rated},B}$). If percentage impedances are unequal, the unit with the smaller percentage impedance takes a disproportionately large share and overloads prematurely.
 
-38. **Q: Why are modern alternators constructed with a stationary stator armature and rotating field?**  
-    *A:* (1) Stator armature allows heavy insulation for high generation voltages ($11-33\text{kV}$) without centrifugal stress. (2) Heavy output currents are taken directly from stationary terminals without brush wear. (3) Rotor field requires only low DC voltage ($110-250\text{V}$) via two light slip rings. (4) Superior mechanical balance and cooling.
+38. **Q: What produces circulating current in parallel transformers at no load, and how is it calculated?**  
+    *A:* A difference in open-circuit secondary terminal voltages ($E_A \neq E_B$) caused by slightly mismatched voltage ratios or turns ratios. The circulating current is given by $I_c = \frac{E_A - E_B}{Z_A + Z_B}$.
+
+---
+
+### Category F: AC Machines, Universal Motors, Instrument Transformers & Safety
+
+39. **Q: Why can a Universal Motor operate on both AC and DC supplies?**  
+    *A:* Because the field and armature coils are connected in series, the field flux and armature current reverse polarity simultaneously each half-cycle on AC. Since torque is proportional to the product $\tau \propto \Phi I_a$, the resulting torque remains unidirectional.
+
+40. **Q: Why does a Universal Motor develop lower speed and lower torque on AC compared to DC?**  
+    *A:* On AC, the high inductive reactance ($X_L = 2\pi f L$) of the armature and field coils introduces a large reactive voltage drop ($I X_L$). This reduces the effective active voltage across the armature, lowering rotational speed and developed torque.
+
+41. **Q: Why must the secondary of an energized Current Transformer (CT) never be opened?**  
+    *A:* In a CT, primary current is determined by the external power system load. Opening the secondary eliminates opposing secondary ampere-turns ($I_2 N_2 = 0$). The entire primary current becomes magnetizing current, driving the core into deep saturation and inducing lethal voltage spikes (thousands of volts) across the open terminals.
+
+42. **Q: Why is a single-phase induction motor not self-starting, and how is starting torque achieved?**  
+    *A:* By Double Revolving Field Theory, single-phase pulsating flux resolves into two equal, counter-rotating fields producing zero net torque at rest. Starting torque is achieved by adding a spatial auxiliary winding with a capacitor or high resistance to produce a two-phase rotating magnetic field.
