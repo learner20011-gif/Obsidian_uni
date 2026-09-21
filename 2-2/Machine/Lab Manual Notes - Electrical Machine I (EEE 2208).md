@@ -134,7 +134,7 @@ $$E_g = \frac{P \Phi Z N}{60 A} = k \Phi \omega_m$$
 ### 4. Graph & Physical Zone Analysis
 
 ![No-Load Magnetization Curve (OCC)](attachments/fig2_4_occ_curve.png)
-
+![[Pasted image 20260921070002.jpg]]![[Pasted image 20260921070011.png]]
 1.  **Residual Voltage Region ($I_f = 0$):**  
     At zero field current ($I_f = 0$), the generator still produces a small voltage ($E_{g,\text{res}} \approx 6\text{ V} - 15\text{ V}$). This is induced because ferromagnetic pole cores retain **residual magnetic flux** ($\Phi_{\text{res}}$) from previous magnetization.
 2.  **Air-Gap Line (Linear Zone):**  
@@ -148,7 +148,7 @@ $$E_g = \frac{P \Phi Z N}{60 A} = k \Phi \omega_m$$
 6.  **Critical Speed ($N_c$):**  
     The lowest speed at which a self-excited DC generator can build up voltage with its field resistance fixed at rated value. At $N_c$, the OCC curve becomes tangent to the field resistance line.
 
-### 5. The 5 Essential Conditions for Voltage Buildup in Self-Excited Generators
+### 5. The 5 Essential Conditions for Voltage Buildup in Self-Excited Generators![[Pasted image 20260921071012.jpg]]
 For a self-excited shunt generator to successfully build up voltage, all five conditions must be met simultaneously:
 1.  **Presence of Residual Magnetism:** The pole cores must retain residual flux $\Phi_{\text{res}}$ to induce the initial bootstrap voltage ($E_{\text{res}}$).
 2.  **Aiding Polarity Connection:** The field coil connections must be phased so that initial field current ($I_f = E_{\text{res}} / R_f$) creates magnetic flux that **aids** residual flux, rather than opposes it.
