@@ -331,10 +331,10 @@ When field rheostat resistance increases, field current drops ($I_f \downarrow \
 
 ### 6. Characteristic Curves
 
-| Field Control Curve ($N$ vs. $I_f$) | Armature Control Curve ($N$ vs. $I_a$) |
-| :---: | :---: |
+|                 Field Control Curve ($N$ vs. $I_f$)                 |                            Armature Control Curve ($N$ vs. $I_a$)                             |
+| :-----------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
 | ![Speed vs Field Current Curve](attachments/fig6_2_speed_vs_if.png) | ![[image-2.webp]] <br> ![Speed vs Armature Current Curve](attachments/fig6_3_speed_vs_ia.png) |
-| Speed rises inversely with field current ($N \propto 1/\Phi$). | Added armature resistance increases voltage drop, lowering speed. |
+|   Speed rises inversely with field current ($N \propto 1/\Phi$).    |               Added armature resistance increases voltage drop, lowering speed.               |
 
 ![[Pasted image 20260921084401.jpg]]
 
