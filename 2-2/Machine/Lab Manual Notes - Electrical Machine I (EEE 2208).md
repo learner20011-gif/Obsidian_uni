@@ -47,6 +47,7 @@ Every electrical machine carries a nameplate that defines its safe thermal, elec
     *   **Back EMF ($E_b$):** By **Lenz's Law**, as the motor armature rotates, conductors cut the main field flux, inducing a counter-EMF ($E_b = k \Phi N$) that opposes the applied terminal voltage $V$. Back EMF acts as an automatic governor that regulates armature current to match shaft load.
 
 *   **Essential Components:**
+* ![[Pasted image 20260921063615.jpg]]
     1.  **Stator (Stationary Frame):**
         *   *Yoke (Frame):* Cast iron (small machines) or cast steel (large machines). Protects internal parts and provides the return path for magnetic flux.
         *   *Main Field Poles & Pole Shoes:* Laminated sheet steel. Pole shoes spread magnetic flux uniformly across the air gap and support field coils.
