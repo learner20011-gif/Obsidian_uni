@@ -174,14 +174,14 @@ The shunt field circuit is connected in parallel with the armature terminals thr
 
 ### 3. Governing Equations
 $$I_a = I_L + I_f \approx I_L \quad (\text{since } I_f \ll I_L)$$
-$$V_T = E_g - I_a R_a - V_{\text{brush}}$$
+$$V_T = E_g - I_a R_a $$
 $$I_f = \frac{V_T}{R_{sh}}$$
 $$\%VR = \frac{V_{\text{no-load}} - V_{\text{full-load}}}{V_{\text{full-load}}} \times 100\%$$
 
 ### 4. The 4 Compounding Causes of Voltage Droop Under Load
 
 ![External Characteristics Curve of Shunt DC Generator](attachments/fig3_4_external_char_shunt.png)
-
+![[Pasted image 20260921072920.jpg]]
 As load current ($I_L$) increases, terminal voltage ($V_T$) drops due to four factors:
 1.  **Armature Ohmic Resistance Drop ($I_a R_a$):** The armature winding possesses internal copper resistance ($R_a$). As current increases, internal ohmic voltage drop ($I_a R_a$) increases linearly.
 2.  **Brush Contact Voltage Drop ($V_{\text{brush}}$):** Contact resistance between carbon brushes and copper commutator segments introduces a relatively constant $1\text{ V} - 2\text{ V}$ drop across the brush pairs.
@@ -189,6 +189,7 @@ As load current ($I_L$) increases, terminal voltage ($V_T$) drops due to four fa
 4.  **Cumulative Drop in Field Excitation Current ($I_f = V_T / R_{sh}$):** Because the field winding is connected across the output terminals, any drop in terminal voltage caused by (1), (2), and (3) reduces field current ($I_f$). This weakens the main field flux further, causing an accelerated downward drop in $V_T$.
 
 ### 5. Breakdown / Turn-Around Phenomenon
+![[Pasted image 20260921073646.jpg]]
 If external load resistance ($R_L$) is reduced beyond a critical breakdown point, the severe collapse in $V_T$ chokes field current $I_f$. The generator enters an unstable region where both terminal voltage and load current decrease simultaneously, hooking the curve back toward zero. This behavior provides inherent short-circuit self-protection in shunt generators.
 
 ---
