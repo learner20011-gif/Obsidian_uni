@@ -1,3 +1,6 @@
+### **Measurement of High, Medium, and Low Resistances & DC Bridges**
+
+
 ### 1. Page 4, Q.3.(a): Describe the loss of charge method to measure high resistance.
 
 **Solution:**
@@ -372,6 +375,11 @@ The exact calculated value of the unknown resistance is **$50.135\ \Omega$**.
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.16 (Pages **440–442**)
 
 
+
+***
+
+### **Measurement of Insulation and Earth Resistances**
+
 ### 11. Page 2, Q.2. (c): Describe the construction and working principle of a megger.
 
 **Solution:**
@@ -541,6 +549,9 @@ By knowing the total cable route length $l$ and the balanced values of $P$ and $
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.8, Pages **484–485**
 
 ***
+
+
+### **Localization of Cable Faults**
 
 ### 19. Page 2, Q.4. (b): How can the ground fault in a cable be localized using the Varley loop test?
 
@@ -1048,6 +1059,9 @@ The location of the earth fault is **7.5 km** from the testing end.
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.9 (Pages **485–486**)
 
 ***
+
+
+### **AC Bridge Methods (Inductance, Capacitance & Frequency)**
 
 ### 33. Page 2, Q.3. (a): Explain why Hay's bridge is useful for measuring the inductance of coils with a storage factor Q>10.
 
@@ -1887,6 +1901,9 @@ For these reasons, Maxwell's bridge is preferred for $Q < 10$ (because its $L_1$
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.7 (Pages **502–503**)
 
 ***
+
+
+### **Bridge Sensitivity and Galvanometer Equations**
 
 ### 54. Page 2, Q.5. (c): A Wheatstone bridge is balanced with resistance of equal values P = Q = R = S = 10 $\Omega$ . A 9 V battery is driving the bridge. If the sensitivity of the detector galvanometer is $15^\circ$/V and there is an increase in measuring resistance by 1 $\Omega$, determine the angle of deflection shown by the galvanometer due to the unbalanced condition.
 

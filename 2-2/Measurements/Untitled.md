@@ -3,7 +3,9 @@
  
  
  ![[Pasted image 20260922133614.png|458]]
- 
+ ![[Pasted image 20260922172757.png]]![[Pasted image 20260922173151.png]]
+
+
  ### List of the methods for the measurement of medium resistance
  ![[Pasted image 20260922140749.png|469]]![[Pasted image 20260922141505.png|391]]
  ![[Pasted image 20260922163156.png]]

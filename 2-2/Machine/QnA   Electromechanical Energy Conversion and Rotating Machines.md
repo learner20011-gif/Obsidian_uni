@@ -2,6 +2,9 @@
 
 ***
 
+
+### **1. Principles of Electromechanical Energy Conversion**
+
 ### Page 5, Q.68: Prove that the electrical power converted into mechanical power is equal to the product of the counter emf and the armature current.
 
 **Solution:**
@@ -161,6 +164,9 @@ $P_m = P_2(1 - s)$ (Proved).
 **References:** Not explicitly covered in the provided DC Machine slides or notes (Subject matter is AC Induction Motors).
 
 ***
+
+
+### **2. Basic Concepts and Structure of Rotating Electric Machines**
 
 ### Page 2, Q.1: What are the functions of Generators and Motors?
 
@@ -845,6 +851,9 @@ An induction motor is essentially a rotating transformer where the stator acts a
 
 ***
 
+
+### **3. Generated Voltage in AC (and DC) Rotating Machines**
+
 ### Page 2, Q.6: Show that the voltage induced in a conductor rotating in a magnetic field is alternating in nature. How the alternating voltage induced in the conductor can be made unidirectional? Show by neat sketch. [Figure Involved]
 
 **Solution:**
@@ -1057,6 +1066,9 @@ Here are the detailed solutions for the next four questions from your syllabus/P
 *Note: All four of these questions deal with Alternating Current (AC) machines—specifically rotating magnetic fields and Induction Motors. These topics are not present in the provided "Mam slide" or "Firoz note" documents, which are focused entirely on Direct Current (DC) machines. I have provided the standard electrical engineering derivations and explanations for these AC concepts.*
 
 ***
+
+
+### **4. Rotating Magnetic Field**
 
 ### Page 31, Q.5(c): Show with necessary figures that if a three phase set of currents, each of equal magnitude and differing in phase by 120°, flows in a three phase winding consisting of three separate windings spaced 120 electrical degrees apart around the surface of a machine, then it will produce a rotating magnetic field of constant magnitude. [Figure Involved]
 
@@ -1424,6 +1436,9 @@ The Double Field Revolving Theory (DRFT) states that any stationary, pulsating (
 **References:** Not explicitly covered in the provided DC Machine slides or notes.
 
 ***
+
+
+### **5. Machine Torque (General & Cylindrical Air Gaps)**
 
 ### Page 4, Q.53: Derive the expression of induced torque for a real motor.
 
@@ -2097,7 +2112,6 @@ $$T_{max (syn \, watts)} = 3 \times \frac{5267.85}{1.8} = \frac{15803.55}{1.8} \
 
 **Figures involved:** None required for the calculation.
 **References:** Not explicitly covered in the provided DC Machine slides or notes (Subject matter is purely mathematical AC Induction Motor analysis).
-
 
 
 

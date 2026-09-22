@@ -1,5 +1,10 @@
 
 [1, 2, 3, 7, 13, 14, 16, 18, 19, 20, 24, 27, 36, 37, 38, 39, 41, 43]
+
+***
+
+### **Moore’s Law**
+
 ### 1. State Moore's 1st law of micro-electronics and draw a comparison of speed/power performance of available technologies. figure involved.
 
 **Answer:**
@@ -55,6 +60,9 @@ A 3-input CMOS NAND gate is designed using a complementary arrangement of a Pull
 
 ***
 
+
+### **IC(s) and Scale Integration**
+
 ### 5. What are the function of IC packages?
 
 **Answer:**
@@ -103,6 +111,9 @@ The terms SSI, MSI, LSI, and VLSI refer to the historical progression of integra
 
 ***
 
+
+### **Evolution of VLSI**
+
 ### 9. What is VLSI? Mentions two major advantages of VLSI.
 
 **Answer:**
@@ -118,6 +129,13 @@ VLSI stands for Very Large Scale Integration. It is the process of fabricating i
 *Ans related location: Pucknell textbook pg 2, 19; Rakib's note pg 2.*
 
 ***
+
+
+### **VLSI Design Flow**
+
+11. *(No direct questions strictly related to the VLSI design flow steps/Y-chart were found in the provided exams).*
+
+### **Basic MOSFET Structures**
 
 ### 13. Implement CMOS inverter and hence draw and explain the different steps of drawing its stick diagram. figure involved.
 
@@ -191,6 +209,9 @@ The transfer characteristic of a CMOS inverter is a graph plotting the output vo
 *Ans related location: Pucknell textbook pg 60, 61, 62.*
 
 ***
+
+
+### **Switch Level Modelling of PMOS and NMOS**
 
 ### 18. Demonstrate numerically that an nMOS transistor passes a strong logic '0' but a degraded logic '1', whereas a pMOS transistor passes a strong logic '1' but a degraded logic '0'. figure involved.
 
@@ -275,6 +296,9 @@ Because the node voltage cannot drop below $|V_{tp}|$, the output does not reach
 *Ans related location: Rakib's note pg 17; Pucknell textbook pg 154.*
 
 ***
+
+
+### **Compound Gates Using CMOS**
 
 ### 22. Draw the CMOS compound gates as shown below: (i) OAI31 (ii) 4x1 MUX using 2x1 MUX [figure Involved] figure involved.
 
@@ -694,6 +718,9 @@ To implement $F = AB + BC + AC$, we first build a compound gate for the inverted
 
 ***
 
+
+### **Transmission Logic**
+
 ### 35. Implement the following function using nMOS pass-transistor. y = A B + C D
 
 **Answer:**
@@ -802,6 +829,9 @@ Here is a comparison highlighting the key differences between pass transistors a
 
 ***
 
+
+### **Tristates**
+
 ### 41. Differentiate between restoring circuits and non-restoring circuits. Briefly explain the working principle of a tri-state inverter.
 
 **Answer:**
@@ -826,6 +856,11 @@ A typical CMOS tri-state inverter uses four transistors in series between $V_{DD
 *Ans related location: Rakib's note pg 18.*
 
 
+
+***
+
+### **Glue Logic**
+
 ### 43. Define glue logic. Distinguish between CMOS inverter and tri-state inverter.
 
 **Answer:**
@@ -845,6 +880,9 @@ Glue logic refers to a special form of digital circuitry designed to act as an i
 *Ans related location: Rakib's note pg 3, 18.*
 
 ***
+
+
+### **CMOS Memory Elements**
 
 ### 45. Define miniaturization. Distinguish between a three transistor dynamic RAM cell and one transistor dynamic RAM cell.
 
@@ -1151,11 +1189,8 @@ The critical conceptual leap to vastly improve storage capacity was abandoning t
 
 ***
 
-### 58. NMOS Inverter
 
-*(Note: This is a heading in the user prompt, not a question itself. Proceeding to question 59).*
-
-***
+### **NMOS Inverter**
 
 ### 59. Sketch an inverter circuit using nMOS. How does it work? Enlist the drawbacks of using nMOS inverter circuit.
 
@@ -1236,6 +1271,9 @@ If interpreted as providing full rail-to-rail voltage swings ($0V$ to $V_{DD}$),
 *(Note: This is a heading in the user prompt, not a question itself. Proceeding to question 63).*
 
 ***
+
+
+### **Pull-Up to Pull-Down Ratio of NMOS Inverter**
 
 ### 63. Calculate the pull-up to pull-down ratio of a pseudo-nMOS inverter. Also determine the inverter pair delay.
 
@@ -1385,6 +1423,9 @@ Let $\tau$ be the fundamental delay unit (time to charge $1 \square C_g$ through
 
 ***
 
+
+### **BiCMOS Inverters**
+
 ### 69. Draw the circuit diagram of an improved BiCMOS inverter using MOS transistor for the base current discharge. Discuss about its demerits.
 
 **Answer:**
@@ -1493,6 +1534,9 @@ The **BiCMOS Inverter with active Base Current Discharge (Fig 2.20) is vastly be
 *(Note: This is a heading in the user prompt. Proceeding to question 74).*
 
 ***
+
+
+### **Latch Up in CMOS Circuits**
 
 ### 74. Define Latch-up process and explain how Bi-CMOS circuits are susceptible of latch-up.
 

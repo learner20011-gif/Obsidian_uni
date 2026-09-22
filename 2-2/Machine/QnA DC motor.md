@@ -1,5 +1,10 @@
 Here are the detailed solutions for the first 4 questions from your provided syllabus list. 
 
+
+***
+
+### **1. Working principle of motor**
+
 ### 1. Page 4, Q.52: Explain the principle of operation of a DC motor.
 
 **Solution:**
@@ -63,6 +68,9 @@ As described in Q.52, when a DC supply is connected across the motor terminals, 
 * **Reference in Theraja Vol II:** PDF Page 139
 
 ---
+
+
+### **2. Back E.M.F.**
 
 ### 4. Page 4, Q.54: Define counter EMF. Explain the significance of counter EMF of a dc motor.
 
@@ -391,6 +399,9 @@ $$E_{b2} = 230 - 9.0 = 221 \text{ V}$$
 
 ---
 
+
+### **3. Types of DC motors**
+
 ### 12. Page 4, Q.55: Write applications of all DC motors.
 
 **Solution:**
@@ -501,6 +512,11 @@ Let the three phases of the stator be A, B, and C. By energizing the phases sequ
 Here are the detailed step-by-step solutions for the next 4 questions (Items 16, 17, 18, and 19) from your syllabus list.
 
 *(Note: Item 15 in your provided list is a section heading "4. Equivalent circuit of a DC motor", so I have skipped it and solved the next 4 actual questions).*
+
+
+***
+
+### **4. Equivalent circuit of a DC motor**
 
 ### 16. Page 9, Q.6(c): The following values were obtained from the test data of a motor: line voltage, 120 V; line current 30 A; motor speed 186 rad/s; armature resistance 0.25 Ω; field resistance 90 Ω. Determine (i) the field current (ii) armature current (iii) counter – emf (iv) developed kW.
 
@@ -743,6 +759,9 @@ $$T_{dev} = \frac{P_{dev}}{\omega_m} = \frac{4347.7}{186} \approx 23.37 \text{ N
 
 ---
 
+
+### **5. Torque of DC motor**
+
 ### 22. Page 4, Q.53: Derive the expression of induced torque for a real motor.
 
 **Solution:**
@@ -961,6 +980,9 @@ $$P_{out} = 8320 - 500 = 7820 \text{ W}$$
 
 ---
 
+
+### **6. Characteristics of a DC shunt motor**
+
 ### 28. Page 4, Q.58: Why the field circuit of dc motor should never be opened while power is applied to the motor?
 
 **Solution:**
@@ -1053,6 +1075,9 @@ Through this automatic adjustment (dictated by the Back EMF), the shunt motor su
 *   **Figure Involved:** None
 
 ---
+
+
+### **7. Characteristics of a DC series motor**
 
 ### 33. Page 5, Q.60: Explain why the series motor must be started with a mechanical load coupled to its armature.
 
@@ -1200,6 +1225,9 @@ Because of its extraordinarily high starting torque and variable speed nature (w
 
 ---
 
+
+### **8. Characteristics of a DC compound motor / All DC Motors**
+
 ### 39. Page 5, Q.64: Explain briefly speed versus armature current and torque versus armature current characteristics of all dc motors.
 
 **Solution:**
@@ -1312,6 +1340,9 @@ This requires outlining the electrical characteristics (Torque vs $I_a$ and Spee
 
 ---
 
+
+### **9. Speed of a DC machine**
+
 ### 44. Page 8, Q.7(b): Define the base speed of a dc motor. Describe how motor speed can be decreased and increased from the base speed.
 
 **Solution:**
@@ -1371,6 +1402,9 @@ When a mechanical load is added, the armature current ($I_a$) increases. This ca
 *   **Figure Involved:** None required (but a Speed vs Load graph showing a rising curve can be drawn for clarity).
 
 ---
+
+
+### **10. Speed control of DC motors (and Braking)**
 
 ### 47. Page 5, Q.75: Name the different methods of electrical breaking of dc motors and explain.
 
@@ -1762,6 +1796,9 @@ The plugging torque equation contains an additional constant term ($k_4 \Phi$) t
 
 ---
 
+
+### **11. Starting of DC motors**
+
 ### 61. Page 4, Q.57: What will happen if a shunt motor is directly connected to the supply line?
 
 **Solution:**
@@ -1824,6 +1861,11 @@ When a DC motor fails to start upon applying power, the issue usually falls into
 *(Note: Item 63 is a section heading: "12. Three point and four point starter with its advantages and disadvantages", so I have skipped it to solve the actual questions).*
 * **Reference in Rosenblatt:** Sections 8-1, 8-2, 8-3, Pages 91-93
 * **Reference in Theraja Vol II:** PDF Page 175
+
+
+***
+
+### **12. Three point and four point starter with its advantages and disadvantages**
 
 ### 64. Page 5, Q.72: What are the purposes of starter used in a dc motor? Describe the working of the three-point starter for DC shunt motor with neat diagram. [Figure Involved]
 
@@ -2078,6 +2120,9 @@ By adding a fourth terminal, the NVR coil is wired into its own independent, **p
 *   **Reference in Theraja Vol II:** PDF Page 175
 
 ---
+
+
+### **13. Losses in DC machines (and Power flow diagram)**
 
 ### 74. Page 5, Q.68: Prove that the electrical power converted into mechanical power is equal to the product of the counter emf and the armature current.
 

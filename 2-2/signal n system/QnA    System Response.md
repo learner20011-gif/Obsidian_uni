@@ -1,5 +1,10 @@
 Based on the provided document, here are the step-by-step solutions for the first four questions.
 
+
+***
+
+### **Time domain and frequency domain analysis of LTI systems**
+
 ### 3. 1. Page 14, Q.3(b): Determine $i_o(t)$ for the following network using Fourier transform method . [Figure involved.]
 
 
@@ -246,6 +251,9 @@ $$v_0(t) = -\frac{1}{2}\cos(t) + \frac{1}{2}\sin(t)\text{ V}$$
 *Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform), Section 18.4 (Circuit Applications), pg. 833-835.*
 
 ***
+
+
+### **First order and second order system response**
 
 ### 8. Page 6, Q.3(b): Consider the following second-order circuit (i) Find the value of R so that critically damped response is obtained. (ii) Determine the response $v_0(t)$ if $v_s(t) = 10u(t)$ and $R = 1\ \Omega$.
 
@@ -640,6 +648,9 @@ Therefore, the capacitance must be $2\text{ F}$ to produce a critically damped r
 *Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.4 (The Source-Free Parallel RLC Circuit), pg. 326-327.*
 
 ***
+
+
+### **First order and second order switching circuit**
 
 ### 19. Page 2, Q.2(c): Switch $S_1$ in the following Fig. is closed at t = 0 and $S_2$ is closed at t = 3s. Calculate $i(t)$ for all t. Also find $i(2)$ and $i(4)$. [Figure Involved]
 
@@ -2108,6 +2119,9 @@ Because $\alpha = 0$, the system is strictly **undamped** (it oscillates perpetu
 
 ***
 
+
+### **Application of first order and second order system**
+
 ### 44. Page 1, Q.2(a): Design the capacitance, C of the following circuit so that the LED turns on when the capacitor voltage reaches half of the supply voltage and will take 35 ms for that. (Figure involved)
 
 **Solution:**
@@ -2729,6 +2743,9 @@ The basic circuit consists of:
 
 ***
 
+
+### **Zero-input and zero-state response**
+
 ### 57. Page 5, Q.2(c): Consider the following circuit. (i) Find the zero-state response (ii) Determine the time necessary for the capacitor to reach one-fourth of the final voltage.
 
 **Solution:**
@@ -2876,6 +2893,9 @@ $$i(t) = \frac{V_m \omega L}{R^2 + (\omega L)^2} \left[ e^{-\frac{R}{L}t} - \cos
 
 ***
 
+
+### **Transient and steady-state response**
+
 ### 62. Page 39, Q.1 (CT-02): Draw a first order RC or RL switching circuit to fulfil the following conditions: (i) The switching should be happened at time t = 0. (ii) Before switching, the circuit should be a first order circuit with DC source at reached at steady-state. (iii) After switching, the circuit should be a source-free first order circuit. (iv) The time constant before switching and after switching should be different. Find the expression and sketch capacitor voltage (for RC circuit) or inductor current (for RL circuit). [10]
 
 **Solution:**
@@ -2915,6 +2935,13 @@ We will design an RC circuit that meets all the criteria.
 
 **Related Location in Sadiku Textbook:** Chapter 7, Section 7.2 (The Source-Free RC Circuit), Page 254; Section 7.5 (Step Response of an RC Circuit), Page 273.
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 63 to 66).
+
+
+***
+
+### **Forced and natural response**
+
+### **Impulse and step responses**
 
 ### 63. Page 20, Q.2(b): For the circuit of Fig. Q. 2(b), find $i(t)$ and $v_c(t)$ for $t \ge 0$ given that $i_L(0^-) = 10\text{A}$ and the switch $s$ closes at $t=0$. Then compute the energy dissipated in the $5\Omega$ resistor over the time interval $[0.4, \infty]$.
 
@@ -3152,6 +3179,9 @@ $$h(t) = 0.8 \delta(t) + \left[ \left( \frac{0.8 s_1^2}{s_1 - s_2} \right) e^{s_
 **Related Location in Sadiku Textbook:** Chapter 15, Section 15.4 (The Inverse Laplace Transform), Page 690; Chapter 16, Section 16.4 (Transfer Functions), Page 726.
 
 ***
+
+
+### **Convolution integral and application to LTI system**
 
 ### 68. Page 3, Q.6(b): Using convolution integral, find the response $v_0(t)$ of the following circuit.
 
@@ -3480,6 +3510,9 @@ $$z(t) = \begin{cases}
 
 ***
 
+
+### **Network Synthesis**
+
 ### 76. Page 3, Q.5(c): Given a transfer function $G(s) = \frac{s^2}{s^2+4s+10}$, synthesize the network. Assume L= 1H.
 
 **Solution:**
@@ -3682,6 +3715,11 @@ Taking the inverse Laplace, this represents an integrator whose input is a sum o
 
 **Related Location in Sadiku Textbook:** Chapter 16, Section 16.6.2 (Network Synthesis), Page 740; Section 6.6.3 (Analog Computer), Page 237.
 Based on the provided PDF, here are the detailed solutions for the final 2 questions (Questions 79 and 80) available in the document.
+
+
+***
+
+### **Parseval's theorem**
 
 ### 79. Page 10, Q.8(c): Why it is not possible to find the Fourier transform of ramp signal? State and explain Parseval's theorem.
 

@@ -1,3 +1,6 @@
+### **1. Ideal transformer - transformation ratio**
+
+
 ### 1. Page 17, Q.1(a): What is transformer? Briefly describe the basic construction and working principle of a transformer.
 
 #### **Definition of a Transformer**
@@ -808,6 +811,11 @@ $$\cos\phi_1 = \frac{I_{1x}}{I_1} = \frac{45.40}{58.28} \approx 0.779\text{ lagg
     
 - **Primary power factor ($\cos\phi_1$):** **$0.779\text{ lagging}$** (or approximately **$0.78\text{ lagging}$**)
 
+
+***
+
+### **2. No-load and load vector diagrams**
+
 ### 15. Page 7, Q.1(a): Draw the vector diagram of a 1-φ transformer connected with unity p.f., lagging p.f., and leading p.f load. [Figure Involved]
 
 
@@ -1402,6 +1410,9 @@ A transformer operates as a self-regulating magnetic device that automatically b
    As the secondary load current $I_2$ increases, $I_2'$ increases proportionately, which in turn increases the total primary current $\vec{I}_1 = \vec{I}_0 + \vec{I}_2'$.
 
 ---
+
+
+### **3. Actual transformer - equivalent circuit**
 
 ### 25. Page 7, Q.2(a): Prove that R02 = R2 + k^2 R1, where the symbols have their usual meaning.
 
@@ -2033,6 +2044,9 @@ A transformer is a self-regulating electrical machine that maintains an automati
 
 ---
 
+
+### **4. Regulation**
+
 ### 39. Page 9, Q.1(d): Calculate the percentage of voltage regulation of a transformer in which the percentage resistance drop is 1% and percentage reactance drop is 5% when p.f. is (i) 0.8 lagging (ii) unity and (iii) 0.8 leading.
 
 #### **Given Data:**
@@ -2378,6 +2392,9 @@ Between the two transformers:
 3. **Protection of Connected Loads:** Industrial and domestic equipment, lighting systems, and electronic appliances perform more efficiently and have longer lifespans when supplied with a steady voltage free from noticeable voltage sags under load changes.
 
 ---
+
+
+### **5. Short circuit and open circuit tests (Transformer-tests)**
 
 ### 47. Page 7, Q.1(c): A 10 kVA, 1-φ, 50 Hz 400/200 V transformer gave the following test results: O.C. Test (LV side) 200 V 3.0 A 200 W. S.C. Test (HV side) 15 V 30 A 300 W. Calculate efficiency and regulation at full load, 0.8 p.f lagging.
 
@@ -3619,6 +3636,9 @@ $$\eta_{\text{all-day}} = \frac{\text{Total Output (kWh)}}{\text{Total Input (kW
 
 ---
 
+
+### **6. Auto-transformer and instrument transformers: (C.T. and P.T.)**
+
 ### 73. Page 9, Q.2(a): Explain how autotransformer can provide better efficiency and kVA capacity compared to same size two-winding transformer.
 
 #### **1. Mechanism of Power Transfer in an Auto-Transformer:**
@@ -4373,6 +4393,9 @@ When the voltage transformation ratio $K = \frac{V_2}{V_1}$ is very small (such 
 
 ---
 
+
+### **7. Parallel operation of transformers**
+
 ### 88. Page 7, Q.1(b): What are the conditions to be fulfilled to operate transformers successfully in parallel with proper division of load?
 
 To connect two or more single-phase transformers in parallel to share a common load safely and economically, certain conditions must be satisfied:
@@ -4725,6 +4748,11 @@ The load shared by each parallel transformer ($\vec{S}_A, \vec{S}_B$) is **inver
 #### **(C) Additional Conditions for Three-Phase Systems:**
 6. **Same Phase Sequence ($R\text{-}Y\text{-}B$).**
 7. **Zero Relative Phase Displacement (Same Vector Group / Grouping Angle).**
+
+***
+
+### **8. Three phase transformer and its connections**
+
 ### 96. Page 7, Q.2(b): What will happen if one winding of a 3-φ transformer is not connected properly in regard to polarity? Show with corresponding vector diagram. [Figure Involved]
 
 Connecting one winding of a three-phase transformer with reversed polarity produces severe voltage imbalance or destructive short-circuit currents depending on whether the connection is **Star ($Y$)** or **Delta ($\Delta$)**:
@@ -5294,6 +5322,9 @@ Three-phase electrical power can be transformed using only **two single-phase tr
 
 ---
 
+
+### **9. Phase conversion**
+
 ### 108. Page 7, Q.3(a): With neat diagram show that the power handing capacity of a V-V circuit is 57.7% of the capacity of a complete Δ-Δ circuit of the same transformer. [Figure Involved]
 
 #### **1. Circuit Diagrams:**
@@ -5847,4 +5878,3 @@ $$S_{\Delta\Delta} = 3 \times 25\text{ kVA} = \mathbf{75.0\text{ kVA}}$$
 9. **Phase Conversion & Open-Delta Operation:** (Q.108 – Q.117)
 
 All questions from the document are complete.
-

@@ -1,3 +1,6 @@
+### **Classifications of system**
+
+
 ### 1. Page 1, Q1(a): A system H has its input-output pairs given. Determine whether the system could be memoryless, causal, linear, and time invariant. For all cases justify your answers. [Figure Involved]
 
 **Detailed Solution:**
@@ -496,6 +499,9 @@ Since applying the combined input $a x_1(t) + b x_2(t)$ perfectly yields the com
 
 ***
 
+
+### **Representation of systems by block diagrams**
+
 ### 18. Page 7, Q6(b): A canonical form of the system is shown in the following figure. (i) Find the transfer function of the system. (ii) Find the impulse response of the system. [Figure Involved]
 
 **Detailed Solution:**
@@ -574,6 +580,9 @@ This circuit acts as an ideal inverting integrator.
 *Related location in Sadiku textbook: The derivation of transfer functions for First-Order Op Amp Circuits in the s-domain is demonstrated in Chapter 16, Section 16.2, pg. 716 and Section 16.4, pg. 726.*
 
 ***
+
+
+### **Differential and difference equations for LTI systems**
 
 ### 20. Page 6, Q3(c): The response of an RLC circuit can be described by the following differential equation: $\frac{d^2v}{dt^2} + 6\frac{dv}{dt} + 5v = v_s(t)$. (i) Find the impulse response of the system. (ii) Find the response if $v_s(t) = u(t)$.
 
@@ -735,6 +744,9 @@ $s[n] = \left[ \frac{8}{3} - 2\left(\frac{1}{2}\right)^n + \frac{1}{3}\left(\fra
 
 ***
 
+
+### **State space representations**
+
 ### 23. Page 20, Q3(a): Define State variable and state equation. How they are important for linear system analysis?
 
 **Detailed Solution:**
@@ -871,6 +883,9 @@ $\mathbf{H}(s) = \mathbf{C}(s\mathbf{I} - \mathbf{A})^{-1}\mathbf{B} + \mathbf{D
 *Related concept location in Sadiku textbook: The derivation of a transfer function from a State Variable Model is explicitly shown in Chapter 16, Section 16.5, Equations 16.21 to 16.24, pg. 732.*
 
 ***
+
+
+### **Modelling of electrical, Mechanical and electromechanical system**
 
 ### 26. Page 4, Q8(b): Draw the equivalent mechanical system for the following electrical network. [Figure Involved]
 
@@ -1323,6 +1338,9 @@ Applying Kirchhoff's Voltage Law (KVL) to the two meshes yields the identical ma
 *Related concept location in Sadiku textbook: Analogous systems and writing differential equations for physical systems are discussed as an application of the Laplace transform in Chapter 16, Section 16.1, pg. 716.*
 
 ***
+
+
+### **Transfer functions of LTI systems**
 
 ### 38. Page 2, Q3(c): A second order active filter is shown below. (i) Find the transfer function. (ii) Find the impulse response. [Figure Involved]
 
@@ -1822,6 +1840,9 @@ $H(s) = Z_p(s) = \frac{s^2 + 1}{s^3 + s^2 + 2s + 1}$
 
 ***
 
+
+### **Pole-zero diagram and system stability**
+
 ### 50. Page 2, Q3(a): The circuit in the following Fig. contains a current controlled voltage source. What restriction must be placed on the gain R of this dependent source to guarantee stability? [Figure Involved]
 
 **Detailed Solution:**
@@ -2248,6 +2269,9 @@ Therefore, the value of $R_1$ should be $\mathbf{R_1 = \infty}$ (i.e., the resis
 
 ***
 
+
+### **Realization of system using direct, cascade, and parallel forms**
+
 ### 59. Page 3, Q5(c): Given a transfer function $G(s) = \frac{s^2}{s^2+4s+10}$, synthesize the network. Assume L= 1H.
 
 **Detailed Solution:**
@@ -2603,6 +2627,11 @@ Given constraint: $R_1 = 1\text{ k}\Omega = 1000\ \Omega$
 
 
 
+
+***
+
+### **Interconnection of system**
+
 ### 64. Page 3, Q6(a): A system is formed by cascading two systems as shown. Given that the impulse response of the system are $h_1(t) = 3e^{-t}u(t)$, $h_2(t) = e^{-4t}u(t)$. (i) Obtain the impulse response of the overall system H(s) and h(t). (ii) Pole-zero plot of the overall system. (iii) Check if the overall system is stable. [Figure Involved]
 
 **Detailed Solution:**
@@ -2686,6 +2715,9 @@ Because there is at least one pole with a positive real part, the system is **No
 
 ***
 
+
+### **Basic feedback system**
+
 ### 66. Page 21, Q8(c): Write down the name of processes to determine the stability of a system. Find the value of K for the closed-loop system given in Fig. Q. 8(c) so that the closed-loop system is stable. [Figure Involved]
 
 **Detailed Solution:**
@@ -2725,6 +2757,9 @@ Therefore, the closed-loop system is stable for any gain value $K$ strictly grea
 *Related concept location in Sadiku textbook: The principles of stability resting on the roots of the characteristic equation (denominator of the transfer function) being strictly negative are defined in Chapter 16, Section 16.6.1 (Network Stability), pgs. 737-738.*
 
 ***
+
+
+### **Inverse system**
 
 ### 67. Page 5, Q2(a): The input-output relationship of a system is shown below.
 *   $y(t) = V_{cc}$, $x(t) > V_{ref}$
@@ -2838,6 +2873,9 @@ A system is invertible if every unique input $x(t)$ maps to a unique output $y(t
 
 ***
 
+
+### **Distortion less system**
+
 ### 70. Page 20, Q.4(c): Explain Harmonic Distortion in an Amplifier with necessary diagram. (No specific questions matching purely "distortion less system" criteria were explicitly found in this PDF's text).
 
 **Detailed Solution:**
@@ -2873,6 +2911,11 @@ where $V_1$ is the fundamental, and $V_2, V_3\dots$ are the harmonics. A lower T
 *Related concept location in Sadiku textbook: While Harmonic Distortion is not explicitly detailed, the concept of breaking a distorted periodic waveform into its fundamental and harmonic frequency components is the core subject of Fourier Series analysis, covered extensively in Chapter 17, pgs. 760-761.*
 
 ***
+
+
+### **Signal and carrier**
+
+### **Bandwidth and spectrum allocation**
 
 ### 71. Page 10, Q.5(a): Obtain and draw the frequency spectrum of the following waveform. [Figure Involved]
 
@@ -3437,6 +3480,11 @@ The outline connecting the tips of these lines curves downwards like a $1/n$ rel
 
 *Related location pg number In sadiku textbook: Chapter 17, Section 17.2 "Trigonometric Fourier Series", pg. 760-766, and Section 17.3 "Symmetry Considerations", pg. 770.*
 
+
+***
+
+### **Modulation schemes: AM, FM and PM**
+
 ### 84. Page 8, Q.7(b): Discuss amplitude modulation and sampling as the application scenarios of Fourier transform.
 
 **Detailed Solution:**
@@ -3505,6 +3553,11 @@ This property mathematically proves that amplitude modulation takes the original
 
 ***
 
+
+### **Modulators and demodulators**
+
+### **Time division and Frequency division multiplexing**
+
 ### 87. Page 21, Q.5(a): Define and explain frequency division multiplexing and time division multiplexing.
 
 **Detailed Solution:**
@@ -3521,5 +3574,4 @@ Multiplexing is the process of combining multiple distinct information signals i
 *   **Example:** The modern digital telephone network uses TDM to send dozens of phone calls simultaneously over a single trunk line. 
 
 *Related location pg number In sadiku textbook: Concepts are an application extension of Chapter 18, Section 18.7.1 "Amplitude Modulation" (FDM basis), pg. 840, and Section 18.7.2 "Sampling" (TDM basis), pg. 842-843.*
-
 

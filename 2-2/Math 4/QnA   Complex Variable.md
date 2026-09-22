@@ -1,5 +1,14 @@
 Here are the detailed solutions for the first four questions from the provided document.
 
+
+***
+
+# Complex Variable - Comprehensive Question Bank (Aggregated by Topic)
+
+## 1. Complex Number System
+
+### Source: PDF Extraction
+
 ### Q1. Pg 1, Q1(a): Find two complex numbers whose sum is 4 and whose product is 8.
 
 **Solution:**
@@ -1290,6 +1299,9 @@ $$|z| = 1$$
 
 ***
 
+
+### Source: Firoz Note
+
 ### Q38. Problem-11: Prove that, $\overline{z_1+z_2}=\overline{z_1}+\overline{z_2}$
 
 **Solution:**
@@ -2471,6 +2483,9 @@ The inequality "$>$" indicates that the distance from any point $(x,y)$ to the c
 The inequality represents the open region **strictly outside the circle** whose center is at **$z = -5$** and whose radius is **$4$**. (The boundary circle itself is not included).
 
 ***
+
+
+### Source: Feruj Sheet & Slides
 
 ### Q64. Problem 1.1: Prove that $z_{1}+z_{2}=\overline{z_{1}}+\overline{z_{2}}$
 
@@ -4174,6 +4189,11 @@ By comparing our formatted equation to the standard form $|z - z_0| = r$, we can
 
 ***
 
+
+## 2. General Functions of a Complex Variable
+
+### Source: PDF Extraction
+
 ### Q102. Pg 1, Q1(b): Separate real and imaginary parts of the following function. $f(z) = \sqrt{z}$.
 
 **Solution:**
@@ -4446,6 +4466,11 @@ $$f(z) = x\left( 1 + \frac{1}{x^2 + y^2} \right) + iy\left( 1 - \frac{1}{x^2 + y
 
 ***
 
+
+## 3. Limits and Continuity of a Function of Complex Variable
+
+### Source: PDF Extraction
+
 ### Q108. Pg 6, Q1(c): Is the function $f(z) = \begin{cases} \frac{z^2+2z}{z-i}; & z \neq i \\ 3+2i; & z=i \end{cases}$ Continuous at $z = i$? If it is not true, redefine the function to be continuous at $z = i$.
 
 **Solution:**
@@ -4684,6 +4709,9 @@ $$= -\frac{5}{256}$$
 **Answer:** The limit evaluates to **$-\frac{5}{256}$**.
 
 ***
+
+
+### Source: Firoz Note
 
 ### Q112. Ques: a) $\lim_{z\rightarrow\infty}\frac{z-1}{z+1}$, b) $\lim_{z\rightarrow\infty}\frac{2z+3i}{z^2+z+1}$
 
@@ -5009,6 +5037,9 @@ For the complex limit to exist, the function must approach the exact same unique
 Because of this requirement, complex limits are much more stringent. If you can find even two different paths in the complex plane that yield different limit values (as demonstrated in Q113), the complex limit does not exist.
 
 ***
+
+
+### Source: Feruj Sheet & Slides
 
 ### Q120. Question 1: Evaluate: (a) $lim_{z\rightarrow\infty}\frac{z-1}{z+i}$ and (b) $lim_{z\rightarrow\infty}\frac{2z+3i}{z^{2}+z+1}$
 
@@ -5684,6 +5715,11 @@ $$\lim_{(x,y)\to(0,0)} u(x,y) = 0$$
 **(Proved)**
 
 ***
+
+
+## 4. Complex Differentiation and Cauchy-Riemann Equations
+
+### Source: PDF Extraction
 
 ### Q134. Pg 1, Q2(a): Show that $f(z) = |z|^2$ is differentiable at $z=0$ but not analytic at $z=0$.
 
@@ -6762,6 +6798,9 @@ Therefore, the set of analytic functions is a subset of the set of derivable fun
 
 ***
 
+
+### Source: Firoz Note
+
 ### Q164. Problem 3.1.1: $f(z)=z^2$ (Implied: Evaluate analytic function derivative)
 
 *(Note: Based on standard textbook structures, early problems introducing $f(z)=z^2$ ask to either prove it is analytic via the limit definition or to find its derivative using Cauchy-Riemann equations. We will do both).*
@@ -7667,6 +7706,9 @@ $$\phi(x,y) = \frac{1}{2}\ln(x^2+y^2) + C$$
 **Answer:** The velocity potential is **$\phi(x,y) = \frac{1}{2}\ln(x^2+y^2) + C$**.
 
 ***
+
+
+### Source: Feruj Sheet & Slides
 
 ### Q182. Problem 3.1.1: Test the analyticity of the function $f(z)=\overline{z}$
 
@@ -8830,6 +8872,11 @@ Therefore, the real part $u(x,y)$ is the other term in the bracket. Let $C = c_1
 
 ***
 
+
+## 5. Mapping by Elementary Functions / Conformal Mapping
+
+### Source: PDF Extraction
+
 ### Q206. Pg 2, Q4(a): Prove that the bilinear transformation can be considered as a combination of translation, rotation, stretching and inversion.
 
 *(Note: This is conceptually identical to Q209. We will provide the formal proof).*
@@ -8944,6 +8991,9 @@ Since $P$ and $S$ are real numbers and $Q$ is a complex number, this equation is
 Therefore, any circle or line in the $z$-plane maps exactly to a circle or line in the $w$-plane under a bilinear transformation. **(Proved)**
 
 ***
+
+
+### Source: Feruj Sheet & Slides
 
 ### Q208. Problem 8.1: Let $w=f(z)=u+iv$ be analytic in a region R. Prove that $\frac{\partial(u,v)}{\partial(x,y)}=\vert{}f^{\prime}(z)\vert{}^{2}$
 
@@ -9249,6 +9299,11 @@ Therefore, it represents a circle (if $P \neq 0$) or a straight line (if $P = 0$
 
 ***
 
+
+## 6. Line Integral of a Complex Function
+
+### Source: PDF Extraction
+
 ### Q214. Pg 6, Q3(c): Evaluate $\oint_c |z|^2 dz$ around the square with vertices at $(0, 0), (1, 0), (1, 1)$, and $(0, 1)$.
 
 **Solution:**
@@ -9352,6 +9407,9 @@ $$\oint_C f(z) dz = 0 + i(0) = 0$$
 **(Result found. This serves as a formal proof of Cauchy's Integral Theorem).**
 
 ***
+
+
+### Source: Firoz Note
 
 ### Q216. Prblm 4.1.1: Evaluate $\int_C \overline{z} dz$ from $z=0$ to $z=4+2i$ along the curve C given by $z=t^2+it$
 
@@ -9824,6 +9882,9 @@ $W = \frac{3(12+16i)}{2} + 5(4+2i) = (18 + 24i) + (20 + 10i) = 38 + 34i$. Both m
 **Answer:** The total work done is **$38 + 34i$**.
 
 ***
+
+
+### Source: Feruj Sheet & Slides
 
 ### Q224. Example: Evaluate $\int_{0}^{2+i}(\overline{z})^{2}dz$ along the real axis from $z=0$ to $z=2$ and then along a line parallel to y-axis from $z=2$ to $z=2+i.$
 
@@ -10484,6 +10545,13 @@ $$\oint_C B(z,\overline{z}) dz = 2i \iint_R \frac{\partial B}{\partial \overline
 
 Here are the detailed solutions for the next four questions (Q241 to Q244).
 
+
+***
+
+## 7. Cauchy's Integral Theorem & Cauchy's Integral Formula
+
+### Source: PDF Extraction
+
 ### Q241. Pg 2, Q3(b): State and prove Cauchy's integral formula.
 
 **Solution:**
@@ -10787,6 +10855,9 @@ $$I = 2\pi i$$
 **Answer:** The value of the integral is **$2\pi i$**.
 
 ***
+
+
+### Source: Firoz Note
 
 ### Q248. Problem 4.4.1: Prove that, (i) $\oint_C dz=0$ (ii) $\oint_C z dz=0$ (iii) $\oint_C (z-z_0)dz=0$ where C is simple closed curve & $z_0$ is constant.
 
@@ -11291,6 +11362,9 @@ $$I = \frac{3\pi}{2} + \pi i$$
 **Answer:** The value of the integral is **$\frac{\pi}{2}(3 + 2i)$** (or **$\frac{3\pi}{2} + \pi i$**).
 
 ***
+
+
+### Source: Feruj Sheet & Slides
 
 ### Q260. Example: Evaluate $\int(z-a)^{n}dz$ where c is the circle with centre a and r. Discuss the case when $n=-1$.
 
@@ -13041,6 +13115,11 @@ Because *neither* pole is enclosed by the contour, the entire function is analyt
 
 ***
 
+
+## 8. Taylor's Theorem and Laurent's Theorem
+
+### Source: PDF Extraction
+
 ### Q299. Pg 1, Q3(c): Expand $f(z) = \frac{1}{(z+1)(z+3)}$ in a Laurent series valid for $1 < |z| < 3$.
 
 **Solution:**
@@ -13182,6 +13261,9 @@ $$f(z) = 2 \sum_{n=0}^\infty \frac{z^{2n+1}}{2n+1}$$
 **Answer:** The Taylor series expansion is **$2 \left( z + \frac{z^3}{3} + \frac{z^5}{5} + \frac{z^7}{7} + \dots \right)$** or **$2 \sum_{n=0}^\infty \frac{z^{2n+1}}{2n+1}$**.
 
 ***
+
+
+### Source: Feruj Sheet & Slides
 
 ### Q302. Problem 6.1: Prove Taylor's theorem: If $f(z)$ is analytic inside a circle C with center at a, then for all z inside C, $f(z)=f(a)+f^{\prime}(a)(z-a)+\frac{f^{\prime\prime}(a)}{2!}(z-a)^{2}+\frac{f^{\prime\prime\prime}(a)}{3!}(z-a)^{3}+\dots$
 
@@ -13497,6 +13579,13 @@ This is a standard Taylor (Maclaurin) series since it encloses no singularities.
 
 Here are the detailed solutions for the next four questions (Q309 to Q312).
 
+
+***
+
+## 9. Singular Points
+
+### Source: PDF Extraction
+
 ### Q309. Pg 2, Q3(a): Find all the singular points of $f(z) = \frac{(z+3i)^5}{(z^2-2z+5)^2}$.
 
 **Solution:**
@@ -13593,6 +13682,9 @@ The imaginary part is exactly $v$. Let $C = c_1 + ic_2$.
 
 ***
 
+
+### Source: Feruj Sheet & Slides
+
 ### Q311. Example: Locate and name all the singularities of $f(z)=\frac{z^{8}+z^{4}+2}{(z-1)^{3}(3z+2)^{2}}.$ Determine where $f(z)$ is analytic.
 
 **Solution:**
@@ -13623,6 +13715,11 @@ In set notation, the region of analyticity is:
 *   Analytic everywhere except at **$z=1$ and $z=-2/3$**.
 
 ***
+
+
+## 10. Residue & Cauchy's Residue Theorem
+
+### Source: PDF Extraction
 
 ### Q312. Pg 1, Q3(a): State and prove Cauchy's Residue theorem for a pole of order m at $z=a$ inside simple closed curve C.
 
@@ -13982,6 +14079,9 @@ $$I = -8\pi i$$
 **Answer:** The value of the integral is **$-8\pi i$**.
 
 ***
+
+
+### Source: Feruj Sheet & Slides
 
 ### Q319. Question (5.2): Cauchy's Residue theorem: If $F(z)$ is analytic inside and on a simple closed curve C except for a pole of order m at $z=a$ inside C, Prove that (i) $\frac{1}{2\pi~i}\oint_{C}F(z)dz=lim_{z\rightarrow a}\frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{m-1}}\{(z-a)^{m}F(z)\}$ (ii) if there are two poles at $z=a_{1}$ and $z=a_{2}$ inside C of orders $m_{1}$ and $m_{2}$ respectively, Prove that... (iii) In general if $F(z)$ has a number of poles inside C with residues $R_{1}$, $R_{2}$, $R_{3}$,........., then $\oint_{C}F(z)dz=2\pi i\{R_{1}+R_{2}+R_{3}+\dots\}$
 
@@ -14346,6 +14446,11 @@ $$I = 0$$
 **Answer:** The value of the integral is **$0$**.
 
 ***
+
+
+## 11. Contour Integration
+
+### Source: PDF Extraction
 
 ### Q327. Pg 1, Q4(i): Evaluate $\int_0^\infty \frac{1}{x^4+a^4} dx$
 
@@ -14723,6 +14828,9 @@ $$I = \frac{1}{2} \text{Re} \left( \frac{\pi(m+1)e^{-m}}{2} \right) = \frac{\pi(
 **Answer:** The value of the integral is **$\frac{\pi(m+1)e^{-m}}{4}$**.
 
 ***
+
+
+### Source: Feruj Sheet & Slides
 
 ### Q334. Example: Evaluate the Cauchy principal value of $\int_{-\infty}^{\infty}\frac{dx}{(x^{2}+1)(x^{2}+9)}$
 
@@ -15264,4 +15372,3 @@ $$I_c = 2\pi \left( \frac{1}{24} \right) = \frac{2\pi}{24} = \frac{\pi}{12}$$
 The contour integral result is purely real.
 $$I = \text{Re}(I_c) = \text{Re}\left(\frac{\pi}{12}\right) = \frac{\pi}{12}$$
 **(Proved)**
-

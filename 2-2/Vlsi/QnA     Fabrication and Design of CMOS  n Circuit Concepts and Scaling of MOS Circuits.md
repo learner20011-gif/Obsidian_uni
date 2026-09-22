@@ -1,5 +1,10 @@
 [20, 22, 25, 27, 31, 32, 36, 37, 38, 40, 41, 42, 44, 46]
     
+
+***
+
+### **CMOS fabrication**
+
 ### 1. "Describe the n-MOS fabrication process." (Page 6, Q.2(a))
 
 The fabrication of n-MOS (n-channel Metal-Oxide-Semiconductor) transistors involves a sequence of photographic and chemical steps to selectively pattern regions on a silicon wafer. The detailed steps are as follows:
@@ -244,6 +249,11 @@ To sketch the final cross-sectional view of the n-well CMOS fabrication process 
 
 *Location: Pucknell Textbook Pg 33 (Figure 1.12), Rakib's Note Pg 108*
 
+
+***
+
+### **Twin-Tub fabrication process of CMOS**
+
 ### 16. "Explain different steps involved in preparation of CMOS using twin tub process." (Page 9, Q.1(b))
 
 The Twin-Tub (or Twin-Well) process is a logical extension of single-well processes. Instead of relying on the native substrate for one type of transistor, it creates two separate, optimized wells for *both* types of transistors. The steps involved are:
@@ -297,6 +307,11 @@ The Twin-Tub (or Twin-Well) process is an advanced CMOS fabrication technique th
 7.  **Contact Cuts and Metallization:** A thick insulating layer of oxide is deposited over the entire structure. Contact windows are etched through to the source, drain, and gate terminals. Finally, a metal layer (like aluminum) is deposited and patterned to create the circuit interconnections.
 
 *Location: Pucknell Textbook Pg 34 & 36, Rakib's Note Pg 107*
+
+
+***
+
+### **Lambda and Micron based design rules and layout**
 
 ### 20. "Sketch the mask layout of a CMOS inverter." (Page 3, Q.6(c)) [figure involved.]
 
@@ -468,6 +483,11 @@ If the polysilicon were drawn exactly flush with the edge of the diffusion and t
 
 *Location: Pucknell Textbook Pg 85 (Figure 3.7), Pg 86-88; Rakib's Note Pg 26-27*
 
+
+***
+
+### **Basics of stick diagrams**
+
 ### 31. "Give a list of different colors used to draw a stick diagram. Draw the stick diagram of NMOS transistor." (Page 8, Q.2(c))
 
 **List of colors used in a stick diagram:**
@@ -504,6 +524,11 @@ A stick diagram is a simplified, color-coded (or line-pattern encoded) topologic
 4.  **Purpose:** The stick diagram is used for floorplanning, finding Euler paths (optimizing the order of transistor gates to share diffusion contacts), and visualizing routing. The layout is the final blueprint that is translated into CIF/GDSII code to physically manufacture the photographic masks used in the foundry.
 
 *Location: Rakib's Note Pg 19, 24; Pucknell Textbook Pg 57-58*
+
+
+***
+
+### **Design of complementary gates using stick diagrams**
 
 ### 36. "Enlist the advantages of stick diagram and draw the stick diagram of the given equation. $Y = (AB) + ((A \oplus B)C)$." (Page 2, Q.2(b))
 
@@ -567,6 +592,11 @@ The PUN is the topological dual of the PDN and connects to $V_{DD}$. Series conn
 5.  **Output:** Use a Blue line to connect the junction of the Yellow PUN and Green PDN to create the final output $Y$.
 
 *Location: Rakib's Note Pg 11-14; Pucknell Textbook Pg 57-58, 159*
+
+
+***
+
+### **Stick diagram rules**
 
 ### 38. "Write short note on stick diagram and sketch a stick diagram of the given expression, $x = \overline{(A + B.(C + D))}$." (Page 4, Q.3(b))
 
@@ -881,6 +911,13 @@ This expression simplifies to a 3-input NOR gate: $Y = \overline{A + B + C}$.
 *Location: Pucknell Textbook Pg 84-85 (Rules), Pg 161 (NOR Gate); Rakib's Note Pg 25-26, 10*
 
 
+
+***
+
+## **Circuit Concepts and Scaling of MOS Circuits**
+
+### **Sheet Resistance**
+
 ### 53. "What is sheet resistance? Calculate the values of $C_{in}$ and $C_{out}$ for the structure represented in Fig. 6(c). [figure Involved]"
 
 **Sheet Resistance ($R_s$):**
@@ -976,6 +1013,11 @@ A CMOS inverter uses a pMOS pull-up and an nMOS pull-down. Because hole mobility
 
 *Location: Pucknell Textbook Pg 105-107 (Figure 4.3); Rakib's Note Pg 36*
 
+
+***
+
+### **Inverter Resistance Calculation**
+
 ### 56. "Calculate the channel resistance and capacitance for the following Fig. considering the transistor is off and channel length is negligible. [figure Involved]"
 
 Based on the provided figure geometry (which corresponds to standard textbook examples for calculating resistance of a non-minimum size channel), we evaluate the channel formed by the intersection of the polysilicon and diffusion.
@@ -1051,6 +1093,11 @@ To calculate the capacitance of any feature (metal line, poly line, or diffusion
 *   Capacitance = $15 \times 0.075\square C_g = 1.125 \square C_g$.
 
 *Location: Pucknell Textbook Pg 108-110 (Section 4.3 - 4.5); Rakib's Note Pg 37-39*
+
+
+***
+
+### **Area Capacitance Calculation of MOS Structures**
 
 ### 59. "Calculate the $C_{in}$ and $C_{out}$ values of capacitance for the structure represented in Fig. 4. [figure Involved]" (Page 5, Q.(c))
 
@@ -1149,6 +1196,13 @@ When a transistor is turned OFF, the channel does not exist, and the source and 
 *Location: Rakib's Note Pg 38-41; Pucknell Textbook Pg 108-111, 128*
 
 ---
+
+
+### **Silicides**
+
+63. *(No direct questions explicitly mentioning silicides were found in the provided exams).*
+
+### **Scaling Models and Scaling Factors**
 
 ### 65. "Discuss about the scaling effect on substrate doping level."
 
@@ -1543,6 +1597,9 @@ However, increasing the substrate doping level introduces a severe physical limi
 *Location: Pucknell Textbook Pg 120 (Section 5.3.1.2); Rakib's Note Pg 50*
 
 ---
+
+
+### **Limits of Miniaturization**
 
 ### 80. "Define miniaturization. Distinguish between a three transistor dynamic RAM cell and one transistor dynamic RAM cell."
 

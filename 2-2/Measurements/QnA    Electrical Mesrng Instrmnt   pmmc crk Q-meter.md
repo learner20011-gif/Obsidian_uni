@@ -1,3 +1,6 @@
+### **1. Fundamentals, Torques, Damping & Galvanometers**
+
+
 ### 1. Page 2, Q.2. (b): Suppose you are working with a gavanometer that has underdamped motion. How can you modify the instrument for critically damped motion if you cannot change the spring and inertia of the instrument? Provide mathematical reasoning.
 [watch this for galvanometer](https://youtu.be/7UCUGHBZXNQ?si=2C2TI95LoQr4VOpy)
 **Answer:**
@@ -216,6 +219,9 @@ Therefore, **spring control** is the only appropriate type of controlling torque
 *   **Reference in A. K. Sawhney Textbook:** Chapter 6, Sec 6.2–6.3 (Pages 135–138)
 
 ***
+
+
+### **2. PMMC, MI & Electrostatic Instruments**
 
 ### 10. Page 2, Q.1. (b): Show that the electrostatic instruments are voltage sensors that work with both AC and DC. Also, comment on the uniformity of the scale of those instruments.
 
@@ -537,6 +543,11 @@ Because the physical moving system (the coil, former, and pointer assembly) poss
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** Slide 7 (*PMMC Disadvantages*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 8, Sec 8.5 (Page 196)
 
+
+
+***
+
+### **3. Ammeters, Voltmeters, Ohmmeters & Range Extension**
 
 ### 21. Page 2, Q.1. (c): Suppose you have extended the range of an ammeter two times of its original capacity if the value of the shunt resistance used is 0.5 $\Omega$, find the internal resistance of the ammeter.
 
@@ -1036,6 +1047,14 @@ The resistance to be connected in series is **1496 $\Omega$**.
 
 ***
 
+
+### **4. Electrodynamometer & Wattmeters**
+
+
+### **Lecture 5 (CT-PT) — `L05_EEE_2211_Instrumentation_ak.pdf`**
+
+#### **From `Q Electrical Mesrng Instrmnt pmmc crk Q-meter.md`**
+
 ### 35. Page 4, Q.2 (a): Explain the general construction and operation of electrodynamometer type instruments.
 
 **Answer:**
@@ -1295,6 +1314,9 @@ In an electrodynamometer type wattmeter, the current coil (fixed coil) is almost
 
 ***
 
+
+### **5. Energy Meters**
+
 ### 43. Page 2, Q.4. (a): Describe the working principle of an induction type energy meter.
 
 **Answer:**
@@ -1401,6 +1423,9 @@ This establishes that the total number of revolutions is strictly proportional t
 *   **Reference in A. K. Sawhney Textbook:** Chapter 11, Sec 11.2 (Pages 374–378)
 
 ***
+
+
+### **6. Speed, Frequency & Phase Difference (Frequency meter, PF meter, Synchroscope)**
 
 ### 46. Page 2, Q.6. (b): Mention the conditions for synchronization of an AC generator to a power system.
 
@@ -1731,6 +1756,9 @@ A frequency meter operating on the phenomenon of electrical resonance (the Ferro
 *   **Reference in A. K. Sawhney Textbook:** Chapter 12, Sec 12.10 (Pages 415–416)
 
 ***
+
+
+### **7. Flux Meter & Magnetic Measurements**
 
 ### 58. Page 2, Q.3. (c): Describe briefly the operating principle of flux meter and hence prove that $\phi = (G/N)\theta$, where the symbols have their usual meanings.
 
@@ -2238,6 +2266,11 @@ Let:
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** Slide 13 (*Flux Meter Theory*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 18, Sec 18.11 (Pages 579–581)
 
+
+***
+
+### **8. Instrument Transformers (CT & PT)**
+
 ### 69. Page 4, Q.3 (c): A current transformer with a bar primary has 300 turns in the secondary winding. The resistance and reactance of the secondary circuit are $1.5 \, \Omega$ and $1 \, \Omega$ respectively including the transformer winding. With 5 A flowing in the secondary winding, the magnetizing mmf is 100 A and the iron loss is 1.2 W. Determine the ratio and phase angle errors.
 
 **Answer:**
@@ -2575,6 +2608,9 @@ If the secondary circuit is opened while the primary is carrying current:
 
 ***
 
+
+### **1. Cathode Ray Oscilloscope (CRO) & Cathode Ray Tube (CRT)**
+
 ### 75. Page 4, Q.4 (b): What value should $C_1$ have for $V_0$ to be equal to $0.1V_i$ for the circuit shown in following figure? [figure Involved]
 
 **Answer:**
@@ -2849,6 +2885,9 @@ This is the final expression for the vertical deflection $D$ on the CRT screen.
 
 ***
 
+
+#### **From `Q intro static transducer.md`**
+
 ### 83. Page 10, Q.6 (c): An electrically deflected CRT has a final anode voltage of 2000 V and parallel deflecting plates 1.5 cm long and 5 mm apart. If the screen is 50 cm from the centre of deflecting plates, find (i) beam speed, (ii) the deflection sensitivity of the tube and (iii) the deflection factor of the tube.
 
 **Answer:**
@@ -2938,6 +2977,11 @@ A Cathode Ray Oscilloscope (CRO) is a highly versatile, fast-responding electron
 *   **Reference in A. K. Sawhney Textbook:** Chapter 21, Sec 21.11 (Pages 664–665)
 
 ***
+
+
+### **Lecture 6 (up to Page 35) — `L06_EEE_2211_Electronic Meas. Instrument_ak.pdf`**
+
+#### **From `Q Electrical Mesrng Instrmnt pmmc crk Q-meter.md`**
 
 ### 86. Page 12, Q.6 (b): Differentiate between the digital and conventional CRO. Prove that the path of an electron traveling through an electric field with constant intensity in nonlinear.
 
@@ -3181,6 +3225,9 @@ This is the standard mathematical equation for a parabola. Thus, we have proven 
 
 ***
 
+
+### **2. Digital Voltmeters (DVM), VTVM & Analog vs. Digital Instruments**
+
 ### 94. Page 5, Q.7 (b): Discuss the factors that decide whether to choose a digital instrument or analog one. Also, list the advantages of digital instruments over the analog one.
 
 **Answer:**
@@ -3372,6 +3419,11 @@ A Potentiometric DVM determines an unknown voltage by continuously comparing it 
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** Slide 4 (*Potentiometric DVM*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 28, Sec 28.35 (Pages 940–943)
+
+
+***
+
+### **3. Q-Meter & Resonance Measurement**
 
 ### 101. Page 6, Q.2 c): What is the source of error in Q measurement and how it can be measured?
 
@@ -3631,6 +3683,9 @@ The self-capacitance of the coil is approximately **14.28 pF**.
 
 ***
 
+
+### **4. Microcontrollers & Sensor Interfacing**
+
 ### 108. Page 5, Q.6 (b): Write an Arduino program for an air conditioner that uses a thermistor as a temperature sensor. The air conditioner should turn on when the temperature above 25 $^\circ$C and it should turn off when the temperature is below 22 $^\circ$C. Use the Steinhart-Hart equation to convert resistance to temperature, where $A = 10^{-3}$, $B = 2 \times 10^{-4}$, and $C = 9 \times 10^{-8}$.
 
 **Answer:**
@@ -3716,6 +3771,5 @@ void loop() {
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** Slide 4 (*Sensors & Transducers / Thermistor*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 25, Sec 25.12 (Pages 780–783)
-
 
 
