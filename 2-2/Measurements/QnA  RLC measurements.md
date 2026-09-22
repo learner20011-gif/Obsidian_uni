@@ -628,7 +628,7 @@ Both methods yield the same result. The distance of the fault from the testing e
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 62–63** (*Murray loop test ground fault distance calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.8 (Pages **484–485**)
-### 21. Page 5, Q.8 (c): In a test by Murray loop method for a fault to earth on a 530 meters length of cable having a resistance of 1.1 $\Omega$ per 1 km, the faulty cable is looped with a sound cable of the same length, but having a resistance of 2.29 $\Omega$ per 1 km. The resistance of the other two arms of the testing network, at balance is in the ratio of 2.7:1. Calculate the distance of the fault from the testing end of the test cable.
+### ✅21. Page 5, Q.8 (c): In a test by Murray loop method for a fault to earth on a 530 meters length of cable having a resistance of 1.1 $\Omega$ per 1 km, the faulty cable is looped with a sound cable of the same length, but having a resistance of 2.29 $\Omega$ per 1 km. The resistance of the other two arms of the testing network, at balance is in the ratio of 2.7:1. Calculate the distance of the fault from the testing end of the test cable.
 
 **Solution:**
 In this Murray loop problem, the sound cable and the faulty cable have different resistances per unit length. Therefore, we must calculate the actual resistances of the cables rather than relying solely on the length proportionality formula.
