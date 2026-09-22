@@ -31,7 +31,7 @@ $R = \frac{0.4343 t}{C \log_{10}(V/v_c)}$
 
 By knowing the initial voltage ($V$), the voltage after time $t$ ($v_c$), the time elapsed ($t$), and the capacitance ($C$), the unknown high resistance $R$ can be calculated.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Measurement of High Resistance**, Slide 68
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 54–55** (*Loss of charge method for measuring high resistance*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.24 (Pages **446, 450–451**)
 
 ***
@@ -129,7 +129,7 @@ $$S + \beta + (L - l_1)\rho = R + \beta + (L - l_2)\rho$$
 
 Notice that $\alpha$, $\beta$, $P$, and $Q$ have completely canceled out.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Carey-Foster Slide-wire Bridge**, Slide 10
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 40** (*Carey-Foster slide wire bridge for medium resistance*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.2 & 13.9 (Pages **424, 432–433**)
 
 ***
@@ -173,7 +173,7 @@ $R = 50.135036\ \mu\Omega - 0.16316\ \mu\Omega = 49.971876\ \mu\Omega$
 
 Rounding to the nearest 0.01 $\mu\Omega$, the unknown resistance is **$49.97\ \mu\Omega$**.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Kelvin Double Bridge Method**, Slides 11–13
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 41–44, 53** (*Kelvin bridge low resistance calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.16 (Pages **440–442**)
 
 ***
@@ -206,7 +206,7 @@ $R = 50.135036\ \Omega - 0.000000163\ \Omega = 50.1350358\ \Omega$
 
 The value of the unknown resistance is **$50.135\ \Omega$**. *(If the standard resistor was intended to be $100.03\ \mu\Omega$ as is standard for Kelvin Bridge measurements, the answer reverts to $49.97\ \mu\Omega$ as shown in Question 3).*
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Kelvin Double Bridge Method**, Slides 11–13
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 43–44, 53** (*Kelvin's double bridge low resistance calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.16 (Pages **440–442**)
 ### 5. Page 15, Q.4 (b): Explain the modified Kelvin's double bridge method of measuring low resistance.
 
@@ -236,7 +236,7 @@ $$R = \frac{P}{Q}S$$
 **Conclusion:**
 By using this double-arm arrangement and ensuring the ratios are equal, the effect of the connecting link resistance ($r$) is completely eliminated from the final calculation. This allows for highly accurate measurements of very low resistances, independent of lead and contact resistances.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Kelvin Double Bridge Method**, Slides 11–13
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 44** (*Modified Kelvin's double bridge method*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.16 (Pages **440–442**)
 
 ***
@@ -274,7 +274,7 @@ Since the error magnitude in Connection A ($1.875\%$) is smaller than in Connect
 
 *   **Figure Involved:** The suitable connection diagram corresponds to "Fig. (a)" from the lecture slides. The ammeter is in series with the unknown resistance $R$, and the voltmeter is connected in parallel across the outer terminals of the ammeter and $R$ combined. 
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Ammeter Voltmeter Method**, Slide 8
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 38–39** (*Voltmeter-ammeter method for resistance*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.3 (Pages **424–426**)
 
 ***
@@ -311,7 +311,7 @@ The negative sign simply indicates that the measured value is slightly less than
 
 *   **Figure Involved:** The derivation implies the circuit where the Voltmeter is in parallel with the unknown resistor $R$, and the Ammeter is in series with that combination (Fig. (b) in the slides).
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Ammeter Voltmeter Method**, Slide 8
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 38–39** (*Relative error in ammeter-voltmeter method formula*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.3 (Pages **424–426**)
 
 ***
@@ -371,7 +371,7 @@ The negative sign simply indicates that the measured value is slightly less than
 
 The exact calculated value of the unknown resistance is **$50.135\ \Omega$**.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Kelvin Double Bridge / Problem Slide**, Slide 28
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 43–44, 53** (*Kelvin's double bridge formula derivation without approximation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.16 (Pages **440–442**)
 
 
@@ -401,7 +401,7 @@ The operation is based on the principle of a ratio-meter, where the deflection o
 
 *   **Figure Involved:** The internal diagram showing the permanent magnet, crossed coils (Coil A and Coil B / Current and Pressure coils), DC generator, and crank handle.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Methods for High Resistance**, Slide 68
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 54** (*Construction and working principle of a megger*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 8**, Sec 8.25 *(Also Chapter 13: Sec 13.22)*, Pages **218–219** *(p. 445, 448)*
 
 ***
@@ -424,7 +424,7 @@ The **Fall of Potential method** (also known as the 3-point test) is the most co
 
 *   **Figure Involved:** A conceptual diagram showing the Earth electrode ($E$), Potential spike ($P$), Current spike ($C$), connected to an AC source with an Ammeter in the main loop and a Voltmeter across $E$ and $P$.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Fall of Potential Method**, Slides 18–19
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 54** (*Fall of potential method for earth resistance*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.4(1), Pages **481–482**
 
 ***
@@ -449,7 +449,7 @@ This method is highly suitable for insulation testing because it accurately hand
 
 *   **Figure Involved:** Circuit diagram showing a DC source, switch, capacitor $C$, unknown resistance $R$, and an electrostatic voltmeter in parallel. 
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Measurement of Insulation**, Slide 68
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 54–55** (*Insulation resistance measurement method*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.19 – 13.25, Pages **444–450**
 
 ***
@@ -467,7 +467,7 @@ The effectiveness of an earthing (grounding) system is determined by its resista
 6.  **Size, Shape, and Spacing of Electrodes:** A larger surface area of the electrode (using larger diameter rods or wide plates) reduces contact resistance with the soil. Furthermore, using multiple earth rods connected in parallel will lower the overall resistance, provided they are spaced sufficiently apart so their "spheres of influence" do not overlap significantly.
 7.  **Condition of the Metal Electrode:** Corrosion or rusting of the earth rod or plate over time will increase the contact resistance between the metal and the soil, degrading the earthing system.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Syllabus / Resistance Measurement**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 54** (*Factors affecting resistance of earthing system*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.3, Pages **480–481**
 ### 15. Page 15, Q.4 (c): Explain the loss of charge method to measure the insulation resistance.
 
@@ -506,7 +506,7 @@ $$R = \frac{0.4343 \times t}{C \log_{10}(V/v_c)}$$
 
 By accurately knowing the capacitance $C$ and measuring $V$, $v_c$, and $t$, the high insulation resistance $R$ can be precisely calculated.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Measurement of Insulation**, Slide 68
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 54–55** (*Loss of charge method for insulation resistance*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.24, Pages **447–448**
 
 ***
@@ -545,7 +545,7 @@ $$l_1 = \frac{Q}{P + Q} (2l)$$
 
 By knowing the total cable route length $l$ and the balanced values of $P$ and $Q$, the exact physical distance $l_1$ to the fault can be calculated.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 61–63** (*Insulation of a cable measurement via Murray loop test*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.8, Pages **484–485**
 
 ***
@@ -586,7 +586,7 @@ The test is conducted in two distinct steps using the switch $K_2$:
 
 Once $X$ (the resistance of the cable from the test end to the fault) is calculated, the physical distance to the fault can be found by dividing $X$ by the known resistance per unit length of the cable.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 64–66** (*Localization of ground fault using Varley loop test*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.9 (Pages **485–486**)
 
 ***
@@ -626,7 +626,7 @@ $$l_1 = \frac{0.8\ \Omega}{1.6\ \Omega/\text{km}} = 0.5\text{ km} = 500\text{ me
 
 Both methods yield the same result. The distance of the fault from the testing end is **500 meters**.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 62–63** (*Murray loop test ground fault distance calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.8 (Pages **484–485**)
 ### 21. Page 5, Q.8 (c): In a test by Murray loop method for a fault to earth on a 530 meters length of cable having a resistance of 1.1 $\Omega$ per 1 km, the faulty cable is looped with a sound cable of the same length, but having a resistance of 2.29 $\Omega$ per 1 km. The resistance of the other two arms of the testing network, at balance is in the ratio of 2.7:1. Calculate the distance of the fault from the testing end of the test cable.
 
@@ -667,7 +667,7 @@ $$0.44145\text{ km} \times 1000\text{ m/km} = 441.45\text{ meters}$$
 
 The distance of the fault from the testing end is approximately **441.45 meters**.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 62–63** (*Murray loop test calculation with unequal cable resistances*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.8 (Pages **484–486**, Ex. 15.3)
 
 ***
@@ -708,7 +708,7 @@ $$l_1 = \frac{Q}{P + Q} (2l)$$
 
 By reading the balanced values of $P$ and $Q$ and knowing the total cable length, the exact distance to the fault can be calculated.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 61–63** (*Ground and short-circuit fault location via Murray loop test*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.8 (Pages **484–485**)
 
 ***
@@ -737,7 +737,7 @@ $$l_1 \approx 3.03456\text{ km}$$
 
 The distance from the test end to the fault point is approximately **$3.03\text{ km}$** (or $3034.56\text{ meters}$).
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 62–63** (*Murray loop test fault distance calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.8 (Page **486**, Ex. 15.2)
 
 ***
@@ -772,7 +772,7 @@ The setup involves fixed ratio arms $P$ and $Q$, a precision variable standard r
 **Conclusion:**
 Once the resistance $X$ up to the fault point is calculated, the physical distance to the fault can be easily determined by dividing $X$ by the known resistance per unit length of that specific faulty cable conductor. By relying on electrical resistance rather than physical length geometry alone, the Varley loop minimizes localization errors.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 64–66** (*Varley loop test method for cable fault localization*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.9 (Pages **485–486**)
 
 ### 25. Page 9, Q.2. (c): Name the types of fault occur in a cable. How the position of fault in a cable can be determined by using Varley loop test?
@@ -814,7 +814,7 @@ The Varley loop test determines the position of a ground or short circuit fault 
     Once the resistance $X$ is calculated, the physical distance to the fault is found by dividing $X$ by the known resistance per unit length ($r$) of the faulty cable:
     $$\text{Distance to fault} = \frac{X}{r}$$
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Types of Faults**, Slide 19
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 61, 64–66** (*Cable fault types and Varley loop test location determination*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.6 & 15.9 (Pages **484–486**)
 
 ***
@@ -858,7 +858,7 @@ $$l_1 = \frac{Q}{P + Q} \times (2l)$$
 
 By reading the balanced values of the ratio arms $P$ and $Q$ and knowing the total route length, the exact distance to the fault ($l_1$) can be calculated.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 61–63** (*Murray loop test for ground and short-circuit faults*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.8 (Pages **484–485**)
 
 ***
@@ -901,7 +901,7 @@ $$S = 21.6\ \Omega$$
 
 The value of the variable resistance required to give balance in the Varley loop test is **$21.6\ \Omega$**.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 64–66** (*Varley loop test calculation for telephone line fault*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.9 (Page **495**, Prob. 3)
 
 ***
@@ -953,7 +953,7 @@ To find the distance of a fault from the test end using the Murray Loop Test, we
 **Conclusion:**
 The formula $l_1 = \frac{Q}{P + Q} (2l)$ calculates the exact distance from the test end to the fault point. You only need to know the total length of one single cable run ($l$) and the balanced values of the ratio arms ($P$ and $Q$).
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 62–63** (*Murray loop test fault distance calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.8 (Pages **484–485**)
 ### 29.  ✅ Page 29, Class test #3 Q1: Suppose, you are assigned to localize a short circuit fault using Murray loop test. Unlike the conventional test set-up, where a sound cable identical to the faulty cable is used as one of the bridge arms, here, a resistance equal to the sound cable resistance is inserted in that bridge arm instead of the actual cable. The connecting wire resistance is negligible. (c) Derive the equation for finding the fault location for the above situation. (d) Given, the sound cable resistance = 10 $\Omega$, resistance of the ratio arms, P= 30 $\Omega$, Q= 10 $\Omega$, length of the cable= 10 km. Find the location of the fault.
 
@@ -1006,7 +1006,7 @@ $$l_x = \frac{X}{r} = \frac{5\ \Omega}{1\ \Omega/\text{km}} = 5\text{ km}$$
 
 The location of the fault is **5 km** from the testing end.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 61–63** (*Murray loop test short-circuit fault derivation and calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.8 (Pages **484–485**)
 
 ***
@@ -1055,7 +1055,7 @@ $$l_x = 7.5\text{ km}$$
 
 The location of the earth fault is **7.5 km** from the testing end.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Resistance & Cable Faults Syllabus**, Slide 3
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 64–66** (*Varley loop test cable fault location calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 15**, Sec 15.9 (Pages **485–486**)
 
 ***
@@ -1089,7 +1089,7 @@ $$L_1 = \frac{R_2 R_3 C_4}{1 + (\frac{1}{Q})^2}$$
 2.  **Practical Component Values:** For a high-Q coil, the internal resistance $R_1$ is very small. In Maxwell's bridge (where $Q = \omega C_4 R_4$), measuring a high-Q coil requires a correspondingly very high value for the parallel resistance $R_4$. High-value precision variable resistors are expensive, bulky, and prone to error. 
     In Hay's bridge (where $Q = \frac{1}{\omega C_4 R_4}$), a high Q-factor means $R_4$ must be a **small** value. It is much easier, cheaper, and more accurate to construct a precision low-value variable resistor box than a high-value one.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Hay's Bridge Advantages**, Slide 23
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 74** (*Hay's bridge for measuring inductance of coils with Q > 10*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.7 (Pages **502–503**)
 
 ***
@@ -1150,7 +1150,7 @@ $$|Z_1| = \sqrt{17487.704} \approx 132.24\ \Omega$$
 
 The effective impedance of the specimen is **$132.24\ \Omega$**.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Owen's Bridge**, Slide 23
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 75** (*Owen's bridge balance conditions and specimen impedance derivation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.9 (Page **528**, Ex. 16.9)
 
 ### 35. Page 4, Q.4 (b): What value should $C_1$ have for $V_0$ to be equal to $0.1V_i$ for the circuit shown in following figure? 
@@ -1185,7 +1185,7 @@ $$C_1 = 5\text{ pF}$$
 
 The value of $C_1$ must be **$5\text{ pF}$** to ensure $V_0 = 0.1 V_i$ at all frequencies.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Syllabus / Electronic Instruments**, Slide 4
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 77** (*Capacitance voltage divider circuit*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 8** / **Chapter 16** (Pages **265, 522–523**)
 
 ***
@@ -1228,7 +1228,7 @@ A practical capacitor can be modeled mathematically in two ways: as an ideal cap
 
 In both models, for a high-quality capacitor, the loss angle $\delta$ is very small, making $D$ very small, indicating minimal power dissipation.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **De Sauty's Bridge**, Slide 24
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 67, 77** (*Dissipation factor of a capacitor with phasor diagram*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 5** (p. 115) & **Chapter 16**, Sec 16.11 (Pages **508–509**)
 
 ***
@@ -1271,7 +1271,7 @@ The Q-factor is $Q = \frac{\omega L_1}{R_1} = \frac{1}{\omega C_4 R_4}$.
 **Conclusion:** 
 Hay's bridge is more advantageous because it requires cheap, easily obtainable low-value resistors for the balance arm and provides a simplified, frequency-independent equation for calculating the inductance of high-Q coils.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Hay's Bridge Advantages**, Slide 23
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 72, 74, 76** (*Advantages of Hay's bridge over Maxwell's bridge for high-Q coils*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.6 & 16.7 (Pages **501–503**)
 
 ***
@@ -1328,7 +1328,7 @@ $$R_1 = \frac{\omega^2 R_2 R_3 R_4 C_4^2}{1 + \omega^2 C_4^2 R_4^2}$$
 
 Through these derivations, if the frequency ($\omega$) and the values of the standard balancing components ($R_2, R_3, R_4, C_4$) are known, the exact self-inductance and internal resistance of the coil can be measured.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Hay's Bridge**, Slides 22–23
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 74** (*Self-inductance measurement using Hay's bridge*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.7 (Pages **502–503**)
 ### 39. Page 6, Q.3 b): An Owen bridge is used to measure the properties of a sample of sheet steel at 2 kHz. At balance, arm ab is test specimen; arm bc is $R_3 = 100\Omega$, arm cd is $C_4 = 0.1\mu F$ and arm da is $R_2 = 834\Omega$ in series with $C_2 = 0.124\mu F$. Derive balance conditions and calculate the effective impedance of the specimen under test conditions.
 
@@ -1386,7 +1386,7 @@ $$|Z_1| \approx 132.24\ \Omega$$
 
 The effective impedance of the specimen under test conditions is **$132.24\ \Omega$**.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Owen's Bridge**, Slide 23
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 75** (*Owen's bridge balance conditions and effective impedance calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.9 (Page **528**, Ex. 16.9)
 
 ***
@@ -1433,7 +1433,7 @@ $$D_1 = \omega C_2 R_2 - \omega C_1 R_1$$
 *   The current $I_1$ in Arm 1 causes a voltage drop across the resistive part $(R_1+r_1)$ that is in phase with $I_1$, and a voltage drop across the ideal capacitance $C_1$ that lags $I_1$ by $90^\circ$.
 *   The total voltage $V_1$ is the vector sum of these drops. The small angle between the pure capacitive voltage drop and the total $V_1$ is the loss angle $\delta_1$, where $\tan(\delta_1) = D_1$.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **De Sauty's Bridge**, Slide 24
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 77–78** (*Dissipation factor and modified De-Sauty's bridge*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.11 (Pages **508–509**)
 
 ***
@@ -1481,7 +1481,7 @@ $$Q = 0.0005 \omega$$
 *   $L_1 = 0.12\text{ H}$
 *   $Q = 0.0005\omega$ (requires frequency to evaluate numerically)
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Maxwell's Inductance-Capacitance bridge**, Slide 21
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 71–72** (*Maxwell's capacitance bridge inductance and Q calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.6 (Page **525**, Ex. 16.4)
 
 ***
@@ -1528,7 +1528,7 @@ $$|Z_1| \approx 132.24\ \Omega$$
 
 The effective impedance of the sheet steel specimen is **$132.24\ \Omega$**.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Owen's Bridge**, Slide 23
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 75** (*Owen's bridge effective impedance calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.9 (Page **528**, Ex. 16.9)
 
 
@@ -1576,7 +1576,7 @@ $$D_1 - D_2 = \omega C_2 R_2 - \omega C_1 R_1$$
 
 Because of these inherent inaccuracies in measuring small dissipation factors, the Schering Bridge is practically used instead of the modified De Sauty bridge.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **De Sauty's Bridge Advantages/Limitations**, Slide 24
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 77–78** (*Limitations of De Sauty's bridge and modified De Sauty's bridge*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.11 (Pages **508–509**)
 
 ***
@@ -1607,7 +1607,7 @@ This equation proves that the modified De Sauty's bridge **cannot accurately det
 1. It only provides the difference between the two dissipation factors. The exact internal loss of the standard capacitor ($D_2$) must be perfectly known to find $D_1$, which is practically difficult unless $C_2$ is an expensive perfect air capacitor.
 2. Even if $D_2$ is known, $D_1$ is evaluated by taking the difference between two large quantities ($\omega C_2 R_2$ and $\omega C_1 R_1$). For small dissipation factors, minor measurement errors in the bridge arm resistors or frequency will result in severe relative errors in the final calculated value of $D_1$.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **De Sauty's Bridge**, Slide 24
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 77–78** (*Dissipation factor measurement inaccuracy in modified De Sauty's bridge*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.11 (Pages **508–509**)
 
 ***
@@ -1658,7 +1658,7 @@ $$Q \approx 3.1416$$
 *   **$L_1 = 0.12\text{ H}$ (or $120\text{ mH}$)**
 *   **$Q = 3.14$**
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Maxwell's Inductance-Capacitance bridge**, Slide 21
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 71–72** (*Maxwell's capacitance bridge unknown inductance and storage factor*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.6 (Page **525**, Ex. 16.4)
 
 ***
@@ -1692,7 +1692,7 @@ The Storage Factor or Q-factor of a coil is defined as $Q = \omega L_1 / R_1$. W
 | **Suitability** | Medium Q coils ($1 < Q < 10$) | High Q coils ($Q > 10$) |
 | **For High-Q, $R_4$ is...**| Impractically Large | Conveniently Small |
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Question Slide on Q-factor**, Slide 23
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 76** (*Differentiation between Maxwell's and Hay's bridge on basis of Q-factor*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.6 & 16.7 (Pages **501–503**)
 
 
@@ -1745,7 +1745,7 @@ $$Q \approx 1.2996$$
 *   Effective Impedance ($Z_1$) = **$132.24\ \Omega$**
 *   Q-Factor = **$1.30$**
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Owen's Bridge**, Slide 23
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 75** (*Owen's bridge balance conditions, effective impedance, and Q-factor*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.9 (Page **528**, Ex. 16.9)
 
 ***
@@ -1794,7 +1794,7 @@ $$f = \frac{1}{2\pi \sqrt{R^2 C^2}} = \frac{1}{2\pi R C}$$
 
 Thus, by reading the values of the balanced components, the exact frequency of the power source driving the bridge is determined.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **16.8.1 Wien's Bridge**, Slide 15
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 81** (*Wien's bridge for experimental determination of frequency*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.22 (Pages **517–518**)
 
 ***
@@ -1816,7 +1816,7 @@ Maxwell's Inductance-Capacitance bridge is unsuitable for measuring coils with a
 
 For these reasons, Hay's bridge (where $Q \propto 1/R_4$) is used instead for high-Q coils, as it requires a conveniently small value for $R_4$ to balance, thereby avoiding the parasitic capacitance issues associated with large resistors.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Maxwell's Bridge Disadvantages**, Slide 22
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 72, 76** (*Unsuitability of Maxwell's bridge for high Q measurement*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.6 (Pages **501–502**)
 
 ***
@@ -1872,7 +1872,7 @@ $$R_1 = \frac{\omega^2 R_2 R_3 R_4 C_4^2}{1 + \omega^2 C_4^2 R_4^2}$$
     *   For the standard arm (Arm 4), let the current be $I_2$. The voltage drop $E_4$ consists of the drop across $R_4$ ($I_2 R_4$ in phase with $I_2$) and the drop across $C_4$ ($I_2 / \omega C_4$ lagging $I_2$ by $90^\circ$).
     *   Since $E_1 = E_4$, the vector sum of ($I_2 R_4$) and ($I_2 / \omega C_4$) must equal the vector sum of ($I_1 R_1$) and ($I_1 \omega L_1$). The phasor diagram graphically represents this equality of complex voltages.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Hay's Bridge**, Slide 22
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 74** (*Hay's bridge connection diagram, phasor diagram, and equations*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.7 (Pages **502–503**)
 ### 51. Page 24, Notes 1: Why Q< 10 is not suited in hays bridge(10)
 
@@ -1897,7 +1897,7 @@ Hay's bridge is specifically designed to overcome the limitations of Maxwell's b
 
 For these reasons, Maxwell's bridge is preferred for $Q < 10$ (because its $L_1$ formula never depends on frequency), and Hay's bridge is strictly reserved for $Q > 10$.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Hay's Bridge Disadvantages**, Slide 23
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 74, 76** (*Reason why Q < 10 is not suited in Hay's bridge*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.7 (Pages **502–503**)
 
 ***
@@ -1935,7 +1935,7 @@ $$\theta \approx 3.214^\circ$$
 
 The angle of deflection shown by the galvanometer is approximately **$3.21^\circ$**.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Bridge Sensitivity**, Slide 15
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 49–52** (*Wheatstone bridge unbalance deflection angle calculation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.6–13.7 (Pages **429–431**)
 
 ***
@@ -1982,7 +1982,7 @@ $$S_B = \frac{S_v E}{4}$$
 
 This is the final expression for the bridge sensitivity of a Wheatstone bridge with equal arms.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Determine bridge sensitivity for equal arms**, Slide 14
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 49** (*Bridge sensitivity definition and Wheatstone bridge sensitivity derivation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.6–13.7 (Pages **429–431**)
 
 ***
@@ -2014,7 +2014,7 @@ As explicitly outlined in the course materials:
 *   **Heating Errors ($I^2R$ Loss):** The current flowing through the bridge arms causes $I^2R$ power dissipation, which heats the resistors. If they have a high temperature coefficient, their resistance values will change during the measurement, drifting the balance point.
 *   **Not suitable for very high resistances:** For extremely high resistances (like insulation), the current becomes too small for the galvanometer to detect unbalance effectively.
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Bridge Sensitivity / Voltage Sensitivity**, Slide 14
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 49, 52** (*Wheatstone bridge sensitivity equation, advantages, and limitations*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.6, 13.7 & 13.11 (Pages **429–431, 435–436**)
 ### 57. Page 9, Q.1. (c): Define bridge sensitivity. Find the expression for current through the galvanometer for a small unbalance in the Wheatstone bridge.
 
@@ -2061,7 +2061,7 @@ If specifically requested for an **equal arm bridge** ($P=Q=R=S$):
 Substitute $E_o = \frac{E \Delta R}{4R}$ and $R_o = R$:
 $$I_g = \frac{\frac{E \Delta R}{4R}}{R + G} = \frac{E \Delta R}{4R(R + G)}$$
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Current through galvanometer for small unbalance**, Slide 16
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 50–52** (*Galvanometer current expression for small unbalance in Wheatstone bridge*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.6–13.7 (Pages **429–431**)
 
 ***
@@ -2109,7 +2109,7 @@ If all arms are equal to $R$:
 *   $R_o \approx \frac{R \cdot R}{R + R} + \frac{R \cdot R}{R + R} = \frac{R}{2} + \frac{R}{2} = R$
 *   Therefore, $I_g = \frac{\frac{E \Delta R}{4R}}{R + G} = \frac{E \Delta R}{4R(R + G)}$
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Current through galvanometer for small unbalance**, Slide 16
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 50–52** (*Galvanometer current derivation in Wheatstone bridge*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.6–13.7 (Pages **429–431**)
 
 ***
@@ -2162,5 +2162,5 @@ $$S_B = \frac{\theta}{\Delta R / R}$$
     Rearranging the terms in the denominator yields the final proven formula:
     $$S_B = \frac{S_v E}{\frac{P}{Q} + \frac{Q}{P} + 2}$$
 
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Establish relation between Bridge & Current sensitivity**, Slide 16
+*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 49, 52** (*Proof of Wheatstone bridge sensitivity formula*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.6–13.7 (Pages **429–431**)
