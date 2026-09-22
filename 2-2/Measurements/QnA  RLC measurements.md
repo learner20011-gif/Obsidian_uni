@@ -1153,7 +1153,7 @@ The effective impedance of the specimen is **$132.24\ \Omega$**.
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 75** (*Owen's bridge balance conditions and specimen impedance derivation*)
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.9 (Page **528**, Ex. 16.9)
 
-### 35. Page 4, Q.4 (b): What value should $C_1$ have for $V_0$ to be equal to $0.1V_i$ for the circuit shown in following figure? 
+### ❓35. Page 4, Q.4 (b): What value should $C_1$ have for $V_0$ to be equal to $0.1V_i$ for the circuit shown in following figure? 
 
 [figure Involved] -  ![[Pasted image 20260722082537.png]] The figure shows a voltage divider circuit. The top arm has a resistor $900\text{ k}\Omega$ in parallel with capacitor $C_1$. The bottom arm has a resistor $100\text{ k}\Omega$ in parallel with a capacitor $45\text{ pF}$. The input voltage $V_i$ is across the entire combination, and output voltage $V_0$ is across the bottom arm.
 
@@ -1190,7 +1190,7 @@ The value of $C_1$ must be **$5\text{ pF}$** to ensure $V_0 = 0.1 V_i$ at all fr
 
 ***
 
-### 36. Page 5, Q.8 (a): Illustrate the concept of dissipation factor of a capacitor with proper phasor diagram.
+### ❓36. Page 5, Q.8 (a): Illustrate the concept of dissipation factor of a capacitor with proper phasor diagram.
 
 **Solution:**
 **Concept of Dissipation Factor:**

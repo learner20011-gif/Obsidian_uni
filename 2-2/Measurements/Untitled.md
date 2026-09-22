@@ -20,4 +20,4 @@
 
 ### **AC Bridge Methods (Inductance, Capacitance & Frequency)**
 
-![[Pasted image 20260922235031.png|431]]![[Pasted image 20260922235234.png|432]]![[Pasted image 20260922235307.png|457]]![[Pasted image 20260922235319.png]]![[Pasted image 20260923000043.png|656]]
+![[Pasted image 20260922235031.png|431]]![[Pasted image 20260922235234.png|432]]![[Pasted image 20260922235307.png|457]]![[Pasted image 20260922235319.png]]![[Pasted image 20260923000043.png|656]]![[Pasted image 20260923001741.png|662]]
