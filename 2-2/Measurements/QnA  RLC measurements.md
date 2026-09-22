@@ -52,6 +52,79 @@ To find the unknown resistance, two separate balance points are found:
 2.  The positions of the standard resistor and the unknown resistor are then swapped. A new balance point is found on the slide wire.
 
 By utilizing the difference between these two balance lengths and knowing the resistance per unit length of the slide wire, the exact difference between the standard and unknown resistance can be calculated mathematically. Because the resistors are swapped and measured using the same contacts and leads, the parasitic lead and contact resistances cancel each other out in the final calculation, yielding a highly accurate measurement of the medium resistance.
+#### Mathematical Derivation of Carey-Foster Bridge
+
+A Carey-Foster bridge consists of four gaps with resistances $P$, $Q$, $R$, and $S$, along with a uniform slide wire of length $L$ (typically $100\text{ cm}$) having resistance per unit length $\rho$.
+
+- **Gaps 1 & 4 (Outer Gaps):** Contain the standard resistance $S$ and unknown resistance $R$ (or vice versa).
+    
+- **Gaps 2 & 3 (Inner Gaps):** Contain two nearly equal ratio arms $P$ and $Q$.
+    
+- **End Corrections:** Let $\alpha$ and $\beta$ represent the parasitic contact/end resistances at the left and right terminals of the slide wire.
+    
+
+#### 1. First Balance Condition
+
+The unknown resistor $X$ (let us denote it as $R$) is in the outer left gap, and the known standard resistor $S$ is in the outer right gap.
+
+- The total resistance of the left lower arm up to the null point $l_1$ is:
+    
+    $$R + \alpha + l_1 \rho$$
+    
+- The total resistance of the right lower arm from the null point $l_1$ to the right end is:
+    
+    $$S + \beta + (L - l_1)\rho$$
+    
+- By the Wheatstone bridge null condition:
+    
+    $$\frac{P}{Q} = \frac{R + \alpha + l_1 \rho}{S + \beta + (L - l_1)\rho}$$
+    
+- Adding $1$ to both sides (componendo rule):
+    
+    $$\frac{P + Q}{Q} = \frac{(R + \alpha + l_1 \rho) + [S + \beta + (L - l_1)\rho]}{S + \beta + (L - l_1)\rho}$$
+    
+- Simplifying the numerator:
+    
+    $$\frac{P + Q}{Q} = \frac{R + S + \alpha + \beta + L\rho}{S + \beta + (L - l_1)\rho} \quad \text{--- (Equation 1)}$$
+    
+
+#### 2. Second Balance Condition (Swapping Resistors)
+
+Swap the positions of $R$ and $S$ so that $S$ is in the left outer gap and $R$ is in the right outer gap. The slider finds a new balance point at length $l_2$.
+
+- The bridge balance equation becomes:
+    
+    $$\frac{P}{Q} = \frac{S + \alpha + l_2 \rho}{R + \beta + (L - l_2)\rho}$$
+    
+- Applying the same operation (adding $1$ to both sides):
+    
+    $$\frac{P + Q}{Q} = \frac{R + S + \alpha + \beta + L\rho}{R + \beta + (L - l_2)\rho} \quad \text{--- (Equation 2)}$$
+    
+
+#### 3. Eliminating End Corrections and Solving for Difference
+
+Because the left sides of Equation 1 and Equation 2 are equal, their right sides must also be equal:
+
+$$\frac{R + S + \alpha + \beta + L\rho}{S + \beta + (L - l_1)\rho} = \frac{R + S + \alpha + \beta + L\rho}{R + \beta + (L - l_2)\rho}$$
+
+Since the numerators are identical, the denominators must be equal:
+
+$$S + \beta + (L - l_1)\rho = R + \beta + (L - l_2)\rho$$
+
+- Cancel the identical end resistance term $\beta$ and the full-length term $L\rho$ from both sides:
+    
+    $$S - l_1 \rho = R - l_2 \rho$$
+    
+- Rearrange to isolate the difference $(R - S)$:
+    
+    $$R - S = (l_2 - l_1)\rho$$
+    
+- Therefore:
+    
+    $$R = S + (l_2 - l_1)\rho$$
+    
+
+Notice that $\alpha$, $\beta$, $P$, and $Q$ have completely canceled out.
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Carey-Foster Slide-wire Bridge**, Slide 10
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 13**, Sec 13.2 & 13.9 (Pages **424, 432–433**)
