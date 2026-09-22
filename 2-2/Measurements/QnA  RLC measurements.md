@@ -1391,7 +1391,7 @@ The effective impedance of the specimen under test conditions is **$132.24\ \Ome
 
 ***
 
-### 40. Page 6, Q.5 a): What is dissipation factor? Describe the principle of modified De-Sauty's bridge and show the measurement procedure of dissipation factor with appropriate phasor diagram.
+### ❓40. Page 6, Q.5 a): What is dissipation factor? Describe the principle of modified De-Sauty's bridge and show the measurement procedure of dissipation factor with appropriate phasor diagram.
 
 **Solution:**
 
@@ -1532,7 +1532,7 @@ The effective impedance of the sheet steel specimen is **$132.24\ \Omega$**.
 *   **Reference in A. K. Sawhney Textbook:** **Chapter 16**, Sec 16.9 (Page **528**, Ex. 16.9)
 
 
-### 43. Page 9, Q.3. (a): What are the limitations of De Sauty's bridge? Draw the modified De Sauty's bridge and show that the dissipation factor cannot be determined accurately using this bridge.
+### ✅43. Page 9, Q.3. (a): What are the limitations of De Sauty's bridge? Draw the modified De Sauty's bridge and show that the dissipation factor cannot be determined accurately using this bridge.
 
 **Solution:**
 
