@@ -384,7 +384,7 @@ The exact calculated value of the unknown resistance is **$50.135\ \Omega$**.
 
 **Solution:**
 A **Megger** (or megohmmeter) is a portable electrical instrument primarily used to measure very high resistances, specifically the insulation resistance of electrical circuits, cables, transformers, and motors.
-
+![[Pasted image 20260922173151.png]]
 **Construction:**
 The Megger essentially consists of two main parts integrated into a single unit:
 1.  **DC Generator (Hand-driven or Battery-operated):** It contains a small DC generator (magneto) that provides the high testing voltage required to measure insulation resistance (typically 500V, 1000V, or higher). In hand-operated types, a crank handle is used to rotate the armature. 
