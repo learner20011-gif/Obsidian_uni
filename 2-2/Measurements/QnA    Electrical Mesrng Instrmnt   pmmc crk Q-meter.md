@@ -1050,11 +1050,6 @@ The resistance to be connected in series is **1496 $\Omega$**.
 
 ### **4. Electrodynamometer & Wattmeters**
 
-
-### **Lecture 5 (CT-PT) — `L05_EEE_2211_Instrumentation_ak.pdf`**
-
-#### **From `Q Electrical Mesrng Instrmnt pmmc crk Q-meter.md`**
-
 ### 35. Page 4, Q.2 (a): Explain the general construction and operation of electrodynamometer type instruments.
 
 **Answer:**
@@ -2979,9 +2974,6 @@ A Cathode Ray Oscilloscope (CRO) is a highly versatile, fast-responding electron
 ***
 
 
-### **Lecture 6 (up to Page 35) — `L06_EEE_2211_Electronic Meas. Instrument_ak.pdf`**
-
-#### **From `Q Electrical Mesrng Instrmnt pmmc crk Q-meter.md`**
 
 ### 86. Page 12, Q.6 (b): Differentiate between the digital and conventional CRO. Prove that the path of an electron traveling through an electric field with constant intensity in nonlinear.
 
