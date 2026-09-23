@@ -183,8 +183,40 @@ $r = \frac{-D \pm \sqrt{D^2 - 4JK}}{2J}$
 3.  **Increasing D:** Since we cannot change $J$ (moving mass/inertia) or $K$ (spring constant), we must increase $D$ to equal $2\sqrt{JK}$.
     The total damping $D$ consists of mechanical damping ($D_{mech}$, which is fixed/negligible) and electromagnetic damping ($D_{em}$).
     $D = D_{mech} + D_{em}$
-    Electromagnetic damping depends on the displacement constant $G$ (which is fixed as $NBA$ because we cannot change the core, winding, or magnet) and the total resistance $R_{total}$ of the circuit:
-    $D_{em} = \frac{G^2}{R_{total}}$
+    $$e = N \cdot \frac{d\Phi}{dt} = N \cdot B \cdot A \cdot \frac{d\theta}{dt}$$
+
+Using the **displacement constant** $G = NBA$:
+
+$$e = G \frac{d\theta}{dt}$$
+
+ **Step B: Induced Damping Current**
+
+This induced voltage $e$ drives a current $i_{ind}$ through the total electrical loop resistance $R_{total}$ (which includes coil resistance + external circuit/shunt resistance):
+
+$$i_{ind} = \frac{e}{R_{total}} = \frac{G}{R_{total}} \frac{d\theta}{dt}$$
+
+ **Step C: Opposing Damping Torque**
+
+A current-carrying conductor inside a magnetic field experiences a mechanical force ($F = N \cdot I \cdot L \cdot B$). The resulting opposing torque $T_{em}$ exerted on the moving coil is:
+
+$$T_{em} = N \cdot B \cdot A \cdot i_{ind} = G \cdot i_{ind}$$
+
+Substitute the value of $i_{ind}$ from **Step B**:
+
+$$T_{em} = G \left( \frac{G}{R_{total}} \frac{d\theta}{dt} \right)$$
+
+$$T_{em} = \left( \frac{G^2}{R_{total}} \right) \frac{d\theta}{dt}$$
+
+**Step D: Extracting the Damping Constant**
+
+By standard mechanics definition, a damping torque is proportional to angular velocity:
+
+$$T_{em} = D_{em} \frac{d\theta}{dt}$$
+
+Comparing both torque equations directly yields:
+
+$$D_{em} = \frac{G^2}{R_{total}}$$
+
 4.  **Conclusion:** To increase $D_{em}$ so that the total damping $D$ reaches the critical threshold $2\sqrt{JK}$, we must **decrease** the total circuit resistance $R_{total}$. By adding a shunt resistor ($R_{sh}$) in parallel with the galvanometer's internal resistance, the equivalent resistance of the circuit decreases, thereby increasing the electromagnetic damping $D_{em}$ until critical damping is achieved.
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 82–84** (*Underdamped PMMC ammeter modification for critical damping*)
