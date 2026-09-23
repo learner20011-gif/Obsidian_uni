@@ -87,8 +87,28 @@ Where:
 To analyze the transient motion (how the pointer settles), we solve the homogeneous part of the differential equation:
 $J \frac{d^2\theta}{dt^2} + D \frac{d\theta}{dt} + K\theta = 0$
 
-This leads to the characteristic auxiliary equation:
-$Jr^2 + Dr + K = 0$
+Assume the angular deflection takes the exponential form:
+
+$$\theta(t) = e^{rt}$$
+
+Substitute the trial solution and its derivatives into the homogeneous differential equation:
+
+- First derivative (velocity): $\frac{d\theta}{dt} = r e^{rt}$
+    
+- Second derivative (acceleration): $\frac{d^2\theta}{dt^2} = r^2 e^{rt}$
+    
+
+$$J(r^2 e^{rt}) + D(r e^{rt}) + K(e^{rt}) = 0$$
+
+Factor out $e^{rt}$:
+
+$$(Jr^2 + Dr + K)e^{rt} = 0$$
+
+Since $e^{rt} \neq 0$, the characteristic auxiliary equation is:
+
+$$Jr^2 + Dr + K = 0$$
+
+
 
 Using the quadratic formula, the roots ($r_1$ and $r_2$) of this equation are:
 $r_{1,2} = \frac{-D \pm \sqrt{D^2 - 4JK}}{2J}$
