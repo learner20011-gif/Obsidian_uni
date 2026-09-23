@@ -20,6 +20,8 @@
 
 ### **AC Bridge Methods (Inductance, Capacitance & Frequency)**
 
+https://www.youtube.com/watch?v=M-8WAMQh8z4
+
 ![[Pasted image 20260922235031.png|431]]![[Pasted image 20260922235234.png|432]]![[Pasted image 20260922235307.png|457]]![[Pasted image 20260922235319.png]]![[Pasted image 20260923000043.png|656]]![[Pasted image 20260923001741.png|662]]![[Pasted image 20260923010052.png|666]]![[Pasted image 20260923011652.png]]
 
 ![[Pasted image 20260923013716.png]]
