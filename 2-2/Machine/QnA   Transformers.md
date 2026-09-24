@@ -5863,18 +5863,3 @@ $$S_{\Delta\Delta} = 3 \times 25\text{ kVA} = \mathbf{75.0\text{ kVA}}$$
 
 ---
 
-### **Note: Completion of the Question Document**
-
-**Question 117 is the final question of the provided 7-page examination compilation.** Every single question from **Q.1 through Q.117** across all sections has now been fully solved in complete detail:
-
-1. **Ideal Transformer & Transformation Ratio:** (Q.1 – Q.13)
-2. **No-Load and Load Vector Diagrams:** (Q.15 – Q.23)
-3. **Actual Transformer & Equivalent Circuit:** (Q.25 – Q.37)
-4. **Regulation:** (Q.39 – Q.45)
-5. **Short-Circuit and Open-Circuit Tests:** (Q.47 – Q.71)
-6. **Auto-Transformer and Instrument Transformers (C.T. & P.T.):** (Q.73 – Q.86)
-7. **Parallel Operation of Transformers:** (Q.88 – Q.94)
-8. **Three-Phase Transformer Connections:** (Q.96 – Q.106)
-9. **Phase Conversion & Open-Delta Operation:** (Q.108 – Q.117)
-
-All questions from the document are complete.
