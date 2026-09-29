@@ -140,3 +140,6 @@ end architecture sim;
 | **Data Types**              | Highly extensible with rich user-defined types, enumerated types, and records.                                               | Fixed set of predefined types: `wire`, `reg`, `integer`, `time`, etc.                                                           |
 | **Learning Curve**          | Steeper learning curve due to verbosity and strict compiler checks, but catches semantic bugs earlier.                       | Gentler learning curve for engineers familiar with C; faster prototyping, but easier to introduce subtle simulation mismatches. |
 | **Industry Usage**          | Widely used in aerospace, defense, telecom, and European industries.                                                         | Predominant in commercial ASIC, consumer electronics, and semiconductor firms (especially in the US and Asia).                  |
+![[Pasted image 20260930020128.png]]
+
+![[Pasted image 20260930020210.png]]
