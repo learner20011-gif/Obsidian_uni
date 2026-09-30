@@ -1,5 +1,82 @@
 
-[1, 2, 3, 7, 13, 14, 16, 18, 19, 20, 24, 27, 36, 37, 38, 39, 41, 43]
+
+---
+- **Q.1:** Pucknell Pg 19, 20, 21
+- **Q.2:** Pucknell Pg 19
+- **Q.3:** Pucknell Pg 19, 138
+- **Q.4:** Pucknell Pg 22
+- **Q.5:** Pucknell Pg 102
+- **Q.6:** Pucknell Pg 102
+- **Q.7:** Pucknell Pg 22, 37
+- **Q.8:** Pucknell Pg 2, 19
+- **Q.9:** Pucknell Pg 2, 19
+- **Q.10:** Pucknell Pg 182–183
+- **Q.11:** Pucknell Pg 182–183
+- **Q.12:** Pucknell Pg 6–8
+- **Q.13:** Pucknell Pg 61, 81, 138, 155
+- **Q.14:** Pucknell Pg 60, 61
+- **Q.15:** Pucknell Pg 37, 48
+- **Q.16:** Pucknell Pg 60, 61, 62
+- **Q.17:** Pucknell Pg 135–137
+- **Q.18:** Pucknell Pg 154
+- **Q.19:** Pucknell Pg 154
+- **Q.20:** Pucknell Pg 145–147
+- **Q.21:** Pucknell Pg 145–147
+- **Q.22:** Pucknell Pg 145–147, 157–158
+- **Q.23:** Pucknell Pg 145–147
+- **Q.24:** Pucknell Pg 145–147, 159
+- **Q.25:** Pucknell Pg 145–147
+- **Q.26:** Pucknell Pg 145–147
+- **Q.27:** Pucknell Pg 145–147
+- **Q.28:** Pucknell Pg 145–147
+- **Q.29:** Pucknell Pg 145–147
+- **Q.30:** Pucknell Pg 145–147
+- **Q.31:** Pucknell Pg 145–147
+- **Q.32:** Pucknell Pg 145–147
+- **Q.33:** Pucknell Pg 145–147
+- **Q.34:** Pucknell Pg 135–137
+- **Q.35:** Pucknell Pg 136, 304
+- **Q.36:** Pucknell Pg 136, 137, 154, 302, 304
+- **Q.37:** Pucknell Pg 136, 137, 154
+- **Q.38:** Pucknell Pg 136, 137
+- **Q.39:** Pucknell Pg 136, 137, 154
+- **Q.40:** Pucknell Pg 170–173
+- **Q.41:** Pucknell Pg 137, 170–173
+- **Q.42:** Pucknell Pg 3, 18
+- **Q.43:** Pucknell Pg 3, 18, 170–173
+- **Q.44:** Pucknell Pg 236–246
+- **Q.45:** Pucknell Pg 238, 239
+- **Q.46:** Pucknell Pg 238
+- **Q.47:** Pucknell Pg 238, 239
+- **Q.48:** Pucknell Pg 238, 239
+- **Q.49:** Pucknell Pg 157–158, 247–249
+- **Q.50:** Pucknell Pg 242
+- **Q.51:** Pucknell Pg 238, 240
+- **Q.52:** Pucknell Pg 239, 240, 241
+- **Q.53:** Pucknell Pg 238, 241, 243, 245
+- **Q.54:** Pucknell Pg 245, 246
+- **Q.55:** Pucknell Pg 237, 238, 241
+- **Q.56:** Pucknell Pg 238, 239, 240, 241
+- **Q.57:** Pucknell Pg 238, 239, 240, 241
+- **Q.58:** Pucknell Pg 35–36
+- **Q.59:** Pucknell Pg 35, 36, 41, 42, 52
+- **Q.60:** Pucknell Pg 41, 42, 43, 60
+- **Q.61:** Pucknell Pg 35, 36, 41, 42
+- **Q.62:** Pucknell Pg 37–38, 146–147
+- **Q.63:** Pucknell Pg 146, 147
+- **Q.64:** Pucknell Pg 146, 147
+- **Q.65:** Pucknell Pg 37, 38
+- **Q.66:** Pucknell Pg 37, 38
+- **Q.67:** Pucknell Pg 146, 147
+- **Q.68:** Pucknell Pg 49–51
+- **Q.69:** Pucknell Pg 49, 50, 51
+- **Q.70:** Pucknell Pg 50, 51
+- **Q.71:** Pucknell Pg 37, 49, 50
+- **Q.72:** Pucknell Pg 50, 51
+- **Q.73:** Pucknell Pg 51–54
+- **Q.74:** Pucknell Pg 51, 52, 53, 54
+- **Q.75:** Pucknell Pg 51, 52, 53, 54
+- **Q.76:** Pucknell Pg 54
 
 ***
 
