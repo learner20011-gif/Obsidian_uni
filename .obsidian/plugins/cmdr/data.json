@@ -59,7 +59,11 @@
       "Delete",
       "Open as Markdown",
       "Export Image",
-      "Install or update Excalidraw Scripts"
+      "Install or update Excalidraw Scripts",
+      "Close",
+      "Pin",
+      "as Obsidian URL",
+      "from vault folder"
     ]
   },
   "spacing": 0,

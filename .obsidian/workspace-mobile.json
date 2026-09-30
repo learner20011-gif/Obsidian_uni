@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2-2/Vlsi/Untitled.md",
-                "mode": "source",
+                "file": "2-2/signal n system/Q signal.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Q signal"
             }
           },
           {
@@ -185,8 +185,8 @@
   },
   "active": "0b952a814c0118f9",
   "lastOpenFiles": [
-    "2-2/signal n system/Q signal.md",
     "2-2/Vlsi/Untitled.md",
+    "2-2/signal n system/Q signal.md",
     "2-2/Vlsi/QnA     IC Technology and  MOS and BiCMOS.md",
     "2-2/Measurements/attachments/1140989.jpg",
     "2-2/Measurements/attachments/1000026949.jpg",
