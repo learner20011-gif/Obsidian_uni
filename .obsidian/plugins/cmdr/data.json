@@ -15,6 +15,18 @@
       "icon": "lucide-maximize-2",
       "name": "Unfold all headings and lists",
       "mode": "any"
+    },
+    {
+      "id": "obsidian-mark-and-select:set-mark",
+      "icon": "pencil",
+      "name": "Mark and Select: Set mark",
+      "mode": "any"
+    },
+    {
+      "id": "obsidian-mark-and-select:select-from-mark",
+      "icon": "up-and-down-arrows",
+      "name": "Mark and Select: Select from mark",
+      "mode": "any"
     }
   ],
   "leftRibbon": [],
@@ -59,7 +71,13 @@
       "Delete",
       "Open as Markdown",
       "Export Image",
-      "Install or update Excalidraw Scripts"
+      "Install or update Excalidraw Scripts",
+      "Close",
+      "Pin",
+      "as Obsidian URL",
+      "from vault folder",
+      "Mark and Select: Set mark",
+      "Mark and Select: Select from mark"
     ]
   },
   "spacing": 0,
