@@ -1,4 +1,4 @@
-## Atomic Notes: Periodicity of Continuous-Time Signals
+ ## Atomic Notes: Periodicity of Continuous-Time Signals
  
 ## Periodicity of Summed Signals
 When [[2-2/signal n system/Q signal|adding multiple periodic signals]] ($x(t) = x_1(t) + x_2(t) + \dots + x_N(t)$):
