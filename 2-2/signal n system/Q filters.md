@@ -1,4 +1,4 @@
-19, 20, 21, 23
+
 ### **Analog filter design**
 
 1. **Page 8, Q.8(b):** Design a Butterworth low pass filter which has the following transfer characteristics.![[Pasted image 20260829111056.png]] [Figure Involved]
