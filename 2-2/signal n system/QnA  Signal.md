@@ -1822,6 +1822,53 @@ It is a staircase-like pulse composed of two rectangular segments.
 ***
 
 # 4. Laplace Transform
+### Practice Problem 15.1: Laplace Transforms
+
+
+
+#### Problem Statement
+
+* Find the Laplace transforms of the following functions and ROC:
+
+
+2. $f_2(t) = B e^{-j\omega t} u(t)$
+
+
+
+
+
+---
+
+#### Solution 3: Complex Exponential $f_2(t) = B e^{-j\omega t} u(t)$
+
+#### Integral Setup
+
+* Set up the Laplace transform integral:
+
+$$\mathcal{L}\{B e^{-j\omega t} u(t)\} = \int_{0}^{\infty} B e^{-j\omega t} e^{-st} \, dt = B \int_{0}^{\infty} e^{-(s + j\omega)t} \, dt$$
+
+
+
+#### Integral Evaluation & Result
+
+* Evaluate the definite integral:
+
+$$B \int_{0}^{\infty} e^{-(s + j\omega)t} \, dt = B \left[ \frac{e^{-(s + j\omega)t}}{-(s + j\omega)} \right]_{0}^{\infty}$$
+
+
+* The imaginary term $j\omega$ only contributes phase oscillations ($\vert{}e^{-j\omega t}\vert{} = 1$), so convergence requires $\text{Re}\{s\} > 0$:
+
+$$B \left[ 0 - \left( -\frac{1}{s + j\omega} \right) \right] = \frac{B}{s + j\omega}$$
+
+
+* **Transform**:
+
+$$\mathcal{L}\{f_2(t)\} = \frac{B}{s + j\omega}, \quad \text{ROC: } \text{Re}\{s\} > 0$$
+
+
+
+
+---
 
 ### 4.1. Laplace Transform of Piecewise Linear Ramp $h(t) = 2t[u(t)-u(t-1)]$ (Figure involved)
 
