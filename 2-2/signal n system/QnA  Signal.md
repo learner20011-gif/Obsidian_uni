@@ -2819,7 +2819,115 @@ We analyze the left-sided and right-sided portions separately.
 ***
 
 # 5. Fourier Transform
+### Question 1 Determine the Fourier transform of the constant signal $x(t) = 1$ using the **duality (symmetry) property** of the Fourier transform.
 
+  
+
+#### Solution 1
+
+- **Known Impulse Transform Pair:**
+    
+      
+    - Recall the standard continuous-time Fourier transform pair for the Dirac delta function $\delta(t)$:
+        
+          
+        
+        $$\mathcal{F}\{\delta(t)\} = \int_{-\infty}^{\infty} \delta(t) e^{-j\omega t} \, dt = 1$$
+        
+    - Thus, setting $f(t) = \delta(t)$ gives:
+        
+          
+        
+        $$F(\omega) = 1$$
+        
+- **Duality (Symmetry) Property:**
+    
+      
+    - The duality property of the continuous-time Fourier transform states that if $f(t) \overset{\mathcal{F}}{\longleftrightarrow} F(\omega)$, then:
+        
+          
+        
+        $$\mathcal{F}\{F(t)\} = 2\pi f(-\omega)$$
+        
+- **Applying Duality:**
+    
+      
+    - Substitute $F(t) = 1$ and $f(-\omega) = \delta(-\omega)$ into the duality relation:
+        
+          
+        
+        $$\mathcal{F}\{1\} = 2\pi \delta(-\omega)$$
+        
+    - Since the Dirac delta function is symmetric (an even distribution), $\delta(-\omega) = \delta(\omega)$:
+        
+          
+        
+        $$\mathcal{F}\{1\} = 2\pi \delta(\omega)$$
+        
+
+#### Final Answer 1
+
+$$\mathcal{F}\{1\} = 2\pi \delta(\omega)$$
+
+### Question 2
+
+Determine the Fourier transform of the sinusoidal signal:
+
+  
+
+$$x(t) = \cos(\omega_0 t)$$
+
+  
+
+using the Fourier transform of $1$ and standard transform properties.
+
+  
+
+#### Solution 2
+
+- **Euler's Identity Representation:**
+    
+      
+    - Express the cosine function as a sum of complex exponentials:
+        
+          
+        
+        $$\cos(\omega_0 t) = \frac{e^{j\omega_0 t} + e^{-j\omega_0 t}}{2} = \frac{1}{2} e^{j\omega_0 t} \cdot 1 + \frac{1}{2} e^{-j\omega_0 t} \cdot 1$$
+        
+          
+        
+- **Frequency-Shifting (Modulation) Property:**
+    
+      
+    - The frequency-shifting property states that:
+        
+          
+        
+        $$\mathcal{F}\{e^{j\omega_0 t} f(t)\} = F(\omega - \omega_0)$$
+        
+    - With $f(t) = 1$, where $\mathcal{F}\{1\} = 2\pi \delta(\omega)$:
+        
+          
+        
+        $$\mathcal{F}\{e^{j\omega_0 t} \cdot 1\} = 2\pi \delta(\omega - \omega_0)$$
+        
+        $$\mathcal{F}\{e^{-j\omega_0 t} \cdot 1\} = 2\pi \delta(\omega + \omega_0)$$
+        
+- **Linear Combination:**
+    
+      
+    - Substitute both terms into the Fourier transform of the cosine expression:
+        
+          
+        
+        $$\mathcal{F}\{\cos(\omega_0 t)\} = \frac{1}{2} \left[ 2\pi \delta(\omega - \omega_0) + 2\pi \delta(\omega + \omega_0) \right]$$
+        
+        $$\mathcal{F}\{\cos(\omega_0 t)\} = \pi \left[ \delta(\omega - \omega_0) + \delta(\omega + \omega_0) \right]$$
+        
+
+#### Final Answer 2
+
+$$\mathcal{F}\{\cos(\omega_0 t)\} = \pi \left[ \delta(\omega + \omega_0) + \delta(\omega - \omega_0) \right]$$
 ### 5.1. Differentiation Property & Fourier Transform of $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$
 
 Given that $\frac{dx(t)}{dt} \Leftrightarrow j\omega X(\omega)$ and $\text{sgn}(t) = \begin{cases} 1, & t > 0 \\ -1, & t < 0 \end{cases}$, show that $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$.$
