@@ -4406,7 +4406,306 @@ $\mathbf{X(\omega) = \frac{8}{\omega^2 T} \sin^2\left(\frac{\omega T}{4}\right)}
 ***
 
 # 6. Fourier Series & Spectrums
+### Question Obtain the Fourier series for the periodic function shown in Fig. 17.7 and plot the amplitude and phase spectra.
 
+  ![[Pasted image 20261003202829.png]]
+
+#### Step 1: Define the Periodic Function and Fundamental Frequency
+
+- The function repeats with period $T = 2$.
+    
+      
+    
+- Over one period from $t = 0$ to $t = 2$, the function is defined as:
+    
+      
+    
+    $$f(t) = \begin{cases} t, & 0 < t < 1 \\ 0, & 1 < t < 2 \end{cases}$$
+    
+- The fundamental angular frequency $\omega_0$ is:
+    
+      
+    
+    $$\omega_0 = \frac{2\pi}{T} = \frac{2\pi}{2} = \pi \text{ rad/s}$$
+    
+
+#### Step 2: Compute the DC Component ($a_0$)
+
+- The formula for the average/DC component over period $T$ is:
+    
+      
+    
+    $$a_0 = \frac{1}{T}\int_{0}^{T} f(t)\, dt$$
+    
+- Substituting $T = 2$ and the piecewise definition of $f(t)$:
+    
+      
+    
+    $$a_0 = \frac{1}{2} \left[ \int_{0}^{1} t\, dt + \int_{1}^{2} 0\, dt \right]$$
+    
+- Evaluating the definite integral:
+    
+      
+    
+    $$a_0 = \frac{1}{2} \left[ \frac{t^2}{2} \right]_0^1 = \frac{1}{2} \left( \frac{1}{2} - 0 \right) = \frac{1}{4}$$
+    
+
+#### Step 3: Compute the Cosine Coefficients ($a_n$)
+
+- The formula for the cosine coefficients is:
+    
+      
+    
+    $$a_n = \frac{2}{T}\int_{0}^{T} f(t) \cos(n\omega_0 t)\, dt$$
+    
+- Substituting $T = 2$ and $\omega_0 = \pi$:
+    
+      
+    
+    $$a_n = \frac{2}{2} \left[ \int_{0}^{1} t \cos(n\pi t)\, dt + \int_{1}^{2} 0 \cdot \cos(n\pi t)\, dt \right] = \int_{0}^{1} t \cos(n\pi t)\, dt$$
+    
+- Applying integration by parts ($\int u\, dv = uv - \int v\, du$), with $u = t$ and $dv = \cos(n\pi t)\, dt$:
+    
+      
+    
+    $$du = dt, \quad v = \frac{\sin(n\pi t)}{n\pi}$$
+    
+    $$\int_{0}^{1} t \cos(n\pi t)\, dt = \left[ \frac{t}{n\pi}\sin(n\pi t) \right]_0^1 - \int_{0}^{1} \frac{\sin(n\pi t)}{n\pi}\, dt$$
+    
+    $$= \left[ \frac{1}{n^2\pi^2}\cos(n\pi t) + \frac{t}{n\pi}\sin(n\pi t) \right]_0^1$$
+    
+- Evaluating the limits:
+    
+      
+    
+    $$a_n = \frac{1}{n^2\pi^2}\left(\cos(n\pi) - \cos(0)\right) + \frac{1}{n\pi}\sin(n\pi) - 0$$
+    
+- Since $\sin(n\pi) = 0$ and $\cos(n\pi) = (-1)^n$:
+    
+      
+    
+    $$a_n = \frac{(-1)^n - 1}{n^2\pi^2}$$
+    
+- Evaluating for even and odd harmonics:
+    
+      
+    - For **even** $n$ ($n = 2, 4, 6, \dots$): $(-1)^n = 1 \implies a_n = \frac{1 - 1}{n^2\pi^2} = 0$
+        
+          
+        
+          
+        
+    - For **odd** $n$ ($n = 1, 3, 5, \dots$): $(-1)^n = -1 \implies a_n = \frac{-1 - 1}{n^2\pi^2} = -\frac{2}{n^2\pi^2}$
+        
+          
+        
+          
+        
+
+#### Step 4: Compute the Sine Coefficients ($b_n$)
+
+- The formula for the sine coefficients is:
+    
+      
+    
+    $$b_n = \frac{2}{T}\int_{0}^{T} f(t) \sin(n\omega_0 t)\, dt$$
+    
+- Substituting $T = 2$ and $\omega_0 = \pi$:
+    
+      
+    
+    $$b_n = \int_{0}^{1} t \sin(n\pi t)\, dt$$
+    
+- Applying integration by parts with $u = t$ and $dv = \sin(n\pi t)\, dt$:
+    
+      
+    
+    $$du = dt, \quad v = -\frac{\cos(n\pi t)}{n\pi}$$
+    
+    $$\int_{0}^{1} t \sin(n\pi t)\, dt = \left[ -\frac{t}{n\pi}\cos(n\pi t) \right]_0^1 - \int_{0}^{1} \left(-\frac{\cos(n\pi t)}{n\pi}\right) dt$$
+    
+    $$= \left[ \frac{1}{n^2\pi^2}\sin(n\pi t) - \frac{t}{n\pi}\cos(n\pi t) \right]_0^1$$
+    
+- Evaluating the limits:
+    
+      
+    
+    $$b_n = \frac{1}{n^2\pi^2}(\sin(n\pi) - 0) - \left(\frac{1}{n\pi}\cos(n\pi) - 0\right)$$
+    
+    $$b_n = 0 - \frac{\cos(n\pi)}{n\pi} = -\frac{(-1)^n}{n\pi} = \frac{(-1)^{n+1}}{n\pi}$$
+    
+- Evaluating for even and odd harmonics:
+    
+      
+    - For **even** $n$ ($n = 2, 4, 6, \dots$): $b_n = \frac{(-1)^{n+1}}{n\pi} = -\frac{1}{n\pi}$
+        
+          
+        
+          
+        
+    - For **odd** $n$ ($n = 1, 3, 5, \dots$): $b_n = \frac{(-1)^{n+1}}{n\pi} = \frac{1}{n\pi}$
+        
+          
+        
+          
+        
+
+#### Step 5: Complete Fourier Series Representation
+
+- Substituting the coefficients into the trigonometric Fourier series expression:
+    
+      
+    
+    $$f(t) = a_0 + \sum_{n=1}^{\infty} \left[ a_n \cos(n\omega_0 t) + b_n \sin(n\omega_0 t) \right]$$
+    
+    $$f(t) = \frac{1}{4} + \sum_{n=1}^{\infty} \left[ \frac{(-1)^n - 1}{n^2\pi^2} \cos(n\pi t) + \frac{(-1)^{n+1}}{n\pi} \sin(n\pi t) \right]$$
+    
+
+#### Step 6: Amplitude and Phase Spectra Calculation
+
+To express the series in polar/harmonic form $f(t) = a_0 + \sum_{n=1}^{\infty} A_n \cos(n\omega_0 t - \phi_n)$, define the complex phasor:
+
+
+In textbook convention ($A_n \angle \phi_n = a_n - jb_n$):
+
+  
+
+- **For Even Harmonics ($n = 2, 4, 6, \dots$)**:
+    
+      
+    - $a_n = 0$
+        
+          
+        
+          
+        
+    - $b_n = -\frac{1}{n\pi}$
+        
+          
+        
+          
+        
+    - Complex expression:
+        
+          
+        
+        $$A_n \angle \phi_n = a_n - j b_n = 0 - j\left(-\frac{1}{n\pi}\right) = 0 + j\frac{1}{n\pi}$$
+        
+    - Harmonic amplitude:
+        
+          
+        
+        $$A_n = \vert{}b_n\vert{} = \frac{1}{n\pi}, \quad n = 2, 4, 6, \dots$$
+        
+    - Harmonic phase:
+        
+          
+        
+        $$\phi_n = \angle\left(j\frac{1}{n\pi}\right) = 90^\circ, \quad n = 2, 4, 6, \dots$$
+        
+- **For Odd Harmonics ($n = 1, 3, 5, \dots$)**:
+    
+      
+    - $a_n = -\frac{2}{n^2\pi^2}$
+        
+          
+        
+          
+        
+    - $b_n = \frac{1}{n\pi}$
+        
+          
+        
+          
+        
+    - Complex expression:
+        
+          
+        
+        $$A_n \angle \phi_n = a_n - j b_n = -\frac{2}{n^2\pi^2} - j\frac{1}{n\pi}$$
+        
+    - Harmonic amplitude:
+        
+          
+        
+        $$A_n = \sqrt{a_n^2 + b_n^2} = \sqrt{\frac{4}{n^4\pi^4} + \frac{1}{n^2\pi^2}} = \frac{1}{n^2\pi^2}\sqrt{4 + n^2\pi^2}, \quad n = 1, 3, 5, \dots$$
+        
+    - Harmonic phase (lies in the third quadrant since both real and imaginary components are negative):
+        
+          
+        
+        $$\phi_n = 180^\circ + \tan^{-1}\left(\frac{-1/(n\pi)}{-2/(n^2\pi^2)}\right) = 180^\circ + \tan^{-1}\left(\frac{n\pi}{2}\right), \quad n = 1, 3, 5, \dots$$
+        
+
+#### Step 7: Numerical Values for Plotting (Spectra)
+![[Pasted image 20261003202844.png]]
+- **DC Term ($n = 0$)**:
+    
+      
+    - Frequency $\omega = 0$
+        
+          
+        
+          
+        
+    - Amplitude $A_0 = a_0 = 0.25$
+        
+          
+        
+          
+        
+    - Phase $\phi_0 = 0^\circ$
+        
+          
+        
+- **Harmonic Values ($n = 1$ to $6$)**:
+    
+      
+    - **$n = 1$** ($\omega = \pi$ rad/s):
+        
+          
+        
+        $$A_1 = \frac{\sqrt{4 + \pi^2}}{\pi^2} \approx \frac{\sqrt{4 + 9.8696}}{9.8696} = \frac{3.724}{9.8696} \approx 0.377 \approx 0.38$$
+        
+        $$\phi_1 = 180^\circ + \tan^{-1}\left(\frac{\pi}{2}\right) = 180^\circ + \tan^{-1}(1.5708) = 180^\circ + 57.52^\circ \approx 237.5^\circ \text{ (or } 237.8^\circ\text{)}$$
+        
+    - **$n = 2$** ($\omega = 2\pi$ rad/s):
+        
+          
+        
+        $$A_2 = \frac{1}{2\pi} \approx \frac{1}{6.283} \approx 0.159 \approx 0.16$$
+        
+        $$\phi_2 = 90^\circ$$
+        
+    - **$n = 3$** ($\omega = 3\pi$ rad/s):
+        
+          
+        
+        $$A_3 = \frac{\sqrt{4 + 9\pi^2}}{9\pi^2} \approx \frac{\sqrt{4 + 88.826}}{88.826} = \frac{9.635}{88.826} \approx 0.108 \approx 0.11$$
+        
+        $$\phi_3 = 180^\circ + \tan^{-1}\left(\frac{3\pi}{2}\right) = 180^\circ + \tan^{-1}(4.712) = 180^\circ + 78.0^\circ = 258^\circ$$
+        
+    - **$n = 4$** ($\omega = 4\pi$ rad/s):
+        
+          
+        
+        $$A_4 = \frac{1}{4\pi} \approx \frac{1}{12.566} \approx 0.08$$
+        
+        $$\phi_4 = 90^\circ$$
+        
+    - **$n = 5$** ($\omega = 5\pi$ rad/s):
+        
+          
+        
+        $$A_5 = \frac{\sqrt{4 + 25\pi^2}}{25\pi^2} \approx \frac{\sqrt{4 + 246.74}}{246.74} = \frac{15.835}{246.74} \approx 0.064 \approx 0.06$$
+        
+        $$\phi_5 = 180^\circ + \tan^{-1}\left(\frac{5\pi}{2}\right) = 180^\circ + \tan^{-1}(7.854) = 180^\circ + 82.7^\circ = 262.7^\circ$$
+        
+    - **$n = 6$** ($\omega = 6\pi$ rad/s):
+        
+        $$A_6 = \frac{1}{6\pi} \approx \frac{1}{18.85} \approx 0.053 \approx 0.05$$
+        
+        $$\phi_6 = 90^\circ$$
 ### 6.1. Fourier Series of $v_o(t)$ in Active Filter Circuit for Square Wave Input (Figure involved)
 ![[Pasted image 20260628170311.png]]
 **Detailed Answer:**

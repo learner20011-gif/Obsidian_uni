@@ -21,6 +21,12 @@
 ![[Pasted image 20261003194227.png]]
 ![[Pasted image 20261003200254.png]]
 
+![[Pasted image 20261003203421.png]]
+
+![[Pasted image 20261003203444.png]]
+
+![[Pasted image 20261003203500.png]]
+![[Pasted image 20261003204155.png]]
 
 ### Qna
 
