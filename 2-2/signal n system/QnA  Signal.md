@@ -2928,6 +2928,213 @@ using the Fourier transform of $1$ and standard transform properties.
 #### Final Answer 2
 
 $$\mathcal{F}\{\cos(\omega_0 t)\} = \pi \left[ \delta(\omega + \omega_0) + \delta(\omega - \omega_0) \right]$$
+### Question (Practice Problem 18.1)
+
+Determine the Fourier transforms of the following functions using standard known Fourier transform pairs and properties:
+
+  
+
+- **(a)** Gate function $g(t) = 4u(t + 1) - 4u(t - 2)$
+    
+      
+    
+      
+    
+- **(b)** $4\delta(t + 2)$
+    
+      
+    
+      
+    
+- **(c)** $10\sin(\omega_0 t)$
+    
+      
+    
+      
+    
+
+#### Solution
+
+#### Part (a): $g(t) = 4u(t + 1) - 4u(t - 2)$
+
+- **Known Transform Pairs & Properties:**
+    
+      
+    - Unit step transform pair:
+        
+          
+        
+        $$\mathcal{F}\{u(t)\} = \pi \delta(\omega) + \frac{1}{j\omega}$$
+        
+    - Time-shifting property:
+        
+          
+        
+        $$\mathcal{F}\{f(t - t_0)\} = e^{-j\omega t_0} F(\omega)$$
+        
+    - Linearity property:
+        
+          
+        
+        $$\mathcal{F}\{a f_1(t) + b f_2(t)\} = a F_1(\omega) + b F_2(\omega)$$
+        
+- **Step-by-Step Derivation:**
+    
+      
+    - Express the Fourier transform of each shifted step function:
+        
+          
+        
+        $$\mathcal{F}\{4u(t + 1)\} = 4 e^{j\omega} \left[ \pi \delta(\omega) + \frac{1}{j\omega} \right]$$
+        
+        $$\mathcal{F}\{4u(t - 2)\} = 4 e^{-j2\omega} \left[ \pi \delta(\omega) + \frac{1}{j\omega} \right]$$
+        
+    - Subtract the two transforms using linearity:
+        
+          
+        
+        $$G(\omega) = 4 \left( e^{j\omega} - e^{-j2\omega} \right) \left[ \pi \delta(\omega) + \frac{1}{j\omega} \right]$$
+        
+    - Distribute across the Dirac delta term:
+        
+          
+        
+        $$4 \left( e^{j\omega} - e^{-j2\omega} \right) \pi \delta(\omega) = 4 \pi \left[ \left. \left( e^{j\omega} - e^{-j2\omega} \right) \right\vert{}_{\omega = 0} \right] \delta(\omega)$$
+        
+    - Evaluating the complex exponential term at $\omega = 0$:
+        
+          
+        
+        $$\left. \left( e^{j(0)} - e^{-j2(0)} \right) \right. = 1 - 1 = 0$$
+        
+    - Because the impulse term evaluates to zero:
+        
+          
+        
+        $$4 \left( e^{j\omega} - e^{-j2\omega} \right) \pi \delta(\omega) = 0$$
+        
+    - Combine the remaining frequency terms:
+        
+          
+        
+        $$G(\omega) = \frac{4\left(e^{j\omega} - e^{-j2\omega}\right)}{j\omega}$$
+        
+    - _Note regarding the textbook printed answer:_ The textbook answer key provides $\frac{4(e^{-j\omega} - e^{-j2\omega})}{j\omega}$, which arises from an erratum in the textbook's sign convention for the shift $(t + 1)$.
+        
+          
+        
+
+#### Part (b): $4\delta(t + 2)$
+
+- **Known Transform Pair & Property:**
+    
+      
+    - Dirac delta transform pair:
+        
+          
+        
+        $$\mathcal{F}\{\delta(t)\} = 1$$
+        
+    - Time-shifting property:
+        
+          
+        
+        $$\mathcal{F}\{\delta(t - t_0)\} = e^{-j\omega t_0}$$
+        
+- **Step-by-Step Derivation:**
+    
+      
+    - Identify the time-shift parameter:
+        
+          
+        
+        $$t_0 = -2$$
+        
+    - Apply the time-shifting property:
+        
+          
+        
+        $$\mathcal{F}\{\delta(t + 2)\} = e^{-j\omega(-2)} = e^{j2\omega}$$
+        
+    - Multiply by the constant scalar factor $4$:
+        
+          
+        
+        $$\mathcal{F}\{4\delta(t + 2)\} = 4e^{j2\omega}$$
+        
+          
+        
+
+#### Part (c): $10\sin(\omega_0 t)$
+
+- **Known Transform Pairs & Properties:**
+    
+      
+    - Constant transform pair:
+        
+          
+        
+        $$\mathcal{F}\{1\} = 2\pi \delta(\omega)$$
+        
+    - Frequency-shifting (modulation) property:
+        
+          
+        
+        $$\mathcal{F}\{e^{j\omega_0 t} f(t)\} = F(\omega - \omega_0)$$
+        
+    - Combining the two gives the basic complex exponential pair:
+        
+          
+        
+        $$\mathcal{F}\{e^{\pm j\omega_0 t}\} = 2\pi \delta(\omega \mp \omega_0)$$
+        
+- **Step-by-Step Derivation:**
+    
+      
+    - Expand the sinusoidal signal using Euler's identity:
+        
+          
+        
+        $$10\sin(\omega_0 t) = 10 \left( \frac{e^{j\omega_0 t} - e^{-j\omega_0 t}}{2j} \right) = \frac{5}{j} e^{j\omega_0 t} - \frac{5}{j} e^{-j\omega_0 t}$$
+        
+    - Rewrite $\frac{1}{j}$ as $-j$:
+        
+          
+        
+        $$10\sin(\omega_0 t) = -j5 e^{j\omega_0 t} + j5 e^{-j\omega_0 t}$$
+        
+    - Substitute the known transform pairs for $e^{j\omega_0 t}$ and $e^{-j\omega_0 t}$:
+        
+          
+        
+        $$\mathcal{F}\{10\sin(\omega_0 t)\} = -j5 [2\pi \delta(\omega - \omega_0)] + j5 [2\pi \delta(\omega + \omega_0)]$$
+        
+        $$= -j10\pi \delta(\omega - \omega_0) + j10\pi \delta(\omega + \omega_0)$$
+        
+    - Factor out the common term $j10\pi$:
+        
+          
+        
+        $$\mathcal{F}\{10\sin(\omega_0 t)\} = j10\pi [\delta(\omega + \omega_0) - \delta(\omega - \omega_0)]$$
+        
+          
+        
+
+#### Final Answer
+
+- **(a)** $G(\omega) = \frac{4\left(e^{j\omega} - e^{-j2\omega}\right)}{j\omega}$ _(Printed textbook key: $\frac{4(e^{-j\omega} - e^{-j2\omega})}{j\omega}$)_
+    
+      
+    
+      
+    
+- **(b)** $4e^{j2\omega}$
+    
+      
+    
+      
+    
+- **(c)** $j10\pi [\delta(\omega + \omega_0) - \delta(\omega - \omega_0)]$
 ### 5.1. Differentiation Property & Fourier Transform of $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$
 
 Given that $\frac{dx(t)}{dt} \Leftrightarrow j\omega X(\omega)$ and $\text{sgn}(t) = \begin{cases} 1, & t > 0 \\ -1, & t < 0 \end{cases}$, show that $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$.$

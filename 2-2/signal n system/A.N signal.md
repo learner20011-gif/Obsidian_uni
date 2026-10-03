@@ -1,6 +1,9 @@
  
  ![[Pasted image 20261003072613.png]]
  ![[Pasted image 20261003123308.png]]
+
+![[Pasted image 20261003172933.png]]
+
 ### ROC curve
  ![[Pasted image 20261003091206.png]]
  ![[Pasted image 20261003091728.png]]
