@@ -5918,7 +5918,7 @@ The Fourier Transform is a fundamental mathematical tool that allows us to move 
 
 ***
 
-### 7.2. Q.7 (a) Sampling of Triangular Baseband Spectrum at 5 kHz, 10 kHz, and 20 kHz (Figure involved)
+### 7.2. Q.7 (a)❓ Sampling of Triangular Baseband Spectrum at 5 kHz, 10 kHz, and 20 kHz (Figure involved)
 ![[Pasted image 20260626191739.png]]
 **Solution:**
 
@@ -5973,7 +5973,7 @@ The Nyquist rate for this signal is $2f_m = 2(5 \text{ kHz}) = 10 \text{ kHz}$.
 
 ***
 
-# 8. Z-Transform
+# 8. ❓Z-Transform
 
 ### 8.1. Significance of Region of Convergence (ROC) in Z-Transform Representation
 
