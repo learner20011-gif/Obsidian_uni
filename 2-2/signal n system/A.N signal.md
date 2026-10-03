@@ -174,6 +174,19 @@ A signal is bounded if its amplitude always remains finite.
     Because $M$ is finite, the output is guaranteed to remain finite.
     
 - _Result:_ ✅ **Stable**
+- 
+==, absolute integrability of the impulse response means the system is BIBO stable.==
+
+For a Linear Time-Invariant (LTI) system, absolute integrability is the necessary and sufficient condition for BIBO stability.
+
+
+
+If an LTI system has an impulse response h(t), the system is guaranteed to be BIBO stable if and only if:
+
+$$\int_{-\infty}^{\infty} \vert{}h(t)\vert{} \, dt < M < \infty$$
+
+Where M is a finite maximum value.
+
 
 ## Quick Memory Tricks
 

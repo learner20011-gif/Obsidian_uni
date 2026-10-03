@@ -3637,6 +3637,127 @@ This can be solved using three distinct methods:
           
         
         $$F(\omega) = \frac{20\cos 3\omega - 10\cos 4\omega - 10\cos 2\omega}{\omega^2}$$
+
+### Example 18.9: Question The voltage across a $10\text{-}\Omega$ resistor is $v(t) = 5e^{-3t}u(t)\text{ V}$. Find the total energy dissipated in the resistor.
+    
+
+#### Easy Explanation and Solution
+
+- **Time-Domain Method:**
+    
+    - Instantaneous power dissipated in a resistor of resistance $R$ is $p(t) = \frac{v^2(t)}{R}$.
+        
+    - Here, $R = 10\ \Omega$, so the conductance is $G = \frac{1}{R} = \frac{1}{10} = 0.1\ \Omega^{-1}$.
+        
+    - The total energy dissipated is the integral of instantaneous power from $t = -\infty$ to $\infty$:
+        
+        $$W_{10\Omega} = \int_{-\infty}^{\infty} \frac{v^2(t)}{R} \, dt = 0.1 \int_{-\infty}^{\infty} v^2(t) \, dt$$
+        
+    - Since $u(t) = 0$ for $t < 0$ and $u(t) = 1$ for $t \ge 0$, the limits become $0$ to $\infty$:
+        
+        $$v^2(t) = (5e^{-3t})^2 = 25e^{-6t}$$
+        
+        $$W_{10\Omega} = 0.1 \int_{0}^{\infty} 25e^{-6t} \, dt = 2.5 \left[ \frac{e^{-6t}}{-6} \right]_{0}^{\infty}$$
+        
+    - Evaluating at the upper and lower limits:
+        
+        $$W_{10\Omega} = 2.5 \left( 0 - \frac{1}{-6} \right) = \frac{2.5}{6} \approx 0.4167\text{ J} = 416.7\text{ mJ}$$
+        
+- **Frequency-Domain Method (Parseval's Theorem):**
+    
+    - Find the Fourier transform of the voltage signal using the standard pair $\mathcal{F}\{e^{-at}u(t)\} = \frac{1}{a + j\omega}$:
+        
+        $$V(\omega) = \mathcal{F}\{5e^{-3t}u(t)\} = \frac{5}{3 + j\omega}$$
+        
+    - Compute the energy spectral density $\vert{}V(\omega)\vert{}^2$:
+        
+        $$\vert{}V(\omega)\vert{}^2 = V(\omega)V^*(\omega) = \frac{5}{3 + j\omega} \cdot \frac{5}{3 - j\omega} = \frac{25}{9 + \omega^2}$$
+        
+    - According to Parseval's relation: $\int_{-\infty}^{\infty} v^2(t)\,dt = \frac{1}{2\pi}\int_{-\infty}^{\infty} \vert{}V(\omega)\vert{}^2\,d\omega$.
+        
+    - Multiply by conductance $0.1$ and use symmetry ($\vert{}V(\omega)\vert{}^2$ is an even function, so $\int_{-\infty}^{\infty} = 2\int_{0}^{\infty}$):
+        
+        $$W_{10\Omega} = \frac{0.1}{2\pi} \int_{-\infty}^{\infty} \vert{}V(\omega)\vert{}^2 \, d\omega = \frac{0.1}{\pi} \int_{0}^{\infty} \frac{25}{9 + \omega^2} \, d\omega = \frac{2.5}{\pi} \int_{0}^{\infty} \frac{d\omega}{3^2 + \omega^2}$$
+        
+    - Using the standard standard integral formula $\int \frac{d\omega}{a^2 + \omega^2} = \frac{1}{a} \tan^{-1}\left(\frac{\omega}{a}\right)$:
+        
+        $$W_{10\Omega} = \frac{2.5}{\pi} \left[ \frac{1}{3} \tan^{-1}\left(\frac{\omega}{3}\right) \right]_{0}^{\infty} = \frac{2.5}{\pi} \cdot \frac{1}{3} \left( \frac{\pi}{2} - 0 \right) = \frac{2.5}{6} = 416.7\text{ mJ}$$
+        
+
+### Practice Problem 18.9: Question (a) Calculate the total energy absorbed by a $1\text{-}\Omega$ resistor with current $i(t) = 10e^{-2\vert{}t\vert{}}\text{ A}$ in the time domain.(b) Repeat (a) in the frequency domain.
+    
+
+#### Easy Explanation and Solution
+
+- **Part (a): In the Time Domain**
+    
+    - For a $1\text{-}\Omega$ resistor, power is $p(t) = R \cdot i^2(t) = 1 \cdot i^2(t) = i^2(t)$.
+        
+    - Total energy is:
+        
+        $$W = \int_{-\infty}^{\infty} i^2(t) \, dt = \int_{-\infty}^{\infty} \left(10e^{-2\vert{}t\vert{}}\right)^2 dt = \int_{-\infty}^{\infty} 100e^{-4\vert{}t\vert{}} \, dt$$
+        
+    - Because $e^{-4\vert{}t\vert{}}$ is symmetric (even function), integrate from $0$ to $\infty$ and multiply by $2$:
+        
+        $$W = 2 \int_{0}^{\infty} 100e^{-4t} \, dt = 200 \int_{0}^{\infty} e^{-4t} \, dt$$
+        
+    - Evaluating the integral:
+        
+        $$W = 200 \left[ \frac{e^{-4t}}{-4} \right]_{0}^{\infty} = 200 \left( 0 - \left(-\frac{1}{4}\right) \right) = \frac{200}{4} = 50\text{ J}$$
+        
+- **Part (b): In the Frequency Domain**
+    
+    - Find the Fourier transform of the two-sided exponential $i(t) = 10e^{-2\vert{}t\vert{}}$ using $\mathcal{F}\{e^{-a\vert{}t\vert{}}\} = \frac{2a}{a^2 + \omega^2}$ where $a = 2$:
+        
+        $$I(\omega) = 10 \left( \frac{2(2)}{2^2 + \omega^2} \right) = \frac{40}{4 + \omega^2}$$
+        
+    - Square the magnitude of $I(\omega)$:
+        
+        $$\vert{}I(\omega)\vert{}^2 = \frac{1600}{(4 + \omega^2)^2}$$
+        
+    - Apply Parseval's theorem:
+        
+        $$W = \frac{1}{2\pi} \int_{-\infty}^{\infty} \vert{}I(\omega)\vert{}^2 \, d\omega = \frac{1}{\pi} \int_{0}^{\infty} \frac{1600}{(4 + \omega^2)^2} \, d\omega = \frac{1600}{\pi} \int_{0}^{\infty} \frac{d\omega}{(2^2 + \omega^2)^2}$$
+        
+    - Use the standard integral identity $\int_{0}^{\infty} \frac{d\omega}{(a^2 + \omega^2)^2} = \frac{\pi}{4a^3}$ with $a = 2$:
+        
+        $$\int_{0}^{\infty} \frac{d\omega}{(2^2 + \omega^2)^2} = \frac{\pi}{4(2^3)} = \frac{\pi}{32}$$
+        
+    - Substitute this value back:
+        
+        $$W = \frac{1600}{\pi} \left(\frac{\pi}{32}\right) = \frac{1600}{32} = 50\text{ J}$$
+        
+
+### Example 18.10: Question Calculate the fraction of the total energy dissipated by a $1\text{-}\Omega$ resistor in the frequency band $-10 < \omega < 10\text{ rad/s}$ when the voltage across it is $v(t) = e^{-2t}u(t)\text{ V}$.
+    
+
+#### Easy Explanation and Solution
+
+- **Step 1: Find Total Energy ($W_{1\Omega}$)**
+    
+    - Fourier transform of $v(t) = e^{-2t}u(t)$ is $V(\omega) = \frac{1}{2 + j\omega}$.
+        
+    - Energy spectral density is $\vert{}V(\omega)\vert{}^2 = \frac{1}{4 + \omega^2}$.
+        
+    - Using Parseval's theorem over all frequencies $(-\infty < \omega < \infty)$:
+        
+        $$W_{1\Omega} = \frac{1}{\pi} \int_{0}^{\infty} \frac{d\omega}{4 + \omega^2} = \frac{1}{\pi} \left[ \frac{1}{2} \tan^{-1}\left(\frac{\omega}{2}\right) \right]_{0}^{\infty} = \frac{1}{2\pi} \left(\frac{\pi}{2}\right) = 0.25\text{ J}$$
+        
+- **Step 2: Find Energy in Band ($-10 < \omega < 10\text{ rad/s}$)**
+    
+    - Integrating over the limited frequency band:
+        
+        $$W = \frac{1}{\pi} \int_{0}^{10} \frac{d\omega}{4 + \omega^2} = \frac{1}{2\pi} \left[ \tan^{-1}\left(\frac{10}{2}\right) - \tan^{-1}(0) \right] = \frac{1}{2\pi} \tan^{-1}(5)$$
+        
+    - Since $\tan^{-1}(5) \approx 78.69^\circ = 78.69 \times \frac{\pi}{180}\text{ rad} \approx 1.3734\text{ rad}$:
+        
+        $$W = \frac{1}{2\pi} (1.3734) \approx 0.2186\text{ J}$$
+        
+- **Step 3: Calculate the Percentage**
+    
+    - The energy fraction is:
+        
+        $$\text{Percentage} = \frac{W}{W_{1\Omega}} \times 100\% = \frac{0.2186}{0.25} \times 100\% \approx 87.4\%$$
 ### 5.1. Differentiation Property & Fourier Transform of $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$
 
 Given that $\frac{dx(t)}{dt} \Leftrightarrow j\omega X(\omega)$ and $\text{sgn}(t) = \begin{cases} 1, & t > 0 \\ -1, & t < 0 \end{cases}$, show that $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$.$
