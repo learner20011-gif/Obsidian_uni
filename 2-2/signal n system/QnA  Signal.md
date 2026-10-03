@@ -1824,47 +1824,62 @@ It is a staircase-like pulse composed of two rectangular segments.
 # 4. Laplace Transform
 
 ### 4.1. Laplace Transform of Piecewise Linear Ramp $h(t) = 2t[u(t)-u(t-1)]$ (Figure involved)
-![[Pasted image 20260628100212.png]]
+
 **Detailed Answer:**
+#### Problem Statement and Analysis
 
-The given figure shows a periodic signal $h(t)$. It's a triangular wave that oscillates between an amplitude of $1$ and $3$, with a period $T = 2$.
-he formula for periodic signals:
-$$H(s) = \frac{H_1(s)}{1 - e^{-sT}}$$
-where $H_1(s)$ is the Laplace transform of the first period of the signal, and $T$ is the fundamental period. Here, $T=2$.
+The objective is to determine the Laplace transform of the piecewise linear ramp function defined as:
 
-Let's define the function for the first period, $h_1(t)$, which exists for $0 \le t < 2$ and is zero elsewhere. 
-We can view $h_1(t)$ as a DC offset of 1 added to a triangular pulse that goes from 0 to 2 and back to 0.
-$h_1(t) = 1 \cdot \text{pulse}_{(0,2)} + \text{triangle}_{(0,2)}$
+$$h(t) = 2t \left[ u(t) - u(t - 1) \right]$$
 
-Let's build this systematically using ramp functions $r(t) = t u(t)$. A unit ramp has a slope of 1.
-*   The signal starts at $t=0$ with a value of $1$. Because we are dealing with unilateral Laplace transforms ($t \ge 0$), this initial DC value can be represented by a unit step: $1 \cdot u(t)$.
-*   From $t=0$ to $t=1$, the signal rises from 1 to 3. The slope is $\frac{3-1}{1-0} = 2$. We add a ramp of slope 2 starting at $t=0$: $+2r(t)$.
-    Current function: $u(t) + 2tu(t)$
-*   At $t=1$, the signal must start falling from 3 to 1. The slope of the segment from $t=1$ to $t=2$ is $\frac{1-3}{2-1} = -2$. The current slope is $+2$, so we need to add a ramp that changes the net slope to $-2$. We must add a slope of $-4$ starting at $t=1$: $-4r(t-1)$.
-    Current function: $u(t) + 2tu(t) - 4(t-1)u(t-1)$
-*   At $t=2$, the single-period signal $h_1(t)$ must return to zero (since it represents *only* the first period). The current slope is $-2$. To flatten it to $0$, we add a ramp of slope $+2$ at $t=2$: $+2r(t-2)$.
-    Current function: $u(t) + 2tu(t) - 4(t-1)u(t-1) + 2(t-2)u(t-2)$
-    Let's check the value for $t > 2$: $1 + 2t - 4(t-1) + 2(t-2) = 1 + 2t - 4t + 4 + 2t - 4 = 1$.
-*   The value is stuck at 1 for $t>2$. We need it to be 0 for $t>2$ to properly define just one period. We must subtract a step function at $t=2$: $-1 \cdot u(t-2)$.
-    Final expression for one period:
-    $$h_1(t) = u(t) + 2r(t) - 4r(t-1) + 2r(t-2) - u(t-2)$$
+- **Time interval active range:** The difference of unit step functions $[u(t) - u(t - 1)]$ acts as a rectangular window that isolates the signal strictly between $t = 0$ and $t = 1$.
+    
+- **Signal behavior:** For $0 \le t < 1$, the function linearly increases according to $h(t) = 2t$. For all other times ($t < 0$ or $t \ge 1$), the signal is identically zero.
+    
 
-Now, we take the Laplace transform of $h_1(t)$. We know that $\mathcal{L}\{u(t)\} = \frac{1}{s}$ and $\mathcal{L}\{r(t)\} = \frac{1}{s^2}$. Applying the time-shifting property:
-$$H_1(s) = \frac{1}{s} + \frac{2}{s^2} - \frac{4}{s^2}e^{-s} + \frac{2}{s^2}e^{-2s} - \frac{1}{s}e^{-2s}$$
+#### Method 1: Using the Time-Shift Property of the Laplace Transform
 
-Group the $1/s$ and $1/s^2$ terms:
-$$H_1(s) = \frac{1}{s}(1 - e^{-2s}) + \frac{2}{s^2}(1 - 2e^{-s} + e^{-2s})$$
-Notice that $(1 - 2e^{-s} + e^{-2s})$ is a perfect square: $(1 - e^{-s})^2$.
-$$H_1(s) = \frac{1 - e^{-2s}}{s} + \frac{2(1 - e^{-s})^2}{s^2}$$
+The time-shifting theorem states that:
 
-Now, apply the formula for periodic signals to find the full transform $H(s)$:
-$$H(s) = \frac{H_1(s)}{1 - e^{-sT}} = \frac{H_1(s)}{1 - e^{-2s}}$$
-$$H(s) = \frac{\frac{1 - e^{-2s}}{s} + \frac{2(1 - e^{-s})^2}{s^2}}{1 - e^{-2s}}$$
-$$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})^2}{s^2(1 - e^{-2s})}$$
+$$\mathcal{L}\{f(t - a)u(t - a)\} = e^{-as} F(s)$$
 
-We can simplify the denominator of the second term using the difference of squares: $(1 - e^{-2s}) = (1 - e^{-s})(1 + e^{-s})$.
-$$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})^2}{s^2(1 - e^{-s})(1 + e^{-s})}$$
-$$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})}{s^2(1 + e^{-s})}$$
+- **Expanding the expression:** Expand $h(t)$ into separate terms:
+    
+    $$h(t) = 2t \, u(t) - 2t \, u(t - 1)$$
+    
+- **Shifting the delayed term:**
+    
+    Rewrite the second term around $(t - 1)$ to match the time-shift theorem argument:
+    
+    $$2t = 2(t - 1) + 2$$
+    
+    Substitute this into the expression:
+    
+    $$h(t) = 2t \, u(t) - \left[ 2(t - 1) + 2 \right] u(t - 1)$$
+    
+    $$h(t) = 2t \, u(t) - 2(t - 1)u(t - 1) - 2u(t - 1)$$
+    
+- **Applying standard Laplace transform pairs:**
+    
+    - Recall that $\mathcal{L}\{t \, u(t)\} = \frac{1}{s^2}$
+        
+    - Recall that $\mathcal{L}\{u(t)\} = \frac{1}{s}$
+        
+    - Applying the delay property with $a = 1$:
+        
+        $$\mathcal{L}\{2t \, u(t)\} = \frac{2}{s^2}$$
+        
+        $$\mathcal{L}\{2(t - 1)u(t - 1)\} = \frac{2}{s^2} e^{-s}$$
+        
+        $$\mathcal{L}\{2u(t - 1)\} = \frac{2}{s} e^{-s}$$
+        
+- **Combining into a single transform expression:**
+    
+    $$H(s) = \frac{2}{s^2} - \frac{2}{s^2} e^{-s} - \frac{2}{s} e^{-s}$$
+    
+    Factoring $\frac{2}{s^2}$:
+    
+    $$H(s) = \frac{2}{s^2} \left( 1 - e^{-s} - s e^{-s} \right)$$
 
 *Ans related location: Sadiku Textbook, Chapter 15 (Introduction to the Laplace Transform) – Section 15.3: Properties of the Laplace Transform, pg. 679.*
 
@@ -1877,27 +1892,67 @@ $$H(s) = \frac{1}{s} + \frac{2(1 - e^{-s})}{s^2(1 + e^{-s})}$$
 **Detailed Answer:**
 
 The given figure shows a periodic signal $h(t)$. It's a triangular wave that oscillates between an amplitude of $1$ and $3$, with a period $T = 2$.
-Since it is a periodic function, its Laplace transform $H(s)$ can be found using the formula for periodic signals:
+he formula for periodic signals:
 $$H(s) = \frac{H_1(s)}{1 - e^{-sT}}$$
-where $H_1(s)$ is the Laplace transform of the first period of the signal, and $T$ is the fundamental period. Here, $T=2$.
+#### 1. Standard Piecewise Representation
 
-Let's define the function for the first period, $h_1(t)$, which exists for $0 \le t < 2$ and is zero elsewhere. 
-We can view $h_1(t)$ as a DC offset of 1 added to a triangular pulse that goes from 0 to 2 and back to 0.
-$h_1(t) = 1 \cdot \text{pulse}_{(0,2)} + \text{triangle}_{(0,2)}$
+For the single fundamental period over the domain $0 \le t < 2$, the function is defined segment by segment:
 
-Let's build this systematically using ramp functions $r(t) = t u(t)$. A unit ramp has a slope of 1.
-*   The signal starts at $t=0$ with a value of $1$. Because we are dealing with unilateral Laplace transforms ($t \ge 0$), this initial DC value can be represented by a unit step: $1 \cdot u(t)$.
-*   From $t=0$ to $t=1$, the signal rises from 1 to 3. The slope is $\frac{3-1}{1-0} = 2$. We add a ramp of slope 2 starting at $t=0$: $+2r(t)$.
-    Current function: $u(t) + 2tu(t)$
-*   At $t=1$, the signal must start falling from 3 to 1. The slope of the segment from $t=1$ to $t=2$ is $\frac{1-3}{2-1} = -2$. The current slope is $+2$, so we need to add a ramp that changes the net slope to $-2$. We must add a slope of $-4$ starting at $t=1$: $-4r(t-1)$.
-    Current function: $u(t) + 2tu(t) - 4(t-1)u(t-1)$
-*   At $t=2$, the single-period signal $h_1(t)$ must return to zero (since it represents *only* the first period). The current slope is $-2$. To flatten it to $0$, we add a ramp of slope $+2$ at $t=2$: $+2r(t-2)$.
-    Current function: $u(t) + 2tu(t) - 4(t-1)u(t-1) + 2(t-2)u(t-2)$
-    Let's check the value for $t > 2$: $1 + 2t - 4(t-1) + 2(t-2) = 1 + 2t - 4t + 4 + 2t - 4 = 1$.
-*   The value is stuck at 1 for $t>2$. We need it to be 0 for $t>2$ to properly define just one period. We must subtract a step function at $t=2$: $-1 \cdot u(t-2)$.
-    Final expression for one period:
-    $$h_1(t) = u(t) + 2r(t) - 4r(t-1) + 2r(t-2) - u(t-2)$$
+$$h_1(t) = \begin{cases} 2t + 1, & 0 \le t < 1 \\ -2t + 5, & 1 \le t < 2 \end{cases}$$
 
+- **Rising Segment ($0 \le t < 1$):**
+    
+    - The curve connects coordinates $(0, 1)$ and $(1, 3)$.
+        
+    - The slope is calculated as:
+        
+        $$m = \frac{3 - 1}{1 - 0} = 2$$
+        
+    - With a $y$-intercept of $1$, this yields the linear expression:
+        
+        $$h(t) = 2t + 1$$
+        
+- **Falling Segment ($1 \le t < 2$):**
+    
+    - The curve connects coordinates $(1, 3)$ and $(2, 1)$.
+        
+    - The slope is calculated as:
+        
+        $$m = \frac{1 - 3}{2 - 1} = -2$$
+        
+    - Using the point-slope formulation at $(2, 1)$:
+        
+        $$h(t) - 1 = -2(t - 2) \implies h(t) = -2t + 5$$
+        
+- **Full Periodic Definition:**
+    
+    - Because the waveform is continuous and repeats with a period $T = 2$ across $t \ge 0$:
+        
+        $$h(t) = h(t + 2) \quad \text{for all } t \ge 0$$
+        
+
+#### 2. Unit Step $u(t)$ and Ramp $r(t)$ Formulations
+
+Expressing the waveform using causal step functions $u(t)$ and ramp functions $r(t) = t \cdot u(t)$ makes it straightforward to compute integral transforms:
+
+- **Direct Windowed Formulation:**
+    
+    - Activate each equation only within its active time window:
+        
+        $$h_1(t) = (2t + 1)\big[u(t) - u(t - 1)\big] + (-2t + 5)\big[u(t - 1) - u(t - 2)\big]$$
+        
+- **Shifted/Delay Formulation (Laplace-Ready Form):**
+    
+    - Grouping the algebraic terms about their respective activation points:
+        
+        $$h_1(t) = (2t + 1)u(t) - 4(t - 1)u(t - 1) + 2(t - 2)u(t - 2) - u(t - 2)$$
+        
+- **Pure Ramp and Step Form:**
+    
+    - Expressing the slope changes as explicit ramp functions where $r(t - a) = (t - a)u(t - a)$:
+        
+        $$h_1(t) = u(t) + 2r(t) - 4r(t - 1) + 2r(t - 2) - u(t - 2)$$
+$$h_1(t) = \mathbf{1 \cdot [u(t) - u(t - 2)]} + \text{triangular part}$$
 Now, we take the Laplace transform of $h_1(t)$. We know that $\mathcal{L}\{u(t)\} = \frac{1}{s}$ and $\mathcal{L}\{r(t)\} = \frac{1}{s^2}$. Applying the time-shifting property:
 $$H_1(s) = \frac{1}{s} + \frac{2}{s^2} - \frac{4}{s^2}e^{-s} + \frac{2}{s^2}e^{-2s} - \frac{1}{s}e^{-2s}$$
 
@@ -1999,7 +2054,27 @@ Looking at the graph of $h(t)$:
 
 Combining these components, the mathematical expression for the signal is:
 $h(t) = 10u(t) - 5u(t-2) - 5u(t-4)$
+#### Direct Jump Rule for $h(t)$
 
+To write any piecewise flat graph directly:
+
+- **Rule:** At every time instant $t = a$, add:
+    
+    $$\Delta (\text{amplitude}) \cdot u(t - a)$$
+    
+    where $\Delta (\text{amplitude}) = \text{New Level} - \text{Old Level}$.
+    
+
+#### 1-Line Formulation
+
+- **At $t = 0$:** Jumps from $0 \to 10$ ($\Delta = +10$) $\implies +10u(t)$
+    
+- **At $t = 2$:** Drops from $10 \to 5$ ($\Delta = -5$) $\implies -5u(t - 2)$
+    
+- **At $t = 4$:** Drops from $5 \to 0$ ($\Delta = -5$) $\implies -5u(t - 4)$
+    
+
+$$h(t) = 10u(t) - 5u(t - 2) - 5u(t - 4)$$
 Now, we take the unilateral Laplace transform of this equation. Because the Laplace transform is a linear operator, we can take the transform of each term individually:
 $H(s) = \mathcal{L}[10u(t)] - \mathcal{L}[5u(t-2)] - \mathcal{L}[5u(t-4)]$
 

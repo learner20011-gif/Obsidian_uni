@@ -4,7 +4,27 @@
  
  
  
- 
+ #### Direct Jump Rule for $h(t)$
+![[Pasted image 20260628100445.png]]
+To write any piecewise flat graph directly:
+
+- **Rule:** At every time instant $t = a$, add:
+    
+    $$\Delta (\text{amplitude}) \cdot u(t - a)$$
+    
+    where $\Delta (\text{amplitude}) = \text{New Level} - \text{Old Level}$.
+    
+
+#### 1-Line Formulation
+
+- **At $t = 0$:** Jumps from $0 \to 10$ ($\Delta = +10$) $\implies +10u(t)$
+    
+- **At $t = 2$:** Drops from $10 \to 5$ ($\Delta = -5$) $\implies -5u(t - 2)$
+    
+- **At $t = 4$:** Drops from $5 \to 0$ ($\Delta = -5$) $\implies -5u(t - 4)$
+    
+
+$$h(t) = 10u(t) - 5u(t - 2) - 5u(t - 4)$$
  
  ## Atomic Notes: Periodicity of Continuous-Time Signals
  
