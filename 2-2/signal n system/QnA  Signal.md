@@ -3120,6 +3120,7 @@ Determine the Fourier transforms of the following functions using standard known
           
         
 
+
 #### Final Answer
 
 - **(a)** $G(\omega) = \frac{4\left(e^{j\omega} - e^{-j2\omega}\right)}{j\omega}$ _(Printed textbook key: $\frac{4(e^{-j\omega} - e^{-j2\omega})}{j\omega}$)_
@@ -3135,6 +3136,325 @@ Determine the Fourier transforms of the following functions using standard known
       
     
 - **(c)** $j10\pi [\delta(\omega + \omega_0) - \delta(\omega - \omega_0)]$
+
+### 1. Mathematical Representation of $f(t)$ Using the Unit Step Function $u(t)$
+
+From the given figure:
+
+  ![[Pasted image 20261003174412.png]]
+
+- $f(t) = 10$ for $-1 < t < 0$
+    
+      
+    
+- $f(t) = -10$ for $0 < t < 1$
+    
+      
+    
+- $f(t) = 0$ everywhere else
+    
+      
+    
+
+A rectangular pulse active over the interval $a < t < b$ can be written using unit step functions as:
+
+  
+
+$$p(t) = u(t - a) - u(t - b)$$
+
+Decomposing $f(t)$ into its two separate rectangular sections:
+
+  
+
+- **Positive pulse:** Active from $t = -1$ to $t = 0$ with an amplitude of $10$:
+    
+      
+    
+    $$f_1(t) = 10 [u(t + 1) - u(t)]$$
+    
+- **Negative pulse:** Active from $t = 0$ to $t = 1$ with an amplitude of $-10$:
+    
+      
+    
+    $$f_2(t) = -10 [u(t) - u(t - 1)]$$
+    
+
+Combining both parts:
+
+  
+
+$$f(t) = f_1(t) + f_2(t) = 10 u(t + 1) - 10 u(t) - 10 u(t) + 10 u(t - 1)$$
+
+$$f(t) = 10 u(t + 1) - 20 u(t) + 10 u(t - 1)$$
+
+#### 2. Method 1: Using the Known Fourier Transform Pair of $u(t)$
+
+#### Relevant Properties and Known Transform Pair:
+
+- **Standard Fourier transform pair of the unit step function:**
+    
+      
+    
+    $$\mathcal{F}\{u(t)\} = \pi \delta(\omega) + \frac{1}{j\omega}$$
+    
+- **Time-shifting property of the Fourier transform:**
+    
+      
+    
+    $$\mathcal{F}\{x(t - t_0)\} = e^{-j\omega t_0} X(\omega)$$
+    
+
+#### Applying the Transform to Each Component:
+
+- For the term $10 u(t + 1)$ (where $t_0 = -1$):
+    
+      
+    
+    $$\mathcal{F}\{10 u(t + 1)\} = 10 e^{j\omega} \left[ \pi \delta(\omega) + \frac{1}{j\omega} \right]$$
+    
+- For the term $-20 u(t)$:
+    
+      
+    
+    $$\mathcal{F}\{-20 u(t)\} = -20 \left[ \pi \delta(\omega) + \frac{1}{j\omega} \right]$$
+    
+- For the term $10 u(t - 1)$ (where $t_0 = 1$):
+    
+      
+    
+    $$\mathcal{F}\{10 u(t - 1)\} = 10 e^{-j\omega} \left[ \pi \delta(\omega) + \frac{1}{j\omega} \right]$$
+    
+
+#### Combining and Factoring:
+
+$$F(\omega) = \left[ 10 e^{j\omega} - 20 + 10 e^{-j\omega} \right] \left[ \pi \delta(\omega) + \frac{1}{j\omega} \right]$$
+
+Expanding the product into impulse and rational components:
+
+  
+
+$$F(\omega) = \pi \delta(\omega) \left[ 10 e^{j\omega} - 20 + 10 e^{-j\omega} \right] + \frac{10 e^{j\omega} - 20 + 10 e^{-j\omega}}{j\omega}$$
+
+#### Evaluating the Impulse Term:
+
+- By the sifting property of the Dirac delta function, $g(\omega)\delta(\omega) = g(0)\delta(\omega)$.
+    
+      
+    
+- Evaluating the bracketed factor at $\omega = 0$:
+    
+      
+    
+    $$g(0) = 10 e^{0} - 20 + 10 e^{0} = 10(1) - 20 + 10(1) = 0$$
+    
+- Thus, the impulse term evaluates to zero:
+    
+      
+    
+    $$\pi \delta(\omega) \left[ 10 e^{j\omega} - 20 + 10 e^{-j\omega} \right] = 0$$
+    
+
+#### Simplifying the Remaining Term:
+
+- Using Euler's identity, $e^{j\omega} + e^{-j\omega} = 2\cos\omega$:
+    
+      
+    
+    $$10 e^{j\omega} + 10 e^{-j\omega} - 20 = 10(e^{j\omega} + e^{-j\omega}) - 20 = 20\cos\omega - 20$$
+    
+- Factoring out $20$:
+    
+      
+    
+    $$F(\omega) = \frac{20(\cos\omega - 1)}{j\omega}$$
+    
+
+#### 3. Method 2: Verification via Differentiation Property
+
+- Differentiating $f(t)$ using $\frac{d}{dt}u(t) = \delta(t)$:
+    
+      
+    
+    $$f'(t) = 10 \delta(t + 1) - 20 \delta(t) + 10 \delta(t - 1)$$
+    
+- Applying the differentiation property $\mathcal{F}\{f'(t)\} = j\omega F(\omega)$:
+    
+      
+    
+    $$j\omega F(\omega) = 10 e^{j\omega} - 20 + 10 e^{-j\omega} = 20\cos\omega - 20 = 20(\cos\omega - 1)$$
+    
+- Solving for $F(\omega)$:
+    
+    $$F(\omega) = \frac{20(\cos\omega - 1)}{j\omega}$$
+### Question Find the Fourier transforms of the following functions:
+
+  
+
+- (a) The signum function $\text{sgn}(t)$, shown in Fig. 18.13.
+    
+      
+    
+- (b) The double-sided exponential function $e^{-a\vert{}t\vert{}}$ (where $a > 0$).
+    
+      
+    
+- (c) The sinc-type function $\dfrac{\sin t}{t}$.
+    
+      
+    
+
+#### Solution to Part (a): Fourier Transform of the Signum Function $\text{sgn}(t)$
+
+The signum function is defined as:
+
+  
+
+$$\text{sgn}(t) = \begin{cases} +1, & t > 0 \\ -1, & t < 0 \end{cases}$$
+
+This can be solved using three distinct methods:
+
+  
+
+- **Method 1: Expressing in terms of $u(t)$ and $u(-t)$ using the time-reversal property**
+    
+      
+    
+      
+    - Write $\text{sgn}(t)$ as the difference of two unit step functions:
+        
+          
+        
+        $$\text{sgn}(t) = u(t) - u(-t)$$
+        
+    - Recall the standard Fourier transform pair of the unit step function:
+        
+          
+        
+        $$U(\omega) = \mathcal{F}\{u(t)\} = \pi \delta(\omega) + \frac{1}{j\omega}$$
+        
+    - Using the time-reversal property ($\mathcal{F}\{x(-t)\} = X(-\omega)$):
+        
+          
+        
+        $$\mathcal{F}\{u(-t)\} = U(-\omega) = \pi \delta(-\omega) + \frac{1}{-j\omega} = \pi \delta(\omega) - \frac{1}{j\omega}$$
+        
+        _(since $\delta(\omega)$ is an even function, $\delta(-\omega) = \delta(\omega)$)_.
+        
+          
+        
+    - Subtracting the two transforms gives:
+        
+          
+        
+        $$\mathcal{F}\{\text{sgn}(t)\} = U(\omega) - U(-\omega) = \left(\pi \delta(\omega) + \frac{1}{j\omega}\right) - \left(\pi \delta(\omega) - \frac{1}{j\omega}\right) = \frac{2}{j\omega}$$
+        
+- **Method 2: Expressing as a constant shift of a scaled step function**
+    
+      
+    
+      
+    - Express the signum function as:
+        
+          
+        
+        $$\text{sgn}(t) = -1 + 2u(t)$$
+        
+    - The Fourier transform of a constant $A$ is $2\pi A \delta(\omega)$, so for $-1$, it is $-2\pi \delta(\omega)$.
+        
+          
+        
+    - Taking the Fourier transform term-by-term:
+        
+          
+        
+        $$F(\omega) = -2\pi \delta(\omega) + 2\left(\pi \delta(\omega) + \frac{1}{j\omega}\right) = -2\pi \delta(\omega) + 2\pi \delta(\omega) + \frac{2}{j\omega} = \frac{2}{j\omega}$$
+        
+- **Method 3: Using the differentiation property**
+    
+      
+    
+      
+    - Taking the generalized derivative of $\text{sgn}(t)$, which has a single discontinuity of height $+2$ at $t = 0$:
+        
+          
+        
+        $$f'(t) = \frac{d}{dt}\text{sgn}(t) = 2\delta(t)$$
+        
+    - Applying the time-differentiation property $\mathcal{F}\{f'(t)\} = j\omega F(\omega)$:
+        
+          
+        
+        $$j\omega F(\omega) = \mathcal{F}\{2\delta(t)\} = 2$$
+        
+    - Solving for $F(\omega)$:
+        
+          
+        
+        $$F(\omega) = \frac{2}{j\omega}$$
+        
+
+#### Solution to Part (b): Fourier Transform of the Double-Sided Exponential $e^{-a\vert{}t\vert{}}$
+
+- The double-sided exponential can be split into causal and anti-causal parts:
+    
+      
+    
+    $$f(t) = e^{-a\vert{}t\vert{}} = e^{-at}u(t) + e^{at}u(-t)$$
+    
+- Let $y(t) = e^{-at}u(t)$, which has the standard one-sided exponential Fourier transform:
+    
+      
+    
+    $$Y(\omega) = \mathcal{F}\{e^{-at}u(t)\} = \frac{1}{a + j\omega}$$
+    
+- The second term is the time-reversed version, $y(-t) = e^{at}u(-t)$. By the time-reversal property:
+    
+      
+    
+    $$\mathcal{F}\{y(-t)\} = Y(-\omega) = \frac{1}{a - j\omega}$$
+    
+- Combining both components:
+    
+      
+    
+    $$\mathcal{F}\{e^{-a\vert{}t\vert{}}\} = Y(\omega) + Y(-\omega) = \frac{1}{a + j\omega} + \frac{1}{a - j\omega}$$
+    
+- Finding a common denominator:
+    
+      
+    
+    $$\mathcal{F}\{e^{-a\vert{}t\vert{}}\} = \frac{(a - j\omega) + (a + j\omega)}{(a + j\omega)(a - j\omega)} = \frac{2a}{a^2 + \omega^2}$$
+    
+
+#### Solution to Part (c): Fourier Transform of the Sinc Function $\dfrac{\sin t}{t}$
+
+- From the rectangular pulse transform pair (pulse of width $\tau$ centered at $t = 0$):
+    
+      
+    
+    $$\mathcal{F}\left[ u\left(t + \frac{\tau}{2}\right) - u\left(t - \frac{\tau}{2}\right) \right] = \tau \frac{\sin(\omega \tau / 2)}{\omega \tau / 2} = 2 \frac{\sin(\omega \tau / 2)}{\omega}$$
+    
+- Setting $\tau / 2 = 1$ (i.e., $\tau = 2$) gives a pulse from $t = -1$ to $t = 1$:
+    
+      
+    
+    $$\mathcal{F}[u(t + 1) - u(t - 1)] = 2 \frac{\sin\omega}{\omega}$$
+    
+- Applying the **duality property** of the Fourier transform ($\mathcal{F}\{X(t)\} = 2\pi x(-\omega)$):
+    
+      
+    
+    $$\mathcal{F}\left[ 2 \frac{\sin t}{t} \right] = 2\pi [u(-\omega + 1) - u(-\omega - 1)]$$
+    
+- Because the rectangular gate function is symmetric/even, $[u(-\omega + 1) - u(-\omega - 1)] = [u(\omega + 1) - u(\omega - 1)]$:
+    
+      
+    
+    $$\mathcal{F}\left[ 2 \frac{\sin t}{t} \right] = 2\pi [u(\omega + 1) - u(\omega - 1)]$$
+    
+- Dividing both sides by $2$:
+    
+    $$\mathcal{F}\left[ \frac{\sin t}{t} \right] = \pi [u(\omega + 1) - u(\omega - 1)]$$
 ### 5.1. Differentiation Property & Fourier Transform of $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$
 
 Given that $\frac{dx(t)}{dt} \Leftrightarrow j\omega X(\omega)$ and $\text{sgn}(t) = \begin{cases} 1, & t > 0 \\ -1, & t < 0 \end{cases}$, show that $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$.$

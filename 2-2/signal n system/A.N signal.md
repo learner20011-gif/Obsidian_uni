@@ -4,6 +4,7 @@
 
 ![[Pasted image 20261003172933.png]]
 
+![[Pasted image 20261003175017.png]]
 ### ROC curve
  ![[Pasted image 20261003091206.png]]
  ![[Pasted image 20261003091728.png]]
