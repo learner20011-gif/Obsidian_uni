@@ -1,12 +1,5 @@
  
  ![[Pasted image 20261003072613.png]]
- ![[Pasted image 20261003123308.png]]
-
-![[Pasted image 20261003172933.png]]
-
-![[Pasted image 20261003175017.png]]
-
-![[Pasted image 20261003181806.png]]
 
 ### ROC curve
  ![[Pasted image 20261003091206.png]]
@@ -15,6 +8,19 @@
 ![[Pasted image 20261003092943.png]]
 
 ![[Pasted image 20261003094850.png]]
+
+ ### fourier
+ ![[Pasted image 20261003123308.png]]
+
+![[Pasted image 20261003172933.png]]
+
+![[Pasted image 20261003175017.png]]
+
+![[Pasted image 20261003181806.png]]
+
+![[Pasted image 20261003194227.png]]
+![[Pasted image 20261003200254.png]]
+
 
 ### Qna
 
@@ -327,3 +333,158 @@ $$\left\vert{}e^{j\omega t}\right\vert{} = \sqrt{\cos^2(\omega t) + \sin^2(\omeg
       
     
 - The Fourier transform exists if and only if the Laplace ROC contains the $j\omega$-axis.
+
+## 1. Fundamental Concepts and Dirichlet Conditions
+
+A periodic function $f(t)$ with fundamental period $T$ satisfies:
+
+  
+
+$$f(t + T) = f(t), \quad \forall t$$
+
+The fundamental angular frequency $\omega_0$ is defined as:
+
+  
+
+$$\omega_0 = \frac{2\pi}{T} = 2\pi f_0$$
+
+A function $f(t)$ can be expanded into a convergent Fourier series if it satisfies **Dirichlet's Conditions** over any period:
+
+  
+
+- $f(t)$ is absolutely integrable over the period $T$:
+    
+      
+    
+    $$\int_{t_0}^{t_0 + T} \vert{}f(t)\vert{}\, dt < \infty$$
+    
+- $f(t)$ has a finite number of finite maxima and minima within any single period.
+    
+      
+    
+- $f(t)$ has a finite number of jump discontinuities within any single period, with no infinite discontinuities.
+    
+      
+    
+
+## 2. Trigonometric Fourier Series (Standard Form)
+
+### General Period $T$ (Frequency $\omega_0 = \frac{2\pi}{T}$)
+
+The trigonometric expansion is given by:
+
+  
+
+$$f(t) = a_0 + \sum_{n=1}^{\infty} \left[ a_n \cos(n\omega_0 t) + b_n \sin(n\omega_0 t) \right]$$
+
+The Fourier coefficients are evaluated over any interval of length $T$ (typically $[0, T]$ or $[-T/2, T/2]$):
+
+  
+
+- **DC / Average Value:**
+    
+      
+    
+    $$a_0 = \frac{1}{T} \int_{0}^{T} f(t)\, dt$$
+    
+- **Cosine Coefficients:**
+    
+      
+    
+    $$a_n = \frac{2}{T} \int_{0}^{T} f(t) \cos(n\omega_0 t)\, dt, \quad n = 1, 2, 3, \dots$$
+    
+- **Sine Coefficients:**
+    
+      
+    
+    $$b_n = \frac{2}{T} \int_{0}^{T} f(t) \sin(n\omega_0 t)\, dt, \quad n = 1, 2, 3, \dots$$
+    
+
+_(Alternative convention: If defined as $f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty [a_n \cos(n\omega_0 t) + b_n \sin(n\omega_0 t)]$, then $a_0 = \frac{2}{T} \int_0^T f(t)\, dt$ is unified with the formula for $a_n$ at $n=0$.)_
+
+  
+## 3. Compact (Harmonic / Polar) Fourier Series
+
+The individual sine and cosine terms can be combined into single phase-shifted sinusoids:
+
+  
+
+### Cosine Form
+
+$$f(t) = a_0 + \sum_{n=1}^{\infty} A_n \cos(n\omega_0 t + \theta_n)$$
+
+or with phase delay:
+
+  
+
+$$f(t) = a_0 + \sum_{n=1}^{\infty} C_n \cos(n\omega_0 t - \phi_n)$$
+
+### Conversion Relations
+
+- **Harmonic Amplitude:**
+    
+      
+    
+    $$A_n = C_n = \sqrt{a_n^2 + b_n^2}$$
+    
+- **Phase Angles:**
+    
+      
+    
+    $$\theta_n = -\tan^{-1}\left(\frac{b_n}{a_n}\right) \quad \text{or} \quad \phi_n = \tan^{-1}\left(\frac{b_n}{a_n}\right) = -\theta_n$$
+    
+- **Inverse Relations:**
+    
+      
+    
+    $$a_n = A_n \cos\theta_n = C_n \cos\phi_n$$
+    
+    $$b_n = -A_n \sin\theta_n = C_n \sin\phi_n$$
+    
+
+## 4. Complex Exponential Fourier Series
+
+The most compact mathematical representation uses complex exponentials:
+
+  
+
+$$f(t) = \sum_{n=-\infty}^{\infty} c_n e^{j n \omega_0 t}$$
+
+### Coefficient Formula
+
+$$c_n = \frac{1}{T} \int_{-T/2}^{T/2} f(t) e^{-j n \omega_0 t}\, dt, \quad n = 0, \pm 1, \pm 2, \dots$$
+
+### Inter-conversion Between Forms
+
+For real-valued signals $f(t)$:
+
+  
+
+- $$c_0 = a_0$$
+    
+- $$c_n = \frac{1}{2}(a_n - j b_n) = \frac{1}{2} A_n e^{j \theta_n}, \quad n > 0$$
+    
+- $$c_{-n} = c_n^* = \frac{1}{2}(a_n + j b_n)$$
+    
+- $$a_n = 2 \operatorname{Re}(c_n) = c_n + c_{-n}$$
+    
+- $$b_n = -2 \operatorname{Im}(c_n) = j(c_n - c_{-n})$$
+    
+- $$\vert{}c_n\vert{} = \frac{1}{2} \sqrt{a_n^2 + b_n^2} = \frac{A_n}{2}, \quad \angle c_n = \theta_n$$
+    
+
+## 5. Waveform Symmetries and Simplifications
+
+Exploiting waveform symmetry halves integration intervals and eliminates entire sets of coefficients:
+
+  
+
+|**Symmetry Type**|**Condition**|**Coefficients**|**Notes**|
+|---|---|---|---|
+|**Even (Symmetric)**|$f(-t) = f(t)$|$b_n = 0$<br><br>  <br>  <br><br>$a_0 = \frac{2}{T}\int_0^{T/2} f(t)dt$<br><br>  <br>  <br><br>$a_n = \frac{4}{T}\int_0^{T/2} f(t)\cos(n\omega_0 t)dt$|Contains only cosine terms and DC.|
+|**Odd (Antisymmetric)**|$f(-t) = -f(t)$|$a_0 = 0$, $a_n = 0$<br><br>  <br>  <br><br>$b_n = \frac{4}{T}\int_0^{T/2} f(t)\sin(n\omega_0 t)dt$|Contains only sine terms (no DC component).|
+|**Half-Wave Symmetry (HWS)**|$f(t \pm T/2) = -f(t)$|$a_0 = 0$<br><br>  <br>  <br><br>$a_n = b_n = 0$ for **even** $n$<br><br>  <br>  <br><br>$a_n = \frac{4}{T}\int_0^{T/2} f(t)\cos(n\omega_0 t)dt$ ($n$ odd)<br><br>  <br>  <br><br>$b_n = \frac{4}{T}\int_0^{T/2} f(t)\sin(n\omega_0 t)dt$ ($n$ odd)|Contains **odd harmonics only** ($n = 1, 3, 5, \dots$).|
+|**Even Half-Wave**|Even + HWS|$a_n \neq 0$ for odd $n$ only<br><br>  <br>  <br><br>$b_n = 0$ for all $n$|$a_n = \frac{8}{T}\int_0^{T/4} f(t)\cos(n\omega_0 t)dt$ ($n$ odd)|
+|**Odd Half-Wave**|Odd + HWS|$b_n \neq 0$ for odd $n$ only<br><br>  <br>  <br><br>$a_n = 0$ for all $n$|$b_n = \frac{8}{T}\int_0^{T/4} f(t)\sin(n\omega_0 t)dt$ ($n$ odd)|
+|**Quarter-Wave Symmetry**|HWS + Even/Odd|Defined by symmetry about $T/4$.|Integrals only span $[0, T/4]$.|
+
