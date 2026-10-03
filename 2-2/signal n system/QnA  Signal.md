@@ -4797,47 +4797,190 @@ The final Fourier series for the output voltage $v_o(t)$ consists only of cosine
 ![[Pasted image 20260628170514.png]]
 **Detailed Answer:**
 
-The figure shows a periodic signal $f(t)$ consisting of a sequence of rectangular pulses.
-Let's define the parameters of the signal from the graph:
-1.  **Amplitude ($A$):** The height of the pulses is $A = 10$.
-2.  **Period ($T_0$):** The distance between the start of one pulse to the start of the next is from $t = -1$ to $t = 9$, or from $t = -11$ to $t = -1$. Therefore, the period is $T_0 = 10$.
-3.  **Pulse Width ($\tau$):** The pulse is "on" from $t = -1$ to $t = 1$. The width is $\tau = 1 - (-1) = 2$.
-4.  **Fundamental Angular Frequency ($\omega_0$):** $\omega_0 = \frac{2\pi}{T_0} = \frac{2\pi}{10} = \frac{\pi}{5}$ rad/s.
 
-The signal $f(t)$ is an even function since it is symmetric about the vertical axis ($f(t) = f(-t)$). This means its exponential Fourier series coefficients $D_n$ will be purely real.
+#### Step 1: Read the Waveform Values
 
-The formula for the exponential Fourier series coefficients is:
-$$D_n = \frac{1}{T_0} \int_{-T_0/2}^{T_0/2} f(t) e^{-jn\omega_0 t} dt$$
+- The pulse centered at $t = 0$ goes from $t = -1$ to $t = 1$.
+    
+      
+    
+- Therefore, the pulse width (duration) is:
+    
+      
+    
+    $$\tau = 1 - (-1) = 2$$
+    
+- The pulse repeats at $t = 10$ (centered from $9$ to $11$).
+    
+      
+    
+- The fundamental period is:
+    
+      
+    
+    $$T_0 = 10$$
+    
+- The peak height (amplitude) is:
+    
+      
+    
+    $$A = 10$$
+    
+- The fundamental frequency is:
+    
+      
+    
+    $$\omega_0 = \frac{2\pi}{T_0} = \frac{2\pi}{10} = \frac{\pi}{5} \text{ rad/s}$$
+    
+- Over one period from $t = -5$ to $t = 5$, the signal is written as:
+    
+      
+    
+    $$f(t) = \begin{cases} 10, & -1 < t < 1 \\ 0, & \text{otherwise} \end{cases}$$
+    
 
-We can integrate over one full period, for example from $-5$ to $5$. Within this interval, the signal is non-zero only from $-1$ to $1$.
-$$D_n = \frac{1}{10} \int_{-1}^{1} 10 \cdot e^{-jn\left(\frac{\pi}{5}\right)t} dt$$
-$$D_n = \int_{-1}^{1} e^{-jn\frac{\pi}{5}t} dt$$
+#### Step 2: Formula for Exponential Fourier Series ($D_n$)
 
-Let's evaluate the integral:
-$$D_n = \left[ \frac{e^{-jn\frac{\pi}{5}t}}{-jn\frac{\pi}{5}} \right]_{-1}^{1}$$
-$$D_n = \frac{e^{-jn\frac{\pi}{5}(1)} - e^{-jn\frac{\pi}{5}(-1)}}{-jn\frac{\pi}{5}}$$
-$$D_n = \frac{e^{-jn\frac{\pi}{5}} - e^{jn\frac{\pi}{5}}}{-jn\frac{\pi}{5}}$$
-Using Euler's formula, $\sin(x) = \frac{e^{jx} - e^{-jx}}{2j}$, which means $-2j \sin(x) = e^{-jx} - e^{jx}$:
-$$D_n = \frac{-2j \sin\left(n\frac{\pi}{5}\right)}{-jn\frac{\pi}{5}} = \frac{2\sin\left(n\frac{\pi}{5}\right)}{n\frac{\pi}{5}}$$
-To express this in a more standard form using the `sinc` function (where $\text{sinc}(x) = \frac{\sin(x)}{x}$ as defined in the textbook context):
-Multiply numerator and denominator by $\frac{1}{5}$:
-$$D_n = \frac{2}{5} \frac{\sin\left(n\frac{\pi}{5}\right)}{n\frac{\pi}{5}} = 0.4 \text{ sinc}\left(n\frac{\pi}{5}\right)$$
+- The exponential Fourier series is:
+    
+      
+    
+    $$f(t) = \sum_{n=-\infty}^{\infty} D_n e^{j n \omega_0 t}$$
+    
+- The formula to calculate the coefficient $D_n$ is:
+    
+      
+    
+    $$D_n = \frac{1}{T_0} \int_{-T_0/2}^{T_0/2} f(t) e^{-j n \omega_0 t}\, dt$$
+    
 
-Therefore, the exponential Fourier series is:
-$$f(t) = \sum_{n=-\infty}^{\infty} D_n e^{jn\omega_0 t}$$
-**$$f(t) = \sum_{n=-\infty}^{\infty} \left[ 0.4 \text{ sinc}\left(n\frac{\pi}{5}\right) \right] e^{jn\frac{\pi}{5}t}$$**
+#### Step 3: Calculate the DC Value ($D_0$)
 
-**Drawing the Spectrum:**
-The spectrum consists of lines at discrete frequencies $n\omega_0 = n\frac{\pi}{5}$ rad/s (or $nf_0 = \frac{n}{10}$ Hz).
-The envelope of the spectrum is a scaled sinc function: $0.4 \text{ sinc}\left(\frac{\omega\tau}{2}\right) = 0.4 \text{ sinc}\left(\frac{\omega(2)}{2}\right) = 0.4 \text{ sinc}(\omega)$.
-Since $D_n$ is real, we can plot it directly, noting that it can take negative values. A true amplitude spectrum $|D_n|$ would be strictly non-negative, with a corresponding phase spectrum having $\pi$ phase shifts where $D_n$ is negative.
-Let's find some key values for $D_n$:
-*   **DC component ($n=0$):** $D_0 = \frac{10 \times 2}{10} = 2$.
-*   **Zero crossings:** The sinc envelope is zero when the argument is a multiple of $\pi$ (excluding $0$). So, $n\frac{\pi}{5} = k\pi \implies n = 5k$. The coefficients are zero for $n = \pm 5, \pm 10, \pm 15, \dots$
-*   **First null bandwidth:** The first zero occurs at the 5th harmonic.
+- For $n = 0$:
+    
+      
+    
+    $$D_0 = \frac{1}{T_0} \int_{-T_0/2}^{T_0/2} f(t)\, dt$$
+    
+- Put the numbers into the integral:
+    
+      
+    
+    $$D_0 = \frac{1}{10} \int_{-1}^{1} 10\, dt = \frac{10}{10} \times [t]_{-1}^{1} = 1 \times (1 - (-1)) = 2$$
+    
+- So, the average (DC) value is:
+    
+      
+    
+    $$D_0 = 2$$
+    
 
-The spectrum plot is a series of discrete lines following a "sinc" shaped envelope. The central peak is at $D_0=2$. The lines are spaced apart by $\omega_0 = \pi/5$. Every 5th line is exactly zero.
+#### Step 4: Calculate the General Coefficient ($D_n$ for $n \neq 0$)
 
+- Put $f(t) = 10$ over the range $[-1, 1]$ into the formula:
+    
+      
+    
+    $$D_n = \frac{1}{10} \int_{-1}^{1} 10 e^{-j n \omega_0 t}\, dt = \int_{-1}^{1} e^{-j n \omega_0 t}\, dt$$
+    
+- Solve the simple integral:
+    
+      
+    
+    $$D_n = \left[ \frac{e^{-j n \omega_0 t}}{-j n \omega_0} \right]_{-1}^{1} = \frac{e^{-j n \omega_0} - e^{j n \omega_0}}{-j n \omega_0} = \frac{e^{j n \omega_0} - e^{-j n \omega_0}}{j n \omega_0}$$
+    
+- Use Euler's formula ($\sin\theta = \frac{e^{j\theta} - e^{-j\theta}}{2j}$):
+    
+      
+    
+    $$D_n = \frac{2j \sin(n \omega_0)}{j n \omega_0} = \frac{2 \sin(n \omega_0)}{n \omega_0}$$
+    
+- Now replace $\omega_0$ with $\frac{\pi}{5}$:
+    
+      
+    
+    $$D_n = \frac{2 \sin\left(\frac{n\pi}{5}\right)}{\frac{n\pi}{5}} = 2\,\text{sinc}\left(\frac{n}{5}\right)$$
+    
+    _(or equivalently: $D_n = \frac{10}{n\pi} \sin\left(\frac{n\pi}{5}\right)$)_
+    
+      
+    
+
+#### Step 5: Values of $D_n$ for the First Few Harmonics (Rewritten for Clarity)
+
+- Because the rectangular pulse $f(t)$ is symmetrical about the vertical axis ($f(-t) = f(t)$), its Fourier coefficients are purely real and even:
+    
+    $$D_{-n} = D_n$$
+    
+- Mathematically, using $\sin(-\theta) = -\sin(\theta)$:
+    
+    $$D_{-n} = \frac{10}{(-n)\pi} \sin\left(-\frac{n\pi}{5}\right) = \frac{-10}{-n\pi} \sin\left(\frac{n\pi}{5}\right) = D_n$$
+    
+- **Harmonic values:**
+    
+    - **$n = 0$:**
+        
+        $$D_0 = 2$$
+        
+    - **$n = \pm 1$:**
+        
+        $$D_1 = D_{-1} = \frac{10}{\pi} \sin\left(\frac{\pi}{5}\right) \approx 1.87$$
+        
+    - **$n = \pm 2$:**
+        
+        $$D_2 = D_{-2} = \frac{10}{2\pi} \sin\left(\frac{2\pi}{5}\right) \approx 1.51$$
+        
+    - **$n = \pm 3$:**
+        
+        $$D_3 = D_{-3} = \frac{10}{3\pi} \sin\left(\frac{3\pi}{5}\right) \approx 1.01$$
+        
+    - **$n = \pm 4$:**
+        
+        $$D_4 = D_{-4} = \frac{10}{4\pi} \sin\left(\frac{4\pi}{5}\right) \approx 0.47$$
+        
+    - **$n = \pm 5$:**
+        
+        $$D_5 = D_{-5} = \frac{10}{5\pi} \sin(\pi) = 0$$
+#### Step 6: Line Spectrum (How to Plot)
+
+The exponential line spectrum is two-sided (plotted for both positive and negative values of $n$ or $\omega$):
+
+  ![[Pasted image 20261003232516.png]]
+
+- **Amplitude Spectrum ($\vert{}D_n\vert{}$ versus $n\omega_0$):**
+    
+      
+    - It has vertical lines (bars) placed at $\omega = n\omega_0 = n \frac{\pi}{5}$ rad/s.
+        
+          
+        
+    - The heights of the bars follow a $\text{sinc}$ envelope curve with peak value $2$ at the center $\omega = 0$.
+        
+          
+        
+    - The bars cross zero at every multiple of $n = \pm 5, \pm 10, \pm 15, \dots$ (which means $\omega = \pm \pi, \pm 2\pi, \dots$).
+        
+          
+        
+    - The height values are symmetric:
+        
+          
+        
+        $$\vert{}D_0\vert{} = 2, \quad \vert{}D_{\pm 1}\vert{} \approx 1.87, \quad \vert{}D_{\pm 2}\vert{} \approx 1.51, \quad \vert{}D_{\pm 3}\vert{} \approx 1.01, \quad \vert{}D_{\pm 4}\vert{} \approx 0.47, \quad \vert{}D_{\pm 5}\vert{} = 0$$
+        
+- **Phase Spectrum ($\angle D_n$ versus $n\omega_0$):**
+    
+      
+    - Because the original signal $f(t)$ is an even function ($f(-t) = f(t)$), all $D_n$ values are purely real.
+        
+          
+        
+    - When $D_n > 0$, the phase angle is $\angle D_n = 0^\circ$.
+        
+          
+        
+    - When $D_n < 0$ (such as between $n = 6$ and $n = 9$), the phase angle is $\angle D_n = \pm 180^\circ$ (or $\pm \pi$ rad).
+    - 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series) – Section 17.6: Exponential Fourier Series, pg. 785-791.*
 
 *BP Lathi Topic Location: Chapter 6, Section 6.3: Exponential Fourier Series, pp. 621–631.*
