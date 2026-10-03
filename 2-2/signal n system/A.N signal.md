@@ -1,3 +1,11 @@
+ 
+ ![[Pasted image 20261003072613.png]]
+ 
+ 
+ 
+ 
+ 
+ 
  ## Atomic Notes: Periodicity of Continuous-Time Signals
  
 ## Periodicity of Summed Signals
@@ -142,3 +150,8 @@ A signal is bounded if its amplitude always remains finite.
     
 
 > **Exam Definition:** A system is BIBO stable if and only if every bounded input produces a bounded output for all time.
+
+---
+
+
+$$\left\vert{}e^{j\omega t}\right\vert{} = \sqrt{\cos^2(\omega t) + \sin^2(\omega t)} = 1$$

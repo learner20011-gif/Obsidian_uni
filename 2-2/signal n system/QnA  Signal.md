@@ -1828,7 +1828,7 @@ It is a staircase-like pulse composed of two rectangular segments.
 **Detailed Answer:**
 
 The given figure shows a periodic signal $h(t)$. It's a triangular wave that oscillates between an amplitude of $1$ and $3$, with a period $T = 2$.
-Since it is a periodic function, its Laplace transform $H(s)$ can be found using the formula for periodic signals:
+he formula for periodic signals:
 $$H(s) = \frac{H_1(s)}{1 - e^{-sT}}$$
 where $H_1(s)$ is the Laplace transform of the first period of the signal, and $T$ is the fundamental period. Here, $T=2$.
 
