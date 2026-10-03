@@ -2107,6 +2107,7 @@ $$f(t) = 50 \cos(\omega t) u(t)$$
 #### Final Answer 2
 
 $$\mathcal{L}[50 \cos(\omega t) u(t)] = \frac{50s}{s^2 + \omega^2}$$
+
 ### Question 1 (Example 15.7)
 
 Find the initial and final values of the function whose Laplace transform is:
