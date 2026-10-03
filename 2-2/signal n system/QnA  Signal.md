@@ -4706,6 +4706,189 @@ In textbook convention ($A_n \angle \phi_n = a_n - jb_n$):
         $$A_6 = \frac{1}{6\pi} \approx \frac{1}{18.85} \approx 0.053 \approx 0.05$$
         
         $$\phi_6 = 90^\circ$$
+### Question Let the function $f(t)$ in Example 17.1 be the voltage source $v_s(t)$ in the circuit of Fig. 17.20. Find the response $v_o(t)$ of the circuit.
+
+  
+![[Pasted image 20261004000911.png]]
+#### Step 1: Write Down the Input Voltage $v_s(t)$
+
+- From Example 17.1, the periodic input voltage is:
+    
+      
+    
+    $$v_s(t) = \frac{1}{2} + \frac{2}{\pi}\sum_{k=1}^{\infty} \frac{1}{n}\sin(n\pi t), \quad n = 2k - 1$$
+    
+- This series has:
+    
+      
+    - A DC (constant) component: $V_{\text{dc}} = \frac{1}{2}\text{ V}$
+        
+          
+        
+          
+        
+    - Odd harmonics only ($n = 1, 3, 5, \dots$)
+        
+          
+        
+    - Fundamental angular frequency: $\omega_0 = \pi\text{ rad/s}$
+        
+          
+        
+          
+        
+    - Harmonic frequency: $\omega_n = n\omega_0 = n\pi\text{ rad/s}$
+        
+          
+        
+          
+        
+
+#### Step 2: Set Up Circuit Transfer Function by Voltage Division
+
+- The circuit is a series connection of a resistor $R = 5\,\Omega$ and an inductor $L = 2\text{ H}$.
+    
+      
+    
+- The impedance of the resistor is $Z_R = R = 5\,\Omega$.
+    
+      
+    
+- The impedance of the inductor at frequency $\omega_n$ is $Z_L = j\omega_n L = j(n\pi)(2) = j 2n\pi\,\Omega$.
+    
+      
+    
+- Using the voltage divider rule across the inductor:
+    
+      
+    
+    $$\mathbf{V}_o = \frac{Z_L}{R + Z_L} \mathbf{V}_s = \frac{j\omega_n L}{R + j\omega_n L}\mathbf{V}_s = \frac{j 2n\pi}{5 + j 2n\pi}\mathbf{V}_s$$
+    
+
+#### Step 3: DC Response ($n = 0$)
+
+- At DC, the frequency is $\omega = 0$.
+    
+      
+    
+- The impedance of the inductor becomes zero ($Z_L = j(0)L = 0\,\Omega$), which means the inductor acts as a short circuit.
+    
+      
+    
+- Therefore, the DC output voltage is zero:
+    
+      
+    
+    $$\mathbf{V}_s = \frac{1}{2} \implies \mathbf{V}_o = 0\text{ V}$$
+    
+
+#### Step 4: AC Response for Harmonics ($n = 1, 3, 5, \dots$)
+
+- Convert the sine terms of the source into cosine phasor form:
+    
+      
+    
+    $$\sin(n\pi t) = \cos(n\pi t - 90^\circ)$$
+    
+- Therefore, the phasor representation for the $n$-th harmonic source is:
+    
+      
+    
+    $$\mathbf{V}_s = \frac{2}{n\pi}\angle -90^\circ\text{ V}$$
+    
+- Convert each part of the voltage divider ratio into polar form:
+    
+      
+    - Numerator:
+        
+          
+        
+        $$j 2n\pi = 2n\pi\angle 90^\circ$$
+        
+    - Denominator:
+        
+          
+        
+        $$5 + j 2n\pi = \sqrt{5^2 + (2n\pi)^2}\angle \tan^{-1}\left(\frac{2n\pi}{5}\right) = \sqrt{25 + 4n^2\pi^2}\angle \tan^{-1}\left(\frac{2n\pi}{5}\right)$$
+        
+- Multiply by $\mathbf{V}_s$ to find the output phasor $\mathbf{V}_o$:
+    
+      
+    
+    $$\mathbf{V}_o = \left[ \frac{2n\pi\angle 90^\circ}{\sqrt{25 + 4n^2\pi^2}\angle \tan^{-1}\left(\frac{2n\pi}{5}\right)} \right] \left( \frac{2}{n\pi}\angle -90^\circ \right)$$
+    
+- Notice that the terms $n\pi$ cancel out, and the angles $90^\circ + (-90^\circ) = 0^\circ$ cancel out:
+    
+      
+    
+    $$\mathbf{V}_o = \frac{4}{\sqrt{25 + 4n^2\pi^2}} \angle -\tan^{-1}\left(\frac{2n\pi}{5}\right)\text{ V}$$
+    
+
+#### Step 5: Convert Back to Time Domain $v_o(t)$
+
+- Combining all harmonic components, the total steady-state output voltage is:
+    
+      
+    
+    $$v_o(t) = \sum_{k=1}^{\infty} \frac{4}{\sqrt{25 + 4n^2\pi^2}} \cos\left(n\pi t - \tan^{-1}\left(\frac{2n\pi}{5}\right)\right)\text{ V}, \quad n = 2k - 1$$
+    
+
+#### Step 6: Numerical Values for the First Three Harmonics
+![[Pasted image 20261004001021.png]]
+- **For $n = 1$ ($k = 1$):**
+    
+      
+    
+      
+    - Amplitude:
+        
+          
+        
+        $$\frac{4}{\sqrt{25 + 4(1)^2\pi^2}} = \frac{4}{\sqrt{25 + 39.478}} = \frac{4}{\sqrt{64.478}} \approx 0.4981\text{ V}$$
+        
+    - Phase:
+        
+          
+        
+        $$-\tan^{-1}\left(\frac{2\pi}{5}\right) = -\tan^{-1}(1.2566) \approx -51.49^\circ$$
+        
+- **For $n = 3$ ($k = 2$):**
+    
+      
+    
+      
+    - Amplitude:
+        
+          
+        
+        $$\frac{4}{\sqrt{25 + 4(3)^2\pi^2}} = \frac{4}{\sqrt{25 + 355.31}} = \frac{4}{\sqrt{380.31}} \approx 0.2051\text{ V}$$
+        
+    - Phase:
+        
+          
+        
+        $$-\tan^{-1}\left(\frac{6\pi}{5}\right) = -\tan^{-1}(3.7699) \approx -75.14^\circ$$
+        
+- **For $n = 5$ ($k = 3$):**
+    
+      
+    
+      
+    - Amplitude:
+        
+          
+        
+        $$\frac{4}{\sqrt{25 + 4(5)^2\pi^2}} = \frac{4}{\sqrt{25 + 986.96}} = \frac{4}{\sqrt{1011.96}} \approx 0.1257\text{ V}$$
+        
+    - Phase:
+        
+          
+        
+        $$-\tan^{-1}\left(\frac{10\pi}{5}\right) = -\tan^{-1}(2\pi) = -\tan^{-1}(6.2832) \approx -80.96^\circ$$
+        
+- Writing the sum of the first three terms:
+    
+    $$v_o(t) = 0.4981\cos(\pi t - 51.49^\circ) + 0.2051\cos(3\pi t - 75.14^\circ) + 0.1257\cos(5\pi t - 80.96^\circ) + \dots\text{ V}$$
 ### 6.1. Fourier Series of $v_o(t)$ in Active Filter Circuit for Square Wave Input (Figure involved)
 ![[Pasted image 20260628170311.png]]
 **Detailed Answer:**
