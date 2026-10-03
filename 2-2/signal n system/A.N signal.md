@@ -11,7 +11,7 @@
 ![[Pasted image 20261003094850.png]]
 
 ### Qna
-
+![[Screenshot_20261003-123515_WPS Office.png]]
 
  #### Direct Jump Rule for $h(t)$
 ![[Pasted image 20260628100445.png]]
