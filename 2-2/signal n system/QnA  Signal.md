@@ -3455,6 +3455,188 @@ This can be solved using three distinct methods:
 - Dividing both sides by $2$:
     
     $$\mathcal{F}\left[ \frac{\sin t}{t} \right] = \pi [u(\omega + 1) - u(\omega - 1)]$$
+### Example 18.5: Question and Complete Solution
+![[Pasted image 20261003181851.png]]
+- **Problem Statement:**
+    
+      
+    - Find the Fourier transform of the triangular function $f(t)$ shown in Fig. 18.14.
+        
+          
+        
+    - The signal is defined piecewise as:
+        
+          
+        
+        $$f(t) = \begin{cases} 1 + t, & -1 < t < 0 \\ 1 - t, & 0 < t < 1 \\ 0, & \text{otherwise} \end{cases}$$
+        
+- **Step 1: First Derivative of $f(t)$**
+    
+      
+    - Differentiating the piecewise linear segments gives the rectangular pulses shown in Fig. 18.15(a):
+        
+          
+        
+        $$f'(t) = \begin{cases} 1, & -1 < t < 0 \\ -1, & 0 < t < 1 \end{cases}$$
+        
+- **Step 2: Second Derivative of $f(t)$**
+    
+      
+    - Taking the derivative of the step discontinuities in $f'(t)$ produces Dirac delta impulses at each jump discontinuity, as shown in Fig. 18.15(b):
+        
+          
+        - At $t = -1$, a jump from $0$ to $+1 \implies +\delta(t + 1)$.
+            
+              
+            
+        - At $t = 0$, a jump from $+1$ to $-1 \implies -2\delta(t)$.
+            
+              
+            
+        - At $t = 1$, a jump from $-1$ to $0 \implies +\delta(t - 1)$.
+            
+              
+            
+    - Combining these gives the second derivative:
+        
+          
+        
+        $$f''(t) = \delta(t + 1) - 2\delta(t) + \delta(t - 1)$$
+        
+- **Step 3: Applying the Differentiation Property**
+    
+      
+    - Applying the Fourier transform property $\mathcal{F}\{f''(t)\} = (j\omega)^2 F(\omega)$:
+        
+          
+        
+        $$(j\omega)^2 F(\omega) = \mathcal{F}\{\delta(t + 1) - 2\delta(t) + \delta(t - 1)\} = e^{j\omega} - 2 + e^{-j\omega}$$
+        
+    - Using Euler's identity, $e^{j\omega} + e^{-j\omega} = 2\cos\omega$:
+        
+          
+        
+        $$(j\omega)^2 F(\omega) = -2 + 2\cos\omega = -2(1 - \cos\omega)$$
+        
+    - Since $(j\omega)^2 = -\omega^2$:
+        
+          
+        
+        $$-\omega^2 F(\omega) = -2(1 - \cos\omega) \implies F(\omega) = \frac{2(1 - \cos\omega)}{\omega^2}$$
+        
+
+### ✅Practice Problem 18.5: Question and Step-by-Step Derivation
+
+- **Problem Statement:**
+    ![[Pasted image 20261003181821.png]]
+      
+    - Determine the Fourier transform of the function shown in Fig. 18.16.
+        
+          
+        
+    - The waveform consists of two symmetric triangular pulses of height $5$ and base width $2$:
+        
+          
+        - A triangle centered at $t = -3$, spanning from $t = -4$ to $t = -2$.
+            
+              
+            
+        - A triangle centered at $t = 3$, spanning from $t = 2$ to $t = 4$.
+            
+              
+            
+- **Step 1: First Derivative of the Two Triangular Pulses**
+    
+      
+    - Slopes of the triangle centered at $t = -3$:
+        
+          
+        - From $t = -4$ to $t = -3$: slope is $\frac{5 - 0}{-3 - (-4)} = +5$.
+            
+              
+            
+        - From $t = -3$ to $t = -2$: slope is $\frac{0 - 5}{-2 - (-3)} = -5$.
+            
+              
+            
+    - Slopes of the triangle centered at $t = 3$:
+        
+          
+        - From $t = 2$ to $t = 3$: slope is $\frac{5 - 0}{3 - 2} = +5$.
+            
+              
+            
+        - From $t = 3$ to $t = 4$: slope is $\frac{0 - 5}{4 - 3} = -5$.
+            
+              
+            
+- **Step 2: Second Derivative of the Function**
+    
+      
+    - Differentiating the piecewise constant derivative $f'(t)$ yields Dirac delta impulses at each slope change:
+        
+          
+        - At $t = -4$: slope jumps from $0$ to $+5 \implies +5\delta(t + 4)$.
+            
+              
+            
+        - At $t = -3$: slope jumps from $+5$ to $-5 \implies -10\delta(t + 3)$.
+            
+              
+            
+        - At $t = -2$: slope jumps from $-5$ to $0 \implies +5\delta(t + 2)$.
+            
+              
+            
+        - At $t = 2$: slope jumps from $0$ to $+5 \implies +5\delta(t - 2)$.
+            
+              
+            
+        - At $t = 3$: slope jumps from $+5$ to $-5 \implies -10\delta(t - 3)$.
+            
+              
+            
+        - At $t = 4$: slope jumps from $-5$ to $0 \implies +5\delta(t - 4)$.
+            
+              
+            
+    - Expressing $f''(t)$ as the sum of all impulses:
+        
+          
+        
+        $$f''(t) = 5\delta(t + 4) - 10\delta(t + 3) + 5\delta(t + 2) + 5\delta(t - 2) - 10\delta(t - 3) + 5\delta(t - 4)$$
+        
+- **Step 3: Fourier Transform Using the Differentiation Property**
+    
+      
+    - Applying the Fourier transform property $(j\omega)^2 F(\omega) = \mathcal{F}\{f''(t)\}$:
+        
+          
+        
+        $$-\omega^2 F(\omega) = 5e^{j4\omega} - 10e^{j3\omega} + 5e^{j2\omega} + 5e^{-j2\omega} - 10e^{-j3\omega} + 5e^{-j4\omega}$$
+        
+    - Grouping the complex conjugate pairs:
+        
+          
+        
+        $$-\omega^2 F(\omega) = 5(e^{j4\omega} + e^{-j4\omega}) - 10(e^{j3\omega} + e^{-j3\omega}) + 5(e^{j2\omega} + e^{-j2\omega})$$
+        
+    - Applying Euler's formula $e^{j\theta} + e^{-j\theta} = 2\cos\theta$:
+        
+          
+        
+        $$-\omega^2 F(\omega) = 5(2\cos 4\omega) - 10(2\cos 3\omega) + 5(2\cos 2\omega)$$
+        
+        $$-\omega^2 F(\omega) = 10\cos 4\omega - 20\cos 3\omega + 10\cos 2\omega$$
+        
+- **Step 4: Solving for $F(\omega)$**
+    
+      
+    - Multiplying both sides by $-1$ and dividing by $\omega^2$:
+        
+          
+        
+        $$F(\omega) = \frac{20\cos 3\omega - 10\cos 4\omega - 10\cos 2\omega}{\omega^2}$$
 ### 5.1. Differentiation Property & Fourier Transform of $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$
 
 Given that $\frac{dx(t)}{dt} \Leftrightarrow j\omega X(\omega)$ and $\text{sgn}(t) = \begin{cases} 1, & t > 0 \\ -1, & t < 0 \end{cases}$, show that $\text{sgn}(t) \Leftrightarrow \frac{2}{j\omega}$.$
@@ -3628,7 +3810,185 @@ In practical terms, whenever we truncate a signal in time (applying a window), w
 ### 5.5. ✅Find and Draw Fourier Transform of Truncated Sine-Wave Pulse (Figure involved)
 ![[Pasted image 20260628100321.png]]
 **Detailed Answer:**
+#### Problem Definition and Function Formula
 
+- **Waveform Characteristics:**
+    
+      
+    - The signal $f(t)$ is one complete cycle of a sine wave starting at $t = 0$ and ending at $t = 2$.
+        
+          
+        
+    - Amplitude: Peak value is $+1$ and minimum value is $-1$.
+        
+          
+        
+    - Period: One full period $T = 2$.
+        
+          
+        
+    - Fundamental angular frequency:
+        
+          
+        
+        $$\omega_0 = \frac{2\pi}{T} = \frac{2\pi}{2} = \pi \text{ rad/s}$$
+        
+- **Mathematical Definition:**
+    
+      
+    
+    $$f(t) = \begin{cases} \sin(\pi t), & 0 \le t \le 2 \\ 0, & \text{otherwise} \end{cases}$$
+    
+
+#### Step 1: Set Up the Fourier Transform Integral
+
+- The continuous-time Fourier transform is given by:
+    
+      
+    
+    $$F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-j\omega t} \, dt$$
+    
+- Substituting $f(t) = \sin(\pi t)$ over the non-zero interval $[0, 2]$:
+    
+      
+    
+    $$F(\omega) = \int_{0}^{2} \sin(\pi t) e^{-j\omega t} \, dt$$
+    
+
+#### Step 2: Express $\sin(\pi t)$ Using Euler's Identity
+
+- Substitute $\sin(\pi t) = \dfrac{e^{j\pi t} - e^{-j\pi t}}{2j}$:
+    
+      
+    
+    $$F(\omega) = \int_{0}^{2} \left( \frac{e^{j\pi t} - e^{-j\pi t}}{2j} \right) e^{-j\omega t} \, dt$$
+    
+    $$F(\omega) = \frac{1}{2j} \int_{0}^{2} \left[ e^{-j(\omega - \pi)t} - e^{-j(\omega + \pi)t} \right] dt$$
+    
+
+#### Step 3: Evaluate the Definite Integrals
+
+- Integrating each exponential term:
+    
+      
+    
+    $$\int_{0}^{2} e^{-j(\omega - \pi)t} \, dt = \left[ \frac{e^{-j(\omega - \pi)t}}{-j(\omega - \pi)} \right]_{0}^{2} = \frac{e^{-j2(\omega - \pi)} - 1}{-j(\omega - \pi)} = \frac{1 - e^{-j2(\omega - \pi)}}{j(\omega - \pi)}$$
+    
+    $$\int_{0}^{2} e^{-j(\omega + \pi)t} \, dt = \left[ \frac{e^{-j(\omega + \pi)t}}{-j(\omega + \pi)} \right]_{0}^{2} = \frac{e^{-j2(\omega + \pi)} - 1}{-j(\omega + \pi)} = \frac{1 - e^{-j2(\omega + \pi)}}{j(\omega + \pi)}$$
+    
+- Simplify the exponential terms using $e^{\pm j2\pi} = 1$:
+    
+      
+    
+    $$e^{-j2(\omega - \pi)} = e^{-j2\omega} \cdot e^{j2\pi} = e^{-j2\omega} \cdot 1 = e^{-j2\omega}$$
+    
+    $$e^{-j2(\omega + \pi)} = e^{-j2\omega} \cdot e^{-j2\pi} = e^{-j2\omega} \cdot 1 = e^{-j2\omega}$$
+    
+- Substitute these back into the integral expressions:
+    
+      
+    
+    $$\int_{0}^{2} e^{-j(\omega - \pi)t} \, dt = \frac{1 - e^{-j2\omega}}{j(\omega - \pi)}$$
+    
+    $$\int_{0}^{2} e^{-j(\omega + \pi)t} \, dt = \frac{1 - e^{-j2\omega}}{j(\omega + \pi)}$$
+    
+
+#### Step 4: Combine and Simplify the Terms
+
+- Substituting back into the expression for $F(\omega)$:
+    
+      
+    
+    $$F(\omega) = \frac{1}{2j} \left[ \frac{1 - e^{-j2\omega}}{j(\omega - \pi)} - \frac{1 - e^{-j2\omega}}{j(\omega + \pi)} \right]$$
+    
+- Factor out $\dfrac{1 - e^{-j2\omega}}{j}$:
+    
+      
+    
+    $$F(\omega) = \frac{1 - e^{-j2\omega}}{2j^2} \left[ \frac{1}{\omega - \pi} - \frac{1}{\omega + \pi} \right]$$
+    
+- Since $j^2 = -1$:
+    
+      
+    
+    $$F(\omega) = -\frac{1 - e^{-j2\omega}}{2} \left[ \frac{(\omega + \pi) - (\omega - \pi)}{(\omega - \pi)(\omega + \pi)} \right] = -\frac{1 - e^{-j2\omega}}{2} \left[ \frac{2\pi}{\omega^2 - \pi^2} \right]$$
+    
+    $$F(\omega) = \frac{\pi (1 - e^{-j2\omega})}{\pi^2 - \omega^2}$$
+    
+
+#### Step 5: Convert to Sinc / Magnitude Form
+
+- Factor out the center phase delay $e^{-j\omega}$:
+    
+      
+    
+    $$1 - e^{-j2\omega} = e^{-j\omega} (e^{j\omega} - e^{-j\omega}) = e^{-j\omega} (2j \sin\omega) = 2j e^{-j\omega} \sin\omega$$
+    
+- Substitute this into $F(\omega)$:
+    
+      
+    
+    $$F(\omega) = \frac{2\pi j e^{-j\omega} \sin\omega}{\pi^2 - \omega^2} = \frac{2\pi \sin\omega}{\pi^2 - \omega^2} e^{-j(\omega - \pi/2)}$$
+    
+
+#### Step 6: Key Points for Drawing the Spectrum
+
+- **Magnitude Spectrum $\vert{}F(\omega)\vert{}$:**
+    
+      
+    
+    $$\vert{}F(\omega)\vert{} = \left\vert{} \frac{2\pi \sin\omega}{\pi^2 - \omega^2} \right\vert{}$$
+    
+    - At $\omega = 0$:
+        
+          
+        
+        $$\vert{}F(0)\vert{} = \frac{2\pi \cdot 0}{\pi^2} = 0$$
+        
+    - At $\omega = \pm \pi$ (evaluating using L'Hôpital's Rule):
+        
+          
+        
+        $$\lim_{\omega \to \pi} \frac{2\pi \sin\omega}{\pi^2 - \omega^2} = \lim_{\omega \to \pi} \frac{2\pi \cos\omega}{-2\omega} = \frac{2\pi (-1)}{-2\pi} = 1$$
+        
+        - Thus, the two main spectral peaks occur symmetrically at $\omega = \pm \pi$ with a peak value of $1$.
+            
+              
+            
+    - Zero Crossings:
+        
+          
+        - Occur when $\sin\omega = 0$ for $\omega \ne \pm \pi$, which means $\omega = \pm 2\pi, \pm 3\pi, \pm 4\pi, \dots$
+            
+              
+            
+- **Sketch Guidelines for $\vert{}F(\omega)\vert{}$ and $\angle F(\omega)$:**
+    
+      
+    - **$\vert{}F(\omega)\vert{}$ Plot:**
+        
+          
+        - Draw the horizontal axis $\omega$ and vertical axis $\vert{}F(\omega)\vert{}$.
+            
+              
+            
+        - Starts at $0$ at the origin ($\omega = 0$).
+            
+              
+            
+        - Rises smoothly to reach two symmetric primary lobes with peaks of height $1$ at $\omega = \pi$ and $\omega = -\pi$.
+            
+              
+            
+        - Crosses zero at $\omega = \pm 2\pi, \pm 3\pi, \dots$ with diminishing sidelobes between successive multiples of $\pi$.
+            
+              
+            
+    - **$\angle F(\omega)$ (Phase) Plot:**
+        
+          
+        - Determined by the linear phase slope $-\omega + \frac{\pi}{2}$ combined with sign inversions ($\pm \pi$ jumps) at the zero-crossing points.
+#### Another method
 **1. Define the Signal Mathematically:**
 The figure displays a single full cycle of a sine wave.
 *   It starts at $t = 0$ and ends at $t = 2$.
