@@ -3455,7 +3455,7 @@ This can be solved using three distinct methods:
 - Dividing both sides by $2$:
     
     $$\mathcal{F}\left[ \frac{\sin t}{t} \right] = \pi [u(\omega + 1) - u(\omega - 1)]$$
-### Example 18.5: Question and Complete Solution
+### Example 18.5: ✅Question and Complete Solution
 ![[Pasted image 20261003181851.png]]
 - **Problem Statement:**
     
