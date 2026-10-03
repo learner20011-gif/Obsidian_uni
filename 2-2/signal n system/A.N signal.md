@@ -183,3 +183,127 @@ A signal is bounded if its amplitude always remains finite.
 
 
 $$\left\vert{}e^{j\omega t}\right\vert{} = \sqrt{\cos^2(\omega t) + \sin^2(\omega t)} = 1$$
+
+### Bilateral Laplace Transform & Convergence Basics
+
+#### Core Definition & Role of $\sigma$
+
+- The bilateral Laplace transform converts a continuous-time signal into the complex frequency domain via $X(s) = \int_{-\infty}^{\infty} x(t) e^{-st} \, dt$.
+    
+      
+    
+- The complex variable is defined as $s = \sigma + j\omega$, splitting the transform into an attenuation factor $e^{-\sigma t}$ and an oscillation factor $e^{-j\omega t}$.
+    
+      
+    
+- Signals that blow up or fail Dirichlet conditions for Fourier analysis can converge if the real damping factor $\sigma = \text{Re}\{s\}$ neutralizes their growth.
+    
+      
+    
+- Because $\vert{}e^{-j\omega t}\vert{} = 1$, convergence depends strictly on $\sigma$ satisfying $\int_{-\infty}^{\infty} \vert{}x(t) e^{-\sigma t}\vert{} \, dt < \infty$.
+    
+      
+    
+
+#### Region of Convergence (ROC)
+
+- The ROC defines the set of all values of $s$ in the complex plane for which the Laplace integral converges.
+    
+      
+    
+- Two distinct time-domain signals can share the identical algebraic expression $X(s)$; the ROC uniquely specifies the inverse transform.
+    
+      
+    
+- The ROC forms vertical strips or half-planes parallel to the $j\omega$-axis because convergence is independent of $\omega$.
+    
+      
+    
+- No poles can exist within an ROC because the integral diverges to infinity at a pole.
+    
+      
+    
+
+### Signal Classification & ROC Geometry
+
+#### Right-Sided Signals ($t \to +\infty$)
+
+- A causal or right-sided signal is zero prior to a starting point, represented fundamentally by $x(t) = e^{at}u(t)$.
+    
+      
+    
+- Computing the integral yields $X(s) = \left[ \frac{e^{-(s-a)t}}{-(s-a)} \right]_{0}^{\infty} = \frac{1}{s-a} - \lim_{t \to \infty} \frac{e^{-(\sigma-a)t}e^{-j\omega t}}{s-a}$.
+    
+      
+    
+- For the limit at $t \to \infty$ to vanish, the real exponent must be negative: $-(\sigma - a) < 0 \implies \sigma > a$.
+    
+      
+    
+- This produces a lower bound and a right-half plane ROC: $\text{Re}\{s\} > \sigma_R$.
+    
+      
+    
+
+#### Left-Sided Signals ($t \to -\infty$)
+
+- An anti-causal or left-sided signal extends into the past, modeled as $x(t) = -e^{at}u(-t)$.
+    
+      
+    
+- Substituting $\tau = -t$ maps the past to $+\infty$, leading to $X(s) = -\int_{0}^{\infty} e^{(s-a)\tau} \, d\tau = \frac{1}{s-a} - \lim_{\tau \to \infty} \frac{e^{(\sigma-a)\tau}e^{j\omega \tau}}{s-a}$.
+    
+      
+    
+- For the limit at $\tau \to \infty$ to vanish, the growth rate must dominate $\sigma$: $(\sigma - a) < 0 \implies \sigma < a$.
+    
+      
+    
+- This produces an upper bound and a left-half plane ROC: $\text{Re}\{s\} < \sigma_L$.
+    
+      
+    
+
+#### Two-Sided & Finite Signals
+
+- A two-sided signal is the sum of causal and anti-causal parts: $x(t) = x_R(t) + x_L(t)$.
+    
+      
+    
+- Its total ROC is the intersection $\text{ROC}_R \cap \text{ROC}_L$, forming an open vertical strip $\sigma_R < \text{Re}\{s\} < \sigma_L$ bounded by poles.
+    
+      
+    
+- If $\sigma_R > \sigma_L$, no overlapping region exists, and the bilateral Laplace transform does not exist for the signal.
+    
+      
+    
+- Finite-duration signals converge everywhere over the finite integration interval, giving an ROC of the entire $s$-plane (excluding possibly $s = \pm\infty$).
+    
+      
+    
+
+### Stability & Transform Relationships
+
+#### System Stability (BIBO)
+
+- An LTI system is bounded-input bounded-output (BIBO) stable if and only if its impulse response $h(t)$ is absolutely integrable.
+    
+      
+    
+- In the complex $s$-plane, absolute integrability occurs if and only if the ROC of the transfer function $H(s)$ includes the imaginary axis ($\text{Re}\{s\} = 0$).
+    
+      
+    
+- For causal LTI systems, stability requires all system poles to lie strictly in the open left-half plane ($\text{Re}\{p_k\} < 0$).
+    
+      
+    
+
+#### Relationship to Fourier Transform
+
+- When $\sigma = 0$ ($s = j\omega$), the damping factor becomes $e^0 = 1$, reducing the Laplace transform directly to the continuous-time Fourier transform.
+    
+      
+    
+- The Fourier transform exists if and only if the Laplace ROC contains the $j\omega$-axis.

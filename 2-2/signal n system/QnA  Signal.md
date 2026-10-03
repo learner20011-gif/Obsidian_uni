@@ -2232,7 +2232,7 @@ This intersection represents a vertical strip in the s-plane between $\sigma = b
 
 ***
 
-### 4.9. Pg 36, CT-3 Q1: Laplace Transform of Trapezoidal Pulse via Differentiation Property (Figure involved)
+### 4.9. ✅Pg 36, CT-3 Q1: Laplace Transform of Trapezoidal Pulse via Differentiation Property (Figure involved)
 ![[Pasted image 20260712005827.png]]
 
 **Figure Description:**
