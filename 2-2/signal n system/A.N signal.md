@@ -10,6 +10,7 @@
 
 ![[Pasted image 20261003094850.png]]
 
+### Qna
 
 
  #### Direct Jump Rule for $h(t)$
