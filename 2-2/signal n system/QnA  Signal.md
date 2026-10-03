@@ -1870,6 +1870,460 @@ $$\mathcal{L}\{f_2(t)\} = \frac{B}{s + j\omega}, \quad \text{ROC: } \text{Re}\{s
 
 ---
 
+### Question Determine the Laplace transform of the function:
+
+  
+
+$$f(t) = t^2 \sin(2t) u(t)$$
+
+  
+
+#### Solution
+
+- **Base Transform:** Recall the standard one-sided Laplace transform for $\sin(\omega t) u(t)$:
+    
+      
+    
+    $$\mathcal{L}[\sin(2t)] = \frac{2}{s^2 + 2^2} = \frac{2}{s^2 + 4}$$
+    
+      
+    
+- **Frequency Differentiation Property:** Multiplying a time-domain signal by $t^n$ corresponds to differentiation in the complex frequency domain ($s$-domain):
+    
+      
+    
+    $$\mathcal{L}[t^n f(t)] = (-1)^n \frac{d^n}{ds^n} F(s)$$
+    
+      
+    
+    Applying this property for $n = 2$:
+    
+      
+    
+    $$F(s) = \mathcal{L}[t^2 \sin(2t)] = (-1)^2 \frac{d^2}{ds^2} \left( \frac{2}{s^2 + 4} \right) = \frac{d^2}{ds^2} \left[ 2(s^2 + 4)^{-1} \right]$$
+    
+      
+    
+- **First Derivative:** Compute the first derivative with respect to $s$:
+    
+      
+    
+    $$\frac{d}{ds} \left[ 2(s^2 + 4)^{-1} \right] = 2(-1)(s^2 + 4)^{-2}(2s) = \frac{-4s}{(s^2 + 4)^2}$$
+    
+      
+    
+- **Second Derivative:** Differentiate the resulting expression once more using the quotient rule:
+    
+      
+    
+    $$\frac{d}{ds} \left[ \frac{-4s}{(s^2 + 4)^2} \right] = \frac{\frac{d}{ds}(-4s) \cdot (s^2 + 4)^2 - (-4s) \cdot \frac{d}{ds}(s^2 + 4)^2}{(s^2 + 4)^4}$$
+    
+    Carrying out the differentiation of each term:
+    
+      
+    
+    $$\frac{d}{ds}(-4s) = -4$$
+    
+    $$\frac{d}{ds}(s^2 + 4)^2 = 2(s^2 + 4)(2s) = 4s(s^2 + 4)$$
+    
+    Substitute these into the quotient rule:
+    
+      
+    
+    $$\frac{d}{ds} \left( \frac{-4s}{(s^2 + 4)^2} \right) = \frac{-4(s^2 + 4)^2 - (-4s)[4s(s^2 + 4)]}{(s^2 + 4)^4}$$
+    
+    Factor out the common term $(s^2 + 4)$ from the numerator:
+    
+      
+    
+    $$= \frac{(s^2 + 4) \left[ -4(s^2 + 4) + 16s^2 \right]}{(s^2 + 4)^4}$$
+    
+    $$= \frac{-4s^2 - 16 + 16s^2}{(s^2 + 4)^3}$$
+    
+    $$= \frac{12s^2 - 16}{(s^2 + 4)^3}$$
+    
+      
+    
+
+#### Final Answer
+
+$$\mathcal{L}[t^2 \sin(2t) u(t)] = \frac{12s^2 - 16}{(s^2 + 4)^3}$$
+
+### Question 1 (Example 15.2)
+
+Determine the Laplace transform of the function:
+
+  
+
+$$f(t) = \sin(\omega t) u(t)$$
+
+  
+
+#### Solution 1 (Example 15.2)
+
+- **Definition of Laplace Transform:**
+    
+      
+    - By the standard definition of the unilateral Laplace transform, the transform of $f(t)$ is given by:
+        
+          
+        
+        $$F(s) = \mathcal{L}[\sin(\omega t)] = \int_{0}^{\infty} (\sin \omega t) e^{-st} \, dt$$
+        
+          
+        
+- **Euler's Identity Representation:**
+    
+      
+    - Using Euler's formula, express the sine function in complex exponential form:
+        
+          
+        
+        $$\sin(\omega t) = \frac{e^{j\omega t} - e^{-j\omega t}}{2j}$$
+        
+          
+        
+    - Substitute this expression directly into the Laplace integral:
+        
+          
+        
+        $$F(s) = \int_{0}^{\infty} \left( \frac{e^{j\omega t} - e^{-j\omega t}}{2j} \right) e^{-st} \, dt$$
+        
+          
+        
+- **Integral Splitting and Simplification:**
+    
+      
+    - Factor out the constant factor $\frac{1}{2j}$ and combine exponents inside the integral:
+        
+          
+        
+        $$F(s) = \frac{1}{2j} \int_{0}^{\infty} \left( e^{-(s - j\omega)t} - e^{-(s + j\omega)t} \right) dt$$
+        
+          
+        
+- **Integration Step:**
+    
+      
+    - Evaluate each exponential integral over the limits from $0$ to $\infty$, assuming $\text{Re}(s) > 0$:
+        
+          
+        
+        $$\int_{0}^{\infty} e^{-(s - j\omega)t} \, dt = \left[ \frac{e^{-(s - j\omega)t}}{-(s - j\omega)} \right]_{0}^{\infty} = \frac{1}{s - j\omega}$$
+        
+          
+        
+        $$\int_{0}^{\infty} e^{-(s + j\omega)t} \, dt = \left[ \frac{e^{-(s + j\omega)t}}{-(s + j\omega)} \right]_{0}^{\infty} = \frac{1}{s + j\omega}$$
+        
+          
+        
+    - Combine the two evaluated terms:
+        
+          
+        
+        $$F(s) = \frac{1}{2j} \left( \frac{1}{s - j\omega} - \frac{1}{s + j\omega} \right)$$
+        
+          
+        
+- **Algebraic Simplification:**
+    
+      
+    - Combine the fractions over a common denominator:
+        
+          
+        
+        $$F(s) = \frac{1}{2j} \left( \frac{(s + j\omega) - (s - j\omega)}{(s - j\omega)(s + j\omega)} \right)$$
+        
+        $$F(s) = \frac{1}{2j} \left( \frac{2j\omega}{s^2 - (j\omega)^2} \right)$$
+        
+        $$F(s) = \frac{\omega}{s^2 + \omega^2}$$
+        
+          
+        
+
+#### Final Answer 1
+
+$$\mathcal{L}[\sin(\omega t) u(t)] = \frac{\omega}{s^2 + \omega^2}$$
+
+  
+
+### Question 2 (Practice Problem 15.2)
+
+Find the Laplace transform of the function:
+
+  
+
+$$f(t) = 50 \cos(\omega t) u(t)$$
+
+  
+
+#### Solution 2 (Practice Problem 15.2)
+
+- **Euler's Identity for Cosine:**
+    
+      
+    - Represent the cosine function in exponential terms:
+        
+          
+        
+        $$\cos(\omega t) = \frac{e^{j\omega t} + e^{-j\omega t}}{2}$$
+        
+- **Application of Laplace Transform Definition:**
+    
+      
+    - Set up the integral with the scaling constant $50$:
+        
+          
+        
+        $$\mathcal{L}[50 \cos(\omega t)] = 50 \int_{0}^{\infty} \left( \frac{e^{j\omega t} + e^{-j\omega t}}{2} \right) e^{-st} \, dt$$
+        
+        $$= 25 \int_{0}^{\infty} \left( e^{-(s - j\omega)t} + e^{-(s + j\omega)t} \right) dt$$
+        
+- **Evaluating the Integrals:**
+    
+      
+    - Integrate each exponential term over the domain $[0, \infty)$:
+        
+          
+        
+        $$= 25 \left( \frac{1}{s - j\omega} + \frac{1}{s + j\omega} \right)$$
+        
+- **Simplifying the Expression:**
+    
+      
+    - Find the common denominator and simplify:
+        
+          
+        
+        $$= 25 \left( \frac{(s + j\omega) + (s - j\omega)}{(s - j\omega)(s + j\omega)} \right)$$
+        
+        $$= 25 \left( \frac{2s}{s^2 + \omega^2} \right)$$
+        
+        $$= \frac{50s}{s^2 + \omega^2}$$
+        
+          
+        
+
+#### Final Answer 2
+
+$$\mathcal{L}[50 \cos(\omega t) u(t)] = \frac{50s}{s^2 + \omega^2}$$
+### Question 1 (Example 15.7)
+
+Find the initial and final values of the function whose Laplace transform is:
+
+  
+
+$$H(s) = \frac{20}{(s + 3)(s^2 + 8s + 25)}$$
+
+  
+
+#### Solution 1 (Example 15.7)
+
+- **Initial-Value Theorem Formulation:**
+    
+      
+    - The initial-value theorem states that $h(0) = \lim_{s \to \infty} s H(s)$.
+        
+          
+        
+    - Substituting the given function $H(s)$ into the formula gives:
+        
+          
+        
+        $$h(0) = \lim_{s \to \infty} \frac{20s}{(s + 3)(s^2 + 8s + 25)}$$
+        
+          
+        
+- **Initial-Value Evaluation:**
+    
+      
+    - Expand or divide both the numerator and denominator by the highest power of $s$, which is $s^3$:
+        
+          
+        
+        $$h(0) = \lim_{s \to \infty} \frac{\frac{20}{s^2}}{\left(1 + \frac{3}{s}\right)\left(1 + \frac{8}{s} + \frac{25}{s^2}\right)}$$
+        
+          
+        
+    - Evaluating the limit as $s \to \infty$:
+        
+          
+        
+        $$h(0) = \frac{0}{(1 + 0)(1 + 0 + 0)} = 0$$
+        
+          
+        
+- **Pole Verification for Final-Value Theorem Applicability:**
+    
+      
+    - The final-value theorem is applicable only if all poles of $s H(s)$ lie strictly in the left half of the $s$-plane (or has at most a simple pole at $s = 0$).
+        
+          
+        
+    - The poles of $H(s)$ are found by setting the denominator to zero:
+        
+          
+        
+        $$(s + 3)(s^2 + 8s + 25) = 0$$
+        
+    - Solving for the roots yields:
+        
+          
+        
+        $$s = -3$$
+        
+          
+        
+        $$s = \frac{-8 \pm \sqrt{64 - 100}}{2} = -4 \pm j3$$
+        
+          
+        
+    - Because all poles ($-3$ and $-4 \pm j3$) have negative real parts, they are located entirely in the left half of the $s$-plane.
+        
+          
+        
+    - Therefore, the final-value theorem is valid and applicable.
+        
+          
+        
+- **Final-Value Evaluation:**
+    
+      
+    - The final-value theorem states that $h(\infty) = \lim_{s \to 0} s H(s)$.
+        
+          
+        
+    - Substituting $H(s)$ into the expression gives:
+        
+          
+        
+        $$h(\infty) = \lim_{s \to 0} \frac{20s}{(s + 3)(s^2 + 8s + 25)}$$
+        
+          
+        
+    - Evaluating the limit as $s \to 0$:
+        
+          
+        
+        $$h(\infty) = \frac{0}{(0 + 3)(0 + 0 + 25)} = \frac{0}{75} = 0$$
+        
+          
+        
+
+#### Final Answer 1
+
+- **Initial value:** $h(0) = 0$
+    
+      
+    
+      
+    
+- **Final value:** $h(\infty) = 0$
+    
+      
+    
+      
+    
+
+### Question 2 (Practice Problem 15.7)
+
+Obtain the initial and the final values of the function whose Laplace transform is:
+
+  
+
+$$G(s) = \frac{6s^3 + 2s + 5}{s(s + 2)^2(s + 3)}$$
+
+  
+
+#### Solution 2 (Practice Problem 15.7)
+
+- **Initial-Value Determination:**
+    
+      
+    - Apply the initial-value theorem:
+        
+          
+        
+        $$g(0) = \lim_{s \to \infty} s G(s) = \lim_{s \to \infty} s \cdot \frac{6s^3 + 2s + 5}{s(s + 2)^2(s + 3)}$$
+        
+    - Cancel the common factor of $s$ from the numerator and denominator:
+        
+          
+        
+        $$g(0) = \lim_{s \to \infty} \frac{6s^3 + 2s + 5}{(s + 2)^2(s + 3)}$$
+        
+    - Expand the denominator polynomial:
+        
+          
+        
+        $$(s + 2)^2(s + 3) = (s^2 + 4s + 4)(s + 3) = s^3 + 7s^2 + 16s + 12$$
+        
+    - Substitute the expanded denominator back into the limit expression:
+        
+          
+        
+        $$g(0) = \lim_{s \to \infty} \frac{6s^3 + 2s + 5}{s^3 + 7s^2 + 16s + 12}$$
+        
+    - Divide the numerator and denominator by the highest power of $s$, which is $s^3$:
+        
+          
+        
+        $$g(0) = \lim_{s \to \infty} \frac{6 + \frac{2}{s^2} + \frac{5}{s^3}}{1 + \frac{7}{s} + \frac{16}{s^2} + \frac{12}{s^3}} = \frac{6 + 0 + 0}{1 + 0 + 0 + 0} = 6$$
+        
+          
+        
+- **Pole Verification for Final-Value Theorem Applicability:**
+    
+      
+    - Inspect the poles of $s G(s)$:
+        
+          
+        
+        $$s G(s) = \frac{6s^3 + 2s + 5}{(s + 2)^2(s + 3)}$$
+        
+    - The poles of $s G(s)$ are located at the roots of $(s + 2)^2(s + 3) = 0$:
+        
+          
+        
+        $$s = -2 \quad (\text{double pole}), \quad s = -3 \quad (\text{simple pole})$$
+        
+    - All poles lie strictly in the left half of the $s$-plane ($\text{Re}(s) < 0$), confirming that the final-value theorem is applicable.
+        
+          
+        
+- **Final-Value Determination:**
+    
+      
+    - Apply the final-value theorem:
+        
+          
+        
+        $$g(\infty) = \lim_{s \to 0} s G(s) = \lim_{s \to 0} \frac{6s^3 + 2s + 5}{(s + 2)^2(s + 3)}$$
+        
+    - Evaluate the expression by setting $s = 0$:
+        
+          
+        
+        $$g(\infty) = \frac{6(0)^3 + 2(0) + 5}{(0 + 2)^2(0 + 3)} = \frac{5}{(4)(3)} = \frac{5}{12}$$
+        
+    - Converting the fraction to decimal format:
+        
+          
+        
+        $$g(\infty) \approx 0.4167$$
+        
+          
+        
+
+#### Final Answer 2
+
+- **Initial value:** $g(0) = 6$
+    
+      
+    
+      
+    
+- **Final value:** $g(\infty) = \frac{5}{12} \approx 0.4167$
 ### 4.1. Laplace Transform of Piecewise Linear Ramp $h(t) = 2t[u(t)-u(t-1)]$ (Figure involved)
 
 **Detailed Answer:**

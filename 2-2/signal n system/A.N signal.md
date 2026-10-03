@@ -1,7 +1,6 @@
  
  ![[Pasted image 20261003072613.png]]
- 
- 
+ ![[Pasted image 20261003123308.png]]
 ### ROC curve
  ![[Pasted image 20261003091206.png]]
  ![[Pasted image 20261003091728.png]]
@@ -11,7 +10,7 @@
 ![[Pasted image 20261003094850.png]]
 
 ### Qna
-![[Screenshot_20261003-123515_WPS Office.png]]
+
 
  #### Direct Jump Rule for $h(t)$
 ![[Pasted image 20260628100445.png]]
