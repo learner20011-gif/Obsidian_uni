@@ -2,8 +2,15 @@
  ![[Pasted image 20261003072613.png]]
  
  
- 
- 
+ ![[Pasted image 20261003091206.png]]
+ ![[Pasted image 20261003091728.png]]
+
+![[Pasted image 20261003092943.png]]
+
+
+
+
+
  #### Direct Jump Rule for $h(t)$
 ![[Pasted image 20260628100445.png]]
 To write any piecewise flat graph directly:
