@@ -3,6 +3,8 @@
 
 ### 1. Page 1, Q1(a): A system H has its input-output pairs given. Determine whether the system could be memoryless, causal, linear, and time invariant. For all cases justify your answers. [Figure Involved]
 
+![[Pasted image 20260829104628.png]]
+
 **Detailed Solution:**
 
 Based on the provided input-output graphs, we will analyze the system $H$ for the four properties:
@@ -26,6 +28,8 @@ Based on the provided input-output graphs, we will analyze the system $H$ for th
 ***
 
 ### 2. Page 5, Q1(b): Consider the system shown in the following figure, determine is it (i) memory less (ii) Causal (iii) time-invariant? [Figure Involved]
+
+![[Pasted image 20260829104703.png]]
 
 **Detailed Solution:**
 
@@ -199,6 +203,8 @@ $\text{Total Response} = \text{Zero-Input Response} + \text{Zero-State Response}
 
 ### 9. Page 22, Q2: A time limited rectangular pulse (left) is applied to a system produces an output as shown in the following figure (right). Express y(t) in terms of x(t). Also provide a mathematical justification whether the system is (i) Linear (ii) Time invariant and (iii) Causal. [Figure Involved]
 
+![[Pasted image 20260829104752.png]]
+
 **Detailed Solution:**
 
 **1. Expressing $y(t)$ in terms of $x(t)$:**
@@ -303,6 +309,8 @@ A system is causal if the output does not depend on future inputs.
 ***
 
 ### 12. Page 45, Q2: The input and output relationship of a system is shown in the following figure. Express y(t) in terms of x(t). Also provide a mathematical justification whether the system is (i) Linear (ii) Time-variant and (iii) Causal. [Figure Involved]
+
+![[Pasted image 20260829104821.png]]
 
 **Detailed Solution:**
 
@@ -504,6 +512,8 @@ Since applying the combined input $a x_1(t) + b x_2(t)$ perfectly yields the com
 
 ### 18. Page 7, Q6(b): A canonical form of the system is shown in the following figure. (i) Find the transfer function of the system. (ii) Find the impulse response of the system. [Figure Involved]
 
+![[Pasted image 20260829104849.png]]
+
 **Detailed Solution:**
 
 **(i) Find the transfer function of the system $H(s) = Y(s)/X(s)$:**
@@ -545,6 +555,8 @@ $h(t) = \delta(t) - e^{-t}u(t)$
 ***
 
 ### 19. Page 21, Q7(c): Determine the transfer function H(s) = Vo(s)/Vi(s) of the circuit given in Fig.Q.7(c). [Figure Involved]
+
+![[Pasted image 20260829104925.png]]
 
 **Detailed Solution:**
 
@@ -779,6 +791,8 @@ where:
 
 ### 24. Page 20, Q3(b): Find the state equation for the circuit of Fig.Q.3(b).
 
+![[Pasted image 20260829105012.png]]
+
 **Detailed Solution:**
 
 Based on the schematic provided in Fig. Q.3(b):
@@ -889,6 +903,8 @@ $\mathbf{H}(s) = \mathbf{C}(s\mathbf{I} - \mathbf{A})^{-1}\mathbf{B} + \mathbf{D
 
 ### 26. Page 4, Q8(b): Draw the equivalent mechanical system for the following electrical network. [Figure Involved]
 
+![[Pasted image 20260829105045.png]]
+
 **Detailed Solution:**
 
 The provided electrical circuit consists of:
@@ -935,6 +951,8 @@ To draw the equivalent mechanical system, we will use the **Force-Voltage (f-v) 
 ***
 
 ### 27. Page 8, Q8(a): A translational mechanical system is shown below. (i) Find the transfer function of the system. (ii) Find the impulse response if D = 0. (iii) Find the response x(t) if f(t) = u(t). Assume D = 0. [Figure Involved]
+
+![[Pasted image 20260829105105.png]]
 
 **Detailed Solution:**
 
@@ -986,6 +1004,8 @@ $x(t) = \frac{1}{k} [1 - \cos(\omega_n t)] u(t) = \frac{1}{k} \left[ 1 - \cos\le
 
 ### 28. Page 13, Q7(a): What is analogous system? Draw the electrical analogous for the following mechanical system using f-v analogy. [Figure Involved]
 
+![[Pasted image 20260829105135.png]]
+
 **Detailed Solution:**
 
 **What is an analogous system?**
@@ -1030,6 +1050,8 @@ Draw three adjacent loops (windows).
 *Related concept location in Sadiku textbook: Modeling mechanical physical systems using analogous electrical circuit equations is referenced as a primary application of system modeling and Laplace transforms in Chapter 16, Section 16.1, pg. 716.*
 
 ### 29. Page 17, Q1(b): What do you mean by analogous systems? What is intuitive mechanical analogy? Draw the analogous electrical circuit of the following mechanical system using intuitive analogy. [Figure Involved]
+
+![[Pasted image 20260829105213.png]]
 
 **Detailed Solution:**
 
@@ -1085,6 +1107,8 @@ The **Force-Voltage (f-v) analogy** is a direct mathematical mapping between tra
 
 ### 31. Page 21, Q8(b): Draw the equivalent Mechanical system for the circuit given in Fig. Q. 8(b). [Figure Involved]
 
+![[Pasted image 20260829105303.png]]
+
 **Detailed Solution:**
 
 We are given an electrical circuit and must reverse-engineer the mechanical system using the **Force-Voltage (f-v) analogy**. 
@@ -1117,6 +1141,8 @@ We are given an electrical circuit and must reverse-engineer the mechanical syst
 ***
 
 ### 32. Page 73, Q7(a): What is analogous system? State D'Alembert's principle. Draw the f-v analogous electrical circuit of the following mechanical system- [Figure Involved]
+
+![[Pasted image 20260829105333.png]]
 
 **Detailed Solution:**
 
@@ -1153,6 +1179,8 @@ Mathematically: $\sum F_{applied} - M\frac{d^2x}{dt^2} = 0$, which is simply a r
 *   **Mesh 1:** Contains Inductor $L_1$, Capacitor $C_1$, and Resistor $R_1$ in series, completing the loop through the shared Capacitor $C_2$.
 *   **Mesh 2:** Contains Inductor $L_2$, the Voltage source $V(t)$, and completes the loop through the shared Capacitor $C_2$.
 ### 33. Page 73, Q7(b): For the following mechanical system, find the transfer function X(s)/F(s). Also draw the electrical equivalent using force-current analogy. [Figure Involved]
+
+![[Pasted image 20260829105356.png]]
 
 **Detailed Solution:**
 
@@ -1257,6 +1285,8 @@ Because the underlying math is exactly the same, the dynamic behavior of the sys
 
 ### 36. Page 74, Q7(b): Find the equations that describe the motion of the mechanical system shown below. Also draw the electrical equivalent circuit using (i) Force-voltage analogy and (ii) Force-current analogy. [Figure Involved]
 
+![[Pasted image 20260829105411.png]]
+
 **Detailed Solution:**
 
 Based on the provided mechanical figure, we have:
@@ -1292,6 +1322,8 @@ Let $v_1 = \dot{x}_1$ and $v_2 = \dot{x}_2$.
 
 
 ### 37. Page 74, Q8(b): State D'Alembert's principle. Find the equations that describe the motion of the mechanical system of the following figure using (i) D'Alembert's principle and (ii) f-v analogy. [Figure Involved]
+
+![[Pasted image 20260829105432.png]]
 
 **Detailed Solution:**
 
@@ -1343,6 +1375,8 @@ Applying Kirchhoff's Voltage Law (KVL) to the two meshes yields the identical ma
 ### **Transfer functions of LTI systems**
 
 ### 38. Page 2, Q3(c): A second order active filter is shown below. (i) Find the transfer function. (ii) Find the impulse response. [Figure Involved]
+
+![[Pasted image 20260829105534.png]]
 
 **Detailed Solution:**
 
@@ -1396,6 +1430,8 @@ $h(t) = \left[ -\frac{1}{3} + \frac{1}{3}e^{-3t} \right] u(t) = \frac{1}{3}(e^{-
 ***
 
 ### 39. Page 4, Q8(a): The step response of the following system is $v_o(t) = 5e^{-4t}\sin(2t)u(t)$. (i) Find the transfer function H(s). (ii) Comment on the stability of the system. [Figure Involved]
+
+![[Pasted image 20260829105601.png]]
 
 **Detailed Solution:**
 
@@ -1581,6 +1617,8 @@ $y_2(t) = \frac{\sin(4t)}{\pi t}$
 
 ### 44. Page 24, Q1: [Figure Involved] For the following circuit, find the transfer function. Also find iL(t) if (i) it(t) = $\delta(t)$ (ii) it(t) = $u(t)$ and (iii) it(t) = $e^{-t}u(t)$. Assume $\tau = 1s$.
 
+![[Pasted image 20260829105630.png]]
+
 **Detailed Solution:**
 
 **1. Find the Transfer Function $H(s)$:**
@@ -1670,6 +1708,8 @@ $y(t) = \left( -45e^{-3t} + 90e^{-6t} \right) u(t)$
 
 ### 46. Page 35, Q2: For the following circuit, express the transfer function, H(s) in terms of time constant, $\tau$. Find $v_0(t)$ when (i) $v_i(t) = \delta(t)$ (ii) $v_i(t) = u(t)$ and (iii) $v_i(t) = e^{-t}u(t)$. Assume $\tau = 1s$. [Figure Involved]
 
+![[Pasted image 20260829105710.png]]
+
 **Detailed Solution:**
 
 **1. Find the Transfer Function $H(s)$:**
@@ -1711,6 +1751,8 @@ $v_o(t) = (e^{-t} - t e^{-t})u(t) = e^{-t}(1 - t)u(t)$
 ***
 
 ### 47. Page 41, Q1: [Figure Involved] For the circuit (i) Find the transfer function H(s)=V2(s)/V1(s) (ii) Draw the pole-zero plot of H(s). (iii) Find the step response. (2 Marks) (iv) Comment on the stability of the system. (2 Marks)
+
+![[Pasted image 20260829105815.png]]
 
 **Detailed Solution:**
 
@@ -1762,6 +1804,8 @@ The transfer function $H(s)$ has poles at $s = -10000$ and $s = -666.67$. Becaus
 
 ### 48. Page 58, Q.4(b): For the following circuit, find the transfer function. Also find $i_o(t)$ when (i) $i_s(t) = e^{-t}u(t)$ and (ii) $i_s(t) = \sin t$. [Figure Involved]
 
+![[Pasted image 20260829105849.png]]
+
 **Detailed Solution:**
 
 **1. Find the Transfer Function $H(s) = I_o(s)/I_s(s)$:**
@@ -1804,6 +1848,8 @@ $i_o(t) = \frac{1}{2} \left[ e^{-t} - \cos t + \sin t \right] u(t)$
 
 ### 49. Page 62, Q.6(a): Find the transfer function $H(s) = \frac{I_o(s)}{I_s(s)}$ referring to the following network. [Figure Involved]
 
+![[Pasted image 20260829105913.png]]
+
 **Detailed Solution:**
 
 Based on the provided circuit diagram:
@@ -1844,6 +1890,8 @@ $H(s) = Z_p(s) = \frac{s^2 + 1}{s^3 + s^2 + 2s + 1}$
 ### **Pole-zero diagram and system stability**
 
 ### 50. Page 2, Q3(a): The circuit in the following Fig. contains a current controlled voltage source. What restriction must be placed on the gain R of this dependent source to guarantee stability? [Figure Involved]
+
+![[Pasted image 20260829105958.png]]
 
 **Detailed Solution:**
 
@@ -1902,6 +1950,8 @@ $400 + R > 0 \implies R > -400\ \Omega$
 
 ### 51. Page 3, Q5(b): For the following circuit (i) Find the transfer function G(s) = V2(s)/V1(s). (ii) Select values of R and L so that the transfer function has a zero at S = -120 and a pole at S = -80. [Figure Involved]
 
+![[Pasted image 20260829110016.png]]
+
 **Detailed Solution:**
 
 Based on the provided circuit diagram:
@@ -1946,6 +1996,8 @@ So, one valid selection is $R = 120\ \Omega$ and $L = 1\text{ H}$.
 ***
 
 ### 52. Page 7, Q5(b): The input to a linear circuit is the voltage vi. The output is the voltage vo. The transfer function of the circuit is H(s) = Vo(s)/Vi(s). The poles and zeros of H(s) are shown in the following pole-zero diagram. (i) Find the transfer function of the system. (ii) Find the step response. (iii) Comment on the stability of the system. [Figure Involved]
+
+![[Pasted image 20260829110040.png]]
 
 **Detailed Solution:**
 
@@ -2123,6 +2175,8 @@ Discriminant $\Delta = b^2 - 4ac = (k - 5)^2 - 4(1)(10) = (k - 5)^2 - 40$
 
 ### 56. Page 12, Q.4(c): For what value of $\beta$ is the following circuit stable? [Figure Involved]
 
+![[Pasted image 20260829110126.png]]
+
 **Detailed Solution:**
 
 Based on the provided circuit diagram:
@@ -2209,6 +2263,8 @@ $\mathbf{i(t) = \left[ \frac{2}{3} + \frac{4}{3}e^{-3t} \right] u(t) \text{ A}}$
 ***
 
 ### 58. Page 40, Q1: For the circuit (i) Find the characteristics equation and characteristics roots (ii) Plot the roots on s-plane (iii) Find the type of damping provided by the system (iv) Find $v_0(t)$ and sketch the waveform (v) What should the value of $R_1$ to obtain an undamped response. [Figure Involved]
+
+![[Pasted image 20260829110216.png]]
 
 **Detailed Solution:**
 
@@ -2356,6 +2412,8 @@ The input signal $X(s)$ is fed simultaneously into three parallel subsystems, wh
 
 ### 61. Page 7, Q5(c): Design an op-amp circuit using the figure that will realize the following transfer function. Choose $C_1 = 10\mu\text{F}$, determine $R_1$, $R_2$, and $C_2$. $\frac{V_0(s)}{V_i(s)} = \frac{-(s+1000)}{2(s+4000)}$ [Figure Involved]
 
+![[Pasted image 20260829110248.png]]
+
 **Detailed Solution:**
 
 We are given the target transfer function:
@@ -2400,6 +2458,8 @@ $R_2 = 12.5\ \Omega$
 ***
 
 ### 62. Page 12, Q5(a): Realize the function $G(s) = \frac{V_2(s)}{V_1(s)} = \frac{4s}{s^2+4s+20}$ using the following circuit. Select $R = 2\Omega$, and determine L and C. [Figure Involved]
+
+![[Pasted image 20260829110318.png]]
 
 **Detailed Solution:**
 
@@ -2451,6 +2511,8 @@ $C = 0.1\text{ F}$
 ***
 
 ### 63. Page 18, Q6(b): What is network synthesis? Synthesis the function $T(s) = \frac{V_0(s)}{V_i(s)} = \frac{-2s}{s^2+6s+10}$ using the topology in the following figure. [Figure Involved]
+
+![[Pasted image 20260829110345.png]]
 
 **Detailed Solution:**
 
@@ -2634,6 +2696,8 @@ Given constraint: $R_1 = 1\text{ k}\Omega = 1000\ \Omega$
 
 ### 64. Page 3, Q6(a): A system is formed by cascading two systems as shown. Given that the impulse response of the system are $h_1(t) = 3e^{-t}u(t)$, $h_2(t) = e^{-4t}u(t)$. (i) Obtain the impulse response of the overall system H(s) and h(t). (ii) Pole-zero plot of the overall system. (iii) Check if the overall system is stable. [Figure Involved]
 
+![[Pasted image 20260829110417.png]]
+
 **Detailed Solution:**
 
 Based on the description, we have two systems cascaded (connected in series). 
@@ -2677,6 +2741,8 @@ The poles of $H(s)$ are at $s = -1$ and $s = -4$. Since both real parts are nega
 
 ### 65. Page 8, Q6(c): Figure shows a cascade connection of two LTIC systems. The transfer function of these system are $H_1(s) = \frac{1}{s-1}$ and $H_2(s) = \frac{s-1}{s+1}$. Determine the BIBO and asymptotic stability of the composite system. [Figure Involved]
 
+![[Pasted image 20260829110433.png]]
+
 **Detailed Solution:**
 
 We have two Linear Time-Invariant Continuous (LTIC) systems cascaded together.
@@ -2719,6 +2785,8 @@ Because there is at least one pole with a positive real part, the system is **No
 ### **Basic feedback system**
 
 ### 66. Page 21, Q8(c): Write down the name of processes to determine the stability of a system. Find the value of K for the closed-loop system given in Fig. Q. 8(c) so that the closed-loop system is stable. [Figure Involved]
+
+![[Pasted image 20260829110502.png]]
 
 **Detailed Solution:**
 
@@ -2795,6 +2863,8 @@ Let the input be bounded such that $|x(t)| \le M_x < \infty$ for all $t$. We mus
 
 ### 68. Page 33, Q1: The input-output relationship of a system is shown in the following figure. Provide a mathematical justification whether the system is (i) Linear and (ii) Invertible. [Figure Involved]
 
+![[Pasted image 20260829110534.png]]
+
 **Detailed Solution:**
 
 Based on the provided figure:
@@ -2836,6 +2906,8 @@ A system is invertible if and only if there is a strict one-to-one mapping betwe
 ***
 
 ### 69. Page 34, Q1: The input-output relationship of two systems are shown the following figure. Provide a mathematical justification whether the system shown in figure (i) linear, and (ii) invertible. For both systems the slope is unity. [Figure Involved]
+
+![[Pasted image 20260829110552.png]]
 
 **Detailed Solution:**
 
@@ -2918,6 +2990,8 @@ where $V_1$ is the fundamental, and $V_2, V_3\dots$ are the harmonics. A lower T
 ### **Bandwidth and spectrum allocation**
 
 ### 71. Page 10, Q.5(a): Obtain and draw the frequency spectrum of the following waveform. [Figure Involved]
+
+![[Pasted image 20260829110626.png]]
 
 **Detailed Solution:**
 
@@ -3042,6 +3116,8 @@ It is a fundamental mathematical truth of Fourier analysis (often called the Pal
 
 ### 74. Page 16, Q.7(c): Find the exponential series of the following signal. Also draw the spectrum of that signal. [Figure Involved]
 
+![[Pasted image 20260829110652.png]]
+
 **Detailed Solution:**
 
 **1. Analyze the Waveform:**
@@ -3101,6 +3177,8 @@ The spectrum consists of discrete vertical lines whose heights trace out an enve
 ***
 
 ### 75. Page 18, Q.4(a): If the periodic voltage as shown in the following figure is applied to the following network; Draw the frequency spectrum of $i_0(t)$. [Figure Involved]
+
+![[Pasted image 20260829110719.png]]
 
 **Detailed Solution:**
 
@@ -3213,6 +3291,8 @@ $P_{total} = 0.2 \text{ W} + 0.05 \text{ W} + 0.05 \text{ W} = 0.3 \text{ W} = 3
 
 ### 77. Page 27, Q2: Find the Fourier series of the square wave in following Fig. Plot the amplitude and phase spectra. [Figure involved.]
 
+![[Pasted image 20260829110758.png]]
+
 **Detailed Solution:**
 Based on the figure of the square wave, let's extract the signal properties:
 *   The wave alternates between an amplitude of $1$ and $-1$.
@@ -3252,6 +3332,8 @@ $\phi_n = \tan^{-1}\left(\frac{-b_n}{a_n}\right) = -90^\circ$ (since $b_n$ is po
 ***
 
 ### 78. Page 37, Q1: The following input signal is applied to an ideal band pass filer with gain, |H| = 1 and lower cutoff frequency, ω1 = 6 rad/s and upper cutoff frequency, ω2 = 12 rad/s. (a) Determine the output signal. (b) What would be the range of bandwidth and the corner frequency so that the filter allows only the fundamental component. [Figure involved.]
+
+![[Pasted image 20260829110818.png]]
 
 **Detailed Solution:**
 **Part (a): Determine the output signal.**
@@ -3321,6 +3403,8 @@ By comparing the discrete summation $\sum |c_n|^2$ to the continuous integral $\
 
 ### 80. Page 65, Q.6(b): Draw the amplitude spectrum of the following waveform. [Figure Involved]
 
+![[Pasted image 20260829110845.png]]
+
 **Detailed Solution:**
 Based on the provided figure, the waveform is a periodic sawtooth wave. Let's assume the peak amplitude of the waveform is $A$. 
 *   The waveform repeats every $1$ unit of time, so the period $T = 1$.
@@ -3364,6 +3448,8 @@ The envelope of the spectrum decays proportionally to $1/n$.
 
 ### 81. Page 66, Q(b) (Middle): Plot the amplitude and phase spectra of the following waveform. [Figure Involved]
 
+![[Pasted image 20260829110911.png]]
+
 **Detailed Solution:**
 Based on the figure, the waveform is a periodic square wave.
 *   The amplitude alternates between $15$ and $-15$.
@@ -3406,6 +3492,8 @@ $-\frac{60}{n\pi} \sin(n\pi t) = \frac{60}{n\pi} \cos(n\pi t + 90^\circ)$
 
 ### 82. Page 68, Q(c) (Middle): Derive the Fourier transform of the rectangular pulse as shown in the figure below. Also graphically illustrate that with increasing pulse width, the amplitude spectrum is congested. [Figure Involved]
 
+![[Pasted image 20260829110932.png]]
+
 **Detailed Solution:**
 **1. Derivation of the Fourier Transform:**
 Based on the figure, the signal $f(t)$ is a non-periodic rectangular pulse that starts at $t = 0$ and ends at $t = T$ with a constant amplitude $A$.
@@ -3442,6 +3530,8 @@ $\frac{\omega T}{2} = n\pi \implies \omega = \frac{2n\pi}{T} \quad (\text{for } 
 ***
 
 ### 83. Page 68, Q(b) (Bottom): Draw the frequency spectrum for the following signal. [Figure Involved]
+
+![[Pasted image 20260829110946.png]]
 
 **Detailed Solution:**
 Based on the figure provided, the signal $f(t)$ is a periodic square wave centered around the horizontal axis.
