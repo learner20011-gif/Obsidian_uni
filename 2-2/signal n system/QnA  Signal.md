@@ -2990,7 +2990,7 @@ In practical terms, whenever we truncate a signal in time (applying a window), w
 
 ***
 
-### 5.5. Find and Draw Fourier Transform of Truncated Sine-Wave Pulse (Figure involved)
+### 5.5. ✅Find and Draw Fourier Transform of Truncated Sine-Wave Pulse (Figure involved)
 ![[Pasted image 20260628100321.png]]
 **Detailed Answer:**
 
