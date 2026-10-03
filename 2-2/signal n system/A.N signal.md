@@ -447,7 +447,26 @@ $$f(t) = a_0 + \sum_{n=1}^{\infty} C_n \cos(n\omega_0 t - \phi_n)$$
     
     $$b_n = -A_n \sin\theta_n = C_n \sin\phi_n$$
     
+#### Scenario 1: Target Form is $A_n \cos(nt - \theta_n)$ (Phase Lag / Circuit Standard)
 
+- **Goal:** Group into $\cos(nt - \theta)$
+    
+- **Identity:** $\cos(nt - \theta) = \cos nt \cos\theta + \sin nt \sin\theta$
+    
+- **Phasor Formula:**
+    
+    $$\mathbf{V}_n = a_n - jb_n= A_n \angle -\theta_n$$
+#### Scenario 2: Target Form is $A_n \cos(nt + \phi_n)$ (Phase Lead / DSP Standard)
+
+- **Goal:** Group into $\cos(nt + \phi)$
+    
+- **Identity:** $\cos(nt + \phi) = \cos nt \cos\phi - \sin nt \sin\phi$
+    
+- **Phasor Formula:**
+    
+    $$\mathbf{V}_n = a_n - jb_n = A_n \angle \phi_n$$
+always (v.i.):
+$$\mathbf{V}_n = a_n - jb_n $$
 ## 4. Complex Exponential Fourier Series
 
 The most compact mathematical representation uses complex exponentials:

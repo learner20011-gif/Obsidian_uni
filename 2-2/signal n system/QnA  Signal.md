@@ -4835,6 +4835,7 @@ In textbook convention ($A_n \angle \phi_n = a_n - jb_n$):
 
 #### Step 6: Numerical Values for the First Three Harmonics
 ![[Pasted image 20261004001021.png]]
+
 - **For $n = 1$ ($k = 1$):**
     
       
@@ -4889,6 +4890,227 @@ In textbook convention ($A_n \angle \phi_n = a_n - jb_n$):
 - Writing the sum of the first three terms:
     
     $$v_o(t) = 0.4981\cos(\pi t - 51.49^\circ) + 0.2051\cos(3\pi t - 75.14^\circ) + 0.1257\cos(5\pi t - 80.96^\circ) + \dots\text{ V}$$
+
+### Question If the input voltage in the circuit of Fig. 17.24 is $v(t) = \frac{1}{3} + \frac{1}{\pi^2} \sum_{n=1}^{\infty} \left( \frac{1}{n^2}\cos nt - \frac{\pi}{n}\sin nt \right)\text{ V}$, determine the response $i_o(t)$.
+
+  ![[Pasted image 20261004005126.png]]
+
+#### Step 1: Find Circuit Transfer Function
+
+- The circuit has a source $v(t)$ in series with a $2\,\Omega$ resistor, driving the parallel combination of a $1\text{ F}$ capacitor and a $1\,\Omega$ load resistor.
+    
+      
+    
+- Parallel impedance of $1\text{ F}$ capacitor ($Z_C = \frac{1}{j\omega}$) and $1\,\Omega$ resistor:
+    
+      
+    
+    $$Z_p = \frac{1 \cdot \frac{1}{j\omega}}{1 + \frac{1}{j\omega}} = \frac{1}{1 + j\omega}$$
+    
+- Total impedance seen by the voltage source:
+    
+      
+    
+    $$Z_{\text{in}} = 2 + Z_p = 2 + \frac{1}{1 + j\omega} = \frac{3 + j2\omega}{1 + j\omega}$$
+    
+- The voltage across the parallel branch is:
+    
+      
+    
+    $$\mathbf{V}_p = \mathbf{V} \frac{Z_p}{Z_{\text{in}}} = \mathbf{V} \frac{\frac{1}{1+j\omega}}{\frac{3+j2\omega}{1+j\omega}} = \frac{\mathbf{V}}{3 + j2\omega}$$
+    
+- The current $i_o(t)$ flows through the $1\,\Omega$ branch:
+    
+      
+    
+    $$\mathbf{I}_o = \frac{\mathbf{V}_p}{1\,\Omega} = \frac{\mathbf{V}}{3 + j2\omega}$$
+    
+- In polar form, with $\omega = n$:
+    
+      
+    
+    $$\mathbf{I}_o = \frac{\mathbf{V}}{\sqrt{9 + 4n^2}\,\angle\tan^{-1}\left(\frac{2n}{3}\right)}$$
+    
+
+#### Step 2: DC Response ($n = 0$)
+
+- At DC ($\omega = 0$), the capacitor acts as an open circuit.
+    
+      
+    
+- Input DC voltage: $V_{\text{dc}} = \frac{1}{3}\text{ V}$.
+    
+      
+    
+- Output DC current:
+    
+      
+    
+    $$I_{o,\text{dc}} = \frac{V_{\text{dc}}}{2\,\Omega + 1\,\Omega} = \frac{1/3}{3} = \frac{1}{9}\text{ A} \quad \text{[cite: 6]}$$
+    
+
+#### Step 3: AC Phasor Response for Harmonics ($n \ge 1$)
+
+- Each harmonic in the voltage source has the form:
+    
+      
+    
+    $$v_n(t) = a_n \cos nt + b_n \sin nt = \frac{1}{\pi^2 n^2}\cos nt - \frac{1}{\pi n}\sin nt$$
+    
+- Express in compact cosine form $A_n \cos(nt - \theta_n)$ using the phasor $\mathbf{V}_n = a_n - jb_n$:
+    
+      
+    
+    $$\mathbf{V}_n = \frac{1}{\pi^2 n^2} - j\left(-\frac{1}{\pi n}\right) = \frac{1}{n^2\pi^2} + j\frac{\pi}{n\pi^2} = \frac{1 + jn\pi}{n^2\pi^2}$$
+    
+- In polar form:
+    
+      
+    
+    $$\mathbf{V}_n = \frac{\sqrt{1 + n^2\pi^2}}{n^2\pi^2} \angle \tan^{-1}(n\pi)$$
+    
+- Multiply by the transfer function $\frac{1}{3 + j2n}$:
+    
+      
+    
+    $$\mathbf{I}_{o,n} = \frac{\mathbf{V}_n}{3 + j2n} = \frac{\frac{\sqrt{1 + n^2\pi^2}}{n^2\pi^2} \angle \tan^{-1}(n\pi)}{\sqrt{9 + 4n^2}\angle \tan^{-1}\left(\frac{2n}{3}\right)}$$
+    
+    $$\mathbf{I}_{o,n} = \frac{\sqrt{1 + n^2\pi^2}}{n^2\pi^2\sqrt{9 + 4n^2}} \angle \left( \tan^{-1}(n\pi) - \tan^{-1}\left(\frac{2n}{3}\right) \right) \quad \text{[cite: 6]}$$
+    
+
+#### Step 4: Final Output Current $i_o(t)$
+
+- Converting the phasors back into the time domain and summing with the DC component:
+    
+    $$i_o(t) = \frac{1}{9} + \sum_{n=1}^{\infty} \frac{\sqrt{1 + n^2\pi^2}}{n^2\pi^2\sqrt{9 + 4n^2}}\cos\left(nt - \tan^{-1}\frac{2n}{3} + \tan^{-1}n\pi\right)\text{ A} \quad \text{[cite: 6]}$$
+
+### Question: Example 17.8
+
+Determine the average power supplied to the circuit in Fig. 17.26 if $i(t) = 2 + 10\cos(t + 10^\circ) + 6\cos(3t + 35^\circ)\text{ A}$.
+
+  
+
+- **Network Impedance:**
+    
+      
+    
+    $$\mathbf{Z} = 10 \parallel \frac{1}{j2\omega} = \frac{10}{1 + j20\omega} = \frac{10}{\sqrt{1 + 400\omega^2}\angle\tan^{-1}(20\omega)}\,\Omega \quad \text{[cite: 7]}$$
+    
+- **DC Response ($\omega = 0$ rad/s):**
+    
+      
+    - Current: $\mathbf{I} = 2\text{ A}$
+        
+          
+        
+          
+        
+    - Voltage: $\mathbf{V}_{\text{dc}} = I_{\text{dc}} R = 2 \times 10 = 20\text{ V}$
+        
+          
+        
+          
+        
+- **Fundamental Harmonic ($\omega = 1$ rad/s):**
+    
+      
+    - Current: $\mathbf{I}_1 = 10\angle 10^\circ\text{ A}$
+        
+          
+        
+          
+        
+    - Voltage:
+        
+          
+        
+        $$\mathbf{V}_1 = \frac{10(10\angle 10^\circ)}{\sqrt{1 + 400}\angle\tan^{-1}(20)} \approx \frac{100\angle 10^\circ}{20.025\angle 87.14^\circ} \approx 5\angle -77.14^\circ\text{ V} \quad \text{[cite: 7]}$$
+        
+- **Third Harmonic ($\omega = 3$ rad/s):**
+    
+      
+    - Current: $\mathbf{I}_3 = 6\angle 35^\circ\text{ A}$
+        
+          
+        
+          
+        
+    - Voltage:
+        
+          
+        
+        $$\mathbf{V}_3 = \frac{10(6\angle 35^\circ)}{\sqrt{1 + 3600}\angle\tan^{-1}(60)} \approx \frac{60\angle 35^\circ}{60\angle 89.04^\circ} \approx 1\angle -54.04^\circ\text{ V} \quad \text{[cite: 7]}$$
+        
+- **Total Average Power Delivered:** Since an ideal capacitor consumes zero average power, total power is absorbed entirely by the $10\,\Omega$ resistor:
+    
+      
+    
+    $$P = \frac{V_{\text{dc}}^2}{R} + \frac{1}{2}\sum_{n} \frac{\vert{}\mathbf{V}_n\vert{}^2}{R} = \frac{20^2}{10} + \frac{1}{2}\frac{5^2}{10} + \frac{1}{2}\frac{1^2}{10} \quad \text{[cite: 7]}$$
+    
+    $$P = 40 + 1.25 + 0.05 = 41.5\text{ W} \quad \text{[cite: 7]}$$
+    
+
+### Question: Example 17.9
+
+Find an estimate for the RMS value of the voltage $v(t) = 1 - 1.414\cos(t + 45^\circ) + 0.8944\cos(2t + 63.45^\circ) - 0.6345\cos(3t + 71.56^\circ) - 0.4851\cos(4t + 78.7^\circ) + \dots\text{ V}$.
+
+  
+
+- **Formula for RMS Value of a Fourier Series:**
+    
+      
+    
+    $$V_{\text{rms}} = \sqrt{a_0^2 + \frac{1}{2}\sum_{n=1}^{\infty} A_n^2} \quad \text{[cite: 8]}$$
+    
+- **Calculation:**
+    
+      
+    
+    $$V_{\text{rms}} \approx \sqrt{1^2 + \frac{1}{2}\left[(-1.414)^2 + (0.8944)^2 + (-0.6345)^2 + (-0.4851)^2\right]} \quad \text{[cite: 8]}$$
+    
+    $$V_{\text{rms}} \approx \sqrt{1 + \frac{1}{2}(2.000 + 0.800 + 0.403 + 0.235)} = \sqrt{2.7186} \approx 1.649\text{ V} \quad \text{[cite: 8]}$$
+    
+
+### Question: Practice Problem 17.9
+
+Find the RMS value of the periodic current $i(t) = 8 + 30\cos 2t - 20\sin 2t + 15\cos 4t - 10\sin 4t\text{ A}$.
+
+  
+
+- **Formula for Trigonometric Fourier Series:**
+    
+      
+    
+    $$I_{\text{rms}} = \sqrt{a_0^2 + \frac{1}{2}\sum_{n=1}^{\infty}\left(a_n^2 + b_n^2\right)}$$
+    
+- **Identify Coefficients:**
+    
+      
+    - DC component: $a_0 = 8\text{ A}$
+        
+          
+        
+          
+        
+    - Harmonic at $\omega = 2$ rad/s: $a_1 = 30$, $b_1 = -20$
+        
+          
+        
+          
+        
+    - Harmonic at $\omega = 4$ rad/s: $a_2 = 15$, $b_2 = -10$
+        
+          
+        
+          
+        
+- **Calculation:**
+    
+    $$I_{\text{rms}} = \sqrt{8^2 + \frac{1}{2}\left(30^2 + (-20)^2\right) + \frac{1}{2}\left(15^2 + (-10)^2\right)}$$
+    
+    $$I_{\text{rms}} = \sqrt{64 + \frac{1}{2}(900 + 400) + \frac{1}{2}(225 + 100)}$$
+    
+    $$I_{\text{rms}} = \sqrt{64 + 650 + 162.5} = \sqrt{876.5} \approx 29.61\text{ A} \quad \text{[cite: 8]}$$
 ### 6.1. Fourier Series of $v_o(t)$ in Active Filter Circuit for Square Wave Input (Figure involved)
 ![[Pasted image 20260628170311.png]]
 **Detailed Answer:**
