@@ -5861,7 +5861,33 @@ Therefore, the $n$-th harmonic is: $\frac{4}{n\pi} \cos(n\pi t - 90^\circ)$ (for
 ***
 
 # 7. Sampling and Modulation
+### Example 18.11
 
+The example demonstrates how to find the resulting frequencies:
+
+- **Given:**
+    
+    - Carrier frequency = **1,200,000 Hz** (1.2 MHz)
+        
+    - Music frequencies = **15 Hz to 30,000 Hz** (30 kHz)
+        
+- **Calculation:**
+    
+    - **Lower Sideband (Carrier minus Music):**
+        
+        - $1,200,000 - 30,000 = 1,170,000\text{ Hz}$
+            
+        - $1,200,000 - 15 = 1,199,985\text{ Hz}$
+            
+        - Range: **1,170,000 Hz to 1,199,985 Hz**
+            
+    - **Upper Sideband (Carrier plus Music):**
+        
+        - $1,200,000 + 15 = 1,200,015\text{ Hz}$
+            
+        - $1,200,000 + 30,000 = 1,230,000\text{ Hz}$
+            
+        - Range: **1,200,015 Hz to 1,230,000 Hz**
 ### 7.1. Discuss Amplitude Modulation (AM) and Sampling as Applications of Fourier Transform
 
 **Detailed Answer:**
