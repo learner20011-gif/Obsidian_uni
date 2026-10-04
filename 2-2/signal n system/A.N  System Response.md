@@ -307,6 +307,98 @@
           
         
         $$i_o(t) = \begin{cases} 0\text{ A}, & t < 0 \\ -\dfrac{2}{3}e^{-t}\text{ A}, & t > 0 \end{cases}$$
+
+### Practice Problem 7.10: Find $v(t)$ for $t > 0$ and $v(0.5)$
+
+  
+![[Pasted image 20261004171539.png]]
+- **Initial Voltage $v(0)$ ($t < 0$):**
+    
+      
+    - The switch is open, disconnecting the right branch.
+        
+          
+        
+    - At steady state, the capacitor behaves as an open circuit.
+        
+          
+        
+    - With no current flowing through the $2\ \Omega$ resistor, the entire source voltage drops across the capacitor:
+        
+          
+        
+        $$v(0^-) = v(0^+) = 15\text{ V}$$
+        
+          
+        
+- **Final Voltage $v(\infty)$ ($t \to \infty$):**
+    
+      
+    - The switch closes at $t = 0$.
+        
+          
+        
+    - At steady state, the capacitor is again treated as an open circuit.
+        
+          
+        
+    - Using nodal analysis at the capacitor node with reference to the bottom rail:
+        
+          
+        
+        $$\frac{v(\infty) - 15}{2} + \frac{v(\infty) - (-7.5)}{6} = 0$$
+        
+          
+        
+    - Multiplying the entire equation by $6$:
+        
+          
+        
+        $$3[v(\infty) - 15] + [v(\infty) + 7.5] = 0$$
+        
+        $$4v(\infty) - 45 + 7.5 = 0 \implies 4v(\infty) = 37.5 \implies v(\infty) = 9.375\text{ V}$$
+        
+- **Thevenin Resistance $R_{\text{th}}$ and Time Constant $\tau$ ($t > 0$):**
+    
+      
+    - Deactivating the independent voltage sources (replacing them with short circuits):
+        
+          
+        
+        $$R_{\text{th}} = 2\ \Omega \parallel 6\ \Omega = \frac{2 \times 6}{2 + 6} = \frac{12}{8} = 1.5\ \Omega$$
+        
+          
+        
+    - The capacitor has capacitance $C = \frac{1}{3}\text{ F}$:
+        
+          
+        
+        $$\tau = R_{\text{th}}C = 1.5 \times \frac{1}{3} = 0.5\text{ s}$$
+        
+        $$\frac{1}{\tau} = \frac{1}{0.5} = 2\text{ s}^{-1}$$
+        
+- **Voltage Response $v(t)$ for $t > 0$:**
+    
+      
+    - Applying the standard first-order step response formula:
+        
+          
+        
+        $$v(t) = v(\infty) + [v(0) - v(\infty)]e^{-t/\tau}$$
+        
+        $$v(t) = 9.375 + (15 - 9.375)e^{-2t} = (9.375 + 5.625e^{-2t})\text{ V}$$
+        
+          
+        
+- **Value at $t = 0.5\text{ s}$:**
+    
+      
+    - Substituting $t = 0.5$:
+        
+          
+        
+        $$v(0.5) = 9.375 + 5.625e^{-2(0.5)} = 9.375 + 5.625e^{-1} \approx 9.375 + 5.625(0.36788) \approx 11.44\text{ V}$$
+        
 ##
 
 * A second-order circuit is characterized by a second-order differential equation. It consists of resistors and the equivalent of **two energy storage elements.**
