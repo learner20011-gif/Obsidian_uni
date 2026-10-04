@@ -1529,8 +1529,8 @@ $$ v_c(0^-) = 10\text{ V} $$
 **2. S-Domain Transformation ($t > 0$):**
 At $t=0$, the switch opens, disconnecting the $5\Omega$ resistor. The circuit becomes a series RLC circuit driven by the $10\text{ V}$ source. We transform the circuit into the Laplace domain:
 *   Voltage source: $V_s(s) = \frac{10}{s}$
-*   Inductor: impedance is $sL = 0.5s$. To account for the initial current, we use a series voltage source $-L i(0) = -0.5(2) = -1$ V (opposing the current flow).
-*   Capacitor: impedance is $\frac{1}{sC} = \frac{1}{(1/20)s} = \frac{20}{s}$. To account for the initial voltage, we use a series voltage source $\frac{v_c(0)}{s} = \frac{10}{s}$.
+*   Inductor: impedance is $sL = 0.5s$. **To account for the initial current, we use a series voltage source $-L i(0) = -0.5(2) = -1$ V (opposing the current flow).**
+*   Capacitor: impedance is $\frac{1}{sC} = \frac{1}{(1/20)s} = \frac{20}{s}$. **To account for the initial voltage, we use a series voltage source $\frac{v_c(0)}{s} = \frac{10}{s}$.**
 *   Resistor: $2\Omega$.
 
 **3. Circuit Analysis in the S-Domain:**
