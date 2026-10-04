@@ -525,7 +525,7 @@ $$v(t) = v(\infty) + [v(t_0) - v(\infty)]e^{-(t - t_0)/\tau}, \quad t \ge t_0$$
 
 
   
-
+In any linear circuit, **every voltage and current in the network** satisfies the exact same characteristic differential equation:
 $$\frac{d^2 x(t)}{dt^2} + 2\alpha \frac{dx(t)}{dt} + \omega_0^2 x(t) = f(t)$$
 
 where $x(t)$ represents current or voltage, $\alpha$ is the damping factor (attenuation factor), and $\omega_0$ is the undamped natural frequency.
