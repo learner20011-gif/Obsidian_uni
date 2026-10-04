@@ -518,6 +518,7 @@
 * The Key to Working with a Source-Free RCCircuit Is Finding: 1. The initial voltage across the capacitor. 2. The time constant t. v(0)
 * The Key to Working with a Source-Free RLCircuit Is to Find: 1. The initial current through the inductor. 2. The time constant of the circuit. 
 * 1. The initial capacitor voltage 2. The final capacitor voltage 3. The time constant t. 
+* The 5-Tau Rule : Because the growth or decay follows an exponential curve rather than a linear line, a circuit never theoretically reaches 100% of its final state. However, for all practical engineering applications, a circuit is considered **fully charged or discharged after 5 time constants (5τ)**, where it reaches **99.3%** of its final steady-state value
 * This formula is the standard **complete response formula** for a first-order circuit ($RC$ or $RL$), modified for when a switch flips at some time $t_0$ instead of $t = 0$.
 $$v(t) = v(\infty) + [v(t_0) - v(\infty)]e^{-(t - t_0)/\tau}, \quad t \ge t_0$$
 
@@ -815,3 +816,96 @@ $$\frac{d^2 v}{dt^2} + a_1 \frac{dv}{dt} + a_0 v = f(t)$$
 |**Quality Factor ($Q$)**|$\frac{1}{R}\sqrt{\frac{L}{C}}$|$R\sqrt{\frac{C}{L}}$|$< 0.5$ (Cannot oscillate)|
 |**Possible Regimes**|Over / Critical / Under / Undamped|Over / Critical / Under / Undamped|Strictly Overdamped|
 |**Root Locations**|Anywhere in Left Half Plane|Anywhere in Left Half Plane|Strictly Negative Real Axis|
+
+
+
+Heaviside’s Cover-Up Method is an algebraic shortcut to find the coefficients (residues) of a Partial Fraction Expansion (PFE) directly without solving systems of simultaneous linear equations.
+
+It applies to any strictly proper rational function:
+
+$$F(s) = \frac{N(s)}{D(s)}, \quad \text{where } \deg(N) < \deg(D)$$
+
+### Case 1: Distinct (Simple) Real Poles
+
+When the denominator consists of non-repeated linear factors:
+
+$$D(s) = (s - p_1)(s - p_2)\cdots(s - p_n)$$
+
+The expansion is:
+
+$$F(s) = \frac{A_1}{s - p_1} + \frac{A_2}{s - p_2} + \dots + \frac{A_n}{s - p_n}$$
+
+- **General Formula:**
+    
+    $$A_k = \left. (s - p_k) F(s) \right\vert{}_{s = p_k}$$
+    
+- **Intuition ("Cover-Up"):**
+    
+    - Cover up the factor $(s - p_k)$ in the denominator of $F(s)$.
+        
+    - Substitute $s = p_k$ into the remaining expression to evaluate $A_k$.
+        
+- **Worked Example:**
+    
+    $$F(s) = \frac{2s + 5}{(s + 1)(s + 3)} = \frac{A_1}{s + 1} + \frac{A_2}{s + 3}$$
+    
+    - Find $A_1$ (at pole $s = -1$):
+        
+        $$A_1 = \left. \frac{2s + 5}{s + 3} \right\vert{}_{s = -1} = \frac{2(-1) + 5}{-1 + 3} = \frac{3}{2}$$
+        
+    - Find $A_2$ (at pole $s = -3$):
+        
+        $$A_2 = \left. \frac{2s + 5}{s + 1} \right\vert{}_{s = -3} = \frac{2(-3) + 5}{-3 + 1} = \frac{-1}{-2} = \frac{1}{2}$$
+        
+    - Result:
+        
+        $$F(s) = \frac{3/2}{s + 1} + \frac{1/2}{s + 3}$$
+        
+
+### Case 2: Repeated (Multiple) Real Poles
+
+When the denominator contains a factor repeated $m$ times: $(s - p)^m$.
+
+The expansion for that factor has $m$ terms:
+
+$$F(s) = \frac{A_m}{(s - p)^m} + \frac{A_{m-1}}{(s - p)^{m-1}} + \dots + \frac{A_1}{s - p} + \dots$$
+
+- **General Derivative Formula:**
+    
+    $$A_{m-k} = \frac{1}{k!} \left. \frac{d^k}{ds^k} \left[ (s - p)^m F(s) \right] \right\vert{}_{s = p}, \quad \text{for } k = 0, 1, \dots, m-1$$
+    
+- **Order of Evaluation:**
+    
+    - **Highest power ($k = 0$):** Standard cover-up (no derivative):
+        
+        $$A_m = \left. (s - p)^m F(s) \right\vert{}_{s = p}$$
+        
+    - **Next lower power ($k = 1$):** First derivative:
+        
+        $$A_{m-1} = \left. \frac{d}{ds} \left[ (s - p)^m F(s) \right] \right\vert{}_{s = p}$$
+        
+    - **General lower power ($k$):** $k$-th derivative divided by $k!$:
+        
+        $$A_{m-k} = \frac{1}{k!} \left. \frac{d^k}{ds^k} \left[ (s - p)^m F(s) \right] \right\vert{}_{s = p}$$
+        
+- **Worked Example:**
+    
+    $$F(s) = \frac{s^2 + 1}{(s + 1)^2(s + 2)} = \frac{A_2}{(s + 1)^2} + \frac{A_1}{s + 1} + \frac{B}{s + 2}$$
+    
+    - Find $B$ (distinct pole at $s = -2$):
+        
+        $$B = \left. \frac{s^2 + 1}{(s + 1)^2} \right\vert{}_{s = -2} = \frac{(-2)^2 + 1}{(-2 + 1)^2} = \frac{5}{1} = 5$$
+        
+    - Find $A_2$ (highest repeated power at $s = -1$):
+        
+        $$A_2 = \left. \frac{s^2 + 1}{s + 2} \right\vert{}_{s = -1} = \frac{(-1)^2 + 1}{-1 + 2} = \frac{2}{1} = 2$$
+        
+    - Find $A_1$ (first derivative at $s = -1$):
+        
+        $$\frac{d}{ds}\left[ \frac{s^2 + 1}{s + 2} \right] = \frac{2s(s + 2) - (s^2 + 1)(1)}{(s + 2)^2} = \frac{s^2 + 4s - 1}{(s + 2)^2}$$
+        
+        $$A_1 = \left. \frac{s^2 + 4s - 1}{(s + 2)^2} \right\vert{}_{s = -1} = \frac{(-1)^2 + 4(-1) - 1}{(-1 + 2)^2} = \frac{1 - 4 - 1}{1} = -4$$
+        
+    - Result:
+        
+        $$F(s) = \frac{2}{(s + 1)^2} - \frac{4}{s + 1} + \frac{5}{s + 2}$$

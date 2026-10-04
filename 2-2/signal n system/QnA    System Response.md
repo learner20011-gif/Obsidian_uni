@@ -1026,7 +1026,7 @@ $$v(t) = 10 - 8e^{-0.25t} \text{ V}$$
 
 **Problem Statement:**
 Describe the current sketches for the three damping conditions of a source-free series RLC circuit and identify which condition reaches steady state the fastest.
-
+![[Pasted image 20261004193537.png]]
 **Solution:**
 For a series RLC circuit, the damping factor is $\alpha = \frac{R}{2L}$ and the resonant frequency is $\omega_0 = \frac{1}{\sqrt{LC}}$. The damping conditions depend on the relationship between $\alpha$ and $\omega_0$.
 *   **(i) $R > 2\sqrt{L/C}$ (Overdamped):** Here, $\alpha > \omega_0$. The roots are real and negative. The current $i(t)$ rises to a single, relatively broad peak and then decays very sluggishly to zero without crossing the time axis (no oscillation).
