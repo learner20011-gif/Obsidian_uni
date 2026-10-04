@@ -1223,6 +1223,119 @@ Therefore, the capacitance must be $2\text{ F}$ to produce a critically damped r
 
 ### **First order and second order switching circuit**
 
+### Question
+
+In the circuit shown in Figure 16.10(a), the switch moves from position $a$ to position $b$ at $t = 0$. Find the current $i(t)$ for $t > 0$.
+
+---
+
+#### Solution
+
+The circuit response for $t \ge 0$ is **$i(t) = \left(I_0 - \frac{V_0}{R}\right)e^{-t/\tau} + \frac{V_0}{R}$**, where $\tau = \frac{L}{R}$.
+
+* **Initial Condition:**
+* Prior to switching at $t < 0$, the inductor is connected to the independent current source $I_0$.
+
+
+* Due to the inductor continuity property, the initial current through the inductor is:
+
+$$i(0) = I_0$$
+
+
+
+
+
+* **$s$-Domain Transformation:**
+* For $t > 0$, the switch moves to position $b$, connecting the DC voltage source $V_0$, resistor $R$, and inductor $L$ in a single series loop.
+
+
+* In the frequency domain ($s$-domain), the circuit components transform to:
+* Constant voltage source: $\frac{V_0}{s}$
+
+* Resistor: $R$
+
+* Inductor with initial current: An impedance $sL$ in series with an opposing voltage source $L i(0) = L I_0$
+
+
+
+
+
+* **Mesh Analysis in the $s$-Domain:**
+* Applying Kirchhoff's Voltage Law (KVL) around the mesh gives:
+
+$$I(s)(R + sL) - L I_0 - \frac{V_0}{s} = 0$$
+
+
+
+* Solving for the mesh current $I(s)$:
+
+$$I(s) = \frac{L I_0}{R + sL} + \frac{V_0}{s(R + sL)} = \frac{I_0}{s + R/L} + \frac{V_0/L}{s(s + R/L)}$$
+
+
+
+
+
+* **Partial Fraction Expansion:**
+* Expanding the second term on the right-hand side:
+
+$$\frac{V_0/L}{s(s + R/L)} = \frac{A}{s} + \frac{B}{s + R/L}$$
+
+
+
+where $A = \frac{V_0/L}{R/L} = \frac{V_0}{R}$ and $B = \frac{V_0/L}{-R/L} = -\frac{V_0}{R}$.
+* Substituting back into the expression for $I(s)$ yields:
+
+$$I(s) = \frac{I_0}{s + R/L} + \frac{V_0/R}{s} - \frac{V_0/R}{s + R/L}$$
+
+
+
+
+
+* **Inverse Laplace Transform:**
+* Taking the inverse Laplace transform $\mathcal{L}^{-1}\{I(s)\}$:
+
+$$i(t) = I_0 e^{-(R/L)t} + \frac{V_0}{R} - \frac{V_0}{R} e^{-(R/L)t}$$
+
+
+* Factoring the terms together:
+
+$$i(t) = \left(I_0 - \frac{V_0}{R}\right)e^{-t/\tau} + \frac{V_0}{R}, \quad t \ge 0$$
+
+
+
+
+where the time constant is defined as $\tau = \frac{L}{R}$.
+
+
+
+
+
+---
+
+#### Alternative Form and Analysis
+
+* **Natural vs. Forced Response:**
+* Regrouping the solution by initial state and input yields:
+
+$$i(t) = \underbrace{I_0 e^{-t/\tau}}_{\text{Natural Response}} + \underbrace{\frac{V_0}{R}\left(1 - e^{-t/\tau}\right)}_{\text{Forced Response}}, \quad t \ge 0$$
+
+
+
+
+
+* **Transient vs. Steady-State:**
+* The term $\left(I_0 - \frac{V_0}{R}\right)e^{-t/\tau}$ decays to zero as $t \to \infty$ (transient response).
+
+
+* The term $\frac{V_0}{R}$ persists indefinitely as $t \to \infty$ (steady-state response).
+
+
+
+
+* **Final-Value Theorem Verification:**
+* Evaluating the steady-state value using the final-value theorem confirms:
+
+$$\lim_{s \to 0} sI(s) = \lim_{s \to 0}\left(\frac{s I_0}{s + R/L} + \frac{V_0/L}{s + R/L}\right) = \frac{V_0}{R}$$
 ### 19. Page 2, Q.2(c): Switch $S_1$ in the following Fig. is closed at t = 0 and $S_2$ is closed at t = 3s. Calculate $i(t)$ for all t. Also find $i(2)$ and $i(4)$. [Figure Involved]
 
 ![[Pasted image 20260727114700.png]]
