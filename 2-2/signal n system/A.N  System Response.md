@@ -1,3 +1,7 @@
+
+
+
+
 ### second order
 
 ![[Pasted image 20261004135654.png]]![[Pasted image 20261004193537.png]]
