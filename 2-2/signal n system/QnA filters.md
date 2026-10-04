@@ -1,3 +1,45 @@
+# Filter Design Questions & Solutions
+
+> [!tip]- Complete Textbook Reference Mapping Table (Click to expand)
+> 
+> | # | Question Number & Short Title | BP Lathi Topic Location | BP Lathi Page Range | Sadiku (5th Ed) Topic Location | Sadiku Page Range |
+> | :--- | :--- | :--- | :--- | :--- | :--- |
+> | **1** | **Pg 8, Q.8(b): Butterworth Low-Pass Filter Design** | Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-2 (*Butterworth Filters*) | pp. 439–441, 458–460 | Chapter 14, Section 14.7.1 (*Lowpass Filter*), Section 14.8.1 (*First-Order Lowpass Filter*), Section 14.9 (*Scaling*) | pp. 638–639, 643, 648–651 |
+> | **2** | **Pg 10, Q.6(a): Butterworth vs. Chebyshev Decibel Gain Comparison** | Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-4 (*Chebyshev Filters*) | pp. 440–441, 463–466 | Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*) | pp. 637–648 |
+> | **3** | **Pg 10, Q.6(b): Steps to Design a Chebyshev Filter** | Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-4 (*Chebyshev Filters*) | pp. 440–441, 463–466 | Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*) | pp. 637–648 |
+> | **4** | **Pg 13, Q.8(a): Chebyshev Filter Parameter Proofs (\epsilon and n)** | Chapter 4, Section 4.10-5 (*Practical Filters and Their Specifications*), Section 4.12-4 (*Chebyshev Filters*) | pp. 444–445, 463–466 | Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*) | pp. 637–648 |
+> | **5** | **Pg 13, Q.8(b): Low-Pass Filter Design Specifications** | Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.10-5 (*Specifications*), Section 4.12-4 (*Chebyshev Filters*) | pp. 439–445, 463–466 | Chapter 14, Section 14.7.1 (*Lowpass Filter*), Section 14.8.1 (*First-Order Lowpass Filter*) | pp. 638–639, 643 |
+> | **6** | **Pg 16, Q.8(b): Low-Pass Butterworth Filter (-80 dB/decade Slope)** | Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-2 (*Butterworth Filters*) | pp. 439–441, 458–460 | Chapter 14, Section 14.4 (*Bode Plots*), Section 14.8.1 (*Active Lowpass Filters*), Section 14.9 (*Scaling*) | pp. 619–628, 643, 648–651 |
+> | **7** | **Pg 71, Q.8(a) (Top): Butterworth, Chebyshev, and Elliptic Approximations** | Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.10-5 (*Specifications*), Section 4.12-2 & 4.12-4 (*Butterworth & Chebyshev Filters*) | pp. 439–445, 458–466 | Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*) | pp. 637–648 |
+> | **8** | **Pg 71, Q.8(a) (Middle): Chebyshev vs. Butterworth Stop-Band Slope** | Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-4 (*Chebyshev Filters*) | pp. 440–441, 463–466 | Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*) | pp. 637–648 |
+> | **9** | **Pg 71, Q.8(b) (Middle): Butterworth Pole Locations (-80 dB/decade)** | Chapter 4, Section 4.10-2 (*Butterworth Semicircular Pole Wall*), Section 4.12-2 (*Butterworth Filters*) | pp. 439–440, 458–460 | Chapter 14, Section 14.2 (*Transfer Functions*), Section 14.9 (*Scaling & Filter Poles*) | pp. 614–617, 648–651 |
+> | **10** | **Pg 71, Q.8(a) (Bottom): Modern Filters & Butterworth vs. Chebyshev Comparison** | Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.10-5 (*Practical Filters*) | pp. 439–445 | Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*) | pp. 637–648 |
+> | **11** | **Pg 71, Q.8(b) (Bottom): Butterworth Filter Design Algorithm** | Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-2 (*Butterworth Filters*) | pp. 439–440, 458–460 | Chapter 14, Section 14.8 (*Active Filters*), Section 14.9 (*Scaling*) | pp. 642–651 |
+> | **12** | **Pg 72, Q.8(b): Ideal vs. Practical Frequency Response & Active vs. Passive Filters** | Chapter 4, Section 4.10-5 (*Practical Filters*), Chapter 7, Section 7.5 (*Ideal and Practical Filters*) | pp. 444–445, 730–732 | Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*) | pp. 637–648 |
+> | **13** | **Pg 16, Q.8(c): Normalized Chebyshev Low-Pass Model (n=2)** | Chapter 4, Section 4.12-4 (*Chebyshev Filters*) | pp. 463–466 | Chapter 14, Section 14.9 (*Magnitude & Frequency Scaling*) | pp. 648–651 |
+> | **14** | **Pg 19, Q.8(b): Normalized Chebyshev Model Specifications** | Chapter 4, Section 4.12-4 (*Chebyshev Filters*) | pp. 463–466 | Chapter 14, Section 14.9 (*Magnitude & Frequency Scaling*) | pp. 648–651 |
+> | **15** | **Pg 71, Q(c) (Top): Transfer Function of Chebyshev LPF** | Chapter 4, Section 4.12-4 (*Chebyshev Filters*) | pp. 463–466 | Chapter 14, Section 14.2 & 14.8 (*Transfer Functions & Active Filters*) | pp. 614–617, 642–648 |
+> | **16** | **Pg 71, Q.8(c) (Middle): Construct Chebyshev Transfer Function** | Chapter 4, Section 4.12-4 (*Chebyshev Filters*) | pp. 463–466 | Chapter 14, Section 14.2 & 14.8 (*Transfer Functions*) | pp. 614–617, 642–648 |
+> | **17** | **Pg 10, Q.6(c): Band-Reject Butterworth Filter (n=2)** | Chapter 4, Section 4.10-4 & 4.10-5 (*Notch Filters*) | pp. 441–445 | Chapter 14, Section 14.7.4 & 14.8.4 (*Bandstop Filters*) | pp. 640–641, 645–646 |
+> | **18** | **Pg 13, Q.6(c): Band-Stop Butterworth Filter (n=2)** | Chapter 4, Section 4.10-4 (*Notch Filters*) | pp. 441–443 | Chapter 14, Section 14.7.4 & 14.8.4 (*Bandstop Filters*) | pp. 640–641, 645–646 |
+> | **19** | **Pg 25, Q.1: High-Pass Filter Response to Signal Input** | Chapter 6, Section 6.4 & Chapter 7, Section 7.5 (*Periodic Inputs & Filtering*) | pp. 637–640, 730–732 | Chapter 14, Section 14.7.2 & Chapter 17, Section 17.8.2 (*Highpass Filters & Fourier Series Input*) | pp. 639, 797–800 |
+> | **20** | **Pg 37, Q.1: Band-Pass Filter Response to Signal Input** | Chapter 6, Section 6.4 & Chapter 7, Section 7.5 (*Periodic Inputs & Filtering*) | pp. 637–640, 730–732 | Chapter 14, Section 14.7.3 & Chapter 17, Section 17.8.2 (*Bandpass Filters & Harmonic Response*) | pp. 639–640, 797–800 |
+> | **21** | **Pg 38, Q.1: Low-Pass Filter Response to Signal Input** | Chapter 6, Section 6.4 & Chapter 7, Section 7.5 (*Periodic Inputs & Filtering*) | pp. 637–640, 730–732 | Chapter 14, Section 14.7.1 & Chapter 17, Section 17.8.2 (*Lowpass Filters & DC Filtering*) | pp. 638–639, 797–800 |
+> | **22** | **Pg 71, Q.8(c) (Bottom): High-Pass Chebyshev Filter Specifications** | Chapter 4, Section 4.10-2, 4.10-5 & 4.12-4 (*Chebyshev Filters*) | pp. 439–445, 463–466 | Chapter 14, Section 14.7.2, 14.8.2 & 14.9 (*Highpass Filters & Scaling*) | pp. 639, 643, 648–651 |
+> | **23** | **Pg 72, Q.6(a): Sawtooth Waveform Input to Bandpass Filter** | Chapter 6, Section 6.4 & Chapter 7, Section 7.5 (*Periodic Inputs & Filtering*) | pp. 637–640, 730–732 | Chapter 14, Section 14.7.3 & Chapter 17, Section 17.8.2 (*Bandpass Filtering of Waveforms*) | pp. 639–640, 797–800 |
+> | **24** | **Pg 72, Q.8(c): Band-Stop Butterworth Filter (n=3)** | Chapter 4, Section 4.10-4 & 4.12 (*Notch Filters*) | pp. 441–443, 458–460 | Chapter 14, Section 14.7.4 & 14.8.4 (*Bandstop Filters*) | pp. 640–641, 645–646 |
+> | **25** | **Pg 2, Q.3(c): Second-Order Active Filter Transfer Function & Impulse Response** | Chapter 4, Section 4.12-3 (*Sallen-Key & Active Filter Stages*) | pp. 460–463 | Chapter 8, Section 8.8 & Chapter 14, Section 14.8 (*Second-Order Op-Amp Active Filters*) | pp. 344–346, 642–648 |
+> | **26** | **Pg 24, Q.2: Second-Order Active Filter Transfer Function Analysis & Stability** | Chapter 4, Section 4.10-1 & 4.12-3 (*Active Filter Poles & Stability*) | pp. 436–439, 460–463 | Chapter 14, Section 14.2, 14.8 & Chapter 16, Section 16.4–16.5 (*Transfer Functions, Active Filters & Stability*) | pp. 614–617, 642–648, 737–740 |
+> | **27** | **Pg 4, Q.8(c): Sallen-Key Lowpass Butterworth Filter Design (Stopband < -20 dB)** | Chapter 4, Section 4.12-3 (*Sallen-Key Filter Stages*) | pp. 460–463 | Chapter 14, Section 14.8.1, 14.8.3 & 14.9 (*Active Lowpass Realization*) | pp. 643, 648–651 |
+> | **28** | **Pg 8, Q.8(c): Sallen-Key Lowpass Butterworth Filter Design (Stopband < -40 dB)** | Chapter 4, Section 4.12-3 (*Sallen-Key Filter Stages*) | pp. 460–463 | Chapter 14, Section 14.8.1, 14.8.3 & 14.9 (*Active Lowpass Realization*) | pp. 643, 648–651 |
+> | **29** | **Pg 71, Q.8(b) (Top): Sallen-Key Lowpass Butterworth Filter Design (fp=10 kHz, fs=40 kHz)** | Chapter 4, Section 4.12-3 (*Sallen-Key Filter Stages*) | pp. 460–463 | Chapter 14, Section 14.8.1, 14.8.3 & 14.9 (*Active Lowpass Realization*) | pp. 643, 648–651 |
+> | **30** | **Pg 44, Q.1: Second-Order Filter Transfer Function Stability & Oscillation Range** | Chapter 4, Section 4.10-1 & 4.10-5 (*Transfer Function Stability*) | pp. 436–439, 444–445 | Chapter 14, Section 14.2 & Chapter 16, Section 16.4–16.5 (*Transfer Function Analysis & Stability*) | pp. 614–617, 737–740 |
+> | **31** | **Pg 57, Q.3(c): Second-Order Active Circuit Impulse Response Analysis** | Chapter 4, Section 4.10-1 & 4.12-3 (*Active Circuit Analysis*) | pp. 436–439, 460–463 | Chapter 14, Section 14.2 & Chapter 15, Section 15.3–15.5 (*Transfer Functions & Inverse Laplace Transforms*) | pp. 614–617, 679–695 |
+
+---
+
+### **Analog filter design**
+
 ### 1. Page 8, Q.8(b): Design a Butterworth low pass filter which has the following transfer characteristics.
 
 ```
@@ -10,6 +52,12 @@
           +-------------\---------> ω
                         ωc
 ```
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-2 (*Butterworth Filters*), pp. 439–441, 458–460
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7.1 (*Lowpass Filter*), Section 14.8.1 (*First-Order Lowpass Filter*), Section 14.9 (*Scaling*), pp. 638–639, 643, 648–651
+
+---
 
 #### **1. Determine the Filter Order ($n$)**
 * For a Butterworth low-pass filter, each pole provides a high-frequency roll-off rate (slope) of $-20\text{ dB/decade}$.
@@ -54,6 +102,12 @@ $$H(s) = \left(\frac{1}{s + 1}\right) \left(\frac{1}{s^2 + s + 1}\right)$$
 
 ### 2. Page 10, Q.6(a): Show that the decibel gain curve of Butterworth filter is smaller compared to Chebyshev filter at large frequencies.
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-4 (*Chebyshev Filters*), pp. 440–441, 463–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*), pp. 637–648
+
+---
+
 #### **1. Magnitude Response at Large Frequencies**
 
 * **Butterworth Filter:**
@@ -91,6 +145,10 @@ Hence, the Chebyshev filter provides much sharper rolloff and smaller gain than 
 ---
 
 ### 3. Page 10, Q.6(b): Write the steps to design a Chebyshev filter.
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-4 (*Chebyshev Filters*), pp. 440–441, 463–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*), pp. 637–648
 
 To design an analog Chebyshev low-pass filter, follow this systematic procedure:
 
@@ -131,6 +189,12 @@ To design an analog Chebyshev low-pass filter, follow this systematic procedure:
 ---
 
 ### 4. Page 13, Q.8(a): Prove that $\epsilon = \sqrt{10^{0.1A_{\max}} - 1}$ and $n = \frac{\cosh^{-1}\left(\sqrt{(10^{0.1A_{\min}}-1)/\epsilon^2}\right)}{\cosh^{-1}(\omega_s/\omega_p)}$ for Chebyshev filter; where symbols have their usual meanings. (Note: Mathematical symbols transcribed as closely as possible from original image)
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-5 (*Practical Filters and Their Specifications*), Section 4.12-4 (*Chebyshev Filters*), pp. 444–445, 463–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*), pp. 637–648
+
+---
 
 #### **1. Derivation of the Ripple Factor $\epsilon$**
 The magnitude response of a low-pass Chebyshev filter is given by:
@@ -173,6 +237,10 @@ where $C_n(x)$ is the Chebyshev polynomial of order $n$.
   $$n = \frac{\cosh^{-1}\left(\sqrt{\frac{10^{0.1 A_{\min}} - 1}{\epsilon^2}}\right)}{\cosh^{-1}\left(\frac{\omega_s}{\omega_p}\right)} \quad \text{--- (Proved)}$$
 ### 5. Page 13, Q.8(b): A low-pass filter is to be designed according to the following specifications.
 **(i) $R_L = 600\text{ ohms}$, (ii) $f_c = 1400\text{ cps}$ ($\omega_c = 8800\text{ rps}$), (iii) ripple specification is that $20 \log_{10} \frac{\text{peak magnitude}}{\text{valley magnitude}} = 1\text{ dB}$, (iv) slope of the decibel gain curve is to be -40 dB/decade, (v) $|G(j0)|$ must be unity.**
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.10-5 (*Specifications*), Section 4.12-4 (*Chebyshev Filters*), pp. 439–445, 463–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7.1 (*Lowpass Filter*), Section 14.8.1 (*First-Order Lowpass Filter*), pp. 638–639, 643
 
 ---
 
@@ -251,6 +319,10 @@ $$L_2 = \frac{K_m}{K_f} L_2' = \frac{600}{8800} \times 0.6850 = 46.7\text{ mH}$$
 
 ### 6. Page 16, Q.8(b): Design a low-pass Butterworth filter having a slope of -80 dB/decade outside the pass band.
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-2 (*Butterworth Filters*), pp. 439–441, 458–460
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.4 (*Bode Plots*), Section 14.8.1 (*Active Lowpass Filters*), Section 14.9 (*Scaling*), pp. 619–628, 643, 648–651
+
 ---
 
 #### **1. Determine the Order of the Filter ($n$)**
@@ -312,6 +384,10 @@ $$H_1(s) = \frac{1}{s^2 + 0.7654s + 1}, \quad H_2(s) = \frac{1}{s^2 + 1.8478s + 
 
 ### 7. Page 71, Q.8(a) (Top): In context of filter performance characteristics, discuss Butterworth, Chebyshev and Elliptic filter approximations.
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.10-5 (*Specifications*), Section 4.12-2 & 4.12-4 (*Butterworth & Chebyshev Filters*), pp. 439–445, 458–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*), pp. 637–648
+
 Filter approximations are mathematical functions used to approximate the ideal "brick-wall" low-pass filter response. The three most fundamental approximations are:
 
 ```
@@ -372,6 +448,10 @@ Filter approximations are mathematical functions used to approximate the ideal "
 
 ### 8. Page 71, Q.8(a) (Middle): Show that the slope in the stop-band region for Chebyshev design is greater than Butterworth.
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-4 (*Chebyshev Filters*), pp. 440–441, 463–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*), pp. 637–648
+
 To compare the rate of attenuation (slope) in the stopband region, we examine the derivative of the attenuation/gain with respect to frequency for both filter types.
 
 ---
@@ -420,6 +500,10 @@ Let both filters be normalized such that the cutoff frequency is $\omega_p = 1$.
 **Conclusion:** The Chebyshev filter provides a much steeper slope into the stopband than the Butterworth filter of identical order.
 
 ### 9. Page 71, Q.8(b) (Middle): For the Butterworth low pass filter, find and sketch the poles on the complex S-plane when the slope of the decibel gain curve is -80 dB/decade.
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2 (*Butterworth Semicircular Pole Wall*), Section 4.12-2 (*Butterworth Filters*), pp. 439–440, 458–460
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.2 (*Transfer Functions*), Section 14.9 (*Scaling & Filter Poles*), pp. 614–617, 648–651
 
 ---
 
@@ -490,6 +574,10 @@ All 4 poles lie on a circle of radius $\omega_0 = 1$ in the left half of the $s$
 
 ### 10. Page 71, Q.8(a) (Bottom): What is modern filter? What are the differences between Butterworth and Chebyshev design?
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.10-5 (*Practical Filters*), pp. 439–445
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*), pp. 637–648
+
 ---
 
 #### **1. What is a Modern Filter?**
@@ -517,6 +605,10 @@ All 4 poles lie on a circle of radius $\omega_0 = 1$ in the left half of the $s$
 ---
 
 ### 11. Page 71, Q.8(b) (Bottom): Write down the algorithm for Butterworth filter design.
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2 (*Lowpass Filters*), Section 4.12-2 (*Butterworth Filters*), pp. 439–440, 458–460
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.8 (*Active Filters*), Section 14.9 (*Scaling*), pp. 642–651
 
 The step-by-step algorithm to design an analog low-pass Butterworth filter is as follows:
 
@@ -560,6 +652,10 @@ $$s_k = -\sin\left(\frac{2k - 1}{2n}\pi\right) + j\cos\left(\frac{2k - 1}{2n}\pi
 ---
 
 ### 12. Page 72, Q.8(b): Draw the ideal and practical frequency responses of different types of filter and also distinguish between active and passive filter.
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-5 (*Practical Filters*), Chapter 7, Section 7.5 (*Ideal and Practical Filters*), pp. 444–445, 730–732
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7 (*Passive Filters*), Section 14.8 (*Active Filters*), pp. 637–648
 
 ---
 
@@ -627,7 +723,15 @@ Rejects frequencies within a specific band ($\omega_1$ to $\omega_2$), while pas
 | **Power Supply** | Requires **no external DC power supply**. | Requires an **external DC power supply** to bias the active components. |
 | **Tuning & Flexibility** | Difficult to tune; changing component values often requires replacing physical inductors. | Highly versatile and easy to tune using potentiometers or adjustable resistors. |
 
+---
+
+### **Low pass prototypes of modern filters**
+
 ### 13. Page 16, Q.8(c): Develop a normalized low-pass Chebyshev model with n=2, ϵ = 0.663, ωc = 1 rps and RL = 1Ω. The magnitude of gain must be unity at ω = 0. Sketch the approximate shape of the decibel gain curve.
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.12-4 (*Chebyshev Filters*), pp. 463–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.9 (*Magnitude & Frequency Scaling*), pp. 648–651
 
 ---
 
@@ -698,6 +802,10 @@ For a normalized low-pass ladder network with load $R_L = 1\,\Omega$ and $\omega
 ### 14. Page 19, Q.8(b): Design a normalized low pass Chebyshev model to meet the following specifications:
 **(i) $R_L = 1\text{k}\Omega$ (ii) $\omega_c = 1\text{ rps}$ (iii) The ripple specification is: $20 \log_{10} \frac{\text{peak magnitude}}{\text{valley magnitude}} = 1.5\text{ dB}$ (iv) Slop of the dB gain curve is to be -60 dB/decade at frequency much higher than cutoff. (v) $G(j0)$ must be unity.**
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.12-4 (*Chebyshev Filters*), pp. 463–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.9 (*Magnitude & Frequency Scaling*), pp. 648–651
+
 ---
 
 #### **1. Determine Filter Order ($n$) and Ripple Factor ($\epsilon$)**
@@ -758,6 +866,10 @@ $$G(s) = \frac{0.3894}{s^3 + 0.8404s^2 + 1.1032s + 0.3894}$$
 **The ratio $r \le 2\text{ dB}$ over a passband $0 < \omega \le 10$, $\omega_p = 10\text{ rad/s}$**  
 **The stop band gain $G_s \le -20\text{dB}$ for $\omega > 16.5$, $\omega_s = 16.5\text{ rad/s}$**
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.12-4 (*Chebyshev Filters*), pp. 463–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.2 & 14.8 (*Transfer Functions & Active Filters*), pp. 614–617, 642–648
+
 ---
 
 #### **1. Calculate Filter Order ($n$)**
@@ -806,6 +918,10 @@ $$H(s) = \frac{327.0}{s^3 + 7.379s^2 + 102.26s + 327.0}$$
 
 ### 16. Page 71, Q.8(c) (Middle): Construct the transfer function of the Chebyshev filter if $G(s)G(-s) = \frac{1}{1+0.5C_3^2(s/j)}$.
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.12-4 (*Chebyshev Filters*), pp. 463–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.2 & 14.8 (*Transfer Functions*), pp. 614–617, 642–648
+
 ---
 
 #### **1. Identify Parameters**
@@ -843,8 +959,15 @@ $$D(s) = (s + 0.3914)(s^2 + 0.3914s + 0.9038) = s^3 + 0.7828s^2 + 1.057s + 0.353
 Since $n = 3$ is odd, $|G(j0)| = 1$:
 $$G(s) = \frac{0.3537}{s^3 + 0.7828s^2 + 1.057s + 0.3537}$$
 
+---
+
+### **Filter design and transformations**
 
 ### 17. Page 10, Q.6(c): Develop a band reject Butterworth filter with n = 2, $\omega_h$ = 60000 rps, $\omega_l$ = 10000 rps and $R_L$ = 1000Ω. Sketch the approximate shape of the decibel gain characteristics.
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-4 & 4.10-5 (*Notch Filters*), pp. 441–445
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7.4 & 14.8.4 (*Bandstop Filters*), pp. 640–641, 645–646
 
 ---
 
@@ -930,6 +1053,10 @@ Under the **low-pass to band-reject transformation**:
 
 ### 18. Page 13, Q.6(c): Develop a band-stop Butterworth filter with n = 2, $\omega_h$ = 60000 rps, $\omega_l$ = 10000 rps and $R_L$ = 10000Ω. Sketch the approximate shape of the decibel gain curve.
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-4 (*Notch Filters*), pp. 441–443
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7.4 & 14.8.4 (*Bandstop Filters*), pp. 640–641, 645–646
+
 ---
 
 #### **1. Filter Parameters**
@@ -998,6 +1125,10 @@ The frequency response curve is mathematically identical in shape to Question 17
 **(a) Determine the output signal.**  
 **(b) What would be range of $\omega_c$ of the filter so that first two harmonics will be blocked?**
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 6, Section 6.4 & Chapter 7, Section 7.5 (*Periodic Inputs & Filtering*), pp. 637–640, 730–732
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7.2 & Chapter 17, Section 17.8.2 (*Highpass Filters & Fourier Series Input*), pp. 639, 797–800
+
 ---
 
 #### **Part (a): Determine the Output Signal**
@@ -1048,6 +1179,10 @@ The frequency response curve is mathematically identical in shape to Question 17
                         |           |
                     -1  +-----------+
 ```
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 6, Section 6.4 & Chapter 7, Section 7.5 (*Periodic Inputs & Filtering*), pp. 637–640, 730–732
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7.3 & Chapter 17, Section 17.8.2 (*Bandpass Filters & Harmonic Response*), pp. 639–640, 797–800
 
 ---
 
@@ -1118,6 +1253,10 @@ To pass **only** the fundamental component:
                         |           |
 ```
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 6, Section 6.4 & Chapter 7, Section 7.5 (*Periodic Inputs & Filtering*), pp. 637–640, 730–732
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7.1 & Chapter 17, Section 17.8.2 (*Lowpass Filters & DC Filtering*), pp. 638–639, 797–800
+
 ---
 
 #### **Part (a): Determine the Output Signal**
@@ -1167,6 +1306,10 @@ To pass **only** the fundamental component:
 **(iii) The ripple specification is $20 \log_{10} \frac{\text{Peak Magnitude}}{\text{Valley Magnitude}} = 1\text{dB}$**  
 **(iv) Slope of the decibel gain curve is to be -60 dB/decade at frequencies much lower than cut-off.**  
 **(v) $G (j0)$ must be unity.**
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-2, 4.10-5 & 4.12-4 (*Chebyshev Filters*), pp. 439–445, 463–466
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7.2, 14.8.2 & 14.9 (*Highpass Filters & Scaling*), pp. 639, 643, 648–651
 
 ---
 
@@ -1240,6 +1383,10 @@ $$C_3 = \frac{1}{\omega_c R_L g_3} = \frac{1}{8800 \times 600 \times 2.0236} = \
           -1    0   1   2                                            (rad/s)
 ```
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 6, Section 6.4 & Chapter 7, Section 7.5 (*Periodic Inputs & Filtering*), pp. 637–640, 730–732
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7.3 & Chapter 17, Section 17.8.2 (*Bandpass Filtering of Waveforms*), pp. 639–640, 797–800
+
 ---
 
 #### **1. Fourier Series Representation of the Sawtooth Waveform**
@@ -1287,6 +1434,10 @@ $$\mathbf{y(t) = -\frac{1}{3\pi}\sin(6\pi t) - \frac{1}{4\pi}\sin(8\pi t) - \fra
 ---
 
 ### 24. Page 72, Q.8(c): Develop a band-stop Butterworth filter for the following specifications. Filter order: n = 3, Cut-off frequencies: $\omega_h$ = 60, 000 rps, $\omega_l$ = 10, 000 rps, Load resistance: $R_L$ = 1000Ω.
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-4 & 4.12 (*Notch Filters*), pp. 441–443, 458–460
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.7.4 & 14.8.4 (*Bandstop Filters*), pp. 640–641, 645–646
 
 ---
 
@@ -1342,6 +1493,9 @@ Substituting $S = \frac{B s}{s^2 + \omega_0^2}$ into $H_{\text{LP}}(S) = \frac{1
 $$H(s) = \frac{(s^2 + \omega_0^2)^3}{(s^2 + \omega_0^2)^3 + 2Bs(s^2 + \omega_0^2)^2 + 2B^2 s^2(s^2 + \omega_0^2) + B^3 s^3}$$
 where $\omega_0^2 = 6 \times 10^8\text{ (rad/s)}^2$ and $B = 50{,}000\text{ rad/s}$.
 
+---
+
+### **Active filters**
 
 ### 25. Page 2, Q.3(c): A second order active filter is shown below. (i) Find the transfer function. (ii) Find the impulse response.
 
@@ -1362,6 +1516,10 @@ where $\omega_0^2 = 6 \times 10^8\text{ (rad/s)}^2$ and $B = 50{,}000\text{ rad/
                                  +----(+) /
 ```
 *(Standard Sallen-Key low-pass filter with unity-gain follower: $R_1 = 1\,\Omega$, $R_2 = 1\,\Omega$, feedback capacitor $C_1 = 1\text{ F}$, and ground capacitor $C_2 = 1\text{ F}$.)*
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.12-3 (*Sallen-Key & Active Filter Stages*), pp. 460–463
+> * **Alexander & Sadiku (5th Ed):** Chapter 8, Section 8.8 & Chapter 14, Section 14.8 (*Second-Order Op-Amp Active Filters*), pp. 344–346, 642–648
 
 ---
 
@@ -1408,6 +1566,10 @@ $$\mathbf{h(t) = t e^{-t} u(t)}$$
 **(ii) Sketch $g(t)$ if $\beta = -4$.**  
 **(iii) Plot poles and zeros in the complex S plane if $\beta = 4$.**  
 **(iv) Find the range of $\beta$ for which the filter becomes stable.**
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-1 & 4.12-3 (*Active Filter Poles & Stability*), pp. 436–439, 460–463
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.2, 14.8 & Chapter 16, Section 16.4–16.5 (*Transfer Functions, Active Filters & Stability*), pp. 614–617, 642–648, 737–740
 
 ---
 
@@ -1476,6 +1638,8 @@ For the quadratic denominator $D(s) = s^2 + (\beta + 4)s + 4$:
 
 ---
 
+### **Realization of higher order filters**
+
 ### 27. Page 4, Q.8(c): Design a low pass Butterworth filter with Sallen-Key topology to satisfy the following specifications.
 **pass band gain $G_p > -3\text{ dB}$ at $5\text{ kHz}$**  
 **stop band gain $G_p < -20\text{ dB}$ at $50\text{ kHz}$**  
@@ -1488,6 +1652,10 @@ Order    Butterworth polynomial
   3      (s + 1)(s^2 + s + 1)
   4      (s^2 + 0.765s + 1)(s^2 + 1.848s + 1)
 ```
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.12-3 (*Sallen-Key Filter Stages*), pp. 460–463
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.8.1, 14.8.3 & 14.9 (*Active Lowpass Realization*), pp. 643, 648–651
 
 ---
 
@@ -1561,6 +1729,10 @@ Order    Butterworth polynomial
   5      (s + 1)(s^2 + 0.618s + 1)(s^2 + 1.618s + 1)
 ```
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.12-3 (*Sallen-Key Filter Stages*), pp. 460–463
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.8.1, 14.8.3 & 14.9 (*Active Lowpass Realization*), pp. 643, 648–651
+
 ---
 
 #### **1. Determine the Filter Order ($n$)**
@@ -1622,6 +1794,10 @@ Order, n    Butterworth polynomial
    4        (S^2 + 0.765S + 1)(S^2 + 1.848S + 1)
    5        (S + 1)(S^2 + 0.618S + 1)(S^2 + 1.618S + 1)
 ```
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.12-3 (*Sallen-Key Filter Stages*), pp. 460–463
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.8.1, 14.8.3 & 14.9 (*Active Lowpass Realization*), pp. 643, 648–651
 
 ---
 
@@ -1694,10 +1870,17 @@ $$2R\omega_c = 2(10{,}000)(62{,}832) = 1.2566 \times 10^9$$
 
 ---
 
+### **First and second order transfer functions**
+*(Note: These refer specifically to extracting or analyzing mathematical properties of 1st/2nd order filters. Some crossover with Active Filters above).*
+
 ### 30. Page 44, Q.1: A second order filter circuit has the following transfer function: Find the range of k so that
 **(i) The filter becomes stable.**  
 **(ii) The filter provides oscillation**  
 $$H(s) = \frac{10}{s^2+(k-5)s+10}$$
+
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-1 & 4.10-5 (*Transfer Function Stability*), pp. 436–439, 444–445
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.2 & Chapter 16, Section 16.4–16.5 (*Transfer Function Analysis & Stability*), pp. 614–617, 737–740
 
 ---
 
@@ -1732,6 +1915,10 @@ $$H(s) = \frac{10}{s^2+(k-5)s+10}$$
 
 ### 31. Page 57, Q.3(c): A second order active circuit has the following transfer function, $H(s) = \frac{1}{s^2+(\beta+4)s+4}$. Find the impulse response if (i) $\beta = 0$, (ii) $\beta = -4$ and (iii) $\beta = -8$.
 
+> [!info] **Textbook References**
+> * **BP Lathi (3rd Ed):** Chapter 4, Section 4.10-1 & 4.12-3 (*Active Circuit Analysis*), pp. 436–439, 460–463
+> * **Alexander & Sadiku (5th Ed):** Chapter 14, Section 14.2 & Chapter 15, Section 15.3–15.5 (*Transfer Functions & Inverse Laplace Transforms*), pp. 614–617, 679–695
+
 The impulse response $h(t)$ is obtained by taking the inverse Laplace transform of $H(s)$:
 $$h(t) = \mathcal{L}^{-1}\{H(s)\}$$
 
@@ -1761,6 +1948,11 @@ $$H(s) = \frac{1}{s^2 + (-8 + 4)s + 4} = \frac{1}{s^2 - 4s + 4} = \frac{1}{(s - 
 Using the Laplace transform pair $\mathcal{L}^{-1}\left\{\frac{1}{(s - a)^2}\right\} = t e^{at} u(t)$:
 $$\mathbf{h(t) = t e^{2t} u(t)}$$
 *(This is an unstable, exponentially growing response due to a double repeated pole in the right-half plane at $s = +2$).*
+
+---
+
+### **Realisation of passive filter circuits**
+*(No specific questions exclusively defining or asking to realize a passive filter circuit from scratch using inductor/capacitor ladder networks were found, outside of the active Sallen-Key topologies and generic RLC analyses covered in other sections).*
 
 ---
 
