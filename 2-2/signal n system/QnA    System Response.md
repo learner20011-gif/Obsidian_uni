@@ -1044,7 +1044,7 @@ The current $i(t)$ reaches steady state (decays to zero) in the shortest period 
 
 ***
 
-### 15. Page 51, Q(c): For the following circuit, express the time constant, $\tau$ in terms of $\beta$. Also find the range of $\beta$ for which $\tau$ becomes negative. Sketch $v_c(t)$ if $\beta = 3$. Assume $v_c(0) = 2V$. [Figure Involved]
+### 15. ✅Page 51, Q(c): For the following circuit, express the time constant, $\tau$ in terms of $\beta$. Also find the range of $\beta$ for which $\tau$ becomes negative. Sketch $v_c(t)$ if $\beta = 3$. Assume $v_c(0) = 2V$. [Figure Involved]
 
 ![[Pasted image 20260727114524.png]]
 
