@@ -1,7 +1,91 @@
-Based on the provided document, here are the step-by-step solutions for the first four questions.
+# System Response Questions & Solutions
 
+> [!tip]- Complete Textbook Reference Mapping Table (Click to expand)
+> 
+> | # | Question & Page | Topic | Alexander & Sadiku (5th Ed) Location | B.P. Lathi (3rd Ed) Location |
+> | :--- | :--- | :--- | :--- | :--- |
+> | **1** | **Pg 14, Q.3(b)** | Fourier Transform Method for Circuit Analysis | Chapter 18, Section 18.4, pp. 813–845 (Circuit Applications, pp. 833–835) | Chapter 7, Section 7.4, pp. 373–385 |
+> | **2** | **Pg 15, Q.5(b)** | Square Wave Response & Fourier Series | Chapter 17, Sec. 17.2–17.4, pp. 760–782 (Circuit Applications, pp. 778–781) | Chapter 6, Section 6.1, pp. 82–89 |
+> | **3** | **Pg 16, Q(b) (Top)** | Sawtooth Waveform & Band-Pass Filter Response | Section 14.7, pp. 637–642; Section 17.4 & 17.8.2, pp. 778–782, 797–799 | Chapter 6, Section 6.2, p. 207; Section 7.5, pp. 730–732 |
+> | **4** | **Pg 18, Q.4(a)** | Periodic Waveforms & Frequency Spectrum | Section 17.2–17.6, pp. 760–788 | Chapter 6, Section 6.1, pp. 64–70 |
+> | **5** | **Pg 21, Q.5(c)** | Fourier Transform Output Analysis | Chapter 18, Sec. 18.2–18.4, pp. 813–835 | Chapter 7, Section 7.3, pp. 360–373 |
+> | **6** | **Pg 64, Q(c)** | Sawtooth Fourier Series Expansion & Filter Output | Section 14.7, pp. 637–642; Chapter 17, Sec. 17.8.2, pp. 759–785, 797–799 | Chapter 6, Section 6.2, pp. 203–209 |
+> | **7** | **Pg 67, Q(b)** | Fourier Transform Impulse and Sinusoidal Response | Chapter 18, pp. 813–835; Section 7.4, pp. 265–273 | Chapter 7, Section 7.1, pp. 86–89, 360–373 |
+> | **8** | **Pg 6, Q.3(b)** | Second-Order RLC Circuit Critical Damping | Section 8.3 & 8.5, pp. 319–336 | Section 2.2 & 2.5, pp. 193–203 |
+> | **9** | **Pg 11, Q.2(a)** | Series RLC Parameter Determination ($R, L, C$) | Section 8.3–8.5, pp. 319–335 | Section 2.2, pp. 193–196 |
+> | **10** | **Pg 21, Q.6(a)** | Definitions of Damping (Critically Damped, Underdamped, Overdamped) | Section 8.3, pp. 319–325; Section 8.4, pp. 326–331 | Section 2.5, pp. 196–203 |
+> | **11** | **Pg 27, Q (Handwritten top)** | Source-Free Parallel RLC Damping & Parameters | Section 8.4, pp. 326–331 | Section 2.2 & 2.5, pp. 193–203 |
+> | **12** | **Pg 44, Q2** | System Transfer Function, Impulse Response & Output | Section 16.4, pp. 726–730 | Section 2.4 & 4.3, pp. 360–373 |
+> | **13** | **Pg 48, Q.1(a) (Middle)** | First-Order Differential Equations & Time Constants | Section 7.2–7.5, pp. 254–280 | Section 2.6, pp. 205–207 |
+> | **14** | **Pg 51, Q(b) (Middle)** | Source-Free Series RLC Current Response Sketches | Section 8.3, pp. 319–325 | Section 2.2 & 2.5, pp. 193–203 |
+> | **15** | **Pg 51, Q(c)** | Time Constant Expressions & Parameter Ranges | Section 7.2–7.3, pp. 254–265; Section 16.6.1, pp. 737–740 | Section 2.5, pp. 196–203 |
+> | **16** | **Pg 54, Q.2(a)** | Underdamped Systems Concepts & Examples | Section 8.3 & 8.4, pp. 323–329 | Section 2.2 & 2.5, pp. 196–203 |
+> | **17** | **Pg 54, Q (Middle)** | RLC Series Circuit Capacitance Design for Damping Types | Section 8.3, pp. 319–325 | Section 2.2 & 2.5, pp. 193–203 |
+> | **18** | **Pg 55, Q.6(a)** | Critical Damping Capacitance Design | Section 8.3 & 8.4, pp. 319–331 | Section 2.2 & 2.5, pp. 193–203 |
+> | **19** | **Pg 2, Q.2(c)** | Sequential Switching in First-Order RL Circuits | Section 7.3 & 7.6, pp. 259–284 | Section 2.2 & 2.6, pp. 193–209 |
+> | **20** | **Pg 2, Q.3(b)** | Second-Order Switching Initial Conditions & Transient Response | Section 8.2 & 8.5, pp. 314–335 | Section 2.2 & 4.3, pp. 193–196, 360–365 |
+> | **21** | **Pg 3, Q.5(a)** | $s$-Domain Circuit Modeling with Initial Conditions | Section 16.2 & 16.3, pp. 716–725 | Section 4.3 & 4.4, pp. 360–382 |
+> | **22** | **Pg 5, Q.2(b)** | RL Switching Circuit Initial and Final Values | Section 7.3 & 7.6, pp. 259–284 | Section 2.2, pp. 193–196 |
+> | **23** | **Pg 7, Q.5(a)** | $s$-Domain Transformation of Inductor Switching Circuits | Section 16.3, pp. 722–725 | Section 4.4, pp. 373–382 |
+> | **24** | **Pg 9, Q.3(a)** | Power Supply Transient Circuit Analysis | Section 8.5 & 8.7, pp. 331–343 | Section 2.2 & 4.4, pp. 193–196, 373–382 |
+> | **25** | **Pg 9, Q.3(b)** | Second-Order RLC Switching Response | Section 8.5–8.7, pp. 331–343 | Section 2.2 & 4.3, pp. 193–196, 360–365 |
+> | **26** | **Pg 11, Q.1(b)** | First-Order RC Switching Transient Response | Section 7.2 & 7.5, pp. 254–279 | Section 2.2 & 2.6, pp. 193–209 |
+> | **27** | **Pg 11, Q.1(c)** | Electronic Astable Switch & Triangular Wave Generators | Section 7.9.1, pp. 293–295; Section 10.9.2, pp. 439–441 | Section 2.6, pp. 203–209 |
+> | **28** | **Pg 11, Q.2(c)** | Two-Position Switching in Second-Order Networks | Section 8.2 & 8.7, pp. 314–319, 339–343 | Section 2.2 & 4.4, pp. 193–196, 373–382 |
+> | **29** | **Pg 14, Q.1(c)** | Relay Coil Resistance, Inductance & Activation Time | Section 7.9.3, pp. 296–298 | Section 2.6, pp. 205–207 |
+> | **30** | **Pg 14, Q.2(b)** | Parallel Inductor First-Order Transient Currents | Section 6.5, pp. 230–233; Section 7.3, pp. 259–265 | Section 2.2, pp. 193–196 |
+> | **31** | **Pg 15, Q.4(c)** | Laplace Transform Circuit Transient Analysis | Section 16.3 & 16.4, pp. 722–730 | Section 4.3 & 4.4, pp. 360–382 |
+> | **32** | **Pg 23, Q.1** | First-Order Dependent Source Switching Parameters | Section 7.2 & 7.5, pp. 254–279 | Section 2.2, pp. 193–196 |
+> | **33** | **Pg 26, Q (Handwritten 1)** | First-Order RC Circuit Response Synthesis | Section 7.5, pp. 273–279 | Section 2.6, pp. 205–209 |
+> | **34** | **Pg 26, Q (Handwritten 2)** | Inductor Current Step Response | Section 7.6, pp. 280–284 | Section 2.2 & 2.6, pp. 193–209 |
+> | **35** | **Pg 30, Q.1** | Laplace Technique for Circuit Switching | Section 16.3, pp. 722–725 | Section 4.3, pp. 360–366 |
+> | **36** | **Pg 33, Q.2** | RC Response to Anti-Step / Decaying Inputs | Section 7.2 & 7.5, pp. 254–279 | Section 2.2, pp. 193–196 |
+> | **37** | **Pg 34, Q.2** | Step Response of RC Circuits & Time Constants | Section 7.5, pp. 273–279 | Section 2.2 & 2.6, pp. 193–209 |
+> | **38** | **Pg 39, CT-02 Q.2** | Source-Free RL Energy Dissipation & Time Constant | Section 7.3, pp. 259–265 | Section 2.2 & 2.6, pp. 193–209 |
+> | **39** | **Pg 40, Q.2** | Second-Order $s$-Domain Equivalent & Waveform Analysis | Section 8.3–8.5, pp. 319–339; Section 16.2–16.3, pp. 716–725 | Section 2.5, pp. 196–203; Section 4.4, pp. 373–382 |
+> | **40** | **Pg 42, CT-02 Q.2** | RC Switching Circuit Voltage & Current Computations | Section 7.2 & 7.5, pp. 254–279 | Section 2.2 & 2.6, pp. 193–209 |
+> | **41** | **Pg 43, Q.1** | Initial Values, Damping Nature & Response Current | Section 8.2 & 8.5, pp. 314–335 | Section 2.2 & 2.5, pp. 193–203 |
+> | **42** | **Pg 45, Q.2** | RC Circuit Transient Waveform Sketching | Section 7.2 & 7.5, pp. 254–279 | Section 2.2 & 2.6, pp. 193–209 |
+> | **43** | **Pg 46, Q.2** | $s$-Domain Circuit Realization & Damping Types | Section 8.3–8.5, pp. 319–339; Section 16.3, pp. 722–725 | Section 2.5, pp. 196–203; Section 4.4, pp. 373–382 |
+> | **44** | **Pg 1, Q.2(a)** | LED Triggering RC Circuit Capacitance Design | Section 7.9.1, pp. 293–295 | Section 2.6, pp. 205–207 |
+> | **45** | **Pg 2, Q.4(b)** | Space Station Transmitter Second-Order Transient Response | Section 8.5 & 8.7, pp. 331–343 | Section 2.2 & 4.4, pp. 193–196, 373–382 |
+> | **46** | **Pg 9, Q.1(b)** | Battery Charging Circuit AC Sinusoidal Response | Section 7.5–7.6, pp. 273–284; Section 16.3, pp. 722–725 | Section 2.4, pp. 193–195 |
+> | **47** | **Pg 9, Q.1(c)** | Fuse Overcurrent Protection & Circuit Energy | Section 7.3 & 7.6, pp. 259–284 | Section 2.6, pp. 205–209 |
+> | **48** | **Pg 10, Q.4(c)** | Fluorescent Light Circuit Transient Response & Overshoot Design | Section 8.4, pp. 326–331; Section 8.11, pp. 353–355 | Section 2.2 & 2.5, pp. 196–203 |
+> | **49** | **Pg 12, Q.4(b)** | Automobile Ignition Coil Secondary Voltage | Section 8.11.1, pp. 353–355; Section 13.9.4, p. 598 | Section 2.2, pp. 193–196 |
+> | **50** | **Pg 18, Q.4(b)** | Biological RL Circuit Discharge Modeling (Frog Kick) | Section 7.3, pp. 259–265; Section 7.9, pp. 293–298 | Section 2.6, pp. 205–209 |
+> | **51** | **Pg 30, Q.2** | Microphone Circuit Transfer Function $H(s)$ | Section 16.4, pp. 726–730 | Section 4.3 & 4.4, pp. 360–385 |
+> | **52** | **Pg 42, CT-02 Q.1** | First-Order DC RC Timing Circuit Design | Section 7.5, pp. 273–279 | Section 2.6, pp. 205–207 |
+> | **53** | **Pg 45, CT-02 Q.1** | Neon Lamp Timing Circuit Resistance Design | Section 7.9.1, pp. 293–295 | Section 2.6, pp. 205–207 |
+> | **54** | **Pg 51, Q(b) (Bottom)** | Neon Bulb Flasher Flash Time Interval | Section 7.9.1, pp. 293–295 | Section 2.6, pp. 205–207 |
+> | **55** | **Pg 52, Q.2(a)** | Tank Circuit Sinusoidal Oscillation Mechanism | Section 8.3–8.4, pp. 319–331; Section 10.9.2, pp. 439–441 | Section 2.5 & 2.6, pp. 196–205 |
+> | **56** | **Pg 52, Q.2(b)** | Electronic Photoflash Pulse Circuit Design | Section 7.9.2, pp. 295–296 | Section 2.6, pp. 205–209 |
+> | **57** | **Pg 5, Q.2(c)** | Zero-State Step Response & Capacitor Charging Time | Section 7.5, pp. 273–279; Section 16.3, pp. 722–725 | Section 2.3, p. 195; Section 4.3, p. 366 |
+> | **58** | **Pg 11, Q.1(a)** | Transient Response, Zero-State Response & Time Constant Definitions | Section 7.2, p. 256; Section 7.5, p. 276 | Section 2.3, p. 195; Section 2.6, p. 205 |
+> | **59** | **Pg 14, Q.1(b)** | Ideal Integrator ZIR and ZSR Components | Section 6.6.1, pp. 234–235; Section 16.4, pp. 726–730 | Section 1.7, pp. 104–106; Section 2.3 & 2.4, pp. 193–195 |
+> | **60** | **Pg 20, Q.2(a)** | Zero-Input and Zero-State Response Definitions | Section 7.5, pp. 275–276; Section 16.3, pp. 722–725 | Section 2.2 & 2.3, pp. 193–195 |
+> | **61** | **Pg 52, Q.2(c)** | Zero-State Response via Laplace Transform | Section 16.3 & 16.4, pp. 722–730 | Section 4.3, p. 366 |
+> | **62** | **Pg 39, Q.1 (CT-02)** | First-Order RC/RL Circuit Transient Design | Section 7.2–7.6, pp. 254–284 | Section 2.6, pp. 205–209 |
+> | **63** | **Pg 20, Q.2(b)** | Resistor Energy Dissipation Integral Over Time Interval | Section 7.3 & 7.6, pp. 259–284 | Section 2.2 & 2.6, pp. 193–209 |
+> | **64** | **Pg 23, Q.2** | Active First-Order Circuit Instability | Section 7.2 & 7.5, pp. 254–279; Section 16.6.1, pp. 737–740 | Section 2.5, pp. 196–203 |
+> | **65** | **Pg 36, Q.2** | High-Pass Filter Impulse, Step, and Ramp Responses | Section 7.4–7.5, pp. 265–279; Section 14.7, pp. 637–642 | Section 2.4 & 4.3, pp. 360–373 |
+> | **66** | **Pg 41, Q.2** | Rectangular Impulse Response Output | Section 7.4, pp. 265–273; Section 15.4, pp. 697–705 | Section 1.4 & 2.4, pp. 83–89, 193–195 |
+> | **67** | **Pg 63, Q(c) (Middle)** | Circuit Impulse Response Determination | Section 7.4, pp. 265–273; Section 16.4, pp. 726–730 | Section 2.4, pp. 193–195 |
+> | **68** | **Pg 3, Q.6(b)** | Circuit Output via Convolution Integral | Section 15.4, pp. 697–705; Section 16.4, pp. 726–730 | Section 2.4, pp. 193–195 |
+> | **69** | **Pg 7, Q.6(a)** | Circuit Response via Convolution Integral | Section 15.4, pp. 697–705; Section 16.4, pp. 726–730 | Section 2.4, pp. 193–195 |
+> | **70** | **Pg 9, Q.2(c)** | Graphical Signal Pair Convolution | Section 15.4, pp. 697–705 | Section 2.4, pp. 193–195 |
+> | **71** | **Pg 14, Q.3(a)** | Convolution Integral Definition & Unit Step Convolution | Section 15.4, pp. 697–705 | Section 2.4, pp. 193–195 |
+> | **72** | **Pg 61, Q(c)** | RL Circuit Convolution Response to Current Pulse | Section 15.4, pp. 697–705; Section 16.4, pp. 726–730 | Section 2.4, pp. 193–195 |
+> | **73** | **Pg 62, Q(c)** | Ramp and Rectangular Pulse Convolution | Section 15.4, pp. 697–705 | Section 2.4, pp. 193–195 |
+> | **74** | **Pg 63, Q(c) (Top)** | Rectangular & Bipolar Pulse Convolution | Section 15.4, pp. 697–705 | Section 2.4, pp. 193–195 |
+> | **75** | **Pg 63, Q.5(a)** | Convolution of Piecewise Signals | Section 15.4, pp. 697–705 | Section 2.4, pp. 193–195 |
+> | **76** | **Pg 3, Q.5(c)** | Transfer Function Network Synthesis | Section 16.6.2, pp. 740–745 | Section 4.6, pp. 388–391 |
+> | **77** | **Pg 18, Q.6(b)** | Active Op-Amp Filter Network Synthesis | Section 16.6.2, pp. 740–745 | Section 4.6, pp. 388–391 |
+> | **78** | **Pg 69, Q(b)** | Integrators vs. Differentiators & System Realization Forms | Section 6.6.1, pp. 233–236; Section 16.6.2, pp. 740–745 | Section 4.6, pp. 388–391 |
+> | **79** | **Pg 10, Q.8(c)** | Fourier Transform Existence & Parseval's Energy Theorem | Section 18.2, p. 814, 817; Section 18.5 & 18.6, pp. 836–839 | Section 1.1, pp. 65–70; Chapter 7, pp. 360–380 |
+> | **80** | **Pg 13, Q.8(c)** | Parseval's Energy Theorem Statement & Proof (Periodic & Non-Periodic) | Section 17.5 & 17.6, pp. 782–785; Section 18.5 & 18.6, pp. 836–839 | Section 1.1, pp. 65–70; Chapter 7, pp. 360–380 |
 
-***
+---
 
 ### **FOURIER APPLICATIONS Time domain and frequency domain analysis of LTI systems**
 
@@ -9,13 +93,24 @@ Based on the provided document, here are the step-by-step solutions for the firs
 
 ![[Pasted image 20260727113934.png]]
 
-*Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform), Section 18.4 (Circuit Applications), pg. 833-835.*
+
+> [!info] **Textbook References**
+> * **Topic:** Fourier Transform Method for Circuit Analysis
+> * **Alexander & Sadiku (5th Ed):** Chapter 18, Section 18.4, pp. 813–845 (Circuit Applications, pp. 833–835)
+> * **B.P. Lathi (3rd Ed):** Chapter 7, Section 7.4, pp. 373–385
+
 
 ***
 
 ### 2. Page 15, Q.5(b): The square wave in the following waveform is applied to the following network. Find the Fourier series of $v_o(t)$ . [Figure involved.]
 
 ![[Pasted image 20260727114009.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Square Wave Response & Fourier Series
+> * **Alexander & Sadiku (5th Ed):** Chapter 17, Sec. 17.2–17.4, pp. 760–782 (Circuit Applications, pp. 778–781)
+> * **B.P. Lathi (3rd Ed):** Chapter 6, Section 6.1, pp. 82–89
 
 **Problem Statement:**
 A square wave voltage $v_i(t)$ with an amplitude of $\pm 10$ V and a period of $T = 2$ s is applied to an inverting ideal integrator op-amp circuit with $R = 10 \text{ k}\Omega$ and $C = 40 \mu\text{F}$ (using $\mu\text{F}$ as standard for such circuits). Find the Fourier series of the output $v_o(t)$.
@@ -45,13 +140,18 @@ A square wave voltage $v_i(t)$ with an amplitude of $\pm 10$ V and a period of $
     Converting the phasors back to the time domain yields cosine waves (since $\angle 0^\circ$ represents a pure cosine):
     $$v_o(t) = \sum_{n=1,3,5...}^{\infty} \frac{100}{n^2\pi^2} \cos(n\pi t) \text{ V}$$
 
-*Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series), Section 17.4 (Circuit Applications), pg. 778-781.*
 
 ***
 
 ### 3. Page 16, Q(b) (Top): If the following sawtooth waveform is applied to a band-pass filter with the transfer function shown below Determine the output. [Figure involved.]
 
 ![[Pasted image 20260727114057.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Sawtooth Waveform & Band-Pass Filter Response
+> * **Alexander & Sadiku (5th Ed):** Section 14.7, pp. 637–642; Section 17.4 & 17.8.2, pp. 778–782, 797–799
+> * **B.P. Lathi (3rd Ed):** Chapter 6, Section 6.2, p. 207; Section 7.5, pp. 730–732
 
 #### Problem Statement and Given Parameters
 
@@ -221,13 +321,18 @@ A square wave voltage $v_i(t)$ with an amplitude of $\pm 10$ V and a period of $
     
     $$y(t) = -\frac{1}{\pi} \left[ \frac{1}{3} \sin(6\pi t) + \frac{1}{4} \sin(8\pi t) + \frac{1}{5} \sin(10\pi t) \right]$$
 
-*Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series), Section 17.8.2 (Filters), pg. 797-799.*
 
 ***
 
 ### 4. Page 18, Q.4(a): If the periodic voltage as shown in the following figure is applied to the following network; Draw the frequency spectrum of $i_0(t)$. [Figure involved.]
 
 ![[Pasted image 20260727114121.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Periodic Waveforms & Frequency Spectrum
+> * **Alexander & Sadiku (5th Ed):** Section 17.2–17.6, pp. 760–788
+> * **B.P. Lathi (3rd Ed):** Chapter 6, Section 6.1, pp. 64–70
 
 **Problem Statement:**
 
@@ -546,14 +651,18 @@ A square wave voltage $v_i(t)$ with an amplitude of $\pm 10$ V and a period of $
 |**5**|$5\pi \approx 15.71$|$2.5$|**$1.01$**|$-176.79^\circ$|
 
 
-*Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series), Section 17.6 (Exponential Fourier Series/Amplitude Spectrum), pg. 786-788.*
-
 Based on the provided document, here are the step-by-step solutions for the next four questions (Questions 5 to 8).
 
 ### 5. Page 21, Q.5(c): Find $v_0(t)$ in the circuit given in Fig. Q. 5(c) for $v_i(t) = 2e^{-3t}u(t)$ using Fourier Transform.
 
 ![[Pasted image 20260727114201.png]]
 ![[Pasted image 20261004130537.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Fourier Transform Output Analysis
+> * **Alexander & Sadiku (5th Ed):** Chapter 18, Sec. 18.2–18.4, pp. 813–835
+> * **B.P. Lathi (3rd Ed):** Chapter 7, Section 7.3, pp. 360–373
 **Problem Statement:**
 Find the output voltage $v_0(t)$ across the capacitor in the provided RC low-pass filter circuit using the Fourier transform method. 
 *From Fig. Q. 5(c), we observe a series resistor $R = 2\ \Omega$ and a shunt capacitor $C = 1\text{ F}$.*
@@ -591,7 +700,6 @@ Transforming back to the time domain using the standard pair $\mathcal{F}^{-1}\l
 $$v_0(t) = 0.4 e^{-0.5t}u(t) - 0.4 e^{-3t}u(t)\text{ V}$$
 $$v_0(t) = 0.4(e^{-0.5t} - e^{-3t})u(t)\text{ V}$$
 
-*Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform), Section 18.4 (Circuit Applications), pg. 833-835.*
 
 ***
 
@@ -599,13 +707,24 @@ $$v_0(t) = 0.4(e^{-0.5t} - e^{-3t})u(t)\text{ V}$$
 
 ![[Pasted image 20260727114240.png]]
 
-*Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series), Section 17.8.2 (Filters), pg. 797-799.*
+
+> [!info] **Textbook References**
+> * **Topic:** Sawtooth Fourier Series Expansion & Filter Output
+> * **Alexander & Sadiku (5th Ed):** Section 14.7, pp. 637–642; Chapter 17, Sec. 17.8.2, pp. 759–785, 797–799
+> * **B.P. Lathi (3rd Ed):** Chapter 6, Section 6.2, pp. 203–209
+
 
 ***
 
 ### 7. Page 67, Q(b): Using the Fourier transform method, find the response $v_0(t)$ of the following circuit shown in Fig. 6(b), when (i) $v_{in}(t) = \delta(t)$ and (ii) $v_{in}(t) = \sin(t)$.
 
 ![[Pasted image 20260727114300.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Fourier Transform Impulse and Sinusoidal Response
+> * **Alexander & Sadiku (5th Ed):** Chapter 18, pp. 813–835; Section 7.4, pp. 265–273
+> * **B.P. Lathi (3rd Ed):** Chapter 7, Section 7.1, pp. 86–89, 360–373
 
 **Problem Statement:**
 The circuit is a voltage divider with a series resistor $R = 1\ \Omega$ and a capacitor $C = 1\text{ F}$. The output $v_0(t)$ is taken across the capacitor.
@@ -640,7 +759,6 @@ $$V_0(\omega) = -\frac{\pi}{2}[\delta(\omega - 1) + \delta(\omega + 1)]
 Taking the inverse Fourier Transform yields:
 $$v_0(t) = -\frac{1}{2}\cos(t) + \frac{1}{2}\sin(t)\text{ V}$$
 
-*Ans related location: Sadiku Textbook, Chapter 18 (Fourier Transform), Section 18.4 (Circuit Applications), pg. 833-835.*
 
 ***
 
@@ -650,6 +768,12 @@ $$v_0(t) = -\frac{1}{2}\cos(t) + \frac{1}{2}\sin(t)\text{ V}$$
 ### 8. Page 6, Q.3(b): Consider the following second-order circuit (i) Find the value of R so that critically damped response is obtained. (ii) Determine the response $v_0(t)$ if $v_s(t) = 10u(t)$ and $R = 1\ \Omega$.
 
 ![[Pasted image 20260727114329.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Second-Order RLC Circuit Critical Damping
+> * **Alexander & Sadiku (5th Ed):** Section 8.3 & 8.5, pp. 319–336
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.5, pp. 193–203
 
 **Problem Statement:**
 A series RLC circuit is driven by a voltage source $v_s(t)$. Components are $R$, $L = 2\text{ H}$, and $C = 1\text{ F}$. Output $v_0(t)$ is across the capacitor.
@@ -692,10 +816,14 @@ This is a step response problem. For $t > 0$, the circuit is driven by a constan
     Substituting $A$ and $B$ back into the response equation:
     $$v_0(t) = \left[ 10 - e^{-0.25t} \left( 10\cos\left(\frac{\sqrt{7}}{4}t\right) + \frac{10}{\sqrt{7}}\sin\left(\frac{\sqrt{7}}{4}t\right) \right) \right] u(t)\text{ V}$$
 
-*Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.5 (Step Response of a Series RLC Circuit), pg. 331-336.*
-
 
 ### 9. Page 11, Q.2(a): The responses of a series RLC circuit are $v_c(t) = 30 - 10e^{-20t} + 30e^{-10t} V$; $i_L(t) = 40e^{-20t} - 60e^{-10t} mA$; where $v_c(t)$ and $i_L(t)$ are the capacitor voltage and inductor current respectively. Determine the values of R, L, and C.
+
+> [!info] **Textbook References**
+> * **Topic:** Series RLC Parameter Determination ($R, L, C$)
+> * **Alexander & Sadiku (5th Ed):** Section 8.3–8.5, pp. 319–335
+> * **B.P. Lathi (3rd Ed):** Section 2.2, pp. 193–196
+
 
 **Problem Statement:**
 Find the resistance ($R$), inductance ($L$), and capacitance ($C$) of a series RLC circuit given its voltage and current responses.
@@ -735,11 +863,16 @@ $$L = \frac{1}{200 \times 200 \times 10^{-6}} = \frac{1}{40000 \times 10^{-6}} =
 Using the second coefficient relation and the calculated value of $L$:
 $$\frac{R}{25} = 30 \implies R = 30 \times 25 = 750 \ \Omega$$
 
-*Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.3 & 8.5, pg. 319-325, 331.*
 
 ***
 
 ### 10. Page 21, Q.6(a): Define i) Critically damped ii) Under damped iii) Over damped.
+
+> [!info] **Textbook References**
+> * **Topic:** Definitions of Damping (Critically Damped, Underdamped, Overdamped)
+> * **Alexander & Sadiku (5th Ed):** Section 8.3, pp. 319–325; Section 8.4, pp. 326–331
+> * **B.P. Lathi (3rd Ed):** Section 2.5, pp. 196–203
+
 
 **Problem Statement:**
 Provide definitions for the three types of damping in a second-order circuit.
@@ -751,11 +884,16 @@ In a second-order circuit (like RLC circuits), the type of natural response is d
 *   **ii) Critically damped:** A circuit is critically damped when the damping factor is exactly equal to the resonant frequency ($\alpha = \omega_0$). The characteristic equation has two identical, real roots (repeated roots). This represents the boundary between oscillatory and non-oscillatory responses and it is the condition that allows the response to reach its steady-state value in the shortest possible time without overshooting.
 *   **iii) Underdamped:** A circuit is underdamped when the damping factor is strictly less than the resonant frequency ($\alpha < \omega_0$). The characteristic equation has two complex conjugate roots. The response is an exponentially decaying sinusoidal oscillation (often referred to as ringing) before settling to its steady-state value.
 
-*Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.3, pg. 321.*
 
 ***
 
 ### 11. Page 27, Q (Handwritten top): there is a parallel RLC circuit (without source) with $R = 1k\Omega$ & $v_c(t) = 10e^{-2000t} - 2000te^{-2000t} V$. (i) find the type of damping. (ii) characteristic eqn. (iii) find the value of C & L. (iv) find the $i_R(t)$. (v) capacitor voltage.
+
+> [!info] **Textbook References**
+> * **Topic:** Source-Free Parallel RLC Damping & Parameters
+> * **Alexander & Sadiku (5th Ed):** Section 8.4, pp. 326–331
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.5, pp. 193–203
+
 
 **Solution:**
 **(i) Type of damping:**
@@ -789,13 +927,18 @@ $$i_R(t) = 0.01e^{-2000t} - 2te^{-2000t} \text{ A} \quad \text{or} \quad 10e^{-2
 This is explicitly given in the problem prompt.
 $$v_c(t) = 10e^{-2000t} - 2000te^{-2000t} \text{ V}$$
 
-*Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.4 (The Source-Free Parallel RLC Circuit), pg. 326-327.*
 
 ***
 
 ### 12. Page 44, Q2: For the following circuit, Find [Figure involved] (i) Transfer function. (ii) Impulse response. (iii) Output $i_0(t)$ if $i_s(t) = e^{-2t}$.
 
 ![[Pasted image 20260727114355.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** System Transfer Function, Impulse Response & Output
+> * **Alexander & Sadiku (5th Ed):** Section 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Section 2.4 & 4.3, pp. 360–373
 
 **Problem Statement:**
 A parallel RL circuit is driven by a current source $i_s(t)$. The resistor is $R=1\ \Omega$ and the inductor is $L=1\text{ H}$. The output is the current through the inductor, $i_0(t)$.
@@ -836,11 +979,16 @@ Taking the inverse Laplace transform yields the output current:
 $$i_0(t) = \mathcal{L}^{-1} \left\{ \frac{1}{s + 1} - \frac{1}{s + 2} \right\}$$
 $$i_0(t) = (e^{-t} - e^{-2t})u(t) \text{ A}$$
 
-*Ans related location: Sadiku Textbook, Chapter 16 (Applications of the Laplace Transform), Section 16.4 (Transfer Functions), pg. 726-728.*
 
 Based on the provided document, here are the step-by-step solutions for the next four questions (Questions 13 to 16).
 
 ### 13. Page 48, Q.1(a) (Middle): A linear circuit is described by $4\frac{dv}{dt} + v = 10$. (i) Determine the time constant of the circuit. (ii) Determine $v(\infty)$, the final value of $v$ and (iii) If $v(0) = 2$, find $v(t)$ for $t \ge 0$.
+
+> [!info] **Textbook References**
+> * **Topic:** First-Order Differential Equations & Time Constants
+> * **Alexander & Sadiku (5th Ed):** Section 7.2–7.5, pp. 254–280
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–207
+
 
 **Problem Statement:**
 Analyze the given first-order differential equation for a linear circuit to find its time constant, steady-state (final) value, and the complete time-domain response given an initial condition.
@@ -865,11 +1013,16 @@ Substitute the known values ($v(\infty) = 10$, $v(0) = 2$, and $\tau = 4$):
 $$v(t) = 10 + [2 - 10]e^{-t/4}$$
 $$v(t) = 10 - 8e^{-0.25t} \text{ V}$$
 
-*Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits), Section 7.5 (Step Response of an RC Circuit), pg. 273-276.*
 
 ***
 
 ### 14. Page 51, Q(b) (Middle): For a source free series RLC circuit, sketch the current $i(t)$ when (i) $R > 2\sqrt{L/C}$ (ii) $R < 2\sqrt{L/C}$ and (iii) $R = 2\sqrt{L/C}$. At what values of above R the current $i(t)$ reaches at steady state in short period of time?
+
+> [!info] **Textbook References**
+> * **Topic:** Source-Free Series RLC Current Response Sketches
+> * **Alexander & Sadiku (5th Ed):** Section 8.3, pp. 319–325
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.5, pp. 193–203
+
 
 **Problem Statement:**
 Describe the current sketches for the three damping conditions of a source-free series RLC circuit and identify which condition reaches steady state the fastest.
@@ -888,13 +1041,18 @@ For a series RLC circuit, the damping factor is $\alpha = \frac{R}{2L}$ and the 
 **Shortest time to steady state:**
 The current $i(t)$ reaches steady state (decays to zero) in the shortest period of time under the **critically damped** condition, which occurs when **$R = 2\sqrt{L/C}$**.
 
-*Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.3 (The Source-Free Series RLC Circuit), pg. 319-324.*
 
 ***
 
 ### 15. Page 51, Q(c): For the following circuit, express the time constant, $\tau$ in terms of $\beta$. Also find the range of $\beta$ for which $\tau$ becomes negative. Sketch $v_c(t)$ if $\beta = 3$. Assume $v_c(0) = 2V$. [Figure Involved]
 
 ![[Pasted image 20260727114524.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Time Constant Expressions & Parameter Ranges
+> * **Alexander & Sadiku (5th Ed):** Section 7.2–7.3, pp. 254–265; Section 16.6.1, pp. 737–740
+> * **B.P. Lathi (3rd Ed):** Section 2.5, pp. 196–203
 
 **Problem Statement:**
 Given an RC circuit containing a dependent current source, find the time constant $\tau$, the stability condition for $\beta$, and the response $v_c(t)$.
@@ -938,11 +1096,16 @@ The response for a source-free RC circuit is:
 $$v_c(t) = v_c(0)e^{-t/\tau} = 2e^{-t/9} \text{ V for } t \ge 0$$
 *Sketch description:* Plot a graph with time $t$ on the x-axis and voltage $v_c(t)$ on the y-axis. The curve starts at the y-intercept $(0, 2\text{V})$ and decays exponentially towards zero as $t \to \infty$. At $t = 9\text{s}$ (one time constant), the voltage will have dropped to approximately $36.8\%$ of its initial value, which is $2 \times 0.368 \approx 0.736\text{ V}$.
 
-*Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits), Section 7.2 (The Source-Free RC Circuit), pg. 254-259.*
 
 ***
 
 ### 16. Page 54, Q.2(a): Explain under-damped system with a suitable example.
+
+> [!info] **Textbook References**
+> * **Topic:** Underdamped Systems Concepts & Examples
+> * **Alexander & Sadiku (5th Ed):** Section 8.3 & 8.4, pp. 323–329
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.5, pp. 196–203
+
 
 **Problem Statement:**
 Define what constitutes an under-damped system and provide a relevant circuit example to illustrate the concept.
@@ -967,11 +1130,16 @@ Since $\alpha = 0.5$ is less than $\omega_0 = 1$, the condition $\alpha < \omega
 
 If there was an initial voltage on the capacitor, the resulting current $i(t)$ would oscillate back and forth (ringing) at the damped natural frequency $\omega_d = \sqrt{1^2 - 0.5^2} = 0.866 \text{ rad/s}$ while its peaks exponentially shrink according to the envelope $e^{-0.5t}$.
 
-*Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.3 (The Source-Free Series RLC Circuit), pg. 321-323.*
 
 Based on the provided document, here are the step-by-step solutions for the next four questions (Questions 17 to 20).
 
 ### 17. Page 54, Q (Middle): If $R = 50\Omega, L = 1.5H$, what value of C will make an RLC series circuit: (i) Overdamped (ii) Critically damped (iii) Underdamped?
+
+> [!info] **Textbook References**
+> * **Topic:** RLC Series Circuit Capacitance Design for Damping Types
+> * **Alexander & Sadiku (5th Ed):** Section 8.3, pp. 319–325
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.5, pp. 193–203
+
 
 **Problem Statement:**
 Determine the required capacitance $C$ to achieve different damping conditions in a series RLC circuit given the resistance and inductance.
@@ -1009,13 +1177,18 @@ $$\alpha < \frac{1}{\sqrt{LC}} \implies \alpha^2 < \frac{1}{LC} \implies C < \fr
 Using the calculation from part (i):
 $$C < 0.0024 \text{ F} \implies C < 2.4 \text{ mF}$$
 
-*Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.3 (The Source-Free Series RLC Circuit), pg. 320-322.*
 
 ***
 
 ### 18. Page 55, Q.6(a): Design the capacitance, C of the second order circuit shown in Fig. 6(a) so that it will produce critically damped response. [Figure Involved]
 
 ![[Pasted image 20260727114553.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Critical Damping Capacitance Design
+> * **Alexander & Sadiku (5th Ed):** Section 8.3 & 8.4, pp. 319–331
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.5, pp. 193–203
 
 **Problem Statement:**
 Find the value of $C$ for the provided parallel RLC circuit to achieve a critically damped response.
@@ -1044,7 +1217,6 @@ $$C = \frac{2}{4(0.5)^2} = \frac{2}{4(0.25)} = \frac{2}{1} = 2\text{ F}$$
 
 Therefore, the capacitance must be $2\text{ F}$ to produce a critically damped response.
 
-*Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.4 (The Source-Free Parallel RLC Circuit), pg. 326-327.*
 
 ***
 
@@ -1054,6 +1226,12 @@ Therefore, the capacitance must be $2\text{ F}$ to produce a critically damped r
 ### 19. Page 2, Q.2(c): Switch $S_1$ in the following Fig. is closed at t = 0 and $S_2$ is closed at t = 3s. Calculate $i(t)$ for all t. Also find $i(2)$ and $i(4)$. [Figure Involved]
 
 ![[Pasted image 20260727114700.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Sequential Switching in First-Order RL Circuits
+> * **Alexander & Sadiku (5th Ed):** Section 7.3 & 7.6, pp. 259–284
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.6, pp. 193–209
 
 **Problem Statement:**
 Analyze a first-order RL circuit with sequential switching.
@@ -1106,13 +1284,18 @@ $$i(t) = \begin{cases}
 *   At $t = 4$, use the equation for $t \ge 3$:
     $$i(4) = 3.6 - 1.6e^{-5(4-3)} = 3.6 - 1.6e^{-5} = 3.6 - 1.6(0.006738) \approx 3.6 - 0.01078 \approx 3.589\text{ A}$$
 
-*Ans related location: Sadiku Textbook, Chapter 7 (First-Order Circuits), Section 7.6 (Step Response of an RL Circuit), pg. 280-284.*
 
 ***
 
 ### 20. Page 2, Q.3(b): A second order circuit is shown in the following Fig. where the switch was closed for a long time and is opened at $t = 0$ s. (i) Find $v_c(0-)$ and $i_L(0-)$ (ii) Find $v_c, t > 0$. (iii) Find the nature of the response. [Figure Involved]
 
 ![[Pasted image 20260727114716.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Second-Order Switching Initial Conditions & Transient Response
+> * **Alexander & Sadiku (5th Ed):** Section 8.2 & 8.5, pp. 314–335
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 4.3, pp. 193–196, 360–365
 
 **Problem Statement:**
 Analyze a second-order circuit with a step change to find initial conditions, the transient response equation, and the damping nature.
@@ -1157,11 +1340,16 @@ $$v_c(t) = 6 - (4 + 2t)e^{-t} \text{ V}, \quad \text{for } t > 0$$
 **(iii) Find the nature of the response:**
 As calculated in part (ii), $\alpha = 1$ and $\omega_0 = 1$. Because $\alpha = \omega_0$, the nature of the response is **Critically damped**.
 
-*Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.5 (Step Response of a Series RLC Circuit), pg. 331-336.*
 
 ### 21. Page 3, Q.5(a): For the following circuit (i) Draw the s-domain circuit considering $v_0(0) = 5V$. (ii) Find $v_0(t)$ (Figure Involved)
 
 ![[Pasted image 20260727114753.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** $s$-Domain Circuit Modeling with Initial Conditions
+> * **Alexander & Sadiku (5th Ed):** Section 16.2 & 16.3, pp. 716–725
+> * **B.P. Lathi (3rd Ed):** Section 4.3 & 4.4, pp. 360–382
 
 **Solution:**
 
@@ -1205,13 +1393,18 @@ $$ V_0(s) = \frac{10}{s+1} + \frac{5}{s+2} $$
 Taking the inverse Laplace transform of each term yields the time-domain voltage:
 $$ v_0(t) = \left( 10e^{-t} + 5e^{-2t} \right) u(t) \text{ V} $$
 
-*Reference: Fundamentals of Electric Circuits by Sadiku, Chapter 16 (Applications of the Laplace Transform), Section 16.3, similar to Example 16.5 (Page 723).*
 
 ***
 
 ### 22. Page 5, Q.2(b): The switch of the following circuit was opened for a long period of time and is closed at t=0 s. Fill the table for the following circuit parameters. (Figure Involved)
 
 ![[Pasted image 20260727114901.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** RL Switching Circuit Initial and Final Values
+> * **Alexander & Sadiku (5th Ed):** Section 7.3 & 7.6, pp. 259–284
+> * **B.P. Lathi (3rd Ed):** Section 2.2, pp. 193–196
 
 **Solution:**
 #### **Given Circuit Parameters**
@@ -1309,13 +1502,18 @@ $$v_L(10) = -5 e^{-10/4} = -5 e^{-2.5} \approx -5 \cdot 0.082085 = -0.410\text{ 
 | **(iii) $i_L, t = 10\text{ s}$** | $10 e^{-2.5}\text{ A}$ | $10 e^{-2.5}\text{ A}$ | **$0.821\text{ A}$**          |
 | **(iv) $v_L, t = 10\text{ s}$**  | $-5 e^{-2.5}\text{ V}$ | $-5 e^{-2.5}\text{ V}$ | **$-0.410\text{ V}$**         |
 
-*Reference: Fundamentals of Electric Circuits by Sadiku, Chapter 7 (First-Order Circuits), Section 7.3 Source-Free RL Circuit (Page 259).*
 
 ***
 
 ### 23. Page 7, Q.5(a): In the following circuit the switch is closed for a long time before it is opened at t = 0. Find the inductor current i(t) for t>0 by transforming the circuit in s-domain. (Figure Involved)
 
 ![[Pasted image 20260727114947.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** $s$-Domain Transformation of Inductor Switching Circuits
+> * **Alexander & Sadiku (5th Ed):** Section 16.3, pp. 722–725
+> * **B.P. Lathi (3rd Ed):** Section 4.4, pp. 373–382
 
 **Solution:**
 
@@ -1361,13 +1559,18 @@ $$ I(s) = 2 \left( \frac{s+2}{(s+2)^2 + 6^2} \right) - \frac{2}{3} \left( \frac{
 Taking the inverse Laplace transform gives the time-domain current:
 $$ i(t) = \left( 2e^{-2t}\cos(6t) - \frac{2}{3}e^{-2t}\sin(6t) \right) u(t) \text{ A} $$
 
-*Reference: Fundamentals of Electric Circuits by Sadiku, Chapter 16 (Applications of the Laplace Transform), Section 16.3 Circuit Analysis (Page 722).*
 
 ***
 
 ### 24. Page 9, Q.3(a): A 240W power supply circuit is shown in the following figure. This circuit employs a large inductor and capacitor. Find $i_L(t)$ for $t > 0$. Assume steady-state conditions exist at $t = 0^-$. (Figure Involved)
 
 ![[Pasted image 20260727115014.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Power Supply Transient Circuit Analysis
+> * **Alexander & Sadiku (5th Ed):** Section 8.5 & 8.7, pp. 331–343
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 4.4, pp. 193–196, 373–382
 
 **Solution:**
 
@@ -1414,13 +1617,18 @@ $$ A_2 - (-5.6) = 2.8 \implies A_2 + 5.6 = 2.8 \implies A_2 = 2.8 - 5.6 = -2.8 $
 Substituting $A_1$ and $A_2$ back into the generic response equation gives:
 $$ i_L(t) = (-5.6 - 2.8t) e^{-t} u(t) \text{ A} $$
 
-*Reference: Fundamentals of Electric Circuits by Sadiku, Chapter 8 (Second-Order Circuits), Section 8.4 Source-Free Parallel RLC Circuit (Page 327).*
 
 Based on the document provided, here are the detailed step-by-step solutions for the next 4 questions (Questions 25 to 28).
 
 ### 25. Page 9, Q.3(b): Find $i(t)$ for $t > 0$ in the following circuit.
 
 ![[Pasted image 20260727115031.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Second-Order RLC Switching Response
+> * **Alexander & Sadiku (5th Ed):** Section 8.5–8.7, pp. 331–343
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 4.3, pp. 193–196, 360–365
 
 *(Image shows a 20V source, a 10 $\Omega$ resistor, a switch opening at t=0, a 40 $\Omega$ resistor, a 60 $\Omega$ resistor, a 1 mF capacitor, and a 2.5 H inductor).*
 
@@ -1470,6 +1678,12 @@ $$ \mathbf{i(t) = -6.4 t e^{-20t} u(t) \text{ A}} $$
 ### 26. Page 11, Q.1(b): The switch in the following figure opens at t = 0. Determine v(t) for t > 0.
 
 ![[Pasted image 20260727115047.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** First-Order RC Switching Transient Response
+> * **Alexander & Sadiku (5th Ed):** Section 7.2 & 7.5, pp. 254–279
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.6, pp. 193–209
 
 *(Image shows a 6A source, 4 $\Omega$ resistor, switch, 6 $\Omega$ resistor, 100mF capacitor, 5 $\Omega$ resistor, 20 $\Omega$ resistor, 30V source).*
 
@@ -1608,6 +1822,12 @@ $$v(t) = -24 + 14.4 e^{-t}\text{ V} \quad \text{for } t > 0$$
 ### 27. Page 11, Q.1(c): The switch of the circuit in the figure below is controlled electronically so that it closes when $v_c$ rises to 9V and opens when $v_c$ falls to 5V. Find and plot $v_c(t)$ for several switchings. Also find the frequency of the generating triangular waveform.
 
 ![[Pasted image 20260727115108.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Electronic Astable Switch & Triangular Wave Generators
+> * **Alexander & Sadiku (5th Ed):** Section 7.9.1, pp. 293–295; Section 10.9.2, pp. 439–441
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 203–209
 
 **Solution:**
 Here is the complete step-by-step mathematical analysis for the given electronically controlled switching circuit.
@@ -1780,6 +2000,12 @@ To sketch/plot $v_c(t)$:
 
 ![[Pasted image 20260727115122.png]]
 
+
+> [!info] **Textbook References**
+> * **Topic:** Two-Position Switching in Second-Order Networks
+> * **Alexander & Sadiku (5th Ed):** Section 8.2 & 8.7, pp. 314–319, 339–343
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 4.4, pp. 193–196, 373–382
+
 **Solution:**
 The circuit has a $10\text{V}$ source at Position A, ground at Position B. The main circuit consists of a switch node connected to a vertical $2.5\Omega$ resistor to ground, and a horizontal branch containing a $2.5\Omega$ resistor, a $2.5\text{H}$ inductor, and a $0.1\text{F}$ capacitor to ground.
 
@@ -1834,6 +2060,12 @@ Based on the provided document, here are the full texts and detailed step-by-ste
 
 ![[Pasted image 20260731212230.png]]
 
+
+> [!info] **Textbook References**
+> * **Topic:** Relay Coil Resistance, Inductance & Activation Time
+> * **Alexander & Sadiku (5th Ed):** Section 7.9.3, pp. 296–298
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–207
+
 **Solution:**
 When a DC voltage is suddenly applied to an RL circuit (like a relay coil), it acts as a step response. The circuit consists of a voltage source $V_s = 110\text{ V}$, a resistor $R = 200 \Omega$, and an inductor $L = 500\text{ mH} = 0.5\text{ H}$ in series.
 
@@ -1865,13 +2097,18 @@ $$ t \approx \frac{1.0116}{400} \approx 0.002529 \text{ s} $$
 
 **Answer:**
 The time elapsed before contact closure is **$2.529\text{ ms}$**. 
-*(Related location: Sadiku textbook, Chapter 7, Practice Problem 7.21)*
 
 ***
 
 ### 30. Page 14, Q.2(b): Obtain $i_1$ and $i_2$ for $t > 0$ for the following network. (Figure Involved)
 
 ![[Pasted image 20260727115151.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Parallel Inductor First-Order Transient Currents
+> * **Alexander & Sadiku (5th Ed):** Section 6.5, pp. 230–233; Section 7.3, pp. 259–265
+> * **B.P. Lathi (3rd Ed):** Section 2.2, pp. 193–196
 
 **Solution:**
 Based on the provided schematic image, the circuit consists of:
@@ -1929,11 +2166,16 @@ $$ K_0 = \frac{24}{p_1 p_2} = \frac{24}{(-4+\sqrt{10})(-4-\sqrt{10})} = \frac{24
 $$ K_1 = \frac{24}{p_1(p_1 - p_2)} = \frac{24}{(-4+\sqrt{10})(2\sqrt{10})} = \frac{12}{-4\sqrt{10} + 10} = -2 - 0.8\sqrt{10} $$
 $$ K_2 = \frac{24}{p_2(p_2 - p_1)} = \frac{24}{(-4-\sqrt{10})(-2\sqrt{10})} = \frac{12}{4\sqrt{10} + 10} = -2 + 0.8\sqrt{10} $$
 $$ \mathbf{ i_2(t) = \left[ 4 - (2 + 0.8\sqrt{10})e^{(-4+\sqrt{10})t} + (-2 + 0.8\sqrt{10})e^{(-4-\sqrt{10})t} \right] u(t) \text{ A} } $$
-*(Related location: Sadiku textbook, Chapter 16, Circuit Analysis in s-domain)*
 
 ***
 
 ### 31. Page 15, Q.4(c): (ii) An 8 V battery is connected to the network via a switch. If the switch is closed at t = 0, find the current i(t) through Y(s) using the Laplace transform.
+
+> [!info] **Textbook References**
+> * **Topic:** Laplace Transform Circuit Transient Analysis
+> * **Alexander & Sadiku (5th Ed):** Section 16.3 & 16.4, pp. 722–730
+> * **B.P. Lathi (3rd Ed):** Section 4.3 & 4.4, pp. 360–382
+
 
 **Solution:**
 *(Note: Because this is part (ii) of a question, the definition of the network $Y(s)$ is required from part (i). Based on standard textbook problems matching this exact phrasing, we assume the known problem where the input admittance $Y(s)$ has a pole at $s = -3$, a zero at $s = -1$, and $Y(\infty) = 0.25 \text{ S}$).*
@@ -1965,13 +2207,18 @@ Substituting the coefficients back:
 $$ I(s) = \frac{2/3}{s} + \frac{4/3}{s+3} $$
 Taking the inverse Laplace transform of each term:
 $$ \mathbf{ i(t) = \left( \frac{2}{3} + \frac{4}{3}e^{-3t} \right) u(t) \text{ A} } $$
-*(Related location: Sadiku textbook, Chapter 16, Problem 16.104)*
 
 ***
 
 ### 32. Page 23, Q.1: For the following circuit shown in Fig. 1 fill the table (right). Assume that the switch of the following circuit was closed for a long time and is opened at t=0s. (Figure Involved)
 
 ![[Pasted image 20260727115213.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** First-Order Dependent Source Switching Parameters
+> * **Alexander & Sadiku (5th Ed):** Section 7.2 & 7.5, pp. 254–279
+> * **B.P. Lathi (3rd Ed):** Section 2.2, pp. 193–196
 
 **Solution:**
 Based on the schematic, the circuit consists of a top common node connected to ground through four parallel branches:
@@ -2011,11 +2258,16 @@ $$ \mathbf{v_c(1) \approx 2.27 \times 10^{-4} \text{ V}} $$
 *   (ii) $V_c(0^-)$ $\rightarrow$ **$5 \text{ V}$**
 *   (iii) $V_c(t=1s)$ $\rightarrow$ **$5e^{-10} \text{ V}$** (or $2.27 \times 10^{-4} \text{ V}$)
 
-*(Related location: Sadiku textbook, Chapter 7, Section 7.2 Source-Free RC Circuit and Dependent Sources)*
 
 Based on the document provided, here are the detailed step-by-step solutions for the next 4 questions (Questions 33 to 36).
 
 ### 33. Page 26, Q (Handwritten 1): Design a first order RC circuit which capacitor voltage is $v_c = 50 - 100e^{-2000t}$ [Hint: sketch the graph of vc vs t to understand it properly].
+
+> [!info] **Textbook References**
+> * **Topic:** First-Order RC Circuit Response Synthesis
+> * **Alexander & Sadiku (5th Ed):** Section 7.5, pp. 273–279
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–209
+
 
 **Solution:**
 To design a first-order RC circuit that produces this specific voltage response, we need to extract the key characteristics from the given equation: $v_c(t) = 50 - 100e^{-2000t}$ V (for $t \ge 0$).
@@ -2046,13 +2298,18 @@ To realize this physically:
 **Final Design:**
 The circuit consists of a **$50 \text{ V}$ DC voltage source** connected in series with a switch (that closes at $t=0$), a **$500 \Omega$ resistor**, and a **$1 \mu\text{F}$ capacitor**. The capacitor must be pre-charged with an initial voltage of **$-50 \text{ V}$** (the positive terminal of the initial voltage opposing the positive terminal of the 50V source).
 
-*(Related location: Sadiku textbook, Chapter 7, Section 7.5 Step Response of an RC Circuit)*
 
 ***
 
 ### 34. Page 26, Q (Handwritten 2): The switch closes at t>0. Find the inductor current when the switch is closed. [Figure Involved]
 
 ![[Pasted image 20260727115253.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Inductor Current Step Response
+> * **Alexander & Sadiku (5th Ed):** Section 7.6, pp. 280–284
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.6, pp. 193–209
 
 **Solution:**
 The inductor current for $t \ge 0$ is **$i(t) = 2.4 - 1.6 e^{-0.5t}\text{ A}$** (or $2.4 - 1.6e^{-t/2}\text{ A}$).
@@ -2122,13 +2379,18 @@ $$i(t) = 2.4 + (0.8 - 2.4) e^{-t / 2}$$
 
 $$i(t) = 2.4 - 1.6 e^{-0.5t}\text{ A} \quad \text{for } t \ge 0$$
 
-*(Related location: Sadiku textbook, Chapter 7, Section 7.6 Step Response of an RL Circuit)*
 
 ***
 
 ### 35. Page 30, Q.1: The switch in the circuit closes at time t = 0. Determine the voltage v(t) after the switch closes using Laplace technique. [Figure Involved]
 
 ![[Pasted image 20260727115325.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Laplace Technique for Circuit Switching
+> * **Alexander & Sadiku (5th Ed):** Section 16.3, pp. 722–725
+> * **B.P. Lathi (3rd Ed):** Section 4.3, pp. 360–366
 
 **Solution:**
 From the schematic, the circuit consists of a $12\text{V}$ DC source. A $4\Omega$ resistor has a switch in parallel with it that closes at $t=0$. This is followed by a $2\Omega$ resistor in series. Then the circuit splits into a parallel combination of a $2\text{H}$ inductor and a $0.125\text{F}$ capacitor to ground. $v(t)$ is the voltage across the parallel LC pair.
@@ -2166,13 +2428,18 @@ The expression $V(s) = \frac{32}{(s+2)^2}$ matches the standard Laplace transfor
 $$ \mathbf{v(t) = 32 t e^{-2t} u(t) \text{ V}} $$
 *(This indicates a critically damped response, which aligns with $\alpha = \frac{1}{2RC} = \frac{1}{2(2)(0.125)} = 2$ and $\omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{2(0.125)}} = 2$)*.
 
-*(Related location: Sadiku textbook, Chapter 16, Section 16.3 Circuit Analysis)*
 
 ***
 
 ### 36. Page 33, Q.2: The switch of the following circuit was opened for long period of time, and is closed at t = 0s. Fill the table for the circuit parameters: R1=2Ω, R2 = 2Ω, C = 1F. The input is Vs= 10 u(−t). [Figure Involved]
 
 ![[Pasted image 20260727115344.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** RC Response to Anti-Step / Decaying Inputs
+> * **Alexander & Sadiku (5th Ed):** Section 7.2 & 7.5, pp. 254–279
+> * **B.P. Lathi (3rd Ed):** Section 2.2, pp. 193–196
 
 **Solution:**
 Based on the schematic, we have a voltage source $V_s$ connected to $R_1$. The other side of $R_1$ is a node. From this node, a capacitor $C$ connects to ground. Also from this node, a switch connects to $R_2$, which goes to ground.
@@ -2215,13 +2482,18 @@ $$ i_c(t) = C \frac{dV_c}{dt} = 1 \times (-10 e^{-t}) = -10 e^{-t} \text{ A} $$
 *   **(iii) $V_c, t=6\text{s}$ :** $\mathbf{10e^{-6} \text{ V}}$
 *   **(iv) $i_c, t=6\text{s}$ :** $\mathbf{-10e^{-6} \text{ A}}$
 
-*(Related location: Sadiku textbook, Chapter 7, Section 7.2 Source-Free RC Circuit)*
 
 Based on the provided document, here are the full texts and detailed step-by-step solutions for the next 4 questions (Questions 37 to 40).
 
 ### 37. Page 34, Q.2: The switch of the following circuit was opened for long period of time, and is closed at t = 0s. Fill the table for the circuit parameters: R1=1$\Omega$, R2 = 1$\Omega$, C = 1F. The input is a step signal having magnitude of 10 V.
 
 ![[Pasted image 20260727115405.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Step Response of RC Circuits & Time Constants
+> * **Alexander & Sadiku (5th Ed):** Section 7.5, pp. 273–279
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.6, pp. 193–209
 
 *(Image shows a voltage source $V_s$ connected to $R_1$, then a node with a capacitor $C$ to ground and a switch to $R_2$ to ground. A table is provided to fill in values for $V_c(0^-)$, $V_c$ for $t>0$, $i_c(0^-)$, $i_c$ for $t>0$, $\tau$ for $t<0$, and $\tau$ for $t>0$.)*
 
@@ -2266,6 +2538,12 @@ The input is a step signal of $10\text{ V}$, which means $V_s(t) = 10u(t) \text{
 
 ![[Pasted image 20260727115454.png]]
 
+
+> [!info] **Textbook References**
+> * **Topic:** Source-Free RL Energy Dissipation & Time Constant
+> * **Alexander & Sadiku (5th Ed):** Section 7.3, pp. 259–265
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.6, pp. 193–209
+
 *(Image shows a source-free RL circuit with a resistor R and an inductor L in a single closed loop. Current $i$ flows from R to L, and voltage $v$ is across L).*
 
 **Solution:**
@@ -2307,6 +2585,12 @@ Here are the detailed solutions for the 4 questions starting from Question 39.
 ### 39. Page 40, Q.2: A switch has been in position 1 for a long time. At t = 0, it is moved to connect the circuit to the capacitor. (i) Draw the circuit in the S-domain (Laplace equivalent) after switching. (ii) Determine the expression of $v(t)$ for $t > 0$ and sketch the corresponding waveform. (iii) Identify the type of damping.
 
 ![[Pasted image 20260727115509.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Second-Order $s$-Domain Equivalent & Waveform Analysis
+> * **Alexander & Sadiku (5th Ed):** Section 8.3–8.5, pp. 319–339; Section 16.2–16.3, pp. 716–725
+> * **B.P. Lathi (3rd Ed):** Section 2.5, pp. 196–203; Section 4.4, pp. 373–382
 
 **Solution:**
 
@@ -2355,13 +2639,18 @@ The characteristic equation of the circuit is given by the denominator of the tr
 The roots are $s = \frac{-8 \pm \sqrt{64 - 80}}{2} = -4 \pm j2$.
 Since the roots are complex conjugate pairs, the system is **underdamped**.
 
-*Location in Sadiku Textbook: Chapter 16, Section 16.3 (Circuit Analysis in the s-domain), Page 722.*
 
 ***
 
 ### 40. Page 42, CT-02 Q.2: The switch of the following circuit has been in position 'a' for a long time and moved to the position 'b' at t=0 s. Calculate the followings: (i) Capacitor voltage, Vc at t = 0 s. (ii) The time constant, $\tau$ for t < 0. (iii) Capacitor voltage, Vc at t = 2 ms. (iv) Capacitor current, i at t = 2 ms.
 
 ![[Pasted image 20260727115538.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** RC Switching Circuit Voltage & Current Computations
+> * **Alexander & Sadiku (5th Ed):** Section 7.2 & 7.5, pp. 254–279
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.6, pp. 193–209
 
 **Solution:**
 
@@ -2437,13 +2726,18 @@ $$\frac{dv_c(t)}{dt} = 0$$
 
 $$i(2\text{ ms}) = \mathbf{0\text{ A}}$$
 
-*Location in Sadiku Textbook: Chapter 7, Section 7.5 (Step Response of an RC Circuit), Page 273.*
 
 ***
 
 ### 41. Page 43, Q.1: The switch in the following circuit has been closed for a long time and opened at t=0s. Find and Calculate: (i) Nature of the response (ii) i(0-) and v(0-) (iii) Current i(t), t>0.
 
 ![[Pasted image 20260727115554.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Initial Values, Damping Nature & Response Current
+> * **Alexander & Sadiku (5th Ed):** Section 8.2 & 8.5, pp. 314–335
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.5, pp. 193–203
 
 **Solution:**
 
@@ -2479,13 +2773,18 @@ $$A_2 = \frac{8}{\sqrt{24}} = \frac{4}{\sqrt{6}} \approx 1.633$$
 Substituting $A_1$ and $A_2$ back into the general solution:
 $$i(t) = e^{-4t} \left( 2 \cos(4.899t) + 1.633 \sin(4.899t) \right)\text{ A} \quad \text{for } t > 0$$
 
-*Location in Sadiku Textbook: Chapter 8, Section 8.3 (The Source-Free Series RLC Circuit), Page 319.*
 
 ***
 
 ### 42. Page 45, Q.2: The switch of the following circuit has been in position 1 for a long time and moved to the position 2 at t=0 s. Calculate the followings: (i) Capacitor voltage, Vc at t = 0 s. (ii) Capacitor voltage, Vc at t = 3 ms. (iii) The time constant ($\tau$) for t $\ge$ 0. (iv) Sketch capacitor voltage, Vc for all time.
 
 ![[Pasted image 20260727115633.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** RC Circuit Transient Waveform Sketching
+> * **Alexander & Sadiku (5th Ed):** Section 7.2 & 7.5, pp. 254–279
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.6, pp. 193–209
 
 **Solution:**
 
@@ -2513,13 +2812,18 @@ $$V_c(3\text{ ms}) = 6 e^{-1000(0.003)} = 6 e^{-3} = 6(0.049787) \approx 0.299\t
 *   **For $t < 0$:** The voltage is a constant $6\text{ V}$ (a horizontal straight line).
 *   **For $t > 0$:** Starting from $6\text{ V}$ at $t = 0$, the curve exponentially decays toward $0\text{ V}$. It passes through $2.2\text{ V}$ at $t = 1\text{ ms}$ ($\tau$), $0.81\text{ V}$ at $t = 2\text{ ms}$ ($2\tau$), and is practically $0\text{ V}$ by $t = 5\text{ ms}$ ($5\tau$).
 
-*Location in Sadiku Textbook: Chapter 7, Section 7.2 (The Source-Free RC Circuit), Page 254.*
 
 Based on the provided PDF, here are the detailed solutions for the 4 questions starting from Question 39.
 
 ### 43. Page 46, Q.2: The switch has been closed for a long time. At t = 0, it is opened. (i) Draw the circuit in the S-domain (Laplace equivalent) after switching. (3 marks) (ii) Determine the expression of v(t) t > 0 and sketch the corresponding waveform. (5 marks) (iii) Identify the type of damping. (2 marks) (Figure involved)
 
 ![[Pasted image 20260727115649.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** $s$-Domain Circuit Realization & Damping Types
+> * **Alexander & Sadiku (5th Ed):** Section 8.3–8.5, pp. 319–339; Section 16.3, pp. 722–725
+> * **B.P. Lathi (3rd Ed):** Section 2.5, pp. 196–203; Section 4.4, pp. 373–382
 
 **Solution:**
 
@@ -2558,7 +2862,6 @@ $$v(t) = -24 \sin(0.5t)\text{ V} \quad \text{for } t > 0$$
 (iii) Since there is no resistor in the remaining circuit for $t > 0$ ($R = \infty$ for a parallel tank circuit), there is no energy dissipation. The damping factor is $\alpha = \frac{1}{2RC} = 0$.
 Because $\alpha = 0$, the system is strictly **undamped** (it oscillates perpetually).
 
-**Related Location in Sadiku Textbook:** Chapter 8, Section 8.4 (The Source-Free Parallel RLC Circuit), Page 326; Chapter 16, Section 16.2 (Circuit Element Models), Page 717.
 
 ***
 
@@ -2568,6 +2871,12 @@ Because $\alpha = 0$, the system is strictly **undamped** (it oscillates perpetu
 ### 44. Page 1, Q.2(a): Design the capacitance, C of the following circuit so that the LED turns on when the capacitor voltage reaches half of the supply voltage and will take 35 ms for that. (Figure involved)
 
 ![[Pasted image 20260727115718.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** LED Triggering RC Circuit Capacitance Design
+> * **Alexander & Sadiku (5th Ed):** Section 7.9.1, pp. 293–295
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–207
 
 **Solution:**
 
@@ -2603,13 +2912,18 @@ $$C = \frac{0.035}{693.1} \approx 5.049 \times 10^{-5}\text{ F}$$
 Converting to microfarads ($\mu\text{F}$):
 $$C \approx 50.5\ \mu\text{F}$$
 
-**Related Location in Sadiku Textbook:** Chapter 7, Section 7.5 (Step Response of an RC Circuit), Page 273.
 
 ***
 
 ### 45. Page 2, Q.4(b): A communication system from a space station uses short pulses to control a robot operating in space. The transmitter circuit is modeled in following Fig. Find the output voltage vc(t) for t > 0. Assume steady-state condition at t = 0-. (Figure involved)
 
 ![[Pasted image 20260727115748.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Space Station Transmitter Second-Order Transient Response
+> * **Alexander & Sadiku (5th Ed):** Section 8.5 & 8.7, pp. 331–343
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 4.4, pp. 193–196, 373–382
 
 **Solution:**
 
@@ -2651,13 +2965,18 @@ $$468.75 + 474.96 A_2 = 0 \implies A_2 = -\frac{468.75}{474.96} \approx -0.9869$
 Substitute $A_1$ and $A_2$ into the general equation:
 $$v_c(t) = 6 - e^{-156.25 t} (3 \cos 474.96 t + 0.9869 \sin 474.96 t)\text{ V} \quad \text{for } t > 0$$
 
-**Related Location in Sadiku Textbook:** Chapter 8, Section 8.5 (Step Response of a Series RLC Circuit), Page 331.
 
 ***
 
 ### 46. Page 9, Q.1(b): The orbiting space station uses photovoltaic cells to store energy to batteries. The charging circuit is modeled by the following circuit where vs = 10 sin 20t V. If v(0-) = 0, find v(t) for t > 0. (Figure involved)
 
 ![[Pasted image 20260727115817.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Battery Charging Circuit AC Sinusoidal Response
+> * **Alexander & Sadiku (5th Ed):** Section 7.5–7.6, pp. 273–284; Section 16.3, pp. 722–725
+> * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
 
@@ -2705,13 +3024,18 @@ Taking the inverse Laplace transform of each term:
 Combining these yields the complete time-domain voltage:
 $$v(t) = \left( 4e^{-10t} - 4\cos(20t) + 2\sin(20t) \right)\text{ V} \quad \text{for } t > 0$$
 
-**Related Location in Sadiku Textbook:** Chapter 16, Section 16.4 (Transfer Functions / Circuit Analysis in s-domain), Page 726.
 
 Based on the provided PDF, here are the detailed solutions for the 4 questions starting from Question 47.
 
 ### 47. Page 9, Q.1(c)✅: Fuses are used to open a circuit when excessive current flows. One fuse is to be designed to open when the power absorbed by R exceeds 10 w for 0.5s. The source represents the turn-on condition for the load where $v_s = A[u(t) - u(t - 0.75)]\text{V}$. Assume that $i_L(0^-) = 0$. The goal is to achieve the maximum current while not opening the fuse. Determine the appropriate value of A and sketch the current waveform.
 
 ![[Pasted image 20260727115835.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Fuse Overcurrent Protection & Circuit Energy
+> * **Alexander & Sadiku (5th Ed):** Section 7.3 & 7.6, pp. 259–284
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–209
 
 **Solution:**
 
@@ -2876,6 +3200,12 @@ To sketch the current waveform $i(t)$, set up a graph with Time ($t$ in seconds)
 
 ![[Pasted image 20260727115854.png]]
 
+
+> [!info] **Textbook References**
+> * **Topic:** Fluorescent Light Circuit Transient Response & Overshoot Design
+> * **Alexander & Sadiku (5th Ed):** Section 8.4, pp. 326–331; Section 8.11, pp. 353–355
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.5, pp. 196–203
+
 **Solution:**
 
 **Step 1: Analyze the Circuit and Transfer Function**
@@ -2912,11 +3242,16 @@ Since $\zeta = \sqrt{2L}$:
 $$\sqrt{2L} \ge 0.5911 \implies 2L \ge 0.34946 \implies L \ge 0.1747\text{ H}$$
 To ensure the overshoot is less than 10%, the inductance must be selected such that $L \ge 0.175\text{ H}$.
 
-*Location in Sadiku Textbook: Chapter 8, Section 8.4 (The Source-Free Parallel RLC Circuit), Page 326.*
 
 ***
 
 ### 49. Page 12, Q.4(b): Draw the equivalent electrical circuit of an automobile ignition system. Prove that the maximum voltage appearing at the open circuited secondary is $|v_2(t)|_{max} = \frac{M}{L_1} \cdot Q \cdot E$; when the switch opens. Where, Q = quality factor, $L_1$ = inductance, M = mutual inductance, E = supply voltage.
+
+> [!info] **Textbook References**
+> * **Topic:** Automobile Ignition Coil Secondary Voltage
+> * **Alexander & Sadiku (5th Ed):** Section 8.11.1, pp. 353–355; Section 13.9.4, p. 598
+> * **B.P. Lathi (3rd Ed):** Section 2.2, pp. 193–196
+
 
 **Solution:**
 
@@ -2943,13 +3278,18 @@ To ensure the overshoot is less than 10%, the inductance must be selected such t
     $$|v_2(t)|_{max} = \frac{M}{L_1} \left| L_1 \frac{di_1}{dt} \right|_{max} = \frac{M}{L_1} \cdot Q \cdot E$$
 *(This proves the required expression.)*
 
-*Location in Sadiku Textbook: Chapter 13, Section 13.9.4 (Automobile Ignition Circuit), Page 598.*
 
 ***
 
 ### 50. Page 18, Q.4(b): The following circuit is used by biology student to study "frog kick". She noticed that the frog kicked little then the switch was closed but kicked violently for 5 s when the switched was opened. Model the frog as a resistor and calculate its resistance. Assume that it takes 10 mA for the frog to kick violently.
 
 ![[Pasted image 20260727115934.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Biological RL Circuit Discharge Modeling (Frog Kick)
+> * **Alexander & Sadiku (5th Ed):** Section 7.3, pp. 259–265; Section 7.9, pp. 293–298
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–209
 
 **Solution:**
 
@@ -2987,13 +3327,18 @@ Solve for $R_f$:
 $$R_f = \frac{-3.178}{-2.5} \approx 1.271\ \Omega$$
 The resistance of the frog in this model is approximately $1.27\ \Omega$.
 
-*Location in Sadiku Textbook: Chapter 7, Section 7.9 (Applications / Problem 7.91), Page 312.*
 
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 51 to 54).
 
 ### 51. Page 30, Q.2: An electric microphone and its associated circuit can be represented by the circuit shown in Figure. Determine the transfer function $H(s) = V_o(s)/V(s)$.
 
 ![[Pasted image 20260727120004.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Microphone Circuit Transfer Function $H(s)$
+> * **Alexander & Sadiku (5th Ed):** Section 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Section 4.3 & 4.4, pp. 360–385
 
 **Solution:**
 
@@ -3038,13 +3383,18 @@ $$V_2(s) \left[ \frac{s^2 R_1 R C^2 + sC(R + 2R_1) + 1}{sRC} \right] = V(s)$$
 Since $V_o(s) = V_2(s)$, we can write the transfer function $H(s) = \frac{V_o(s)}{V(s)}$:
 $$H(s) = \frac{sRC}{s^2 R_1 R C^2 + sC(R + 2R_1) + 1}$$
 
-**Related Location in Sadiku Textbook:** Chapter 16, Section 16.4 (Transfer Functions), Page 726.
 
 ***
 
 ### 52. Page 42, CT-02 Q.1: A first-order RC circuit is subjected to a 12 V DC voltage. Design the circuit by selecting the value of the capacitor C such that the voltage across the capacitor reaches 4 V at a time 6 ms. (Figure involved)
 
 ![[Pasted image 20260727120046.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** First-Order DC RC Timing Circuit Design
+> * **Alexander & Sadiku (5th Ed):** Section 7.5, pp. 273–279
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–207
 
 **Solution:**
 
@@ -3081,13 +3431,18 @@ Since $\tau = 1000 C$:
 $$C = \frac{\tau}{1000} = \frac{0.005461}{1000} = 5.461 \times 10^{-6}\text{ F}$$
 $$C = 5.461\ \mu\text{F}$$
 
-**Related Location in Sadiku Textbook:** Chapter 7, Section 7.5 (Step Response of an RC Circuit), Page 273.
 
 ***
 
 ### 53. Page 45, CT-02 Q.1: For the given RC timing circuit connected in parallel with a neon lamp, design the resistance, R needed to make the lamp fire after 5 ms. The lamp triggers when the capacitor voltage reaches two-thirds of the supply voltage and can be treated as an open circuit (R = $\infty\Omega$) until it fires.
 
 ![[Pasted image 20260727120101.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Neon Lamp Timing Circuit Resistance Design
+> * **Alexander & Sadiku (5th Ed):** Section 7.9.1, pp. 293–295
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–207
 
 **Solution:**
 
@@ -3119,13 +3474,18 @@ Since $\ln(3) \approx 1.09861$:
 $$R = \frac{5000}{1.09861} \approx 4551.2\ \Omega$$
 $$R \approx 4.55\text{ k}\Omega$$
 
-**Related Location in Sadiku Textbook:** Chapter 7, Section 7.9.1 (Applications: Delay Circuits), Page 294 (Similar to Example 7.19).
 
 ***
 
 ### 54. Page 51, Q(b) (Bottom): A practical example of a delay circuit is shown in Fig. 2(b). The neon bulb fires when its voltage reaches 70 V and turns off when its voltage drops to 30 V. Its resistance is $100\ \Omega$ when on and infinitely high when off. Determine the time interval between light flashes.
 
 ![[Pasted image 20260727120129.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Neon Bulb Flasher Flash Time Interval
+> * **Alexander & Sadiku (5th Ed):** Section 7.9.1, pp. 293–295
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–207
 
 **Solution:**
 
@@ -3165,11 +3525,16 @@ The total period $T$ of the flashing cycle is the sum of the charging and discha
 $$T = t_{charge} + t_{discharge} = 29.389\text{ s} + 0.000847\text{ s} \approx 29.39\text{ s}$$
 *(Note: Because the discharge time is a tiny fraction of a second, the interval between flashes is overwhelmingly dominated by the charging time.)*
 
-**Related Location in Sadiku Textbook:** Chapter 7, Section 7.9.1 (Applications: Delay Circuits), Page 294 (Exact match to Example 7.19).
 
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 55 to 58).
 
 ### 55. Page 52, Q.2(a): How does a tank circuit produce sinusoidal oscillation? Explain in brief.
+
+> [!info] **Textbook References**
+> * **Topic:** Tank Circuit Sinusoidal Oscillation Mechanism
+> * **Alexander & Sadiku (5th Ed):** Section 8.3–8.4, pp. 319–331; Section 10.9.2, pp. 439–441
+> * **B.P. Lathi (3rd Ed):** Section 2.5 & 2.6, pp. 196–205
+
 
 **Solution:**
 A "tank circuit" is a fundamental electrical circuit consisting of an inductor (L) and a capacitor (C) connected in parallel (or series). It produces sinusoidal oscillations through the continuous, lossless exchange of energy between the two components.
@@ -3181,11 +3546,16 @@ A "tank circuit" is a fundamental electrical circuit consisting of an inductor (
 4.  **Repeat:** Once the capacitor is fully charged in the opposite polarity, the process reverses. The current flows back in the opposite direction. 
 5.  **Oscillation:** This continuous back-and-forth transfer of energy between the capacitor's electric field and the inductor's magnetic field creates a sinusoidal voltage and current oscillation. In an ideal (lossless) tank circuit without resistance, this oscillation would continue forever at the resonant frequency $\omega_0 = \frac{1}{\sqrt{LC}}$.
 
-**Related Location in Sadiku Textbook:** Chapter 8, Section 8.3 / 8.4 (The Source-Free Series/Parallel RLC Circuit). The physical meaning of the oscillations (ringing) is discussed on page 324.
 
 ***
 
 ### 56. Page 52, Q.2(b): Design an electronic photo flash unit using R-C circuit that should provide a short duration, high current pulse. Also, explain in brief.
+
+> [!info] **Textbook References**
+> * **Topic:** Electronic Photoflash Pulse Circuit Design
+> * **Alexander & Sadiku (5th Ed):** Section 7.9.2, pp. 295–296
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–209
+
 
 **Solution:**
 An electronic photoflash unit exploits the ability of a capacitor to store energy slowly over a long period and then release it almost instantaneously to create a high-current pulse.
@@ -3202,7 +3572,6 @@ The basic circuit consists of:
 2.  **Discharging Phase (Fast):** When a photo is taken, the switch disconnects the supply and connects the fully charged capacitor directly across the flashlamp ($R_2$). Because the flashlamp's resistance $R_2$ is extremely low, the capacitor discharges very rapidly. 
 3.  **High Current Pulse:** The discharge time constant $\tau_{discharge} = R_2 C$ is very short ($\tau_{discharge} \ll \tau_{charge}$). This creates a very brief, high-magnitude current pulse ($I_{peak} = V_s / R_2$) through the lamp, producing the bright flash of light.
 
-**Related Location in Sadiku Textbook:** Chapter 7, Section 7.9.2 (Photoflash Unit), Page 295.
 
 ***
 
@@ -3212,6 +3581,12 @@ The basic circuit consists of:
 ### 57. Page 5, Q.2(c): Consider the following circuit. (i) Find the zero-state response (ii) Determine the time necessary for the capacitor to reach one-fourth of the final voltage.
 
 ![[Pasted image 20260727120205.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Zero-State Step Response & Capacitor Charging Time
+> * **Alexander & Sadiku (5th Ed):** Section 7.5, pp. 273–279; Section 16.3, pp. 722–725
+> * **B.P. Lathi (3rd Ed):** Section 2.3, p. 195; Section 4.3, p. 366
 
 **Solution:**
 
@@ -3247,11 +3622,16 @@ $$-t_1 = \ln(0.75)$$
 $$t_1 = -\ln(0.75) \approx 0.2877\text{ s}$$
 It will take approximately **$0.288\text{ s}$** for the capacitor to reach one-fourth of its final voltage.
 
-**Related Location in Sadiku Textbook:** Chapter 7, Section 7.5 (Step Response of an RC Circuit), Page 273.
 
 ***
 
 ### 58. Page 11, Q.1(a): Define (i) transient response (ii) zero-state response (iii) time constant
+
+> [!info] **Textbook References**
+> * **Topic:** Transient Response, Zero-State Response & Time Constant Definitions
+> * **Alexander & Sadiku (5th Ed):** Section 7.2, p. 256; Section 7.5, p. 276
+> * **B.P. Lathi (3rd Ed):** Section 2.3, p. 195; Section 2.6, p. 205
+
 
 **Solution:**
 
@@ -3259,13 +3639,18 @@ It will take approximately **$0.288\text{ s}$** for the capacitor to reach one-f
 *   **(ii) Zero-State Response:** The zero-state response is the behavior of a circuit to an external input (excitation) when all initial conditions are zero. This means there is no initial energy stored in any of the capacitors (initial voltage = 0) or inductors (initial current = 0) prior to the application of the input.
 *   **(iii) Time Constant ($\tau$):** The time constant is a measure of how quickly a first-order circuit (RC or RL) responds to a sudden change. Specifically, it is the time required for the step response to reach $63.2\%$ (which is $1 - 1/e$) of its final steady-state value, or equivalently, the time required for the natural (source-free) response to decay to $36.8\%$ (which is $1/e$) of its initial value. It characterizes the speed of the transient decay.
 
-**Related Location in Sadiku Textbook:** 
 * Transient Response: Chapter 7, Section 7.5, Page 276.
 * Zero-state Response: Covered implicitly in Laplace transforms (Chapter 15) and Step Response (Chapter 7).
 * Time Constant: Chapter 7, Section 7.2, Page 256.
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 59 to 62).
 
 ### 59. Page 14, Q.1(b): Write the input-output relationship for an ideal integrator. Determine the zero-input and zero-state components of the response.
+
+> [!info] **Textbook References**
+> * **Topic:** Ideal Integrator ZIR and ZSR Components
+> * **Alexander & Sadiku (5th Ed):** Section 6.6.1, pp. 234–235; Section 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Section 1.7, pp. 104–106; Section 2.3 & 2.4, pp. 193–195
+
 
 **Solution:**
 
@@ -3291,24 +3676,34 @@ $$v_{zs}(t) = -\frac{1}{RC} \int_{0}^{t} v_{in}(\tau) d\tau$$
 
 *Note: The total complete response is always the sum of the zero-input response and the zero-state response: $v_o(t) = v_{zi}(t) + v_{zs}(t)$.*
 
-**Related Location in Sadiku Textbook:** Chapter 6, Section 6.6.1 (Integrator), Page 234; Chapter 16, Section 16.4 (Transfer Functions), Page 726.
 
 ***
 
 ### 60. Page 20, Q.2(a): Define zero-input response and zero-state response.
+
+> [!info] **Textbook References**
+> * **Topic:** Zero-Input and Zero-State Response Definitions
+> * **Alexander & Sadiku (5th Ed):** Section 7.5, pp. 275–276; Section 16.3, pp. 722–725
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.3, pp. 193–195
+
 
 **Solution:**
 
 *   **Zero-Input Response:** The zero-input response (often analogous to the natural or unforced response) is the behavior or output of a circuit resulting exclusively from the initial energy stored in its reactive elements (capacitors and inductors), with all external independent input sources turned off (voltage sources short-circuited and current sources open-circuited). It reveals how the circuit naturally behaves and dissipates its initial energy over time.
 *   **Zero-State Response:** The zero-state response (often analogous to the forced response calculated from initial rest) is the behavior or output of a circuit resulting exclusively from the external independent input sources applied to it, assuming the circuit is initially completely "at rest." This means there is absolutely no initial energy stored in any of the capacitors ($v_c(0) = 0$) or inductors ($i_L(0) = 0$) when the input is applied. 
 
-**Related Location in Sadiku Textbook:** Chapter 7, Section 7.2 (The Source-Free RC Circuit), Page 254; Chapter 16, Section 16.4 (Transfer Functions), Page 726.
 
 ***
 
 ### 61. Page 52, Q.2(c): Determine zero state response for the circuit shown below using laplace transform. (Figure involved)
 
 ![[Pasted image 20260727120232.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Zero-State Response via Laplace Transform
+> * **Alexander & Sadiku (5th Ed):** Section 16.3 & 16.4, pp. 722–730
+> * **B.P. Lathi (3rd Ed):** Section 4.3, p. 366
 
 **Solution:**
 
@@ -3356,7 +3751,6 @@ $$i(t) = \frac{V_m \omega L}{R^2 + (\omega L)^2} \left[ e^{-\frac{R}{L}t} - \cos
 
 *(Note: To get the exact numeric answer, simply substitute $R=2000$, $L=0.01$, $V_m=10$, and the specific $\omega$ provided by your instructor into this final closed-form equation).*
 
-**Related Location in Sadiku Textbook:** Chapter 16, Section 16.3 (Circuit Analysis in the s-domain), Page 722.
 
 ***
 
@@ -3364,6 +3758,12 @@ $$i(t) = \frac{V_m \omega L}{R^2 + (\omega L)^2} \left[ e^{-\frac{R}{L}t} - \cos
 ### **Transient and steady-state response**
 
 ### 62. Page 39, Q.1 (CT-02): Draw a first order RC or RL switching circuit to fulfil the following conditions: (i) The switching should be happened at time t = 0. (ii) Before switching, the circuit should be a first order circuit with DC source at reached at steady-state. (iii) After switching, the circuit should be a source-free first order circuit. (iv) The time constant before switching and after switching should be different. Find the expression and sketch capacitor voltage (for RC circuit) or inductor current (for RL circuit). [10]
+
+> [!info] **Textbook References**
+> * **Topic:** First-Order RC/RL Circuit Transient Design
+> * **Alexander & Sadiku (5th Ed):** Section 7.2–7.6, pp. 254–284
+> * **B.P. Lathi (3rd Ed):** Section 2.6, pp. 205–209
+
 
 **Solution:**
 
@@ -3400,7 +3800,6 @@ We will design an RC circuit that meets all the criteria.
     *   At $t = 5\text{ ms}$ (five time constants), the voltage is practically $0\text{ V}$ ($v_c \approx 0.03\text{ V}$).
     *   The curve asymptotically approaches the horizontal time axis ($0\text{ V}$).
 
-**Related Location in Sadiku Textbook:** Chapter 7, Section 7.2 (The Source-Free RC Circuit), Page 254; Section 7.5 (Step Response of an RC Circuit), Page 273.
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 63 to 66).
 
 
@@ -3413,6 +3812,12 @@ Based on the provided PDF, here are the detailed solutions for the next 4 questi
 ### 63. Page 20, Q.2(b): For the circuit of Fig. Q. 2(b), find $i(t)$ and $v_c(t)$ for $t \ge 0$ given that $i_L(0^-) = 10\text{A}$ and the switch $s$ closes at $t=0$. Then compute the energy dissipated in the $5\Omega$ resistor over the time interval $[0.4, \infty]$.
 
 ![[Pasted image 20260727120325.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Resistor Energy Dissipation Integral Over Time Interval
+> * **Alexander & Sadiku (5th Ed):** Section 7.3 & 7.6, pp. 259–284
+> * **B.P. Lathi (3rd Ed):** Section 2.2 & 2.6, pp. 193–209
 
 **Solution:**
 
@@ -3463,13 +3868,18 @@ $$E = 118.518 \left[ \frac{0.3679}{2.5} - \frac{0.3679}{40} \left( 2.5(-0.686) -
 $$E = 118.518 \left[ 0.14716 - 0.0091975 (-1.715 - 4.229) \right] = 118.518 \left[ 0.14716 - 0.0091975 (-5.944) \right]$$
 $$E = 118.518 \left[ 0.14716 + 0.05467 \right] = 118.518 \times 0.20183 \approx 23.92\text{ J}$$
 
-**Related Location in Sadiku Textbook:** Chapter 8, Section 8.4 (The Source-Free Parallel RLC Circuit), Page 326; Chapter 16, Section 16.3 (Circuit Analysis).
 
 ***
 
 ### 64. Page 23, Q.2: Express $V_c(t), t \ge 0$ if the direction of the dependent current source of Fig. 1 is reversed. Plot $V_c(t), t \ge 0$ and comments on your answer.
 
 ![[Pasted image 20260801034217.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Active First-Order Circuit Instability
+> * **Alexander & Sadiku (5th Ed):** Section 7.2 & 7.5, pp. 254–279; Section 16.6.1, pp. 737–740
+> * **B.P. Lathi (3rd Ed):** Section 2.5, pp. 196–203
 
 **Solution:**
 
@@ -3521,13 +3931,18 @@ $$E = 118.518 \left[ 0.14716 + 0.05467 \right] = 118.518 \times 0.20183 \approx 
     
 - **Comments:** The system is completely unstable. Reversing the dependent source essentially creates a negative equivalent resistance ($-0.25\ \Omega$) for the RC circuit. Instead of safely discharging, the voltage grows exponentially without bound. In a real physical circuit, this would instantly saturate the active components or lead to thermal destruction.
 
-**Related Location in Sadiku Textbook:** Chapter 16, Section 16.6.1 (Network Stability), Page 737.
 
 ***
 
 ### 65. Page 36, Q.2: For the following circuit, Find the impulse response. Also find $v_{out}(t)$ when (i) $v_{in}(t) = u(t)$ (ii) $v_{in}(t) = e^{-t}u(t)$, and (iii) $v_{in}(t) = tu(t)$. For all cases assume $\tau = 1\text{s}$.
 
 ![[Pasted image 20260727120345.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** High-Pass Filter Impulse, Step, and Ramp Responses
+> * **Alexander & Sadiku (5th Ed):** Section 7.4–7.5, pp. 265–279; Section 14.7, pp. 637–642
+> * **B.P. Lathi (3rd Ed):** Section 2.4 & 4.3, pp. 360–373
 
 **Solution:**
 
@@ -3562,11 +3977,16 @@ $$h(t) = \mathcal{L}^{-1} \{ H(s) \} = \delta(t) - e^{-t} u(t)$$
 *   Taking the inverse Laplace transform:
     $$v_{out}(t) = (1 - e^{-t}) u(t)\text{ V}$$
 
-**Related Location in Sadiku Textbook:** Chapter 16, Section 16.4 (Transfer Functions), Page 726.
 
 ***
 
 ### 66. Page 41, Q.2: The impulse response of a linear circuit is $h(t) = 10[u(t) - u(t - 2)]$. (i) Use the convolution to find the response due to an input $x(t) = e^{-t}u(t)$. [4 marks] (ii) Convert the impulse response into a transfer function and the input into the s domain. Solve the problem in the s domain and covert your answer back into the t domain. [4 Marks] (iii) Compare your result of (ii) with (i) and comment. [2 Marks]
+
+> [!info] **Textbook References**
+> * **Topic:** Rectangular Impulse Response Output
+> * **Alexander & Sadiku (5th Ed):** Section 7.4, pp. 265–273; Section 15.4, pp. 697–705
+> * **B.P. Lathi (3rd Ed):** Section 1.4 & 2.4, pp. 83–89, 193–195
+
 
 **Solution:**
 
@@ -3598,12 +4018,16 @@ Let's verify that the s-domain result matches the piecewise convolution result:
     $$y(t) = 10(1 - e^{-t}) - 10(1 - e^{-t}e^2) = 10 - 10e^{-t} - 10 + 10e^2 e^{-t} = 10e^{-t}(e^2 - 1)$$ (Matches part i)
 **Comment:** Both methods yield mathematically identical results. The s-domain method transforms calculus (convolution integrals) into algebra (multiplication and partial fractions), which elegantly handles piecewise functions automatically using time-shifting exponential terms ($e^{-as}$), making it generally less prone to limits-of-integration errors.
 
-**Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697; Chapter 16, Section 16.4 (Transfer Functions), Page 726.
-Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 67 to 70).
 
 ### 67. Page 63, Q(c) (Middle): Determine the impulse response of the following circuit.
 
 ![[Pasted image 20260727120409.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Circuit Impulse Response Determination
+> * **Alexander & Sadiku (5th Ed):** Section 7.4, pp. 265–273; Section 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
 
@@ -3651,7 +4075,6 @@ Taking the inverse Laplace transform gives the impulse response $h(t)$:
 $$h(t) = 0.8 \delta(t) + \left[ \left( \frac{0.8 s_1^2}{s_1 - s_2} \right) e^{s_1 t} + \left( \frac{0.8 s_2^2}{s_2 - s_1} \right) e^{s_2 t} \right] u(t)$$
 *(Note: Plugging in the numerical values yields $s_1 \approx -0.130$, $s_2 \approx -0.770$, and the coefficients evaluate to approximately $0.021 e^{-0.130t} + 0.594 e^{-0.770t}$.)*
 
-**Related Location in Sadiku Textbook:** Chapter 15, Section 15.4 (The Inverse Laplace Transform), Page 690; Chapter 16, Section 16.4 (Transfer Functions), Page 726.
 
 ***
 
@@ -3661,6 +4084,12 @@ $$h(t) = 0.8 \delta(t) + \left[ \left( \frac{0.8 s_1^2}{s_1 - s_2} \right) e^{s_
 ### 68. Page 3, Q.6(b): Using convolution integral, find the response $v_0(t)$ of the following circuit.
 
 ![[Pasted image 20260727120501.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Circuit Output via Convolution Integral
+> * **Alexander & Sadiku (5th Ed):** Section 15.4, pp. 697–705; Section 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
 
@@ -3694,13 +4123,18 @@ $$v_0(t) = (1 - e^{-t})u(t) - (1 - e^{-(t-2)})u(t - 2)$$
 *   **For $t > 2$:** Both step functions are equal to $1$.
     $$v_0(t) = (1 - e^{-t}) - (1 - e^{-t}e^2) = 1 - e^{-t} - 1 + e^2 e^{-t} = e^{-t}(e^2 - 1)\text{ V}$$
 
-**Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697.
 
 ***
 
 ### 69. Page 7, Q.6(a): Using convolution integral, find the response of the following circuit.
 
 ![[Pasted image 20260727120513.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Circuit Response via Convolution Integral
+> * **Alexander & Sadiku (5th Ed):** Section 15.4, pp. 697–705; Section 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
 
@@ -3726,13 +4160,18 @@ Combining both terms:
 $$v_0(t) = e^{-t}u(t) - t e^{-t}u(t)$$
 $$v_0(t) = e^{-t}(1 - t)u(t)\text{ V}$$
 
-**Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697.
 
 ***
 
 ### 70. Page 9, Q.2(c): Obtain the convolution of the pairs of signals in the figure below.
 
 ![[Pasted image 20260727120528.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Graphical Signal Pair Convolution
+> * **Alexander & Sadiku (5th Ed):** Section 15.4, pp. 697–705
+> * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
 
@@ -3767,13 +4206,18 @@ To sketch or fully define the output, evaluate the sum of the ramp functions for
 
 **(Sketch description: The resulting waveform $y(t)$ starts at $(0,0)$, rises linearly to a peak at $(1,1)$, falls steeply to a minimum at $(2,-1)$, and then rises linearly back to $(3,0)$, remaining at $0$ thereafter.)**
 
-**Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697.
 
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 71 to 74).
 
 ### 71. Page 14, Q.3(a): Define convolution integral. Compute the convolution of h(t)=u(t) with the function x(t) sketched in the following figure. (Figure shows a rectangular pulse from t=-1 to t=1 with amplitude 1).
 
 ![[Pasted image 20260727120604.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Convolution Integral Definition & Unit Step Convolution
+> * **Alexander & Sadiku (5th Ed):** Section 15.4, pp. 697–705
+> * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
 
@@ -3808,13 +4252,18 @@ t + 1, & -1 \le t \le 1 \\
 2, & t > 1 
 \end{cases}$$
 
-**Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697.
 
 ***
 
 ### 72. Page 61, Q(c): For the RL circuit in the following figure, use the convolution integral to find the response $i_o(t)$ due to the excitation $i_s(t)$.
 
 ![[Pasted image 20260727120638.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** RL Circuit Convolution Response to Current Pulse
+> * **Alexander & Sadiku (5th Ed):** Section 15.4, pp. 697–705; Section 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
 
@@ -3846,7 +4295,6 @@ $$i_o(t) = (1 - e^{-t})u(t) - (1 - e^{-(t-2)})u(t - 2) \text{ A}$$
 *   **$0 \le t \le 2$:** $i_o(t) = 1 - e^{-t} \text{ A}$
 *   **$t > 2$:** $i_o(t) = (1 - e^{-t}) - (1 - e^{-(t-2)}) = e^{-(t-2)} - e^{-t} = e^{-t}(e^2 - 1) \text{ A}$
 
-**Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697.
 
 ***
 
@@ -3855,6 +4303,12 @@ $$i_o(t) = (1 - e^{-t})u(t) - (1 - e^{-(t-2)})u(t - 2) \text{ A}$$
 ![[Pasted image 20260727120705.png]]
 
 *(Figure shows $f_1(t)$ as a ramp from (0,0) to (1,1) dropping to 0, and $f_2(t)$ as a rectangular pulse from t=1 to t=5 with amplitude 2).*
+
+
+> [!info] **Textbook References**
+> * **Topic:** Ramp and Rectangular Pulse Convolution
+> * **Alexander & Sadiku (5th Ed):** Section 15.4, pp. 697–705
+> * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
 
@@ -3896,7 +4350,6 @@ $$y(t) = \begin{cases}
 0 & t > 6 
 \end{cases}$$
 
-**Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697.
 
 ***
 
@@ -3905,6 +4358,12 @@ $$y(t) = \begin{cases}
 ![[Pasted image 20260727120717.png]]
 
 *(Figure shows $x(t)$ as a rectangular pulse from t=0 to t=1 with amplitude 1, and $h(t)$ as a positive pulse from t=0 to t=1 with amp 1, followed by a negative pulse from t=1 to t=2 with amp -1).*
+
+
+> [!info] **Textbook References**
+> * **Topic:** Rectangular & Bipolar Pulse Convolution
+> * **Alexander & Sadiku (5th Ed):** Section 15.4, pp. 697–705
+> * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
 
@@ -3945,12 +4404,17 @@ t - 3, & 2 < t \le 3 \\
 \end{cases}$$
 *(Note: This matches the piecewise result derived from step-function properties in Question 70).*
 
-**Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697.
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 75 to 78).
 
 ### 75. Page 63, Q.5(a): Find the convolution of the following signals. (Figure shows $x(t)$ as a rectangular pulse from t=0 to t=4 with amplitude 2, and $y(t)$ as a positive pulse from t=0 to t=2 with amp 4, followed by a negative pulse from t=2 to t=4 with amp -4).
 
 ![[Pasted image 20260727120731.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Convolution of Piecewise Signals
+> * **Alexander & Sadiku (5th Ed):** Section 15.4, pp. 697–705
+> * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
 
@@ -3997,7 +4461,6 @@ $$z(t) = \begin{cases}
 0, & t > 8 
 \end{cases}$$
 
-**Related Location in Sadiku Textbook:** Chapter 15, Section 15.5 (The Convolution Integral), Page 697.
 
 ***
 
@@ -4005,6 +4468,12 @@ $$z(t) = \begin{cases}
 ### **Network Synthesis**
 
 ### 76. Page 3, Q.5(c): Given a transfer function $G(s) = \frac{s^2}{s^2+4s+10}$, synthesize the network. Assume L= 1H.
+
+> [!info] **Textbook References**
+> * **Topic:** Transfer Function Network Synthesis
+> * **Alexander & Sadiku (5th Ed):** Section 16.6.2, pp. 740–745
+> * **B.P. Lathi (3rd Ed):** Section 4.6, pp. 388–391
+
 
 **Solution:**
 
@@ -4043,13 +4512,18 @@ The network is a series RLC circuit connected to a voltage source $V_{in}$.
 *   Inductor $L = 1\text{ H}$
 The output voltage $V_{out}$ is measured across the $1\text{ H}$ inductor.
 
-**Related Location in Sadiku Textbook:** Chapter 16, Section 16.6.2 (Network Synthesis), Page 740.
 
 ***
 
 ### 77. Page 18, Q.6(b): What is network synthesis? Synthesis the function $T(s) = \frac{V_0(s)}{V_i(s)} = \frac{-2s}{s^2+6s+10}$ using the topology in the following figure. (Figure shows an active bandpass filter topology using an op-amp with admittances $Y_1$ through $Y_4$).
 
 ![[Pasted image 20260727120839.png]]
+
+
+> [!info] **Textbook References**
+> * **Topic:** Active Op-Amp Filter Network Synthesis
+> * **Alexander & Sadiku (5th Ed):** Section 16.6.2, pp. 740–745
+> * **B.P. Lathi (3rd Ed):** Section 4.6, pp. 388–391
 
 **Solution:**
 
@@ -4155,11 +4629,16 @@ Now find $C_2$: $R_2 C_2 = 0.2 \implies 2000 \cdot C_2 = 0.2 \implies C_2 = \fra
 *   $C_1 = 500\ \mu\text{F}$
 *   $C_2 = 100\ \mu\text{F}$
 
-**Related Location in Sadiku Textbook:** Chapter 16, Section 16.6.2 (Network Synthesis), Practice Problem 16.16, Page 745.
 
 ***
 
 ### 78. Page 69, Q(b): A given transfer function can be realized in many different ways. A transfer function can be realized by using integrators or differentiators along with adders and multipliers. Generally differentiator is avoided to realize a transfer function. (i) State the reason of preferring integrator over differentiator in system realization. (ii) Realize the following transfer function by any one of the following forms. Canonic direct, series and parallel forms. $H(s) = \frac{s(s+2)}{(s+1)(s+3)(s+4)}$
+
+> [!info] **Textbook References**
+> * **Topic:** Integrators vs. Differentiators & System Realization Forms
+> * **Alexander & Sadiku (5th Ed):** Section 6.6.1, pp. 233–236; Section 16.6.2, pp. 740–745
+> * **B.P. Lathi (3rd Ed):** Section 4.6, pp. 388–391
+
 
 **Solution:**
 
@@ -4206,7 +4685,6 @@ Taking the inverse Laplace, this represents an integrator whose input is a sum o
 4.  **Path 3:** $x(t)$ is multiplied by a gain of $8/3$. It enters a summing junction, then an integrator ($1/s$). The output of the integrator is fed back to the summing junction with a gain of $-4$.
 5.  The outputs of all three integrators are added together in a final summing junction to produce the output $y(t)$.
 
-**Related Location in Sadiku Textbook:** Chapter 16, Section 16.6.2 (Network Synthesis), Page 740; Section 6.6.3 (Analog Computer), Page 237.
 Based on the provided PDF, here are the detailed solutions for the final 2 questions (Questions 79 and 80) available in the document.
 
 
@@ -4215,6 +4693,12 @@ Based on the provided PDF, here are the detailed solutions for the final 2 quest
 ### **Parseval's theorem**
 
 ### 79. Page 10, Q.8(c): Why it is not possible to find the Fourier transform of ramp signal? State and explain Parseval's theorem.
+
+> [!info] **Textbook References**
+> * **Topic:** Fourier Transform Existence & Parseval's Energy Theorem
+> * **Alexander & Sadiku (5th Ed):** Section 18.2, p. 814, 817; Section 18.5 & 18.6, pp. 836–839
+> * **B.P. Lathi (3rd Ed):** Section 1.1, pp. 65–70; Chapter 7, pp. 360–380
+
 
 **Solution:**
 
@@ -4242,13 +4726,16 @@ $$W_{1\Omega} = \int_{-\infty}^{\infty} f^2(t) dt = \frac{1}{2\pi} \int_{-\infty
 *   **Frequency Domain:** The right side of the equation shows that this same total energy can be found by integrating $|F(\omega)|^2$ over all frequencies (and dividing by $2\pi$ to account for angular frequency $\omega = 2\pi f$). 
 *   **Physical Significance:** The term $|F(\omega)|^2$ is known as the **energy spectral density** (in joules per hertz). It shows how the energy of the signal is distributed across the frequency spectrum. Parseval's theorem proves that the energy is conserved; the transformation from the time domain to the frequency domain does not alter the total energy content of the signal.
 
-**Ans related location pg number In sadiku textbook:** 
-* Fourier Transform Convergence (Ramp signal): Chapter 18, Section 18.2 (Definition of the Fourier Transform), Page 817.
-* Parseval's Theorem: Chapter 18, Section 18.5 (Parseval's Theorem), Page 836.
 
 ***
 
 ### 80. Page 13, Q.8(c): State and explain Parseval's theorem.
+
+> [!info] **Textbook References**
+> * **Topic:** Parseval's Energy Theorem Statement & Proof (Periodic & Non-Periodic)
+> * **Alexander & Sadiku (5th Ed):** Section 17.5 & 17.6, pp. 782–785; Section 18.5 & 18.6, pp. 836–839
+> * **B.P. Lathi (3rd Ed):** Section 1.1, pp. 65–70; Chapter 7, pp. 360–380
+
 
 **Solution:**
 
@@ -4276,6 +4763,3 @@ $$W_{1\Omega} = \int_{-\infty}^{\infty} f^2(t) dt = \frac{1}{2\pi} \int_{-\infty
 *   The theorem demonstrates the conservation of energy between domains.
 *   It introduces the concept of $|F(\omega)|^2$ as the **energy spectral density**. It allows engineers to calculate how much energy is contained within a specific frequency band $[\omega_1, \omega_2]$ by evaluating $\frac{1}{\pi} \int_{\omega_1}^{\omega_2} |F(\omega)|^2 d\omega$. This is highly useful in communications and filter design to determine how much signal energy is passed or rejected by a filter.
 
-**Ans related location pg number In sadiku textbook:** 
-* Parseval's Theorem for Fourier Series: Chapter 17, Section 17.5 (Average Power and RMS Values), Page 783.
-* Parseval's Theorem for Fourier Transform: Chapter 18, Section 18.5 (Parseval's Theorem), Page 836.
