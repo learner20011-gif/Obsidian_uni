@@ -2835,53 +2835,228 @@ Here are the detailed solutions for the 4 questions starting from Question 39.
 > * **B.P. Lathi (3rd Ed):** Section 2.5, pp. 196–203; Section 4.4, pp. 373–382
 
 **Solution:**
+For $t > 0$, the circuit response is **critically damped** with the capacitor voltage given by **$v(t) = -32t e^{-2t}\text{ V}$** (or **$v(t) = 40(1 + 2t)e^{-2t}\text{ V}$** if position 1 initially held the capacitor at $40\text{ V}$).
 
-**(i) Initial Conditions and S-domain Circuit**
-*   **For $t < 0$:** The switch is closed (position 1), bypassing the capacitor and short-circuiting it. The circuit is a DC loop with the $40\text{ V}$ source, $4\ \Omega$ resistor, $4\text{ H}$ inductor, and $16\ \Omega$ resistor in series. 
-    In DC steady state, the inductor acts as a short circuit.
-    The initial current through the inductor is:
-    $$i_L(0^-) = \frac{40\text{ V}}{4\ \Omega + 16\ \Omega} = \frac{40}{20} = 2\text{ A}$$
-    Since the capacitor is bypassed, its initial voltage is zero:
-    $$v_c(0^-) = 0\text{ V}$$
-    By continuity, $i_L(0^+) = 2\text{ A}$ and $v_c(0^+) = 0\text{ V}$.
+  
 
-*   **For $t > 0$ (S-domain circuit):** The switch opens (position 2), placing the capacitor into the circuit. The circuit becomes a voltage source connected to a series resistor and then a parallel combination of the capacitor and the L-R branch.
-    *   Voltage source: $40/s$
-    *   Series Resistor: $4\ \Omega$
-    *   Capacitor: Impedance $1/sC = 16/s\ \Omega$
-    *   Inductor branch: Impedance $sL + R_{ind} = 4s + 16$. The initial current $i_L(0)=2\text{ A}$ is modeled as a series voltage source $L i_L(0) = 4(2) = 8\text{ V}$ opposing the current direction.
+#### Initial Conditions at $t = 0^-$ and $t = 0^+$
 
-**(ii) Determine the expression of $v(t)$ for $t > 0$**
-Let $V(s)$ be the node voltage across the parallel branches (which is the capacitor voltage). Applying KCL at this node:
-$$\frac{V(s) - 40/s}{4} + \frac{V(s)}{16/s} + \frac{V(s) + 8}{4s + 16} = 0$$
-Multiply the entire equation by 16 to clear some denominators:
-$$4\left(V(s) - \frac{40}{s}\right) + sV(s) + \frac{16(V(s) + 8)}{4(s + 4)} = 0$$
-$$4V(s) - \frac{160}{s} + sV(s) + \frac{4V(s) + 32}{s + 4} = 0$$
-Factor out $V(s)$:
-$$V(s) \left[ s + 4 + \frac{4}{s+4} \right] = \frac{160}{s} - \frac{32}{s+4}$$
-Simplify the terms inside the brackets:
-$$V(s) \left[ \frac{(s+4)^2 + 4}{s+4} \right] = \frac{160(s+4) - 32s}{s(s+4)} = \frac{128s + 640}{s(s+4)}$$
-$$V(s) \left[ \frac{s^2 + 8s + 20}{s+4} \right] = \frac{128s + 640}{s(s+4)}$$
-$$V(s) = \frac{128s + 640}{s(s^2 + 8s + 20)}$$
-Now, perform partial fraction expansion:
-$$V(s) = \frac{128s + 640}{s(s^2 + 8s + 20)} = \frac{A}{s} + \frac{Bs + C}{s^2 + 8s + 20}$$
-$$128s + 640 = A(s^2 + 8s + 20) + s(Bs + C)$$
-$$128s + 640 = (A+B)s^2 + (8A+C)s + 20A$$
-Equating coefficients:
-*   Constant: $20A = 640 \implies A = 32$
-*   $s^2$ term: $A + B = 0 \implies B = -32$
-*   $s^1$ term: $8A + C = 128 \implies 8(32) + C = 128 \implies 256 + C = 128 \implies C = -128$
-Substitute A, B, and C back:
-$$V(s) = \frac{32}{s} - \frac{32s + 128}{s^2 + 8s + 20} = \frac{32}{s} - 32 \left[ \frac{s + 4}{(s + 4)^2 + 2^2} \right]$$
-Taking the inverse Laplace transform:
-$$v(t) = 32u(t) - 32e^{-4t}\cos(2t)u(t) = 32(1 - e^{-4t}\cos(2t))\text{ V} \quad \text{for } t > 0$$
+- **DC Steady-State Analysis ($t < 0$):**
+    
+      
+    - Before $t = 0$, the switch has been resting in position 1 for a long time.
+        
+          
+        
+    - In DC steady state, the inductor acts as an ideal short circuit ($0\ \Omega$), while the capacitor acts as an open circuit.
+        
+          
+        
+    - The $40\text{ V}$ DC source delivers current through the series loop consisting of the $4\ \Omega$ resistor, switch contact 1, the $4\text{ H}$ inductor, and the $16\ \Omega$ resistor.
+        
+          
+        
+    - The initial inductor current is:
+        
+          
+        
+        $$i_L(0^-) = \frac{40\text{ V}}{4\ \Omega + 16\ \Omega} = \frac{40}{20} = 2\text{ A}$$
+        
+    - Because the capacitor is isolated in position 1, no initial charge has accumulated across its plates:
+        
+          
+        
+        $$v_C(0^-) = 0\text{ V}$$
+        
+- **Switching Continuity at $t = 0^+$:**
+    
+      
+    - By the physical law of charge conservation, capacitor voltage cannot change instantaneously:
+        
+          
+        
+        $$v(0^+) = v_C(0^-) = 0\text{ V}$$
+        
+    - By the physical law of flux linkage conservation, inductor current cannot change instantaneously:
+        
+          
+        
+        $$i_L(0^+) = i_L(0^-) = 2\text{ A}$$
+        
+    - Clockwise loop current $i(t)$ flows out of the positive terminal of the capacitor for $t > 0$:
+        
+          
+        
+        $$i(t) = -C \frac{dv(t)}{dt} \implies \left.\frac{dv}{dt}\right\vert{}_{t=0^+} = -\frac{i_L(0^+)}{C} = -\frac{2\text{ A}}{\frac{1}{16}\text{ F}} = -32\text{ V/s}$$
+        
 
-**(iii) Identify the type of damping**
-The characteristic equation of the circuit is given by the denominator of the transfer function: $s^2 + 8s + 20 = 0$.
-The roots are $s = \frac{-8 \pm \sqrt{64 - 80}}{2} = -4 \pm j2$.
-Since the roots are complex conjugate pairs, the system is **underdamped**.
+#### (i) S-Domain (Laplace Equivalent) Circuit Representation
 
+After switching at $t = 0$, the $40\text{ V}$ source and $4\ \Omega$ resistor are disconnected. The remaining loop consists of the capacitor $C$, inductor $L$, and resistor $R$ in series:
 
+  
+
+- **Impedance Transformations:**
+    
+      
+    - **Capacitor Impedance:** $Z_C(s) = \frac{1}{sC} = \frac{16}{s}\ \Omega$ (with $v(0) = 0\text{ V}$, requiring no auxiliary source).
+        
+          
+        
+    - **Inductor Impedance:** $Z_L(s) = sL = 4s\ \Omega$.
+        
+          
+        
+    - **Inductor Initial Energy Source:** In series with the inductor, an impulsive voltage source $L \cdot i_L(0^-) = 4 \times 2 = 8\text{ V}$ oriented in the direction of clockwise current flow.
+        
+          
+        
+    - **Resistor Impedance:** $Z_R(s) = R = 16\ \Omega$.
+        
+          
+        
+
+```
+               +-----[ 4s Ω ]-----+----( + 8V - )----+
+               |                  Inductor Source    |
+               |                                     |
+               |                                    [ ]
+             + |                                    [ ] 16 Ω
+          V(s) [ 16/s Ω ]                           [ ]
+             - |                                     |
+               |                                     |
+               +-------------------------------------+
+```
+
+- **Loop Equation in the S-Domain:**
+    
+      
+    - Applying Kirchhoff's Voltage Law (KVL) clockwise:
+        
+          
+        
+        $$I(s)\left(\frac{16}{s} + 4s + 16\right) - 8 = 0$$
+        
+    - Solving for loop current $I(s)$:
+        
+          
+        
+        $$I(s) = \frac{8}{4s + 16 + \frac{16}{s}} = \frac{8s}{4s^2 + 16s + 16} = \frac{2s}{(s + 2)^2}$$
+        
+    - The capacitor voltage in the S-domain corresponds to:
+        
+          
+        
+        $$V(s) = -\frac{1}{sC} I(s) = -\frac{16}{s} \left[\frac{2s}{(s + 2)^2}\right] = -\frac{32}{(s + 2)^2}$$
+        
+
+#### (ii) Expression of $v(t)$ for $t > 0$ and Waveform Sketch
+
+- **Derivation of Time-Domain Voltage $v(t)$:**
+    
+      
+    - Using standard Laplace transform pairs:
+        
+          
+        
+        $$\mathcal{L}^{-1}\left\{\frac{1}{(s + a)^2}\right\} = t e^{-at}$$
+        
+    - Taking the inverse Laplace transform of $V(s)$:
+        
+          
+        
+        $$v(t) = \mathcal{L}^{-1}\left\{-\frac{32}{(s + 2)^2}\right\} = -32t e^{-2t}\text{ V}, \quad t \ge 0$$
+        
+- **Waveform Characteristics:**
+    
+      
+    - **Initial Value:** $v(0^+) = 0\text{ V}$.
+        
+          
+        
+    - **Initial Slope:** $v'(0^+) = -32\text{ V/s}$.
+        
+          
+        
+    - **Local Extremum:** Setting $\frac{dv(t)}{dt} = -32(1 - 2t)e^{-2t} = 0 \implies t = 0.5\text{ s}$.
+        
+          
+        
+    - **Peak Negative Voltage:** $v(0.5) = -32(0.5)e^{-1} = -\frac{16}{e} \approx -5.89\text{ V}$.
+        
+          
+        
+    - **Steady-State Limit:** $\lim_{t \to \infty} v(t) = 0\text{ V}$.
+        
+          
+        
+
+```
+   v(t) [V]
+      0 +--------------------------------------------------> t [s]
+        |  \
+        |   \
+ -2.0 V |    \
+        |     \
+ -4.0 V |      \
+        |       * (0.5 s, -5.89 V)
+ -5.89V |--------\----------------- - - - - - - - - -
+        |         '-._
+ -8.0 V |             `'--..______________________
+        +---------------------------------------------------
+        0       0.5       1.0       1.5       2.0       3.0
+```
+
+#### (iii) Identification of Damping Type
+
+- **Second-Order Characteristic Parameters:**
+    
+      
+    - **Neper Frequency ($\alpha$):**
+        
+          
+        
+        $$\alpha = \frac{R}{2L} = \frac{16}{2 \times 4} = 2\text{ Np/s}$$
+        
+    - **Undamped Natural Angular Frequency ($\omega_0$):**
+        
+          
+        
+        $$\omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{4 \times \frac{1}{16}}} = \frac{1}{\sqrt{0.25}} = 2\text{ rad/s}$$
+        
+    - **Damping Ratio ($\zeta$):**
+        
+          
+        
+        $$\zeta = \frac{\alpha}{\omega_0} = \frac{2}{2} = 1$$
+        
+- **Damping Classification:**
+    
+      
+    - Because $\alpha = \omega_0$ ($\zeta = 1$), the characteristic equation $s^2 + 4s + 4 = (s + 2)^2 = 0$ yields two identical, negative real roots ($s_{1,2} = -2$).
+        
+          
+        
+    - The response is uniquely **Critically Damped**.
+        
+          
+        
+
+#### Alternative Interpretation Note
+
+If position 1 held the capacitor charged across the $40\text{ V}$ source prior to switching while the inductor had zero initial current ($v(0) = 40\text{ V}$, $i_L(0) = 0\text{ A}$):
+
+  
+
+- **Initial Derivatives:** $v(0) = 40\text{ V}$, $v'(0) = 0\text{ V/s}$.
+    
+      
+    
+- **Time Response:** $v(t) = (A_1 + A_2 t)e^{-2t} = 40(1 + 2t)e^{-2t}\text{ V}$.
+    
+      
+    
+- **Damping Type:** Identical values of $R, L, C$ ensure the circuit remains **Critically Damped**.
 ***
 
 ### 40. Page 42, CT-02 Q.2: The switch of the following circuit has been in position 'a' for a long time and moved to the position 'b' at t=0 s. Calculate the followings: (i) Capacitor voltage, Vc at t = 0 s. (ii) The time constant, $\tau$ for t < 0. (iii) Capacitor voltage, Vc at t = 2 ms. (iv) Capacitor current, i at t = 2 ms.
