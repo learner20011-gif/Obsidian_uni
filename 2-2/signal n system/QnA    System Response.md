@@ -1673,7 +1673,7 @@ $$v_L(10) = -5 e^{-10/4} = -5 e^{-2.5} \approx -5 \cdot 0.082085 = -0.410\text{ 
 
 ***
 
-### 23. Page 7, Q.5(a): In the following circuit the switch is closed for a long time before it is opened at t = 0. Find the inductor current i(t) for t>0 by transforming the circuit in s-domain. (Figure Involved)
+### 23. ✅️Page 7, Q.5(a): In the following circuit the switch is closed for a long time before it is opened at t = 0. Find the inductor current i(t) for t>0 by transforming the circuit in s-domain. (Figure Involved)
 
 ![[Pasted image 20260727114947.png]]
 
