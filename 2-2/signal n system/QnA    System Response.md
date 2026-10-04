@@ -1353,7 +1353,104 @@ As calculated in part (ii), $\alpha = 1$ and $\omega_0 = 1$. Because $\alpha = \
 
 **Solution:**
 ![[SmartSelect_20261005_025049_Xodo.jpg]]
+The solution for the circuit in the time domain is **$v_o(t) = (10e^{-t} + 15e^{-2t})u(t)\text{ V}$**.
 
+#### Circuit Transformation to the $s$-Domain
+
+* The given circuit is converted to the frequency ($s$) domain.
+
+
+* The capacitor's initial condition is represented as an equivalent parallel current source oriented upwards with a value of $C v_o(0) = 0.1(5) = 0.5\text{ A}$.
+
+
+* The capacitor impedance is represented as $\frac{1}{sC} = \frac{10}{s}\ \Omega$.
+
+
+* The independent input source transformed to the $s$-domain is $\frac{10}{s+1}\text{ V}$.
+
+
+
+#### Nodal Analysis at Node $V_o(s)$
+
+* Applying Kirchhoff's Current Law (KCL) at the essential top node $V_o(s)$ yields:
+
+
+
+$$\frac{\frac{10}{s+1} - V_o}{10} + 2 + 0.5 = \frac{V_o}{10} + \frac{V_o}{10/s}$$
+
+
+
+* Grouping and simplifying the nodal terms gives:
+
+
+
+$$\frac{1}{s+1} + 2.5 = \frac{2V_o}{10} + \frac{sV_o}{10} = \frac{1}{10}V_o(s+2)$$
+
+
+
+* Multiplying the entire equation across by $10$ results in:
+
+
+
+$$\frac{10}{s+1} + 25 = V_o(s+2)$$
+
+
+
+* Combining terms over a common denominator leads to:
+
+
+
+$$\frac{10 + 25(s+1)}{s+1} = V_o(s+2)$$
+
+
+
+$$V_o(s) = \frac{25s + 35}{(s+1)(s+2)}$$
+
+
+
+
+#### Partial Fraction Expansion
+
+* The expression for $V_o(s)$ is expanded into partial fractions:
+
+
+
+$$V_o(s) = \frac{A}{s+1} + \frac{B}{s+2}$$
+
+
+
+* Evaluating the residue $A$ via the Heaviside cover-up method:
+
+
+
+$$A = (s+1)V_o(s)\Big\vert{}_{s=-1} = \left.\frac{25s + 35}{s+2}\right\vert{}_{s=-1} = \frac{-25 + 35}{-1 + 2} = \frac{10}{1} = 10$$
+
+
+
+* Evaluating the residue $B$ via the Heaviside cover-up method:
+
+
+
+$$B = (s+2)V_o(s)\Big\vert{}_{s=-2} = \left.\frac{25s + 35}{s+1}\right\vert{}_{s=-2} = \frac{-50 + 35}{-2 + 1} = \frac{-15}{-1} = 15$$
+
+
+
+* Substituting the computed residues back gives:
+
+
+
+$$V_o(s) = \frac{10}{s+1} + \frac{15}{s+2}$$
+
+
+
+
+#### Inverse Laplace Transform
+
+* Taking the inverse Laplace transform $\mathcal{L}^{-1}\{V_o(s)\}$ to return to the continuous time domain:
+
+
+
+$$v_o(t) = \left(10e^{-t} + 15e^{-2t}\right)u(t)\text{ V}$$
 ***
 
 ### 22. Page 5, Q.2(b): The switch of the following circuit was opened for a long period of time and is closed at t=0 s. Fill the table for the following circuit parameters. (Figure Involved)
