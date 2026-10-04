@@ -1,3 +1,7 @@
+ 
+ ![[Screenshot_20261005_023903_Xodo.jpg]]
+ 
+ 
  ![[Pasted image 20261004164126.png]]
  ![[Pasted image 20261003072613.png]]
 
