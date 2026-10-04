@@ -309,7 +309,6 @@
         $$i_o(t) = \begin{cases} 0\text{ A}, & t < 0 \\ -\dfrac{2}{3}e^{-t}\text{ A}, & t > 0 \end{cases}$$
 
 ### Practice Problem 7.10: Find $v(t)$ for $t > 0$ and $v(0.5)$
-
   
 ![[Pasted image 20261004171539.png]]
 - **Initial Voltage $v(0)$ ($t < 0$):**
@@ -398,7 +397,122 @@
           
         
         $$v(0.5) = 9.375 + 5.625e^{-2(0.5)} = 9.375 + 5.625e^{-1} \approx 9.375 + 5.625(0.36788) \approx 11.44\text{ V}$$
+
+### Example 7.13: Find $i(t)$ for $t > 0$, and Calculate $i(2)$ and $i(5)$
+
+  ![[Pasted image 20261004175239.png]]
+
+- **Initial State ($t < 0$):**
+    
+      
+    - Switches $S_1$ and $S_2$ are both open, disconnecting sources from the inductor.
         
+          
+        
+    - Inductor current: $i(0^-) = i(0^+) = 0\text{ A}$.
+        
+          
+        
+- **Interval $0 \le t \le 4\text{ s}$ ($S_1$ closed, $S_2$ open):**
+    
+      
+    - The $4\ \Omega$ and $6\ \Omega$ resistors are in series with the $40\text{ V}$ source:
+        
+          
+        
+        $$R_{\text{th}} = 4 + 6 = 10\ \Omega, \quad i(\infty) = \frac{40}{10} = 4\text{ A}$$
+        
+          
+        
+    - Time constant:
+        
+          
+        
+        $$\tau = \frac{L}{R_{\text{th}}} = \frac{5}{10} = 0.5\text{ s} \implies \frac{1}{\tau} = 2\text{ s}^{-1}$$
+        
+          
+        
+    - Inductor current response:
+        
+          
+        
+        $$i(t) = 4(1 - e^{-2t})\text{ A} \quad (0 \le t \le 4)$$
+        
+          
+        
+- **Switching at $t = 4\text{ s}$:**
+    
+      
+    - Initial current entering the next interval:
+        
+          
+        
+        $$i(4) = 4(1 - e^{-8}) \approx 4\text{ A}$$
+        
+          
+        
+- **Interval $t \ge 4\text{ s}$ ($S_1$ and $S_2$ both closed):**
+    
+      
+    - Steady-state current via nodal analysis at node $P$ (with inductor as a short circuit):
+        
+          
+        
+        $$\frac{40 - v}{4} + \frac{10 - v}{2} = \frac{v}{6} \implies v = \frac{180}{11}\text{ V}$$
+        
+          
+        
+        $$i(\infty) = \frac{v}{6} = \frac{30}{11} \approx 2.727\text{ A}$$
+        
+          
+        
+    - Thevenin resistance seen by the inductor:
+        
+          
+        
+        $$R_{\text{th}} = (4 \parallel 2) + 6 = \frac{4 \times 2}{4 + 2} + 6 = \frac{22}{3}\ \Omega$$
+        
+          
+        
+    - Time constant:
+        
+          
+        
+        $$\tau = \frac{L}{R_{\text{th}}} = \frac{5}{22/3} = \frac{15}{22}\text{ s} \implies \frac{1}{\tau} = \frac{22}{15} \approx 1.4667\text{ s}^{-1}$$
+        
+          
+        
+    - Inductor current response:
+        
+          
+        
+        $$i(t) = i(\infty) + [i(4) - i(\infty)]e^{-(t - 4)/\tau}$$
+        
+          
+        
+        $$i(t) = 2.727 + 1.273e^{-1.4667(t - 4)}\text{ A} \quad (t \ge 4)$$
+        
+          
+        
+- **Values at Specific Times:**
+    
+      
+    - At $t = 2\text{ s}$ (falls in $0 \le t \le 4$):
+        
+          
+        
+        $$i(2) = 4(1 - e^{-4}) \approx \mathbf{3.93\text{ A}}$$
+        
+          
+        
+    - At $t = 5\text{ s}$ (falls in $t \ge 4$):
+        
+          
+        
+        $$i(5) = 2.727 + 1.273e^{-1.4667(5 - 4)} \approx \mathbf{3.02\text{ A}}$$
+
+### *second order*
+
 ##
 
 * A second-order circuit is characterized by a second-order differential equation. It consists of resistors and the equivalent of **two energy storage elements.**
