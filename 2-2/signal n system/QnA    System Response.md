@@ -1730,7 +1730,7 @@ $$ i(t) = \left( 2e^{-2t}\cos(6t) - \frac{2}{3}e^{-2t}\sin(6t) \right) u(t) \tex
 
 ***
 
-### 24. Page 9, Q.3(a): A 240W power supply circuit is shown in the following figure. This circuit employs a large inductor and capacitor. Find $i_L(t)$ for $t > 0$. Assume steady-state conditions exist at $t = 0^-$. (Figure Involved)
+### 24. ✅️Page 9, Q.3(a): A 240W power supply circuit is shown in the following figure. This circuit employs a large inductor and capacitor. Find $i_L(t)$ for $t > 0$. Assume steady-state conditions exist at $t = 0^-$. (Figure Involved)
 
 ![[Pasted image 20260727115014.png]]
 
@@ -2102,7 +2102,7 @@ $$v(t) = -24 + [-9.6 - (-24)] e^{-t/1}$$
 $$v(t) = -24 + 14.4 e^{-t}\text{ V} \quad \text{for } t > 0$$
 ***
 
-### 27. Page 11, Q.1(c): The switch of the circuit in the figure below is controlled electronically so that it closes when $v_c$ rises to 9V and opens when $v_c$ falls to 5V. Find and plot $v_c(t)$ for several switchings. Also find the frequency of the generating triangular waveform.
+### 27. ✅️Page 11, Q.1(c): The switch of the circuit in the figure below is controlled electronically so that it closes when $v_c$ rises to 9V and opens when $v_c$ falls to 5V. Find and plot $v_c(t)$ for several switchings. Also find the frequency of the generating triangular waveform.
 
 ![[Pasted image 20260727115108.png]]
 
