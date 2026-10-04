@@ -1,9 +1,20 @@
+# Systems & Applications of Signals and Systems: Questions & Solutions
+
+
+
+---
+
 ### **Classifications of system**
 
 
 ### 1. Page 1, Q1(a): A system H has its input-output pairs given. Determine whether the system could be memoryless, causal, linear, and time invariant. For all cases justify your answers. [Figure Involved]
 
 ![[Pasted image 20260829104628.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Memoryless, Causal, Linear, Time-Invariant Check — Input-output pair properties
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1 & 16.4, pp. 716, 726–730
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7, pp. 97–110
 
 **Detailed Solution:**
 
@@ -23,13 +34,17 @@ Based on the provided input-output graphs, we will analyze the system $H$ for th
 4.  **Time-Invariant:** A system is time-invariant if a time shift in the input results in an identical time shift in the output.
     *   *Analysis:* Consider the positive pulse in $x_1(t)$ which occurs at $t \in [0, 1]$. Its output $y_1(t)$ is a triangle from $t \in [0, 2]$ peaking at $t=1$. Now look at the second positive pulse in $x_3(t)$, which is essentially $x_1(t)$ shifted by $2$ seconds: $x_1(t-2)$. If the system were time-invariant, the output for this part should be $y_1(t-2)$, which would be a positive triangle peaking at $t=3$. However, $y_3(t)$ produces a *negative* triangle for that corresponding input. Because a shifted input does not produce an identically shifted output, the system is **not time-invariant** (it is time-varying).
 
-*Related concept location in Sadiku Textbook: The foundational concepts of Linearity (Additivity and Homogeneity) can be found in Chapter 4, Section 4.2 (Linearity Property), pg. 128. The concept of system "memory" parallels energy storage elements (capacitors/inductors) discussed in Chapter 6, pg. 216.*
 
 ***
 
 ### 2. Page 5, Q1(b): Consider the system shown in the following figure, determine is it (i) memory less (ii) Causal (iii) time-invariant? [Figure Involved]
 
 ![[Pasted image 20260829104703.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Multiplier System Classification — Multiplier network causality and time-invariance
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, p. 716
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7, pp. 97–110
 
 **Detailed Solution:**
 
@@ -52,13 +67,17 @@ Let us evaluate the system for the three properties:
         $y(t - T) = x(t - T)\cos(\omega_c (t - T)) = x(t - T)\cos(\omega_c t - \omega_c T)$
     *   Comparing the two results: $y_1(t) \neq y(t - T)$ (unless $\omega_c T$ happens to be an exact multiple of $2\pi$, which is not generally true for all $T$). Because a time shift in the input does not yield a straightforward time shift in the output, the system is **not time-invariant** (it is a time-varying system).
 
-*Related concept location in Sadiku Textbook: Time-invariance and memory concepts are analogous to linear circuit parameters. The memory of an electrical system is introduced with Capacitors and Inductors in Chapter 6, pg. 216.*
 
 ***
 
 ### 3. Page 5, Q1(c): Determine which of the following system is linear or non-linear?
 (i) $dy(t)/dt + t^2y(t) = (2t + 3)x(t)$
 (ii) $y(t)dy(t)/dt + 3y(t) = x(t)$
+
+> [!info] **Textbook References**
+> * **Topic:** Differential Equation Linearity — Time-varying coefficients and linearity
+> * **Alexander & Sadiku (5th Ed):** Ch. 4, Sec. 4.2, pp. 128–129
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-1, pp. 97–102
 
 **Detailed Solution:**
 
@@ -80,11 +99,15 @@ A system is linear if it satisfies both the properties of homogeneity (scaling) 
     Notice that due to the product of $y(t)$ and its derivative, the constant $k$ becomes squared ($k^2$) in the first term. This expression is strictly NOT equal to $k \left[y(t)\frac{dy(t)}{dt} + 3y(t)\right]$ (unless $k=1$ or $k=0$).
 *   *Conclusion:* Because the system fails the homogeneity property (and consequently the additivity property), the system is **Non-linear**.
 
-*Related concept location in Sadiku Textbook: Linear equations and the properties of Linearity (Homogeneity and Additivity) are detailed in Chapter 4, Section 4.2, pg. 128. Linear differential equations are also covered during First-Order Circuits in Chapter 7, pg. 255.*
 
 ***
 
 ### 4. Page 14, Q1(a): A system is specified by its input-output relationship as $y(t) = \frac{x^2(t)}{dx/dt}$. Show that the system satisfies the homogeneity property but not the additivity property.
+
+> [!info] **Textbook References**
+> * **Topic:** Homogeneity vs. Additivity — Testing individual linearity axioms
+> * **Alexander & Sadiku (5th Ed):** Ch. 4, Sec. 4.2, pp. 128–129
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-1, pp. 97–102
 
 **Detailed Solution:**
 
@@ -112,9 +135,13 @@ The additivity property states that the response to a sum of inputs must equal t
     $\frac{x_1^2(t) + 2x_1(t)x_2(t) + x_2^2(t)}{x_1'(t) + x_2'(t)} \neq \frac{x_1^2(t)x_2'(t) + x_2^2(t)x_1'(t)}{x_1'(t)x_2'(t)}$
     Because $y_3(t) \neq y_1(t) + y_2(t)$, the system **does not satisfy the additivity property**.
 
-*Related concept location in Sadiku Textbook: The definitions and applications of Homogeneity and Additivity as prerequisites for system linearity are thoroughly explained in Chapter 4, Section 4.2 (Linearity Property), pg. 128.*
 
 ### 5. Page 17, Q2(a): Briefly describe the following classifications of systems, (i) a causal system, and (ii) a time invariant system.
+
+> [!info] **Textbook References**
+> * **Topic:** Causal & Time-Invariant Definitions — Core system classifications
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, p. 716
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-2 & 1.7-4, pp. 102–106
 
 **Detailed Solution:**
 
@@ -127,11 +154,15 @@ A system is time-invariant if a time delay or time advance in the input signal l
 *   **Mathematical Meaning:** If an input $x(t)$ produces an output $y(t)$, then for any time shift $T$, the delayed input $x(t - T)$ will produce the exact same output delayed by $T$, which is $y(t - T)$.
 *   **Physical Meaning:** The system's internal parameters and behavior do not change over time. For example, an electrical circuit made of standard fixed-value resistors, capacitors, and inductors is time-invariant because its components don't magically change their values as the clock ticks.
 
-*Related concept location in Sadiku textbook: Causal responses (responses that do not exist before the switch is closed at $t=0$) are fundamental to transient analysis, introduced in Chapter 7 (First-Order Circuits), pg. 254. Time-invariance is the foundational assumption of all linear time-invariant (LTI) circuits analyzed throughout the book.*
 
 ***
 
 ### 6. A system has the following input-output relation: $y(t) = x(t) - 0.5(t + 1)$. State the justification, whether this system is time invariant and causal.
+
+> [!info] **Textbook References**
+> * **Topic:** Offset System Analysis — Causality and time-invariance of \(y(t) = x(t) - 0.5(t+1)\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, p. 716
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-2 & 1.7-4, pp. 102–106
 
 **Detailed Solution:**
 
@@ -154,11 +185,15 @@ A system is time-invariant if shifting the input by a constant $T$ shifts the ou
     Clearly, $y_1(t) \neq y(t - T)$ because of the extra $0.5T$ term.
 *   *Conclusion:* Because a time shift in the input does not yield the exact same time shift in the output, the system is explicitly dependent on the absolute time $t$. Therefore, the system is **not time-invariant** (it is a time-varying system).
 
-*Related concept location in Sadiku textbook: The assumption of time-invariance (components remaining constant over time) is a fundamental premise for the ordinary differential equations formulated for RLC circuits, discussed in Chapter 8 (Second-Order Circuits), pg. 314.*
 
 ***
 
 ### 7. Page 20, Q1(b): What is linearity and non-linearity of a system? How non-linearity affects on system performance?
+
+> [!info] **Textbook References**
+> * **Topic:** Non-Linearity Impact — Non-linearity effects on performance
+> * **Alexander & Sadiku (5th Ed):** Ch. 4, Sec. 4.2, pp. 128–129
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-1, pp. 97–102
 
 **Detailed Solution:**
 
@@ -177,11 +212,15 @@ A system is non-linear if it fails to satisfy either homogeneity or additivity (
 3.  **Saturation and Clipping:** Non-linear systems generally have physical limits (like the maximum voltage output of an operational amplifier). If pushed beyond linear operating regions, the output "clips" or flattens, losing information.
 4.  **Failure of Superposition:** Complex signals cannot be analyzed by breaking them down into simpler components, solving individually, and adding them back together, making analysis and control significantly more difficult.
 
-*Related concept location in Sadiku textbook: The Linearity Property (Homogeneity and Superposition) is formally defined and heavily utilized in Chapter 4, Section 4.2 and 4.3, pgs. 128-130.*
 
 ***
 
 ### 8. Page 20, Q2(a): Define zero-input response and zero-state response.
+
+> [!info] **Textbook References**
+> * **Topic:** Zero-Input & Zero-State Responses — System response decomposition (ZIR & ZSR)
+> * **Alexander & Sadiku (5th Ed):** Ch. 7, Sec. 7.2–7.5, pp. 254–276
+> * **B.P. Lathi (3rd Ed):** Ch. 2, Sec. 2.2 & 2.4, pp. 151, 168–170
 
 **Detailed Solution:**
 
@@ -199,11 +238,15 @@ The zero-state response is the behavior or output of a system strictly due to th
 For linear systems, the Total Response is simply the linear addition of these two components: 
 $\text{Total Response} = \text{Zero-Input Response} + \text{Zero-State Response}$
 
-*Related concept location in Sadiku textbook: These concepts directly map to the "Natural Response" (source-free, due to stored energy) and "Forced Response" (due to external sources) discussed extensively in Chapter 7 (First-Order Circuits), pgs. 254-255, and explicitly formulated in Chapter 15 (Laplace Transform Applications), pg. 676.*
 
 ### 9. Page 22, Q2: A time limited rectangular pulse (left) is applied to a system produces an output as shown in the following figure (right). Express y(t) in terms of x(t). Also provide a mathematical justification whether the system is (i) Linear (ii) Time invariant and (iii) Causal. [Figure Involved]
 
 ![[Pasted image 20260829104752.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Rectangular Pulse Response — Input-output relations for pulse inputs
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7, pp. 97–110; Ch. 2, pp. 168–180
 
 **Detailed Solution:**
 
@@ -237,11 +280,15 @@ Comparing the two: $y_1(t) \neq y(t - T)$ because $t \cdot x(t - T) \neq (t - T)
 A system is causal if the output at any time $t$ depends only on the present and/or past values of the input.
 *Conclusion:* In the relationship $y(t) = t \cdot x(t)$, calculating the output at time $t$ strictly requires the input at that exact same time $t$. It does not anticipate future values like $x(t+1)$. Therefore, the system is **Causal** (specifically, it is memoryless).
 
-*Related concept location in Sadiku textbook: The linearity property is detailed in Chapter 4, Section 4.2, pg. 128. The concept of time-shifting and its implications on system behavior is explored during the Laplace Transform in Chapter 15, pg. 681.*
 
 ***
 
 ### 10. Page 28, Q1: Consider a discrete-time system whose output signal y[n] is the average of the three most recent values of the input signal x[n]; that is $y[n] = \frac{1}{3}(x[n] + x[n - 1] + x[n - 2])$. Such a system is referred as a moving-average system. Determine whether the system is (i) Memoryless (ii) Causal (iii) Linear (iv) Time-invariant (v) Stable.
+
+> [!info] **Textbook References**
+> * **Topic:** Discrete Moving-Average System (Causal) — \(y[n] = \frac{1}{3}(x[n] + x[n-1] + x[n-2])\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, p. 716
+> * **B.P. Lathi (3rd Ed):** Ch. 3, Sec. 3.4-1, pp. 253–265
 
 **Detailed Solution:**
 
@@ -276,11 +323,15 @@ $|y[n]| = |\frac{1}{3}(x[n] + x[n-1] + x[n-2])| \le \frac{1}{3}(|x[n]| + |x[n-1]
 If $|x[n]| \le M_x$, then $|y[n]| \le \frac{1}{3}(M_x + M_x + M_x) = M_x < \infty$.
 *   *Conclusion:* Since the output is bounded by the same finite limit as the input, the system is **Stable**.
 
-*Related concept location in Sadiku textbook: While discrete-time sequences are not the main focus, the properties of Linearity and Stability governing systems correspond to Linearity in Ch 4, pg. 128, and Network Stability limits in Ch 16, pg. 737.*
 
 ***
 
 ### 11. Page 39, Q1: Consider a discrete-time system whose output signal y[n] is the average of the three most recent values of the input signal x[n]; that is $y[n] = \frac{1}{3}(x[n + 1] + x[n] + x[n - 1])$. Such a system is referred as a moving-average system. Determine whether the system is (i) Memoryless (ii) Causal (iii) Linear (iv) Time-invariant (v) Stable with short reasoning.
+
+> [!info] **Textbook References**
+> * **Topic:** Discrete Moving-Average System (Non-Causal) — \(y[n] = \frac{1}{3}(x[n+1] + x[n] + x[n-1])\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, p. 716
+> * **B.P. Lathi (3rd Ed):** Ch. 3, Sec. 3.4-1, pp. 253–265
 
 **Detailed Solution:**
 
@@ -304,13 +355,17 @@ A system is causal if the output does not depend on future inputs.
 **(v) Stable:**
 *   *Reasoning:* If the input is bounded such that $|x[n]| \le M_x$, the magnitude of the output is bounded by $|y[n]| \le \frac{1}{3}(|x[n+1]| + |x[n]| + |x[n-1]|) \le \frac{1}{3}(M_x + M_x + M_x) = M_x$. Because a bounded input guarantees a bounded output, the system is **Stable**.
 
-*Related concept location in Sadiku textbook: Similar to Q10, general definitions for Linearity and Stability are addressed in Ch 4, pg. 128 and Ch 16, pg. 737.*
 
 ***
 
 ### 12. Page 45, Q2: The input and output relationship of a system is shown in the following figure. Express y(t) in terms of x(t). Also provide a mathematical justification whether the system is (i) Linear (ii) Time-variant and (iii) Causal. [Figure Involved]
 
 ![[Pasted image 20260829104821.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Triangular Pulse System Relations — Linearity and time-variance from visual pulse mapping
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7, pp. 97–110
 
 **Detailed Solution:**
 
@@ -345,10 +400,13 @@ Let's test if a delayed input creates exactly the same delayed output.
 A system is causal if the output $y(t)$ depends only on values of the input at time $\le t$.
 *Conclusion:* In the derived relation $y(t) = (1-t) \cdot x(t)$, the output at time $t$ is simply the input at that exact same moment $t$ multiplied by a scalar factor $(1-t)$. Since it relies strictly on the present value and doesn't look at future values of $x$, the system is **Causal**.
 
-*Related concept location in Sadiku textbook: Principles of scaling, addition, and linearity are described in Chapter 4, Section 4.2 (Linearity Property), pg. 128. Time-shifting behavior is treated mathematically in Chapter 15, pg. 681.*
-
 
 ### 13. Page 48, Q.1(a) (Top): What is linear system? Explain linear system from physical and mathematical point of view.
+
+> [!info] **Textbook References**
+> * **Topic:** Physical & Mathematical Linearity — Concept of linear systems
+> * **Alexander & Sadiku (5th Ed):** Ch. 4, Sec. 4.2, pp. 128–129
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-1, pp. 97–102
 
 **Detailed Solution:**
 
@@ -365,11 +423,15 @@ Furthermore, differential equations describing linear systems contain only linea
 **Physical Point of View:**
 Physically, a linear system exhibits strict proportionality between cause (input) and effect (output) without any saturation, thresholds, or distortion. For instance, in an electrical circuit, if a network consists entirely of ideal linear passive elements (constant resistors, capacitors, and inductors), it is a linear system. If you double the applied voltage to this circuit, the resulting current everywhere in the circuit exactly doubles. Applying two different voltage sources simultaneously yields a total current that is the exact sum of the currents that would have been generated by each source acting alone.
 
-*Related concept location in Sadiku textbook: The definition of Linearity and the principles of Homogeneity and Additivity are formally defined in Chapter 4, Section 4.2 (Linearity Property), pg. 128.*
 
 ***
 
 ### 14. Page 48, Q.1(a) (Middle): Show that the system described by the following equation is linear: $\frac{dy}{dt} + t^2y(t) = (2t + 3)x(t)$
+
+> [!info] **Textbook References**
+> * **Topic:** Differential System Proof — Proof of linearity for \(\frac{dy}{dt} + t^2y(t) = (2t+3)x(t)\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 4, Sec. 4.2, pp. 128–129
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-1, pp. 97–102
 
 **Detailed Solution:**
 
@@ -405,11 +467,15 @@ $\text{LHS} = (2t + 3)x_3(t)$
 
 This exactly matches the required right-hand side of the differential equation for input $x_3(t)$. Because the system responds to a linear combination of inputs with the same linear combination of outputs, the system satisfies the principle of superposition and is therefore **linear**. (Note: the presence of time-varying coefficients like $t^2$ and $(2t+3)$ makes the system time-varying, but it does *not* violate linearity).
 
-*Related concept location in Sadiku textbook: Verification of Linearity using homogeneity and superposition is covered in Chapter 4, Section 4.2 (Linearity Property), pg. 128.*
 
 ***
 
 ### 15. Page 48, Q.1(a) (Bottom): Why is the linear system important to study? Explain linear system from physical point of view and mathematical point of view.
+
+> [!info] **Textbook References**
+> * **Topic:** Importance of Linear Systems — Theoretical and practical importance of linear models
+> * **Alexander & Sadiku (5th Ed):** Ch. 4, Sec. 4.2, pp. 128–129
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-1, pp. 97–102
 
 **Detailed Solution:**
 
@@ -423,11 +489,15 @@ This exactly matches the required right-hand side of the differential equation f
 *   **Physical Point of View:** A linear physical system is one where the magnitude of the effect is directly proportional to the magnitude of the cause. If you push a linear spring twice as hard, it compresses twice as far. In an electrical circuit, if you double the voltage applied to a network of resistors, capacitors, and inductors, the current through every branch exactly doubles. There is no distortion, saturation, or clipping in a linear physical system.
 *   **Mathematical Point of View:** A system represented by operator $H$ is mathematically linear if it strictly satisfies $H\{a x_1(t) + b x_2(t)\} = a H\{x_1(t)\} + b H\{x_2(t)\}$. In the context of differential equations, it means the equation contains no products of the dependent variable with itself or its derivatives, no powers of the dependent variable other than one, and no nonlinear functions (like sine or log) applied to the dependent variable.
 
-*Related concept location in Sadiku textbook: The importance of linear systems and the definition of a system as a mathematical model of a physical process is explained in the introduction to Laplace Transforms applications in Chapter 16, pg. 716. Superposition and Linearity are defined in Chapter 4, pg. 128.*
 
 ***
 
 ### 16. Page 48, Q.1(b): What is system? Show that the system described by the following equation is linear. $\frac{dy}{dt} + 3y(t) = x(t)$
+
+> [!info] **Textbook References**
+> * **Topic:** System Concept & Linearity — Proof for \(\frac{dy}{dt} + 3y(t) = x(t)\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 4, Sec. 4.2, pp. 128–129; Ch. 16, p. 716
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.6 & 1.7-1, pp. 95–102
 
 **Detailed Solution:**
 
@@ -462,10 +532,13 @@ $\text{LHS} = a [x_1(t)] + b [x_2(t)]$
 This expression exactly equals our defined combined input, $x_3(t)$. 
 Since applying the combined input $a x_1(t) + b x_2(t)$ perfectly yields the combined output $a y_1(t) + b y_2(t)$, the system satisfies the principle of superposition. Therefore, the system is **linear**.
 
-*Related concept location in Sadiku textbook: The definition of a "system" is explicitly provided in Chapter 16, Section 16.1 (Introduction to Laplace transform applications), pg. 716. The proof of linearity mirrors the Linearity Property outlined in Chapter 4, Section 4.2, pg. 128.*
-
 
 ### 17. Page 42, CT-01 Q2: Determine whether the following systems are (i) Time-variant and (iii) Causal. (a) $y_1(t) = tx(t + 1)$ (b) $y_2(t) = x(1 - t)$
+
+> [!info] **Textbook References**
+> * **Topic:** Time-Variance & Causality Tests — \(y_1(t) = tx(t+1)\) and \(y_2(t) = x(1-t)\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, p. 716
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-2 & 1.7-4, pp. 102–106
 
 **Detailed Solution:**
 
@@ -503,7 +576,6 @@ Since applying the combined input $a x_1(t) + b x_2(t)$ perfectly yields the com
     To determine the output at time $t = -2$, the system needs to know the input at time $t = 3$. Since $3 > -2$, the system is looking into the future.
     Therefore, the system is **Non-causal**.
 
-*Related location in Sadiku textbook: The concepts of time-shifting and causal signals are foundational for the Laplace Transform and Convolution integral properties, discussed in Chapter 15, pgs. 681 and 698.*
 
 ***
 
@@ -513,6 +585,11 @@ Since applying the combined input $a x_1(t) + b x_2(t)$ perfectly yields the com
 ### 18. Page 7, Q6(b): A canonical form of the system is shown in the following figure. (i) Find the transfer function of the system. (ii) Find the impulse response of the system. [Figure Involved]
 
 ![[Pasted image 20260829104849.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Canonical Block Diagram Analysis — Transfer function \(H(s)\) and impulse response \(h(t)\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.5, pp. 386–388
 
 **Detailed Solution:**
 
@@ -550,13 +627,17 @@ Now, apply the inverse Laplace transform using standard pairs:
 Therefore:
 $h(t) = \delta(t) - e^{-t}u(t)$
 
-*Related location in Sadiku textbook: Finding a transfer function $H(s)$ and its corresponding impulse response $h(t)$ via inverse Laplace transform is detailed in Chapter 16, Section 16.4 (Transfer Functions), pgs. 726-727.*
 
 ***
 
 ### 19. Page 21, Q7(c): Determine the transfer function H(s) = Vo(s)/Vi(s) of the circuit given in Fig.Q.7(c). [Figure Involved]
 
 ![[Pasted image 20260829104925.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Op-Amp / Circuit Block Diagram — Derivation of \(H(s) = V_o(s)/V_i(s)\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.3 & 16.4, pp. 722–730
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.4, pp. 373–382
 
 **Detailed Solution:**
 
@@ -589,7 +670,6 @@ $H(s) = \frac{V_o(s)}{V_i(s)} = -\frac{1}{20s}$
 
 This circuit acts as an ideal inverting integrator. 
 
-*Related location in Sadiku textbook: The derivation of transfer functions for First-Order Op Amp Circuits in the s-domain is demonstrated in Chapter 16, Section 16.2, pg. 716 and Section 16.4, pg. 726.*
 
 ***
 
@@ -597,6 +677,11 @@ This circuit acts as an ideal inverting integrator.
 ### **Differential and difference equations for LTI systems**
 
 ### 20. Page 6, Q3(c): The response of an RLC circuit can be described by the following differential equation: $\frac{d^2v}{dt^2} + 6\frac{dv}{dt} + 5v = v_s(t)$. (i) Find the impulse response of the system. (ii) Find the response if $v_s(t) = u(t)$.
+
+> [!info] **Textbook References**
+> * **Topic:** Second-Order RLC System — Differential equation impulse and step response
+> * **Alexander & Sadiku (5th Ed):** Ch. 8, Sec. 8.3–8.5, pp. 319–335
+> * **B.P. Lathi (3rd Ed):** Ch. 2, Sec. 2.2–2.4, pp. 151–178
 
 **Detailed Solution:**
 
@@ -637,9 +722,13 @@ Taking the inverse Laplace transform gives the time-domain step response:
 $v(t) = \left[ \frac{1}{5} - \frac{1}{4}e^{-t} + \frac{1}{20}e^{-5t} \right] u(t)$
 $v(t) = \left[ 0.2 - 0.25e^{-t} + 0.05e^{-5t} \right] u(t)$
 
-*Related location in Sadiku textbook: Solving linear differential equations using Laplace transforms and partial fraction expansion is covered in Chapter 15, Section 15.6, pg. 705 and Section 15.4, pg. 690.*
 
 ### 21. Page 16, Q7(b): The input and output of a stable and causal system are related by the differential equation $\frac{d^2y(t)}{dt^2} + 6\frac{dy(t)}{dt} + 8y(t) = 2x(t)$. (i) Find the impulse response of this system. (ii) What is the response of this system if $x(t) = te^{-2t}u(t)$?
+
+> [!info] **Textbook References**
+> * **Topic:** Second-Order System Response — Response to exponentially damped ramp \(x(t) = te^{-2t}u(t)\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.3 & 16.4, pp. 722–730
+> * **B.P. Lathi (3rd Ed):** Ch. 2, Sec. 2.3 & 2.4, pp. 163–175
 
 **Detailed Solution:**
 
@@ -696,11 +785,15 @@ Using the inverse Laplace transform table (specifically $\mathcal{L}^{-1}\{\frac
 Combining terms, the time-domain response is:
 $y(t) = \left[ 0.5t^2 e^{-2t} - 0.5te^{-2t} + 0.25e^{-2t} - 0.25e^{-4t} \right] u(t)$
 
-*Related concept location in Sadiku Textbook: Solving linear differential equations using Laplace transforms and repeated pole partial fraction expansions is detailed in Chapter 15, Section 15.4.2 (Repeated Poles), pg. 691 and Section 15.6 (Application to Integrodifferential Equations), pg. 705.*
 
 ***
 
 ### 22. Page 19, Q8(a): A causal discrete time LTI system is describe by $y[n] - \frac{3}{4}y[n-1] + \frac{1}{8}y[n-2] = x[n]$, where, $x[n]$ and $y[n]$ are the input and output of the system, respectively. (i) Determine the transfer function, $H(z)$. (ii) Determine the impulse response $h[n]$. (iii) Find the step response $s[n]$ of the system.
+
+> [!info] **Textbook References**
+> * **Topic:** Discrete-Time Difference Equation — Transfer function \(H(z)\), impulse response \(h[n]\), and step response \(s[n]\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Ch. 3, Sec. 3.5–3.8, pp. 265–297
 
 **Detailed Solution:**
 
@@ -752,7 +845,6 @@ So, $Y(z) = \frac{8}{3} \frac{z}{z - 1} - 2 \frac{z}{z - 1/2} + \frac{1}{3} \fra
 Taking the inverse Z-transform gives the step response:
 $s[n] = \left[ \frac{8}{3} - 2\left(\frac{1}{2}\right)^n + \frac{1}{3}\left(\frac{1}{4}\right)^n \right] u[n]$
 
-*Related concept location in Sadiku Textbook: This discrete-time mathematics exactly mirrors the continuous-time Laplace Transform application for transfer functions, step responses, and partial fractions detailed in Chapter 15 and 16, pg. 690-692, 726.*
 
 ***
 
@@ -760,6 +852,11 @@ $s[n] = \left[ \frac{8}{3} - 2\left(\frac{1}{2}\right)^n + \frac{1}{3}\left(\fra
 ### **State space representations**
 
 ### 23. Page 20, Q3(a): Define State variable and state equation. How they are important for linear system analysis?
+
+> [!info] **Textbook References**
+> * **Topic:** State Space Definitions — State variables and state equations
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.5, pp. 730–732
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.10, pp. 121–125; Ch. 10, Sec. 10.2
 
 **Detailed Solution:**
 
@@ -785,13 +882,17 @@ where:
 3.  **Non-Zero Initial Conditions:** State variables naturally and effortlessly incorporate initial conditions (initial energy in capacitors/inductors) directly into the $\mathbf{x}(0)$ vector, whereas standard transfer functions demand zero initial conditions.
 4.  **Computer Adaptability:** Because state variables reduce high-order differential equations into a neat, standardized set of first-order matrix equations, they are perfectly suited for numerical methods and simulation software (like MATLAB).
 
-*Related concept location in Sadiku Textbook: Definitions and significance of State Variables and State Equations are covered comprehensively in Chapter 16, Section 16.5 (State Variables), pg. 730-731.*
 
 ***
 
 ### 24. Page 20, Q3(b): Find the state equation for the circuit of Fig.Q.3(b).
 
 ![[Pasted image 20260829105012.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Circuit State Equations — Formulating state equations for electrical networks
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.5, pp. 732–737
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.10, pp. 121–125; Ch. 10, Sec. 10.3-1
 
 **Detailed Solution:**
 
@@ -850,9 +951,13 @@ The state equations can be assembled into the standard matrix format $\mathbf{\d
 
 $$ \begin{bmatrix} \dot{v}_c \\ \dot{i}_L \end{bmatrix} = \begin{bmatrix} -5/6 & 20/3 \\ -10/3 & -70/3 \end{bmatrix} \begin{bmatrix} v_c \\ i_L \end{bmatrix} + \begin{bmatrix} 0 \\ 5 \end{bmatrix} V_{in}(t) $$
 
-*Related concept location in Sadiku Textbook: This step-by-step methodology of finding the state variables and utilizing KCL/KVL is demonstrated practically in Chapter 16, Section 16.5, Example 16.10, pg. 733.*
 
 ### 25. Page 21, Q7(b): Consider a system having state space representation of $\dot{x} = Ax + Bu$, $y = Cx + Du$ where the symbols have their usual meaning. Find the transfer function of the system.
+
+> [!info] **Textbook References**
+> * **Topic:** State Matrices to Transfer Function — Deriving \(H(s)\) from \((A, B, C, D)\) matrices
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.5, pp. 730–737
+> * **B.P. Lathi (3rd Ed):** Ch. 10, Sec. 10.3-2 & 10.4-1, pp. 919–933
 
 **Detailed Solution:**
 
@@ -894,7 +999,6 @@ $\mathbf{Y}(s) = [ \mathbf{C}(s\mathbf{I} - \mathbf{A})^{-1}\mathbf{B} + \mathbf
 The transfer function matrix $\mathbf{H}(s)$ is defined as the ratio of the output to the input, $\mathbf{Y}(s) = \mathbf{H}(s)\mathbf{U}(s)$. Therefore:
 $\mathbf{H}(s) = \mathbf{C}(s\mathbf{I} - \mathbf{A})^{-1}\mathbf{B} + \mathbf{D}$
 
-*Related concept location in Sadiku textbook: The derivation of a transfer function from a State Variable Model is explicitly shown in Chapter 16, Section 16.5, Equations 16.21 to 16.24, pg. 732.*
 
 ***
 
@@ -904,6 +1008,11 @@ $\mathbf{H}(s) = \mathbf{C}(s\mathbf{I} - \mathbf{A})^{-1}\mathbf{B} + \mathbf{D
 ### 26. Page 4, Q8(b): Draw the equivalent mechanical system for the following electrical network. [Figure Involved]
 
 ![[Pasted image 20260829105045.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Electrical to Mechanical Conversion — Drawing equivalent mechanical systems
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1 & 16.2, pp. 716–722
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-1 & 1.8-2, pp. 111–118
 
 **Detailed Solution:**
 
@@ -946,13 +1055,17 @@ To draw the equivalent mechanical system, we will use the **Force-Voltage (f-v) 
 
 *(Note: If interpreted using the Force-Current analogy, assuming the circle is a voltage source $V(t)$ instead of a current source despite the $i(t)$ label, it would yield a mass $M_1$ ($C_1$) connected to a parallel combination of a spring $K$ ($1/L$), damper $D$ ($1/R$), and mass $M_2$ ($C_2$) driven by a force $f(t)$. However, the f-v analogy perfectly preserves the given topological drawing without assumptions).*
 
-*Related concept location in Sadiku textbook: Analogous systems and the concept of mapping physical domains using identical differential equations (like modeling mechanical systems with electrical circuits) is introduced as an application of system modeling in Chapter 16, Section 16.1, pg. 716.*
 
 ***
 
 ### 27. Page 8, Q8(a): A translational mechanical system is shown below. (i) Find the transfer function of the system. (ii) Find the impulse response if D = 0. (iii) Find the response x(t) if f(t) = u(t). Assume D = 0. [Figure Involved]
 
 ![[Pasted image 20260829105105.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Translational Mechanical Modeling — Mechanical transfer function and impulse response
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
 
 **Detailed Solution:**
 
@@ -998,13 +1111,17 @@ $X(s) = \frac{1/k}{s} - \frac{(1/k)s}{s^2 + \omega_n^2} = \frac{1}{k} \left[ \fr
 Take the inverse Laplace transform using standard pairs ($\mathcal{L}^{-1}\{\frac{1}{s}\} = u(t)$ and $\mathcal{L}^{-1}\{\frac{s}{s^2+\omega^2}\} = \cos(\omega t)u(t)$):
 $x(t) = \frac{1}{k} [1 - \cos(\omega_n t)] u(t) = \frac{1}{k} \left[ 1 - \cos\left(\sqrt{\frac{k}{M}} t\right) \right] u(t)$
 
-*Related concept location in Sadiku textbook: Solving differential equations via Laplace transform and partial fraction expansion is detailed in Chapter 15, Sections 15.4 and 15.6, pgs. 690, 705. Second-order oscillatory responses are described in Chapter 8, pg. 314.*
 
 ***
 
 ### 28. Page 13, Q7(a): What is analogous system? Draw the electrical analogous for the following mechanical system using f-v analogy. [Figure Involved]
 
 ![[Pasted image 20260829105135.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Force-Voltage (f-v) Analogy — Analogous systems and f-v conversions
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
 
 **Detailed Solution:**
 
@@ -1047,11 +1164,15 @@ Draw three adjacent loops (windows).
 *   **Middle Loop (Mesh 2):** Place an inductor $L_2$ on the top wire. The left shared wire has $R_b || C_b$. On the right shared wire between Loop 2 and Loop 3, place a resistor $R_a$ and capacitor $C_a$ in parallel.
 *   **Right Loop (Mesh 3):** Place an inductor $L_3$ on the top wire. The left shared wire has $R_a || C_a$. On the outer right wire, place a capacitor $C_w$. Connect the bottom wire across all three loops to complete the circuit.
 
-*Related concept location in Sadiku textbook: Modeling mechanical physical systems using analogous electrical circuit equations is referenced as a primary application of system modeling and Laplace transforms in Chapter 16, Section 16.1, pg. 716.*
 
 ### 29. Page 17, Q1(b): What do you mean by analogous systems? What is intuitive mechanical analogy? Draw the analogous electrical circuit of the following mechanical system using intuitive analogy. [Figure Involved]
 
 ![[Pasted image 20260829105213.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Intuitive Mechanical Analogy — Drawing analogous electrical circuits
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
 
 **Detailed Solution:**
 
@@ -1082,6 +1203,11 @@ Assuming standard **Force-Voltage (f-v) analogy** (which is the most common text
 
 ### 30. Page 21, Q8(a): What is f-v analogy? Write down the rules to draw f-v analogous Electrical circuit from Mechanical system.
 
+> [!info] **Textbook References**
+> * **Topic:** f-v Analogy Rules — System transformation guidelines
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
+
 **Detailed Solution:**
 
 **What is f-v analogy?**
@@ -1108,6 +1234,11 @@ The **Force-Voltage (f-v) analogy** is a direct mathematical mapping between tra
 ### 31. Page 21, Q8(b): Draw the equivalent Mechanical system for the circuit given in Fig. Q. 8(b). [Figure Involved]
 
 ![[Pasted image 20260829105303.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Circuit to Mechanical System — Converting electrical components to mechanical counterparts
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
 
 **Detailed Solution:**
 
@@ -1143,6 +1274,11 @@ We are given an electrical circuit and must reverse-engineer the mechanical syst
 ### 32. Page 73, Q7(a): What is analogous system? State D'Alembert's principle. Draw the f-v analogous electrical circuit of the following mechanical system- [Figure Involved]
 
 ![[Pasted image 20260829105333.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** D'Alembert's Principle & f-v Analogy — D'Alembert's principle and circuit synthesis
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
 
 **Detailed Solution:**
 
@@ -1181,6 +1317,11 @@ Mathematically: $\sum F_{applied} - M\frac{d^2x}{dt^2} = 0$, which is simply a r
 ### 33. Page 73, Q7(b): For the following mechanical system, find the transfer function X(s)/F(s). Also draw the electrical equivalent using force-current analogy. [Figure Involved]
 
 ![[Pasted image 20260829105356.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Force-Current (f-i) Analogy — Transfer function \(X(s)/F(s)\) and f-i circuits
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
 
 **Detailed Solution:**
 
@@ -1238,11 +1379,15 @@ In the f-i analogy (nodal analogy):
 
 *(Visually: Node 1 has $I_{source}$ entering, and $C_1 || R_1$ to ground. A resistor $R_3$ connects Node 1 to Node 2. Node 2 has $C_2 || R_2 || L$ to ground).*
 
-*Related concept location in Sadiku textbook: Finding transfer functions using Laplace transforms is thoroughly covered in Chapter 15, Section 15.6, pg. 705. System modeling using analogies is introduced in Chapter 16, pg. 716.*
 
 ***
 
 ### 34. Page 73, Q7(c): Explain D'Alembert principle.
+
+> [!info] **Textbook References**
+> * **Topic:** D'Alembert's Principle Statement — Force balance equations
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
 
 **Detailed Solution:**
 
@@ -1261,11 +1406,15 @@ Therefore, D'Alembert's Principle states that: **"A system of rigid bodies is in
 
 When analyzing complex mechanical networks to draw analogous electrical circuits, using D'Alembert's principle makes it exceptionally easy to write the equations of motion. For any given mass, you simply sum all the applied forces, spring forces ($-kx$), damping forces ($-D\dot{x}$), and the inertial force ($-M\ddot{x}$), and set the total sum equal to zero. This zero-sum formulation perfectly mirrors Kirchhoff's Current Law ($\sum I = 0$) or Kirchhoff's Voltage Law ($\sum V = 0$) in electrical circuits.
 
-*Related concept location in Sadiku textbook: While D'Alembert's principle is a physics concept, its application to creating zero-sum nodal/mesh equations for system modeling directly maps to Kirchhoff's Laws, detailed in Chapter 2, Section 2.4, pg. 37.*
 
 ***
 
 ### 35. Page 74, Q4(a): What is meant by analogous system? What are the distinct advantages to reduce systems to their analogous electrical circuits?
+
+> [!info] **Textbook References**
+> * **Topic:** Analogous System Advantages — Benefits of electrical equivalence
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
 
 **Detailed Solution:**
 
@@ -1279,13 +1428,17 @@ Because the underlying math is exactly the same, the dynamic behavior of the sys
 3.  **Cheap and Safe Prototyping:** Physical prototyping of mechanical, aerospace, or hydraulic systems is extremely expensive, time-consuming, and potentially dangerous. Conversely, building its analogous electrical circuit on a breadboard using pennies' worth of resistors, capacitors, and inductors allows for immediate, safe, and easily modifiable physical testing of the system's dynamics.
 4.  **Unified System Design:** Modern electromechanical systems (like robotics or aerospace controls) contain both mechanical parts and electrical motors/sensors. Converting the mechanical parts into electrical analogs allows the entire hybrid system to be analyzed and optimized simultaneously within a single unified electrical model.
 
-*Related concept location in Sadiku textbook: Modeling various physical systems using electrical circuits and analyzing them via Laplace is the core theme of the introduction to Chapter 16 (Applications of the Laplace Transform), pg. 716.*
 
 ***
 
 ### 36. Page 74, Q7(b): Find the equations that describe the motion of the mechanical system shown below. Also draw the electrical equivalent circuit using (i) Force-voltage analogy and (ii) Force-current analogy. [Figure Involved]
 
 ![[Pasted image 20260829105411.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Mechanical Motion Equations & Dual Analogies — f-v and f-i equivalent circuits
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
 
 **Detailed Solution:**
 
@@ -1318,12 +1471,15 @@ Let $v_1 = \dot{x}_1$ and $v_2 = \dot{x}_2$.
 *   **Shared Branch:** The damper $D_1$ connects the masses, so Resistor $R_1 \leftrightarrow 1/D_1$ is connected *between* Node 1 and Node 2.
 *   *Circuit Drawing:* Draw a bottom ground wire. Draw two top nodes, $V_1$ and $V_2$. Connect a current source $I(t)$ from ground to $V_1$. Connect $C_1$ and $R_2$ in parallel from $V_1$ to ground. Connect a resistor $R_1$ horizontally between $V_1$ and $V_2$. Connect $C_2$ and $L$ in parallel from $V_2$ to ground.
 
-*Related concept location in Sadiku textbook: Network topology (nodes and meshes) is covered in Chapter 2, pg. 35. Applying KVL/KCL to multi-loop/multi-node systems mirrors the mechanical equations above, covered in Chapter 3 (Methods of Analysis).*
-
 
 ### 37. Page 74, Q8(b): State D'Alembert's principle. Find the equations that describe the motion of the mechanical system of the following figure using (i) D'Alembert's principle and (ii) f-v analogy. [Figure Involved]
 
 ![[Pasted image 20260829105432.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** D'Alembert Mechanical Equations — Motion description and f-v circuits
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, pp. 716–718
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.8-2, pp. 114–118
 
 **Detailed Solution:**
 
@@ -1367,7 +1523,6 @@ Applying Kirchhoff's Voltage Law (KVL) to the two meshes yields the identical ma
 *   **Mesh 1:** $L_1 \frac{di_1}{dt} + R_2 i_1 + R_1(i_1 - i_2) = V(t)$
 *   **Mesh 2:** $L_2 \frac{di_2}{dt} + \frac{1}{C}\int i_2 dt + R_1(i_2 - i_1) = 0$
 
-*Related concept location in Sadiku textbook: Analogous systems and writing differential equations for physical systems are discussed as an application of the Laplace transform in Chapter 16, Section 16.1, pg. 716.*
 
 ***
 
@@ -1377,6 +1532,11 @@ Applying Kirchhoff's Voltage Law (KVL) to the two meshes yields the identical ma
 ### 38. Page 2, Q3(c): A second order active filter is shown below. (i) Find the transfer function. (ii) Find the impulse response. [Figure Involved]
 
 ![[Pasted image 20260829105534.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Second-Order Active Filter — Transfer function and impulse response
+> * **Alexander & Sadiku (5th Ed):** Ch. 14, Sec. 14.8, pp. 642–648; Ch. 16, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.4-1 & 4.6-5, pp. 382–385, 399–404
 
 **Detailed Solution:**
 
@@ -1425,13 +1585,17 @@ So, $H(s) = -\frac{1/3}{s} + \frac{1/3}{s + 3}$
 Taking the inverse Laplace transform using standard pairs ($\mathcal{L}^{-1}\{1/s\} = u(t)$ and $\mathcal{L}^{-1}\{1/(s+a)\} = e^{-at}u(t)$):
 $h(t) = \left[ -\frac{1}{3} + \frac{1}{3}e^{-3t} \right] u(t) = \frac{1}{3}(e^{-3t} - 1)u(t)$
 
-*Related concept location in Sadiku textbook: Deriving transfer functions using s-domain nodal analysis for op-amp circuits is detailed in Chapter 16, Section 16.2, Example 16.1, pg. 719. Inverse Laplace transforms via partial fractions are covered in Chapter 15, Section 15.4, pg. 690.*
 
 ***
 
 ### 39. Page 4, Q8(a): The step response of the following system is $v_o(t) = 5e^{-4t}\sin(2t)u(t)$. (i) Find the transfer function H(s). (ii) Comment on the stability of the system. [Figure Involved]
 
 ![[Pasted image 20260829105601.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Step Response Analysis — \(v_o(t) = 5e^{-4t}\sin(2t)u(t)\) transfer function and stability
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.4 & 16.6.1, pp. 726–730, 737–740
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.3, pp. 360–373
 
 **Detailed Solution:**
 
@@ -1467,11 +1631,15 @@ The poles are complex conjugates located at $s_1 = -4 + 2j$ and $s_2 = -4 - 2j$.
 Because the real part of both poles is $-4$, which is strictly less than zero, both poles lie in the left half of the s-plane.
 Therefore, the system is **stable**.
 
-*Related concept location in Sadiku textbook: The relationship between the transfer function and the step response is established in Chapter 16, Section 16.4, pg. 726. The criteria for Network Stability based on pole locations in the left-half s-plane is thoroughly defined in Chapter 16, Section 16.6.1, pg. 737.*
 
 ***
 
 ### 40. Page 10, Q4(a): The transfer function of a certain circuit is $H(s) = \frac{5}{s+1} - \frac{3}{s+2} + \frac{6}{s+4}$. Find the impulse response of the circuit.
+
+> [!info] **Textbook References**
+> * **Topic:** Partial Fraction Impulse Response — \(H(s) = \frac{5}{s+1} - \frac{3}{s+2} + \frac{6}{s+4}\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 15, Sec. 15.3, pp. 679–686; Ch. 16, p. 726
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.1-1, pp. 338–348
 
 **Detailed Solution:**
 
@@ -1497,9 +1665,13 @@ $h(t) = 5e^{-t}u(t) - 3e^{-2t}u(t) + 6e^{-4t}u(t)$
 Factoring out the unit step function $u(t)$ for a cleaner expression:
 $h(t) = (5e^{-t} - 3e^{-2t} + 6e^{-4t})u(t)$
 
-*Related concept location in Sadiku textbook: Finding the inverse Laplace transform of simple poles directly maps to Chapter 15, Section 15.4.1 (Simple Poles), pg. 690. The formal definition of the impulse response $h(t)$ being the inverse transform of $H(s)$ is located in Chapter 16, Section 16.4, pg. 727.*
 
 ### 41. Page 14, Q1(b): Write the input-output relationship for an ideal integrator. Determine the zero-input and zero-state components of the response.
+
+> [!info] **Textbook References**
+> * **Topic:** Ideal Integrator ZIR & ZSR — Integrator response components
+> * **Alexander & Sadiku (5th Ed):** Ch. 6, Sec. 6.6.1, pp. 234–235
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-4, pp. 104–106; Ch. 2, pp. 151–170
 
 **Detailed Solution:**
 
@@ -1527,11 +1699,15 @@ From this expression, we can clearly identify the two fundamental components of 
 
 The total response is the linear sum of these two components: $y(t) = y_{zi}(t) + y_{zs}(t)$.
 
-*Related concept location in Sadiku textbook: The physical realization of an ideal integrator using Op-Amps is detailed in Chapter 6, Section 6.6.1 (Integrator), pg. 234. The concept of separating initial conditions (time integration property) in the s-domain is covered in Chapter 15, pg. 683.*
 
 ***
 
 ### 42. Page 15, Q4(a): A system has the transfer function $H(s) = \frac{s}{(s+1)(s+2)}$. (i) Find the impulse response of the system. (ii) Determine the output $y(t)$, given the input is $x(t) = u(t)$.
+
+> [!info] **Textbook References**
+> * **Topic:** First/Second-Order Transfer Response — \(H(s) = \frac{s}{(s+1)(s+2)}\) impulse and step response
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.3, pp. 360–373
 
 **Detailed Solution:**
 
@@ -1574,11 +1750,15 @@ $Y(s) = \frac{1}{s+1} - \frac{1}{s+2}$
 Take the inverse Laplace transform to find the time-domain output $y(t)$:
 $y(t) = \left( e^{-t} - e^{-2t} \right) u(t)$
 
-*Related concept location in Sadiku textbook: Transfer functions and calculating output responses using $Y(s)=H(s)X(s)$ are covered in Chapter 16, Section 16.4, pg. 726-727. Partial fraction expansions for inverse Laplace are in Chapter 15, Section 15.4.1, pg. 690.*
 
 ***
 
 ### 43. Page 16, Q7(a): Consider an LTI system S with impulse response $h(t) = \frac{\sin(4(t-1))}{\pi(t-1)}$. Determine the output of S for each of the following inputs; (i) $x_1(t) = \cos(6t + \pi/2)$ (ii) $x_2(t) = \frac{\sin(4(t+1))}{\pi(t+1)}$.
+
+> [!info] **Textbook References**
+> * **Topic:** Ideal Sinc Impulse Response — \(h(t) = \frac{\sin(4(t-1))}{\pi(t-1)}\) response to sinusoids
+> * **Alexander & Sadiku (5th Ed):** Ch. 18, Sec. 18.2–18.4, pp. 813–830
+> * **B.P. Lathi (3rd Ed):** Ch. 7, Sec. 7.4, pp. 721–730
 
 **Detailed Solution:**
 
@@ -1611,13 +1791,17 @@ Taking the inverse Fourier transform of $Y_2(\omega)$ gives us the time-domain o
 $y_2(t) = \mathcal{F}^{-1}\{G(\omega)\} = g(t)$
 $y_2(t) = \frac{\sin(4t)}{\pi t}$
 
-*Related concept location in Sadiku textbook: Ideal filters and passbands/stopbands are discussed in Chapter 14, Section 14.7 (Passive Filters), pg. 638. Fourier transform properties (time shifting) and the transform of the sinc function are detailed in Chapter 18, Example 18.2, pg. 819 and Eq. 18.68, pg. 787.*
 
 ***
 
 ### 44. Page 24, Q1: [Figure Involved] For the following circuit, find the transfer function. Also find iL(t) if (i) it(t) = $\delta(t)$ (ii) it(t) = $u(t)$ and (iii) it(t) = $e^{-t}u(t)$. Assume $\tau = 1s$.
 
 ![[Pasted image 20260829105630.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Parallel RL Circuit Response — Impulse, step, and exponential current responses
+> * **Alexander & Sadiku (5th Ed):** Ch. 7, Sec. 7.3 & 7.6, pp. 259–265, 280–284
+> * **B.P. Lathi (3rd Ed):** Ch. 2, Sec. 2.2 & 2.4, pp. 151–175
 
 **Detailed Solution:**
 
@@ -1660,9 +1844,13 @@ $I_L(s) = H(s) \cdot I_t(s) = \frac{1}{s+1} \cdot \frac{1}{s+1} = \frac{1}{(s+1)
 This represents a repeated pole. Using the standard inverse Laplace transform pair $\mathcal{L}^{-1}\left\{\frac{1}{(s+a)^2}\right\} = te^{-at}u(t)$:
 $i_L(t) = t e^{-t} u(t)$
 
-*Related concept location in Sadiku textbook: Current division in the s-domain is applied precisely as in dc analysis, shown in Chapter 16, pg. 717 and Example 16.8, pg. 728. Inverse transforms for repeated poles are covered in Chapter 15, Section 15.4.2, pg. 691.*
 
 ### 45. Page 63, Q7(a): A linear system's transfer function has a pole at s = -6 and a zero at s = 0. Find the response of the system due to input $45e^{-3t}u(t)$ and its impulse response.
+
+> [!info] **Textbook References**
+> * **Topic:** Pole-Zero Response Determination — Pole at \(s=-6\), zero at \(s=0\) response to \(45e^{-3t}u(t)\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.3, pp. 360–373
 
 **Detailed Solution:**
 
@@ -1702,13 +1890,17 @@ $Y(s) = \frac{-45}{s + 3} + \frac{90}{s + 6}$
 Take the inverse Laplace transform to get the time-domain response:
 $y(t) = \left( -45e^{-3t} + 90e^{-6t} \right) u(t)$
 
-*Related concept location in Sadiku textbook: Constructing transfer functions from poles and zeros is discussed in Chapter 14, Section 14.2, pg. 614. Finding output responses using Laplace transforms and partial fractions is in Chapter 16, Section 16.4, pg. 726 and Chapter 15, Section 15.4, pg. 690.*
 
 ***
 
 ### 46. Page 35, Q2: For the following circuit, express the transfer function, H(s) in terms of time constant, $\tau$. Find $v_0(t)$ when (i) $v_i(t) = \delta(t)$ (ii) $v_i(t) = u(t)$ and (iii) $v_i(t) = e^{-t}u(t)$. Assume $\tau = 1s$. [Figure Involved]
 
 ![[Pasted image 20260829105710.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Time Constant Circuit Analysis — Series RL transfer function in terms of \(\tau\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 7, Sec. 7.3 & 7.6, pp. 259–284
+> * **B.P. Lathi (3rd Ed):** Ch. 2, Sec. 2.6, pp. 205–207
 
 **Detailed Solution:**
 
@@ -1746,13 +1938,17 @@ $V_o(s) = \frac{s + 1 - 1}{(s + 1)^2} = \frac{s + 1}{(s + 1)^2} - \frac{1}{(s + 
 Taking the inverse Laplace transform using standard pairs ($\mathcal{L}^{-1}\{\frac{1}{(s+a)^2}\} = te^{-at}u(t)$):
 $v_o(t) = (e^{-t} - t e^{-t})u(t) = e^{-t}(1 - t)u(t)$
 
-*Related concept location in Sadiku textbook: Voltage division in the s-domain and finding transfer functions are covered in Chapter 16, Section 16.4, pg. 726. Inverse Laplace techniques are in Chapter 15, Section 15.4, pg. 690.*
 
 ***
 
 ### 47. Page 41, Q1: [Figure Involved] For the circuit (i) Find the transfer function H(s)=V2(s)/V1(s) (ii) Draw the pole-zero plot of H(s). (iii) Find the step response. (2 Marks) (iv) Comment on the stability of the system. (2 Marks)
 
 ![[Pasted image 20260829105815.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Cascaded Op-Amp Stage — \(H(s) = V_2(s)/V_1(s)\), pole-zero plot, step response, stability
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.4 & 16.6.1, pp. 726–740
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.3–4.6, pp. 360–393
 
 **Detailed Solution:**
 
@@ -1798,13 +1994,17 @@ $v_2(t) = \left( 10 + 0.714e^{-10000t} - 10.714e^{-666.67t} \right)u(t)\text{ V}
 The stability of a linear time-invariant system is determined strictly by the location of its poles in the s-plane. 
 The transfer function $H(s)$ has poles at $s = -10000$ and $s = -666.67$. Because the real parts of all poles are strictly negative (they lie entirely in the left half of the s-plane), the transient response terms will decay to zero over time. Therefore, the system is **Bounded-Input Bounded-Output (BIBO) stable**.
 
-*Related concept location in Sadiku textbook: Deriving transfer functions for cascaded active filters is covered in Chapter 14, Section 14.8 (Active Filters), pg. 642, and Chapter 16, pg. 719. Stability assessment via pole locations is detailed in Chapter 16, Section 16.6.1, pg. 737.*
 
 ***
 
 ### 48. Page 58, Q.4(b): For the following circuit, find the transfer function. Also find $i_o(t)$ when (i) $i_s(t) = e^{-t}u(t)$ and (ii) $i_s(t) = \sin t$. [Figure Involved]
 
 ![[Pasted image 20260829105849.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Parallel RL Filter — Response to \(e^{-t}u(t)\) and \(\sin(t)\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 7, Sec. 7.3, pp. 259–265; Ch. 16, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Ch. 2, Sec. 2.4, pp. 168–175; Ch. 4, pp. 360–373
 
 **Detailed Solution:**
 
@@ -1844,11 +2044,15 @@ $I_o(s) = \frac{1/2}{s + 1} + \frac{-1/2 s + 1/2}{s^2 + 1} = \frac{1}{2} \left[ 
 Taking the inverse Laplace transform using standard pairs ($\mathcal{L}^{-1}\{\frac{s}{s^2+\omega^2}\} = \cos(\omega t)u(t)$ and $\mathcal{L}^{-1}\{\frac{\omega}{s^2+\omega^2}\} = \sin(\omega t)u(t)$):
 $i_o(t) = \frac{1}{2} \left[ e^{-t} - \cos t + \sin t \right] u(t)$
 
-*Related concept location in Sadiku textbook: The transfer function formulation via current division and calculating transient/steady-state outputs using Laplace is explicitly covered in Chapter 16, Section 16.4, Example 16.8, pg. 728.*
 
 ### 49. Page 62, Q.6(a): Find the transfer function $H(s) = \frac{I_o(s)}{I_s(s)}$ referring to the following network. [Figure Involved]
 
 ![[Pasted image 20260829105913.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Third-Order Ladder Filter — Transfer function \(H(s) = I_o(s)/I_s(s)\) derivation
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.3 & 16.4, pp. 722–730
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.4, pp. 373–382
 
 **Detailed Solution:**
 
@@ -1882,7 +2086,6 @@ $I_o(s) = \frac{V_p(s)}{Z_3} = \frac{I_s(s) \cdot Z_p(s)}{1} = I_s(s) \cdot Z_p(
 Therefore, the transfer function $H(s) = \frac{I_o(s)}{I_s(s)}$ is simply equal to the equivalent impedance of the parallel block $Z_p(s)$:
 $H(s) = Z_p(s) = \frac{s^2 + 1}{s^3 + s^2 + 2s + 1}$
 
-*Related concept location in Sadiku textbook: Finding transfer functions using s-domain impedance combinations and current division is detailed in Chapter 16, Section 16.4, Example 16.8, pg. 728.*
 
 ***
 
@@ -1892,6 +2095,11 @@ $H(s) = Z_p(s) = \frac{s^2 + 1}{s^3 + s^2 + 2s + 1}$
 ### 50. Page 2, Q3(a): The circuit in the following Fig. contains a current controlled voltage source. What restriction must be placed on the gain R of this dependent source to guarantee stability? [Figure Involved]
 
 ![[Pasted image 20260829105958.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Dependent Source Stability Constraint — Restricting gain \(R\) for left-half plane poles
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.1, pp. 737–740
+> * **B.P. Lathi (3rd Ed):** Ch. 2, Sec. 2.5, pp. 196–203; Ch. 4, p. 371
 
 **Detailed Solution:**
 
@@ -1944,13 +2152,17 @@ However, in physical circuits, a dependent source generating an effective "negat
 Assuming $R$ represents a physical gain that shouldn't invert the branch dynamics, the standard restriction is:
 $400 + R > 0 \implies R > -400\ \Omega$
 
-*Related concept location in Sadiku textbook: Network stability and determining the stability range of a parameter by analyzing pole locations in the left-half s-plane is demonstrated in Chapter 16, Section 16.6.1, Example 16.13, pg. 739.*
 
 ***
 
 ### 51. Page 3, Q5(b): For the following circuit (i) Find the transfer function G(s) = V2(s)/V1(s). (ii) Select values of R and L so that the transfer function has a zero at S = -120 and a pole at S = -80. [Figure Involved]
 
 ![[Pasted image 20260829110016.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** RL Network Pole-Zero Placement — Designing zero at \(s=-120\) and pole at \(s=-80\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 14, Sec. 14.2, pp. 614–617; Ch. 16, pp. 737–740
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.10, pp. 436–444
 
 **Detailed Solution:**
 
@@ -1991,13 +2203,17 @@ Let's choose a standard, practical component value for one and solve for the oth
 
 So, one valid selection is $R = 120\ \Omega$ and $L = 1\text{ H}$.
 
-*Related concept location in Sadiku textbook: Deriving transfer functions via s-domain voltage division is covered in Chapter 16, Section 16.4, pg. 726. The concepts of poles and zeros mapping to component values are fundamental to Network Synthesis, discussed in Chapter 16, Section 16.6.2, pg. 740.*
 
 ***
 
 ### 52. Page 7, Q5(b): The input to a linear circuit is the voltage vi. The output is the voltage vo. The transfer function of the circuit is H(s) = Vo(s)/Vi(s). The poles and zeros of H(s) are shown in the following pole-zero diagram. (i) Find the transfer function of the system. (ii) Find the step response. (iii) Comment on the stability of the system. [Figure Involved]
 
 ![[Pasted image 20260829110040.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Pole-Zero Diagram Interpretation — Extracting transfer function, step response, and stability
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.4 & 16.6.1, pp. 726–740
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.3 & 4.10, pp. 360–373, 436–444
 
 **Detailed Solution:**
 
@@ -2034,9 +2250,13 @@ $v_o(t) = (0.375 + 0.25e^{-2t} + 0.375e^{-4t})u(t)$
 The stability of a linear time-invariant system is determined exclusively by the location of its poles in the complex s-plane.
 The poles of this system are at $s = -2$ and $s = -4$. Since the real parts of all poles are strictly negative (meaning they are entirely located in the left half of the s-plane), the system's transient response components (the exponential decay terms) will eventually die out over time, leaving only the bounded steady-state response. Therefore, the system is **Bounded-Input Bounded-Output (BIBO) stable**.
 
-*Related concept location in Sadiku textbook: Constructing a transfer function from a pole-zero plot is covered in Chapter 14, Section 14.2, pg. 614. Evaluating stability via pole locations in the left-half plane is detailed in Chapter 16, Section 16.6.1, pg. 737.*
 
 ### 53. Page 10, Q4(b): The transfer function of a circuit is $H(s) = \frac{(s+2)}{s^2-2s+2}$. Plot the poles and zeros on the s-plane and determine whether the circuit is stable.
+
+> [!info] **Textbook References**
+> * **Topic:** Complex Conjugate Poles — \(H(s) = \frac{s+2}{s^2-2s+2}\) pole-zero plot and stability
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.1, pp. 737–740
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.3-3, pp. 371–373
 
 **Detailed Solution:**
 
@@ -2070,11 +2290,15 @@ The absolute condition for a linear time-invariant (LTI) system to be bounded-in
 Because there are poles in the right half of the s-plane, any initial disturbance or bounded input will cause the system's response to grow exponentially over time without bound (due to the $e^{1t}$ term in the time domain). 
 Therefore, the circuit is **unstable**.
 
-*Related concept location in Sadiku textbook: The relationship between pole locations in the complex s-plane and network stability (specifically the requirement that all poles must lie in the left-half plane) is detailed in Chapter 16, Section 16.6.1 (Network Stability), pgs. 737-738.*
 
 ***
 
 ### 54. Page 24, Q2: A second-order active filter has the transfer function, $G(s) = \frac{1}{s^2+(\beta+4)s+4}$. (i) Find the response $g(t)$ if $\beta = 0$. (ii) Sketch $g(t)$ if $\beta = -4$. (iii) Plot poles and zeros in the complex S plane if $\beta = 4$. (iv) Find the range of $\beta$ for which the filter becomes stable.
+
+> [!info] **Textbook References**
+> * **Topic:** Parametric Stability (\(\beta\)) — \(G(s) = \frac{1}{s^2+(\beta+4)s+4}\) impulse response and pole shifts
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.1, pp. 737–740
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.3-3, pp. 371–373
 
 **Detailed Solution:**
 
@@ -2120,11 +2344,15 @@ Therefore, for stability, we require:
 $\beta + 4 > 0 \implies \beta > -4$
 *(Note: If $\beta = -4$, the system is marginally stable/oscillatory as seen in part ii. For strict BIBO stability where transients decay to zero, we must have $\beta > -4$.)*
 
-*Related concept location in Sadiku textbook: Analyzing second-order characteristic equations and stability criteria based on coefficient signs is explicitly covered in Chapter 16, Section 16.6.1, Example 16.14, pgs. 739-740.*
 
 ***
 
 ### 55. Page 44, Q1: A second order filter circuit has the following transfer function: Find the range of k so that (i) The filter becomes stable. (ii) The filter provides oscillation. $H(s) = \frac{10}{s^2+(k-5)s+10}$
+
+> [!info] **Textbook References**
+> * **Topic:** Oscillation vs. Stability Range — \(H(s) = \frac{10}{s^2+(k-5)s+10}\) parameter \(k\) constraints
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.1, pp. 737–740
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.3-3, pp. 371–373
 
 **Detailed Solution:**
 
@@ -2169,13 +2397,17 @@ Discriminant $\Delta = b^2 - 4ac = (k - 5)^2 - 4(1)(10) = (k - 5)^2 - 40$
 
 *Assuming the question meant "act as an oscillator", the specific point $k=5$ is the standard answer. If it meant "exhibit an oscillatory transient response", the range $5 < k < 11.324$ applies.*
 
-*Related concept location in Sadiku textbook: Determining the stability range of a parameter by analyzing the coefficients of a second-order characteristic equation is explicitly covered in Chapter 16, Section 16.6.1, Example 16.14, pgs. 739-740. The conditions for an oscillator (zero damping) are discussed in Chapter 14, pg. 632, and Chapter 16, pg. 738.*
 
 ***
 
 ### 56. Page 12, Q.4(c): For what value of $\beta$ is the following circuit stable? [Figure Involved]
 
 ![[Pasted image 20260829110126.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Dependent Source Circuit Range — Stability condition for dependent feedback parameter \(\beta\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.1, pp. 737–740
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.3-3, pp. 371–373
 
 **Detailed Solution:**
 
@@ -2217,9 +2449,13 @@ $\beta < \frac{2}{R}$
 
 Therefore, the circuit is stable for values of $\beta < \frac{2}{R}$.
 
-*Related concept location in Sadiku textbook: Deriving the characteristic equation using nodal analysis and determining stability ranges for dependent source parameters based on pole locations in the left-half s-plane is demonstrated in Chapter 16, Section 16.6.1, Example 16.13, pg. 739.*
 
 ### 57. Page 15, Q.4(c): A certain network has an input admittance Y(s). The admittance has a pole at s = -3, a zero at s = -1, and Y(∞) = 0.25 S. (i) Find Y(s). (ii) An 8 V battery is connected to the network via a switch. If the switch is closed at t = 0, find the current i(t) through Y(s) using the Laplace transform.
+
+> [!info] **Textbook References**
+> * **Topic:** Admittance Function Synthesis — \(Y(s)\) with pole at \(s=-3\), zero at \(s=-1\), \(Y(\infty)=0.25\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.2, pp. 740–745
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.4, pp. 373–382
 
 **Detailed Solution:**
 
@@ -2258,13 +2494,17 @@ $I(s) = \frac{2/3}{s} + \frac{4/3}{s + 3}$
 Take the inverse Laplace transform using standard pairs ($\mathcal{L}^{-1}\{1/s\} = u(t)$ and $\mathcal{L}^{-1}\{\frac{1}{s+a}\} = e^{-at}u(t)$):
 $\mathbf{i(t) = \left[ \frac{2}{3} + \frac{4}{3}e^{-3t} \right] u(t) \text{ A}}$
 
-*Related concept location in Sadiku textbook: Constructing a transfer function from poles, zeros, and high-frequency limits is covered in Chapter 14, Section 14.2, pg. 614 and Chapter 16, pg. 758 (Prob 16.104). Solving for transient response using Laplace and partial fractions is in Chapter 16, Section 16.4, pg. 726 and Chapter 15, Section 15.4.1, pg. 690.*
 
 ***
 
 ### 58. Page 40, Q1: For the circuit (i) Find the characteristics equation and characteristics roots (ii) Plot the roots on s-plane (iii) Find the type of damping provided by the system (iv) Find $v_0(t)$ and sketch the waveform (v) What should the value of $R_1$ to obtain an undamped response. [Figure Involved]
 
 ![[Pasted image 20260829110216.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** RLC Damping Classification — Characteristic roots, s-plane plot, \(v_o(t)\), and undamped resistance \(R_1\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 8, Sec. 8.2–8.5, pp. 314–335
+> * **B.P. Lathi (3rd Ed):** Ch. 2, Sec. 2.2 & 2.5, pp. 151, 196–203
 
 **Detailed Solution:**
 
@@ -2321,7 +2561,6 @@ To make $\alpha = 0$, we require $\frac{1}{2R_1 C} = 0$.
 This condition is only mathematically satisfied as the resistance approaches infinity.
 Therefore, the value of $R_1$ should be $\mathbf{R_1 = \infty}$ (i.e., the resistor must be completely removed, creating an open circuit, leaving an ideal LC tank circuit).
 
-*Related concept location in Sadiku textbook: Parallel RLC circuits, characteristic equations, damping types (over/under/critical), and finding the step response are covered extensively in Chapter 8, Section 8.6 (Step Response of a Parallel RLC Circuit), pgs. 336-339. The condition for an undamped oscillator is discussed on pg. 323.*
 
 ***
 
@@ -2329,6 +2568,11 @@ Therefore, the value of $R_1$ should be $\mathbf{R_1 = \infty}$ (i.e., the resis
 ### **Realization of system using direct, cascade, and parallel forms**
 
 ### 59. Page 3, Q5(c): Given a transfer function $G(s) = \frac{s^2}{s^2+4s+10}$, synthesize the network. Assume L= 1H.
+
+> [!info] **Textbook References**
+> * **Topic:** Network Synthesis — \(G(s) = \frac{s^2}{s^2+4s+10}\) synthesis with \(L=1\text{H}\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.2, pp. 740–745
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.6, pp. 388–391
 
 **Detailed Solution:**
 
@@ -2369,11 +2613,15 @@ The synthesized network is a **Series RLC circuit**.
     *   An Inductor $L = 1\text{ H}$
 *   The output voltage $V_o(t)$ is measured exclusively across the **Inductor $L$**.
 
-*Related concept location in Sadiku textbook: Network synthesis using s-domain transfer functions and comparing them to standard RLC voltage divider topologies is formally introduced in Chapter 16, Section 16.6.2 (Network Synthesis), Example 16.15, pgs. 740-741.*
 
 ***
 
 ### 60. Page 4, Q7(b): A given transfer function can be realized in many different ways. A transfer function can be realized by using integrators or differentiators along with adders and multipliers. Generally differentiator is avoided to realize a transfer function. (i) State the reason of preferring integrator over differentiator in system realization. (ii) Realize the following transfer function by any one of the following forms. Canonic direct, series and parallel forms. $H(s) = \frac{s(s+2)}{(s+1)(s+3)(s+4)}$
+
+> [!info] **Textbook References**
+> * **Topic:** Integrators vs. Differentiators — Noise amplification and realization forms for \(H(s) = \frac{s(s+2)}{(s+1)(s+3)(s+4)}\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 6, Sec. 6.6, pp. 233–236; Ch. 16, pp. 740–745
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.6, pp. 388–391
 
 **Detailed Solution:**
 
@@ -2408,11 +2656,15 @@ The input signal $X(s)$ is fed simultaneously into three parallel subsystems, wh
 3.  **Subsystem 3:** A first-order block with transfer function $\frac{8/3}{s+4}$. Realized as a gain of $8/3$ feeding into a block $\frac{1}{s+4}$.
 *   The outputs of all three subsystems are fed into a single summing junction to produce the final output $Y(s)$.
 
-*Related concept location in Sadiku textbook: Partial fraction expansion is the core technique for inverse Laplace transforms and parallel realizations, covered in Chapter 15, Section 15.4, pg. 690. The preference for integrators (active lowpass) over differentiators (active highpass) due to noise/stability is practically noted in Chapter 6, Section 6.6.2, pg. 236.*
 
 ### 61. Page 7, Q5(c): Design an op-amp circuit using the figure that will realize the following transfer function. Choose $C_1 = 10\mu\text{F}$, determine $R_1$, $R_2$, and $C_2$. $\frac{V_0(s)}{V_i(s)} = \frac{-(s+1000)}{2(s+4000)}$ [Figure Involved]
 
 ![[Pasted image 20260829110248.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Op-Amp Transfer Realization — Designing \(\frac{V_o(s)}{V_i(s)} = \frac{-(s+1000)}{2(s+4000)}\) with \(C_1=10\mu\text{F}\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.2, pp. 740–745
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.6-5, pp. 399–404
 
 **Detailed Solution:**
 
@@ -2453,13 +2705,17 @@ $C_2 = 20\ \mu\text{F}$
 $R_1 = 100\ \Omega$
 $R_2 = 12.5\ \Omega$
 
-*Related concept location in Sadiku textbook: Network synthesis using s-domain transfer functions mapped to specific operational amplifier circuit topologies is directly covered in Chapter 16, Section 16.6.2 (Network Synthesis), Example 16.15, pgs. 740-741.*
 
 ***
 
 ### 62. Page 12, Q5(a): Realize the function $G(s) = \frac{V_2(s)}{V_1(s)} = \frac{4s}{s^2+4s+20}$ using the following circuit. Select $R = 2\Omega$, and determine L and C. [Figure Involved]
 
 ![[Pasted image 20260829110318.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Series RLC Bandpass Realization — Realizing \(G(s) = \frac{4s}{s^2+4s+20}\) given \(R=2\Omega\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 14, Sec. 14.5, pp. 629–634; Ch. 16, pp. 740–745
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.4 & 4.10-3, pp. 373–382, 441
 
 **Detailed Solution:**
 
@@ -2506,13 +2762,17 @@ $R = 2\ \Omega$ (selected)
 $L = 0.5\text{ H}$
 $C = 0.1\text{ F}$
 
-*Related concept location in Sadiku textbook: Synthesizing RLC passive networks to match a specified transfer function is demonstrated step-by-step in Chapter 16, Section 16.6.2 (Network Synthesis), Example 16.15, pgs. 740-741.*
 
 ***
 
 ### 63. Page 18, Q6(b): What is network synthesis? Synthesis the function $T(s) = \frac{V_0(s)}{V_i(s)} = \frac{-2s}{s^2+6s+10}$ using the topology in the following figure. [Figure Involved]
 
 ![[Pasted image 20260829110345.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Active Op-Amp Synthesis — Synthesizing \(T(s) = \frac{-2s}{s^2+6s+10}\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.2, pp. 740–745
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.6-5, pp. 399–404
 
 **Detailed Solution:**
 
@@ -2685,10 +2945,6 @@ Given constraint: $R_1 = 1\text{ k}\Omega = 1000\ \Omega$
     Use (Eq A): $\frac{1}{R_2 C_2} = 5$
     $C_2 = \frac{1}{5 R_2} = \frac{1}{5(2000)} = \frac{1}{10000} = 10^{-4}\text{ F} = \mathbf{100\ \mu\text{F}}$
 
-*Related concept location in Sadiku textbook: This specific synthesis problem is directly modeled after Practice Problem 16.16 in Chapter 16, Section 16.6.2 (Network Synthesis), pg. 745.*
-
-
-
 
 ***
 
@@ -2697,6 +2953,11 @@ Given constraint: $R_1 = 1\text{ k}\Omega = 1000\ \Omega$
 ### 64. Page 3, Q6(a): A system is formed by cascading two systems as shown. Given that the impulse response of the system are $h_1(t) = 3e^{-t}u(t)$, $h_2(t) = e^{-4t}u(t)$. (i) Obtain the impulse response of the overall system H(s) and h(t). (ii) Pole-zero plot of the overall system. (iii) Check if the overall system is stable. [Figure Involved]
 
 ![[Pasted image 20260829110417.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Cascaded Impulse Responses — \(h_1(t) = 3e^{-t}u(t)\) and \(h_2(t) = e^{-4t}u(t)\) overall response & stability
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.4, pp. 726–730
+> * **B.P. Lathi (3rd Ed):** Ch. 2, Sec. 2.4-3, p. 190; Ch. 4, p. 393
 
 **Detailed Solution:**
 
@@ -2735,13 +2996,17 @@ The transfer function is $H(s) = \frac{3}{(s + 1)(s + 4)}$.
 A linear time-invariant system is bounded-input bounded-output (BIBO) stable if and only if all poles of its transfer function lie strictly in the left half of the complex s-plane (i.e., all poles have strictly negative real parts).
 The poles of $H(s)$ are at $s = -1$ and $s = -4$. Since both real parts are negative, the poles are in the left half-plane. Therefore, the overall system is **stable**.
 
-*Related concept location in Sadiku textbook: Cascading transfer functions and block diagrams are discussed in Chapter 14, Section 14.8, pg. 642. Convolving cascaded systems is shown in Chapter 15, Example 15.14, pg. 704. Stability analysis via pole locations is covered in Chapter 16, Section 16.6.1, pg. 737.*
 
 ***
 
 ### 65. Page 8, Q6(c): Figure shows a cascade connection of two LTIC systems. The transfer function of these system are $H_1(s) = \frac{1}{s-1}$ and $H_2(s) = \frac{s-1}{s+1}$. Determine the BIBO and asymptotic stability of the composite system. [Figure Involved]
 
 ![[Pasted image 20260829110433.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Pole-Zero Cancellation in Cascade — \(H_1(s) = \frac{1}{s-1}\) and \(H_2(s) = \frac{s-1}{s+1}\) BIBO vs. asymptotic stability
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.1, pp. 737–740
+> * **B.P. Lathi (3rd Ed):** Ch. 2, Sec. 2.5, pp. 196–203; Ch. 4, p. 371
 
 **Detailed Solution:**
 
@@ -2777,7 +3042,6 @@ Because there is at least one pole with a positive real part, the system is **No
 
 *(Note: This is a classic "hidden instability" problem. While the input-output behavior appears stable due to pole-zero cancellation, the system is fundamentally unstable internally).*
 
-*Related concept location in Sadiku textbook: The requirement that ALL poles must be strictly in the left-half plane for a system to be considered practically stable is discussed in Chapter 16, Section 16.6.1 (Network Stability), pgs. 737-738.*
 
 ***
 
@@ -2787,6 +3051,11 @@ Because there is at least one pole with a positive real part, the system is **No
 ### 66. Page 21, Q8(c): Write down the name of processes to determine the stability of a system. Find the value of K for the closed-loop system given in Fig. Q. 8(c) so that the closed-loop system is stable. [Figure Involved]
 
 ![[Pasted image 20260829110502.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Closed-Loop Feedback Stability — Determining gain \(K\) for forward path \(\frac{1}{s+5}\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.6.1, pp. 737–740
+> * **B.P. Lathi (3rd Ed):** Ch. 4, Sec. 4.7, pp. 404–412
 
 **Detailed Solution:**
 
@@ -2822,7 +3091,6 @@ $\mathbf{K > -5}$
 
 Therefore, the closed-loop system is stable for any gain value $K$ strictly greater than $-5$.
 
-*Related concept location in Sadiku textbook: The principles of stability resting on the roots of the characteristic equation (denominator of the transfer function) being strictly negative are defined in Chapter 16, Section 16.6.1 (Network Stability), pgs. 737-738.*
 
 ***
 
@@ -2834,6 +3102,11 @@ Therefore, the closed-loop system is stable for any gain value $K$ strictly grea
 *   $y(t) = -V_{cc}$, $x(t) < -V_{ref}$
 *   $y(t) = 2x(t)$, otherwise
 Justify whether the system is (i) Invertible (ii) BIBO stable.
+
+> [!info] **Textbook References**
+> * **Topic:** Saturation Non-linearity Invertibility — Invertibility and BIBO stability of piecewise linear system
+> * **Alexander & Sadiku (5th Ed):** Ch. 16, Sec. 16.1, p. 716
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-7 & 1.7-8, pp. 109–110
 
 **Detailed Solution:**
 
@@ -2859,11 +3132,15 @@ Let the input be bounded such that $|x(t)| \le M_x < \infty$ for all $t$. We mus
 *   Therefore, the maximum possible absolute value of the output for *any* input is $\max(|V_{cc}|, 2|V_{ref}|)$. Since $V_{cc}$ and $V_{ref}$ are finite constants (typical circuit limits), the output can never grow to infinity, regardless of how large the bounded input $x(t)$ becomes.
 *   *Conclusion:* Since the output is strictly bounded by finite physical limits for any input, the system is **BIBO Stable**.
 
-*Related concept location in Sadiku textbook: Stability concepts regarding bounded outputs are formally introduced in Chapter 16, Section 16.6.1, pg. 737. The non-linear behavior described here (clipping/saturation) is often contrasted against the linear systems assumed throughout circuit analysis.*
 
 ### 68. Page 33, Q1: The input-output relationship of a system is shown in the following figure. Provide a mathematical justification whether the system is (i) Linear and (ii) Invertible. [Figure Involved]
 
 ![[Pasted image 20260829110534.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Ramp Non-linearity — Mathematical justification of linearity and invertibility
+> * **Alexander & Sadiku (5th Ed):** Ch. 4, Sec. 4.2, pp. 128–129
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-1 & 1.7-7, pp. 97, 109
 
 **Detailed Solution:**
 
@@ -2901,13 +3178,17 @@ A system is invertible if and only if there is a strict one-to-one mapping betwe
 *   We see that distinct inputs ($x_a \neq x_b$) map to the exact same output ($y_a = y_b = 2$). If you were given an output of $2$, you would have no way of knowing if the original input was $2$, $3$, $5$, or $100$. Information has been lost.
 *   *Conclusion:* Because the mapping is many-to-one in the saturated region ($x > 2$), the system is **Not Invertible**.
 
-*Related concept location in Sadiku textbook: The requirement of strict proportionality (homogeneity) for linearity is defined in Chapter 4, Section 4.2, pg. 128.*
 
 ***
 
 ### 69. Page 34, Q1: The input-output relationship of two systems are shown the following figure. Provide a mathematical justification whether the system shown in figure (i) linear, and (ii) invertible. For both systems the slope is unity. [Figure Involved]
 
 ![[Pasted image 20260829110552.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Offset Ramp Non-linearity — Linearity and invertibility for \(y\)-intercept offset graphs
+> * **Alexander & Sadiku (5th Ed):** Ch. 4, Sec. 4.2, pp. 128–129
+> * **B.P. Lathi (3rd Ed):** Ch. 1, Sec. 1.7-1 & 1.7-7, pp. 97, 109
 
 **Detailed Solution:**
 
@@ -2941,7 +3222,6 @@ A system is invertible if every unique input $x(t)$ maps to a unique output $y(t
 *   *Conclusion:* Because there is a strict one-to-one mapping and a clear inverse function exists, System (ii) is **Invertible**.
 *(Note: System (i) is also invertible because $x(t) = y(t) - 4$ is a valid one-to-one mapping, even though it's not linear).*
 
-*Related concept location in Sadiku textbook: The strict requirement for linear systems to pass through the origin (homogeneity property) is detailed in Chapter 4, Section 4.2, pg. 128.*
 
 ***
 
@@ -2949,6 +3229,11 @@ A system is invertible if every unique input $x(t)$ maps to a unique output $y(t
 ### **Distortion less system**
 
 ### 70. Page 20, Q.4(c): Explain Harmonic Distortion in an Amplifier with necessary diagram. (No specific questions matching purely "distortion less system" criteria were explicitly found in this PDF's text).
+
+> [!info] **Textbook References**
+> * **Topic:** Harmonic Distortion — Amplifier harmonic distortion mechanisms
+> * **Alexander & Sadiku (5th Ed):** Ch. 17, Sec. 17.4, pp. 778–782
+> * **B.P. Lathi (3rd Ed):** Ch. 7, Sec. 7.4-1, pp. 723–726
 
 **Detailed Solution:**
 
@@ -2980,7 +3265,6 @@ The severity of this distortion is quantified by Total Harmonic Distortion (THD)
 $\text{THD} = \frac{\sqrt{V_2^2 + V_3^2 + V_4^2 + \dots}}{V_1} \times 100\%$
 where $V_1$ is the fundamental, and $V_2, V_3\dots$ are the harmonics. A lower THD indicates a higher fidelity, more linear amplifier.
 
-*Related concept location in Sadiku textbook: While Harmonic Distortion is not explicitly detailed, the concept of breaking a distorted periodic waveform into its fundamental and harmonic frequency components is the core subject of Fourier Series analysis, covered extensively in Chapter 17, pgs. 760-761.*
 
 ***
 
@@ -2992,6 +3276,11 @@ where $V_1$ is the fundamental, and $V_2, V_3\dots$ are the harmonics. A lower T
 ### 71. Page 10, Q.5(a): Obtain and draw the frequency spectrum of the following waveform. [Figure Involved]
 
 ![[Pasted image 20260829110626.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Sawtooth Spectrum Analysis — Frequency spectrum derivation for periodic sawtooth
+> * **Alexander & Sadiku (5th Ed):** Ch. 17, Sec. 17.2–17.4, pp. 760–782
+> * **B.P. Lathi (3rd Ed):** Ch. 6, Sec. 6.1, pp. 593–609
 
 **Detailed Solution:**
 
@@ -3058,9 +3347,13 @@ To plot the spectrum, we convert to Amplitude-Phase form: $A_n \cos(n\omega_0 t 
     *   Draw a vertical spike at $\omega=4\pi$ with height $90^\circ$.
     *   Draw a vertical spike at $\omega=6\pi$ with height $90^\circ$.
 
-*Related concept location in Sadiku textbook: Calculating Fourier coefficients for periodic waveforms (specifically sawtooth/triangular forms) and plotting their discrete amplitude and phase spectra are comprehensively detailed in Chapter 17, Section 17.2, Examples 17.1 to 17.3, pgs. 763-766.*
 
 ### 72. Page 13, Q.6(a): Define the following terms: (i) Amplitude spectrum, (ii) Phase spectrum, and (iii) Ladder network.
+
+> [!info] **Textbook References**
+> * **Topic:** Spectrum Definitions — Amplitude spectrum, phase spectrum, ladder network
+> * **Alexander & Sadiku (5th Ed):** Ch. 17, Sec. 17.2, pp. 760–764
+> * **B.P. Lathi (3rd Ed):** Ch. 6, Sec. 6.1-1, pp. 598–606
 
 **Detailed Solution:**
 
@@ -3079,11 +3372,15 @@ A ladder network is a specific type of passive electrical circuit topology consi
 *   It is constructed by connecting an alternating sequence of series impedances ($Z_1, Z_3, Z_5 \dots$ forming the "rungs" along the top wire) and shunt admittances ($Y_2, Y_4, Y_6 \dots$ forming the "steps" connecting the top wire to a common bottom return wire or ground).
 *   **Significance:** Ladder networks are extremely important in electrical engineering for **filter design** (especially passive low-pass filters) and **network synthesis**. They possess highly desirable mathematical properties: their transfer functions and driving-point impedances are guaranteed to be stable and realizable, and they can be synthesized directly from a specified rational transfer function using continued fraction expansion techniques.
 
-*Related concept location in Sadiku textbook: Amplitude and Phase spectra are formally defined and illustrated in Chapter 17, Section 17.2, pg. 764. The definition and synthesis of Ladder Networks are specifically covered in Chapter 19, Section 19.9.2 (Ladder Network Synthesis), pgs. 889-890.*
 
 ***
 
 ### 73. Page 13, Q.6(b): Why a time limited signal is band unlimited in frequency domain? Explain
+
+> [!info] **Textbook References**
+> * **Topic:** Time vs. Frequency Bandwidth — Time-limited signals and infinite frequency spectrum
+> * **Alexander & Sadiku (5th Ed):** Ch. 18, Sec. 18.2, pp. 813–818
+> * **B.P. Lathi (3rd Ed):** Ch. 7, Sec. 7.1 & 7.6, pp. 680–688, 733–736
 
 **Detailed Solution:**
 
@@ -3110,13 +3407,17 @@ The scaling property of the Fourier Transform states: $\mathcal{F}\{f(at)\} = \f
 **Conclusion:**
 It is a fundamental mathematical truth of Fourier analysis (often called the Paley-Wiener theorem in advanced texts) that a signal cannot be strictly confined in both the time domain and the frequency domain simultaneously. If a signal is strictly time-limited (has abrupt start/stop edges), it requires infinite frequency bandwidth to resolve those sharp edges, making it band-unlimited.
 
-*Related concept location in Sadiku textbook: This concept is practically demonstrated by the Fourier Transform of a rectangular pulse yielding an infinitely extending sinc function spectrum, covered in Chapter 18, Section 18.2, Example 18.2, pg. 819. The inverse relationship between time duration and frequency bandwidth (scaling property) is explicitly discussed on pg. 821.*
 
 ***
 
 ### 74. Page 16, Q.7(c): Find the exponential series of the following signal. Also draw the spectrum of that signal. [Figure Involved]
 
 ![[Pasted image 20260829110652.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Exponential Fourier Series — Complex Fourier coefficients and discrete spectrum
+> * **Alexander & Sadiku (5th Ed):** Ch. 17, Sec. 17.6, pp. 785–791
+> * **B.P. Lathi (3rd Ed):** Ch. 6, Sec. 6.3, pp. 621–632
 
 **Detailed Solution:**
 
@@ -3172,13 +3473,17 @@ $|c_n| = \left| \frac{10 \sin(n\pi/5)}{n\pi} \right|$
 *   $|c_5| = |c_{-5}| = \frac{10 \sin(5\pi/5)}{5\pi} = \frac{10 \sin(\pi)}{5\pi} = 0$ (at $\omega = \pm \pi$)
 The spectrum consists of discrete vertical lines whose heights trace out an envelope defined by the absolute value of the sinc function $|\text{sinc}(\omega)|$, with the first zero-crossing occurring at harmonic $n=5$.
 
-*Related concept location in Sadiku textbook: Calculating Exponential Fourier series for pulse trains and plotting their discrete amplitude spectra using the sinc function is thoroughly detailed in Chapter 17, Section 17.6, Example 17.11, pgs. 787-790.*
 
 ***
 
 ### 75. Page 18, Q.4(a): If the periodic voltage as shown in the following figure is applied to the following network; Draw the frequency spectrum of $i_0(t)$. [Figure Involved]
 
 ![[Pasted image 20260829110719.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Network Response to Periodic Waveform — Current spectrum \(i_o(t)\) calculation
+> * **Alexander & Sadiku (5th Ed):** Ch. 17, Sec. 17.4, pp. 778–782
+> * **B.P. Lathi (3rd Ed):** Ch. 6, Sec. 6.4, pp. 637–641
 
 **Detailed Solution:**
 
@@ -3260,9 +3565,13 @@ Plot the calculated amplitudes $|I_n|$ against frequencies $n\pi$ rad/s.
 *   At $\omega = 5\pi$, draw a spike of height $0.0007$ A.
 Notice the circuit acts as a strong low-pass filter, significantly attenuating the higher harmonics compared to the DC and fundamental components.
 
-*Related concept location in Sadiku textbook: Calculating steady-state circuit responses to non-sinusoidal periodic inputs via Fourier Series and phasor analysis is formally detailed in Chapter 17, Section 17.4 (Circuit Applications), pgs. 778-781.*
 
 ### 76. Page 18, Q.4(b): A spectrum analyzer indicates that a signal made up of three components only: 640 kHz at 2 V, 644 kHz at 1 V, 636kHz at 1 V. If the signal is applied across a 10 Ω resistor, what is the average power absorbed by the resistor.
+
+> [!info] **Textbook References**
+> * **Topic:** Spectrum Analyzer Power Computation — Average power across \(10\Omega\) resistor from 3 spectral lines
+> * **Alexander & Sadiku (5th Ed):** Ch. 17, Sec. 17.5, pp. 782–785
+> * **B.P. Lathi (3rd Ed):** Ch. 6, Sec. 6.3-2, pp. 632–635
 
 **Detailed Solution:**
 To find the average power of a signal made up of multiple distinct sinusoidal components, we use the principle derived from Parseval's theorem. When a signal contains multiple distinct frequency components, the total average power absorbed by a linear resistor is simply the sum of the average powers of each individual frequency component. 
@@ -3285,13 +3594,17 @@ The total average power is the sum of the individual powers:
 $P_{total} = P_1 + P_2 + P_3$
 $P_{total} = 0.2 \text{ W} + 0.05 \text{ W} + 0.05 \text{ W} = 0.3 \text{ W} = 300 \text{ mW}$
 
-*Related location pg number In sadiku textbook: Chapter 17, Section 17.5 "Average Power and RMS Values", pg. 782-783.*
 
 ***
 
 ### 77. Page 27, Q2: Find the Fourier series of the square wave in following Fig. Plot the amplitude and phase spectra. [Figure involved.]
 
 ![[Pasted image 20260829110758.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Square Wave Fourier Series — Trigonometric/Exponential Fourier series and plots
+> * **Alexander & Sadiku (5th Ed):** Ch. 17, Sec. 17.2 & 17.3, pp. 760–778
+> * **B.P. Lathi (3rd Ed):** Ch. 6, Sec. 6.1, pp. 593–609
 
 **Detailed Solution:**
 Based on the figure of the square wave, let's extract the signal properties:
@@ -3327,13 +3640,17 @@ $\phi_n = \tan^{-1}\left(\frac{-b_n}{a_n}\right) = -90^\circ$ (since $b_n$ is po
 *   **Amplitude Spectrum Plot:** Discrete vertical lines at $\omega = \pi, 3\pi, 5\pi...$ with heights $\frac{4}{\pi}, \frac{4}{3\pi}, \frac{4}{5\pi}...$ respectively.
 *   **Phase Spectrum Plot:** Discrete vertical lines at $\omega = \pi, 3\pi, 5\pi...$ all going down to $-90^\circ$.
 
-*Related location pg number In sadiku textbook: Chapter 17, Section 17.2 "Trigonometric Fourier Series", pg. 760-766, and Section 17.3 "Symmetry Considerations", pg. 770.*
 
 ***
 
 ### 78. Page 37, Q1: The following input signal is applied to an ideal band pass filer with gain, |H| = 1 and lower cutoff frequency, ω1 = 6 rad/s and upper cutoff frequency, ω2 = 12 rad/s. (a) Determine the output signal. (b) What would be the range of bandwidth and the corner frequency so that the filter allows only the fundamental component. [Figure involved.]
 
 ![[Pasted image 20260829110818.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Ideal Bandpass Filtering — Filtering periodic waveforms (\(\omega_1=6, \omega_2=12\))
+> * **Alexander & Sadiku (5th Ed):** Ch. 14, Sec. 14.7.3, pp. 640–642; Ch. 17, pp. 778–782
+> * **B.P. Lathi (3rd Ed):** Ch. 6, Sec. 6.4, pp. 637–641; Ch. 7, Sec. 7.5, p. 730
 
 **Detailed Solution:**
 **Part (a): Determine the output signal.**
@@ -3375,11 +3692,15 @@ To extract *only* the fundamental component ($n=1$), the filter's passband must 
     The maximum possible bandwidth occurs if $\omega_{L}$ approaches $0$ and $\omega_{H}$ approaches $\frac{3\pi}{2}$.
     Thus, the strict range for the bandwidth is $0 < BW < \frac{3\pi}{2} \text{ rad/s}$ (or $0 < BW < 4.71 \text{ rad/s}$).
 
-*Related location pg number In sadiku textbook: Chapter 14, Section 14.7.3 "Bandpass Filter", pg. 639 and Chapter 17, Section 17.8.2 "Filters", pg. 797-798.*
 
 ***
 
 ### 79. Page 65, Q(a) (Top): Show that the energy associated with a non-periodic signal is spread over the entire frequency spectrum, whereas the energy of a periodic signal is concentrated at the frequencies of its harmonic components.
+
+> [!info] **Textbook References**
+> * **Topic:** Continuous vs. Discrete Energy Spectrum — Continuous energy density vs. line spectrum
+> * **Alexander & Sadiku (5th Ed):** Ch. 17, Sec. 17.5 & 18.6, pp. 782, 836–839
+> * **B.P. Lathi (3rd Ed):** Ch. 6, Sec. 6.3-2, p. 632; Ch. 7, Sec. 7.6, p. 733
 
 **Detailed Solution:**
 To show this fundamental distinction, we analyze the energy distribution formulations using Parseval’s Theorem for both periodic and non-periodic signals.
@@ -3399,11 +3720,15 @@ Here, $|F(\omega)|^2$ acts as an Energy Spectral Density function (Energy per un
 **Conclusion:**
 By comparing the discrete summation $\sum |c_n|^2$ to the continuous integral $\int |F(\omega)|^2 d\omega$, it is proven mathematically that periodic signals concentrate energy purely at harmonic intervals, while non-periodic signals distribute energy across a continuous frequency spectrum.
 
-*Related location pg number In sadiku textbook: Chapter 18, Section 18.5 "Parseval's Theorem", pg. 836-837 and Chapter 17, Section 17.5 "Average Power and RMS Values", pg. 783.*
 
 ### 80. Page 65, Q.6(b): Draw the amplitude spectrum of the following waveform. [Figure Involved]
 
 ![[Pasted image 20260829110845.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Amplitude Spectrum Sketching — Plotting pulse train magnitude spectra
+> * **Alexander & Sadiku (5th Ed):** Ch. 17, Sec. 17.2 & 17.6, pp. 760, 785
+> * **B.P. Lathi (3rd Ed):** Ch. 6, Sec. 6.1-1 & 6.3-1, pp. 598, 624
 
 **Detailed Solution:**
 Based on the provided figure, the waveform is a periodic sawtooth wave. Let's assume the peak amplitude of the waveform is $A$. 
@@ -3442,13 +3767,17 @@ The amplitude spectrum consists of discrete vertical lines at integer multiples 
 *   At $\omega = 6\pi$, height is $A / 3\pi \approx 0.106 A$
 The envelope of the spectrum decays proportionally to $1/n$.
 
-*Related location pg number In sadiku textbook: Chapter 17, Section 17.2 "Trigonometric Fourier Series", pg. 760-766.*
 
 ***
 
 ### 81. Page 66, Q(b) (Middle): Plot the amplitude and phase spectra of the following waveform. [Figure Involved]
 
 ![[Pasted image 20260829110911.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Square Wave Phase & Amplitude Spectrum — Symmetry effects on phase spectrum
+> * **Alexander & Sadiku (5th Ed):** Ch. 17, Sec. 17.3, pp. 768–778
+> * **B.P. Lathi (3rd Ed):** Ch. 6, Sec. 6.1-2, pp. 607–612
 
 **Detailed Solution:**
 Based on the figure, the waveform is a periodic square wave.
@@ -3486,13 +3815,17 @@ $-\frac{60}{n\pi} \sin(n\pi t) = \frac{60}{n\pi} \cos(n\pi t + 90^\circ)$
 1.  **Amplitude Spectrum:** Discrete vertical lines at $\omega = \pi, 3\pi, 5\pi, \dots$ with monotonically decreasing heights of $19.10, 6.37, 3.82, \dots$
 2.  **Phase Spectrum:** Discrete vertical lines at $\omega = \pi, 3\pi, 5\pi, \dots$ all extending upwards to a constant positive phase value of $+90^\circ$.
 
-*Related location pg number In sadiku textbook: Chapter 17, Section 17.2 "Trigonometric Fourier Series", pg. 763-764 and Section 17.3 "Symmetry Considerations", pg. 770.*
 
 ***
 
 ### 82. Page 68, Q(c) (Middle): Derive the Fourier transform of the rectangular pulse as shown in the figure below. Also graphically illustrate that with increasing pulse width, the amplitude spectrum is congested. [Figure Involved]
 
 ![[Pasted image 20260829110932.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Rectangular Pulse Fourier Transform — Sinc function spectrum and pulse width inverse scaling
+> * **Alexander & Sadiku (5th Ed):** Ch. 18, Sec. 18.2, pp. 813–818
+> * **B.P. Lathi (3rd Ed):** Ch. 7, Sec. 7.2, pp. 689–700
 
 **Detailed Solution:**
 **1. Derivation of the Fourier Transform:**
@@ -3525,13 +3858,17 @@ $\frac{\omega T}{2} = n\pi \implies \omega = \frac{2n\pi}{T} \quad (\text{for } 
 *   **Relationship:** The distance between consecutive zero-crossings in the frequency domain is $\Delta\omega = \frac{2\pi}{T}$. 
 *   **Effect of increasing width:** As the time-domain pulse width $T$ *increases*, the spacing between zero-crossings $\Delta\omega$ *decreases*. The main lobe and side lobes of the sinc function become narrower and squeeze closer to the origin $\omega = 0$. This squeezing represents the spectrum becoming "congested." This is a direct manifestation of the Time-Scaling Property: spreading a signal in time compresses it in frequency.
 
-*Related location pg number In sadiku textbook: Chapter 18, Section 18.2 "Definition of the Fourier Transform" (Example 18.2), pg. 818-819, and Section 18.3 "Time Scaling", pg. 820-821.*
 
 ***
 
 ### 83. Page 68, Q(b) (Bottom): Draw the frequency spectrum for the following signal. [Figure Involved]
 
 ![[Pasted image 20260829110946.png]]
+
+> [!info] **Textbook References**
+> * **Topic:** Bipolar Pulse Spectrum — Fourier transform of anti-symmetric pulses
+> * **Alexander & Sadiku (5th Ed):** Ch. 18, Sec. 18.2 & 18.3, pp. 813–824
+> * **B.P. Lathi (3rd Ed):** Ch. 7, Sec. 7.2 & 7.3, pp. 689–710
 
 **Detailed Solution:**
 Based on the figure provided, the signal $f(t)$ is a periodic square wave centered around the horizontal axis.
@@ -3568,7 +3905,6 @@ To draw the amplitude spectrum, create a graph with frequency $\omega$ on the ho
 5.  All even multiples ($\omega = 0, 2\pi, 4\pi, 6\pi...$) will have a height of $0$.
 The outline connecting the tips of these lines curves downwards like a $1/n$ relationship.
 
-*Related location pg number In sadiku textbook: Chapter 17, Section 17.2 "Trigonometric Fourier Series", pg. 760-766, and Section 17.3 "Symmetry Considerations", pg. 770.*
 
 
 ***
@@ -3576,6 +3912,11 @@ The outline connecting the tips of these lines curves downwards like a $1/n$ rel
 ### **Modulation schemes: AM, FM and PM**
 
 ### 84. Page 8, Q.7(b): Discuss amplitude modulation and sampling as the application scenarios of Fourier transform.
+
+> [!info] **Textbook References**
+> * **Topic:** AM & Sampling via Fourier Transform — Frequency shifting and impulse train multiplication
+> * **Alexander & Sadiku (5th Ed):** Ch. 18, Sec. 18.7, pp. 840–843
+> * **B.P. Lathi (3rd Ed):** Ch. 7, Sec. 7.7, pp. 736–749; Ch. 8, Sec. 8.1, pp. 776–785
 
 **Detailed Solution:**
 The Fourier transform is a critical mathematical tool in telecommunications because it allows us to analyze signals in the frequency domain. Amplitude Modulation (AM) and Sampling are two fundamental applications that rely heavily on the principles of the Fourier transform.
@@ -3591,11 +3932,15 @@ The Fourier transform is a critical mathematical tool in telecommunications beca
 *   **The Solution via Fourier Transform:** Sampling involves multiplying the continuous-time signal $f(t)$ by a train of periodic impulses (Dirac delta functions) spaced at interval $T_s$. Using Fourier analysis, multiplying by an impulse train in the time domain corresponds to convolving the signal's spectrum with an impulse train in the frequency domain. 
 *   **Result:** This convolution creates infinite, periodically shifted replicas of the original signal's frequency spectrum, centered at integer multiples of the sampling frequency $\omega_s = 2\pi/T_s$. The Fourier transform reveals the **Nyquist Criterion**: as long as the sampling frequency $\omega_s$ is at least twice the maximum frequency component of the original signal ($2\omega_{max}$), the spectral replicas will not overlap (no aliasing), and the original analog signal can be perfectly reconstructed using a lowpass filter.
 
-*Related location pg number In sadiku textbook: Chapter 18, Section 18.7.1 "Amplitude Modulation", pg. 840-842, and Section 18.7.2 "Sampling", pg. 842-843.*
 
 ***
 
 ### 85. Page 21, Q.5(b): What is modulation? Explain amplitude modulation. What are the demerits of amplitude modulation?
+
+> [!info] **Textbook References**
+> * **Topic:** Amplitude Modulation Fundamentals — AM definition, modulation index, and power demerits
+> * **Alexander & Sadiku (5th Ed):** Ch. 18, Sec. 18.7.1, pp. 840–842
+> * **B.P. Lathi (3rd Ed):** Ch. 7, Sec. 7.7, pp. 736–749
 
 **Detailed Solution:**
 **1. What is Modulation?**
@@ -3612,11 +3957,15 @@ In the frequency domain, AM takes the baseband spectrum $M(\omega)$ and shifts i
 *   **Bandwidth Inefficiency:** AM requires a transmission bandwidth that is exactly twice the maximum frequency of the original message signal ($BW = 2f_m$). This uses up valuable and limited frequency spectrum.
 *   **High Susceptibility to Noise:** Noise in transmission channels typically manifests as amplitude variations. Because AM encodes its information in the amplitude of the signal, any noise directly corrupts the information. AM receivers cannot easily distinguish between intended amplitude variations (the signal) and unintended ones (noise/static).
 
-*Related location pg number In sadiku textbook: Chapter 18, Section 18.7.1 "Amplitude Modulation", pg. 840-842.*
 
 ***
 
 ### 86. Page 67, Q.5(c): Explain the amplitude modulation property of Fourier transform.
+
+> [!info] **Textbook References**
+> * **Topic:** Frequency Shifting Property — \(\mathcal{F}\{x(t)\cos(\omega_c t)\} = \frac{1}{2}[X(\omega-\omega_c) + X(\omega+\omega_c)]\)
+> * **Alexander & Sadiku (5th Ed):** Ch. 18, Sec. 18.3, pp. 821–822
+> * **B.P. Lathi (3rd Ed):** Ch. 7, Sec. 7.3, pp. 701–720
 
 **Detailed Solution:**
 The amplitude modulation property of the Fourier transform, also widely known as the **Frequency Shifting Property**, describes what happens in the frequency domain when a time-domain signal is multiplied by a complex exponential or a sinusoidal carrier wave. 
@@ -3639,7 +3988,6 @@ $\mathcal{F}[f(t)\cos(\omega_c t)] = \frac{1}{2} [F(\omega - \omega_c) + F(\omeg
 **Explanation:**
 This property mathematically proves that amplitude modulation takes the original frequency spectrum of the signal, $F(\omega)$ (which is centered at DC, $\omega = 0$), cuts its amplitude in half, and places one exact replica centered at the positive carrier frequency $+\omega_c$ and another replica centered at the negative carrier frequency $-\omega_c$. This translation of the spectrum is the foundational principle behind all radio and TV broadcasting.
 
-*Related location pg number In sadiku textbook: Chapter 18, Section 18.3 "Properties of the Fourier Transform" (Frequency Shifting), pg. 822-823, and Section 18.7.1 "Amplitude Modulation", pg. 840-841.*
 
 ***
 
@@ -3649,6 +3997,11 @@ This property mathematically proves that amplitude modulation takes the original
 ### **Time division and Frequency division multiplexing**
 
 ### 87. Page 21, Q.5(a): Define and explain frequency division multiplexing and time division multiplexing.
+
+> [!info] **Textbook References**
+> * **Topic:** FDM vs. TDM Multiplexing — Frequency-Division vs. Time-Division Multiplexing
+> * **Alexander & Sadiku (5th Ed):** Ch. 18, Sec. 18.7, pp. 840–843
+> * **B.P. Lathi (3rd Ed):** Ch. 7, Sec. 7.7-4, p. 749; Ch. 8, Sec. 8.3, p. 799
 
 **Detailed Solution:**
 Multiplexing is the process of combining multiple distinct information signals into a single complex signal so they can be transmitted simultaneously over a single shared physical medium (such as a fiber optic cable, coaxial cable, or wireless radio band) without interfering with each other. Two primary techniques for doing this are Frequency Division Multiplexing (FDM) and Time Division Multiplexing (TDM).
@@ -3663,5 +4016,4 @@ Multiplexing is the process of combining multiple distinct information signals i
 *   **Explanation:** TDM relies on the Sampling Theorem. Instead of transmitting continuous analog waves, the system takes discrete samples of each signal at a rapid rate. The multiplexer acts as a high-speed rotary switch, grabbing one sample from Signal 1, then one sample from Signal 2, then Signal 3, and so on, placing them back-to-back in a sequential "frame" for transmission. Because the sampling occurs very fast (at or above the Nyquist rate), the receiver can easily separate the interleaved samples and reconstruct the original continuous signals flawlessly using lowpass filters.
 *   **Example:** The modern digital telephone network uses TDM to send dozens of phone calls simultaneously over a single trunk line. 
 
-*Related location pg number In sadiku textbook: Concepts are an application extension of Chapter 18, Section 18.7.1 "Amplitude Modulation" (FDM basis), pg. 840, and Section 18.7.2 "Sampling" (TDM basis), pg. 842-843.*
 

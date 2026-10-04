@@ -520,3 +520,298 @@
 * 1. The initial capacitor voltage 2. The final capacitor voltage 3. The time constant t. 
 * This formula is the standard **complete response formula** for a first-order circuit ($RC$ or $RL$), modified for when a switch flips at some time $t_0$ instead of $t = 0$.
 $$v(t) = v(\infty) + [v(t_0) - v(\infty)]e^{-(t - t_0)/\tau}, \quad t \ge t_0$$
+
+
+
+
+  
+
+$$\frac{d^2 x(t)}{dt^2} + 2\alpha \frac{dx(t)}{dt} + \omega_0^2 x(t) = f(t)$$
+
+where $x(t)$ represents current or voltage, $\alpha$ is the damping factor (attenuation factor), and $\omega_0$ is the undamped natural frequency.
+
+  
+
+### Core Governing Parameters and Definitions
+
+- **Undamped Natural Frequency ($\omega_0$):**
+    
+      
+    - Determined entirely by the reactive elements:
+        
+          
+        
+        $$\omega_0 = \frac{1}{\sqrt{LC}} \quad \text{(rad/s)}$$
+        
+- **Neper Frequency / Damping Factor ($\alpha$):**
+    
+      
+    - Quantifies the rate of energy dissipation:
+        
+          
+        - **Series RLC:** $\alpha = \frac{R}{2L}$
+            
+              
+            
+        - **Parallel RLC:** $\alpha = \frac{1}{2RC}$
+            
+              
+            
+- **Damping Ratio ($\zeta$):**
+    
+      
+    - A dimensionless measure of system damping:
+        
+          
+        
+        $$\zeta = \frac{\alpha}{\omega_0}$$
+        
+- **Quality Factor ($Q$):**
+    
+      
+    - Relates peak energy stored to energy dissipated per radian:
+        
+          
+        
+        $$Q = \frac{\omega_0}{2\alpha} = \frac{1}{2\zeta}$$
+        
+        - **Series RLC:** $Q = \frac{1}{R}\sqrt{\frac{L}{C}} = \frac{\omega_0 L}{R}$
+            
+              
+            
+        - **Parallel RLC:** $Q = R\sqrt{\frac{C}{L}} = \frac{R}{\omega_0 L}$
+            
+              
+            
+
+### Characteristic Equation and Roots
+
+Setting the input source $f(t) = 0$ yields the characteristic algebraic equation:
+
+  
+
+$$s^2 + 2\alpha s + \omega_0^2 = 0$$
+
+Solving with the quadratic formula gives the natural frequencies (characteristic roots):
+
+  
+
+$$s_{1, 2} = -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}$$
+
+The physical behavior of the natural response $x_n(t)$ depends entirely on the sign of the discriminant $(\alpha^2 - \omega_0^2)$:
+
+  
+
+- **1. Overdamped Response ($\alpha > \omega_0 \implies \zeta > 1$):**
+    
+      
+    - Roots are real, negative, and unequal: $s_1 \neq s_2 < 0$.
+        
+          
+        
+    - Form:
+        
+          
+        
+        $$x_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}$$
+        
+    - Behavior: Non-oscillatory decay; slow return to equilibrium due to high dissipation.
+        
+          
+        
+- **2. Critically Damped Response ($\alpha = \omega_0 \implies \zeta = 1$):**
+    
+      
+    - Roots are real, negative, and repeated: $s_1 = s_2 = -\alpha$.
+        
+          
+        
+    - Form:
+        
+          
+        
+        $$x_n(t) = (A_1 + A_2 t)e^{-\alpha t}$$
+        
+    - Behavior: Fastest non-oscillatory return to equilibrium without overshoot.
+        
+          
+        
+- **3. Underdamped Response ($\alpha < \omega_0 \implies \zeta < 1$):**
+    
+      
+    - Roots are complex conjugate pairs: $s_{1, 2} = -\alpha \pm j\omega_d$.
+        
+          
+        
+    - Damped natural frequency:
+        
+          
+        
+        $$\omega_d = \sqrt{\omega_0^2 - \alpha^2}$$
+        
+    - Form:
+        
+          
+        
+        $$x_n(t) = e^{-\alpha t} \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)$$
+        
+    - Behavior: Sinusoidal oscillations decaying within an exponential envelope $e^{-\alpha t}$.
+        
+          
+        
+- **4. Undamped Response ($\alpha = 0 \implies R = 0 \text{ or } \infty$):**
+    
+      
+    - Roots are purely imaginary: $s_{1, 2} = \pm j\omega_0$.
+        
+          
+        
+    - Form:
+        
+          
+        
+        $$x_n(t) = A_1 \cos(\omega_0 t) + A_2 \sin(\omega_0 t)$$
+        
+    - Behavior: Sustained oscillations at frequency $\omega_0$ with zero energy loss.
+        
+          
+        
+
+### Complete Solution Framework
+
+For circuits with constant DC independent sources switched at $t = 0$:
+
+  
+
+$$x(t) = x_{\text{forced}}(t) + x_{\text{natural}}(t) = x(\infty) + x_n(t)$$
+
+- **Step 1: Determine initial states at $t = 0^-$ and $t = 0^+$:**
+    
+      
+    - Continuity laws for reactive components:
+        
+          
+        
+        $$i_L(0^+) = i_L(0^-), \quad v_C(0^+) = v_C(0^-)$$
+        
+- **Step 2: Find initial derivatives at $t = 0^+$:**
+    
+      
+    - Relate capacitor currents and inductor voltages via device equations:
+        
+          
+        
+        $$\frac{dv_C(0^+)}{dt} = \frac{i_C(0^+)}{C}, \quad \frac{di_L(0^+)}{dt} = \frac{v_L(0^+)}{L}$$
+        
+- **Step 3: Determine the final steady-state value $x(\infty)$:**
+    
+      
+    - For DC inputs at $t \to \infty$, replace capacitors with open circuits and inductors with short circuits.
+        
+          
+        
+- **Step 4: Solve for arbitrary constants ($A_1, A_2$):**
+    
+      
+    - Evaluate the complete equation at $t = 0^+$:
+        
+          
+        
+        $$x(0^+) = x(\infty) + x_n(0^+)$$
+        
+    - Differentiate the complete equation and evaluate at $t = 0^+$:
+        
+          
+        
+        $$\left. \frac{dx}{dt} \right\vert{}_{t=0^+} = \left. \frac{dx_n}{dt} \right\vert{}_{t=0^+}$$
+        
+    - Solve the resulting $2 \times 2$ system of linear equations for $A_1$ and $A_2$.
+        
+          
+        
+
+### Formulas for Common Topologies
+
+#### 1. Series RLC Circuit
+
+- Primary variable: Loop current $i(t)$ or capacitor voltage $v_C(t)$.
+    
+      
+    
+- Differential equation in terms of $i(t)$:
+    
+      
+    
+    $$L\frac{d^2 i}{dt^2} + R\frac{di}{dt} + \frac{1}{C}i = \frac{dv_s}{dt}$$
+    
+- Parameter relationships:
+    
+      
+    
+    $$\alpha = \frac{R}{2L}, \quad \omega_0 = \frac{1}{\sqrt{LC}}, \quad \zeta = \frac{R}{2}\sqrt{\frac{C}{L}}$$
+    
+
+#### 2. Parallel RLC Circuit
+
+- Primary variable: Node voltage $v(t)$ or inductor current $i_L(t)$.
+    
+      
+    
+- Differential equation in terms of $v(t)$:
+    
+      
+    
+    $$C\frac{d^2 v}{dt^2} + \frac{1}{R}\frac{dv}{dt} + \frac{1}{L}v = \frac{di_s}{dt}$$
+    
+- Parameter relationships:
+    
+      
+    
+    $$\alpha = \frac{1}{2RC}, \quad \omega_0 = \frac{1}{\sqrt{LC}}, \quad \zeta = \frac{1}{2R}\sqrt{\frac{L}{C}}$$
+    
+
+#### 3. Pure RC and RL Second-Order Circuits (Two Like Reactive Elements)
+
+Circuits containing two capacitors or two inductors separated by resistors (e.g., cascaded RC filters, ladder networks) form second-order systems governed by:
+
+  
+
+$$\frac{d^2 v}{dt^2} + a_1 \frac{dv}{dt} + a_0 v = f(t)$$
+
+- **Characteristics of Two-Capacitor (RC-RC) or Two-Inductor (RL-RL) Networks:**
+    
+      
+    - Energy is dissipated through resistive elements without reactive energy exchange (sloshing) between $L$ and $C$.
+        
+          
+        
+    - The roots $s_1, s_2$ are **always real and negative** (strictly non-oscillatory).
+        
+          
+        
+    - These circuits are inherently **overdamped** (or critically damped in degenerate limiting cases), never underdamped ($\zeta \ge 1$ always).
+        
+          
+        
+- **Example (Cascaded Two-Stage RC Low-Pass Filter):**
+    
+      
+    - Stage 1 ($R_1, C_1$) connected to Stage 2 ($R_2, C_2$):
+        
+          
+        
+        $$\frac{d^2 v_2}{dt^2} + \left(\frac{1}{R_1 C_1} + \frac{1}{R_2 C_2} + \frac{1}{R_2 C_1}\right)\frac{dv_2}{dt} + \frac{1}{R_1 R_2 C_1 C_2} v_2 = \frac{v_{in}}{R_1 R_2 C_1 C_2}$$
+        
+    - Notice the coupling term $\frac{1}{R_2 C_1}$ representing the loading effect of stage 2 on stage 1.
+        
+
+### Summary Comparison Table
+
+|**Metric / Parameter**|**Series RLC**|**Parallel RLC**|**Cascaded RC-RC**|
+|---|---|---|---|
+|**State Variables**|$i_L(t), v_C(t)$|$v_C(t), i_L(t)$|$v_{C1}(t), v_{C2}(t)$|
+|**$\omega_0$**|$\frac{1}{\sqrt{LC}}$|$\frac{1}{\sqrt{LC}}$|$\frac{1}{\sqrt{R_1 R_2 C_1 C_2}}$|
+|**Damping Factor ($\alpha$)**|$\frac{R}{2L}$|$\frac{1}{2RC}$|$\frac{1}{2}\left(\frac{1}{R_1 C_1} + \frac{1}{R_2 C_2} + \frac{1}{R_2 C_1}\right)$|
+|**Quality Factor ($Q$)**|$\frac{1}{R}\sqrt{\frac{L}{C}}$|$R\sqrt{\frac{C}{L}}$|$< 0.5$ (Cannot oscillate)|
+|**Possible Regimes**|Over / Critical / Under / Undamped|Over / Critical / Under / Undamped|Strictly Overdamped|
+|**Root Locations**|Anywhere in Left Half Plane|Anywhere in Left Half Plane|Strictly Negative Real Axis|
