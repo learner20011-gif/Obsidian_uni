@@ -1741,7 +1741,168 @@ $$ i(t) = \left( 2e^{-2t}\cos(6t) - \frac{2}{3}e^{-2t}\sin(6t) \right) u(t) \tex
 > * **B.P. Lathi (3rd Ed):** Section 2.2 & 4.4, pp. 193–196, 373–382
 
 **Solution:**
+#### Initial Conditions at $t = 0^-$ and $t = 0^+$
 
+For $t < 0$, the switch is closed and the circuit has reached DC steady-state:
+
+* The inductor behaves as a short circuit ($v_L = 0\text{ V}$).
+* The capacitor behaves as an open circuit ($i_C = 0\text{ A}$).
+
+With the inductor shorted, all three resistors ($2\ \Omega$, $4\ \Omega$, $8\ \Omega$) are connected in parallel across the $7\text{ A}$ current source:
+
+
+$$R_{eq} = 2 \parallel 4 \parallel 8 = \frac{1}{\frac{1}{2} + \frac{1}{4} + \frac{1}{8}} = \frac{8}{7}\ \Omega$$
+
+The common node voltage across the parallel branches is:
+
+
+$$V = I \cdot R_{eq} = 7 \cdot \frac{8}{7} = 8\text{ V}$$
+
+* Capacitor voltage:
+
+$$v_C(0^-) = V = 8\text{ V}$$
+
+
+* Inductor current:
+Applying KCL at the node above the capacitor and the $2\ \Omega$ resistor:
+
+$$\frac{V}{2} + i_L(0^-) = 0 \implies \frac{8}{2} + i_L(0^-) = 0 \implies i_L(0^-) = -4\text{ A}$$
+
+
+
+By continuity:
+
+
+$$v_C(0^+) = v_C(0^-) = 8\text{ V}$$
+
+$$i_L(0^+) = i_L(0^-) = -4\text{ A}$$
+
+---
+
+#### Method 1: Second-Order Differential Equation Approach
+
+For $t > 0$, the switch opens, removing the $4\ \Omega$ resistor and the $7\text{ A}$ source.
+
+1. **System Equations:**
+Applying KVL around the outer loop:
+
+$$v_C(t) = v_L(t) + 8\,i_L(t) = 4\frac{di_L}{dt} + 8\,i_L(t)$$
+
+
+Applying KCL at the capacitor node:
+
+$$C\frac{dv_C}{dt} + \frac{v_C}{2} + i_L = 0 \implies \frac{1}{4}\frac{dv_C}{dt} + \frac{1}{2}v_C + i_L = 0$$
+
+
+$$\frac{dv_C}{dt} + 2v_C + 4i_L = 0$$
+
+
+2. **Forming the Second-Order ODE:**
+Differentiating the KVL equation and substituting into KCL:
+
+$$\frac{d}{dt}\left(4\frac{di_L}{dt} + 8i_L\right) + 2\left(4\frac{di_L}{dt} + 8i_L\right) + 4i_L = 0$$
+
+
+$$4\frac{d^2i_L}{dt^2} + 16\frac{di_L}{dt} + 20i_L = 0$$
+
+
+$$\frac{d^2i_L}{dt^2} + 4\frac{di_L}{dt} + 5i_L = 0$$
+
+
+3. **General Solution:**
+The characteristic equation is:
+
+$$s^2 + 4s + 5 = 0 \implies s = -2 \pm j1$$
+
+
+$$i_L(t) = e^{-2t} (A_1 \cos t + A_2 \sin t)$$
+
+
+4. **Determining the Constants:**
+* Using $i_L(0^+) = -4\text{ A}$:
+
+$$i_L(0) = A_1 = -4$$
+
+
+* Using the inductor voltage at $t = 0^+$:
+
+$$v_L(0^+) = v_C(0^+) - 8\,i_L(0^+) = 8 - 8(-4) = 40\text{ V}$$
+
+
+$$\frac{di_L}{dt}(0^+) = \frac{v_L(0^+)}{L} = \frac{40}{4} = 10\text{ A/s}$$
+
+
+* Differentiating $i_L(t)$ at $t = 0$:
+
+$$\frac{di_L}{dt}(0) = -2A_1 + A_2 = 10 \implies -2(-4) + A_2 = 10 \implies A_2 = 2$$
+
+
+
+
+
+$$i_L(t) = e^{-2t} (-4\cos t + 2\sin t)\text{ A}, \quad t > 0$$
+
+---
+
+#### Method 2: Laplace Transform Approach
+
+For $t > 0$, transform the circuit into the $s$-domain:
+
+* The left branch consists of the capacitor $C = \frac{1}{4}\text{ F}$ with initial voltage $v_C(0^+) = 8\text{ V}$ in parallel with $R_1 = 2\ \Omega$.
+* The inductor $L = 4\text{ H}$ has impedance $sL = 4s$ and an initial current series voltage source $L\,i_L(0^+) = 4(-4) = -16\text{ V}$ (opposing current flow).
+* The right branch is resistor $R_2 = 8\ \Omega$.
+
+1. **Admittance of the Left Branch:**
+
+$$Y_1(s) = \frac{1}{2} + \frac{1}{4}s = \frac{s + 2}{4}$$
+
+
+$$Z_1(s) = \frac{1}{Y_1(s)} = \frac{4}{s + 2}$$
+
+
+2. **Thevenin Equivalent of the Left Branch:**
+Using the capacitor initial condition modeled as a current source $C v_C(0^+) = \frac{1}{4}(8) = 2\text{ A}$ in parallel with $Z_1(s)$:
+
+$$V_{th1}(s) = 2 \cdot Z_1(s) = \frac{8}{s + 2}$$
+
+
+3. **Mesh Equation in the $s$-domain:**
+The single loop current is $I_L(s)$. Summing voltages clockwise around the loop:
+
+$$V_{th1}(s) - I_L(s) Z_1(s) - 4s I_L(s) - (-16) - 8 I_L(s) = 0$$
+
+
+$$I_L(s) \left[ Z_1(s) + 4s + 8 \right] = V_{th1}(s) - 16$$
+
+
+$$I_L(s) \left[ \frac{4}{s + 2} + 4(s + 2) \right] = \frac{8}{s + 2} - 16$$
+
+
+4. **Solving for $I_L(s)$:**
+Multiply both sides by $(s + 2)$:
+
+$$I_L(s) \left[ 4 + 4(s + 2)^2 \right] = 8 - 16(s + 2)$$
+
+
+
+Divide by 4:
+
+$$I_L(s) \left[ 1 + (s + 2)^2 \right] = 2 - 4(s + 2)$$
+
+
+$$I_L(s) (s^2 + 4s + 5) = -4s - 6$$
+
+
+$$I_L(s) = \frac{-4s - 6}{s^2 + 4s + 5} = \frac{-4(s + 2) + 2}{(s + 2)^2 + 1}$$
+
+
+5. **Inverse Laplace Transform:**
+Taking the inverse transform using the standard shift property $\mathcal{L}^{-1}\left\{\frac{s+\alpha}{(s+\alpha)^2 + \beta^2}\right\} = e^{-\alpha t}\cos(\beta t)$ and $\mathcal{L}^{-1}\left\{\frac{\beta}{(s+\alpha)^2 + \beta^2}\right\} = e^{-\alpha t}\sin(\beta t)$:
+
+$$I_L(s) = -4 \left[\frac{s + 2}{(s + 2)^2 + 1^2}\right] + 2 \left[\frac{1}{(s + 2)^2 + 1^2}\right]$$
+
+
+$$i_L(t) = e^{-2t} (-4\cos t + 2\sin t)\text{ A}, \quad t > 0$$
 ### 25. Page 9, Q.3(b): Find $i(t)$ for $t > 0$ in the following circuit.
 
 ![[Pasted image 20260727115031.png]]
