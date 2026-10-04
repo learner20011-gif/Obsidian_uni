@@ -1353,46 +1353,6 @@ As calculated in part (ii), $\alpha = 1$ and $\omega_0 = 1$. Because $\alpha = \
 
 **Solution:**
 ![[SmartSelect_20261005_025049_Xodo.jpg]]
-**(i) S-domain Circuit Representation:**
-To transform the circuit into the s-domain (Laplace domain), we replace the time-domain components with their complex frequency equivalents.
-*   **Voltage Source:** The independent voltage source $v_i(t) = 10e^{-t}u(t)$ V transforms to $V_i(s) = \frac{10}{s+1}$ V.
-*   **Resistors:** The two $10 \Omega$ resistors remain unchanged as $10 \Omega$.
-*   **Capacitor:** The capacitor $C = 0.1$ F transforms to an impedance $Z_C(s) = \frac{1}{sC} = \frac{1}{0.1s} = \frac{10}{s} \Omega$.
-*   **Initial Condition:** The initial condition of the capacitor $v_0(0) = 5$ V is modeled as a parallel independent current source. Its value is $I_0 = C v_0(0) = 0.1 \times 5 = 0.5$ A. Because the positive terminal of $v_0(t)$ is at the top, this equivalent current source points DOWNWARDS from the node.
-*   **Current Source:** The independent impulse current source $2\delta(t)$ A transforms to a constant $2$ A pointing UPWARDS.
-
-*The s-domain circuit consists of the voltage source $V_i(s)$ in series with the first $10\Omega$ resistor, connected to the output node $V_0(s)$. At the output node, the second $10\Omega$ resistor, the capacitor impedance $10/s$, the $0.5$ A downward current source, and the $2$ A upward current source are all connected in parallel to ground.*
-
-**(ii) Find $v_0(t)$:**
-We apply Nodal Analysis at the output node $V_0(s)$. The net current entering the node from the independent sources is $2\text{ A (up)} - 0.5\text{ A (down)} = 1.5\text{ A}$.
-
-Summing the currents leaving the node:
-$$ \frac{V_0(s) - V_i(s)}{10} + \frac{V_0(s)}{10} + \frac{V_0(s)}{10/s} = 1.5 $$
-
-Substitute $V_i(s) = \frac{10}{s+1}$ and multiply the entire equation by 10 to eliminate the denominators:
-$$ \left(V_0(s) - \frac{10}{s+1}\right) + V_0(s) + s V_0(s) = 15 $$
-
-Group the $V_0(s)$ terms together:
-$$ V_0(s) (1 + 1 + s) - \frac{10}{s+1} = 15 $$
-$$ V_0(s) (s + 2) = 15 + \frac{10}{s+1} $$
-
-Find a common denominator for the right side:
-$$ V_0(s) (s + 2) = \frac{15(s + 1) + 10}{s+1} = \frac{15s + 15 + 10}{s+1} = \frac{15s + 25}{s+1} $$
-
-Solve for $V_0(s)$:
-$$ V_0(s) = \frac{15s + 25}{(s+1)(s+2)} $$
-
-Now, use partial fraction expansion to prepare for the inverse Laplace transform:
-$$ V_0(s) = \frac{A}{s+1} + \frac{B}{s+2} $$
-$$ A = \left. \frac{15s + 25}{s+2} \right|_{s=-1} = \frac{-15 + 25}{-1 + 2} = \frac{10}{1} = 10 $$
-$$ B = \left. \frac{15s + 25}{s+1} \right|_{s=-2} = \frac{-30 + 25}{-2 + 1} = \frac{-5}{-1} = 5 $$
-
-Substitute $A$ and $B$ back into the partial fraction expression:
-$$ V_0(s) = \frac{10}{s+1} + \frac{5}{s+2} $$
-
-Taking the inverse Laplace transform of each term yields the time-domain voltage:
-$$ v_0(t) = \left( 10e^{-t} + 5e^{-2t} \right) u(t) \text{ V} $$
-
 
 ***
 
