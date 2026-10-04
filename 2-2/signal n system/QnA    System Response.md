@@ -1352,7 +1352,7 @@ As calculated in part (ii), $\alpha = 1$ and $\omega_0 = 1$. Because $\alpha = \
 > * **B.P. Lathi (3rd Ed):** Section 4.3 & 4.4, pp. 360–382
 
 **Solution:**
-
+![[SmartSelect_20261005_025049_Xodo.jpg]]
 **(i) S-domain Circuit Representation:**
 To transform the circuit into the s-domain (Laplace domain), we replace the time-domain components with their complex frequency equivalents.
 *   **Voltage Source:** The independent voltage source $v_i(t) = 10e^{-t}u(t)$ V transforms to $V_i(s) = \frac{10}{s+1}$ V.
