@@ -1742,52 +1742,6 @@ $$ i(t) = \left( 2e^{-2t}\cos(6t) - \frac{2}{3}e^{-2t}\sin(6t) \right) u(t) \tex
 
 **Solution:**
 
-**1. Initial Conditions ($t < 0$):**
-The switch, located on the vertical branch, has an arrow indicating it **closes** at $t=0$. Therefore, for $t < 0$, the switch is OPEN. 
-The $7\text{ A}$ current source supplies the circuit. In DC steady state, the $4\text{ H}$ inductor acts as a short circuit, and the $1/4\text{ F}$ capacitor acts as an open circuit.
-*   Because the inductor is a short, the $8\Omega$ resistor and the $2\Omega$ resistor are effectively in parallel.
-*   Equivalent resistance $R_{eq} = 8\Omega || 2\Omega = \frac{8 \times 2}{8 + 2} = 1.6 \Omega$.
-*   The voltage across the parallel combination (which is also the initial capacitor voltage) is:
-$$ v_c(0^-) = I \times R_{eq} = 7 \text{ A} \times 1.6 \Omega = 11.2 \text{ V} $$
-*   The current flowing through the $2\Omega$ resistor branch (and thus through the shorted inductor from right to left) is:
-$$ i_{2\Omega} = \frac{11.2 \text{ V}}{2 \Omega} = 5.6 \text{ A} $$
-*   The reference arrow for $i_L$ points to the right. Since the actual current flows leftward from the source to the $2\Omega$ load, the initial inductor current is:
-$$ i_L(0^-) = -5.6 \text{ A} $$
-
-**2. Circuit Analysis for $t > 0$:**
-At $t=0$, the switch closes, creating a short circuit directly across the $7\text{ A}$ source and the $8\Omega$ resistor, thereby completely bypassing them.
-The left portion of the circuit now forms a source-free parallel RLC circuit containing the $1/4\text{ F}$ capacitor, the $2\Omega$ resistor, and the $4\text{ H}$ inductor. 
-*   $R = 2\Omega$
-*   $L = 4\text{ H}$
-*   $C = 0.25\text{ F}$
-
-First, we determine the damping coefficient $\alpha$ and resonant frequency $\omega_0$ for a parallel RLC circuit:
-$$ \alpha = \frac{1}{2RC} = \frac{1}{2(2)(0.25)} = \frac{1}{1} = 1 \text{ Np/s} $$
-$$ \omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{4(0.25)}} = \frac{1}{\sqrt{1}} = 1 \text{ rad/s} $$
-Because $\alpha = \omega_0 = 1$, the circuit is **critically damped**.
-The general solution for the inductor current in a critically damped circuit is:
-$$ i_L(t) = (A_1 + A_2 t) e^{-\alpha t} = (A_1 + A_2 t) e^{-t} $$
-
-**3. Solving for Constants $A_1$ and $A_2$:**
-*   Using the initial current:
-$$ i_L(0) = A_1 = -5.6 \text{ A} $$
-*   To find $A_2$, we evaluate the derivative $\frac{di_L}{dt}$ at $t=0^+$. The voltage across the inductor in this parallel configuration is equal to the voltage across the capacitor, $v_L = v_c$.
-$$ v_L(0^+) = L \frac{di_L(0^+)}{dt} = v_c(0^+) $$
-$$ 4 \frac{di_L(0^+)}{dt} = 11.2 \implies \frac{di_L(0^+)}{dt} = \frac{11.2}{4} = 2.8 \text{ A/s} $$
-*   Now, differentiate the general solution:
-$$ \frac{di_L(t)}{dt} = A_2 e^{-t} - (A_1 + A_2 t) e^{-t} $$
-Evaluate at $t=0$:
-$$ \frac{di_L(0)}{dt} = A_2 - A_1 = 2.8 $$
-*   Substitute $A_1 = -5.6$ into the equation:
-$$ A_2 - (-5.6) = 2.8 \implies A_2 + 5.6 = 2.8 \implies A_2 = 2.8 - 5.6 = -2.8 $$
-
-**4. Final Expression:**
-Substituting $A_1$ and $A_2$ back into the generic response equation gives:
-$$ i_L(t) = (-5.6 - 2.8t) e^{-t} u(t) \text{ A} $$
-
-
-Based on the document provided, here are the detailed step-by-step solutions for the next 4 questions (Questions 25 to 28).
-
 ### 25. Page 9, Q.3(b): Find $i(t)$ for $t > 0$ in the following circuit.
 
 ![[Pasted image 20260727115031.png]]
