@@ -2452,47 +2452,6 @@ $$ \mathbf{ i_2(t) = \left[ 4 - (2 + 0.8\sqrt{10})e^{(-4+\sqrt{10})t} + (-2 + 0.
 
 ***
 
-### 31. Page 15, Q.4(c): (ii) An 8 V battery is connected to the network via a switch. If the switch is closed at t = 0, find the current i(t) through Y(s) using the Laplace transform.
-
-> [!info] **Textbook References**
-> * **Topic:** Laplace Transform Circuit Transient Analysis
-> * **Alexander & Sadiku (5th Ed):** Section 16.3 & 16.4, pp. 722–730
-> * **B.P. Lathi (3rd Ed):** Section 4.3 & 4.4, pp. 360–382
-
-
-**Solution:**
-*(Note: Because this is part (ii) of a question, the definition of the network $Y(s)$ is required from part (i). Based on standard textbook problems matching this exact phrasing, we assume the known problem where the input admittance $Y(s)$ has a pole at $s = -3$, a zero at $s = -1$, and $Y(\infty) = 0.25 \text{ S}$).*
-
-**1. Determine the Admittance $Y(s)$:**
-Given a zero at $s=-1$ and a pole at $s=-3$, the form of the admittance is:
-$$ Y(s) = K \frac{s+1}{s+3} $$
-Applying the final value $Y(\infty) = 0.25$:
-$$ \lim_{s \to \infty} Y(s) = \lim_{s \to \infty} K \frac{s(1 + 1/s)}{s(1 + 3/s)} = K = 0.25 \text{ S} $$
-Thus, the admittance is:
-$$ Y(s) = 0.25 \frac{s+1}{s+3} $$
-
-**2. Formulate the circuit in the s-domain:**
-An $8\text{V}$ battery connected at $t=0$ acts as a step input voltage $v(t) = 8u(t)\text{ V}$. 
-Transforming the voltage source to the s-domain:
-$$ V(s) = \frac{8}{s} $$
-
-**3. Calculate the Current $I(s)$:**
-By Ohm's law in the s-domain, $I(s) = Y(s) V(s)$:
-$$ I(s) = \left( 0.25 \frac{s+1}{s+3} \right) \left( \frac{8}{s} \right) = \frac{2(s+1)}{s(s+3)} $$
-
-**4. Inverse Laplace Transform:**
-We use partial fraction expansion to find $i(t)$:
-$$ I(s) = \frac{2(s+1)}{s(s+3)} = \frac{A}{s} + \frac{B}{s+3} $$
-Solve for $A$ and $B$ using the residue method:
-$$ A = \left. \frac{2(s+1)}{s+3} \right|_{s=0} = \frac{2(1)}{3} = \frac{2}{3} $$
-$$ B = \left. \frac{2(s+1)}{s} \right|_{s=-3} = \frac{2(-3+1)}{-3} = \frac{-4}{-3} = \frac{4}{3} $$
-Substituting the coefficients back:
-$$ I(s) = \frac{2/3}{s} + \frac{4/3}{s+3} $$
-Taking the inverse Laplace transform of each term:
-$$ \mathbf{ i(t) = \left( \frac{2}{3} + \frac{4}{3}e^{-3t} \right) u(t) \text{ A} } $$
-
-***
-
 ### 32. Page 23, Q.1: For the following circuit shown in Fig. 1 fill the table (right). Assume that the switch of the following circuit was closed for a long time and is opened at t=0s. (Figure Involved)
 
 ![[Pasted image 20260727115213.png]]
@@ -2584,7 +2543,7 @@ The circuit consists of a **$50 \text{ V}$ DC voltage source** connected in seri
 
 ***
 
-### 34. Page 26, Q (Handwritten 2): The switch closes at t>0. Find the inductor current when the switch is closed. [Figure Involved]
+### 34. ✅️Page 26, Q (Handwritten 2): The switch closes at t>0. Find the inductor current when the switch is closed. [Figure Involved]
 
 ![[Pasted image 20260727115253.png]]
 
