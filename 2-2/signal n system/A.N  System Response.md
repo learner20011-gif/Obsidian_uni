@@ -184,7 +184,129 @@
           
         
         $$i_x(t) = \frac{v}{2} = -\frac{5}{3}e^{-(2/3)t} \approx -1.6667e^{-(2/3)t}\text{ A}\quad (t > 0)$$
+### Question In the circuit shown in Fig. 7.19, find $i_o$, $v_o$, and $i$ for all time, assuming that the switch was open for a long time.
 
+![[Pasted image 20261004160328.png]]
+#### Solution
+
+- **For $t < 0$ (DC Steady State before Switch Closes):**
+    ![[Pasted image 20261004160341.png]]
+      
+    - The switch is open, and under dc steady state, the inductor acts like a short circuit.
+        
+          
+        
+    - Because the inductor short-circuits the $6\ \Omega$ resistor, no current flows through it:
+        
+          
+        
+        $$i_o = 0\text{ A}$$
+        
+          
+        
+    - The inductor current is determined by the series path with the $2\ \Omega$ and $3\ \Omega$ resistors:
+        
+          
+        
+        $$i(t) = \frac{10}{2 + 3} = 2\text{ A}$$
+        
+          
+        
+    - The initial inductor current is therefore:
+        
+          
+        
+        $$i(0) = i(0^-) = 2\text{ A}$$
+        
+          
+        
+    - The voltage across the $3\ \Omega$ resistor is:
+        
+          
+        
+        $$v_o(t) = 3 \times i(t) = 3 \times 2 = 6\text{ V}$$
+        
+          
+        
+
+- **For $t > 0$ (Source-Free Response after Switch Closes):**
+    ![[Pasted image 20261004160351.png]]
+      
+    - When the switch closes at $t = 0$, the $10\text{ V}$ independent source and $2\ \Omega$ resistor are isolated from the inductor loop, resulting in a source-free $RL$ circuit.
+        
+          
+        
+    - The equivalent resistance seen at the inductor terminals is the parallel combination of the $3\ \Omega$ and $6\ \Omega$ resistors:
+        
+          
+        
+        $$R_{\text{Th}} = 3 \parallel 6 = \frac{3 \times 6}{3 + 6} = 2\ \Omega$$
+        
+          
+        
+    - The time constant $\tau$ of the circuit is:
+        
+          
+        
+        $$\tau = \frac{L}{R_{\text{Th}}} = \frac{2\text{ H}}{2\ \Omega} = 1\text{ s}$$
+        
+          
+        
+    - The inductor current for $t > 0$ decays exponentially:
+        
+          
+        
+        $$i(t) = i(0)e^{-t/\tau} = 2e^{-t}\text{ A}$$
+        
+          
+        
+    - The voltage across the inductor $v_L(t)$ is given by:
+        
+          
+        
+        $$v_L(t) = L\frac{di}{dt} = 2 \times \frac{d}{dt}(2e^{-t}) = -4e^{-t}\text{ V}$$
+        
+    - Looking at the reference polarity of $v_o$, it is connected in parallel with the inductor but with opposite polarity ($v_o = -v_L$):
+        
+          
+        
+        $$v_o(t) = -v_L(t) = 4e^{-t}\text{ V}$$
+        
+          
+        
+    - The current $i_o(t)$ flowing downward through the $6\ \Omega$ resistor corresponds directly to $v_L/6$:
+        
+          
+        
+        $$i_o(t) = \frac{v_L(t)}{6} = \frac{-4e^{-t}}{6} = -\frac{2}{3}e^{-t}\text{ A}$$
+        
+          
+        
+
+- **Complete Expressions for All Time:**
+    
+      
+    - **Inductor Current $i(t)$:**
+        
+          
+        
+        $$i(t) = \begin{cases} 2\text{ A}, & t < 0 \\ 2e^{-t}\text{ A}, & t \ge 0 \end{cases}$$
+        
+          
+        
+    - **Resistor Voltage $v_o(t)$:**
+        
+          
+        
+        $$v_o(t) = \begin{cases} 6\text{ V}, & t < 0 \\ 4e^{-t}\text{ V}, & t > 0 \end{cases}$$
+        
+          
+        
+    - **Resistor Current $i_o(t)$:**
+        
+          
+        
+        $$i_o(t) = \begin{cases} 0\text{ A}, & t < 0 \\ -\dfrac{2}{3}e^{-t}\text{ A}, & t > 0 \end{cases}$$
 ##
 
 * A second-order circuit is characterized by a second-order differential equation. It consists of resistors and the equivalent of **two energy storage elements.**
