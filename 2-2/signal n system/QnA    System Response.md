@@ -3,9 +3,9 @@ Based on the provided document, here are the step-by-step solutions for the firs
 
 ***
 
-### **Time domain and frequency domain analysis of LTI systems**
+### **FOURIER APPLICATIONS Time domain and frequency domain analysis of LTI systems**
 
-### 3. 1. Page 14, Q.3(b): Determine $i_o(t)$ for the following network using Fourier transform method . [Figure involved.]
+### 1. Page 14, Q.3(b): Determine $i_o(t)$ for the following network using Fourier transform method . [Figure involved.]
 
 ![[Pasted image 20260727113934.png]]
 
@@ -13,7 +13,7 @@ Based on the provided document, here are the step-by-step solutions for the firs
 
 ***
 
-### 3. 2. Page 15, Q.5(b): The square wave in the following waveform is applied to the following network. Find the Fourier series of $v_o(t)$ . [Figure involved.]
+### 2. Page 15, Q.5(b): The square wave in the following waveform is applied to the following network. Find the Fourier series of $v_o(t)$ . [Figure involved.]
 
 ![[Pasted image 20260727114009.png]]
 
@@ -49,7 +49,7 @@ A square wave voltage $v_i(t)$ with an amplitude of $\pm 10$ V and a period of $
 
 ***
 
-### 3. 3. Page 16, Q(b) (Top): If the following sawtooth waveform is applied to a band-pass filter with the transfer function shown below Determine the output. [Figure involved.]
+### 3. Page 16, Q(b) (Top): If the following sawtooth waveform is applied to a band-pass filter with the transfer function shown below Determine the output. [Figure involved.]
 
 ![[Pasted image 20260727114057.png]]
 
@@ -225,58 +225,326 @@ A square wave voltage $v_i(t)$ with an amplitude of $\pm 10$ V and a period of $
 
 ***
 
-### 3. 4. Page 18, Q.4(a): If the periodic voltage as shown in the following figure is applied to the following network; Draw the frequency spectrum of $i_0(t)$. [Figure involved.]
+### 4. Page 18, Q.4(a): If the periodic voltage as shown in the following figure is applied to the following network; Draw the frequency spectrum of $i_0(t)$. [Figure involved.]
 
 ![[Pasted image 20260727114121.png]]
 
 **Problem Statement:**
-A periodic rectangular pulse train $v_s(t)$ is applied to a circuit. Find the amplitude spectrum of the current $i_0(t)$.
-*   $v_s(t)$ alternates between $7.5$ V and $2.5$ V with a period $T = 2$ s.
-*   The network is a $20 \Omega$ resistor in series with two parallel branches: a $50 \text{ mF}$ capacitor and a series combination of a $40 \Omega$ resistor and $100 \text{ mH}$ inductor. $i_0(t)$ is the current through the inductor branch.
 
-**Solution:**
-1.  **Fourier Series of Input Voltage:**
-    Period $T = 2 \text{ s} \implies \omega_0 = \frac{2\pi}{2} = \pi \text{ rad/s}$.
-    The DC component $V_{s0}$ is the average value: $V_{s0} = \frac{7.5 + 2.5}{2} = 5$ V.
-    The AC component is a square wave alternating between $+2.5$ V and $-2.5$ V. Its Fourier series is:
-    $$v_{s,ac}(t) = \frac{4(2.5)}{\pi} \sum_{n=1,3,5...}^{\infty} \frac{1}{n} \sin(n\pi t) = \sum_{n=odd}^{\infty} \frac{10}{n\pi} \sin(n\pi t)$$
-    $$v_s(t) = 5 + \sum_{n=1,3,5...}^{\infty} \frac{10}{n\pi} \sin(n\pi t) \text{ V}$$
 
-2.  **Network Transfer Function $H(\omega) = \frac{I_0(\omega)}{V_s(\omega)}$:**
-    Circuit values: $R_1 = 20 \Omega$, $C = 0.05$ F, $R_2 = 40 \Omega$, $L = 0.1$ H.
-    The impedance of the parallel combination ($Z_p$) is:
-    $$Z_p = \frac{Z_C Z_{RL}}{Z_C + Z_{RL}} = \frac{(1/j\omega C)(R_2 + j\omega L)}{1/j\omega C + R_2 + j\omega L} = \frac{R_2 + j\omega L}{1 + j\omega R_2 C - \omega^2 LC}$$
-    By current division and Ohm's law, the current $I_0$ through the $R_2-L$ branch is:
-    $$I_0(\omega) = \frac{V_s(\omega)}{R_1 + Z_p} \cdot \frac{Z_C}{Z_C + Z_{RL}} = V_s(\omega) \frac{1}{R_1 \frac{Z_C + Z_{RL}}{Z_C} + Z_{RL}} = V_s(\omega) \frac{1}{R_1(1 + j\omega R_2 C - \omega^2 LC) + R_2 + j\omega L}$$
-    Substitute the numerical values:
-    $$R_1 + R_2 = 20 + 40 = 60$$
-    $$R_1 L C = 20 \times 0.1 \times 0.05 = 0.1$$
-    $$R_1 R_2 C + L = 20 \times 40 \times 0.05 + 0.1 = 40 + 0.1 = 40.1$$
-    $$H(\omega) = \frac{1}{(60 - 0.1\omega^2) + j\omega(40.1)}$$
+#### Input Voltage Waveform & Fourier Series Analysis
 
-3.  **Amplitude Spectrum Calculation:**
-    The current amplitude for each harmonic $n$ is $|I_0(n\omega_0)| = |H(n\pi)| \cdot |V_{sn}|$.
+- **Waveform Characteristics**:
+    
+      
+    - Period: $T = 2\text{ s}$
+        
+          
+        
+          
+        
+    - Fundamental angular frequency:
+        
+          
+        
+        $$\omega_0 = \frac{2\pi}{T} = \frac{2\pi}{2} = \pi\text{ rad/s}$$
+        
+    - Pulse definition over one fundamental period $0 \le t < 2$:
+        
+          
+        
+        $$v_s(t) = \begin{cases} 7.5\text{ V}, & 0 \le t < 1 \\ 2.5\text{ V}, & 1 \le t < 2 \end{cases}$$
+        
+          
+        
+- **Trigonometric Fourier Series Representation**:
+    
+      
+    
+    $$v_s(t) = a_0 + \sum_{n=1}^{\infty} \left[ a_n \cos(n\omega_0 t) + b_n \sin(n\omega_0 t) \right]$$
+    
+- **DC Component ($a_0$)**:
+    
+      
+    
+    $$a_0 = \frac{1}{T} \int_0^T v_s(t)\,dt = \frac{1}{2}\left[\int_0^1 7.5\,dt + \int_1^2 2.5\,dt\right] = \frac{1}{2}(7.5 + 2.5) = 5\text{ V}$$
+    
+- **AC Coefficients ($a_n, b_n$)**:
+    
+      
+    - Cosine coefficients ($a_n$):
+        
+          
+        
+        $$a_n = \frac{2}{2}\left[\int_0^1 7.5\cos(n\pi t)\,dt + \int_1^2 2.5\cos(n\pi t)\,dt\right] = \left[\frac{7.5\sin(n\pi t)}{n\pi}\right]_0^1 + \left[\frac{2.5\sin(n\pi t)}{n\pi}\right]_1^2 = 0$$
+        
+    - Sine coefficients ($b_n$):
+        
+          
+        
+        $$b_n = \frac{2}{2}\left[\int_0^1 7.5\sin(n\pi t)\,dt + \int_1^2 2.5\sin(n\pi t)\,dt\right]$$
+        
+        $$b_n = \left[-\frac{7.5\cos(n\pi t)}{n\pi}\right]_0^1 + \left[-\frac{2.5\cos(n\pi t)}{n\pi}\right]_1^2$$
+        
+        $$b_n = \frac{7.5(1 - \cos(n\pi)) - 2.5(\cos(2n\pi) - \cos(n\pi))}{n\pi} = \frac{5(1 - \cos(n\pi))}{n\pi}$$
+        
+        - For even $n$ ($n = 2, 4, 6, \dots$): $\cos(n\pi) = 1 \implies b_n = 0$
+            
+              
+            
+        - For odd $n$ ($n = 1, 3, 5, \dots$): $\cos(n\pi) = -1 \implies b_n = \frac{10}{n\pi}\text{ V}$
+            
+              
+            
+- **Compact Form of Input Voltage**:
+    
+      
+    - Using the identity $\sin(\theta) = \cos(\theta - 90^\circ)$:
+        
+          
+        
+        $$v_s(t) = 5 + \sum_{\substack{n=1 \\ n\text{ odd}}}^{\infty} \frac{10}{n\pi} \cos(n\pi t - 90^\circ)\text{ V}$$
+        
+    - In phasor form:
+        
+          
+        - DC: $\mathbf{V}_{s,0} = 5\text{ V}$
+            
+              
+            
+        - Harmonics (for odd $n$): $\mathbf{V}_{s,n} = \frac{10}{n\pi}\angle -90^\circ = -j\frac{10}{n\pi}\text{ V}$
+            
+              
+            
 
-    *   **DC Component ($n=0$, $\omega = 0$):**
-        $|H(0)| = \frac{1}{60}$
-        $I_{0,0} = 5 \text{ V} \times \frac{1}{60} = \frac{1}{12} \text{ A} \approx 0.0833 \text{ A}$
+#### Circuit Transfer Function & Harmonic Response
 
-    *   **1st Harmonic ($n=1$, $\omega = \pi \approx 3.14$):**
-        $|V_{s,1}| = \frac{10}{\pi} \approx 3.183$ V
-        $|H(\pi)| = \frac{1}{\sqrt{(60 - 0.1\pi^2)^2 + (40.1\pi)^2}} = \frac{1}{\sqrt{59.01^2 + 125.98^2}} \approx \frac{1}{139.1} \approx 0.00719$
-        $|I_{0,1}| = 3.183 \times 0.00719 \approx 0.0229 \text{ A}$
+- **Circuit Parameters**:
+    
+      
+    - $R_1 = 20\ \Omega$
+        
+          
+        
+          
+        
+    - $C = 50\text{ mF} = 0.05\text{ F}$
+        
+          
+        
+          
+        
+    - $R_2 = 40\ \Omega$
+        
+          
+        
+          
+        
+    - $L = 100\text{ mH} = 0.1\text{ H}$
+        
+          
+        
+          
+        
+- **Frequency-Domain Branch Impedances**:
+    
+      
+    - Capacitor: $Z_C(s) = \frac{1}{sC} = \frac{1}{0.05s} = \frac{20}{s}$
+        
+          
+        
+    - Load branch: $Z_{RL}(s) = R_2 + sL = 40 + 0.1s$
+        
+          
+        
+    - Parallel combination:
+        
+          
+        
+        $$Z_p(s) = Z_C \parallel Z_{RL} = \frac{\frac{20}{s}(40 + 0.1s)}{\frac{20}{s} + 40 + 0.1s} = \frac{2(40 + 0.1s)}{0.01s^2 + 4s + 2}$$
+        
+- **Transfer Function $H(s) = \frac{\mathbf{I}_0(s)}{\mathbf{V}_s(s)}$**:
+    
+      
+    - The voltage across the parallel branch is:
+        
+          
+        
+        $$\mathbf{V}_p(s) = \mathbf{V}_s(s) \cdot \frac{Z_p(s)}{R_1 + Z_p(s)}$$
+        
+    - The output current is:
+        
+          
+        
+        $$\mathbf{I}_0(s) = \frac{\mathbf{V}_p(s)}{Z_{RL}(s)} = \frac{\mathbf{V}_s(s)}{Z_{RL}(s)} \cdot \frac{\frac{Z_C Z_{RL}}{Z_C + Z_{RL}}}{R_1 + \frac{Z_C Z_{RL}}{Z_C + Z_{RL}}} = \mathbf{V}_s(s) \cdot \frac{Z_C}{R_1(Z_C + Z_{RL}) + Z_C Z_{RL}}$$
+        
+    - Substituting components with $s = j\omega$:
+        
+          
+        
+        $$H(j\omega) = \frac{\frac{1}{j\omega C}}{R_1\left(R_2 + j\omega L + \frac{1}{j\omega C}\right) + \frac{R_2 + j\omega L}{j\omega C}} = \frac{1}{R_1 + R_2 + j\omega (L + R_1 R_2 C) - \omega^2 R_1 L C}$$
+        
+    - Evaluating the numerical coefficients:
+        
+          
+        - Real DC term: $R_1 + R_2 = 20 + 40 = 60\ \Omega$
+            
+              
+            
+        - Inductive/capacitive cross term: $L + R_1 R_2 C = 0.1 + (20)(40)(0.05) = 0.1 + 40 = 40.1$
+            
+              
+            
+        - Quadratic term: $R_1 L C = (20)(0.1)(0.05) = 0.1$
+            
+              
+            
+            $$H(j\omega) = \frac{1}{(60 - 0.1\omega^2) + j 40.1\omega}\ \Omega^{-1}$$
+            
 
-    *   **3rd Harmonic ($n=3$, $\omega = 3\pi \approx 9.42$):**
-        $|V_{s,3}| = \frac{10}{3\pi} \approx 1.061$ V
-        $|H(3\pi)| = \frac{1}{\sqrt{(60 - 0.1(9\pi^2))^2 + (40.1(3\pi))^2}} = \frac{1}{\sqrt{51.12^2 + 377.9^2}} \approx \frac{1}{381.4} \approx 0.00262$
-        $|I_{0,3}| = 1.061 \times 0.00262 \approx 0.0028 \text{ A}$
+#### Harmonic Output Calculations
 
-    *   **5th Harmonic ($n=5$, $\omega = 5\pi \approx 15.71$):**
-        $|V_{s,5}| = \frac{10}{5\pi} \approx 0.637$ V
-        $|H(5\pi)| = \frac{1}{\sqrt{(60 - 0.1(25\pi^2))^2 + (40.1(5\pi))^2}} = \frac{1}{\sqrt{35.3^2 + 629.9^2}} \approx \frac{1}{630.9} \approx 0.00158$
-        $|I_{0,5}| = 0.637 \times 0.00158 \approx 0.0010 \text{ A}$
+- **DC Output ($n = 0, \omega = 0$)**:
+    
+      
+    - At DC, the capacitor behaves as an open circuit and the inductor behaves as a short circuit:
+        
+          
+        
+        $$H(0) = \frac{1}{60}\text{ S} \approx 0.01667\text{ S}$$
+        
+        $$I_{0,0} = \mathbf{V}_{s,0} \cdot H(0) = \frac{5}{60} = \frac{1}{12}\text{ A} \approx 0.0833\text{ A}\ (83.3\text{ mA})$$
+        
+        $$\theta_0 = 0^\circ$$
+        
+- **First Harmonic ($n = 1, \omega_1 = \pi \approx 3.1416\text{ rad/s}$)**:
+    
+      
+    - Input phasor: $\mathbf{V}_{s,1} = \frac{10}{\pi}\angle -90^\circ \approx 3.1831\angle -90^\circ\text{ V}$
+        
+          
+        
+    - Denominator of $H(j\pi)$:
+        
+          
+        - $\text{Re} = 60 - 0.1(\pi^2) \approx 60 - 0.9870 = 59.013$
+            
+              
+            
+        - $\text{Im} = 40.1(\pi) \approx 125.976$
+            
+              
+            
+        - Magnitude: $\vert{}Z_{\text{eff}}\vert{} = \sqrt{59.013^2 + 125.976^2} = \sqrt{3482.5 + 15870} \approx 139.11\ \Omega$
+            
+              
+            
+        - Phase: $\theta_Z = \arctan\left(\frac{125.976}{59.013}\right) \approx 64.90^\circ$
+            
+              
+            
+    - Transfer function: $H(j\pi) \approx \frac{1}{139.11}\angle -64.90^\circ \approx 0.007188\angle -64.90^\circ\text{ S}$
+        
+          
+        
+    - Output current phasor:
+        
+          
+        
+        $$\mathbf{I}_{0,1} = (3.1831\angle -90^\circ) \cdot (0.007188\angle -64.90^\circ) \approx 0.02288\angle -154.90^\circ\text{ A}$$
+        
+        $$\vert{}\mathbf{I}_{0,1}\vert{} \approx 22.88\text{ mA}, \quad \angle \mathbf{I}_{0,1} \approx -154.90^\circ$$
+        
+- **Third Harmonic ($n = 3, \omega_3 = 3\pi \approx 9.4248\text{ rad/s}$)**:
+    
+      
+    - Input phasor: $\mathbf{V}_{s,3} = \frac{10}{3\pi}\angle -90^\circ \approx 1.0610\angle -90^\circ\text{ V}$
+        
+          
+        
+    - Denominator of $H(j 3\pi)$:
+        
+          
+        - $\text{Re} = 60 - 0.1(9\pi^2) \approx 60 - 8.883 = 51.117$
+            
+              
+            
+        - $\text{Im} = 40.1(3\pi) \approx 377.93$
+            
+              
+            
+        - Magnitude: $\vert{}Z_{\text{eff}}\vert{} = \sqrt{51.117^2 + 377.93^2} \approx 381.37\ \Omega$
+            
+              
+            
+        - Phase: $\theta_Z = \arctan\left(\frac{377.93}{51.117}\right) \approx 82.29^\circ$
+            
+              
+            
+    - Transfer function: $H(j 3\pi) \approx \frac{1}{381.37}\angle -82.29^\circ \approx 0.002622\angle -82.29^\circ\text{ S}$
+        
+          
+        
+    - Output current phasor:
+        
+          
+        
+        $$\mathbf{I}_{0,3} = (1.0610\angle -90^\circ) \cdot (0.002622\angle -82.29^\circ) \approx 0.00278\angle -172.29^\circ\text{ A}$$
+        
+        $$\vert{}\mathbf{I}_{0,3}\vert{} \approx 2.78\text{ mA}, \quad \angle \mathbf{I}_{0,3} \approx -172.29^\circ$$
+        
+- **Fifth Harmonic ($n = 5, \omega_5 = 5\pi \approx 15.708\text{ rad/s}$)**:
+    
+      
+    - Input phasor: $\mathbf{V}_{s,5} = \frac{10}{5\pi}\angle -90^\circ \approx 0.6366\angle -90^\circ\text{ V}$
+        
+          
+        
+    - Denominator of $H(j 5\pi)$:
+        
+          
+        - $\text{Re} = 60 - 0.1(25\pi^2) \approx 60 - 24.674 = 35.326$
+            
+              
+            
+        - $\text{Im} = 40.1(5\pi) \approx 629.89$
+            
+              
+            
+        - Magnitude: $\vert{}Z_{\text{eff}}\vert{} = \sqrt{35.326^2 + 629.89^2} \approx 630.88\ \Omega$
+            
+              
+            
+        - Phase: $\theta_Z = \arctan\left(\frac{629.89}{35.326}\right) \approx 86.79^\circ$
+            
+              
+            
+    - Transfer function: $H(j 5\pi) \approx 0.001585\angle -86.79^\circ\text{ S}$
+        
+          
+        
+    - Output current phasor:
+        
+          
+        
+        $$\mathbf{I}_{0,5} = (0.6366\angle -90^\circ) \cdot (0.001585\angle -86.79^\circ) \approx 0.00101\angle -176.79^\circ\text{ A}$$
+        
+        $$\vert{}\mathbf{I}_{0,5}\vert{} \approx 1.01\text{ mA}, \quad \angle \mathbf{I}_{0,5} \approx -176.79^\circ$$
+        
+- **Summary Table of Spectrum Line Values**:
+    
+      
+    
 
-    **Frequency Spectrum Plot:** The frequency spectrum graph will have discrete spikes located at $\omega = 0, \pi, 3\pi, 5\pi...$ rad/s. The amplitudes drop rapidly: a strong DC spike at $\approx 0.083$ A, a smaller 1st harmonic at $\approx 0.023$ A, and virtually negligible 3rd and 5th harmonics at $\approx 0.0028$ A and $0.0010$ A.
+|**Harmonic (n)**|**Angular Freq (ω rad/s)**|**Cyclic Freq (f Hz)**|**Amplitude ∣I0,n​∣ (mA)**|**Phase ∠I0,n​**|
+|---|---|---|---|---|
+|**0 (DC)**|$0$|$0$|**$83.33$**|$0^\circ$|
+|**1**|$\pi \approx 3.14$|$0.5$|**$22.88$**|$-154.90^\circ$|
+|**2**|$2\pi \approx 6.28$|$1.0$|**$0$**|—|
+|**3**|$3\pi \approx 9.42$|$1.5$|**$2.78$**|$-172.29^\circ$|
+|**4**|$4\pi \approx 12.57$|$2.0$|**$0$**|—|
+|**5**|$5\pi \approx 15.71$|$2.5$|**$1.01$**|$-176.79^\circ$|
+
 
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series), Section 17.6 (Exponential Fourier Series/Amplitude Spectrum), pg. 786-788.*
 
@@ -285,7 +553,7 @@ Based on the provided document, here are the step-by-step solutions for the next
 ### 5. Page 21, Q.5(c): Find $v_0(t)$ in the circuit given in Fig. Q. 5(c) for $v_i(t) = 2e^{-3t}u(t)$ using Fourier Transform.
 
 ![[Pasted image 20260727114201.png]]
-
+![[Pasted image 20261004130537.png]]
 **Problem Statement:**
 Find the output voltage $v_0(t)$ across the capacitor in the provided RC low-pass filter circuit using the Fourier transform method. 
 *From Fig. Q. 5(c), we observe a series resistor $R = 2\ \Omega$ and a shunt capacitor $C = 1\text{ F}$.*
@@ -331,32 +599,6 @@ $$v_0(t) = 0.4(e^{-0.5t} - e^{-3t})u(t)\text{ V}$$
 
 ![[Pasted image 20260727114240.png]]
 
-**Solution for (i): Fourier Series of the Sawtooth Wave**
-From the graph $x(t)$, the sawtooth wave has a period of $T = 1\text{ s}$ and ranges from $-1$ to $1$. 
-The fundamental frequency is $\omega_0 = \frac{2\pi}{T} = 2\pi\text{ rad/s}$.
-Over one period $t \in [0, 1)$, the mathematical description of the line is:
-$$x(t) = 2t - 1$$
-We find the trigonometric Fourier series coefficients ($a_0, a_n, b_n$):
-*   **DC Component ($a_0$):** Since the triangle is symmetrical above and below the x-axis, the average value is $0$. ($a_0 = 0$).
-*   **Cosine Coefficients ($a_n$):** 
-    $$a_n = \frac{2}{T}\int_{0}^{T} x(t)\cos(n\omega_0t)dt = 2\int_{0}^{1} (2t - 1)\cos(2\pi n t)dt = 0$$ (Due to shifted odd symmetry).
-*   **Sine Coefficients ($b_n$):**
-    $$b_n = \frac{2}{T}\int_{0}^{T} x(t)\sin(n\omega_0t)dt = 2\int_{0}^{1} (2t - 1)\sin(2\pi n t)dt$$
-    Evaluating this integral using integration by parts gives $b_n = -\frac{2}{n\pi}$.
-
-Therefore, the Fourier series expansion of the input is:
-$$x(t) = \sum_{n=1}^{\infty} \left(-\frac{2}{n\pi}\right) \sin(2n\pi t)$$
-
-**Solution for (ii): Determine the Output of the Filter**
-The filter's magnitude response $|H(\omega)|$ is $0$ for $\omega < 10$ and $1$ for $\omega \geq 10$. This acts as an ideal high-pass filter with a cutoff frequency $\omega_c = 10\text{ rad/s}$. (Assuming zero phase shift).
-We must determine which harmonics of the input signal pass through the filter. The harmonic frequencies are $\omega_n = n\omega_0 = 2\pi n \approx 6.28n\text{ rad/s}$.
-*   $n=1: \omega_1 = 2\pi \approx 6.28\text{ rad/s} < 10$ **(Blocked)**
-*   $n=2: \omega_2 = 4\pi \approx 12.57\text{ rad/s} > 10$ **(Passed)**
-*   $n \geq 2:$ All higher harmonics are strictly greater than 10 rad/s and are **passed**.
-
-The output $y(t)$ is simply the input Fourier series minus the blocked 1st harmonic:
-$$y(t) = \sum_{n=2}^{\infty} \left(-\frac{2}{n\pi}\right) \sin(2n\pi t)$$
-
 *Ans related location: Sadiku Textbook, Chapter 17 (The Fourier Series), Section 17.8.2 (Filters), pg. 797-799.*
 
 ***
@@ -393,7 +635,8 @@ Rationalizing the complex fractions ($\frac{1}{1-j} = \frac{1+j}{2}$ and $\frac{
 $$V_0(\omega) = j\pi \left[ \frac{1+j}{2}\delta(\omega + 1) - \frac{1-j}{2}\delta(\omega - 1) \right]$$
 $$V_0(\omega) = \frac{\pi}{2} \left[ (j-1)\delta(\omega + 1) - (j+1)\delta(\omega - 1) \right]$$
 Rearranging into standard Fourier pairs for sine and cosine:
-$$V_0(\omega) = -\frac{\pi}{2}[\delta(\omega - 1) + \delta(\omega + 1)] - \frac{j\pi}{2}[\delta(\omega + 1) - \delta(\omega - 1)]$$
+$$V_0(\omega) = -\frac{\pi}{2}[\delta(\omega - 1) + \delta(\omega + 1)] 
++ \frac{j\pi}{2}[\delta(\omega + 1) - \delta(\omega - 1)]$$
 Taking the inverse Fourier Transform yields:
 $$v_0(t) = -\frac{1}{2}\cos(t) + \frac{1}{2}\sin(t)\text{ V}$$
 
@@ -451,7 +694,6 @@ This is a step response problem. For $t > 0$, the circuit is driven by a constan
 
 *Ans related location: Sadiku Textbook, Chapter 8 (Second-Order Circuits), Section 8.5 (Step Response of a Series RLC Circuit), pg. 331-336.*
 
-Based on the provided document, here are the step-by-step solutions for the next four questions (Questions 9 to 12).
 
 ### 9. Page 11, Q.2(a): The responses of a series RLC circuit are $v_c(t) = 30 - 10e^{-20t} + 30e^{-10t} V$; $i_L(t) = 40e^{-20t} - 60e^{-10t} mA$; where $v_c(t)$ and $i_L(t)$ are the capacitor voltage and inductor current respectively. Determine the values of R, L, and C.
 

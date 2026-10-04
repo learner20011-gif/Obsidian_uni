@@ -328,19 +328,19 @@ $$\mathcal{L}\left\{\frac{d^2 x}{dt^2}\right\} = s^2 X(s) = \sum A_i e^{-s t_i} 
 
 ### 5.2. Fundamental Fourier Transform Pairs
 
-| Signal $x(t)$ | Transform $X(\omega)$ | Notes / Derivation Trick |
-| :--- | :--- | :--- |
-| **Impulse $\delta(t)$** | $1$ | Sifting integral |
-| **DC Constant $1$** | $2\pi \delta(\omega)$ | Duality from $\delta(t) \iff 1$ |
-| **Complex Exp $e^{j\omega_0 t}$** | $2\pi \delta(\omega - \omega_0)$ | Frequency shift of DC |
-| **Cosine $\cos(\omega_0 t)$** | $\pi [\delta(\omega - \omega_0) + \delta(\omega + \omega_0)]$ | Euler's identity |
-| **Sine $\sin(\omega_0 t)$** | $\frac{\pi}{j}[\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$ | Euler's identity |
-| **Signum $\text{sgn}(t)$** | $\frac{2}{j\omega}$ | Limit of $e^{-a\|t\|}\text{sgn}(t)$ as $a \to 0$ |
-| **Unit Step $u(t)$** | $\pi \delta(\omega) + \frac{1}{j\omega}$ | $u(t) = \frac{1}{2} + \frac{1}{2}\text{sgn}(t)$ |
-| **Causal Exp $e^{-at}u(t) \; (a>0)$** | $\frac{1}{a + j\omega}$ | Direct integration |
-| **Double Exp $e^{-a\|t\|} \; (a>0)$** | $\frac{2a}{a^2 + \omega^2}$ | Sum of causal and anti-causal |
-| **Gate / Rect $\Pi(t/\tau)$** | $\tau\,\text{sinc}\left(\frac{\omega\tau}{2}\right) = \tau \frac{\sin(\omega\tau/2)}{\omega\tau/2}$ | Sinc spectrum |
-| **Bandlimited Sinc $\frac{W}{\pi}\text{sinc}(Wt)$** | $\text{rect}\left(\frac{\omega}{2W}\right)$ | Duality of rectangular pulse |
+| Signal $x(t)$                                       | Transform $X(\omega)$                                                                               | Notes / Derivation Trick                         |
+| :-------------------------------------------------- | :-------------------------------------------------------------------------------------------------- | :----------------------------------------------- |
+| **Impulse $\delta(t)$**                             | $1$                                                                                                 | Sifting integral                                 |
+| **DC Constant $1$**                                 | $2\pi \delta(\omega)$                                                                               | Duality from $\delta(t) \iff 1$                  |
+| **Complex Exp $e^{j\omega_0 t}$**                   | $2\pi \delta(\omega - \omega_0)$                                                                    | Frequency shift of DC                            |
+| **Cosine $\cos(\omega_0 t)$**                       | $\pi [\delta(\omega - \omega_0) + \delta(\omega + \omega_0)]$                                       | Euler's identity                                 |
+| **Sine $\sin(\omega_0 t)$**                         | $\frac{\pi}{j}[\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$                              | Euler's identity                                 |
+| **Signum $\text{sgn}(t)$**                          | $\frac{2}{j\omega}$                                                                                 | Limit of $e^{-a\|t\|}\text{sgn}(t)$ as $a \to 0$ |
+| **Unit Step $u(t)$**                                | $\pi \delta(\omega) + \frac{1}{j\omega}$                                                            | $u(t) = \frac{1}{2} + \frac{1}{2}\text{sgn}(t)$  |
+| **Causal Exp $e^{-at}u(t) \; (a>0)$**               | $\frac{1}{a + j\omega}$                                                                             | Direct integration                               |
+| **Double Exp $e^{-a\|t\|} \; (a>0)$**               | $\frac{2a}{a^2 + \omega^2}$                                                                         | Sum of causal and anti-causal                    |
+| **Gate / Rect $\Pi(t/\tau)$**                       | $\tau\,\text{sinc}\left(\frac{\omega\tau}{2}\right) = \tau \frac{\sin(\omega\tau/2)}{\omega\tau/2}$ | Sinc spectrum                                    |
+| **Bandlimited Sinc $\frac{W}{\pi}\text{sinc}(Wt)$** | $\text{rect}\left(\frac{\omega}{2W}\right)$                                                         | Duality of rectangular pulse                     |
 
 ---
 
@@ -424,14 +424,15 @@ $$f(t) = \sum_{n=-\infty}^{\infty} c_n e^{j n \omega_0 t}$$
 
 ### 6.2. Waveform Symmetries Table
 
-| Symmetry | Definition | Eliminated Terms | Surviving Coefficients | Integration Range |
-| :--- | :--- | :--- | :--- | :--- |
-| **Even** | $f(-t) = f(t)$ | $b_n = 0$ | $a_0, a_n$ | $\frac{4}{T}\int_0^{T/2} f(t)\cos(n\omega_0 t)dt$ |
-| **Odd** | $f(-t) = -f(t)$ | $a_0 = 0, a_n = 0$ | $b_n$ only | $\frac{4}{T}\int_0^{T/2} f(t)\sin(n\omega_0 t)dt$ |
-| **Half-Wave (HWS)** | $f(t \pm T/2) = -f(t)$ | $a_0 = 0$, Even harmonics ($a_{\text{even}} = b_{\text{even}} = 0$) | $a_n, b_n$ for **odd $n$ only** | $\frac{4}{T}\int_0^{T/2} f(t)\cdot (\dots)dt$ |
-| **Even HWS** | Even + HWS | $b_n = 0$, all even $n$ | $a_n$ for **odd $n$ only** | $\frac{8}{T}\int_0^{T/4} f(t)\cos(n\omega_0 t)dt$ |
-| **Odd HWS** | Odd + HWS | $a_n = 0$, all even $n$ | $b_n$ for **odd $n$ only** | $\frac{8}{T}\int_0^{T/4} f(t)\sin(n\omega_0 t)dt$ |
-| **Quarter-Wave** | HWS + Symmetry around $T/4$ | All even $n$ | Single term ($a_n$ or $b_n$, odd $n$) | Spans $[0, T/4]$ only |
+| Symmetry            | Definition                  | Eliminated Terms                                                    | Surviving Coefficients                | Integration Range                                 |
+| :------------------ | :-------------------------- | :------------------------------------------------------------------ | :------------------------------------ | :------------------------------------------------ |
+| **Even**            | $f(-t) = f(t)$              | $b_n = 0$                                                           | $a_0, a_n$                            | $\frac{4}{T}\int_0^{T/2} f(t)\cos(n\omega_0 t)dt$ |
+| **Odd**             | $f(-t) = -f(t)$             | $a_0 = 0, a_n = 0$                                                  | $b_n$ only                            | $\frac{4}{T}\int_0^{T/2} f(t)\sin(n\omega_0 t)dt$ |
+| **Half-Wave (HWS)** | $f(t \pm T/2) = -f(t)$      | $a_0 = 0$, Even harmonics ($a_{\text{even}} = b_{\text{even}} = 0$) | $a_n, b_n$ for **odd $n$ only**       | $\frac{4}{T}\int_0^{T/2} f(t)\cdot (\dots)dt$     |
+| **Even HWS**        | Even + HWS                  | $b_n = 0$, all even $n$                                             | $a_n$ for **odd $n$ only**            | $\frac{8}{T}\int_0^{T/4} f(t)\cos(n\omega_0 t)dt$ |
+| **Odd HWS**         | Odd + HWS                   | $a_n = 0$, all even $n$                                             | $b_n$ for **odd $n$ only**            | $\frac{8}{T}\int_0^{T/4} f(t)\sin(n\omega_0 t)dt$ |
+| **Quarter-Wave**    | HWS + Symmetry around $T/4$ | All even $n$                                                        | Single term ($a_n$ or $b_n$, odd $n$) | Spans $[0, T/4]$ only                             |
+|                     |                             |                                                                     |                                       |                                                   |
 
 ---
 
