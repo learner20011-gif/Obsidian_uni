@@ -1223,12 +1223,10 @@ Therefore, the capacitance must be $2\text{ F}$ to produce a critically damped r
 
 ### **First order and second order switching circuit**
 
-### Question
-
-In the circuit shown in Figure 16.10(a), the switch moves from position $a$ to position $b$ at $t = 0$. Find the current $i(t)$ for $t > 0$.
+### Question In the circuit shown in Figure 16.10(a), the switch moves from position $a$ to position $b$ at $t = 0$. Find the current $i(t)$ for $t > 0$.
 
 ---
-
+![[SmartSelect_20261005_030828_Xodo.jpg]]
 #### Solution
 
 The circuit response for $t \ge 0$ is **$i(t) = \left(I_0 - \frac{V_0}{R}\right)e^{-t/\tau} + \frac{V_0}{R}$**, where $\tau = \frac{L}{R}$.
