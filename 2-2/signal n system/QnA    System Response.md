@@ -3537,40 +3537,100 @@ To sketch the current waveform $i(t)$, set up a graph with Time ($t$ in seconds)
 
 **Solution:**
 
-**Step 1: Analyze the Circuit and Transfer Function**
-The circuit consists of a source $v_s(t)$ in series with a $1\ \Omega$ resistor, followed by a parallel combination of a $C = 1/8\text{ F}$ capacitor and the bulb model (an inductor $L$ in series with a $0.4\text{ V}$ source).
-To find the characteristic equation governing the transient behavior (overshoot), we set the independent sources to zero. The circuit becomes a parallel RLC circuit where:
-*   $R = 1\ \Omega$
-*   $C = 1/8\text{ F}$
-*   $L$ is unknown.
+#### Circuit Simplification (Norton / Thévenin Equivalent)
 
-For a parallel RLC circuit, the characteristic parameters are:
-*   Damping factor: $\alpha = \frac{1}{2RC} = \frac{1}{2(1)(1/8)} = 4\text{ Np/s}$
-*   Resonant frequency: $\omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{L/8}} = \sqrt{\frac{8}{L}}\text{ rad/s}$
+- The source $0.4u(t)\text{ A}$ in parallel with the first $1\ \Omega$ resistor forms a Norton source connected in series with the second $1\ \Omega$ resistor.
+    
+      
+    
+- Convert the source and the two $1\ \Omega$ resistors:
+    
+      
+    - Equivalent Thévenin resistance:
+        
+          
+        
+        $$R_{\text{eq}} = 1\ \Omega + 1\ \Omega = 2\ \Omega$$
+        
+    - Equivalent Norton parallel resistance seen by the reactive elements:
+        
+          
+        
+        $$R = 2\ \Omega$$
+        
+- The circuit for $t > 0$ reduces to a standard parallel RLC network across the node:
+    
+      
+    - Parallel equivalent resistance: $R = 2\ \Omega$
+        
+          
+        
+    - Capacitance: $C = \frac{1}{8}\text{ F} = 0.125\text{ F}$
+        
+          
+        
+          
+        
+    - Inductance: $L$ (Bulb)
+        
+          
+        
 
-**Step 2: Relate Overshoot to Damping Ratio ($\zeta$)**
-The damping ratio is defined as $\zeta = \frac{\alpha}{\omega_0}$.
-$$\zeta = \frac{4}{\sqrt{8/L}} = \frac{4\sqrt{L}}{\sqrt{8}} = \frac{4\sqrt{L}}{2\sqrt{2}} = \sqrt{2L}$$
-The percentage overshoot ($\%OS$) for a second-order system is given by:
-$$\%OS = 100 \times e^{-\frac{\zeta \pi}{\sqrt{1 - \zeta^2}}}$$
-We require the overshoot to be less than 10%:
-$$e^{-\frac{\zeta \pi}{\sqrt{1 - \zeta^2}}} \le 0.1$$
+#### Overshoot Specification and Damping Ratio
 
-**Step 3: Solve for $\zeta$ and L**
-Take the natural logarithm of both sides:
-$$-\frac{\zeta \pi}{\sqrt{1 - \zeta^2}} \le \ln(0.1) \approx -2.3026$$
-$$\frac{\zeta \pi}{\sqrt{1 - \zeta^2}} \ge 2.3026$$
-Square both sides:
-$$\frac{\zeta^2 \pi^2}{1 - \zeta^2} \ge (2.3026)^2 \approx 5.3019$$
-$$\zeta^2 \pi^2 \ge 5.3019 - 5.3019\zeta^2$$
-$$\zeta^2 (\pi^2 + 5.3019) \ge 5.3019$$
-Using $\pi^2 \approx 9.8696$:
-$$\zeta^2 (15.1715) \ge 5.3019 \implies \zeta^2 \ge 0.34946 \implies \zeta \ge 0.5911$$
+- The maximum percentage overshoot ($M_p$) for a second-order underdamped system is:
+    
+      
+    
+    $$M_p = e^{-\frac{\pi \zeta}{\sqrt{1 - \zeta^2}}} \times 100\%$$
+    
+- For an overshoot of less than $10\%$ ($M_p < 0.10$):
+    
+      
+    
+    $$-\frac{\pi \zeta}{\sqrt{1 - \zeta^2}} < \ln(0.10) \approx -2.3026$$
+    
+    $$\frac{\pi \zeta}{\sqrt{1 - \zeta^2}} > 2.3026 \implies \frac{\pi^2 \zeta^2}{1 - \zeta^2} > (2.3026)^2 \approx 5.302$$
+    
+    $$\zeta^2 > \frac{5.302}{\pi^2 + 5.302} = \frac{5.302}{9.8696 + 5.302} \approx 0.3495 \implies \zeta > 0.5912$$
+    
+- To rise as rapidly as possible while satisfying the condition $M_p \le 10\%$, choose the boundary condition:
+    
+      
+    
+    $$\zeta \approx 0.5912 \quad (\approx 0.6)$$
+    
 
-Since $\zeta = \sqrt{2L}$:
-$$\sqrt{2L} \ge 0.5911 \implies 2L \ge 0.34946 \implies L \ge 0.1747\text{ H}$$
-To ensure the overshoot is less than 10%, the inductance must be selected such that $L \ge 0.175\text{ H}$.
+#### Calculation of Inductance $L$
 
+- For a parallel RLC network:
+    
+      
+    
+    $$\alpha = \frac{1}{2RC} = \frac{1}{2(2)\left(\frac{1}{8}\right)} = \frac{1}{\frac{1}{2}} = 2\text{ Np/s}$$
+    
+    $$\omega_0 = \frac{1}{\sqrt{LC}}$$
+    
+- Express the damping ratio $\zeta$:
+    
+      
+    
+    $$\zeta = \frac{\alpha}{\omega_0} = \alpha \sqrt{LC} = 2\sqrt{L \cdot \frac{1}{8}} = 2\sqrt{\frac{L}{8}} = \sqrt{\frac{L}{2}}$$
+    
+- Setting $\zeta \ge 0.5912$:
+    
+      
+    
+    $$\sqrt{\frac{L}{2}} \ge 0.5912$$
+    
+    $$\frac{L}{2} \ge (0.5912)^2 \approx 0.3495$$
+    
+    $$L \ge 0.699\text{ H} \approx 0.7\text{ H}$$
+    
+
+#### Final Selection
+
+- **$L \approx 0.7\text{ H}$** (or any $L \ge 0.7\text{ H}$ to keep overshoot below $10\%$).
 
 ***
 
@@ -3581,6 +3641,7 @@ To ensure the overshoot is less than 10%, the inductance must be selected such t
 > * **Alexander & Sadiku (5th Ed):** Section 8.11.1, pp. 353–355; Section 13.9.4, p. 598
 > * **B.P. Lathi (3rd Ed):** Section 2.2, pp. 193–196
 
+![[Pasted image 20261005134717.png]]
 
 **Solution:**
 

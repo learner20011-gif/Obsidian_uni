@@ -581,7 +581,9 @@ where $x(t)$ represents current or voltage, $\alpha$ is the damping factor (atte
           
         
         $$\zeta = \frac{\alpha}{\omega_0}$$
-        
+        The maximum percentage overshoot ($M_p$) for a second-order underdamped system is:
+
+$$M_p = e^{-\frac{\pi \zeta}{\sqrt{1 - \zeta^2}}} \times 100\%$$
 - **Quality Factor ($Q$):**
     
       
