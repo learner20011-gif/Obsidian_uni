@@ -4904,6 +4904,247 @@ $$y(t) = \begin{cases} 0, & t < 0 \\ \frac{1}{2}t^2, & 0 \le t \le 1 \\ \frac{1}
       
     
     $$i_o(t) = (1 - e^{-t})u(t) - (1 - e^{-(t - 2)})u(t - 2)\text{ A}$$
+### Problem Statement (Practice Problem 15.12) **Question**: Graphically convolve the two functions $x_1(t)$ and $x_2(t)$ shown in Fig. 15.14.
+    
+ ![[Pasted image 20261005193041.png]]     
+    
+- **Verification**: Verify the result by performing the equivalent operation in the $s$-domain.
+    
+      
+    
+- **Given Signals**:
+    
+      
+    - $x_1(t) = u(t) - u(t - 1)$ (pulse of height $1$ from $t = 0$ to $t = 1$)
+        
+          
+        
+    - $x_2(t) = [u(t) - u(t - 1)] + 2[u(t - 1) - u(t - 2)] = u(t) + u(t - 1) - 2u(t - 2)$
+        
+          
+        
+          
+        - Height $1$ for $0 \le t < 1$
+            
+              
+            
+              
+            
+        - Height $2$ for $1 \le t \le 2$
+            
+              
+            
+              
+            
+
+#### Graphical Convolution Setup
+
+- We evaluate the convolution integral:
+    
+      
+    
+    $$y(t) = x_1(t) * x_2(t) = \int_{-\infty}^{\infty} x_1(t - \lambda) x_2(\lambda) \, d\lambda$$
+    
+- Keep $x_2(\lambda)$ stationary:
+    
+      
+    
+    $$x_2(\lambda) = \begin{cases} 1, & 0 \le \lambda < 1 \\ 2, & 1 \le \lambda \le 2 \\ 0, & \text{otherwise} \end{cases}$$
+    
+      
+    
+- Fold $x_1(\lambda)$ to get $x_1(-\lambda)$ (lying on $[-1, 0]$), then shift by $t$ to obtain $x_1(t - \lambda)$.
+    
+      
+    
+- The sliding pulse $x_1(t - \lambda)$ has height $1$ and spans the interval:
+    
+      
+    
+    $$\lambda \in [t - 1, \, t]$$
+    
+      
+    
+
+#### Case 1: For $t < 0$ (No Overlap)
+
+- The leading edge $t$ has not reached $\lambda = 0$.
+    
+      
+    
+- Since $x_2(\lambda) = 0$ for $\lambda < 0$, there is no overlapping region:
+    
+      
+    
+    $$y(t) = 0, \quad t < 0$$
+    
+      
+    
+
+#### Case 2: For $0 \le t \le 1$ (Overlap with First Section)
+
+- The window $[t - 1, t]$ enters the range $[0, 1]$.
+    
+      
+    
+- The overlap occurs only from $\lambda = 0$ to $\lambda = t$, where $x_2(\lambda) = 1$:
+    
+      
+    
+    $$y(t) = \int_{0}^{t} (1)(1) \, d\lambda = [\lambda]_0^t = t$$
+    
+      
+    
+
+#### Case 3: For $1 \le t \le 2$ (Window Spans Across Both Sections)
+
+- The trailing edge is $t - 1 \ge 0$, and the leading edge is $t \le 2$.
+    
+      
+    
+- The window $[t - 1, t]$ is split at the boundary $\lambda = 1$:
+    
+      
+    - From $\lambda = t - 1$ to $\lambda = 1$, where $x_2(\lambda) = 1$
+        
+          
+        
+          
+        
+    - From $\lambda = 1$ to $\lambda = t$, where $x_2(\lambda) = 2$
+        
+          
+        
+          
+        
+- Evaluating the two regions:
+    
+      
+    
+    $$y(t) = \int_{t - 1}^{1} (1)(1) \, d\lambda + \int_{1}^{t} (1)(2) \, d\lambda$$
+    
+    $$y(t) = [1 - (t - 1)] + 2[t - 1] = (2 - t) + (2t - 2) = t$$
+    
+      
+    
+
+#### Case 4: For $2 \le t \le 3$ (Window Exits the Second Section)
+
+- The trailing edge is $1 \le t - 1 \le 2$, while the leading edge $t > 2$ has moved beyond $x_2(\lambda)$.
+    
+      
+    
+- The overlap is entirely within the second section of $x_2(\lambda)$, spanning from $\lambda = t - 1$ to $\lambda = 2$:
+    
+      
+    
+    $$y(t) = \int_{t - 1}^{2} (1)(2) \, d\lambda = 2[2 - (t - 1)] = 2(3 - t) = 6 - 2t$$
+    
+      
+    
+
+#### Case 5: For $t > 3$ (No Overlap)
+
+- The trailing edge satisfies $t - 1 > 2$ ($t > 3$).
+    
+      
+    
+- The pulse has completely moved past the non-zero region of $x_2(\lambda)$:
+    
+      
+    
+    $$y(t) = 0, \quad t > 3$$
+    
+      
+    
+
+#### Combined Graphical Result
+
+- Combining the intervals (noting that cases 2 and 3 both equal $t$ over $0 \le t \le 2$):
+    
+      
+    
+    $$y(t) = \begin{cases} t, & 0 \le t \le 2 \\ 6 - 2t, & 2 \le t \le 3 \\ 0, & \text{otherwise} \end{cases}$$
+    
+      
+    
+
+#### Verification in the $s$-Domain
+
+- Express $x_1(t)$ and $x_2(t)$ in terms of unit step functions:
+    
+      
+    
+    $$x_1(t) = u(t) - u(t - 1)$$
+    
+      
+    
+    $$x_2(t) = u(t) + u(t - 1) - 2u(t - 2)$$
+    
+      
+    
+- Take their Laplace transforms:
+    
+      
+    
+    $$X_1(s) = \frac{1 - e^{-s}}{s}$$
+    
+    $$X_2(s) = \frac{1 + e^{-s} - 2e^{-2s}}{s}$$
+    
+- Multiply in the $s$-domain:
+    
+      
+    
+    $$Y(s) = X_1(s) X_2(s) = \frac{(1 - e^{-s})(1 + e^{-s} - 2e^{-2s})}{s^2}$$
+    
+- Expand the numerator polynomial:
+    
+      
+    
+    $$(1 - e^{-s})(1 + e^{-s} - 2e^{-2s}) = (1 - e^{-2s}) - 2e^{-2s}(1 - e^{-s}) = 1 - 3e^{-2s} + 2e^{-3s}$$
+    
+- Therefore:
+    
+      
+    
+    $$Y(s) = \frac{1}{s^2} - 3\frac{e^{-2s}}{s^2} + 2\frac{e^{-3s}}{s^2}$$
+    
+- Apply the inverse Laplace transform using $\mathcal{L}^{-1}\left\{\frac{1}{s^2}\right\} = r(t) = t u(t)$:
+    
+      
+    
+    $$y(t) = r(t) - 3r(t - 2) + 2r(t - 3)$$
+    
+    $$y(t) = t u(t) - 3(t - 2) u(t - 2) + 2(t - 3) u(t - 3)$$
+    
+- Verify piecewise values:
+    
+      
+    - For $0 \le t < 2$:
+        
+          
+        
+        $$y(t) = t$$
+        
+          
+        
+    - For $2 \le t < 3$:
+        
+          
+        
+        $$y(t) = t - 3(t - 2) = t - 3t + 6 = 6 - 2t$$
+        
+          
+        
+    - For $t \ge 3$:
+        
+          
+        
+        $$y(t) = t - 3(t - 2) + 2(t - 3) = t - 3t + 6 + 2t - 6 = 0$$
+        
+          
+        
+- The $s$-domain result matches the graphical convolution result.
 ### 68. Page 3, Q.6(b): Using convolution integral, find the response $v_0(t)$ of the following circuit.
 
 ![[Pasted image 20260727120501.png]]
@@ -4997,41 +5238,158 @@ $$v_0(t) = e^{-t}(1 - t)u(t)\text{ V}$$
 > * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
+#### Problem Setup
 
-**Step 1: Express the Signals as Mathematical Functions**
-*   **Signal 1, $x(t)$:** This is a rectangular pulse of amplitude $1$ starting at $t=0$ and ending at $t=1$.
-    $$x(t) = u(t) - u(t - 1)$$
-*   **Signal 2, $h(t)$:** This signal consists of a positive pulse of amplitude $1$ from $t=0$ to $t=1$, immediately followed by a negative pulse of amplitude $-1$ from $t=1$ to $t=2$.
-    $$h(t) = [u(t) - u(t - 1)] - [u(t - 1) - u(t - 2)] = u(t) - 2u(t - 1) + u(t - 2)$$
+- Convolution: $y(t) = x(t) * h(t) = \int_{-\infty}^{\infty} x(t - \lambda) h(\lambda) \, d\lambda$.
+    
+      
+    
+- Given signals:
+    
+      
+    - $x(t) = u(t) - u(t - 1)$ (pulse of width $1$ from $t = 0$ to $1$).
+        
+          
+        
+    - $h(t) = [u(t) - u(t - 1)] - [u(t - 1) - u(t - 2)] = u(t) - 2u(t - 1) + u(t - 2)$.
+        
+          
+        
+- Sliding window: Fold and shift $x(t)$ to obtain $x(t - \lambda)$, which is active for $\lambda \in [t - 1, t]$ with height $1$.
+    
+      
+    
 
-**Step 2: Perform the Convolution $y(t) = x(t) * h(t)$**
-Substitute the expressions into the convolution operator:
-$$y(t) = [u(t) - u(t - 1)] * [u(t) - 2u(t - 1) + u(t - 2)]$$
-Distribute the terms using the property that convolution is linear and shift-invariant ($u(t-a) * u(t-b) = r(t - (a+b))$), where $r(t) = t u(t)$ is the ramp function:
-$$y(t) = u(t)*u(t) - 2u(t)*u(t-1) + u(t)*u(t-2) - u(t-1)*u(t) + 2u(t-1)*u(t-1) - u(t-1)*u(t-2)$$
-Substitute $u(t-a) * u(t-b) = r(t - a - b)$:
-$$y(t) = r(t) - 2r(t - 1) + r(t - 2) - r(t - 1) + 2r(t - 2) - r(t - 3)$$
-Combine like terms:
-$$y(t) = r(t) - 3r(t - 1) + 3r(t - 2) - r(t - 3)$$
+#### Case-by-Case Solution
 
-**Step 3: Define the Piecewise Function**
-To sketch or fully define the output, evaluate the sum of the ramp functions for different time intervals:
-*   **$t < 0$:** All ramp functions are $0$.
+- **For $t < 0$**: No overlap between $[t - 1, t]$ and $[0, 2]$:
+    
+      
+    
     $$y(t) = 0$$
-*   **$0 \le t \le 1$:** Only $r(t)$ is active.
-    $$y(t) = t$$
-*   **$1 \le t \le 2$:** Both $r(t)$ and $r(t-1)$ are active.
-    $$y(t) = t - 3(t - 1) = t - 3t + 3 = -2t + 3$$
-*   **$2 \le t \le 3$:** $r(t)$, $r(t-1)$, and $r(t-2)$ are active.
+    
+      
+    
+- **For $0 \le t \le 1$**: Overlap is within $[0, t]$ where $h(\lambda) = 1$:
+    
+      
+    
+    $$y(t) = \int_{0}^{t} (1)(1) \, d\lambda = t$$
+    
+      
+    
+- **For $1 \le t \le 2$**: Window $[t - 1, t]$ spans across $\lambda = 1$:
+    
+      
+    - From $\lambda = t - 1$ to $1$, $h(\lambda) = 1$
+        
+          
+        
+          
+        
+    - From $\lambda = 1$ to $t$, $h(\lambda) = -1$
+        
+          
+        
+          
+        
+        $$y(t) = \int_{t - 1}^{1} (1) \, d\lambda + \int_{1}^{t} (-1) \, d\lambda = [1 - (t - 1)] - (t - 1) = 2 - 2t$$
+        
+- **For $2 \le t \le 3$**: Window $[t - 1, t]$ exits the region, overlapping only on $[t - 1, 2]$ where $h(\lambda) = -1$:
+    
+      
+    
+    $$y(t) = \int_{t - 1}^{2} (-1) \, d\lambda = -[2 - (t - 1)] = t - 3$$
+    
+- **For $t > 3$**: No overlap:
+    
+      
+    
+    $$y(t) = 0$$
+    
+
+#### Final Result
+
+$$y(t) = \begin{cases} 0, & t < 0 \\ t, & 0 \le t \le 1 \\ 2 - 2t, & 1 \le t \le 2 \\ t - 3, & 2 \le t \le 3 \\ 0, & t > 3 \end{cases}$$
+#### 2nd method :Step Function Representation
+
+- The signals can be expressed in terms of unit step functions $u(t)$:
+    
+      
+    - $x(t) = u(t) - u(t - 1)$
+        
+          
+        
+          
+        
+    - $h(t) = [u(t) - u(t - 1)] - [u(t - 1) - u(t - 2)] = u(t) - 2u(t - 1) + u(t - 2)$
+        
+          
+        
+          
+        
+
+#### Convolution in Terms of Ramp Functions
+
+- Using the property $u(t) * u(t) = r(t) = t u(t)$, convolve $x(t)$ with $h(t)$:
+    
+      
+    
+    $$y(t) = x(t) * h(t) = [u(t) - u(t - 1)] * [u(t) - 2u(t - 1) + u(t - 2)]$$
+    
+- Expanding the product term by term:
+    
+      
+    
+    $$y(t) = u(t)*u(t) - 2u(t)*u(t-1) + u(t)*u(t-2) - u(t-1)*u(t) + 2u(t-1)*u(t-1) - u(t-1)*u(t-2)$$
+    
+- Combine matching delay terms:
+    
+      
+    
+    $$y(t) = u(t)*u(t) - 3u(t-1)*u(t) + 3u(t-2)*u(t) - u(t-3)*u(t)$$
+    
+- Substitute the unit ramp function $r(t) = t u(t)$:
+    
+      
+    
+    $$y(t) = r(t) - 3r(t - 1) + 3r(t - 2) - r(t - 3)$$
+    
+
+#### Piecewise Evaluation from Ramp Form
+
+- **For $t < 0$**:
+    
+      
+    
+    $$y(t) = 0$$
+    
+- **For $0 \le t \le 1$**:
+    
+      
+    
+    $$y(t) = r(t) = t$$
+    
+- **For $1 \le t \le 2$**:
+    
+      
+    
+    $$y(t) = t - 3(t - 1) = t - 3t + 3 = 3 - 2t$$
+    
+- **For $2 \le t \le 3$**:
+    
+      
+    
     $$y(t) = t - 3(t - 1) + 3(t - 2) = t - 3t + 3 + 3t - 6 = t - 3$$
-*   **$t > 3$:** All ramp functions are active.
-    $$y(t) = t - 3(t - 1) + 3(t - 2) - (t - 3) = t - 3t + 3 + 3t - 6 - t + 3 = 0$$
+    
+- **For $t > 3$**:
+    
+    $$y(t) = t - 3(t - 1) + 3(t - 2) - (t - 3) = 0$$
+    
 
-**(Sketch description: The resulting waveform $y(t)$ starts at $(0,0)$, rises linearly to a peak at $(1,1)$, falls steeply to a minimum at $(2,-1)$, and then rises linearly back to $(3,0)$, remaining at $0$ thereafter.)**
+#### Final Result
 
-
-Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 71 to 74).
-
+$$y(t) = \begin{cases} 0, & t < 0 \\ t, & 0 \le t \le 1 \\ 3 - 2t, & 1 \le t \le 2 \\ t - 3, & 2 \le t \le 3 \\ 0, & t > 3 \end{cases}$$
 ### 71. Page 14, Q.3(a): Define convolution integral. Compute the convolution of h(t)=u(t) with the function x(t) sketched in the following figure. (Figure shows a rectangular pulse from t=-1 to t=1 with amplitude 1).
 
 ![[Pasted image 20260727120604.png]]
@@ -5229,7 +5587,7 @@ t - 3, & 2 < t \le 3 \\
 
 Based on the provided PDF, here are the detailed solutions for the next 4 questions (Questions 75 to 78).
 
-### 75. Page 63, Q.5(a): Find the convolution of the following signals. (Figure shows $x(t)$ as a rectangular pulse from t=0 to t=4 with amplitude 2, and $y(t)$ as a positive pulse from t=0 to t=2 with amp 4, followed by a negative pulse from t=2 to t=4 with amp -4).
+### 75. Page 63, Q.5(a): Find the convolution of the following signals. (Figure shows $x(t)$ as a rectangular pulse from t=0 to t=6 with amplitude 2, and $y(t)$ as a positive pulse from t=0 to t=2 with amp 4, followed by a negative pulse from t=2 to t=4 with amp -4 and 6 to 8 with amp 4).
 
 ![[Pasted image 20260727120731.png]]
 
@@ -5240,54 +5598,209 @@ Based on the provided PDF, here are the detailed solutions for the next 4 questi
 > * **B.P. Lathi (3rd Ed):** Section 2.4, pp. 193–195
 
 **Solution:**
+#### Problem Setup
 
-Let the result of the convolution be $z(t) = x(t) * y(t)$.
+- Let the convolution of the two signals be $z(t) = x(t) * y(t)$.
+    
+      
+    
+- Given signal expressions:
+    
+      
+    - $x(t) = 2[u(t) - u(t - 6)]$
+        
+          
+        
+          
+        
+    - From the figure, $y(t)$ consists of three pulses: a pulse of amplitude $+4$ on $[0, 2]$, a pulse of amplitude $-4$ on $[2, 6]$, and a pulse of amplitude $+4$ on $[6, 8]$:
+        
+          
+        
+        $$y(t) = 4u(t) - 8u(t - 2) + 8u(t - 6) - 4u(t - 8)$$
+        
+          
+        
+- Using the ramp response formula for convolving step functions, where $u(t) * u(t) = r(t) = t u(t)$   $$u(t - t_1) * u(t - t_2) = r(t - t_1 - t_2)$$  :
+    
+      
+    
+    $$z(t) = x(t) * y(t) = 2[u(t) - u(t - 6)] * 4[u(t) - 2u(t - 2) + 2u(t - 6) - u(t - 8)]$$
+    
+      
+    
+    $$z(t) = 8\Big( [u(t) - u(t - 6)] * [u(t) - 2u(t - 2) + 2u(t - 6) - u(t - 8)] \Big)$$
+    
+      
+    
 
-**Step 1: Express the Signals**
-*   $x(t) = 2$ for $0 \le t \le 4$, and $0$ otherwise.
-*   $y(t) = 4$ for $0 \le t \le 2$, and $-4$ for $2 < t \le 4$, and $0$ otherwise.
+#### Ramp Form Expansion
 
-**Step 2: Set up the Convolution Integral using the "Sliding Window" Method**
-We use the integral $z(t) = \int_{-\infty}^{\infty} x(\tau) y(t - \tau) d\tau$.
-Alternatively, it's computationally much simpler here to slide the uniform box $x$ over the complex shape $y$:
-$$z(t) = \int_{-\infty}^{\infty} y(\lambda) x(t - \lambda) d\lambda$$
-Since $x(t-\lambda) = 2$ when $0 \le t - \lambda \le 4 \implies t-4 \le \lambda \le t$, we can pull the constant amplitude $2$ out of the integral, leaving an integration window of width $4$:
-$$z(t) = 2 \int_{t-4}^{t} y(\lambda) d\lambda$$
-This tells us that $z(t)$ is twice the area under the curve of $y(\lambda)$ evaluated over a "sliding window" of width exactly $4$, stretching from $t-4$ to $t$.
+- Expanding the convolution product directly:
+    
+      
+    
+    $$z(t) = 8\Big( r(t) - 2r(t - 2) + 2r(t - 6) - r(t - 8) - r(t - 6) + 2r(t - 8) - 2r(t - 12) + r(t - 14) \Big)$$
+    
+- Combine common delayed ramp terms:
+    
+      
+    
+    $$z(t) = 8r(t) - 16r(t - 2) + 8r(t - 6) + 8r(t - 8) - 16r(t - 12) + 8r(t - 14)$$
+    
 
-**Step 3: Slide the Window $[t-4, t]$ Across $y(\lambda)$**
-*   **Interval 1 ($t < 0$):** The window $[t-4, t]$ is entirely in the negative region. $y(\lambda) = 0$.
+#### Case-by-Case Intervals
+
+- **For $t < 0$**:
+    
+      
+    
     $$z(t) = 0$$
-
-*   **Interval 2 ($0 \le t \le 2$):** The front of the window ($t$) enters the positive part of $y$. The back ($t-4$) is still in the negative region. We integrate $y=4$ from $0$ to $t$.
-    $$z(t) = 2 \int_{0}^{t} 4 \, d\lambda = 2 [4\lambda]_0^t = 8t$$
-
-*   **Interval 3 ($2 < t \le 4$):** The front of the window enters the negative part of $y$, while the back is still $\le 0$. We integrate $4$ from $0$ to $2$, and $-4$ from $2$ to $t$.
-    $$z(t) = 2 \left[ \int_{0}^{2} 4 \, d\lambda + \int_{2}^{t} -4 \, d\lambda \right] = 2 [ 8 - 4(t - 2) ] = 2[8 - 4t + 8] = 32 - 8t$$
-
-*   **Interval 4 ($4 < t \le 6$):** The front of the window leaves $y$ entirely. The back of the window ($t-4$) enters the positive part of $y$. We integrate $4$ from $t-4$ to $2$, and $-4$ from $2$ to $4$.
-    $$z(t) = 2 \left[ \int_{t-4}^{2} 4 \, d\lambda + \int_{2}^{4} -4 \, d\lambda \right] = 2 [ 4(2 - (t - 4)) - 4(4 - 2) ] = 2[4(6 - t) - 8] = 48 - 8t - 16 = 32 - 8t$$
-    *(Notice the slope remains the same, extending the line from the previous interval).*
-
-*   **Interval 5 ($6 < t \le 8$):** The back of the window enters the negative part of $y$. We integrate $-4$ from $t-4$ to $4$.
-    $$z(t) = 2 \int_{t-4}^{4} -4 \, d\lambda = 2 [ -4(4 - (t - 4)) ] = 2[-4(8 - t)] = -32 + 8t = 8t - 32$$
-
-*   **Interval 6 ($t > 8$):** The window has passed the entirety of $y(\lambda)$.
+    
+- **For $0 \le t \le 2$**:
+    
+      
+    
+    $$z(t) = 8t$$
+    
+- **For $2 \le t \le 6$**:
+    
+      
+    
+    $$z(t) = 8t - 16(t - 2) = 32 - 8t$$
+    
+- **For $6 \le t \le 8$**:
+    
+      
+    
+    $$z(t) = (32 - 8t) + 8(t - 6) = -16$$
+    
+- **For $8 \le t \le 12$**:
+    
+      
+    
+    $$z(t) = -16 + 8(t - 8) = 8t - 80$$
+    
+- **For $12 \le t \le 14$**:
+    
+      
+    
+    $$z(t) = (8t - 80) - 16(t - 12) = 112 - 8t$$
+    
+- **For $t > 14$**:
+    
     $$z(t) = 0$$
+    
 
-**Summary of $z(t)$:**
-$$z(t) = \begin{cases} 
-0, & t < 0 \\
-8t, & 0 \le t \le 2 \\
-32 - 8t, & 2 < t \le 6 \\
-8t - 32, & 6 < t \le 8 \\
-0, & t > 8 
-\end{cases}$$
+#### Final Result
 
+$$z(t) = \begin{cases} 0, & t < 0 \\ 8t, & 0 \le t \le 2 \\ 32 - 8t, & 2 \le t \le 6 \\ -16, & 6 \le t \le 8 \\ 8t - 80, & 8 \le t \le 12 \\ 112 - 8t, & 12 \le t \le 14 \\ 0, & t > 14 \end{cases}$$
 
-***
+####  2nd method . Signal Definitions and Convolution Setup
 
+- **Objective**: Evaluate the convolution $c(t) = x(t) * y(t) = \int_{-\infty}^{\infty} x(t - \lambda) y(\lambda)\,d\lambda$.
+    
+      
+    
+- **Stationary signal $y(\lambda)$**:
+    
+      
+    
+    $$y(\lambda) = \begin{cases} 4, & 0 \le \lambda < 2 \\ -4, & 2 \le \lambda < 6 \\ 4, & 6 \le \lambda \le 8 \\ 0, & \text{otherwise} \end{cases}$$
+    
+      
+    
+    (Note: From the figure, the negative segment runs continuously from $\lambda = 2$ to $\lambda = 6$ with amplitude $-4$).
+    
+      
+    
+- **Sliding window $x(t - \lambda)$**:
+    
+      
+    - $x(\lambda) = 2$ for $0 \le \lambda \le 6$.
+        
+          
+        
+    - Fold and shift to obtain $x(t - \lambda) = 2$ over the moving interval $\lambda \in [t - 6, \, t]$.
+        
+          
+        
+    - Length of the sliding window is $\Delta \lambda = 6$.
+        
+          
+        
 
+#### Sliding Window Cases
+
+- **Case 1: $t < 0$ (No overlap)**
+    
+      
+    - The window has not reached the non-zero region:
+        
+          
+        
+        $$c(t) = 0$$
+        
+- **Case 2: $0 \le t < 2$ (Leading edge enters the first $+4$ pulse)**
+    
+      
+    - Window $[t - 6, t]$ overlaps $y(\lambda)$ from $\lambda = 0$ to $\lambda = t$:
+        
+          
+        
+        $$c(t) = \int_{0}^{t} (2)(4)\,d\lambda = 8t$$
+        
+- **Case 3: $2 \le t < 6$ (Leading edge moves across the $-4$ region)**
+    
+      
+    - Overlap spans $[0, 2]$ (height $4$) and $[2, t]$ (height $-4$):
+        
+          
+        
+        $$c(t) = \int_{0}^{2} (2)(4)\,d\lambda + \int_{2}^{t} (2)(-4)\,d\lambda = 16 - 8(t - 2) = 32 - 8t$$
+        
+- **Case 4: $6 \le t < 8$ (Full window inside; trailing edge enters at $\lambda = 0$, leading edge enters $[6, 8]$)**
+    
+      
+    - Overlap spans $[t - 6, 2]$ (height $4$), $[2, 6]$ (height $-4$), and $[6, t]$ (height $4$):
+        
+          
+        
+        $$c(t) = \int_{t - 6}^{2} (2)(4)\,d\lambda + \int_{2}^{6} (2)(-4)\,d\lambda + \int_{6}^{t} (2)(4)\,d\lambda$$
+        
+        $$c(t) = 8(8 - t) - 32 + 8(t - 6) = 64 - 8t - 32 + 8t - 48 = -16$$
+        
+- **Case 5: $8 \le t < 12$ (Trailing edge moves across the $-4$ region)**
+    
+      
+    - Leading edge is past $\lambda = 8$. Overlap spans $[t - 6, 6]$ (height $-4$) and $[6, 8]$ (height $4$):
+        
+          
+        
+        $$c(t) = \int_{t - 6}^{6} (2)(-4)\,d\lambda + \int_{6}^{8} (2)(4)\,d\lambda$$
+        
+        $$c(t) = -8[6 - (t - 6)] + 16 = -8(12 - t) + 16 = 8t - 80$$
+        
+- **Case 6: $12 \le t \le 14$ (Trailing edge exits the last $+4$ region)**
+    
+      
+    - Overlap spans only from $\lambda = t - 6$ to $\lambda = 8$ (height $4$):
+        
+          
+        
+        $$c(t) = \int_{t - 6}^{8} (2)(4)\,d\lambda = 8[8 - (t - 6)] = 8(14 - t) = 112 - 8t$$
+        
+- **Case 7: $t > 14$ (No overlap)**
+    
+      
+    - The trailing edge $t - 6 > 8$, so the window has completely left $y(\lambda)$:
+        
+        $$c(t) = 0$$
+        
+
+#### Final Piecewise Result
+
+$$c(t) = \begin{cases} 0, & t < 0 \\ 8t, & 0 \le t < 2 \\ 32 - 8t, & 2 \le t < 6 \\ -16, & 6 \le t < 8 \\ 8t - 80, & 8 \le t < 12 \\ 112 - 8t, & 12 \le t \le 14 \\ 0, & t > 14 \end{cases}$$
 ### **Network Synthesis**
 
 ### 76. Page 3, Q.5(c): Given a transfer function $G(s) = \frac{s^2}{s^2+4s+10}$, synthesize the network. Assume L= 1H.
