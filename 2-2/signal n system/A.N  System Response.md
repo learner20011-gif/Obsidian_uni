@@ -523,6 +523,17 @@
 * The Key to Working with a Source-Free RLCircuit Is to Find: 1. The initial current through the inductor. 2. The time constant of the circuit. 
 * 1. The initial capacitor voltage 2. The final capacitor voltage 3. The time constant t. 
 * The 5-Tau Rule : Because the growth or decay follows an exponential curve rather than a linear line, a circuit never theoretically reaches 100% of its final state. However, for all practical engineering applications, a circuit is considered **fully charged or discharged after 5 time constants (5τ)**, where it reaches **99.3%** of its final steady-state value
+* Any first-order RC or RL circuit driven by a constant DC source can be described by the standard differential equation:
+
+$$\frac{dx(t)}{dt} + \frac{1}{\tau}x(t) = \frac{x_\infty}{\tau}$$
+
+- $x(t)$: The circuit variable of interest (capacitor voltage $v_C(t)$ or inductor current $i_L(t)$).
+- $\tau$: The circuit time constant ($RC$ for RC circuits, or $\frac{L}{R}$ for RL circuits).
+- $x_\infty$: The final steady-state value of the variable as $t \to \infty$.
+
+
+$$x(t) = x_\infty + [x(0^+) - x_\infty]e^{-t/\tau}$$
+
 * This formula is the standard **complete response formula** for a first-order circuit ($RC$ or $RL$), modified for when a switch flips at some time $t_0$ instead of $t = 0$.
 $$v(t) = v(\infty) + [v(t_0) - v(\infty)]e^{-(t - t_0)/\tau}, \quad t \ge t_0$$
 
