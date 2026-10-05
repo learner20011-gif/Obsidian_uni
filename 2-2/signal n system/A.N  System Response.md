@@ -988,7 +988,7 @@ The physical behavior of the natural response $x_n(t)$ depends entirely on the s
         
 
 ### Complete Solution Framework
-
+finding charachteristics eqn how? then alpha  w. then output signal eqn. 
 For circuits with constant DC independent sources switched at $t = 0$:
 
   

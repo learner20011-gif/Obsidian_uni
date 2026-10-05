@@ -3867,7 +3867,7 @@ $$R \approx 4.55\text{ k}\Omega$$
 
 ***
 
-### 54. Page 51, Q(b) (Bottom): A practical example of a delay circuit is shown in Fig. 2(b). The neon bulb fires when its voltage reaches 70 V and turns off when its voltage drops to 30 V. Its resistance is $100\ \Omega$ when on and infinitely high when off. Determine the time interval between light flashes.
+### 54. ✅Page 51, Q(b) (Bottom): A practical example of a delay circuit is shown in Fig. 2(b). The neon bulb fires when its voltage reaches 70 V and turns off when its voltage drops to 30 V. Its resistance is $100\ \Omega$ when on and infinitely high when off. Determine the time interval between light flashes.
 
 ![[Pasted image 20260727120129.png]]
 
