@@ -4211,55 +4211,6 @@ Based on the provided PDF, here are the detailed solutions for the next 4 questi
 
 **Solution:**
 
-**Step 1: Understand the Circuit at $t > 0$**
-When the switch closes at $t=0$, the $5\ \Omega$ resistor is connected in parallel with the rest of the circuit. The circuit becomes a source-free parallel RLC circuit with:
-*   $L = 1\text{ H}$
-*   $C = 0.1\text{ F}$
-*   Equivalent resistance $R = 5\ \Omega \parallel 20\ \Omega = \frac{5 \times 20}{5 + 20} = \frac{100}{25} = 4\ \Omega$
-*   Initial inductor current $i_L(0) = 10\text{ A}$
-*   Initial capacitor voltage $v_c(0) = 0\text{ V}$ (since it was in a closed DC loop with a shorted inductor prior to $t=0$).
-
-**Step 2: Determine the Damping Type**
-Calculate the damping factor ($\alpha$) and the resonant frequency ($\omega_0$) for a parallel RLC circuit:
-*   $\alpha = \frac{1}{2RC} = \frac{1}{2(4)(0.1)} = \frac{1}{0.8} = 1.25\text{ Np/s}$
-*   $\omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{1 \times 0.1}} = \sqrt{10} \approx 3.162\text{ rad/s}$
-
-Since $\alpha < \omega_0$ ($1.25 < 3.162$), the circuit is **underdamped**.
-The damped natural frequency is $\omega_d = \sqrt{\omega_0^2 - \alpha^2} = \sqrt{10 - 1.25^2} = \sqrt{10 - 1.5625} = \sqrt{8.4375} \approx 2.905\text{ rad/s}$.
-
-**Step 3: Find the Voltage $v_c(t)$ using the S-Domain**
-Applying KCL at the top node in the s-domain:
-$$\frac{V(s)}{R} + \frac{V(s)}{sL} + \frac{i_L(0)}{s} + V(s)sC = 0$$
-Substitute the values ($R=4$, $L=1$, $C=0.1$, $i_L(0)=10$):
-$$V(s) \left[ \frac{1}{4} + \frac{1}{s} + 0.1s \right] = -\frac{10}{s}$$
-Multiply by $10s$:
-$$V(s) [2.5s + 10 + s^2] = -100 \implies V(s) = \frac{-100}{s^2 + 2.5s + 10}$$
-To find the inverse Laplace transform, we complete the square in the denominator: $s^2 + 2.5s + 10 = (s + 1.25)^2 + 8.4375$.
-$$V(s) = -\frac{100}{\sqrt{8.4375}} \left[ \frac{\sqrt{8.4375}}{(s + 1.25)^2 + (\sqrt{8.4375})^2} \right]$$
-$$v_c(t) = -34.426 e^{-1.25t} \sin(2.905t)\text{ V} \quad \text{for } t \ge 0$$
-
-**Step 4: Find the Inductor Current $i_L(t)$**
-In the s-domain, the inductor current is $I_L(s) = \frac{V(s)}{sL} + \frac{i_L(0)}{s}$:
-$$I_L(s) = \frac{-100}{s(s^2 + 2.5s + 10)} + \frac{10}{s} = \frac{-100 + 10(s^2 + 2.5s + 10)}{s(s^2 + 2.5s + 10)} = \frac{10s^2 + 25s}{s(s^2 + 2.5s + 10)} = \frac{10s + 25}{s^2 + 2.5s + 10}$$
-Rewrite to match Laplace tables:
-$$I_L(s) = 10 \left[ \frac{s + 1.25}{(s + 1.25)^2 + 8.4375} \right] + \frac{12.5}{\sqrt{8.4375}} \left[ \frac{\sqrt{8.4375}}{(s + 1.25)^2 + 8.4375} \right]$$
-$$i_L(t) = e^{-1.25t} \left[ 10 \cos(2.905t) + 4.303 \sin(2.905t) \right]\text{ A} \quad \text{for } t \ge 0$$
-
-**Step 5: Compute the Energy Dissipated in the $5\ \Omega$ Resistor**
-The power dissipated in the $5\ \Omega$ resistor is $P(t) = \frac{v_c(t)^2}{5}$.
-$$v_c(t)^2 = \left( \frac{-100}{\sqrt{8.4375}} \right)^2 e^{-2.5t} \sin^2(\omega_d t) = \frac{10000}{8.4375} e^{-2.5t} \sin^2(\omega_d t) \approx 1185.185 e^{-2.5t} \sin^2(2.905t)$$
-Energy $E = \int_{0.4}^{\infty} \frac{v_c(t)^2}{5} dt = \frac{1185.185}{5} \int_{0.4}^{\infty} e^{-2.5t} \left( \frac{1 - \cos(2\omega_d t)}{2} \right) dt$
-$$E = 118.518 \int_{0.4}^{\infty} \left[ e^{-2.5t} - e^{-2.5t} \cos(5.81t) \right] dt$$
-Using standard integral formulas $\int e^{-at} dt = -\frac{1}{a}e^{-at}$ and $\int e^{-at}\cos(bt)dt = \frac{e^{-at}}{a^2+b^2}(-a\cos(bt) + b\sin(bt))$:
-Evaluated from $t=0.4$ to $\infty$:
-$$E = 118.518 \left[ \frac{e^{-2.5(0.4)}}{2.5} - \frac{e^{-2.5(0.4)}}{2.5^2 + 5.81^2} \left( 2.5\cos(5.81 \times 0.4) - 5.81\sin(5.81 \times 0.4) \right) \right]$$
-Given $e^{-1} \approx 0.3679$, $5.81 \times 0.4 \approx 2.324\text{ rad}$, $\cos(2.324) \approx -0.686$, $\sin(2.324) \approx 0.728$:
-$$E = 118.518 \left[ \frac{0.3679}{2.5} - \frac{0.3679}{40} \left( 2.5(-0.686) - 5.81(0.728) \right) \right]$$
-$$E = 118.518 \left[ 0.14716 - 0.0091975 (-1.715 - 4.229) \right] = 118.518 \left[ 0.14716 - 0.0091975 (-5.944) \right]$$
-$$E = 118.518 \left[ 0.14716 + 0.05467 \right] = 118.518 \times 0.20183 \approx 23.92\text{ J}$$
-
-
-***
 
 ### 64. Page 23, Q.2: Express $V_c(t), t \ge 0$ if the direction of the dependent current source of Fig. 1 is reversed. Plot $V_c(t), t \ge 0$ and comments on your answer.
 
