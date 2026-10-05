@@ -1,6 +1,4 @@
 
----
-
 ### **FOURIER APPLICATIONS Time domain and frequency domain analysis of LTI systems**
 
 ### 1. Page 14, Q.3(b): Determine $i_o(t)$ for the following network using Fourier transform method . [Figure involved.]
