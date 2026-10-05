@@ -1015,46 +1015,66 @@ $\mathbf{H}(s) = \mathbf{C}(s\mathbf{I} - \mathbf{A})^{-1}\mathbf{B} + \mathbf{D
 
 **Detailed Solution:**
 
-The provided electrical circuit consists of:
-*   An independent current source $i(t)$.
-*   A capacitor $C_1$ in series with the current source.
-*   A parallel combination of an inductor $L$, a resistor $R$, and a capacitor $C_2$.
+#### System Identification and Differential Equations
 
-To draw the equivalent mechanical system, we will use the **Force-Voltage (f-v) Analogy** (also known as the loop-node analogy). In this specific topological structure, the f-v analogy provides a very clean mechanical mapping without violating physical constraints.
+The given circuit is an electrical network excited by an independent current source $i(t)$ with a common reference (ground) bus at the bottom.
 
-**Force-Voltage (f-v) Mapping Rules:**
-*   Voltage ($v$) $\leftrightarrow$ Force ($f$)
-*   Current ($i$) $\leftrightarrow$ Velocity ($\dot{x} = v$)
-*   Charge ($q$) $\leftrightarrow$ Displacement ($x$)
-*   Inductance ($L$) $\leftrightarrow$ Mass ($M$)
-*   Resistance ($R$) $\leftrightarrow$ Viscous Damper ($D$ or $B$)
-*   Capacitance ($C$) $\leftrightarrow$ Spring Compliance ($1/K \implies K = 1/C$)
-*   **Topology Rule:** Elements in series electrically (sharing the same current) map to elements in parallel mechanically (sharing the same velocity). Elements in parallel electrically (sharing the same voltage) map to elements in series mechanically (sharing the same force).
+- **Node Definition:**
+    
+    - Let the node between the current source, inductor $L$, and capacitor $C_1$ be designated as **Node 1**, with node voltage $v_1(t)$ with respect to ground.
+        
+    - Let the node between capacitor $C_1$, resistor $R$, and capacitor $C_2$ be designated as **Node 2**, with node voltage $v_2(t)$ with respect to ground.
+        
+    - The bottom rail serves as the reference ground ($v_0 = 0\text{ V}$).
+        
+- **Kirchhoff's Current Law (KCL) at Node 1:**
+    
+    - The sum of currents leaving Node 1 equals the current entering from the source:
+        
+        $$i(t) = i_L(t) + i_{C_1}(t)$$
+        
+    - Expressed in terms of node voltages:
+        
+        $$i(t) = \frac{1}{L} \int_0^t v_1(\tau) \, d\tau + C_1 \frac{d\big(v_1(t) - v_2(t)\big)}{dt}$$
+        
+- **Kirchhoff's Current Law (KCL) at Node 2:**
+    
+    - The sum of currents leaving Node 2 must equal zero:
+        
+        $$i_{C_1,\text{in}}(t) = i_R(t) + i_{C_2}(t)$$
+        
+    - Rearranging:
+        
+        $$C_1 \frac{d\big(v_1(t) - v_2(t)\big)}{dt} = \frac{1}{R} v_2(t) + C_2 \frac{d v_2(t)}{dt}$$
+        
+    - Written in standard nodal form:
+        
+        $$C_2 \frac{d v_2(t)}{dt} + C_1 \frac{d\big(v_2(t) - v_1(t)\big)}{dt} + \frac{1}{R} v_2(t) = 0$$
+        
 
-**Step-by-Step Translation:**
-1.  **The Source:** The electrical circuit is driven by a current source $i(t)$. Under the f-v analogy, current maps to velocity. Therefore, the mechanical system is driven by an ideal **Velocity Source** $\dot{x}_{in}(t)$.
-2.  **Series Element ($C_1$):** The capacitor $C_1$ is in series with the source, meaning the entire source current $i(t)$ flows through it. Mechanically, this means the entire input velocity $\dot{x}_{in}(t)$ is applied across a spring $K_1$ (where $K_1 = 1/C_1$).
-3.  **Parallel Bank ($L, R, C_2$):** The current $i(t)$ then enters a node and splits into three parallel branches ($L$, $R$, and $C_2$). 
-    *   Electrically, they share the same voltage $v_p(t)$.
-    *   Mechanically, sharing the same voltage means they share the same Force $f_p(t)$. 
-    *   Mechanical elements that share the same force are connected in **series** with each other.
-    *   The total current is the sum of branch currents: $i(t) = i_L + i_R + i_{C2}$.
-    *   Mechanically, the total velocity is the sum of the velocities across the series elements: $\dot{x}_{in} = \dot{x}_M + \dot{x}_D + \dot{x}_{K2}$.
-4.  **Mechanical Assembly:**
-    *   We have a mass $M$ (from $L$), a damper $D$ (from $R$), and a spring $K_2$ (from $1/C_2$) connected end-to-end in a series chain. One end of this chain is fixed to a rigid wall.
-    *   The spring $K_1$ (from $1/C_1$) is connected between the input velocity actuator $\dot{x}_{in}(t)$ and the start of the $M-D-K_2$ series chain.
+#### Force–Current ($F\text{–}I$) Analogous System
 
-**Equivalent Mechanical System Drawing Description:**
-*   Imagine a fixed wall on the right.
-*   Attached to the wall is Spring $K_2$.
-*   Attached to the other end of Spring $K_2$ is Damper $D$.
-*   Attached to the other end of Damper $D$ is Mass $M$.
-*   Attached to Mass $M$ is Spring $K_1$.
-*   At the free end of Spring $K_1$, an external velocity source $\dot{x}_{in}(t)$ is applied, pulling or pushing the entire assembly.
+Under the **Force–Current ($F\text{–}I$)** analogy (also called the Nodal or Mobility analogy), parallel electrical connections directly correspond to parallel mechanical connections sharing common velocity points.
 
-*(Note: If interpreted using the Force-Current analogy, assuming the circle is a voltage source $V(t)$ instead of a current source despite the $i(t)$ label, it would yield a mass $M_1$ ($C_1$) connected to a parallel combination of a spring $K$ ($1/L$), damper $D$ ($1/R$), and mass $M_2$ ($C_2$) driven by a force $f(t)$. However, the f-v analogy perfectly preserves the given topological drawing without assumptions).*
-
-
+- **Element Correspondence:**
+    
+    - Current source $i(t) \longleftrightarrow$ Applied external force $F(t)$
+        
+    - Node voltages $v_1(t), v_2(t) \longleftrightarrow$ Velocities $\dot{x}_1(t), \dot{x}_2(t)$ (or displacements $x_1, x_2$)
+        
+    - Capacitance $C \longleftrightarrow$ Mass $M$ (or inertance)
+        
+    - Inverse Inductance $1/L \longleftrightarrow$ Spring stiffness $K$
+        
+    - Conductance $1/R \longleftrightarrow$ Viscous damper coefficient $B$
+        
+- **Mechanical System Differential Equations:**
+    
+    - Replacing $i \to F$, $v_1 \to \dot{x}_1$, $v_2 \to \dot{x}_2$, $\frac{1}{L} \to K_1$, $C_1 \to M_1$ (relative inerter/mass), $\frac{1}{R} \to B$, and $C_2 \to M_2$:
+        
+        $$F(t) = K_1 x_1(t) + M_1 \frac{d^2\big(x_1(t) - x_2(t)\big)}{dt^2}$$
+        
+        $$M_2 \frac{d^2 x_2(t)}{dt^2} + M_1 \frac{d^2\big(x_2(t) - x_1(t)\big)}{dt^2} + B \frac{dx_2(t)}{dt} = 0$$
 ***
 
 ### 27. Page 8, Q8(a): A translational mechanical system is shown below. (i) Find the transfer function of the system. (ii) Find the impulse response if D = 0. (iii) Find the response x(t) if f(t) = u(t). Assume D = 0. [Figure Involved]
