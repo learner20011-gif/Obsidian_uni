@@ -3634,7 +3634,7 @@ To sketch the current waveform $i(t)$, set up a graph with Time ($t$ in seconds)
 
 ***
 
-### 49. Page 12, Q.4(b): Draw the equivalent electrical circuit of an automobile ignition system. Prove that the maximum voltage appearing at the open circuited secondary is $|v_2(t)|_{max} = \frac{M}{L_1} \cdot Q \cdot E$; when the switch opens. Where, Q = quality factor, $L_1$ = inductance, M = mutual inductance, E = supply voltage.
+### 49. ❓Page 12, Q.4(b): Draw the equivalent electrical circuit of an automobile ignition system. Prove that the maximum voltage appearing at the open circuited secondary is $|v_2(t)|_{max} = \frac{M}{L_1} \cdot Q \cdot E$; when the switch opens. Where, Q = quality factor, $L_1$ = inductance, M = mutual inductance, E = supply voltage.
 
 > [!info] **Textbook References**
 > * **Topic:** Automobile Ignition Coil Secondary Voltage

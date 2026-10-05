@@ -516,6 +516,297 @@
 
 ### *second order*
 
+### Question Assuming that the switch in Fig. 8.52 is closed prior to $t = 0^-$, find the inductor voltage $v_L(t)$ for $t > 0$.
+
+  ![[Pasted image 20261005143126.png]]
+
+- **Circuit Components:**
+    
+      
+    - DC voltage source: $V_s = 12\text{ V}$
+        
+          
+        
+          
+        
+    - Wiring resistance: $R = 4\ \Omega$
+        
+          
+        
+          
+        
+    - Ignition coil (inductor): $L = 8\text{ mH} = 8 \times 10^{-3}\text{ H}$
+        
+          
+        
+          
+        
+    - Breaker points capacitor (condenser): $C = 1\ \mu\text{F} = 10^{-6}\text{ F}$
+        
+          
+        
+          
+        
+    - Switch opening at $t = 0$
+        
+          
+        
+          
+        
+    - Spark plug in parallel with the ignition coil
+        
+          
+        
+
+#### Physical Concept of the Ignition Circuit
+
+- **Before $t = 0$ (Switch Closed):**
+    
+      
+    - The closed switch provides a zero-resistance path that completely shorts out the $1\ \mu\text{F}$ capacitor.
+        
+          
+        
+    - Current flows from the $12\text{ V}$ battery through the $4\ \Omega$ resistor and directly through the $8\text{ mH}$ ignition coil.
+        
+          
+        
+    - The ignition coil reaches steady state, storing maximum magnetic energy $\frac{1}{2} L i^2$.
+        
+          
+        
+    - The spark plug has a high breakdown gap and acts as an open circuit prior to arcing.
+        
+          
+        
+- **At and After $t = 0$ (Switch Opens):**
+    
+      
+    - The switch suddenly opens, inserting the capacitor into the loop.
+        
+          
+        
+    - The inductor current cannot drop to zero instantaneously; it forces current into the capacitor, charging it rapidly.
+        
+          
+        
+    - This rapid change in magnetic flux induces a large back-EMF voltage ($v_L = L \frac{di}{dt}$) across the ignition coil.
+        
+          
+        
+    - This high voltage pulse is what normally creates the spark across the spark plug gap in an engine.
+        
+          
+        
+
+#### Step 1: Initial Conditions ($t < 0$ and $t = 0^+$)
+
+- **Inductor Current at $t = 0^-$:**
+    
+      
+    - The switch is closed for a long time prior to $t = 0^-$, reaching DC steady state.
+        
+          
+        
+    - In DC steady state, the inductor acts as an ideal short circuit ($0\text{ V}$ drop).
+        
+          
+        
+    - The closed switch bypasses the capacitor entirely, meaning the only resistance in the loop is the $4\ \Omega$ resistor:
+        
+          
+        
+        $$i(0^-) = \frac{12\text{ V}}{4\ \Omega} = 3\text{ A}$$
+        
+    - By current continuity across an inductor:
+        
+          
+        
+        $$i(0^+) = i(0^-) = 3\text{ A}$$
+        
+- **Capacitor Voltage at $t = 0^-$:**
+    
+      
+    - Because the closed switch is connected directly across the capacitor, it holds the capacitor voltage to zero:
+        
+          
+        
+        $$v_C(0^-) = 0\text{ V}$$
+        
+    - By voltage continuity across a capacitor:
+        
+          
+        
+        $$v_C(0^+) = v_C(0^-) = 0\text{ V}$$
+        
+
+#### Step 2: Second-Order Circuit Parameters for $t > 0$
+
+- **Equivalent Loop Topology:**
+    
+      
+    - For $t > 0$, the switch is open and the spark plug behaves as an open circuit before dielectric breakdown occurs.
+        
+          
+        
+    - The battery ($12\text{ V}$), resistor ($4\ \Omega$), capacitor ($1\ \mu\text{F}$), and inductor ($8\text{ mH}$) form a series RLC circuit.
+        
+          
+        
+- **Damping Factor ($\alpha$):**
+    
+      
+    - For a series RLC circuit:
+        
+          
+        
+        $$\alpha = \frac{R}{2L} = \frac{4}{2 \times (8 \times 10^{-3})} = \frac{4}{16 \times 10^{-3}} = 250\text{ Np/s}$$
+        
+- **Undamped Natural Frequency ($\omega_0$):**
+    
+      
+    - Calculated from the reactive elements:
+        
+          
+        
+        $$\omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{(8 \times 10^{-3}\text{ H}) \times (10^{-6}\text{ F})}} = \frac{1}{\sqrt{8 \times 10^{-9}}}$$
+        
+        $$\omega_0^2 = \frac{1}{8 \times 10^{-9}} = 1.25 \times 10^8\text{ (rad/s)}^2$$
+        
+        $$\omega_0 = \sqrt{1.25 \times 10^8} \approx 11,180.34\text{ rad/s}$$
+        
+- **Damping Regime:**
+    
+      
+    - Comparing $\alpha$ and $\omega_0$:
+        
+          
+        
+        $$\alpha = 250 < \omega_0 \approx 11,180$$
+        
+    - Because $\alpha \ll \omega_0$, the circuit is **heavily underdamped**.
+        
+          
+        
+- **Damped Natural Frequency ($\omega_d$):**
+    
+      
+    
+    $$\omega_d = \sqrt{\omega_0^2 - \alpha^2} = \sqrt{1.25 \times 10^8 - (250)^2} = \sqrt{125,000,000 - 62,500} = \sqrt{124,937,500}$$
+    
+    $$\omega_d \approx 11,177.55\text{ rad/s} \approx 11,180\text{ rad/s}$$
+    
+
+#### Step 3: Determining the Loop Current $i(t)$
+
+- **Final Steady-State Current ($t \to \infty$):**
+    
+      
+    - As $t \to \infty$, the series capacitor charges fully and acts as a DC open circuit:
+        
+          
+        
+        $$i(\infty) = 0\text{ A}$$
+        
+- **General Form of Current Response:**
+    
+      
+    
+    $$i(t) = i(\infty) + i_n(t) = 0 + e^{-\alpha t} \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)$$
+    
+    $$i(t) = e^{-250t} \left( A_1 \cos(11,180t) + A_2 \sin(11,180t) \right)$$
+    
+- **Evaluating Constant $A_1$ using $i(0^+) = 3\text{ A}$:**
+    
+      
+    
+    $$i(0) = e^{0} \left( A_1 \cos(0) + A_2 \sin(0) \right) = A_1$$
+    
+    $$A_1 = 3\text{ A}$$
+    
+- **Determining the Initial Derivative $\left.\frac{di}{dt}\right\vert{}_{t=0^+}$ via KVL:**
+    
+      
+    - Applying Kirchhoff's Voltage Law clockwise around the single loop for $t > 0$:
+        
+          
+        
+        $$-12 + v_R(t) + v_C(t) + v_L(t) = 0$$
+        
+        $$-12 + R\cdot i(t) + v_C(t) + L \frac{di(t)}{dt} = 0$$
+        
+    - Evaluating at $t = 0^+$ with $i(0^+) = 3\text{ A}$ and $v_C(0^+) = 0\text{ V}$:
+        
+          
+        
+        $$-12 + 4(3) + 0 + v_L(0^+) = 0$$
+        
+        $$-12 + 12 + v_L(0^+) = 0 \implies v_L(0^+) = 0\text{ V}$$
+        
+    - Since $v_L(0^+) = L \left.\frac{di}{dt}\right\vert{}_{t=0^+}$:
+        
+          
+        
+        $$\left.\frac{di}{dt}\right\vert{}_{t=0^+} = \frac{v_L(0^+)}{L} = \frac{0}{8 \times 10^{-3}} = 0\text{ A/s}$$
+        
+- **Evaluating Constant $A_2$:**
+    
+      
+    - Taking the time derivative of $i(t)$:
+        
+          
+        
+        $$\frac{di}{dt} = -250 e^{-250t} \left( A_1 \cos(11,180t) + A_2 \sin(11,180t) \right) + 11,180 e^{-250t} \left( -A_1 \sin(11,180t) + A_2 \cos(11,180t) \right)$$
+        
+    - Evaluating at $t = 0$:
+        
+          
+        
+        $$\left.\frac{di}{dt}\right\vert{}_{t=0} = -250 A_1 + 11,180 A_2 = 0$$
+        
+        $$11,180 A_2 = 250 A_1$$
+        
+        $$A_2 = \frac{250}{11,180} A_1 = \frac{250 \times 3}{11,180} = \frac{750}{11,180} \approx 0.0671\text{ A}$$
+        
+
+#### Step 4: Inductor Voltage $v_L(t)$
+
+- **Applying the Inductor Characteristic Equation:**
+    
+      
+    
+    $$v_L(t) = L \frac{di(t)}{dt}$$
+    
+- **Substituting the Full Expression for $\frac{di}{dt}$:**
+    
+      
+    
+    $$v_L(t) = L e^{-250t} \left[ (-250 A_1 + 11,180 A_2) \cos(11,180t) - (250 A_2 + 11,180 A_1) \sin(11,180t) \right]$$
+    
+- **Simplifying the Cosine and Sine Coefficients:**
+    
+      
+    - The cosine coefficient is identically zero because $-250 A_1 + 11,180 A_2 = \left.\frac{di}{dt}\right\vert{}_{t=0^+} = 0$:
+        
+          
+        
+        $$\text{Cosine term} = 0$$
+        
+    - Evaluating the sine amplitude:
+        
+          
+        
+        $$250 A_2 + 11,180 A_1 = 250(0.0671) + 11,180(3) = 16.775 + 33,540 \approx 33,540$$
+        
+    - Multiplying by inductance $L = 8 \times 10^{-3}\text{ H}$:
+        
+          
+        
+        $$L \times 33,540 = (8 \times 10^{-3}) \times 33,540 \approx 268.32\text{ V} \approx 268\text{ V}$$
+        
+- **Final Closed-Form Expression for $v_L(t)$:**
+    
+    $$v_L(t) = -268 e^{-250t} \sin(11,180t)\text{ V} \quad \text{for } t > 0$$
 ##
 
 * A second-order circuit is characterized by a second-order differential equation. It consists of resistors and the equivalent of **two energy storage elements.**
