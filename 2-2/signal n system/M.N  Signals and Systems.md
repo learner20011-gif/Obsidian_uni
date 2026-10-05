@@ -454,6 +454,9 @@ $$f(t) = \sum_{n=-\infty}^{\infty} c_n e^{j n \omega_0 t}$$
    $$|V_{o, n}| = |V_{i, n}| \cdot |H(j n\omega_0)|, \quad \angle V_{o, n} = \angle V_{i, n} + \angle H(j n\omega_0)$$
 4. Sum all output harmonic sinusoids.
 5. **Average Power in Resistor $R$:**
+#### Average Power Formula (Fourier Series)
+
+$$P = V_{\text{dc}}I_{\text{dc}} + \frac{1}{2} \sum_{n=1}^{\infty} V_n I_n \cos(\theta_n - \phi_n)$$
    $$P_{\text{avg}} = \frac{1}{R}\left[ V_{o, \text{dc}}^2 + \sum_{n=1}^\infty \frac{|V_{o, n}|^2}{2} \right]$$
 
 ---

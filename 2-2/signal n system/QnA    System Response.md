@@ -5802,6 +5802,312 @@ $$z(t) = \begin{cases} 0, & t < 0 \\ 8t, & 0 \le t \le 2 \\ 32 - 8t, & 2 \le t \
 
 $$c(t) = \begin{cases} 0, & t < 0 \\ 8t, & 0 \le t < 2 \\ 32 - 8t, & 2 \le t < 6 \\ -16, & 6 \le t < 8 \\ 8t - 80, & 8 \le t < 12 \\ 112 - 8t, & 12 \le t \le 14 \\ 0, & t > 14 \end{cases}$$
 ### **Network Synthesis**
+### Problem Statement (Example 16.15)
+![[Pasted image 20261005201439.png]]
+- **Given Transfer Function**:
+    
+      
+    
+    $$H(s) = \frac{V_o(s)}{V_i(s)} = \frac{10}{s^2 + 3s + 10}$$
+    
+      
+    
+- **Task**: Synthesize the circuit in Fig. 16.30(a) by finding $L$ and $C$ for:
+    
+      
+    - **(a)** $R = 5\ \Omega$
+        
+          
+        
+          
+        
+    - **(b)** $R = 1\ \Omega$
+        
+          
+        
+          
+        
+
+#### Circuit Transfer Function Derivation
+
+- **Nodal Analysis at Output Node $V_o$**:
+    
+      
+    
+    $$\frac{V_o(s) - V_i(s)}{sL} + \frac{V_o(s)}{\frac{1}{sC}} + \frac{V_o(s)}{R} = 0$$
+    
+      
+    
+- Multiply by $sLR$ and group terms:
+    
+      
+    
+    $$R[V_o(s) - V_i(s)] + s^2 RLC\, V_o(s) + sL\, V_o(s) = 0$$
+    
+      
+    
+    $$(s^2 RLC + sL + R) V_o(s) = R V_i(s)$$
+    
+      
+    
+- Divide through by $RLC$:
+    
+      
+    
+    $$\frac{V_o(s)}{V_i(s)} = \frac{\frac{1}{LC}}{s^2 + \frac{1}{RC}s + \frac{1}{LC}}$$
+    
+      
+    
+
+#### Coefficient Matching Equations
+
+- Equating with $H(s) = \frac{10}{s^2 + 3s + 10}$ gives:
+    
+      
+    
+    $$\frac{1}{LC} = 10 \implies LC = 0.1 \implies L = \frac{0.1}{C}$$
+    
+      
+    
+    $$\frac{1}{RC} = 3 \implies C = \frac{1}{3R}$$
+    
+      
+    
+
+#### Solutions for (a) and (b)
+
+- **Part (a): For $R = 5\ \Omega$**
+    
+      
+    - Capacitance:
+        
+          
+        
+        $$C = \frac{1}{3(5)} = \frac{1}{15}\text{ F} \approx 66.67\text{ mF}$$
+        
+          
+        
+    - Inductance:
+        
+          
+        
+        $$L = \frac{0.1}{1/15} = 1.5\text{ H}$$
+        
+          
+        
+- **Part (b): For $R = 1\ \Omega$**
+    
+      
+    - Capacitance:
+        
+          
+        
+        $$C = \frac{1}{3(1)} = \frac{1}{3}\text{ F} \approx 333.3\text{ mF}$$
+        
+          
+        
+    - Inductance:
+        
+          
+        
+        $$L = \frac{0.1}{1/3} = 0.3\text{ H} = 300\text{ mH}$$
+### Problem Statement (Example 16.16) **Objective**: Synthesize the second-order lowpass transfer function using the active filter circuit topology given in Fig. 16.32:
+    
+      
+    
+    $$T(s) = \frac{V_o(s)}{V_s(s)} = \frac{10^6}{s^2 + 100s + 10^6}$$
+    
+![[Pasted image 20261005201306.png]]  
+    
+- **Circuit Topology**: An op-amp circuit configured with four general admittances $Y_1, Y_2, Y_3, Y_4$ connected to internal node 1 ($V_1$), node 2 ($V_2$), input source $V_s$, and output $V_o$.
+    
+      
+    
+
+#### Nodal Analysis and General Transfer Function
+
+- **KCL at Node 1**:
+    
+      
+    - Equating the currents entering to those leaving node 1:
+        
+          
+        
+        $$(V_s - V_1)Y_1 = (V_1 - V_o)Y_2 + (V_1 - V_2)Y_3$$
+        
+          
+        
+- **KCL at Node 2**:
+    
+      
+    - Equating currents through $Y_3$ and $Y_4$:
+        
+          
+        
+        $$(V_1 - V_2)Y_3 = (V_2 - 0)Y_4$$
+        
+          
+        
+- **Op-Amp Constraint**:
+    
+      
+    - Because the op-amp is in a voltage-follower (unity-gain) feedback configuration, the non-inverting input is connected to node 2 and the inverting input is connected to $V_o$:
+        
+          
+        
+        $$V_2 = V_o$$
+        
+          
+        
+- **Express $V_1$ in terms of $V_o$**:
+    
+      
+    - Substitute $V_2 = V_o$ into the node 2 equation:
+        
+          
+        
+        $$V_1 Y_3 = (Y_3 + Y_4)V_o \implies V_1 = \frac{Y_3 + Y_4}{Y_3} V_o$$
+        
+          
+        
+- **Derive the closed-loop transfer function**:
+    
+      
+    - Substitute $V_1$ and $V_2 = V_o$ into the node 1 equation:
+        
+          
+        
+        $$Y_1 V_s = (Y_1 + Y_2 + Y_3)V_1 - (Y_2 + Y_3)V_o$$
+        
+          
+        
+        $$Y_1 V_s = (Y_1 + Y_2 + Y_3)\frac{Y_3 + Y_4}{Y_3}V_o - (Y_2 + Y_3)V_o$$
+        
+          
+        
+    - Multiply through by $Y_3$ and simplify:
+        
+          
+        
+        $$Y_1 Y_3 V_s = [Y_1 Y_3 + Y_4(Y_1 + Y_2 + Y_3)]V_o$$
+        
+          
+        
+        $$\frac{V_o}{V_s} = \frac{Y_1 Y_3}{Y_1 Y_3 + Y_4(Y_1 + Y_2 + Y_3)}$$
+        
+          
+        
+
+#### Selection of Passive Components
+
+- **Admittance assignments**:
+    
+      
+    - Since the numerator has no $s$ terms (constant value), $Y_1 Y_3$ must not contain $s$; thus, $Y_1$ and $Y_3$ are chosen as resistors:
+        
+          
+        
+        $$Y_1 = \frac{1}{R_1}, \quad Y_3 = \frac{1}{R_2}$$
+        
+          
+        
+    - To obtain a second-order polynomial in the denominator, $Y_2$ and $Y_4$ are chosen as capacitors:
+        
+          
+        
+        $$Y_2 = sC_1, \quad Y_4 = sC_2$$
+        
+          
+        
+- **Substitute admittances into the transfer function**:
+    
+      
+    
+    $$\frac{V_o}{V_s} = \frac{\frac{1}{R_1 R_2}}{\frac{1}{R_1 R_2} + sC_2\left(\frac{1}{R_1} + \frac{1}{R_2} + sC_1\right)}$$
+    
+      
+    
+    $$\frac{V_o}{V_s} = \frac{\frac{1}{R_1 R_2 C_1 C_2}}{s^2 + s\frac{R_1 + R_2}{R_1 R_2 C_1} + \frac{1}{R_1 R_2 C_1 C_2}}$$
+    
+      
+    
+
+#### Component Value Calculations
+
+- **Compare coefficients with the target function**:
+    
+      
+    - Target: $T(s) = \frac{10^6}{s^2 + 100s + 10^6}$
+        
+          
+        
+          
+        
+    - Constant term:
+        
+          
+        
+        $$\frac{1}{R_1 R_2 C_1 C_2} = 10^6$$
+        
+          
+        
+    - Coefficient of $s$:
+        
+          
+        
+        $$\frac{R_1 + R_2}{R_1 R_2 C_1} = 100$$
+        
+          
+        
+- **Choose convenient standard resistor values**:
+    
+      
+    - Let $R_1 = R_2 = 10\text{ k}\Omega = 10^4\ \Omega$.
+        
+          
+        
+- **Calculate capacitance $C_1$**:
+    
+      
+    
+    $$C_1 = \frac{R_1 + R_2}{100 R_1 R_2} = \frac{20 \times 10^3}{100 \times 100 \times 10^6} = 2 \times 10^{-6}\text{ F} = 2\ \mu\text{F}$$
+    
+      
+    
+- **Calculate capacitance $C_2$**:
+    
+      
+    
+    $$C_2 = \frac{10^{-6}}{R_1 R_2 C_1} = \frac{10^{-6}}{(100 \times 10^6)(2 \times 10^{-6})} = 5 \times 10^{-9}\text{ F} = 5\text{ nF}$$
+    
+      
+    
+![[Pasted image 20261005201327.png]]
+#### Final Synthesized Circuit Values
+
+- **Resistors**:
+    
+      
+    - $R_1 = 10\text{ k}\Omega$
+        
+          
+        
+          
+        
+    - $R_2 = 10\text{ k}\Omega$
+        
+          
+        
+          
+        
+- **Capacitors**:
+    
+      
+    - $C_1 = 2\ \mu\text{F}$ (feedback capacitor placed as $Y_2$)
+        
+          
+        
+    - $C_2 = 5\text{ nF}$ (shunt capacitor to ground placed as $Y_4$)
 
 ### 76. Page 3, Q.5(c): Given a transfer function $G(s) = \frac{s^2}{s^2+4s+10}$, synthesize the network. Assume L= 1H.
 
