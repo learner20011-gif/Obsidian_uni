@@ -1,4 +1,3 @@
-# Systems & Applications of Signals and Systems: Questions & Solutions
 
 
 

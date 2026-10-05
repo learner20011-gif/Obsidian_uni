@@ -1,4 +1,3 @@
-# System Response Questions & Solutions
 
 ---
 
