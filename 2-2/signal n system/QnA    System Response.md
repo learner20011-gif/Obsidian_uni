@@ -4422,6 +4422,141 @@ $$h(t) = 0.8 \delta(t) + \left[ \left( \frac{0.8 s_1^2}{s_1 - s_2} \right) e^{s_
 
 ### **Convolution integral and application to LTI system**
 
+### Question: What are the two signals being convolved?
+![[Pasted image 20261005180959.png|269]]
+- $x_1(t)$ is a pulse of height $2$ and width $1$, lasting from $t = 0$ to $t = 1$.
+    
+      
+    
+- $x_2(t)$ is a pulse of height $1$ and width $2$, lasting from $t = 1$ to $t = 3$.
+    
+      
+    
+- The goal is to compute their convolution:
+    
+      
+    
+    $$y(t) = x_1(t) * x_2(t) = \int_{-\infty}^{\infty} x_1(t - \lambda) x_2(\lambda)\, d\lambda$$
+    
+      
+    
+
+#### Question: What are the main steps in the graphical convolution method?
+
+- **Fold (Flip):** Reflect $x_1(\lambda)$ horizontally around the vertical axis to obtain $x_1(-\lambda)$.
+    
+      
+    
+- **Shift:** Slide the inverted pulse to the right by an amount $t$ so that it lies between $t - 1$ and $t$, representing $x_1(t - \lambda)$.
+    
+      
+    
+- **Multiply and Integrate:** Slide $x_1(t - \lambda)$ from left to right across $x_2(\lambda)$ and calculate the overlapping area for every range of time $t$.
+    
+      
+    
+
+#### Question: How is the overlap calculated across each time interval?
+![[Pasted image 20261005181032.png]]
+- **Case 1: No overlap before entering ($0 < t < 1$)**
+    
+      
+    - The leading edge $t$ has not yet reached the start of $x_2(\lambda)$ at $\lambda = 1$.
+        
+          
+        
+    - Since the pulses do not touch, the product is zero:
+        
+          
+        
+        $$y(t) = 0$$
+        
+          
+        
+- **Case 2: Partial overlap entering ($1 < t < 2$)**
+    
+      
+    - The pulse enters $x_2(\lambda)$ from the left.
+        
+          
+        
+    - The overlap extends from $\lambda = 1$ to $\lambda = t$:
+        
+          
+        
+        $$y(t) = \int_{1}^{t} (2)(1)\, d\lambda = 2(t - 1) = 2t - 2$$
+        
+          
+        
+    - This creates a linear ramp going from $0$ up to $2$.
+        
+          
+        
+- **Case 3: Complete overlap inside ($2 < t < 3$)**
+    
+      
+    - The shorter pulse $x_1(t - \lambda)$ is entirely inside the wider pulse $x_2(\lambda)$.
+        
+          
+        
+    - The overlap region runs from $\lambda = t - 1$ to $\lambda = t$:
+        
+          
+        
+        $$y(t) = \int_{t-1}^{t} (2)(1)\, d\lambda = 2[t - (t - 1)] = 2$$
+        
+          
+        
+    - The output stays constant at $2$ during this flat top.
+        
+          
+        
+- **Case 4: Partial overlap exiting ($3 < t < 4$)**
+    
+      
+    - The pulse is sliding out from the right edge of $x_2(\lambda)$.
+        
+          
+        
+    - The overlap runs from $\lambda = t - 1$ to $\lambda = 3$:
+        
+          
+        
+        $$y(t) = \int_{t-1}^{3} (2)(1)\, d\lambda = 2(3 - t + 1) = 8 - 2t$$
+        
+          
+        
+    - This creates a downward linear ramp going from $2$ to $0$.
+        
+          
+        
+- **Case 5: No overlap after exiting ($t > 4$)**
+    
+      
+    - The trailing edge $t - 1$ has passed the end of $x_2(\lambda)$ at $\lambda = 3$.
+        
+          
+        
+    - The pulses completely separate, giving zero overlap:
+        
+          
+        
+        $$y(t) = 0$$
+        
+          
+        
+
+#### Question: What is the final combined expression and shape of $y(t)$?
+
+- **Piecewise Function:**
+    
+      
+    
+    $$y(t) = \begin{cases} 0, & 0 \le t \le 1 \\ 2t - 2, & 1 \le t \le 2 \\ 2, & 2 \le t \le 3 \\ 8 - 2t, & 3 \le t \le 4 \\ 0, & t \ge 4 \end{cases}$$
+    
+      
+    
+- **Waveform Shape:** A continuous trapezoidal pulse that starts at $t = 1$, ramps up to a peak value of $2$ at $t = 2$, remains flat until $t = 3$, and ramps down to $0$ at $t = 4$.
 ### 68. Page 3, Q.6(b): Using convolution integral, find the response $v_0(t)$ of the following circuit.
 
 ![[Pasted image 20260727120501.png]]
