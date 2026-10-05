@@ -3,6 +3,7 @@
 ![[Screenshot_20261005_023903_Xodo.jpg]]
 
 ### second order
+![[Pasted image 20261005143126.png]]
 
 ![[Pasted image 20261004135654.png]]![[Pasted image 20261004193537.png]]
 ### first order
