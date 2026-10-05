@@ -4425,7 +4425,6 @@ $$h(t) = 0.8 \delta(t) + \left[ \left( \frac{0.8 s_1^2}{s_1 - s_2} \right) e^{s_
 ### Question: What are the two signals being convolved?
 ![[Pasted image 20261005180959.png|269]]
 - $x_1(t)$ is a pulse of height $2$ and width $1$, lasting from $t = 0$ to $t = 1$.
-    
       
     
 - $x_2(t)$ is a pulse of height $1$ and width $2$, lasting from $t = 1$ to $t = 3$.
@@ -4557,6 +4556,192 @@ $$h(t) = 0.8 \delta(t) + \left[ \left( \frac{0.8 s_1^2}{s_1 - s_2} \right) e^{s_
       
     
 - **Waveform Shape:** A continuous trapezoidal pulse that starts at $t = 1$, ramps up to a peak value of $2$ at $t = 2$, remains flat until $t = 3$, and ramps down to $0$ at $t = 4$.
+
+### Problem Statement Graphically convolve the two signals $g(t)$ and $u(t)$ shown in the provided textbook page:
+
+  
+![[Pasted image 20261005182319.png]]
+- $g(t) = t$ for $0 < t < 1$, and $0$ elsewhere.
+    
+      
+    
+- $u(t) = 1$ for $t > 0$, and $0$ elsewhere (the standard unit step function).
+    
+      
+    
+
+The convolution integral is defined as:
+
+  
+
+$$y(t) = g(t) * u(t) = \int_{-\infty}^{\infty} g(\tau) u(t - \tau) \, d\tau = \int_{-\infty}^{\infty} g(t - \tau) u(\tau) \, d\tau$$
+
+#### (Method 1)?
+
+- **Step 1: Time-reversal (Folding):**
+    
+      
+    - Replacing $t$ with $-\lambda$ produces $g(-\lambda)$, which reflects $g(\lambda)$ across the vertical axis, non-zero only for $-1 < \lambda < 0$.
+        
+          
+        
+- **Step 2: Shifting:**
+    
+      
+    - Shifting the folded signal by $t$ yields $g(t - \lambda)$.
+        
+          
+        
+    - The non-zero window of $g(t - \lambda)$ spans from $\lambda = t - 1$ to $\lambda = t$.
+        
+          
+        
+    - Within this interval, the value is given by $g(t - \lambda) = t - \lambda$.
+        
+          
+        
+- **Step 3: Intervals of Integration:**
+    
+      
+    - **For $t < 0$:**
+        
+          
+        - The trailing edge of $g(t - \lambda)$ ends at $\lambda = t < 0$.
+            
+              
+            
+        - Because $u(\lambda) = 0$ for all $\lambda < 0$, there is no overlap between $g(t - \lambda)$ and $u(\lambda)$.
+            
+              
+            
+        - Hence, $y(t) = 0$.
+            
+              
+            
+    - **For $0 \le t \le 1$:**
+        
+          
+        - The two functions overlap over the interval $\lambda \in [0, t]$.
+            
+              
+            
+        - The integral is:
+            
+              
+            
+            $$y(t) = \int_{0}^{t} (1)(t - \lambda) \, d\lambda = \left[ t\lambda - \frac{1}{2}\lambda^2 \right]_{0}^{t} = t^2 - \frac{t^2}{2} = \frac{1}{2}t^2$$
+            
+    - **For $t > 1$:**
+        
+          
+        - The signal $g(t - \lambda)$ is entirely situated inside the positive region where $u(\lambda) = 1$.
+            
+              
+            
+        - Overlap occurs across the entire active duration of $g(t - \lambda)$, which is $\lambda \in [t - 1, t]$.
+            
+              
+            
+        - The integral is:
+            
+              
+            
+            $$y(t) = \int_{t-1}^{t} (1)(t - \lambda) \, d\lambda = \left[ t\lambda - \frac{1}{2}\lambda^2 \right]_{t-1}^{t} = \left( t^2 - \frac{1}{2}t^2 \right) - \left( t(t - 1) - \frac{1}{2}(t - 1)^2 \right) = \frac{1}{2}$$
+            
+
+####  (Method 2)?
+
+- **Step 1: Time-reversal and Shifting:**
+    
+      
+    - Folding the unit step function produces $u(-\lambda)$, which is $1$ for $\lambda < 0$.
+        
+          
+        
+    - Shifting by $t$ produces $u(t - \lambda) = 1$ for $\lambda < t$.
+        
+          
+        
+    - The stationary function is $g(\lambda) = \lambda$ over the interval $0 < \lambda < 1$.
+        
+          
+        
+- **Step 2: Intervals of Integration:**
+    
+      
+    - **For $t < 0$:**
+        
+          
+        - $u(t - \lambda)$ is non-zero only for $\lambda < t < 0$, while $g(\lambda)$ is non-zero only for $\lambda > 0$.
+            
+              
+            
+        - Since there is no overlap, $y(t) = 0$.
+            
+              
+            
+    - **For $0 \le t \le 1$:**
+        
+          
+        - The overlap occurs over $\lambda \in [0, t]$.
+            
+              
+            
+        - The convolution is computed by:
+            
+              
+            
+            $$y(t) = \int_{0}^{t} (1)\lambda \, d\lambda = \left[ \frac{1}{2}\lambda^2 \right]_{0}^{t} = \frac{1}{2}t^2$$
+            
+    - **For $t > 1$:**
+        
+          
+        - The leading edge of $u(t - \lambda)$ is at $\lambda = t > 1$, which fully covers the non-zero region of $g(\lambda)$.
+            
+              
+            
+        - The overlap spans the fixed bounds $\lambda \in [0, 1]$.
+            
+              
+            
+        - The integral simplifies to:
+            
+              
+            
+            $$y(t) = \int_{0}^{1} (1)\lambda \, d\lambda = \left[ \frac{1}{2}\lambda^2 \right]_{0}^{1} = \frac{1}{2}$$
+            
+
+#### Question 3: Which method is more computationally convenient and why?
+
+- **Method Comparison:**
+    
+      
+    - **Method 2 is simpler:** Folding the step function keeps the integration limits dependent on $t$ only during the rise phase ($0 \le t \le 1$). Once $t > 1$, the limits are fixed constants ($0$ to $1$), and the integrand is a single monomial $\lambda$.
+        
+          
+        
+    - **Method 1 requires extra algebra:** Folding the ramp function results in a moving lower bound $(t - 1)$ and an integrand $(t - \lambda)$ containing the variable $t$, requiring expansion and cancellation of polynomial terms.
+        
+          
+        
+
+#### Final Output Summary
+
+The piecewise closed-form expression for $y(t)$ is:
+
+  
+
+$$y(t) = \begin{cases} 0, & t < 0 \\ \frac{1}{2}t^2, & 0 \le t \le 1 \\ \frac{1}{2}, & t \ge 1 \end{cases}$$
+
+- The response starts at $0$ for $t < 0$.
+    
+      
+    
+- It grows quadratically from $0$ to $0.5$ over the interval $0 \le t \le 1$.
+    
+      
+    
+- It stays flat at a constant value of $0.5$ for all $t \ge 1$.
 ### 68. Page 3, Q.6(b): Using convolution integral, find the response $v_0(t)$ of the following circuit.
 
 ![[Pasted image 20260727120501.png]]
