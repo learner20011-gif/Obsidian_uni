@@ -7,6 +7,8 @@
 
 ![[Pasted image 20261004135654.png]]![[Pasted image 20261004193537.png]]
 ### first order
+![[Pasted image 20261005161437.png]]
+![[Pasted image 20261005161421.png]]
 ![[Pasted image 20261004144136.png]]![[Pasted image 20261004150543.png]]
 ![[Pasted image 20261004150521.png]]
 

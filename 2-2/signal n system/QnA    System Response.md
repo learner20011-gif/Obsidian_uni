@@ -3966,7 +3966,7 @@ The basic circuit consists of:
 ***
 
 
-### **Zero-input and zero-state response**
+### **Zero-input and zero-state response/Natural & forced Response**
 
 ### 57. Page 5, Q.2(c): Consider the following circuit. (i) Find the zero-state response (ii) Determine the time necessary for the capacitor to reach one-fourth of the final voltage.
 
