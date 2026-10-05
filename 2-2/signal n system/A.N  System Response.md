@@ -1220,3 +1220,54 @@ $$F(s) = \frac{A_m}{(s - p)^m} + \frac{A_{m-1}}{(s - p)^{m-1}} + \dots + \frac{A
     - Result:
         
         $$F(s) = \frac{2}{(s + 1)^2} - \frac{4}{s + 1} + \frac{5}{s + 2}$$
+
+
+### case 3 complex poles
+#### Overview of Complex Poles
+
+- Complex roots of real polynomials always occur in conjugate pairs.
+    
+      
+    
+- Direct partial fraction expansion with complex algebra is cumbersome, so the **method of completing the square** is preferred.
+    
+      
+    
+
+#### Completing the Square
+
+- The quadratic factor in the denominator is rewritten as a sum of squares:
+    
+      
+    
+    $$s^2 + as + b = s^2 + 2\alpha s + \alpha^2 + \beta^2 = (s + \alpha)^2 + \beta^2$$
+    
+      
+    
+- The linear numerator is decomposed to match standard transform forms:
+    
+      
+    
+    $$A_1s + A_2 = A_1(s + \alpha) + B_1\beta$$
+    
+      
+    
+
+#### Standard s-Domain Form
+
+- Substituting into $F(s)$ yields:
+    
+      
+    
+    $$F(s) = \frac{A_1(s + \alpha)}{(s + \alpha)^2 + \beta^2} + \frac{B_1\beta}{(s + \alpha)^2 + \beta^2} + F_1(s)$$
+    
+      
+    
+
+#### Inverse Laplace Transform
+
+- Taking the inverse transform directly produces damped sinusoidal terms:
+    
+      
+    
+    $$f(t) = \left(A_1 e^{-\alpha t}\cos(\beta t) + B_1 e^{-\alpha t}\sin(\beta t)\right)u(t) + f_1(t)$$
