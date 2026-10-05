@@ -4742,6 +4742,168 @@ $$y(t) = \begin{cases} 0, & t < 0 \\ \frac{1}{2}t^2, & 0 \le t \le 1 \\ \frac{1}
       
     
 - It stays flat at a constant value of $0.5$ for all $t \ge 1$.
+
+### Problem Statement (Example 15.14) - **Problem**: For the $RL$ circuit shown in Fig. 15.21(a), use the convolution integral to find the response $i_o(t)$ due to the excitation $i_s(t)$ shown in Fig. 15.21(b).
+
+- **Circuit Elements**:
+    
+      
+    - Resistor: $R = 1\ \Omega$
+        
+
+    - Inductor: $L = 1\text{ H}$
+        
+  
+    - Independent current source: $i_s(t) = u(t) - u(t - 2)\text{ A}$
+        
+    
+![[Pasted image 20261005190656.png]]
+#### Impulse Response and Folding Formulation
+
+- **Step 1: Determine the transfer function $H(s)$ and impulse response $h(t)$**
+    
+      
+    - In the $s$-domain, the parallel elements are $R = 1\ \Omega$ and inductor impedance $sL = s\ \Omega$.
+        
+          
+        
+    - Using the current division principle across the parallel branches:
+        
+          
+        
+        $$I_o(s) = \frac{\frac{1}{s}}{1 + \frac{1}{s}} I_s(s) = \frac{1}{s + 1} I_s(s)$$
+        
+          
+        
+    - The network transfer function is:
+        
+          
+        
+        $$H(s) = \frac{I_o(s)}{I_s(s)} = \frac{1}{s + 1}$$
+        
+          
+        
+    - Taking the inverse Laplace transform gives the impulse response $h(t)$:
+        
+          
+        
+        $$h(t) = e^{-t} u(t)$$
+        
+          
+        
+- **Step 2: Folding and shifting for convolution**
+    
+      
+    - We compute the response using the convolution integral:
+        
+          
+        
+        $$i_o(t) = i_s(t) * h(t) = \int_{-\infty}^{\infty} i_s(t - \lambda) h(\lambda) \, d\lambda$$
+        
+          
+        
+    - The impulse response in dummy variable form is:
+        
+          
+        
+        $$h(\lambda) = e^{-\lambda}, \quad \lambda \ge 0$$
+        
+          
+        
+        $$h(\lambda) = 0, \quad \lambda < 0$$
+        
+          
+        
+    - The excitation signal $i_s(\lambda)$ is a pulse of amplitude $1$ from $\lambda = 0$ to $\lambda = 2$.
+        
+          
+        
+    - Fold $i_s(\lambda)$ to form $i_s(-\lambda)$ over $[-2, 0]$, then shift by $t$ to form $i_s(t - \lambda)$, which has height $1$ over the moving interval $[t - 2, t]$.
+        
+          
+        
+![[Pasted image 20261005190822.png]]
+#### Case 1: For $t < 0$ (No Overlap)
+
+- The moving pulse $i_s(t - \lambda)$ ends at $\lambda = t$, which is less than $0$.
+    
+      
+    
+- Because $h(\lambda) = 0$ for all $\lambda < 0$, there is no overlapping region between $i_s(t - \lambda)$ and $h(\lambda)$:
+    
+      
+    
+    $$i_o(t) = 0, \quad t < 0$$
+    
+      
+    
+
+#### Case 2: For $0 < t < 2$ (Partial Overlap)
+
+- The leading edge of the pulse $t$ has crossed $\lambda = 0$, while the trailing edge $(t - 2)$ is still negative ($t - 2 < 0$).
+    
+      
+    
+- The two signals overlap strictly from $\lambda = 0$ to $\lambda = t$:
+    
+      
+    
+    $$i_o(t) = \int_{0}^{t} (1) e^{-\lambda} \, d\lambda$$
+    
+      
+    
+- Evaluating the definite integral:
+    
+      
+    
+    $$i_o(t) = \left[ -e^{-\lambda} \right]_{0}^{t} = -e^{-t} - (-e^{0}) = 1 - e^{-t}\text{ A}, \quad 0 < t < 2$$
+    
+      
+    
+
+#### Case 3: For $t > 2$ (Total Overlap of Pulse Duration)
+
+- The trailing edge $(t - 2)$ has passed $\lambda = 0$, meaning the complete rectangular pulse lies entirely within $\lambda \ge 0$.
+    
+      
+    
+- The overlap between $i_s(t - \lambda)$ and $h(\lambda)$ extends across the entire width of the pulse, from $\lambda = t - 2$ to $\lambda = t$:
+    
+      
+    
+    $$i_o(t) = \int_{t - 2}^{t} (1) e^{-\lambda} \, d\lambda$$
+    
+      
+    
+- Evaluating the definite integral:
+    
+      
+    
+    $$i_o(t) = \left[ -e^{-\lambda} \right]_{t - 2}^{t} = -e^{-t} - \left( -e^{-(t - 2)} \right)$$
+    
+      
+    
+    $$i_o(t) = e^{-(t - 2)} - e^{-t} = e^{-t}(e^2 - 1) = (e^2 - 1)e^{-t}\text{ A}, \quad t > 2$$
+    
+      
+    
+
+
+#### Combined Final Result
+
+- Combining the three cases gives the full piecewise output current:
+    
+      
+    
+    $$i_o(t) = \begin{cases} 0, & t \le 0 \\ 1 - e^{-t}\text{ A}, & 0 \le t \le 2 \\ (e^2 - 1)e^{-t}\text{ A}, & t \ge 2 \end{cases}$$
+    
+      
+    
+- Alternatively expressed using unit step functions:
+    
+      
+    
+    $$i_o(t) = (1 - e^{-t})u(t) - (1 - e^{-(t - 2)})u(t - 2)\text{ A}$$
 ### 68. Page 3, Q.6(b): Using convolution integral, find the response $v_0(t)$ of the following circuit.
 
 ![[Pasted image 20260727120501.png]]
