@@ -12,7 +12,7 @@
 ![[Pasted image 20261005161421.png]]
 ![[Pasted image 20261004144136.png]]![[Pasted image 20261004150543.png]]
 ![[Pasted image 20261004150521.png]]
-
+![[IMG_20261006_181154377_HDR.jpg]]
 ## Qna 
 
 ### Question The switch in the circuit has been closed for a long time and is opened at $t = 0$. Find $v(t)$ for $t \ge 0$, and calculate the initial energy stored in the capacitor.
