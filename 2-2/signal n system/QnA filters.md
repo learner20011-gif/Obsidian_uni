@@ -1,8 +1,3 @@
----
-aliases:
----
-
----
 
 ### **Analog filter design**
 
