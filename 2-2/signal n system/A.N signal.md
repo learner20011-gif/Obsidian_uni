@@ -33,6 +33,14 @@
 ![[Pasted image 20261003204155.png]]
 
 ![[Pasted image 20261004022816.png]]
+
+- The Fourier Transform of an impulse train in time is another impulse train in frequency:
+    
+    $$P(\omega) = \frac{2\pi}{T_s} \sum_{k=-\infty}^{\infty} \delta(\omega - k \omega_s), \quad \text{where } \omega_s = \frac{2\pi}{T_s}$$
+    
+- Convolving $X(\omega)$ with $P(\omega)$ yields the spectrum of the sampled signal:
+    
+    $$X_s(\omega) = \frac{1}{T_s} \sum_{k=-\infty}^{\infty} X(\omega - k \omega_s)$$
 ### Qna
 
 
