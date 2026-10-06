@@ -4,13 +4,8 @@
 
 
 
-
-
-![[SmartSelect_20261006_020610_Xodo.jpg]]
-
-![[SmartSelect_20261006_021033_Xodo.jpg]]
-
-
-
+![[SmartSelect_20261006_020610_Xodo.jpg|229]]
 
 - A circuit is stable when all the poles of its transfer function H(s) lie in the left half of the s plane.
+
+![[Pasted image 20261006141214.png]]![[Pasted image 20261006141659.png]]![[Pasted image 20261006142016.png]]![[Pasted image 20261006142634.png|411]]
