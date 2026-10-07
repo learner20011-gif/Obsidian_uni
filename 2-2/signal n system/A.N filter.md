@@ -4,7 +4,7 @@
 
 Using the standard Butterworth order formula:
 
-$$N \ge \frac{\log \sqrt{\frac{10^{-0.1 \alpha_s} - 1}{10^{-0.1 \alpha_p} - 1}}}{\log \left(\frac{\omega_s}{\omega_p}\right)}$$
+$$N \ge \frac{\log \sqrt{\frac{10^{0.1 \alpha_s} - 1}{10^{0.1 \alpha_p} - 1}}}{\log \left(\frac{\omega_s}{\omega_p}\right)}$$
 
 cutoff frequency $\omega_c$ can be determined from either passband or stopband specification:
 
