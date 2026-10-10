@@ -62,3 +62,60 @@
     $$dW_m = F_d \, dx$$
     
     $$F_d = \frac{1}{2} V^2 \frac{dC}{dx}$$
+
+
+#### 1. Lorentz Force on a Single Conductor
+
+- Force on one vertical active conductor of length $l$ carrying current $I$ in magnetic flux density $B$:
+    
+    $$F_1 = B \cdot I \cdot l$$
+    
+
+#### 2. Total Force on Multi-Turn Coil
+
+- For a rectangular coil having $N$ turns (giving $2N$ active vertical sides):
+    
+    $$F = N \cdot B \cdot I \cdot l$$
+    
+
+#### 3. Deflecting Torque ($T_d$)
+
+- Deflecting torque produced by the force couple separated by coil width $d$:
+    
+    $$T_d = F \cdot d = (N \cdot B \cdot I \cdot l) \cdot d$$
+    
+- Area of the rectangular coil ($A = l \cdot d$):
+    
+    $$T_d = B \cdot I \cdot N \cdot A$$
+    
+- Defining the galvanometer displacement/torque constant $G = B \cdot N \cdot A$:
+    
+    $$T_d = G \cdot I$$
+    
+
+#### 4. Controlling Torque ($T_c$)
+
+- Restoring torque exerted by the control spring with torsion constant $K$:
+    
+    $$T_c = K \cdot \theta$$
+    
+
+#### 5. Steady-State Equilibrium Deflection
+
+- Equilibrium condition between deflecting and controlling torques:
+    
+    $$T_d = T_c$$
+    
+- Equating torque expressions:
+    
+    $$B \cdot I \cdot N \cdot A = K \cdot \theta$$
+    
+    $$G \cdot I = K \cdot \theta$$
+    
+- Steady-state angular deflection ($\theta$):
+    
+    $$\theta = \left(\frac{B \cdot N \cdot A}{K}\right) I = \left(\frac{G}{K}\right) I$$
+    
+- Current sensitivity ($S_i$):
+    
+    $$S_i = \frac{\theta}{I} = \frac{B \cdot N \cdot A}{K}$$
