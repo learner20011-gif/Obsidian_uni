@@ -63,7 +63,61 @@
     
     $$F_d = \frac{1}{2} V^2 \frac{dC}{dx}$$
 
+#### 1. Magnetic Field Stored Energy
 
+- Stored magnetic energy in an inductor of inductance $L$ carrying current $I$:
+    
+    $$W = \frac{1}{2} L I^2$$
+    
+
+#### 2. Incremental Work & Energy Balance
+
+- Total magnetic flux linkage:
+    
+    $$\lambda = L I$$
+    
+- Differential flux linkage during angular displacement $d\theta$:
+    
+    $$d\lambda = d(L I) = L \, dI + I \, dL$$
+    
+- Induced back EMF:
+    
+    $$e = \frac{d\lambda}{dt}$$
+    
+- Input electrical energy supplied by the source over time $dt$:
+    
+    $$dW_e = e \cdot I \cdot dt = \left(\frac{d\lambda}{dt}\right) I \, dt = I \, d\lambda$$
+    
+    $$dW_e = I(L \, dI + I \, dL) = I L \, dI + I^2 \, dL$$
+    
+- Differential change in stored magnetic energy:
+    
+    $$dW = d\left(\frac{1}{2} L I^2\right) = \frac{1}{2} L (2I \, dI) + \frac{1}{2} I^2 \, dL = I L \, dI + \frac{1}{2} I^2 \, dL$$
+    
+- Mechanical work performed by the deflecting torque $T_d$:
+    
+    $$dW_m = T_d \, d\theta$$
+    
+
+#### 3. Conservation of Energy & Deflecting Torque
+
+- Energy conservation principle:
+    
+    $$dW_e = dW + dW_m$$
+    
+- Direct substitution:
+    
+    $$I L \, dI + I^2 \, dL = \left(I L \, dI + \frac{1}{2} I^2 \, dL\right) + T_d \, d\theta$$
+    
+- Canceling and simplifying terms:
+    
+    $$I^2 \, dL - \frac{1}{2} I^2 \, dL = T_d \, d\theta$$
+    
+    $$\frac{1}{2} I^2 \, dL = T_d \, d\theta$$
+    
+- Deflecting torque ($T_d$):
+    
+    $$T_d = \frac{1}{2} I^2 \frac{dL}{d\theta}$$
 #### 1. Lorentz Force on a Single Conductor
 
 - Force on one vertical active conductor of length $l$ carrying current $I$ in magnetic flux density $B$:
