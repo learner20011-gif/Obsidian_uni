@@ -9,8 +9,8 @@
 ![[Pasted image 20261012000256.jpg]]![[Pasted image 20261012005958.png]]
 ![[Pasted image 20261012015142.jpg]]
 ![[Pasted image 20261012024030.png]]
-
-
+![[Pasted image 20261012032933.png]]
+![[Pasted image 20261012034139.jpg]]
 #### 1. System Energy Storage
 
 - Stored electrostatic energy in the capacitor:
@@ -1096,3 +1096,154 @@
         - When measuring a **lower frequency**, the moving coil shifts rightward toward the magnetizing coil (thicker section). The pointer tip above the pivot tilts to the left, pointing to the **"Lower"** marking on the scale.
             
         - When measuring a **higher frequency**, the moving coil shifts leftward toward the free end (thinner section). The pointer tip above the pivot tilts to the right, pointing to the **"Higher"** marking on the scale.
+#### What is a Power Factor Meter?
+
+- A **Power Factor Meter** measures the phase difference between alternating current and voltage in an electrical circuit, telling you how efficiently electrical power is being used.
+    
+      
+    
+- Instead of calculating current, voltage, and power separately, this instrument directly indicates whether the circuit's power factor is **leading**, **lagging**, or at **unity (1.0)**.
+    
+      
+    
+
+#### Main Parts and Construction
+
+- **Fixed Coil (Current Coil):**
+    
+      
+    - Placed in a stationary position and split into two equal halves.
+        
+          
+        
+    - Connected in series with the load so that it carries the entire circuit current.
+        
+          
+        
+    - Produces an alternating magnetic field that is directly proportional to the load current.
+        
+          
+        
+- **Moving Coils (Pressure / Voltage Coils A and B):**
+    
+      
+    - Two identical coils mounted together on a central rotating spindle at a right angle ($90^\circ$) to each other.
+        
+          
+        
+    - Both coils are connected in parallel across the main supply voltage.
+        
+          
+        
+    - A pointer is attached to this moving spindle to sweep across the calibrated scale.
+        
+          
+        
+- **Auxiliary Circuit Elements:**
+    
+      
+    - **Coil A** is connected in series with a pure **resistor ($R$)**, making the current through Coil A ($I_A$) stay in phase with the voltage.
+        
+          
+        
+    - **Coil B** is connected in series with an **inductor/choke coil ($L$)**, making the current through Coil B ($I_B$) lag behind the voltage by $90^\circ$.
+        
+          
+        
+    - The components are matched such that $R = \omega L$, ensuring equal current magnitudes pass through both coils under normal operating frequency.
+        
+          
+        
+- **Absence of Control Springs:**
+    
+      
+    - Unlike ordinary meters, this meter has **no control spring**.
+        
+          
+        
+    - Current is led into the moving coils using extremely thin, flexible silver or gold strips (ligaments) that exert negligible controlling torque.
+        
+          
+        
+    - The pointer's position is governed entirely by electrical torques.
+        
+          
+        
+
+#### Working Principle and Theory
+
+- **Two Competing Torques:**
+    
+      
+    - When current flows, the magnetic field of the fixed coil interacts with the magnetic fields produced by coils **A** and **B**.
+        
+          
+        
+    - This interaction creates two rotational forces (deflecting torques), $T_A$ and $T_B$.
+        
+          
+        
+    - The coils are wound in opposite directions, causing $T_A$ to push the pointer in a **clockwise direction** and $T_B$ to push it in a **counter-clockwise direction**.
+        
+          
+        
+- **Deflection Torque Equations (Lagging Power Factor $\cos\phi$):**
+    
+      
+    - Torque on Coil A:
+        
+          
+        
+        $$T_A = K V I M_{\max} \cos\phi \sin\theta$$
+        
+          
+        
+    - Torque on Coil B:
+        
+          
+        
+        $$T_B = K V I M_{\max} \cos(90^\circ - \phi) \sin(90^\circ + \theta) = K V I M_{\max} \sin\phi \cos\theta$$
+        
+          
+        
+    - Here, $V$ is supply voltage, $I$ is circuit current, $\phi$ is the phase angle of the load, $\theta$ is the angle of pointer deflection, and $M_{\max}$ is the maximum mutual inductance.
+        
+          
+        
+- **Balance Condition (Equilibrium):**
+    
+      
+    - The moving system rotates until the two opposing torques perfectly balance each other ($T_A = T_B$):
+        
+          
+        
+        $$K V I M_{\max} \cos\phi \sin\theta = K V I M_{\max} \sin\phi \cos\theta$$
+        
+          
+        
+    - Dividing both sides by $K V I M_{\max}$ and rearranging gives:
+        
+          
+        
+        $$\frac{\sin\theta}{\cos\theta} = \frac{\sin\phi}{\cos\phi} \implies \tan\theta = \tan\phi$$
+        
+    - Therefore:
+        
+          
+        
+        $$\theta = \phi$$
+        
+          
+        
+
+#### Key Takeaway
+
+- The physical angle of rotation of the pointer ($\theta$) is directly equal to the phase angle of the circuit ($\phi$).
+    
+      
+    
+- When the circuit is purely resistive ($\phi = 0^\circ$), the pointer rests at **1.0 (Unity)**.
+    
+      
+    
+- If current lags voltage ($\phi > 0^\circ$), the pointer deflects toward the **Lag** side; if it leads, the pointer deflects toward the **Lead** side.
