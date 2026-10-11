@@ -876,7 +876,7 @@ The function of a clamp-on ammeter is based on the principle of electromagnetic 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 82** (*Clamp-on ammeter definition and functional operation*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 9, Sec 9.8 (Page 296)
 
-### 29. Page 18, Q.8(d): What is maximum demand indicator? Briefly explain the working principle of Merz Price maximum demand indicator.
+### 29. ❓Page 18, Q.8(d): What is maximum demand indicator? Briefly explain the working principle of Merz Price maximum demand indicator.
 
 **Answer:**
 **What is a Maximum Demand Indicator?**
