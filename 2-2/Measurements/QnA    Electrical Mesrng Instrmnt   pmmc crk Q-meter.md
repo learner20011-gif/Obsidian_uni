@@ -1479,7 +1479,7 @@ This establishes that the total number of revolutions is strictly proportional t
 
 ### **6. Speed, Frequency & Phase Difference (Frequency meter, PF meter, Synchroscope)**
 
-### 46. Page 2, Q.6. (b): Mention the conditions for synchronization of an AC generator to a power system.
+### 46. ❓Page 2, Q.6. (b): Mention the conditions for synchronization of an AC generator to a power system.
 
 **Answer:**
 To safely and smoothly connect (synchronize) an incoming AC generator (alternator) to an active, running power system (busbars or infinite bus), several strict electrical conditions must be met simultaneously. If these conditions are not met, connecting the generator can result in catastrophic circulating currents, severe mechanical damage to the generator shaft, and disruption of the power grid.
@@ -1495,7 +1495,7 @@ The mandatory conditions for synchronization are:
 
 ***
 
-### 47. Page 2, Q.6. (c): Show how a synchroscope with an electro-dynamometer movement can decide if a synchronous generator to be connected to the power system is slower or faster.
+### 47. ❓Page 2, Q.6. (c): Show how a synchroscope with an electro-dynamometer movement can decide if a synchronous generator to be connected to the power system is slower or faster.
 
 **Answer:**
 An electro-dynamometer (Weston-type) synchroscope consists of a three-limbed fixed magnetic circuit and a moving system comprising two coils (coil A and coil B) mounted on the same spindle at exactly $90^\circ$ to each other. 
@@ -1544,7 +1544,7 @@ The operation is based on the principle of electrical resonance. The series circ
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 82** (*Structure and operation of a frequency meter*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 12, Sec 12.8 (Pages 413–416)
 
-### 49. Page 6, Q.8 b): Describe the construction and operation principle of Weston frequency meter.
+### 49. ❓Page 6, Q.8 b): Describe the construction and operation principle of Weston frequency meter.
 
 **Answer:**
 *(Note: A Weston frequency meter typically refers to the moving-iron crossed-coil type. The provided slides detail the Ferrodynamic / Electrical Resonance type frequency meter. I will describe the standard Weston crossed-coil type as requested by the specific historical instrument name, but note that slide 102 covers the Ferrodynamic resonance type which is often functionally synonymous in typical exam contexts if the "Weston" name is loosely applied to dynamometer types.)*
@@ -1684,7 +1684,7 @@ This confirms that the mechanical deflection angle ($\theta$) is a direct measur
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 82** (*Electrodynamometer power factor meter phase angle measure proof*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 12, Sec 12.2 (Pages 405–407)
 
-### 53. Page 12, Q.5. (c): What is frequency meter? Explain the operating principle of an electrodynamometer type frequency meter.
+### 53. ❓Page 12, Q.5. (c): What is frequency meter? Explain the operating principle of an electrodynamometer type frequency meter.
 
 **Answer:**
 **What is a frequency meter?**
@@ -1706,7 +1706,7 @@ A frequency meter is an electrical indicating instrument used to measure and dis
 
 ***
 
-### 54. Page 20, Q.7(a): Illustrate the operation of a Weston type synchroscope.
+### 54.❓ Page 20, Q.7(a): Illustrate the operation of a Weston type synchroscope.
 
 **Answer:**
 A Weston type synchroscope is an electro-dynamometer instrument designed to indicate whether an incoming AC generator is running faster, slower, or at the exact same frequency as the main power grid (busbars), and to indicate the exact moment of phase alignment for safe synchronization.

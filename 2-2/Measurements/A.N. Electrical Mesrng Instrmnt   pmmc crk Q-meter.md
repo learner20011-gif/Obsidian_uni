@@ -8,6 +8,9 @@
 
 ![[Pasted image 20261012000256.jpg]]![[Pasted image 20261012005958.png]]
 ![[Pasted image 20261012015142.jpg]]
+![[Pasted image 20261012024030.png]]
+
+
 #### 1. System Energy Storage
 
 - Stored electrostatic energy in the capacitor:
@@ -973,3 +976,123 @@
           
         
     - A gear system connected to the spindle turns the dial pointers to register the total kilowatt-hours ($\text{kWh}$) used.
+#### 1. What This Meter Does & Basic Concept
+
+- **Purpose:** This instrument measures the electrical frequency of an AC power supply by using electrical resonance.
+    
+- **No Spring Needed:** Unlike ordinary meters, it has no control hairsprings to hold or restore the pointer.
+    
+- **Self-Balancing Mechanism:** The moving coil naturally glides along an iron core until electrical resonance ($X_L = X_C$) is reached, where all mechanical torque drops to zero.
+    
+
+#### 2. Key Components (Construction)
+
+- **Magnetizing Coil (Fixed Coil):**
+    
+    - Connected across the AC supply line whose frequency is being measured.
+        
+    - It acts as the primary field coil and sets up an alternating magnetic flux $\Phi$.
+        
+- **Tapered Laminated Iron Core:**
+    
+    - Placed inside the magnetizing coil.
+        
+    - Its cross-sectional thickness varies gradually along its length: it is thickest near the magnetizing coil and thinnest at the outer free end.
+        
+- **Moving Coil & Pointer:**
+    
+    - A light coil free to slide along the tapered iron core.
+        
+    - A pointer is attached to it to indicate the frequency value on a dial.
+        
+- **Tuning Capacitor ($C$):**
+    
+    - Connected directly across the terminals of the moving coil to create a series resonant $L\text{--}C$ circuit.
+        
+
+#### 3. How the Moving Coil Generates Torque
+
+- **Induced Voltage:**
+    
+    - The magnetizing coil creates an alternating flux $\Phi$ that cuts the moving coil.
+        
+    - This induces an alternating EMF $E$ in the moving coil that lags the flux $\Phi$ by $90^\circ$.
+        
+- **Induced Current ($I_2$):**
+    
+    - The induced voltage drives an internal circulating current $I_2$ through the moving coil and capacitor $C$.
+        
+    - The phase of $I_2$ depends on the balance between inductive reactance ($X_L$) and capacitive reactance ($X_C$).
+        
+- **Torque Under Three Circuit Conditions:**
+    
+    - **Inductive ($X_L > X_C$):** Current $I_2$ lags voltage $E$, producing a forward deflecting torque:
+        
+        $$T_d = I I_2 \cos(90^\circ + \alpha)$$
+        
+    - **Capacitive ($X_L < X_C$):** Current $I_2$ leads voltage $E$, producing a reverse deflecting torque:
+        
+        $$T_d = I I_2 \cos(90^\circ - \beta)$$
+        
+    - **Resonance ($X_L = X_C$):** Circuit is purely resistive, making $I_2$ perfectly in phase with $E$ ($90^\circ$ away from flux $\Phi$).
+        
+        $$T_d = I I_2 \cos(90^\circ) = 0$$
+        
+    - **Key takeaway:** The net deflecting torque on the moving coil is **zero** whenever $X_L = X_C$.
+        
+
+#### 4. The Role of the Tapered Iron Core
+
+- **Constant Capacitance vs. Variable Inductance:**
+    
+    - For a given supply frequency, capacitor reactance $X_C = \frac{1}{2\pi f C}$ remains constant.
+        
+    - However, the inductance $L$ of the moving coil depends on its exact physical position along the tapered core.
+        
+- **Position Determines Inductance:**
+    
+    - When the moving coil sits near the magnetizing coil (thick core area), the magnetic path is heavy, making $L$ and $X_L$ maximum.
+        
+    - When the moving coil moves away toward the narrow end (thin core area), $L$ and $X_L$ decrease to a minimum.
+        
+- **Center Calibration:**
+    
+    - The value of capacitor $C$ is chosen so that at normal rated frequency (e.g., $50\text{ Hz}$), resonance ($X_L = X_C$) occurs exactly when the coil rests at the center of the core.
+        
+    - At this center spot, torque is zero, keeping the pointer steady at the center "Normal Frequency" mark.
+        
+
+#### 5. How It Measures Frequency Changes
+
+- **When Frequency Rises Above Normal ($f \uparrow$):**
+    
+    - Inductive reactance increases ($X_L = 2\pi f L \uparrow$) and capacitive reactance drops ($X_C = \frac{1}{2\pi f C} \downarrow$), making $X_L > X_C$.
+        
+    - The circuit becomes inductive, generating a torque that repels the moving coil away from the magnetizing coil.
+        
+    - As the coil slides toward the thinner end of the core, its inductance $L$ naturally decreases.
+        
+    - Movement stops once $X_L$ drops enough to equal $X_C$ again ($T_d = 0$), pointing to a higher frequency reading.
+        
+- **When Frequency Drops Below Normal ($f \downarrow$):**
+    
+    - Capacitive reactance increases and inductive reactance drops, making $X_C > X_L$.
+        
+    - The circuit becomes capacitive, generating an opposite torque that pulls the coil closer toward the magnetizing coil.
+        
+    - Moving onto the thicker core section raises its inductance $L$.
+        
+    - The coil stops moving once $X_L$ rises to match $X_C$ again ($T_d = 0$), pointing to a lower frequency reading.
+#### 4. Pointer Deflection and Scale Alignment
+
+- **Mechanical Pivot Dynamics:**
+    
+    - The moving system is supported by a central pivot located above the core.
+        
+    - The moving coil assembly extends below the pivot, while the pointer needle extends upward to the dial scale.
+        
+    - This configuration functions as a lever about the pivot point:
+        
+        - When measuring a **lower frequency**, the moving coil shifts rightward toward the magnetizing coil (thicker section). The pointer tip above the pivot tilts to the left, pointing to the **"Lower"** marking on the scale.
+            
+        - When measuring a **higher frequency**, the moving coil shifts leftward toward the free end (thinner section). The pointer tip above the pivot tilts to the right, pointing to the **"Higher"** marking on the scale.
