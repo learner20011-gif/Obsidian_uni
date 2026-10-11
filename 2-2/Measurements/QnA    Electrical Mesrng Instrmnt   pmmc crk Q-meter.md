@@ -1417,7 +1417,7 @@ Supply voltage variations affect the accuracy of an induction energy meter in co
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 82, 84–85** (*Creeping and voltage variation effects in energy meters*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 11, Sec 11.2 (Pages 377–378)
 
-### 45. Page 25, CT-03(B) Q1: (a) Draw a simplified diagram of an induction type energy meter and show the flux and eddy current distributions within the rotating disk. (b) Draw the phasor diagram of the energy meter and establish the relationship between total no. of revolution and the energy consumed. [figure Involved - note reference to simplified diagram/phasor]
+### 45. ❓Page 25, CT-03(B) Q1: (a) Draw a simplified diagram of an induction type energy meter and show the flux and eddy current distributions within the rotating disk. (b) Draw the phasor diagram of the energy meter and establish the relationship between total no. of revolution and the energy consumed. [figure Involved - note reference to simplified diagram/phasor]
 
 **Answer:**
 
@@ -1454,16 +1454,6 @@ A top-down view of the aluminum disc is required.
 7.  The resulting eddy currents ($I_{es}$ and $I_{ep}$) lag their respective EMFs by a small angle $\alpha$ due to the self-inductance of the aluminum disc.
 
 **Establishing the Relationship:**
-The instantaneous driving torque $T_i$ is proportional to the interaction of fluxes and opposing eddy currents:
-$T_i \propto (\Phi_p \cdot i_{es}) - (\Phi_s \cdot i_{ep})$
-
-Using the phasor relationships derived above, the average driving torque $T_d$ over a cycle is:
-$T_d \propto \Phi_p \cdot I \cos(\alpha) \sin(\Delta - \phi)$
-Since $\Phi_p \propto V$ and we designed the shading bands so that $\Delta = 90^\circ$:
-$T_d \propto V \cdot I \cos(\alpha) \sin(90^\circ - \phi)$
-$T_d \propto V \cdot I \cos(\phi) \cos(\alpha)$
-Since $\alpha$ is constant for a given disc, $\cos(\alpha)$ is a constant ($K_1$).
-$T_d = K_1 \cdot V \cdot I \cos(\phi) = K_1 \cdot \text{True Power } (P)$
 
 The permanent braking magnet creates a braking torque $T_b$ proportional to the disc's rotational speed $N$:
 $T_b = K_2 \cdot N$

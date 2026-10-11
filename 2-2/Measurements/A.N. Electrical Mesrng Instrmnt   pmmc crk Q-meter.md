@@ -6,7 +6,7 @@
 ![[Pasted image 20261011233422.png]]![[Pasted image 20261011233429.png]]![[Pasted image 20261011233458.png]]
 ![[Pasted image 20261011235746.png]]
 
-![[Pasted image 20261012000256.jpg]]
+![[Pasted image 20261012000256.jpg]]![[Pasted image 20261012005958.png]]
 
 #### 1. System Energy Storage
 
@@ -711,3 +711,265 @@
 - Unknown test resistance as a function of deflection fraction $s$:
     
     $$R_x = R_h \left(\frac{s}{1 - s}\right)$$
+#### 1. The Big Picture: How the Meter Works
+
+- **The Goal of the Meter:**
+    
+      
+    - It measures the total amount of electrical energy consumed by a household or circuit over time.
+        
+          
+        
+    - It behaves like a tiny electric motor that spins an aluminium disc.
+        
+          
+        
+    - The spinning speed of the disc is made to match the real electrical power being used at that exact moment.
+        
+          
+        
+
+#### 2. Creating the Two Magnetic Fluxes
+
+- **Voltage Magnet (Pressure Coil):**
+    
+      
+    - Connected across the main supply voltage $V$.
+        
+          
+        
+    - It has many fine wire turns and high magnetic inductance.
+        
+          
+        
+    - This coil produces an alternating magnetic flux $\Phi_p$ that is proportional to voltage $V$ and lags behind it by an angle $\Delta$ (which is designed to be close to $90^\circ$).
+        
+          
+        
+- **Current Magnet (Current Coil):**
+    
+      
+    - Connected in series with the load.
+        
+          
+        
+    - The actual load current $I$ passes directly through it.
+        
+          
+        
+    - It produces a magnetic flux $\Phi_s$ that is directly proportional to and in step (in phase) with the load current $I$.
+        
+          
+        
+
+#### 3. Why the Disc Spins (Eddy Currents & Forces)
+
+- **Inducing Eddy Currents in the Disc:**
+    
+      
+    - Both alternating fluxes ($\Phi_p$ and $\Phi_s$) shoot downward through the flat aluminium disc.
+        
+          
+        
+    - Because these magnetic fields are constantly changing, they induce small swirling loops of electric current inside the metal disc, called **eddy currents**.
+        
+          
+        
+    - Flux $\Phi_p$ induces eddy current $I_{ep}$, while flux $\Phi_s$ induces eddy current $I_{es}$.
+        
+          
+        
+- **Cross-Action Push (Driving Torque):**
+    
+      
+    - The eddy current $I_{es}$ gets pushed sideways by the magnetic field $\Phi_p$.
+        
+          
+        
+    - At the same time, the eddy current $I_{ep}$ gets pushed in the reverse direction by the magnetic field $\Phi_s$.
+        
+          
+        
+    - These two opposing forces act at different spots on the disc.
+        
+          
+        
+    - The overall difference between these two pushes creates a net twisting force called the **driving torque** ($T_d$), which forces the disc to rotate.
+        
+          
+        
+
+#### 4. The Driving Torque Formula Step-by-Step
+
+- **General Torque Formula:**
+    
+      
+    - For any induction instrument, the twisting torque created between two alternating fluxes is given by:
+        
+          
+        
+        $$T_d \propto \Phi_1 \Phi_2 \frac{f}{Z} \sin\beta \cos\alpha$$
+        
+          
+        
+    - Here, the two working fluxes are $\Phi_p$ and $\Phi_s$.
+        
+          
+        
+    - The angle between these two magnetic fluxes on the phasor diagram is $\beta = (\Delta - \phi)$, where $\phi$ is the phase angle of the load.
+        
+          
+        
+- **Putting in Voltage and Current:**
+    
+      
+    - The pressure coil flux depends on voltage ($\Phi_p \propto V$).
+        
+          
+        
+    - The current coil flux depends on current ($\Phi_s \propto I$).
+        
+          
+        
+    - Substituting these relationships into the torque formula gives:
+        
+          
+        
+        $$T_d = K_3 V I \frac{f}{Z} \sin(\Delta - \phi) \cos\alpha$$
+        
+          
+        
+- **Simplifying the Constants:**
+    
+      
+    - In a standard electrical grid, the supply frequency $f$, disc impedance $Z$, and internal disc phase angle $\alpha$ stay constant.
+        
+          
+        
+    - Combining them into a single constant $K_3$ simplifies the driving torque equation to:
+        
+          
+        
+        $$T_d = K_3 V I \sin(\Delta - \phi)$$
+        
+          
+        
+
+#### 5. Balancing Speed with the Brake Magnet
+
+- **Why a Brake is Needed:**
+    
+      
+    - Without resistance, the driving torque would make the disc spin faster and faster without stopping.
+        
+          
+        
+    - A permanent magnet placed near the rim creates a resisting **braking torque** ($T_b$).
+        
+          
+        
+- **Braking Torque Proportional to Speed:**
+    
+      
+    - The faster the disc spins at speed $N$, the stronger the braking resistance becomes:
+        
+          
+        
+        $$T_b = K_4 N$$
+        
+          
+        
+- **Reaching Steady Speed:**
+    
+      
+    - When the forward drive torque matches the backward braking torque ($T_d = T_b$):
+        
+          
+        
+        $$K_4 N = K_3 V I \sin(\Delta - \phi)$$
+        
+          
+        
+    - Solving for the disc rotational speed $N$:
+        
+          
+        
+        $$N = K V I \sin(\Delta - \phi)$$
+        
+          
+        
+
+#### 6. Why the $90^\circ$ Condition ($\Delta = 90^\circ$) Matters
+
+- **Matching Real Electrical Power:**
+    
+      
+    - The actual electrical power used by any AC appliance is:
+        
+          
+        
+        $$\text{Power} = V I \cos\phi$$
+        
+          
+        
+    - To make the disc speed $N$ directly reflect real power, the term $\sin(\Delta - \phi)$ must become equal to $\cos\phi$.
+        
+          
+        
+    - From basic trigonometry, $\sin(90^\circ - \phi) = \cos\phi$.
+        
+          
+        
+- **Adjusting to Exactly $90^\circ$:**
+    
+      
+    - Copper shading bands on the voltage core are adjusted so that the flux lags voltage by exactly $\Delta = 90^\circ$.
+        
+          
+        
+    - When $\Delta = 90^\circ$, the speed equation becomes:
+        
+          
+        
+        $$N = K V I \sin(90^\circ - \phi) = K V I \cos\phi$$
+        
+          
+        
+        $$N = K \times (\text{Power})$$
+        
+          
+        
+    - **Result:** The rotational speed of the disc is directly proportional to the true power consumed.
+        
+          
+        
+
+#### 7. Recording Total Energy Consumed
+
+- **Total Revolutions as Energy:**
+    
+      
+    - Energy is simply power consumed multiplied by time.
+        
+          
+        
+    - Adding up all disc rotations over time gives the total number of revolutions:
+        
+          
+        
+        $$\text{Total Revolutions} = \int N \, dt = K \int V I \cos\phi \, dt$$
+        
+          
+        
+        $$\text{Total Revolutions} = K \int (\text{Power}) \, dt = K \times (\text{Energy})$$
+        
+          
+        
+- **Reading the Value:**
+    
+      
+    - Every single turn of the disc represents a fixed fraction of energy.
+        
+          
+        
+    - A gear system connected to the spindle turns the dial pointers to register the total kilowatt-hours ($\text{kWh}$) used.
