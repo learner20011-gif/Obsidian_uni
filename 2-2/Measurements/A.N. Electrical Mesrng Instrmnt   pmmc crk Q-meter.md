@@ -324,3 +324,49 @@
           
         
     - $R_x = \infty \implies I_m = 0$ (Zero deflection on the left)
+#### shunt type ohmmeter
+- Defining the Thévenin equivalent internal resistance looking back from the meter terminals:
+    
+    $$R_h = R_1 \parallel R_m = \frac{R_1 R_m}{R_1 + R_m}$$
+    
+- Deflection fraction in terms of $R_h$:
+    
+    $$s = \frac{R_x}{R_h + R_x}$$
+    
+
+#### 5. Half-Scale Deflection Condition ($s = 0.5$)
+
+- At mid-scale deflection, meter current is half of full scale:
+    
+    $$I_m = 0.5 \, I_{fsd} \implies s = 0.5$$
+    
+- Equating with the fractional deflection expression:
+    
+    $$0.5 = \frac{R_x}{R_h + R_x}$$
+    
+    $$0.5(R_h + R_x) = R_x$$
+    
+    $$0.5 R_h + 0.5 R_x = R_x$$
+    
+    $$0.5 R_h = 0.5 R_x$$
+    
+    $$R_x = R_h$$
+    
+- Half-scale calibration resistance identity:
+    
+    $$R_h = R_{x(\text{half-scale})} = \frac{R_1 R_m}{R_1 + R_m}$$
+    
+
+#### 6. Mathematical Expression for Unknown Resistance ($R_x$)
+
+- Starting from fractional deflection relation:
+    
+    $$s(R_h + R_x) = R_x$$
+    
+    $$s R_h + s R_x = R_x$$
+    
+    $$s R_h = R_x(1 - s)$$
+    
+- Unknown test resistance as a function of deflection fraction $s$:
+    
+    $$R_x = R_h \left(\frac{s}{1 - s}\right)$$
