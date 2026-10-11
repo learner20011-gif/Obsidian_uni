@@ -1140,7 +1140,7 @@ The fundamental operating principle is the electromagnetic force that exists bet
 
 ***
 
-### 36. Page 4, Q.4 (c): Mathematically analyze the problem that is created while measuring 3-phase power of power factor below 0.5 using two wattmeter method. State the solution to the problem.
+### 36. ❓Page 4, Q.4 (c): Mathematically analyze the problem that is created while measuring 3-phase power of power factor below 0.5 using two wattmeter method. State the solution to the problem.
 
 **Answer:**
 **Mathematical Analysis of the Problem:**

@@ -118,6 +118,343 @@
 - Deflecting torque ($T_d$):
     
     $$T_d = \frac{1}{2} I^2 \frac{dL}{d\theta}$$
+
+#### 1. Flux Linkages & Total Electrical Input Energy
+
+- **Definitions:**
+    
+      
+    - $i_1, i_2$ = instantaneous currents in fixed coil 1 and moving coil 2
+        
+          
+        
+    - $L_1, L_2$ = self-inductances of fixed and moving coils
+        
+          
+        
+    - $M$ = mutual inductance between the coils
+        
+          
+        
+- Total flux linkages of each coil:
+    
+      
+    
+    $$\lambda_1 = L_1 i_1 + M i_2$$
+    
+      
+    
+    $$\lambda_2 = L_2 i_2 + M i_1$$
+    
+      
+    
+- Induced electromotive forces:
+    
+      
+    
+    $$e_1 = \frac{d\lambda_1}{dt}, \quad e_2 = \frac{d\lambda_2}{dt}$$
+    
+      
+    
+- Differential electrical input energy supplied by sources:
+    
+      
+    
+    $$dW_e = e_1 i_1 \, dt + e_2 i_2 \, dt = i_1 \, d\lambda_1 + i_2 \, d\lambda_2$$
+    
+      
+    
+    $$dW_e = i_1 \, d(L_1 i_1 + M i_2) + i_2 \, d(L_2 i_2 + M i_1)$$
+    
+      
+    
+- Expanding differentials:
+    
+      
+    
+    $$dW_e = i_1 L_1 \, di_1 + i_1^2 \, dL_1 + i_1 i_2 \, dM + i_1 M \, di_2 + i_2 L_2 \, di_2 + i_2^2 \, dL_2 + i_1 i_2 \, dM + i_2 M \, di_1 \quad \text{--- (I)}$$
+    
+      
+    
+
+#### 2. Magnetic Stored Energy & Mechanical Work
+
+- Energy stored in the magnetic field of coupled coils:
+    
+      
+    
+    $$W = \frac{1}{2} L_1 i_1^2 + \frac{1}{2} L_2 i_2^2 + i_1 i_2 M$$
+    
+      
+    
+- Differential change in stored energy:
+    
+      
+    
+    $$dW = d\left(\frac{1}{2} L_1 i_1^2 + \frac{1}{2} L_2 i_2^2 + i_1 i_2 M\right)$$
+    
+      
+    
+    $$dW = i_1 L_1 \, di_1 + \frac{1}{2} i_1^2 \, dL_1 + i_2 L_2 \, di_2 + \frac{1}{2} i_2^2 \, dL_2 + i_1 M \, di_2 + i_2 M \, di_1 + i_1 i_2 \, dM \quad \text{--- (II)}$$
+    
+      
+    
+- Principle of conservation of energy:
+    
+      
+    
+    $$\text{Electrical Input Energy } (dW_e) = \text{Change in Stored Energy } (dW) + \text{Mechanical Work Done } (dW_m)$$
+    
+      
+    
+    $$dW_m = dW_e - dW$$
+    
+      
+    
+- Subtracting Equation (II) from Equation (I):
+    
+      
+    
+    $$dW_m = \frac{1}{2} i_1^2 \, dL_1 + \frac{1}{2} i_2^2 \, dL_2 + i_1 i_2 \, dM$$
+    
+      
+    
+- Since self-inductances $L_1$ and $L_2$ are geometrically constant ($dL_1 = 0$, $dL_2 = 0$):
+    
+      
+    
+    $$dW_m = i_1 i_2 \, dM$$
+    
+      
+    
+- Expressing mechanical work in terms of deflecting torque $T_i$ and angular displacement $d\theta$:
+    
+      
+    
+    $$dW_m = T_i \, d\theta$$
+    
+      
+    
+    $$T_i \, d\theta = i_1 i_2 \, dM$$
+    
+      
+    
+- Instantaneous deflecting torque:
+    
+      
+    
+    $$T_i = i_1 i_2 \frac{dM}{d\theta}$$
+    
+      
+    
+
+#### 3. DC Operation & Steady-State Deflection
+
+- For direct current ($i_1 = I_1$ and $i_2 = I_2$):
+    
+      
+    
+    $$T_d = I_1 I_2 \frac{dM}{d\theta}$$
+    
+      
+    
+- Restoring torque of control spring ($K$ = spring constant):
+    
+      
+    
+    $$T_c = K \theta$$
+    
+      
+    
+- Equilibrium condition ($T_d = T_c$):
+    
+      
+    
+    $$I_1 I_2 \frac{dM}{d\theta} = K \theta$$
+    
+      
+    
+- Steady-state deflection angle ($\theta$):
+    
+      
+    
+    $$\theta = \frac{I_1 I_2}{K} \frac{dM}{d\theta}$$
+    
+      
+    
+
+#### 4. AC Operation under Sinusoidal Currents
+
+- Sinusoidal currents with phase difference $\phi$:
+    
+      
+    
+    $$i_1 = I_{m1} \sin(\omega t)$$
+    
+      
+    
+    $$i_2 = I_{m2} \sin(\omega t - \phi)$$
+    
+      
+    
+- Time-averaged deflecting torque over period $T$:
+    
+      
+    
+    $$T_d = \frac{1}{T} \int_{0}^{T} T_i \, dt = \frac{dM}{d\theta} \cdot \frac{1}{T} \int_{0}^{T} I_{m1} \sin(\omega t) \cdot I_{m2} \sin(\omega t - \phi) \, dt$$
+    
+      
+    
+    $$T_d = \frac{dM}{d\theta} \cdot \frac{I_{m1} I_{m2}}{2\pi} \int_{0}^{2\pi} \sin(\omega t) \sin(\omega t - \phi) \, d(\omega t)$$
+    
+      
+    
+    $$T_d = \frac{I_{m1} I_{m2}}{2} \cos\phi \frac{dM}{d\theta}$$
+    
+      
+    
+- Using RMS values ($I_1 = \frac{I_{m1}}{\sqrt{2}}$ and $I_2 = \frac{I_{m2}}{\sqrt{2}}$):
+    
+      
+    
+    $$T_d = I_1 I_2 \cos\phi \frac{dM}{d\theta}$$
+    
+      
+    
+- Equilibrium steady-state deflection ($T_d = T_c = K\theta$):
+    
+      
+    
+    $$\theta = \frac{I_1 I_2}{K} \cos\phi \frac{dM}{d\theta}$$
+    
+      
+    
+
+#### 5. Electrodynamometer Wattmeter: Instantaneous Torque
+
+- Voltage applied to the pressure coil (P.C.) circuit:
+    
+      
+    
+    $$v = \sqrt{2} V \sin(\omega t)$$
+    
+      
+    
+- Current in purely resistive pressure coil ($R_p \gg \omega L_p$):
+    
+      
+    
+    $$i_p = \frac{v}{R_p} = \frac{\sqrt{2} V}{R_p} \sin(\omega t) = \sqrt{2} I_p \sin(\omega t) \quad \left(\text{where } I_p = \frac{V}{R_p}\right)$$
+    
+      
+    
+- Current in current coil (C.C.) lagging voltage by angle $\phi$:
+    
+      
+    
+    $$i_c = \sqrt{2} I \sin(\omega t - \phi)$$
+    
+      
+    
+- Instantaneous torque equation:
+    
+      
+    
+    $$T_i = i_p \, i_c \frac{dM}{d\theta} = \left[\sqrt{2} I_p \sin(\omega t)\right] \left[\sqrt{2} I \sin(\omega t - \phi)\right] \frac{dM}{d\theta}$$
+    
+      
+    
+    $$T_i = 2 I_p I \sin(\omega t) \sin(\omega t - \phi) \frac{dM}{d\theta}$$
+    
+      
+    
+- Using trigonometric identity $2 \sin A \sin B = \cos(A - B) - \cos(A + B)$:
+    
+      
+    
+    $$T_i = I_p I [\cos\phi - \cos(2\omega t - \phi)] \frac{dM}{d\theta}$$
+    
+      
+    
+
+#### 6. Wattmeter Average Deflecting Torque ($T_d$)
+
+- Average deflecting torque integrated over cycle period $T$:
+    
+      
+    
+    $$T_d = \frac{1}{T} \int_{0}^{T} T_i \, d(\omega t)$$
+    
+      
+    
+    $$T_d = \frac{1}{T} \int_{0}^{T} I_p I [\cos\phi - \cos(2\omega t - \phi)] \frac{dM}{d\theta} \, d(\omega t)$$
+    
+      
+    
+- The double-frequency term $\cos(2\omega t - \phi)$ averages to zero over a full cycle:
+    
+      
+    
+    $$\frac{1}{T} \int_{0}^{T} \cos(2\omega t - \phi) \, d(\omega t) = 0$$
+    
+- Deflecting torque resulting from constant component:
+    
+      
+    
+    $$T_d = I_p I \cos\phi \frac{dM}{d\theta}$$
+    
+      
+    
+- Substituting $I_p = \frac{V}{R_p}$:
+    
+      
+    
+    $$T_d = \frac{V I}{R_p} \cos\phi \frac{dM}{d\theta}$$
+    
+      
+    
+
+#### 7. Wattmeter Scale Deflection & Measured Power
+
+- Spring controlling torque:
+    
+      
+    
+    $$T_c = K \theta$$
+    
+      
+    
+- Equating average deflecting torque to restoring torque ($T_d = T_c$):
+    
+      
+    
+    $$K \theta = I_p I \cos\phi \frac{dM}{d\theta} = \frac{V I}{R_p} \cos\phi \frac{dM}{d\theta}$$
+    
+      
+    
+- Solving for steady deflection angle $\theta$:
+    
+      
+    
+    $$\theta = \frac{V I \cos\phi}{R_p K} \frac{dM}{d\theta}$$
+    
+      
+    
+- Defining instrument constant $K_1 = \frac{1}{R_p K}$:
+    
+      
+    
+    $$\theta = K_1 V I \cos\phi \frac{dM}{d\theta}$$
+    
+      
+    
+- Expressing in terms of true electrical power $P = V I \cos\phi$:
+    
+      
+    
+    $$\theta = \left(K_1 \frac{dM}{d\theta}\right) P$$
+    
+    $$\theta \propto P \quad \left(\text{for uniform } \frac{dM}{d\theta}\right)$$
 #### 1. Lorentz Force on a Single Conductor
 
 - Force on one vertical active conductor of length $l$ carrying current $I$ in magnetic flux density $B$:
