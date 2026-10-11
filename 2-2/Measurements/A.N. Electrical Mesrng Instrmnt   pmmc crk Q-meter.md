@@ -11,6 +11,8 @@
 ![[Pasted image 20261012024030.png]]
 ![[Pasted image 20261012032933.png]]
 ![[Pasted image 20261012034139.jpg]]
+![[Pasted image 20261012043031.png|450]]
+
 #### 1. System Energy Storage
 
 - Stored electrostatic energy in the capacitor:
