@@ -710,15 +710,30 @@ This derives and proves the required expression.
 *   Full-scale deflection current, $I_m = I_{fs} = 50 \text{ mA} = 0.05 \text{ A}$
 
 **Part 1: Adaptation to measure voltage up to 750 V**
-To convert the moving coil instrument into a voltmeter, a high-value resistance called a **multiplier** ($R_s$) must be connected in **series** with the meter.
-*   Desired voltage range, $V = 750 \text{ V}$
+#### 1. Given Parameters
 
-The total voltage across the series combination is $V = I_m (R_m + R_s)$.
-Rearranging the formula to find the multiplier resistance $R_s$:
-$R_m + R_s = \frac{V}{I_m}$
-$R_s = \frac{V}{I_m} - R_m$
-$R_s = \frac{750}{0.05} - 10$
-$R_s = 15000 - 10$
+- Meter movement internal resistance:
+    
+    $$R_m = 10\ \Omega$$
+    
+- Meter full-scale deflection (FSD) current:
+    
+    $$I_m = 50\ \text{mA} = 0.05\ \text{A}$$
+    
+- Voltage drop across the meter at FSD:
+    
+    $$V_m = I_m \cdot R_m = 0.05\ \text{A} \times 10\ \Omega = 0.5\ \text{V}$$
+    
+
+#### 2. Conversion to Voltmeter ($V = 750\ \text{V}$)
+
+- Total voltage to be measured across meter and series multiplier resistor $R_{se}$:
+    
+    $$V = 750\ \text{V}$$
+    
+- Multiplying factor ($m$):
+    
+    $$m = \frac{V}{V_m} = \frac{750}{0.5} = 1500$$
 **$R_s = 14,990 \, \Omega$**
 *Show How:* The instrument can be adapted to measure up to 750V by connecting a multiplier resistor of **14,990 $\Omega$ in series** with the meter.
 
