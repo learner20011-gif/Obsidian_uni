@@ -1247,3 +1247,27 @@
       
     
 - If current lags voltage ($\phi > 0^\circ$), the pointer deflects toward the **Lag** side; if it leads, the pointer deflects toward the **Lead** side.
+#### 2. Stroboscopic Method Basics
+
+- **Concept:**
+    
+    - Uses a variable-frequency flashing light directed at a rotating shaft carrying a distinctive mark.
+        
+    - When the shaft rotates exactly once (or an integer multiple of revolutions) between flashes, the mark is illuminated at the exact same physical spot each time, appearing **stationary** to the human eye.
+        
+- **Single-Mark Condition:**
+    
+    - Appears stationary as a single image when:
+        
+        $$n = f$$
+        
+        _(where $n$ is shaft speed in rps, and $f$ is flashing frequency in Hz)_.
+        
+    - A single stationary image also occurs whenever the shaft speed is an exact integer multiple of flash frequency ($n = 2f, 3f, \dots$).
+        
+    - If flash frequency exceeds shaft speed ($f > n$), multiple stationary images appear simultaneously (e.g., if $f = 2n$, two diametrically opposite images appear).
+    - the shaft speed $n$:
+
+$$n = \frac{f_{H} f_{L} (m - 1)}{f_{H} - f_{L}}$$
+
+_(where $m$ is the number of freeze points/patterns passed, $f_H$ is the higher flash rate, and $f_L$ is the lower flash rate)_.
