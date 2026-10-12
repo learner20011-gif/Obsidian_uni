@@ -2595,39 +2595,7 @@ The vertical signal leads the horizontal by exactly $90^\circ$: $V_x = V_m \sin(
 ### 78. Page 5, Q.5 (b): "For a given accelerating voltage, and for particular dimensions of CRT, the deflection of the electron beam is directly proportional to the deflecting voltage."- Justify the statement mathematically.
 
 **Answer:**
-Let's analyze the path of an electron traveling through the electrostatic deflection plates of a CRT.
-Let:
-*   $v_{ox}$ = axial velocity of the electron upon entering the deflecting plates. This is determined by the accelerating voltage ($E_a$). $v_{ox} = \sqrt{\frac{2e E_a}{m}}$
-*   $E_d$ = potential difference (deflecting voltage) applied across the deflection plates.
-*   $d$ = distance between the deflecting plates.
-*   $l_d$ = length of the deflecting plates.
-*   $L$ = distance from the center of the deflecting plates to the fluorescent screen.
-*   $e$ = charge of an electron.
-*   $m$ = mass of an electron.
-*   $D$ = total vertical deflection of the spot on the screen.
 
-**Mathematical Justification:**
-1.  **Electric Field and Force:** The deflecting voltage creates a uniform electric field $E = \frac{E_d}{d}$ between the plates. This field exerts a constant vertical force on the electron: $F_y = eE = \frac{e E_d}{d}$.
-2.  **Vertical Acceleration:** This force causes a constant vertical acceleration ($a_y$) while the electron is between the plates: $a_y = \frac{F_y}{m} = \frac{e E_d}{m d}$.
-3.  **Time in Plates:** The horizontal velocity $v_{ox}$ remains constant. The time ($t$) the electron spends between the plates is $t = \frac{l_d}{v_{ox}}$.
-4.  **Vertical Velocity:** Upon exiting the plates, the electron has acquired a vertical velocity component ($v_y$):
-    $v_y = a_y t = \left( \frac{e E_d}{m d} \right) \left( \frac{l_d}{v_{ox}} \right)$
-5.  **Deflection Angle:** The electron leaves the plates at an angle $\theta$ relative to the horizontal axis. 
-    $\tan \theta = \frac{v_y}{v_{ox}} = \frac{e E_d l_d}{m d v_{ox}^2}$
-6.  **Total Screen Deflection ($D$):** Geometrically, if we trace the angled path straight back, it intersects the axis exactly at the center of the deflecting plates. Therefore, the total deflection $D$ on the screen is formed by a large right triangle with adjacent side $L$ and opposite side $D$.
-    $\tan \theta = \frac{D}{L}$
-    Equating the two expressions for $\tan \theta$:
-    $\frac{D}{L} = \frac{e E_d l_d}{m d v_{ox}^2}$
-    $D = \frac{L l_d e E_d}{m d v_{ox}^2}$
-7.  **Substituting Accelerating Voltage:** We know the kinetic energy gained from the accelerating voltage is $\frac{1}{2} m v_{ox}^2 = e E_a$, so $v_{ox}^2 = \frac{2 e E_a}{m}$. Substituting this into the deflection equation:
-    $D = \frac{L l_d e E_d}{m d \left( \frac{2 e E_a}{m} \right)} = \frac{L l_d E_d}{2 d E_a}$
-
-**Conclusion:**
-Looking at the final equation: **$D = \left( \frac{L l_d}{2 d E_a} \right) E_d$**
-The term in the parentheses consists entirely of the fixed physical dimensions of the CRT ($L, l_d, d$) and the constant accelerating voltage ($E_a$). 
-Therefore, if these parameters are given and held constant, the total deflection $D$ is directly, linearly proportional to the applied deflecting voltage $E_d$. 
-$D \propto E_d$
-This mathematically justifies the statement.
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 210, 250–251** (*CRT electron beam deflection proportionality to voltage proof*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 21, Sec 21.4 (Pages 658–660)
@@ -2640,12 +2608,8 @@ This mathematically justifies the statement.
 **Function of a Time Base Generator:**
 In order for a Cathode Ray Oscilloscope (CRO) to display a signal's amplitude plotted against time, the electron beam must be swept horizontally across the screen at a constant, known velocity. The Time Base Generator (also called a Sweep Generator) is the internal circuit responsible for creating the specific voltage waveform required to produce this linear horizontal motion.
 
-**Operation:**
-1.  **Required Waveform:** To move the spot steadily from the left side of the screen to the right, a voltage that increases linearly with time must be applied to the horizontal deflection plates. Once the spot reaches the far right, the voltage must abruptly drop back to its starting value to snap the spot instantly back to the left side to begin the next sweep. This creates a **sawtooth waveform** (or ramp waveform).
-2.  **Basic Circuit (Ramp Generation):** The fundamental component of a time base generator is usually a capacitor charging through a resistor (or more accurately, a constant current source) from a DC supply. If charged by a constant current, the voltage across the capacitor rises perfectly linearly over time ($V_c = \frac{1}{C} \int I dt$). This rising voltage is amplified and applied to the horizontal plates, causing the "sweep" or "trace" period where the signal is drawn on the screen.
-3.  **Discharge (Flyback):** When the capacitor voltage reaches a predetermined threshold corresponding to the right edge of the screen, an electronic switch (like a specialized transistor, UJT, or thyristor) is instantly triggered. This switch acts as a short circuit across the capacitor, causing it to discharge almost instantly. This rapid voltage drop is applied to the horizontal plates, yanking the electron beam rapidly back to the left side of the screen. This brief period is called the "flyback" or "retrace" period. During flyback, the beam is usually "blanked" (turned off) so the rapid retrace line doesn't clutter the display.
-4.  **Synchronization:** For a stable, stationary image of a repeating AC signal, the start of the time base sweep must be perfectly synchronized with the input signal being measured. A trigger circuit monitors the incoming vertical signal. When the signal crosses a specific voltage threshold, it sends a pulse to the time base generator, telling it to start charging the capacitor exactly at that moment. This ensures every sweep starts at the exact same point on the waveform, painting a steady picture.
-5.  **Control:** The user can control the rate at which the capacitor charges (by switching in different values of $R$ or $C$). This changes the slope of the ramp, which changes the speed of the horizontal sweep. This is the "Time/Div" control on the front panel of the CRO.
+
+
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 210** (*Time base generator circuit operation for CRO*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 21, Sec 21.10 (Pages 662–664)
@@ -2673,31 +2637,7 @@ A clamp-on ammeter (or clamp meter) is a versatile electrical test instrument pr
 ### 81. Page 7, Q.6 (b): Prove that the path of an electron traveling through an electric field with constant intensity is nonlinear.
 
 **Answer:**
-Let's analyze the trajectory of an electron as it passes between two parallel deflecting plates in a Cathode Ray Tube (CRT). 
 
-Let:
-*   $e$ = charge of an electron
-*   $m$ = mass of an electron
-*   $v_{ox}$ = constant horizontal velocity of the electron as it enters the field
-*   $E_d$ = potential difference applied across the plates
-*   $d$ = distance between the plates
-*   $E$ = electric field intensity between the plates ($E = E_d / d$)
-
-**Proof:**
-1.  **Initial State:** The electron enters the field at the origin $(0,0)$ with a purely horizontal velocity $v_{ox}$. Therefore, the initial vertical velocity is $v_{oy} = 0$.
-2.  **Horizontal Motion:** Because the electric field is strictly vertical, no horizontal forces act on the electron. According to Newton's first law, the horizontal velocity $v_{ox}$ remains constant.
-    The horizontal distance $x$ traveled at any time $t$ is:
-    $x = v_{ox} \cdot t$  =>  $t = \frac{x}{v_{ox}}$  --- (Equation 1)
-3.  **Vertical Motion:** The constant vertical electric field $E$ exerts a constant vertical force $F_y = eE$ on the electron. This causes a constant vertical acceleration $a_y$:
-    $a_y = \frac{F_y}{m} = \frac{eE}{m}$
-    Using the kinematic equation for displacement ($s = ut + \frac{1}{2}at^2$) with initial vertical velocity $u = 0$, the vertical distance $y$ traveled at time $t$ is:
-    $y = \frac{1}{2} a_y t^2 = \frac{1}{2} \left( \frac{eE}{m} \right) t^2$ --- (Equation 2)
-4.  **Trajectory Equation:** To find the path equation (y as a function of x), we substitute the expression for $t$ from Equation 1 into Equation 2:
-    $y = \frac{1}{2} \left( \frac{eE}{m} \right) \left( \frac{x}{v_{ox}} \right)^2$
-    $y = \left( \frac{eE}{2 m v_{ox}^2} \right) x^2$
-
-**Conclusion:**
-In the final equation, the term in parentheses $\left( \frac{eE}{2 m v_{ox}^2} \right)$ is entirely composed of constants (for a given setup). Let this constant be $k$.
 The equation simplifies to:
 **$y = k x^2$**
 
@@ -2713,35 +2653,6 @@ This is the standard mathematical equation for a parabola. A parabola is a non-l
 **Answer:**
 *(This derivation is fundamentally identical to Q78. I will reproduce the standard derivation).*
 
-Let:
-*   $v_{ox}$ = axial (horizontal) velocity of the electron entering plates
-*   $E_a$ = accelerating voltage in the electron gun
-*   $E_d$ = deflecting voltage across the Y-plates
-*   $d$ = distance between the Y-plates
-*   $l_d$ = length of the Y-plates
-*   $L$ = distance from the center of the Y-plates to the screen
-*   $e$ = charge of an electron
-*   $m$ = mass of an electron
-*   $D$ = total vertical deflection on the screen
-
-**Derivation:**
-1.  **Velocity of Electron:** The kinetic energy gained from the accelerating anode is $\frac{1}{2}mv_{ox}^2 = eE_a$. Therefore, $v_{ox}^2 = \frac{2eE_a}{m}$.
-2.  **Force and Acceleration:** The uniform electric field between the plates is $E = \frac{E_d}{d}$. This exerts a vertical force $F_y = eE = \frac{eE_d}{d}$. The vertical acceleration is $a_y = \frac{F_y}{m} = \frac{eE_d}{md}$.
-3.  **Time in Field:** The electron travels horizontally through the plates at constant speed $v_{ox}$. The time spent between the plates is $t = \frac{l_d}{v_{ox}}$.
-4.  **Deflection Velocity:** The vertical velocity $v_y$ acquired just as the electron exits the plates is $v_y = a_y t = \left(\frac{eE_d}{md}\right) \left(\frac{l_d}{v_{ox}}\right)$.
-5.  **Deflection Angle:** The angle $\theta$ at which the electron exits the plates is given by $\tan \theta = \frac{v_y}{v_{ox}}$.
-    Substituting $v_y$:
-    $\tan \theta = \frac{eE_d l_d}{m d v_{ox}^2}$
-6.  **Screen Deflection Geometry:** If you trace the exit trajectory backwards, it appears to originate exactly from the center of the deflecting plates. This forms a large right triangle to the screen, where the adjacent side is $L$ and the opposite side is the total deflection $D$.
-    Therefore, $\tan \theta = \frac{D}{L}$.
-7.  **Final Expression:** Equate the two expressions for $\tan \theta$:
-    $\frac{D}{L} = \frac{e E_d l_d}{m d v_{ox}^2}$
-    $D = \frac{L l_d e E_d}{m d v_{ox}^2}$
-    Substitute $v_{ox}^2 = \frac{2eE_a}{m}$ into the denominator:
-    $D = \frac{L l_d e E_d}{m d \left( \frac{2eE_a}{m} \right)}$
-    $D = \frac{L l_d e E_d}{2 d e E_a}$
-    **$D = \frac{L \cdot l_d \cdot E_d}{2 \cdot d \cdot E_a}$**
-
 This is the final expression for the vertical deflection $D$ on the CRT screen.
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 210, 250–251** (*CRT electron beam vertical deflection expression derivation*)
@@ -2750,7 +2661,6 @@ This is the final expression for the vertical deflection $D$ on the CRT screen.
 ***
 
 
-#### **From `Q intro static transducer.md`**
 
 ### 83. Page 10, Q.6 (c): An electrically deflected CRT has a final anode voltage of 2000 V and parallel deflecting plates 1.5 cm long and 5 mm apart. If the screen is 50 cm from the centre of deflecting plates, find (i) beam speed, (ii) the deflection sensitivity of the tube and (iii) the deflection factor of the tube.
 
@@ -2800,21 +2710,46 @@ $G = \frac{1}{0.375 \text{ mm/V}}$
 **What is a Lissajous pattern?**
 *(This is identical to Q80).*
 A Lissajous pattern is a stationary or slowly moving curve displayed on a CRO screen, created by applying two sinusoidal AC voltages simultaneously to the horizontal (X) and vertical (Y) deflection plates. The resulting shape (which could be a line, circle, ellipse, or complex figure-8 shape) is determined entirely by the ratio of the frequencies of the two signals, their relative phase difference, and their relative amplitudes. It is a powerful visual tool for analyzing the relationship between two signals.
+#### 1. Setup
 
-**How frequency can be measured using Lissajous patterns:**
-To measure an unknown frequency ($f_y$) using a CRO, you use a Lissajous pattern to compare it against a known, highly accurate standard frequency ($f_x$).
-1.  **Setup:** 
-    *   Connect the signal with the **unknown frequency** to the **Vertical (Y-axis)** input of the CRO.
-    *   Connect a signal generator producing a **known, adjustable frequency** to the **Horizontal (X-axis)** input.
-    *   Set the CRO's internal time base (sweep generator) to the 'OFF' or 'X-Y' mode, so the horizontal movement is driven entirely by the external signal generator.
-2.  **Tuning:** Turn on both signals. Adjust the frequency dial on the known signal generator ($f_x$) until a stable, stationary pattern appears on the screen. A stationary pattern only forms when the ratio of the two frequencies is an exact rational fraction (e.g., 1:1, 1:2, 3:2).
-3.  **Calculation Method:** Once the pattern is perfectly stationary, draw imaginary horizontal and vertical tangent lines enclosing the pattern.
-    *   Count the number of times the pattern intersects the top horizontal tangent line. Let this be $n_h$ (number of horizontal tangencies or loops).
-    *   Count the number of times the pattern intersects the side vertical tangent line. Let this be $n_v$ (number of vertical tangencies or loops).
-4.  **The Formula:** The fundamental relationship governing Lissajous figures is:
-    $\frac{\text{Unknown Frequency } (f_y)}{\text{Known Frequency } (f_x)} = \frac{\text{Number of horizontal tangencies } (n_h)}{\text{Number of vertical tangencies } (n_v)}$
-5.  **Example:** If the pattern looks like a figure-8 lying on its side. It touches the top horizontal line twice ($n_h=2$) and the vertical side line once ($n_v=1$). If your known frequency is set to 1000 Hz:
-    $\frac{f_y}{1000} = \frac{2}{1} \implies f_y = 2000 \text{ Hz}$.
+- **Inputs:** Connect the unknown frequency ($f_y$) to the **Y-input** (vertical) and the known standard generator ($f_x$) to the **X-input** (horizontal).
+    
+- **Mode:** Turn off the internal sweep and switch the CRO to **X-Y mode**.
+    
+
+#### 2. Procedure
+
+- **Adjust:** Slowly tune the known frequency generator until the moving loop locks into a **stationary pattern**.
+    
+- **Count Tangencies:** Imagine two tangent lines touching the edges of the pattern:
+    
+    - $n_h$ = Number of loops/touchpoints along the **horizontal** top line.
+        
+    - $n_v$ = Number of loops/touchpoints along the **vertical** side line.
+        
+
+#### 3. Formula
+
+$$\frac{f_y}{f_x} = \frac{n_h}{n_v}$$
+
+$$\implies f_y = f_x \times \left(\frac{n_h}{n_v}\right)$$
+
+- $f_y$: Unknown frequency (Y-plates)
+    
+- $f_x$: Known frequency (X-plates)
+    
+- $n_h$: Horizontal points of contact
+    
+- $n_v$: Vertical points of contact
+    
+
+#### 4. Quick Example
+
+- **Given:** A stable figure-8 pattern touches the top line twice ($n_h = 2$) and the side line once ($n_v = 1$), with $f_x = 1000\text{ Hz}$.
+    
+- **Calculation:**
+    
+    $$\frac{f_y}{1000} = \frac{2}{1} \implies f_y = 2000\text{ Hz}$$
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 210, 255–257** (*Lissajous pattern definition and frequency measurement using CRO*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 21, Sec 21.14 (Pages 668–670)
@@ -2847,29 +2782,8 @@ A Cathode Ray Oscilloscope (CRO) is a highly versatile, fast-responding electron
 ### 86. Page 12, Q.6 (b): Differentiate between the digital and conventional CRO. Prove that the path of an electron traveling through an electric field with constant intensity in nonlinear.
 
 **Answer:**
-**Differentiate between the digital and conventional CRO:**
-| Feature | Conventional (Analog) CRO | Digital Storage Oscilloscope (DSO) |
-| :--- | :--- | :--- |
-| **Basic Operation** | Applies the amplified input voltage directly to the CRT deflection plates. The trace is "real-time." | Samples the analog input, converts it to digital data (ADC), stores it in memory, and then mathematically reconstructs the wave on a display. |
-| **Storage Capability** | Cannot store waveforms. Relies on the persistence of the phosphor screen to view fast transient events. | Can store waveforms in digital memory indefinitely. Allows for viewing pre-trigger data and single-shot events perfectly. |
-| **Display Type** | Uses a traditional Cathode Ray Tube (CRT) with a phosphor screen. | Uses modern digital displays like LCD, LED, or TFT screens. |
-| **Measurement & Math** | Measurements are taken manually by visually counting graticule divisions on the screen. | Microprocessors automatically calculate and display Vpp, Frequency, RMS, Rise time, and can perform FFTs (Fourier Transforms). |
-| **Bandwidth/Speed** | Limited primarily by the physical bandwidth of the vertical amplifier and CRT deflection sensitivity. | Limited by the sample rate of the Analog-to-Digital Converter (ADC) and microprocessor speed. |
-| **Cost & Size** | Generally bulky, heavy, and less expensive (historically). | Compact, lightweight, highly featured, and generally more expensive. |
 
-**Prove that the path of an electron traveling through an electric field with constant intensity is nonlinear:**
-*(This is identical to Q81. I will provide the proof again for completeness).*
-Let an electron (charge $e$, mass $m$) enter a uniform vertical electric field ($E$) with a constant horizontal velocity ($v_{ox}$).
-1.  **Horizontal Motion:** There is no horizontal force. Horizontal velocity is constant.
-    Distance $x = v_{ox} t \implies t = \frac{x}{v_{ox}}$
-2.  **Vertical Motion:** The constant electric field exerts a constant vertical force $F_y = eE$. 
-    Vertical acceleration is $a_y = \frac{eE}{m}$.
-    Starting with zero initial vertical velocity, the vertical distance $y$ after time $t$ is:
-    $y = \frac{1}{2} a_y t^2 = \frac{1}{2} \left( \frac{eE}{m} \right) t^2$
-3.  **Path Equation:** Substitute $t = \frac{x}{v_{ox}}$ into the $y$ equation:
-    $y = \frac{1}{2} \left( \frac{eE}{m} \right) \left( \frac{x}{v_{ox}} \right)^2$
-    **$y = \left( \frac{eE}{2 m v_{ox}^2} \right) x^2$**
-    Since $\left( \frac{eE}{2 m v_{ox}^2} \right)$ is a constant ($k$), the equation is $y = k x^2$. This is the standard equation of a parabola, which is definitively a non-linear curve.
+
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 210, 250–251** (*Digital vs conventional CRO and parabolic electron path proof*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 21, Sec 21.4 & 21.18 (Pages 658–659, 672)
@@ -3046,40 +2960,7 @@ Let the vertical signal be $Y = B \sin(\omega t + \phi)$.
 **Answer:**
 *(This is functionally identical to Q81 and Q86. I will provide the proof again).*
 
-Let an electron (charge $e$, mass $m$) enter a region between two parallel deflection plates of a CRT.
-*   The electric field $E$ between the plates is uniform and constant in the vertical (Y) direction.
-*   The electron enters horizontally (along the X-axis) with a constant initial velocity $v_{ox}$.
 
-**1. Equation of Motion in the X-direction (Horizontal):**
-Since the electric field acts entirely in the vertical direction, there is zero force acting on the electron in the horizontal direction.
-Therefore, horizontal acceleration $a_x = 0$.
-According to Newton's first law, the horizontal velocity remains constant: $v_x = v_{ox}$.
-The horizontal distance $x$ traveled in time $t$ is:
-$x = v_{ox} \cdot t$
-Rearranging for time $t$:
-**$t = \frac{x}{v_{ox}}$**  --- (Equation 1)
-
-**2. Equation of Motion in the Y-direction (Vertical):**
-The constant vertical electric field $E$ exerts a constant vertical force on the electron:
-$F_y = e \cdot E$
-This force causes a constant vertical acceleration $a_y$ according to Newton's second law ($F = ma$):
-$a_y = \frac{F_y}{m} = \frac{e \cdot E}{m}$
-The initial vertical velocity is zero ($u_y = 0$).
-Using the kinematic equation for displacement ($s = ut + \frac{1}{2}at^2$), the vertical distance $y$ traveled in time $t$ is:
-$y = 0 \cdot t + \frac{1}{2} a_y t^2$
-**$y = \frac{1}{2} \left( \frac{e \cdot E}{m} \right) t^2$** --- (Equation 2)
-
-**3. Deriving the Path Equation:**
-To find the equation of the trajectory (the path), we need $y$ as a function of $x$. We do this by substituting the expression for $t$ from Equation 1 into Equation 2:
-$y = \frac{1}{2} \left( \frac{e \cdot E}{m} \right) \left( \frac{x}{v_{ox}} \right)^2$
-$y = \left( \frac{e \cdot E}{2 \cdot m \cdot v_{ox}^2} \right) \cdot x^2$
-
-**4. Conclusion:**
-For a given CRT geometry and operating voltage, the terms $e, E, m,$ and $v_{ox}$ are all constants. 
-Let $k = \left( \frac{e \cdot E}{2 \cdot m \cdot v_{ox}^2} \right)$.
-The path equation simplifies to:
-**$y = k \cdot x^2$**
-This is the standard mathematical equation for a parabola. Thus, we have proven that the path of the electron through the constant electric field is parabolic.
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 210, 250–251** (*Parabolic path of electron trajectory proof*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 21, Sec 21.4 (Pages 658–659)

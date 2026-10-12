@@ -16,6 +16,9 @@
 ![[Pasted image 20261012191748.png]]
 ![[Pasted image 20261012192226.png]]
 ![[Pasted image 20261012192851.jpg]]
+![[Pasted image 20261012202536.png]]
+![[Pasted image 20261012210620.png|513]]
+
 
 #### 1. System Energy Storage
 
@@ -2149,3 +2152,165 @@ _(where $m$ is the number of freeze points/patterns passed, $f_H$ is the higher 
 - This direct linear proportionality allows the CRT to function as an accurate, linear voltage-indicating device.
     
 - As the applied deflecting voltage varies continuously in time, the luminous spot traces an exact, faithful visual reproduction of the input waveform across the calibrated screen.
+
+#### 1. Overview of the CRO Block Diagram
+
+- A **Cathode Ray Oscilloscope (CRO)** takes an electrical input signal and displays it visually as a graph of voltage versus time on a screen.
+    
+      
+    
+- The system is divided into two primary processing paths:
+    
+      
+    - **Vertical Channel:** Handles the input signal amplitude to move the beam up and down.
+        
+          
+        
+    - **Horizontal Channel:** Synchronizes and sweeps the electron beam from left to right at a steady pace.
+        
+          
+        
+- Both channels feed into the central display unit, the **Cathode Ray Tube (CRT)**.
+    
+      
+    
+
+#### 2. The Seven Main Functional Blocks
+
+- **(i) Vertical Amplifier:**
+    
+      
+    - **Purpose:** Boosts weak electrical input signals.
+        
+          
+        
+    - **How it works:** Input test signals are often in the millivolt range, which is too weak to visibly steer high-speed electrons. The vertical amplifier amplifies the signal voltage to a usable level strong enough to deflect the electron beam up and down on the screen.
+        
+          
+        
+- **(ii) Delay Line:**
+    
+      
+    - **Purpose:** Delays the vertical signal by a few nanoseconds.
+        
+          
+        
+    - **Why it is necessary:** The input signal splits into two paths: one heads to the vertical plates, and the other triggers the horizontal sweep. Processing the horizontal sweep through the trigger circuit, time-base generator, and horizontal amplifier takes a fraction of time.
+        
+          
+        
+    - The delay line holds the vertical signal back just enough so that both horizontal sweeping and vertical signal display arrive at the deflection plates at the exact same instant, preventing the leading edge of the waveform from being cut off.
+        
+          
+        
+- **(iii) Trigger Circuit:**
+    
+      
+    - **Purpose:** Provides synchronization between the vertical and horizontal movements.
+        
+          
+        
+    - **How it works:** It monitors the incoming signal and sends a trigger pulse at a specific voltage level. This ensures the horizontal sweep begins at the exact same point of each cycle, keeping the displayed waveform frozen and stationary instead of flickering or drifting.
+        
+          
+        
+- **(iv) Time-Base Generator:**
+    
+      
+    - **Purpose:** Generates a linear **sawtooth waveform** voltage.
+        
+          
+        
+    - **How it works:** The voltage rises steadily and linearly with time to sweep the electron beam across the screen from left to right at a constant speed, then drops rapidly to snap the spot back to the left side (retrace).
+        
+          
+        
+- **(v) Horizontal Amplifier:**
+    
+      
+    - **Purpose:** Amplifies the sawtooth voltage from the time-base generator.
+        
+          
+        
+    - **How it works:** It increases the voltage of the sawtooth signal to provide enough electrostatic force across the horizontal ($X$) deflection plates for the spot to cover the full width of the screen.
+        
+          
+        
+- **(vi) Power Supply Block:**
+    
+      
+    - **Purpose:** Delivers proper electrical power to all internal stages.
+        
+          
+        
+    - **High-Voltage (HV) Supply:** Delivers high positive DC voltages (thousands of volts) needed by the CRT anodes to accelerate the electron beam.
+        
+          
+        
+    - **Low-Voltage (LV) Supply:** Provides lower DC operating voltages needed by the electronic circuits (vertical amplifier, trigger circuit, time-base generator, and heater filament).
+        
+          
+        
+- **(vii) Cathode Ray Tube (CRT):**
+    
+      
+    - **The Heart of the Instrument:** Houses all mechanical and electrostatic elements in a high-vacuum tube.
+        
+          
+        
+    - **Key Functions:**
+        
+          
+        - Generates a focused beam of electrons via thermionic emission.
+            
+              
+            
+        - Accelerates electrons to high velocities using accelerating anodes.
+            
+              
+            
+        - Deflects the beam horizontally and vertically to form the visible waveform.
+            
+              
+            
+        - Strikes the phosphor screen to convert the kinetic energy of electrons into visible light.
+#### 1. Setup
+
+- **Inputs:** Connect the unknown frequency ($f_y$) to the **Y-input** (vertical) and the known standard generator ($f_x$) to the **X-input** (horizontal).
+    
+- **Mode:** Turn off the internal sweep and switch the CRO to **X-Y mode**.
+    
+
+#### 2. Procedure
+
+- **Adjust:** Slowly tune the known frequency generator until the moving loop locks into a **stationary pattern**.
+    
+- **Count Tangencies:** Imagine two tangent lines touching the edges of the pattern:
+    
+    - $n_h$ = Number of loops/touchpoints along the **horizontal** top line.
+        
+    - $n_v$ = Number of loops/touchpoints along the **vertical** side line.
+        
+
+#### 3. Formula
+
+$$\frac{f_y}{f_x} = \frac{n_h}{n_v}$$
+
+$$\implies f_y = f_x \times \left(\frac{n_h}{n_v}\right)$$
+
+- $f_y$: Unknown frequency (Y-plates)
+    
+- $f_x$: Known frequency (X-plates)
+    
+- $n_h$: Horizontal points of contact
+    
+- $n_v$: Vertical points of contact
+    
+
+#### 4. Quick Example
+
+- **Given:** A stable figure-8 pattern touches the top line twice ($n_h = 2$) and the side line once ($n_v = 1$), with $f_x = 1000\text{ Hz}$.
+    
+- **Calculation:**
+    
+    $$\frac{f_y}{1000} = \frac{2}{1} \implies f_y = 2000\text{ Hz}$$
