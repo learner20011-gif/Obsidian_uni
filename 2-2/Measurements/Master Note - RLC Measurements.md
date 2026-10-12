@@ -1,6 +1,3 @@
-# Master Note: RLC & Resistance Measurements
-
----
 
 ## 1. Resistance Classification & Overview
 

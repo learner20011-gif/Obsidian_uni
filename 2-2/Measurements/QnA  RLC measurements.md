@@ -1581,7 +1581,7 @@ Because of these inherent inaccuracies in measuring small dissipation factors, t
 
 ***
 
-### 44. Page 11, Q.3. (a): What is dissipation factor? Draw the modified De Sauty's bridge and show that the dissipation factor cannot be determined accurately using this bridge.
+### 44. ❓Page 11, Q.3. (a): What is dissipation factor? Draw the modified De Sauty's bridge and show that the dissipation factor cannot be determined accurately using this bridge.
 
 *(Note: This question is functionally identical to Question 43 with the addition of asking for the definition of the Dissipation factor first. We will define it and summarize the proof from Q43).*
 
