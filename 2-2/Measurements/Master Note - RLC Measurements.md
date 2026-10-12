@@ -375,9 +375,8 @@ $$L_1 = \frac{R_3}{R_4} L_2, \quad R_1 = \frac{R_3}{R_4}(R_2 + r_2)$$
 ![[Pasted image 20260707154328.png]]
 
 #### Derivation
-*   $Z_1 = R_1 + j\omega L_1$, $Z_2 = R_2$, $Z_3 = R_3$, $Y_4 = \frac{1}{R_4} + j\omega C_4$.
-*   Balance: $Z_1 = Z_2 Z_3 Y_4$:
-    $$R_1 + j\omega L_1 = R_2 R_3 \left( \frac{1}{R_4} + j\omega C_4 \right)$$
+*   $Z_1 = R_1 + j\omega L_1$, $Z_2 = R_2$, $Z_3 = R_3$, $Z_4$.
+*   Balance: $Z_1 Z_4= Z_2 Z_3$:
 *   **Balance Formulas:**
     $$\mathbf{R_1 = \frac{R_2 R_3}{R_4}}, \quad \mathbf{L_1 = R_2 R_3 C_4}$$
 *   **Storage Factor ($Q$):**
