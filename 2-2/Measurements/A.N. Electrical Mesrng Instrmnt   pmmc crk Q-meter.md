@@ -20,6 +20,12 @@
 ![[Pasted image 20261012210620.png|513]]
 ![[Pasted image 20261012232052.png]]
 ![[Pasted image 20261012232116.png]]
+![[inverting-comparator.gif|479]]
+
+
+
+
+
 #### 1. System Energy Storage
 
 - Stored electrostatic energy in the capacitor:
