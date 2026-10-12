@@ -2127,7 +2127,7 @@ This graphical method clearly illustrates how varying the frequency while keepin
 
 ***
 
-### 66. Page 20, Q.5(c): A ring specimen of mild steel has a cross-section area of $600 \text{ mm}^2$ and a mean periphery of $0.25 \text{ m}$. It is uniformly wound with two coils, A and B having 80 and 300 turns, respectively. Coil B is connected to a ballistic galvanometer having a constant of $12 \times 10^{-9}$ coulomb per division; the total resistance of this circuit is $0.2 \text{ M}\Omega$. When a current of 2.2 A through the coil is reversed the galvanometer gives a maximum deflection of 180 divisions. Neglecting the damping of the galvanometer calculate flux density in the iron.
+### 66. ✅Page 20, Q.5(c): A ring specimen of mild steel has a cross-section area of $600 \text{ mm}^2$ and a mean periphery of $0.25 \text{ m}$. It is uniformly wound with two coils, A and B having 80 and 300 turns, respectively. Coil B is connected to a ballistic galvanometer having a constant of $12 \times 10^{-9}$ coulomb per division; the total resistance of this circuit is $0.2 \text{ M}\Omega$. When a current of 2.2 A through the coil is reversed the galvanometer gives a maximum deflection of 180 divisions. Neglecting the damping of the galvanometer calculate flux density in the iron.
 
 **Answer:**
 This is a standard ballistic test problem. Coil A acts as the primary magnetizing coil, and Coil B acts as the secondary search coil.
@@ -2184,35 +2184,6 @@ The flux density in the iron is **1.2 Tesla**.
 **Answer:**
 A flux meter is an inherently heavily damped ballistic galvanometer designed specifically with no mechanical control springs, meaning the restoring torque $T_c = 0$.
 
-Let:
-*   $\Delta \Phi$ = Total change in flux linking the search coil
-*   $N$ = Number of turns in the search coil
-*   $R$ = Total resistance of the flux meter circuit
-*   $G$ = Displacement constant of the flux meter
-*   $D$ = Electromagnetic damping constant of the flux meter
-*   $\theta$ = Final angular deflection of the pointer
-
-**Derivation:**
-1.  **Induced EMF:** A change in flux $\Delta \Phi$ over time $dt$ induces an EMF $e$ in the search coil: $e = N \frac{d\Phi}{dt}$.
-2.  **Current:** This induces a current $i$ in the circuit: $i = \frac{e}{R} = \frac{N}{R} \frac{d\Phi}{dt}$.
-3.  **Torque Balance:** The driving deflecting torque is $T_d = G \cdot i$. Since there is no control spring, this torque is entirely opposed by the inertial torque ($J \frac{d^2\theta}{dt^2}$) and the damping torque ($D \frac{d\theta}{dt}$).
-    $G \cdot i = J \frac{d^2\theta}{dt^2} + D \frac{d\theta}{dt}$
-    Substituting $i$:
-    $\frac{GN}{R} \frac{d\Phi}{dt} = J \frac{d^2\theta}{dt^2} + D \frac{d\theta}{dt}$
-4.  **Integration:** We integrate this equation over the entire time $t$ from the start of the flux change to when the pointer comes to a complete rest at its final deflection $\theta$.
-    $\int \frac{GN}{R} d\Phi = \int J \, d\left(\frac{d\theta}{dt}\right) + \int D \, d\theta$
-    $\frac{GN}{R} \Delta \Phi = J(\text{final velocity} - \text{initial velocity}) + D(\theta - 0)$
-    Since the pointer starts from rest and finishes at rest, both initial and final velocities are zero. The inertia term disappears.
-    $\frac{GN}{R} \Delta \Phi = D\theta$
-5.  **Relating Damping to Constants:** In a flux meter, electromagnetic damping is designed to be dominant. The electromagnetic damping constant $D$ is related to the displacement constant $G$ and circuit resistance $R$ by the relation $D = \frac{G^2}{R}$.
-    Substitute $D = \frac{G^2}{R}$ into the equation:
-    $\frac{GN}{R} \Delta \Phi = \left(\frac{G^2}{R}\right) \theta$
-6.  **Simplifying:**
-    Multiply both sides by $\frac{R}{G}$:
-    $N \Delta \Phi = G \theta$
-    Rearranging for $\theta$:
-    **$\theta = \left(\frac{N}{G}\right) \Delta \Phi$**
-
 **Conclusion regarding uniform scale:**
 In the derived equation $\theta = \left(\frac{N}{G}\right) \Delta \Phi$, the term $\left(\frac{N}{G}\right)$ consists entirely of fixed physical constants (Number of turns in the search coil, and the displacement constant of the instrument). Let this ratio be a constant $k$.
 So, $\theta = k \cdot \Delta \Phi$.
@@ -2227,54 +2198,6 @@ This shows a strict, linear mathematical relationship. The angle of deflection (
 
 **Answer:**
 A flux meter is a special type of ballistic galvanometer featuring very heavy electromagnetic damping and no control spring. 
-
-Let:
-*   $\Phi$ = Flux linking the search coil
-*   $N$ = Turns in the search coil
-*   $G$ = Displacement constant of the flux meter
-*   $R$ = Total resistance of the circuit
-*   $L$ = Total self-inductance of the circuit (search coil + galvanometer)
-*   $J$ = Moment of inertia of the moving system
-*   $D$ = Air friction damping constant (assumed very small)
-*   $\theta$ = Deflection angle
-
-**Mathematical Proof:**
-1.  **Circuit Equation including Inductance:** When flux $\Phi$ changes, the induced EMF $e = N\frac{d\Phi}{dt}$. 
-    By Kirchhoff's voltage law for the closed circuit, this EMF must overcome the resistive voltage drop ($iR$), the back-EMF from the moving coil acting as a generator ($G\frac{d\theta}{dt}$), and the self-inductive voltage drop ($L\frac{di}{dt}$):
-    $N\frac{d\Phi}{dt} = iR + G\frac{d\theta}{dt} + L\frac{di}{dt}$
-    Rearranging for $iR$:
-    $iR = N\frac{d\Phi}{dt} - G\frac{d\theta}{dt} - L\frac{di}{dt}$  --- (Equation A)
-
-2.  **Mechanical Equation of Motion:** The driving torque ($Gi$) is opposed by inertia ($J\frac{d^2\theta}{dt^2}$) and air friction damping ($D\frac{d\theta}{dt}$). (Note: spring control $K=0$).
-    $Gi = J\frac{d^2\theta}{dt^2} + D\frac{d\theta}{dt}$
-    Isolating current $i$:
-    $i = \frac{J}{G}\frac{d^2\theta}{dt^2} + \frac{D}{G}\frac{d\theta}{dt}$ --- (Equation B)
-
-3.  **Substituting $i$:** Substitute Equation B into the left side of Equation A ($iR$):
-    $R \left( \frac{J}{G}\frac{d^2\theta}{dt^2} + \frac{D}{G}\frac{d\theta}{dt} \right) = N\frac{d\Phi}{dt} - G\frac{d\theta}{dt} - L\frac{di}{dt}$
-
-4.  **Integration over Time:** We integrate this entire equation over the time interval from $t=0$ (before flux changes, everything is zero) to $t=\infty$ (after flux has changed by $\Delta\Phi$, pointer has stopped at final deflection $\theta$).
-    $\int_0^\infty \frac{RJ}{G} \frac{d^2\theta}{dt^2} dt + \int_0^\infty \frac{RD}{G} \frac{d\theta}{dt} dt = \int_0^\infty N \frac{d\Phi}{dt} dt - \int_0^\infty G \frac{d\theta}{dt} dt - \int_0^\infty L \frac{di}{dt} dt$
-
-    Evaluating the integrals:
-    *   $\int \frac{d^2\theta}{dt^2} dt$ evaluates to change in velocity. Since initial and final velocities are zero, this term is $0$.
-    *   $\int \frac{di}{dt} dt$ evaluates to change in current. Since initial and final currents are zero, this term is $0$.
-    *   $\int \frac{d\theta}{dt} dt$ evaluates to the final deflection $\theta$.
-    *   $\int \frac{d\Phi}{dt} dt$ evaluates to the total change in flux $\Delta\Phi$.
-
-    Applying these evaluations to the integrated equation:
-    $0 + \frac{RD}{G}\theta = N \Delta\Phi - G\theta - 0$
-    
-    Notice that the term involving inductance ($L\frac{di}{dt}$) completely vanished during the integration because the current starts and ends at zero.
-
-5.  **Final Simplification:**
-    Rearrange the surviving terms:
-    $G\theta + \frac{RD}{G}\theta = N \Delta\Phi$
-    $\theta \left( G + \frac{RD}{G} \right) = N \Delta\Phi$
-    
-    In a well-designed flux meter, the air friction damping $D$ is deliberately made extremely small (negligible) compared to the electromagnetic damping. Therefore, the term $\frac{RD}{G}$ is approximately 0.
-    $G\theta \approx N \Delta\Phi$
-    **$\theta = \left(\frac{N}{G}\right) \Delta\Phi$**
 
 **Justification:**
 1.  **Uniform Scale:** The final equation $\theta = \left(\frac{N}{G}\right) \Delta\Phi$ shows that deflection $\theta$ is strictly directly proportional to the flux change $\Delta\Phi$ (to the power of 1). Since $N$ and $G$ are constants, the relationship is perfectly linear, proving the scale is uniform.
