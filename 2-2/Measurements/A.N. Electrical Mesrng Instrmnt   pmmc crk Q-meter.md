@@ -12,7 +12,7 @@
 ![[Pasted image 20261012032933.png]]
 ![[Pasted image 20261012034139.jpg]]
 ![[Pasted image 20261012043031.png|450]]
-![[Pasted image 20261012045049.png]]
+![[Pasted image 20261012045049.png]]![[Pasted image 20261012173046.png|491]]![[Pasted image 20261012172022.png]]
 #### 1. System Energy Storage
 
 - Stored electrostatic energy in the capacitor:
@@ -1575,3 +1575,441 @@ _(where $m$ is the number of freeze points/patterns passed, $f_H$ is the higher 
           
         
     - Because $N$ and $G$ are constant physical parameters, the relationship between deflection and flux change is linear, giving the flux meter a uniform scale.
+
+#### Parameter Definitions
+
+- $\Phi$: Magnetic flux established inside the magnetic specimen core and linking each turn of the search coil (measured in Webers, $\text{Wb}$).
+    
+      
+    
+- $N$: Number of turns wound on the secondary search coil (also called the B-coil).
+    
+      
+    
+- $R$: Total electrical resistance of the complete ballistic galvanometer closed circuit (measured in Ohms, $\Omega$).
+    
+      
+    
+- $t$: Time duration taken for the commutator/reversing switch to completely reverse the magnetizing current and magnetic flux (measured in seconds, $\text{s}$).
+    
+      
+    
+- $e$: Average electromotive force (EMF) induced across the terminals of the search coil during the flux reversal (measured in Volts, $\text{V}$).
+    
+      
+    
+- $i$: Average transient current flowing through the ballistic galvanometer circuit during the switching interval (measured in Amperes, $\text{A}$).
+    
+      
+    
+- $Q$: Total quantity of electric charge displaced through the galvanometer movement during the entire reversal transient (measured in Coulombs, $\text{C}$).
+    
+      
+    
+- $\theta_1$: First maximum peak deflection or angular throw of the ballistic galvanometer pointer/light spot.
+    
+      
+    
+- $K_q$: Galvanometer ballistic sensitivity constant (expressed in Coulombs per unit deflection, $\text{C/division}$ or $\text{C/rad}$).
+    
+      
+    
+- $A_s$: Effective cross-sectional area of the ring specimen covered by the search coil (measured in square meters, $\text{m}^2$).
+    
+      
+    
+- $B$: Magnetic flux density within the specimen material (measured in $\text{Wb/m}^2$ or Tesla, $\text{T}$).
+    
+      
+    
+
+#### Step 1: Net Change in Magnetic Flux ($\Delta\Phi$)
+
+- The primary magnetizing coil initially carries a steady direct current $I$, which establishes a steady initial magnetic flux $+\Phi$ through the cross-section of the specimen core.
+    
+      
+    
+- When the reversing switch is operated, the direction of the magnetizing current flips instantaneously, reversing the direction of magnetic flux to $-\Phi$.
+    
+      
+    
+- The total net change in magnetic flux linking the search coil is calculated by finding the absolute difference between the initial and final flux states:
+    
+      
+    
+    $$\Delta\Phi = \Phi_{\text{initial}} - \Phi_{\text{final}} = \Phi - (-\Phi) = 2\Phi$$
+    
+      
+    
+
+#### Step 2: Average Induced EMF ($e$)
+
+- According to Faraday's Law of Electromagnetic Induction, the magnitude of induced electromotive force in a coil is proportional to the time rate of change of magnetic flux linkages:
+    
+      
+    
+    $$e = N \frac{d\Phi}{dt}$$
+    
+      
+    
+- Substituting the finite change in total flux $\Delta\Phi = 2\Phi$ over the time interval $\Delta t = t$:
+    
+      
+    
+    $$e = N \left(\frac{\Delta\Phi}{\Delta t}\right) = N \left(\frac{2\Phi}{t}\right)$$
+    
+      
+    
+- Simplifying into standard form gives the average induced EMF:
+    
+      
+    
+    $$e = \frac{2N\Phi}{t}$$
+    
+      
+    
+
+#### Step 3: Average Induced Current ($i$)
+
+- By applying Ohm's Law to the closed secondary circuit consisting of the search coil and the ballistic galvanometer having a total series resistance $R$:
+    
+      
+    
+    $$i = \frac{e}{R}$$
+    
+      
+    
+- Substituting the expression for the average induced EMF $e = \frac{2N\Phi}{t}$ into Ohm's Law:
+    
+      
+    
+    $$i = \frac{\left(\frac{2N\Phi}{t}\right)}{R}$$
+    
+      
+    
+- Simplifying the fraction gives the instantaneous average current passing through the galvanometer coil:
+    
+      
+    
+    $$i = \frac{2N\Phi}{Rt}$$
+    
+      
+    
+
+#### Step 4: Total Electric Charge ($Q$) Transmitted
+
+- The total quantity of electricity or electrical charge ($Q$) swept through the galvanometer circuit is defined as the integral of electric current over the discharge time interval:
+    
+      
+    
+    $$Q = \int_{0}^{t} i \, dt = i \times t$$
+    
+      
+    
+- Substituting the expression for average current $i = \frac{2N\Phi}{Rt}$ into the charge relationship:
+    
+      
+    
+    $$Q = \left(\frac{2N\Phi}{Rt}\right) \times t$$
+    
+      
+    
+- Cancelling out the time duration parameter $t$ reveals that the total charge displaced is entirely independent of how fast or slow the switching occurs:
+    
+      
+    
+    $$Q = \frac{2N\Phi}{R}$$
+    
+      
+    
+
+#### Step 5: Charge Indicated by the Ballistic Galvanometer
+
+- A ballistic galvanometer operates by integrating rapid current pulses into an instantaneous mechanical impulse before the moving system appreciably deflects.
+    
+      
+    
+- The resulting initial angular throw ($\theta_1$) is directly proportional to the total electrical charge passing through its moving coil:
+    
+      
+    
+    $$Q = K_q \theta_1$$
+    
+      
+    
+- Equating the charge calculated from circuit induction to the charge measured mechanically by the ballistic galvanometer:
+    
+      
+    
+    $$\frac{2N\Phi}{R} = K_q \theta_1$$
+    
+      
+    
+- Multiplying both sides by the circuit resistance $R$ gives:
+    
+      
+    
+    $$2N\Phi = R K_q \theta_1$$
+    
+      
+    
+- Isolating the total core magnetic flux $\Phi$:
+    
+      
+    
+    $$\Phi = \frac{R K_q \theta_1}{2N}$$
+    
+      
+    
+
+#### Step 6: Calculation of Magnetic Flux Density ($B$)
+
+- Magnetic flux density $B$ represents the concentration of magnetic flux per unit perpendicular cross-sectional area of the core material:
+    
+      
+    
+    $$B = \frac{\text{Flux}}{\text{Area}} = \frac{\Phi}{A_s}$$
+    
+      
+    
+- Substituting the derived value of $\Phi = \frac{R K_q \theta_1}{2N}$ into the density definition:
+    
+      
+    
+    $$B = \frac{\left(\frac{R K_q \theta_1}{2N}\right)}{A_s}$$
+    
+      
+    
+- Simplifying into the final governing equation (Equation 18.1):
+    
+      
+    
+    $$B = \frac{R K_q \theta_1}{2 N A_s}$$
+    
+      
+    
+- **Physical Significance:** Since $R$, $K_q$, $N$, and $A_s$ are known, fixed physical constants of the test configuration, the magnetic flux density $B$ is found directly by observing the first throw $\theta_1$ on the galvanometer scale.
+#### 1. Extension of Flux Meter Range (Shunt Method)
+![[Pasted image 20261012173046.png]]
+- **Purpose:** When measuring very large magnetic flux, the pointer can deflect beyond full-scale even with a 1-turn search coil.
+    
+- **Solution:** Connect a low-resistance **shunt ($R_s$)** in parallel across the flux meter terminals to bypass a fraction of the current.
+    
+- **Circuit Connections:**
+    
+    - Search coil ($R_c, L_c$) supplies total current $i_c$.
+        
+    - At junction, current splits: $i_f$ enters the flux meter ($R_f, L_f$) and $i_s$ passes through the shunt resistor ($R_s$):
+        
+        $$i_c = i_f + i_s$$
+        
+- **Multiplying Factor ($m$):**
+    
+    - Voltage across the parallel branches is equal:
+        
+        $$i_s R_s \approx i_f R_f \implies i_s = i_f \left(\frac{R_f}{R_s}\right)$$
+        
+    - Substituting $i_s$:
+        
+        $$i_c = i_f \left(1 + \frac{R_f}{R_s}\right) = m \cdot i_f$$
+        
+    - Here, $m = \left(1 + \frac{R_f}{R_s}\right)$ is the **multiplying factor**; the true flux is obtained by multiplying the measured reading by $m$.
+#### 1. Basic Loss Equations
+
+- **Hysteresis Loss Per Unit Volume ($p_h$):**
+    
+      
+    - Derived from the area of the B-H loop times frequency:
+        
+          
+        
+        $$p_h = \eta f B_m^k \quad [\text{W/m}^3]$$
+        
+          
+        
+    - $\eta$: Hysteresis coefficient
+        
+          
+        
+    - $f$: Frequency in Hz
+        
+          
+        
+    - $B_m$: Maximum flux density in $\text{Wb/m}^2$
+        
+          
+        
+          
+        
+    - $k$: Steinmetz exponent (ranges from $1.6$ to $2.0$)
+        
+          
+        
+- **Eddy Current Loss Per Unit Volume ($p_e$):**
+    
+      
+    - For laminated magnetic sheets:
+        
+          
+        
+        $$p_e = \frac{4 K_f^2 f^2 B_m^2 t^2}{3\rho} \quad [\text{W/m}^3]$$
+        
+          
+        
+    - $K_f$: Form factor of the voltage waveform
+        
+          
+        
+    - $t$: Lamination thickness in meters
+        
+          
+        
+    - $\rho$: Electrical resistivity of core material in $\Omega\cdot\text{m}$
+        
+          
+        
+          
+        
+
+#### 2. Total Iron Loss ($P_i$)
+
+- Total loss per unit volume is the sum of both components:
+    
+      
+    
+    $$p_i = p_h + p_e = \eta f B_m^k + \frac{4 K_f^2 f^2 B_m^2 t^2}{3\rho}$$
+    
+      
+    
+- Multiplying by the core volume $V$ gives the total iron loss $P_i$:
+    
+      
+    
+    $$P_i = V \cdot p_i = V \left(\eta f B_m^k + \frac{4 K_f^2 f^2 B_m^2 t^2}{3\rho}\right)$$
+    
+      
+    
+- For a given test specimen, volume $V$, thickness $t$, and resistivity $\rho$ are constant. Combining these constants into $K_h$ and $K_e$:
+    
+      
+    
+    $$P_i = K_h f B_m^k + K_e K_f^2 f^2 B_m^2$$
+    
+      
+    
+    _(where $K_h = V\eta$ and $K_e = \frac{4 V t^2}{3\rho}$)_.
+    
+      
+    
+
+#### 3. Method 1: Separation by Frequency Variation
+
+- **Condition:** Maintain form factor $K_f$ and peak flux density $B_m$ constant while varying frequency $f$.
+    
+      
+    
+- **Step 1: Simplify into Constants**
+    
+      
+    - Group the constant factors:
+        
+          
+        
+        $$K_1 = K_h B_m^k \quad \text{and} \quad K_2 = K_e K_f^2 B_m^2$$
+        
+          
+        
+    - Rewrite total iron loss:
+        
+          
+        
+        $$P_i = K_1 f + K_2 f^2$$
+        
+          
+        
+- **Step 2: Linearize the Equation**
+    
+      
+    - Divide the entire equation by frequency $f$:
+        
+          
+        
+        $$\frac{P_i}{f} = K_1 + K_2 f$$
+        
+          
+        
+- **Step 3: Graphical Separation ($y = mx + c$)**
+    
+      
+    - Plot $\frac{P_i}{f}$ along the y-axis against $f$ along the x-axis, which produces a straight line:
+        
+          
+        - **Vertical Intercept ($c$):** equals $K_1$, giving the hysteresis component per cycle.
+            
+              
+            
+        - **Slope ($m$):** equals $K_2$, giving the eddy current component coefficient.
+            
+              
+            
+    - At any operating frequency $f_1$:
+        
+          
+        
+        $$\text{Hysteresis Loss} = K_1 f_1$$
+        
+          
+        
+        $$\text{Eddy Current Loss} = K_2 f_1^2$$
+        
+          
+        
+
+#### 4. Method 2: Separation by Form Factor Variation
+
+- **Condition:** Maintain peak flux density $B_m$ and frequency $f$ constant while varying waveform form factor $K_f$.
+    
+      
+    
+- **Step 1: Simplify into Constants**
+    
+      
+    - Group the constant terms:
+        
+          
+        
+        $$K_3 = K_h f B_m^k \quad \text{and} \quad K_4 = K_e f^2 B_m^2$$
+        
+          
+        
+    - Total iron loss equation becomes:
+        
+          
+        
+        $$P_i = K_3 + K_4 K_f^2$$
+        
+          
+        
+- **Step 2: Graphical Separation ($y = mx + c$)**
+    
+      
+    - Plot $P_i$ along the y-axis against $K_f^2$ along the x-axis, yielding a straight line:
+        
+          
+        - **Vertical Intercept ($c$):** equals $K_3$, giving the constant hysteresis loss.
+            
+              
+            
+        - **Slope ($m$):** equals $K_4$, giving the eddy current loss rate.
+            
+              
+            
+    - For a given form factor $K_{f1}$:
+        
+          
+        
+        $$\text{Hysteresis Loss} = K_3$$
+        
+          
+        
+        $$\text{Eddy Current Loss} = K_4 K_{f1}^2$$

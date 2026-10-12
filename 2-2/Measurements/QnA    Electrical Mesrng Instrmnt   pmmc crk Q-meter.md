@@ -1820,42 +1820,7 @@ A flux meter is a specialized, highly damped form of a ballistic galvanometer us
 When the search coil is rapidly introduced into or removed from a magnetic field, the change in flux linkages induces an EMF. This EMF drives a current through the flux meter coil, causing it to deflect. Because the controlling torque is zero and electromagnetic damping is very high, the final deflection angle of the pointer is directly proportional to the total change in flux linkages, entirely independent of the speed at which the flux changed.
 
 **Proof that $\phi = (G/N)\theta$:**
-*(Note: The prompt asks to prove $\phi = (G/N)\theta$. In standard texts, $G$ is the displacement constant of the flux meter, $N$ is turns of the search coil, $\phi$ is the flux, and $\theta$ is deflection. Let's align with the provided slide derivation on pg 82, which uses slightly different standard notation but arrives at the same physical relationship).*
 
-Let:
-*   $\Phi$ = Change in flux linking the search coil
-*   $N$ = Number of turns in the search coil
-*   $R$ = Total resistance of the flux meter circuit
-*   $G$ = Displacement constant of the flux meter (equivalent to $N_{meter} B A$)
-*   $\theta$ = Final angular deflection of the flux meter pointer
-
-When flux $\Phi$ changes, an EMF $e$ is induced in the search coil:
-$e = N \frac{d\Phi}{dt}$
-
-This induces a current $i$ in the circuit:
-$i = \frac{e}{R} = \frac{N}{R} \frac{d\Phi}{dt}$
-
-The total charge $Q$ passing through the flux meter is the integral of this current over the time $t$ it takes for the flux to change:
-$Q = \int i \, dt = \int \frac{N}{R} \frac{d\Phi}{dt} dt = \frac{N}{R} \int d\Phi = \frac{N \Phi}{R}$
-
-For a ballistic galvanometer/flux meter, the total charge $Q$ is proportional to the deflection $\theta$. The charge indicated by the instrument is:
-$Q = K_q \theta$ 
-Where $K_q$ is the ballistic constant of the galvanometer. 
-The ballistic constant $K_q$ is related to the displacement constant $G$ and circuit resistance $R$ by $K_q = \frac{G}{R}$ (in an ideal flux meter with no mechanical control, the electromagnetic damping dominates, making deflection proportional to total flux change).
-
-Equating the two expressions for charge $Q$:
-$\frac{N \Phi}{R} = K_q \theta$
-
-Substituting $K_q = \frac{G}{R}$ (from the operational physics of the flux meter balancing impulsive torque against electromagnetic damping torque):
-$\frac{N \Phi}{R} = \frac{G}{R} \theta$
-
-Cancel $R$ from both sides:
-$N \Phi = G \theta$
-
-Rearranging to solve for $\Phi$:
-**$\Phi = \left(\frac{G}{N}\right) \theta$**
-
-This proves that the change in flux $\Phi$ is directly proportional to the deflection $\theta$, with $\frac{G}{N}$ acting as the proportionality constant.
 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 177–179** (*Flux meter operating principle and proof ϕ = (G/N)θ*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 18, Sec 18.11 (Pages 579–581)
