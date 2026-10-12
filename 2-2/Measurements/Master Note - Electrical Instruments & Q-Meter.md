@@ -621,42 +621,100 @@ $$\mathbf{\frac{f_y}{f_x} = \frac{\text{Number of Horizontal Tangencies } (n_h)}
 
 ## 14. Quick Formula & Numerical Cheat-Sheet
 
-```
-+---------------------------------------------------------------------------------------------------------+
-| 1. PMMC Torque & Scale                                                                                  |
-|    T_d = B * I * N * A = G * I        T_c = K * theta        theta = (G / K) * I                        |
-+---------------------------------------------------------------------------------------------------------+
-| 2. Moving Iron (MI) & Electrostatic Torque                                                              |
-|    MI:            T_d = 0.5 * I^2 * (dL / dtheta)            theta = (1 / 2K) * I^2 * (dL / dtheta)     |
-|    Electrostatic: T_d = 0.5 * V^2 * (dC / dtheta)            theta = (1 / 2K) * V^2 * (dC / dtheta)     |
-+---------------------------------------------------------------------------------------------------------+
-| 3. Shunts and Multipliers                                                                               |
-|    Ammeter Shunt:     R_sh = R_m / (m - 1)                   m = I / I_m                                |
-|    Voltmeter Mult.:   R_s  = R_m * (m - 1)                   m = V / v_m                                |
-+---------------------------------------------------------------------------------------------------------+
-| 4. Ohmmeters (Half-Scale Deflection R_h)                                                                |
-|    Series:  R_h = R_1 + [R_2 * R_m / (R_2 + R_m)]            R_x = R_h * [(1 - s) / s]                  |
-|    Shunt:   R_h = (R_1 * R_m) / (R_1 + R_m)                  R_x = R_h * [s / (1 - s)]                  |
-+---------------------------------------------------------------------------------------------------------+
-| 5. Power Measurements (3-Meter Methods)                                                                 |
-|    3-Voltmeter:  P = (V_1^2 - V_2^2 - V_3^2) / (2 * R)       cos(phi) = (V_1^2 - V_2^2 - V_3^2)/(2V2V3) |
-|    3-Ammeter:    P = [(I_1^2 - I_2^2 - I_3^2) * R] / 2       cos(phi) = (I_1^2 - I_2^2 - I_3^2)/(2I2I3) |
-+---------------------------------------------------------------------------------------------------------+
-| 6. Energy Meter & Flux Meter                                                                            |
-|    Energy:  T_d proportional to V * I * sin(Delta - phi)     Delta = 90 deg -> T_d proportional to P    |
-|    Flux:    N * Delta_Phi = G * Delta_theta                  Delta_Phi = (G / N) * Delta_theta          |
-+---------------------------------------------------------------------------------------------------------+
-| 7. CRT Deflection & Sensitivity                                                                         |
-|    Deflection:   D = (L * l * V_d) / (2 * d * V_a)                                                      |
-|    Sensitivity:  S = D / V_d = (L * l) / (2 * d * V_a)       G = 1 / S                                  |
-|    Lissajous:    sin(phi) = Y_1 / Y_2                        f_y / f_x = n_h / n_v                      |
-+---------------------------------------------------------------------------------------------------------+
-| 8. Q-Meter & Self-Capacitance                                                                           |
-|    Q = V_c / E               C_d = (C_1 - 4 * C_2) / 3       L = 1 / [4 * pi^2 * f_1^2 * (C_1 + C_d)]   |
-|    Series:  X_s = (C_1 - C_2) / (w * C_1 * C_2)              R_s = (C_1/C_2)*[(Q1 - Q2)/(Q1*Q2*w*C1)]   |
-+---------------------------------------------------------------------------------------------------------+
-| 9. Current Transformer (CT) Errors                                                                      |
-|    R = n + [I_m * sin(delta) + I_c * cos(delta)] / I_s                                                  |
-|    theta = (180 / pi) * [I_m * cos(delta) - I_c * sin(delta)] / (n * I_s)  degrees                     |
-+---------------------------------------------------------------------------------------------------------+
-```
+### 14.1 Deflecting Torques & Scale Laws
+
+| Instrument Type | Deflecting Torque ($T_d$) | Final Deflection ($\theta$) | Scale Characteristic |
+| :--- | :--- | :--- | :--- |
+| **PMMC** | $T_d = BINA = G \cdot I$ | $\theta = \left(\frac{G}{K}\right) I$ | **Strictly Linear** ($\theta \propto I$) |
+| **Moving Iron (MI)** | $T_d = \frac{1}{2} I^2 \frac{dL}{d\theta}$ | $\theta = \frac{1}{2K} I^2 \frac{dL}{d\theta}$ | **Square law** ($\theta \propto I_{\text{rms}}^2$) — cramped at bottom |
+| **Electrostatic** | $T_d = \frac{1}{2} V^2 \frac{dC}{d\theta}$ | $\theta = \frac{1}{2K} V^2 \frac{dC}{d\theta}$ | **Square law** ($\theta \propto V_{\text{rms}}^2$) |
+| **Electrodynamometer** | $T_d = I_1 I_2 \frac{dM}{d\theta}$ | $\theta = \frac{1}{K} I_1 I_2 \cos\phi \frac{dM}{d\theta}$ | Wattmeter: Linear with active power $P$ |
+
+---
+
+### 14.2 Range Extension: Shunts & Multipliers
+
+| Meter Application | Multiplying Factor ($m$) | Resistor Placement | Exact Resistance Formula |
+| :--- | :--- | :--- | :--- |
+| **Ammeter Shunt** | $m = \frac{I}{I_m}$ | Parallel ($R_{\text{sh}}$ across meter) | $$R_{\text{sh}} = \frac{R_m}{m - 1}$$ |
+| **Voltmeter Multiplier** | $m = \frac{V}{v_m}$ | Series ($R_s$ in series with meter) | $$R_s = R_m (m - 1)$$ |
+
+> [!tip] Practical Memory Rule
+> *   Current divider (Shunt): $m - 1$ in denominator $\implies R_{\text{sh}} \ll R_m$
+> *   Voltage divider (Multiplier): $m - 1$ in numerator $\implies R_s \gg R_m$
+
+---
+
+### 14.3 Ohmmeters: Half-Scale Deflection ($R_h$) & Unknown ($R_x$)
+
+*   **Deflection fraction:** $s = \frac{\theta}{\theta_{\text{max}}} = \frac{I_m}{I_{\text{fsd}}}$
+
+| Ohmmeter Type | Half-Scale Resistance ($R_h$) | Unknown Resistance $R_x(s)$ | Scale Direction |
+| :--- | :--- | :--- | :--- |
+| **Series Ohmmeter** | $R_h = R_1 + (R_2 \parallel R_m) \approx R_1$ | $$R_x = R_h \left( \frac{1 - s}{s} \right)$$ | $\infty$ at Left ($s=0$) $\to 0$ at Right ($s=1$) |
+| **Shunt Ohmmeter** | $R_h = R_1 \parallel R_m = \frac{R_1 R_m}{R_1 + R_m}$ | $$R_x = R_h \left( \frac{s}{1 - s} \right)$$ | $0$ at Left ($s=0$) $\to \infty$ at Right ($s=1$) |
+
+---
+
+### 14.4 3-Meter AC Power & Power Factor Methods
+
+| Method | Total Active Power ($P$) | Load Power Factor ($\cos\phi$) |
+| :--- | :--- | :--- |
+| **3-Voltmeter Method** | $$P = \frac{V_1^2 - V_2^2 - V_3^2}{2 R}$$ | $$\cos\phi = \frac{V_1^2 - V_2^2 - V_3^2}{2 V_2 V_3}$$ |
+| **3-Ammeter Method** | $$P = \frac{(I_1^2 - I_2^2 - I_3^2) R}{2}$$ | $$\cos\phi = \frac{I_1^2 - I_2^2 - I_3^2}{2 I_2 I_3}$$ |
+
+*(Where index $1 = \text{Supply}$, $2 = \text{Load}$, $3 = \text{Known standard non-inductive resistor } R$)*
+
+---
+
+### 14.5 Induction Energy Meter & Ballistic Flux Meter
+
+*   **Induction Energy Meter:**
+    *   Deflecting torque: $T_d \propto V \cdot I \cdot \sin(\Delta - \phi)$
+    *   Lag adjustment at $\Delta = 90^\circ \implies T_d \propto V I \cos\phi = P$
+    *   Braking torque: $T_B \propto N \implies$ Speed $N \propto P \implies \text{Total Revolutions} \propto \int P\,dt = \text{Energy}$
+    *   **Meter Constant:**
+        $$K = \frac{\text{Total Disk Revolutions}}{\text{Energy in kWh}}$$
+*   **Grassot Flux Meter (Zero Control Spring):**
+    *   Dynamic balance: $N \cdot \Delta\Phi = G \cdot \Delta\theta$
+    *   **Flux Change:**
+        $$\Delta\Phi = \frac{G}{N} \cdot \Delta\theta$$
+    *   Deflection is strictly proportional to total flux linkages change, independent of duration.
+
+---
+
+### 14.6 CRO / CRT Electrostatic Deflection & Lissajous
+
+*   **Screen Deflection:**
+    $$D = \frac{L \cdot l \cdot V_d}{2\, d \cdot V_a}$$
+    *(Where $L =$ screen distance, $l =$ plate length, $d =$ plate separation, $V_d =$ deflecting voltage, $V_a =$ accelerating anode voltage)*
+*   **Sensitivity & Factor:**
+    *   Deflection Sensitivity: $S = \frac{D}{V_d} = \frac{L \cdot l}{2\, d \cdot V_a}\quad [\text{mm/V}]$
+    *   Deflection Factor: $G = \frac{1}{S} = \frac{2\, d \cdot V_a}{L \cdot l}\quad [\text{V/mm}]$
+*   **Lissajous Pattern Analysis:**
+    *   **Phase Shift ($\phi$):** $\sin\phi = \frac{Y_1}{Y_2} = \frac{X_1}{X_2}$ ($Y_1 =$ y-intercept, $Y_2 =$ y-maximum)
+    *   **Frequency Ratio:** $\frac{f_y}{f_x} = \frac{\text{Horizontal Tangencies } (n_h)}{\text{Vertical Tangencies } (n_v)}$
+
+---
+
+### 14.7 Q-Meter (Resonance & Impedance Substitution)
+
+*   **Quality Factor & Self-Capacitance ($C_d$):**
+    $$Q = \frac{V_c}{E} = \frac{\omega L}{R}$$
+    $$C_d = \frac{C_1 - 4\,C_2}{3} \quad (\text{when } f_2 = 2 f_1) \qquad\qquad L = \frac{1}{4\pi^2 f_1^2 (C_1 + C_d)}$$
+*   **Unknown Impedance by Series Substitution:**
+    *   **Unknown Reactance:**
+        $$X_s = \frac{C_1 - C_2}{\omega\, C_1 C_2} \quad \begin{cases} > 0 & \text{Inductive } (C_1 > C_2) \\ < 0 & \text{Capacitive } (C_1 < C_2) \end{cases}$$
+    *   **Unknown Resistance:**
+        $$R_s = \left(\frac{C_1}{C_2}\right) \left[ \frac{Q_1 - Q_2}{Q_1 Q_2\, \omega\, C_1} \right]$$
+
+---
+
+### 14.8 Current Transformer (CT) Errors
+
+*   **Actual Transformation Ratio ($R$):**
+    $$R = \frac{I_p}{I_s} \approx n + \frac{I_m \sin\delta + I_c \cos\delta}{I_s}$$
+    *   $\text{Ratio Error } \% = \frac{K_n - R}{R} \times 100\%$ (where $K_n =$ nominal turn ratio)
+*   **Phase Angle Error ($\theta$):**
+    $$\theta \approx \frac{180}{\pi} \left[ \frac{I_m \cos\delta - I_c \sin\delta}{n\, I_s} \right]\quad [\text{degrees}]$$
+    *(Positive $\theta$ indicates reversed secondary current vector leads primary current vector)*
