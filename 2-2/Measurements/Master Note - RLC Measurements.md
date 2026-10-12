@@ -444,7 +444,7 @@ $$L_1 = \frac{R_3}{R_4} L_2, \quad R_1 = \frac{R_3}{R_4}(R_2 + r_2)$$
 
 | Series Model                                | Parallel Model                                                                            |                                                                          |
 | :------------------------------------------ | :---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| ![[Pasted image 20260923010052.png          | 666]]                                                                                     | Dielectric loss creates phase shift angle $\delta$ from ideal $90^\circ$ |
+| ![[Pasted image 20260923010052.png]]        |                                                                                           | Dielectric loss creates phase shift angle $\delta$ from ideal $90^\circ$ |
 | $Z = r_s - \frac{j}{\omega C_s}$            | $D = \tan \delta = \frac{\text{Energy dissipated / cycle}}{\text{Energy stored / cycle}}$ |                                                                          |
 | $\mathbf{D = \tan \delta = \omega C_s r_s}$ | $Q = \frac{1}{D} = \frac{1}{\omega C_s r_s}$                                              |                                                                          |
 
