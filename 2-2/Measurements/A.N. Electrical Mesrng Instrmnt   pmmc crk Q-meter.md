@@ -12,7 +12,7 @@
 ![[Pasted image 20261012032933.png]]
 ![[Pasted image 20261012034139.jpg]]
 ![[Pasted image 20261012043031.png|450]]
-
+![[Pasted image 20261012045049.png]]
 #### 1. System Energy Storage
 
 - Stored electrostatic energy in the capacitor:
@@ -1273,3 +1273,305 @@
 $$n = \frac{f_{H} f_{L} (m - 1)}{f_{H} - f_{L}}$$
 
 _(where $m$ is the number of freeze points/patterns passed, $f_H$ is the higher flash rate, and $f_L$ is the lower flash rate)_.
+
+#### Overview of the Flux Meter Derivation
+
+- The goal of this mathematical derivation is to prove that the mechanical deflection of the flux meter pointer ($\theta$) is directly proportional to the total change in magnetic flux ($\Delta\Phi$) linking the search coil.
+    
+      
+    
+- The derivation combines two fundamental domains:
+    
+      
+    - The **electrical circuit domain**, using Kirchhoff's Voltage Law (KVL) and Faraday's Law of Induction.
+        
+          
+        
+    - The **mechanical moving system domain**, using Newton's rotational equation of motion.
+        
+          
+        
+
+#### Defined Circuit and Mechanical Parameters
+
+- $N$: Number of turns in the external search coil.
+    
+      
+    
+- $\Phi$: Instantaneous magnetic flux passing through each turn of the search coil.
+    
+      
+    
+- $R_c$: Resistance of the search coil.
+    
+      
+    
+- $L_c$: Self-inductance of the search coil.
+    
+      
+    
+- $R_f$: Internal resistance of the flux meter moving coil.
+    
+      
+    
+- $L_f$: Self-inductance of the flux meter moving coil.
+    
+      
+    
+- $i$: Instantaneous current flowing through the closed series circuit.
+    
+      
+    
+- $\theta$: Angular deflection of the meter coil at any given instant.
+    
+      
+    
+- $\omega = \frac{d\theta}{dt}$: Instantaneous angular velocity of the moving coil.
+    
+      
+    
+- $J$: Moment of inertia of the entire rotating system.
+    
+      
+    
+- $G$: Deflection torque constant (also equal to the back-EMF constant), where torque is $T_d = Gi$.
+    
+      
+    
+
+#### Step 1: Mechanical Equation of Motion
+
+- Under general conditions, a suspended galvanometer coil experiences three main torques:
+    
+      
+    - An accelerating torque given by $J \frac{d^2\theta}{dt^2}$.
+        
+          
+        
+    - An air-friction damping torque given by $D \frac{d\theta}{dt}$.
+        
+          
+        
+    - A spring-restoring control torque given by $C\theta$.
+        
+          
+        
+- These torques oppose the electromagnetic deflecting torque $T_d = Gi$, yielding the classic differential equation:
+    
+      
+    
+    $$J \frac{d^2\theta}{dt^2} + D \frac{d\theta}{dt} + C\theta = Gi$$
+    
+      
+    
+- In a true flux meter, two vital mechanical simplifications are designed into the hardware:
+    
+      
+    - **No control springs are used ($C = 0$):** Flexible gold or silver ligaments are used instead of spiral hairsprings, meaning there is zero mechanical restoring torque.
+        
+          
+        
+    - **Negligible air friction ($D = 0$):** Damping from air friction is negligible compared to electromagnetic damping.
+        
+          
+        
+- Substituting $C = 0$ and $D = 0$ simplifies the mechanical equation to:
+    
+      
+    
+    $$J \frac{d^2\theta}{dt^2} = Gi$$
+    
+      
+    
+- Solving directly for the instantaneous current $i$:
+    
+      
+    
+    $$i = \frac{J}{G} \frac{d^2\theta}{dt^2} = \frac{J}{G} \frac{d\omega}{dt}$$
+    
+      
+    
+
+#### Step 2: Electrical Circuit Equations (KVL)
+
+- When the search coil experiences a change in magnetic flux, an induced electromotive force $e_1$ appears across it by Faraday's Law:
+    
+      
+    
+    $$e_1 = -N \frac{d\Phi}{dt}$$
+    
+      
+    
+- As the flux meter's moving coil rotates through the permanent magnet's uniform field, it cuts magnetic lines, generating a back-EMF $e_2$:
+    
+      
+    
+    $$e_2 = -G \frac{d\theta}{dt}$$
+    
+      
+    
+- The total series resistance of the circuit is $(R_c + R_f)$ and the total series inductance is $(L_c + L_f)$.
+    
+      
+    
+- Writing Kirchhoff's Voltage Law around this single closed series loop gives:
+    
+      
+    
+    $$e_1 + e_2 = i(R_c + R_f) + (L_c + L_f) \frac{di}{dt}$$
+    
+      
+    
+- Substituting the exact expressions for $e_1$ and $e_2$ into the KVL loop:
+    
+      
+    
+    $$-N \frac{d\Phi}{dt} - G \frac{d\theta}{dt} = i(R_c + R_f) + (L_c + L_f) \frac{di}{dt}$$
+    
+      
+    
+
+#### Step 3: Coupling the Electrical and Mechanical Systems
+
+- Now substitute the mechanical expression for current, $i = \frac{J}{G} \frac{d^2\theta}{dt^2}$, into the loop voltage equation:
+    
+      
+    
+    $$-N \frac{d\Phi}{dt} - G \frac{d\theta}{dt} = \left(\frac{J}{G} \frac{d^2\theta}{dt^2}\right)(R_c + R_f) + (L_c + L_f)\frac{d}{dt}\left(\frac{J}{G}\frac{d^2\theta}{dt^2}\right)$$
+    
+      
+    
+- Moving the back-EMF term $G \frac{d\theta}{dt}$ to the right-hand side gives:
+    
+      
+    
+    $$-N \frac{d\Phi}{dt} = G \frac{d\theta}{dt} + \frac{J(R_c + R_f)}{G}\frac{d^2\theta}{dt^2} + \frac{J(L_c + L_f)}{G}\frac{d^3\theta}{dt^3}$$
+    
+      
+    
+- Expressing the higher derivatives in terms of angular velocity $\omega = \frac{d\theta}{dt}$ and current $i$:
+    
+      
+    - Note that $\frac{d^2\theta}{dt^2} = \frac{d\omega}{dt}$.
+        
+          
+        
+    - Note that $\frac{J}{G}\frac{d^3\theta}{dt^3} = \frac{di}{dt}$.
+        
+          
+        
+- The equation can therefore be cleanly rewritten as:
+    
+      
+    
+    $$-N \frac{d\Phi}{dt} = G \frac{d\theta}{dt} + \frac{J(R_c + R_f)}{G} \frac{d\omega}{dt} + (L_c + L_f) \frac{di}{dt}$$
+    
+      
+    
+
+#### Step 4: Definite Integration Over Time
+
+- Multiply the entire differential expression by $dt$ to eliminate time differentials:
+    
+      
+    
+    $$-N \, d\Phi = G \, d\theta + \frac{J(R_c + R_f)}{G} \, d\omega + (L_c + L_f) \, di$$
+    
+      
+    
+- Integrate each individual term from the beginning of the flux change ($t = t_1$) to the completion of the movement ($t = t_2$):
+    
+      
+    
+    $$-N \int_{\Phi_1}^{\Phi_2} d\Phi = G \int_{\theta_1}^{\theta_2} d\theta + \frac{J(R_c + R_f)}{G} \int_{\omega_1}^{\omega_2} d\omega + (L_c + L_f) \int_{i_1}^{i_2} di$$
+    
+      
+    
+- Evaluating the definite integrals yields:
+    
+      
+    
+    $$N(\Phi_1 - \Phi_2) = G(\theta_2 - \theta_1) + \frac{J(R_c + R_f)}{G}(\omega_2 - \omega_1) + (L_c + L_f)(i_2 - i_1)$$
+    
+      
+    
+
+#### Step 5: Applying Boundary Conditions
+
+- **Initial State ($t_1$):**
+    
+      
+    - Before the flux change begins, the search coil and moving system are completely stationary: $\omega_1 = 0$.
+        
+          
+        
+    - No induced voltage exists, so no current flows: $i_1 = 0$.
+        
+          
+        
+- **Final State ($t_2$):**
+    
+      
+    - After the flux change concludes, the moving coil settles and comes to rest due to electromagnetic damping: $\omega_2 = 0$.
+        
+          
+        
+    - All transient induced voltages vanish, returning the current to zero: $i_2 = 0$.
+        
+          
+        
+- Substituting these boundary conditions ($\omega_1 = \omega_2 = 0$ and $i_1 = i_2 = 0$) causes the last two terms to vanish completely:
+    
+      
+    
+    $$\frac{J(R_c + R_f)}{G}(0 - 0) = 0$$
+    
+      
+    
+    $$(L_c + L_f)(0 - 0) = 0$$
+    
+      
+    
+- This leaves only the primary flux and deflection terms:
+    
+      
+    
+    $$N(\Phi_1 - \Phi_2) = G(\theta_2 - \theta_1)$$
+    
+      
+    
+
+#### Final Relationship and Physical Meaning
+
+- Let the total change in magnetic flux linking one turn be $\Delta\Phi = (\Phi_1 - \Phi_2)$.
+    
+      
+    
+- Let the total angular pointer deflection be $\Delta\theta = (\theta_2 - \theta_1)$.
+    
+      
+    
+- Rearranging the balanced expression gives:
+    
+      
+    
+    $$\Delta\Phi = \frac{G}{N} \Delta\theta$$
+    
+      
+    
+- Alternatively, expressing the angular deflection directly:
+    
+      
+    
+    $$\Delta\theta = \frac{N}{G} \Delta\Phi$$
+    
+      
+    
+- **Why the result is unique and powerful:**
+    
+      
+    - The total deflection $\Delta\theta$ depends strictly on the net change in flux ($\Delta\Phi$) and is completely independent of the resistance of the search coil or the speed at which the coil is moved.
+        
+          
+        
+    - Because $N$ and $G$ are constant physical parameters, the relationship between deflection and flux change is linear, giving the flux meter a uniform scale.
