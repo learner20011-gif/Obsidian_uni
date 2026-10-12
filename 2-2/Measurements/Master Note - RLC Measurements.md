@@ -1,3 +1,33 @@
+# Master Note: RLC Measurements, Bridges & Cable Faults
+
+---
+
+> [!tip] ⚡ Quick Formula Cheat-Sheet (Exam Problem Solver)
+> *Instant reference when a numerical problem appears. Identify the problem type / given values $\to$ pick the formula.*
+
+### 🎯 Problem-Solving Formula Decision Matrix
+
+| Problem / Target Question | Given Variables | Core Formula to Use | Key Trap / Tip |
+| :--- | :--- | :--- | :--- |
+| **Ammeter-Voltmeter Method (Which connection?)** | $R_a$ (ammeter), $R_v$ (voltmeter) | Threshold $R_{\text{th}} = \sqrt{R_a R_v}$ | $R_x > R_{\text{th}} \implies$ Connect voltmeter across load ($R_{\text{meas}} = R_x + R_a$)<br>$R_x < R_{\text{th}} \implies$ Connect voltmeter across source ($R_{\text{meas}} = R_x \parallel R_v$) |
+| **Wheatstone Unbalance Voltage ($E_{\text{Th}}$ or $E_o$)** | Battery $E$, Nominal arm $R$, Deviation $\Delta R$ | $$E_o = E \left[ \frac{\Delta R}{4R + 2\Delta R} \right] \approx \frac{E}{4} \left(\frac{\Delta R}{R}\right)$$ | Exact form uses $4R + 2\Delta R$; linear approx uses $4R$. |
+| **Galvanometer Deflection ($\theta$ or $d$)** | Voltage sens. $S_v$ or Current sens. $S_i$, $R_{\text{Th}}, G$ | $$\theta = S_v \cdot E_o \quad\text{or}\quad I_g = \frac{E_o}{R_{\text{Th}} + G}, \ \theta = S_i I_g$$ | $R_{\text{Th}} = \frac{P R}{P+R} + \frac{Q S}{Q+S} = R$ (for equal arms $R$). |
+| **Carey-Foster Bridge Difference ($X - Y$)** | Slide wire res/length $\rho$, Balance lengths $l_1, l_2$ | $$X - Y = \rho (l_2 - l_1)$$ | Eliminates end lead resistance without knowing absolute end values! |
+| **Kelvin Double Bridge (Exact Low $R$)** | Standard $S$, link $r$, ratios $P/Q$, $p/q$ | $$R = \frac{P}{Q}S + \frac{qr}{p+q+r}\left( \frac{P}{Q} - \frac{p}{q} \right)$$ | Link error disappears if $\frac{P}{Q} = \frac{p}{q}$ or link resistance $r \to 0$. |
+| **Loss of Charge (Insulation $R$)** | Cap $C$, time $t$, initial $V_1$, final $V_2$ | $$R = \frac{t}{C \ln(V_1 / V_2)} = \frac{0.4343\, t}{C \log_{10}(V_1 / V_2)}$$ | If cap itself leaks ($R_1$): $\frac{1}{R_{\text{meas}}} = \frac{1}{R_{\text{ins}}} + \frac{1}{R_1}$. |
+| **Earth Resistance Fall of Potential** | Current $I$, Potential probe voltage $V$ | $$R_E = \frac{V}{I}$$ | True resistance plateau at distance $d \approx 61.8\%$ of total spacing. |
+| **Murray Loop: Ground Fault ($x$)** | Route length $L$, Bridge ratio arms $P, Q$ | $$x = \left(\frac{Q}{P+Q}\right) 2L$$ | Fault on sound loop return side. If $P=Q \implies x = L$. |
+| **Murray Loop: Different Cable Resistances** | Length $L$, sound rate $r_s$, fault rate $r_f$, $P, Q$ | $$x = \left(\frac{Q}{P+Q}\right) \left[ \frac{L(r_s + r_f)}{r_f} \right]$$ | Remember $r_s, r_f$ in $\Omega/\text{km}$; $x$ comes out in same units as $L$. |
+| **Varley Loop: Fault Distance ($x$)** | Loop test $R_{\text{loop}}$, balance $S_2$, ratio $P, Q$, cable $r$ | $$R_x = \frac{Q R_{\text{loop}} - P S_2}{P + Q} \implies x = \frac{R_x}{r}$$ | If equal arms ($P=Q$): $R_x = \frac{S_1 - S_2}{2}$ (where $S_1 = R_{\text{loop}}$). |
+| **Maxwell-Wien Bridge ($L_1, R_1, Q$)** | $R_2, R_3, R_4, C_4, \omega$ | $$L_1 = R_2 R_3 C_4, \quad R_1 = \frac{R_2 R_3}{R_4}, \quad Q = \omega C_4 R_4$$ | **Medium $Q$ only ($1 \le Q \le 10$)**. Balance independent of frequency. |
+| **Hay's Bridge ($L_1, R_1, Q$)** | $R_2, R_3, R_4, C_4, \omega$ | $$L_1 = \frac{R_2 R_3 C_4}{1 + (1/Q^2)} \approx R_2 R_3 C_4, \quad Q = \frac{1}{\omega C_4 R_4}$$ | **High $Q$ coils ($Q > 10$)**. Series $R_4-C_4$ arm. Frequency dependent! |
+| **Owen's Bridge ($L_1, R_1, Q$)** | $R_2, R_3, C_2, C_4, \omega$ | $$R_1 = \left(\frac{C_4}{C_2}\right)R_3, \quad L_1 = R_2 R_3 C_4, \quad Q = \omega C_2 R_2$$ | Ideal for iron-cored coils & magnetic specimens over wide range. |
+| **De Sauty's Bridge (Capacitance $C_1$)** | Standard $C_2$, resistors $R_3, R_4$ | $$C_1 = C_2 \left(\frac{R_4}{R_3}\right)$$ | Lossless caps only. For lossy caps: $\frac{R_1+r_1}{R_2+r_2} = \frac{R_3}{R_4} = \frac{C_2}{C_1}$. |
+| **Wien's Bridge (Unknown Frequency $f$)** | $R_1, R_2, C_1, C_2$ | $$f = \frac{1}{2\pi \sqrt{R_1 R_2 C_1 C_2}} \quad \xrightarrow{R_1=R_2, C_1=C_2} \quad f = \frac{1}{2\pi R C}$$ | Arm ratio must satisfy: $\frac{R_4}{R_3} = \frac{C_1}{C_2} + \frac{R_2}{R_1} = 2$. |
+| **Compensated Attenuator (Voltage Divider)** | Resistors $R_1, R_2$, Capacitors $C_1, C_2$ | $$R_1 C_1 = R_2 C_2 \implies C_1 = \frac{R_2 C_2}{R_1}$$ | Frequency-independent attenuation ratio $\frac{V_o}{V_{\text{in}}} = \frac{R_2}{R_1 + R_2}$. |
+
+---
+
 ## 1. Resistance Classification & Overview
 
 | Class            | Value Range                         | Major Measurement Methods                                                                             | Dominant Error / Challenge        |

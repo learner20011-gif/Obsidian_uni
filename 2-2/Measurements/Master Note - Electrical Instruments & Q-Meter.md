@@ -2,6 +2,38 @@
 
 ---
 
+> [!tip] ⚡ Quick Formula Cheat-Sheet (Exam Problem Solver)
+> *Instant reference when a numerical problem appears. Identify the problem type / given values $\to$ pick the formula.*
+
+### 🎯 Problem-Solving Formula Decision Matrix
+
+| Problem / Target Question | Given Variables | Core Formula to Use | Key Trap / Tip |
+| :--- | :--- | :--- | :--- |
+| **PMMC Deflection / Torque** | $B, I, N, A, K$ (spring const) | $$T_d = BINA = G \cdot I, \quad \theta = \left(\frac{G}{K}\right) I$$ | Strictly linear: $\theta \propto I_{\text{avg}}$. Reads DC only (reads $0$ on pure sinusoidal AC). |
+| **Moving Iron (MI) Deflection** | Current $I$, inductance gradient $\frac{dL}{d\theta}, K$ | $$\theta = \frac{I^2}{2K} \frac{dL}{d\theta}$$ | Non-linear: $\theta \propto I_{\text{rms}}^2$. Reads true RMS on AC & DC. Cramped scale at bottom. |
+| **Electrostatic Voltmeter Deflection** | Voltage $V$, capacitance gradient $\frac{dC}{d\theta}, K$ | $$\theta = \frac{V^2}{2K} \frac{dC}{d\theta}$$ | Non-linear: $\theta \propto V_{\text{rms}}^2$. Consumes zero DC power. True RMS reader. |
+| **Ammeter Range Extension (Shunt)** | Meter $I_m, R_m$; Target current $I$ | $$m = \frac{I}{I_m} \implies R_{\text{sh}} = \frac{R_m}{m - 1}$$ | Shunt in **parallel**. Always $R_{\text{sh}} \ll R_m$. Manganin alloy avoids thermo-emf errors. |
+| **Voltmeter Range Extension (Multiplier)** | Meter $v_m, R_m$; Target voltage $V$ | $$m = \frac{V}{v_m} \implies R_s = R_m (m - 1)$$ | Multiplier in **series**. Always $R_s \gg R_m$. Drops the bulk of line voltage. |
+| **Series Ohmmeter Unknown $R_x$** | Half-scale $R_h$, deflection ratio $s = \frac{I_m}{I_{\text{fsd}}}$ | $$R_x = R_h \left( \frac{1 - s}{s} \right), \quad R_h \approx R_1$$ | Scale: $\infty$ on Left ($s=0$), $0$ on Right ($s=1$). Half-scale deflection ($s=0.5$) $\implies R_x = R_h$. |
+| **Shunt Ohmmeter Unknown $R_x$** | Half-scale $R_h$, deflection ratio $s = \frac{I_m}{I_{\text{fsd}}}$ | $$R_x = R_h \left( \frac{s}{1 - s} \right), \quad R_h = \frac{R_1 R_m}{R_1 + R_m}$$ | Scale: $0$ on Left ($s=0$), $\infty$ on Right ($s=1$). Best suited for low-resistance tests ($< 10\,\Omega$). |
+| **3-Voltmeter AC Power & $\cos\phi$** | Supply $V_1$, Load $V_2$, Resistor $V_3$, Standard $R$ | $$P = \frac{V_1^2 - V_2^2 - V_3^2}{2R}, \quad \cos\phi = \frac{V_1^2 - V_2^2 - V_3^2}{2 V_2 V_3}$$ | $V_3 = I \cdot R$. Voltmeters must draw negligible current compared to load. |
+| **3-Ammeter AC Power & $\cos\phi$** | Supply $I_1$, Load $I_2$, Resistor $I_3$, Standard $R$ | $$P = \frac{(I_1^2 - I_2^2 - I_3^2)R}{2}, \quad \cos\phi = \frac{I_1^2 - I_2^2 - I_3^2}{2 I_2 I_3}$$ | Supply $I_1$, load in parallel with non-inductive branch $R$. Avoids potential coil errors. |
+| **Induction Energy Meter Constant & Error** | Disk revs $N$, Power $P$, time $t$, true kWh | $$K = \frac{N}{\text{kWh}}, \quad \%\text{ Error} = \frac{\text{Recorded kWh} - \text{True kWh}}{\text{True kWh}} \times 100$$ | True $\text{kWh} = \frac{P [\text{W}] \times t [\text{h}]}{1000}$. Lag angle $\Delta = 90^\circ$ gives $T_d \propto VI\cos\phi$. |
+| **Ballistic Flux Meter (Flux Change)** | Search coil $N$, Galvanometer const $G$, Deflection $\Delta\theta$ | $$\Delta\Phi = \frac{G}{N} \cdot \Delta\theta$$ | **No spring control** ($K=0$). Deflection depends only on total $\Delta\Phi$, strictly independent of time. |
+| **Core Loss Separation ($P_h$ and $P_e$)** | Total iron loss $P_i$ at varied frequencies $f$ | $$\frac{P_i}{f} = A + B f \implies \begin{cases} P_h = A f & (\text{Hysteresis}) \\ P_e = B f^2 & (\text{Eddy Current}) \end{cases}$$ | Plot $\frac{P_i}{f}$ vs $f$: Vertical intercept $= A$; Slope of straight line $= B$. |
+| **Current Transformer (CT) Actual Ratio $R$** | Turn ratio $n = N_s/N_p$, secondary $I_s$, magnetizing $I_m$, core loss $I_c$, burden angle $\delta$ | $$R = \frac{I_p}{I_s} \approx n + \frac{I_m \sin\delta + I_c \cos\delta}{I_s}$$ | Ratio error: $\sigma = \frac{K_n - R}{R} \times 100\%$, where $K_n = \text{Nominal } (I_p/I_s)$. |
+| **CT Phase Angle Error ($\theta$)** | Secondary $I_s$, $I_m, I_c$, burden angle $\delta$ | $$\theta \approx \frac{180}{\pi} \left[ \frac{I_m \cos\delta - I_c \sin\delta}{n\, I_s} \right]\quad [\text{degrees}]$$ | Safety: **Never open-circuit CT secondary under load** (extreme core saturation & fatal voltage surge). |
+| **CRO Electrostatic Deflection ($D$)** | Screen dist $L$, plate len $l$, plate gap $d$, $V_d, V_a$ | $$D = \frac{L \cdot l \cdot V_d}{2\, d \cdot V_a}$$ | $D \propto V_d$, but $D \propto 1/V_a$. Higher accelerating voltage reduces deflection sensitivity! |
+| **CRO Sensitivity ($S$) & Deflection Factor ($G$)** | Deflection $D$, deflecting voltage $V_d$ | $$S = \frac{D}{V_d} = \frac{L \cdot l}{2\, d \cdot V_a}\quad [\text{mm/V}], \quad G = \frac{1}{S}\quad [\text{V/mm}]$$ | $G$ is reciprocal of sensitivity $S$. |
+| **CRO Lissajous: Phase Difference ($\phi$)** | Y-intercept $Y_1$, Y-maximum $Y_2$ | $$\sin\phi = \frac{Y_1}{Y_2} \implies \phi = \arcsin\left(\frac{Y_1}{Y_2}\right)$$ | Ellipse axes in 1st/3rd quadrant $\implies \phi$ or $360^\circ - \phi$; 2nd/4th $\implies 180^\circ \pm \phi$. |
+| **CRO Lissajous: Frequency Ratio** | Tangencies: horizontal $n_h$, vertical $n_v$ | $$\frac{f_y}{f_x} = \frac{n_h}{n_v} = \frac{\text{Number of Horizontal Tangencies}}{\text{Number of Vertical Tangencies}}$$ | $f_y$ is signal to Y-plates; $f_x$ is time-base or signal to X-plates. |
+| **Q-Meter: Quality Factor $Q$** | Resonant tuning cap voltage $V_c$, injected emf $E$ | $$Q = \frac{V_c}{E} = \frac{\omega L}{R}$$ | Series resonance condition $\omega L = \frac{1}{\omega C}$. Low injection resistor $R_{\text{sh}} \approx 0.02\,\Omega$. |
+| **Q-Meter: Self / Distributed Capacitance ($C_d$)** | Resonant freqs $f_1, f_2 = 2f_1$; tuning caps $C_1, C_2$ | $$C_d = \frac{C_1 - 4\,C_2}{3}, \quad L = \frac{1}{4\pi^2 f_1^2 (C_1 + C_d)}$$ | Set $f_2 = 2f_1$ exactly. Then tune $C_2$ for peak. Condition check: $C_1 > 4C_2$. |
+| **Q-Meter: Series Unknown ($X_s, R_s$)** | Resonant $C_1, Q_1$ (coil only); $C_2, Q_2$ (with $Z_x$) | $$X_s = \frac{C_1 - C_2}{\omega C_1 C_2}, \quad R_s = \left(\frac{C_1}{C_2}\right) \left[\frac{Q_1 - Q_2}{Q_1 Q_2 \omega C_1}\right]$$ | If $C_1 > C_2 \implies X_s > 0$ (Inductive). If $C_1 < C_2 \implies X_s < 0$ (Capacitive). |
+| **Ramp-Type DVM (Gating Pulses)** | Input $V_{\text{in}}$, ramp slope $k$, clock freq $f_{\text{clock}}$ | $$\Delta t = \frac{V_{\text{in}}}{k} \implies N = f_{\text{clock}} \cdot \Delta t = \left(\frac{f_{\text{clock}}}{k}\right) V_{\text{in}}$$ | Pulse count $N$ is strictly proportional to input voltage $V_{\text{in}}$. |
+
+---
+
 ## 1. Fundamentals, Torques, Damping & Galvanometers
 
 ### 1.1 Operating Torques in Indicating Instruments
