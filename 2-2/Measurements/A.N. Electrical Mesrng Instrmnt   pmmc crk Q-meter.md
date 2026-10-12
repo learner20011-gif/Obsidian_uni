@@ -13,6 +13,10 @@
 ![[Pasted image 20261012034139.jpg]]
 ![[Pasted image 20261012043031.png|450]]
 ![[Pasted image 20261012045049.png]]![[Pasted image 20261012173046.png|491]]![[Pasted image 20261012172022.png]]
+![[Pasted image 20261012191748.png]]
+![[Pasted image 20261012192226.png]]
+![[Pasted image 20261012192851.jpg]]
+
 #### 1. System Energy Storage
 
 - Stored electrostatic energy in the capacitor:
@@ -2013,3 +2017,135 @@ _(where $m$ is the number of freeze points/patterns passed, $f_H$ is the higher 
           
         
         $$\text{Eddy Current Loss} = K_4 K_{f1}^2$$
+
+#### 4. crt cro Step-by-Step Derivation of Electrostatic Deflection
+
+- **Step 1: Axial Velocity ($v_{ox}$) from Anode Acceleration**
+    
+    - Electrons emitted from the cathode are accelerated across the potential difference $V_a$.
+        
+    - The potential energy lost by an electron equals the kinetic energy gained:
+        
+        $$e V_a = \frac{1}{2} m v_{ox}^2$$
+        
+    - Solving for the axial velocity $v_{ox}$ entering the deflecting plate assembly:
+        
+        $$v_{ox}^2 = \frac{2 e V_a}{m} \implies v_{ox} = \sqrt{\frac{2 e V_a}{m}}$$
+        
+- **Step 2: Electrostatic Force and Upward Acceleration ($a_y$)**
+    
+    - The uniform electric field established between two parallel plates separated by distance $d$ under voltage $V_d$ is:
+        
+        $$\mathcal{E} = \frac{V_d}{d}$$
+        
+    - The upward electrostatic force experienced by the electron within this field is:
+        
+        $$F_y = e \mathcal{E} = e \frac{V_d}{d}$$
+        
+    - Applying Newton's second law of motion ($F_y = m a_y$), the vertical acceleration along the Y-axis is:
+        
+        $$a_y = \frac{F_y}{m} = \frac{e V_d}{m d}$$
+        
+- **Step 3: Transit Time ($t$) Across the Deflection Plates**
+    
+    - No electric field acts along the horizontal X-axis, meaning the horizontal velocity $v_{ox}$ remains strictly constant throughout the plate region.
+        
+    - The time $t$ required for an electron to traverse a horizontal distance $x$ is:
+        
+        $$t = \frac{x}{v_{ox}}$$
+        
+    - For the complete plate length $l$, the total transit time inside the field is:
+        
+        $$t = \frac{l}{v_{ox}}$$
+        
+- **Step 4: Electron Trajectory Inside the Plates (Parabolic Path)**
+    
+    - Since the electron enters horizontally with zero initial vertical velocity ($v_{oy} = 0$), its vertical position $y$ at horizontal distance $x$ follows kinematic motion:
+        
+        $$y = \frac{1}{2} a_y t^2 = \frac{1}{2} a_y \left(\frac{x}{v_{ox}}\right)^2$$
+        
+    - Substituting $a_y = \frac{e V_d}{m d}$ into the trajectory expression:
+        
+        $$y = \frac{1}{2} \left(\frac{e V_d}{m d}\right) \frac{x^2}{v_{ox}^2}$$
+        
+    - Because all terms except $x^2$ are constants, $y \propto x^2$, which proves that the electron travels along a **parabolic path** inside the deflecting field.
+        
+    - At the exit edge of the plates where $x = l$, the internal vertical displacement $y_1$ is:
+        
+        $$y_1 = \frac{1}{2} \left(\frac{e V_d}{m d}\right) \left(\frac{l}{v_{ox}}\right)^2 = \frac{e V_d l^2}{2 m d v_{ox}^2}$$
+        
+- **Step 5: Exit Velocity ($v_y$) and Deflection Angle ($\theta$)**
+    
+    - The vertical velocity $v_y$ gained by the electron at the instant it leaves the plates is:
+        
+        $$v_y = a_y t = \left(\frac{e V_d}{m d}\right) \left(\frac{l}{v_{ox}}\right) = \frac{e V_d l}{m d v_{ox}}$$
+        
+    - The slope or tangent of the deflection angle $\theta$ upon exit is given by the velocity ratio:
+        
+        $$\tan\theta = \frac{v_y}{v_{ox}} = \frac{\left(\frac{e V_d l}{m d v_{ox}}\right)}{v_{ox}} = \frac{e V_d l}{m d v_{ox}^2}$$
+        
+    - Substitute $v_{ox}^2 = \frac{2 e V_a}{m}$ from Step 1 into this equation:
+        
+        $$\tan\theta = \frac{e V_d l}{m d \left(\frac{2 e V_a}{m}\right)}$$
+        
+    - Cancelling the specific charge ratio $\frac{e}{m}$ simplifies the deflection angle to:
+        
+        $$\tan\theta = \frac{l V_d}{2 d V_a}$$
+        
+- **Step 6: Total Deflection on the Fluorescent Screen ($D$)**
+    
+    - Beyond the plates, the electric field is zero, so the electron travels in a straight line along the exit tangent until it strikes the screen.
+        
+    - Projecting this straight-line tangent backward shows that it intersects the central horizontal axis exactly at the midpoint of the plates ($x = l/2$).
+        
+    - Thus, the effective distance from this apparent origin of deflection to the screen is $L$.
+        
+    - From the geometry of the resulting right-angled triangle:
+        
+        $$\tan\theta = \frac{D}{L} \implies D = L \tan\theta$$
+        
+    - Substituting the derived value of $\tan\theta = \frac{l V_d}{2 d V_a}$ into the screen deflection formula:
+        
+        $$D = L \left(\frac{l V_d}{2 d V_a}\right)$$
+        
+    - Rearranging into standard form gives the final expression for spot deflection:
+        
+        $$D = \frac{l L V_d}{2 d V_a}$$
+        
+
+#### 5. Deflection Sensitivity and Deflection Factor
+
+- **Deflection Sensitivity ($S$):**
+    
+    - Defined as the screen deflection produced per unit deflecting voltage applied across the plates:
+        
+        $$S = \frac{D}{V_d} = \frac{l L}{2 d V_a} \quad [\text{m/V} \text{ or } \text{mm/V}]$$
+        
+    - A higher sensitivity means a smaller voltage produces a large, easily readable spot movement.
+        
+    - Sensitivity can be increased by:
+        
+        - Increasing plate length $l$.
+            
+        - Increasing distance to the screen $L$.
+            
+        - Decreasing plate separation $d$.
+            
+        - Decreasing accelerating anode voltage $V_a$ (though reducing $V_a$ lowers beam intensity/brightness).
+            
+- **Deflection Factor ($G$):**
+    
+    - Defined as the reciprocal of deflection sensitivity, representing the deflecting voltage needed to cause unit displacement on the screen:
+        
+        $$G = \frac{1}{S} = \frac{V_d}{D} = \frac{2 d V_a}{l L} \quad [\text{V/m} \text{ or } \text{V/mm}]$$
+        
+
+#### 6. Key Conclusions
+
+- **Linear Response:** For fixed CRT physical dimensions ($l, L, d$) and a stable accelerating voltage ($V_a$), all parameters except $V_d$ are constant:
+    
+    $$D \propto V_d$$
+    
+- This direct linear proportionality allows the CRT to function as an accurate, linear voltage-indicating device.
+    
+- As the applied deflecting voltage varies continuously in time, the luminous spot traces an exact, faithful visual reproduction of the input waveform across the calibrated screen.
