@@ -876,23 +876,6 @@ The function of a clamp-on ammeter is based on the principle of electromagnetic 
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 82** (*Clamp-on ammeter definition and functional operation*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 9, Sec 9.8 (Page 296)
 
-### 29. ❓Page 18, Q.8(d): What is maximum demand indicator? Briefly explain the working principle of Merz Price maximum demand indicator.
-
-**Answer:**
-**What is a Maximum Demand Indicator?**
-A Maximum Demand Indicator (MDI) is a specialized electrical measuring instrument used primarily in industrial and commercial power systems to monitor and record the highest average power (or current) consumed over a specific, successive time interval (usually 15 or 30 minutes) during a billing period. It is designed to ignore short, transient spikes (like motor starting currents) but register sustained thermal loading. Utility companies use this reading to determine the "demand charge" tariff, which reflects the infrastructure capacity they must maintain to supply that facility's peak load.
-
-**Working Principle of Merz Price Maximum Demand Indicator:**
-The Merz Price indicator is an integrating-type instrument that is usually coupled directly with an energy meter (watt-hour meter). Its working principle is as follows:
-1.  **Integration over Time:** The device features a driving mechanism (often a pin or a pusher) that is geared to the rotating disc of the energy meter. As the energy meter rotates (representing power consumed), it advances this pusher.
-2.  **Driving the Pointer:** The pusher slowly moves a recording pointer forward across a dial. The distance the pointer moves is proportional to the total energy consumed during the specific time interval (e.g., 30 minutes). Since energy divided by time equals average power, the pointer's position represents the average demand over that interval.
-3.  **Reset Mechanism:** At the exact end of the time interval, a timing mechanism (like a synchronous motor or clockwork) temporarily uncouples the gear train. A spring instantly snaps the pusher back to the zero position.
-4.  **Recording the Maximum:** Crucially, the recording pointer is left behind at its highest reached position; it does not snap back to zero. During the next 30-minute interval, the pusher starts from zero again. It will only move the pointer further up the scale if the average power in this new interval exceeds the previously recorded maximum. Thus, at the end of the month, the pointer indicates the absolute highest average demand that occurred during any single 30-minute window.
-
-*   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 82** (*Merz Price maximum demand indicator working principle*)
-*   **Reference in A. K. Sawhney Textbook:** Chapter 11, Sec 11.20 (Pages 388–390)
-
-***
 
 ### 30. Page 23, CT-02 Q1: Prove that the expression for series resistance is $R_s = R_m(m - 1)$ for the extension of the voltmeter range where the symbols have their usual meanings.
 
@@ -2382,7 +2365,7 @@ $\theta = \arctan(0.08) \approx \mathbf{4.57^\circ}$
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Pages 195, 208–209** (*Transformation ratio and phase angle of CT calculation*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 9, Sec 9.4 (Page 308, Ex. 9.1)
 
-### 73. Page 9, Q.5. (b): Derive the expression of ration error of a CT by sketching the vector diagram clearly. [figure Involved - note reference to vector diagram]
+### 73. Page 9, Q.5. (b): Derive the expression of ratio error of a CT by sketching the vector diagram clearly. [figure Involved - note reference to vector diagram]
 
 **Answer:**
 - In an **ideal transformer**, the ratio of currents would strictly match the turns ratio:

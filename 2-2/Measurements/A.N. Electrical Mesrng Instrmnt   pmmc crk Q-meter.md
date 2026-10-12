@@ -23,8 +23,8 @@
 ![[Pasted image 20261013004517.png]]![[Pasted image 20261013004458.png]]
 ![[Pasted image 20261013004450.png]]
 ![[Pasted image 20261013004916.png]]
-
-
+![[Pasted image 20261013030047.png]]
+![[Pasted image 20261013030657.png]]
 
 #### 1. System Energy Storage
 
@@ -2460,3 +2460,107 @@ The distributed (self) capacitance $C_d$ of a coil causes measurement errors and
         $$3 C_d = C_1 - 4 C_2$$
         
         $$C_d = \frac{C_1 - 4 C_2}{3}$$
+
+#### Transformation Ratio Derivation ($R$)
+
+- **Phasor Representation:**
+    
+    - From the phasor diagram of the Current Transformer (CT), the primary current vector $\vec{I}_p$ is the vector sum of the reversed secondary current referred to primary ($n\vec{I}_s$) and the exciting current ($\vec{I}_0$):
+        
+        $$I_p = \sqrt{(n I_s)^2 + I_0^2 + 2(n I_s) I_0 \cos(90^\circ - \alpha - \delta)}$$
+        
+    - Since $\cos(90^\circ - (\alpha + \delta)) = \sin(\alpha + \delta)$:
+        
+        $$I_p = \sqrt{(n I_s)^2 + I_0^2 + 2 n I_s I_0 \sin(\alpha + \delta)}$$
+        
+- **Actual Transformation Ratio ($R$):**
+    
+    - The actual transformation ratio is defined as $R = \frac{I_p}{I_s}$:
+        
+        $$R = \frac{\sqrt{(n I_s)^2 + I_0^2 + 2 n I_s I_0 \sin(\alpha + \delta)}}{I_s}$$
+        
+- **Mathematical Approximation:**
+    
+    - The no-load excitation current $I_0$ is very small compared to $n I_s$ ($I_0 \ll n I_s$).
+        
+    - Replacing $I_0^2$ with $[I_0 \sin(\alpha + \delta)]^2$ introduces negligible error:
+        
+        $$R \approx \frac{\sqrt{(n I_s)^2 + [I_0 \sin(\alpha + \delta)]^2 + 2 n I_s I_0 \sin(\alpha + \delta)}}{I_s}$$
+        
+    - Factoring the perfect square:
+        
+        $$R \approx \frac{\sqrt{[n I_s + I_0 \sin(\alpha + \delta)]^2}}{I_s} = \frac{n I_s + I_0 \sin(\alpha + \delta)}{I_s}$$
+        
+        $$R \approx n + \frac{I_0}{I_s}\sin(\alpha + \delta)$$
+        
+- **Component Expansion:**
+    
+    - Expanding $\sin(\alpha + \delta) = \sin\alpha \cos\delta + \cos\alpha \sin\delta$:
+        
+        $$I_0 \sin(\alpha + \delta) = (I_0 \sin\alpha)\cos\delta + (I_0 \cos\alpha)\sin\delta$$
+        
+    - Using core-loss component $I_w = I_0 \sin\alpha$ (or $I_c$) and magnetizing component $I_m = I_0 \cos\alpha$:
+        
+        $$R \approx n + \frac{I_w \cos\delta + I_m \sin\delta}{I_s}$$
+        
+
+#### Phase Angle Error Derivation ($\theta$)
+
+- **Trigonometric Setup:**
+    
+    - From the right-angled triangle $O-b-c$ in the phasor diagram:
+        
+        $$\tan\theta = \frac{bc}{Ob} = \frac{I_0 \sin(90^\circ - \alpha - \delta)}{Oa + ab}$$
+        
+        $$\tan\theta = \frac{I_0 \cos(\alpha + \delta)}{n I_s + I_0 \sin(\alpha + \delta)}$$
+        
+- **Small Angle & Value Approximations:**
+    
+    - Because the phase deviation $\theta$ is very small, $\tan\theta \approx \theta$ (in radians).
+        
+    - Neglecting the small term in the denominator ($I_0 \sin(\alpha + \delta) \ll n I_s$):
+        
+        $$\theta \approx \frac{I_0 \cos(\alpha + \delta)}{n I_s}$$
+        
+- **Expansion into Current Components:**
+    
+    - Expanding the trigonometric identity $\cos(\alpha + \delta) = \cos\alpha \cos\delta - \sin\alpha \sin\delta$:
+        
+        $$\theta = \frac{I_0 \cos\alpha \cos\delta - I_0 \sin\alpha \sin\delta}{n I_s}$$
+        
+    - Substituting $I_m = I_0 \cos\alpha$ and $I_w = I_0 \sin\alpha$:
+        
+        $$\theta = \frac{I_m \cos\delta - I_w \sin\delta}{n I_s} \text{ radians}$$
+        
+    - Converting to degrees:
+        
+        $$\theta = \frac{180}{\pi} \left[ \frac{I_m \cos\delta - I_w \sin\delta}{n I_s} \right]^\circ$$
+        
+
+#### CT Burden and Measurement Errors
+
+- **Burden Definitions:**
+    
+    - **Burden:** The total load across secondary terminals expressed in volt-amperes ($\text{VA}$) at rated secondary current and voltage.
+        
+    - **Rated Burden:** The maximum permissible $\text{VA}$ loading without exceeding accuracy limits for a specific class.
+        
+    - **Total Secondary Burden:**
+        
+        $$\text{Total Burden} = I_s^2 \cdot Z_{\text{secondary total}} = \frac{E_s^2}{Z_{\text{secondary total}}}$$
+        
+    - **External Secondary Load Burden:**
+        
+        $$\text{Load Burden} = \frac{V_s^2}{Z_{\text{load}}}$$
+        
+- **Sources and Formulas of Errors:**
+    
+    - **Ratio Error:** Arises because actual ratio $R$ deviates from nominal ratio $K_n$ (or turns ratio $n$) due to magnetizing current:
+        
+        $$\text{Percentage Ratio Error} = \frac{\text{Nominal Ratio} - \text{Actual Ratio}}{\text{Actual Ratio}} \times 100 = \frac{K_n - R}{R} \times 100$$
+        
+    - **Phase Angle Error ($\theta$):** Occurs because the secondary current is not displaced by exactly $180^\circ$ relative to the primary current.
+        
+    - **Resistive Burden Simplification:** When burden is predominantly resistive ($\delta \approx 0^\circ \implies \sin\delta \approx 0, \cos\delta \approx 1$):
+        
+        $$R \approx n + \frac{I_w}{I_s}, \quad \theta \approx \frac{180}{\pi}\left[\frac{I_m}{n I_s}\right]^\circ$$
