@@ -18,8 +18,8 @@
 ![[Pasted image 20261012192851.jpg]]
 ![[Pasted image 20261012202536.png]]
 ![[Pasted image 20261012210620.png|513]]
-
-
+![[Pasted image 20261012232052.png]]
+![[Pasted image 20261012232116.png]]
 #### 1. System Energy Storage
 
 - Stored electrostatic energy in the capacitor:
@@ -2314,3 +2314,143 @@ $$\implies f_y = f_x \times \left(\frac{n_h}{n_v}\right)$$
 - **Calculation:**
     
     $$\frac{f_y}{1000} = \frac{2}{1} \implies f_y = 2000\text{ Hz}$$
+
+
+#### Overview and Working Principle
+
+The **Q-meter** measures the quality factor ($Q$) of RF circuits, coils, and capacitors directly based on the principle of **series resonance**.
+
+- **Definition of $Q$ factor:**
+    
+    - For inductive components: $Q = \frac{X_L}{R} = \frac{\omega L}{R}$
+        
+    - For capacitive components: $Q = \frac{X_C}{R} = \frac{1}{\omega C R}$
+        
+- **Series Resonance Condition:**
+    
+    - At resonance, inductive reactance equals capacitive reactance:
+        
+        $$X_L = X_C$$
+        
+    - Total circuit impedance reduces to resistance $R$, making the current:
+        
+        $$I = \frac{E}{R}$$
+        
+    - Voltage across the resonating capacitor ($E_C$):
+        
+        $$E_C = I X_C = I X_L$$
+        
+    - Relating $E_C$ to applied oscillator voltage $E$:
+        
+        $$Q = \frac{X_L}{R} = \frac{X_C}{R} = \frac{I X_C}{I R} = \frac{E_C}{E}$$
+        
+        $$E_C = Q \cdot E$$
+        
+- **Measurement rule:** By keeping the input oscillator voltage $E$ constant, the voltage across the capacitor $E_C$ is directly proportional to $Q$.
+#### Series Connection Method (Low Impedance)
+
+Used for measuring low-impedance unknown loads ($Z_S = R_S + j X_S$).
+
+- **Step 1: Reference Measurement (Unknown Shorted)**
+    
+    - A stable work coil is placed in the circuit, and the unknown impedance $Z$ is short-circuited.
+        
+    - The circuit is resonated at frequency $\omega$ using tuning capacitor $C_1$, noting the quality factor $Q_1$:
+        
+        $$X_L = X_{C1} = \frac{1}{\omega C_1}$$
+        
+        $$R_1 = \frac{X_{C1}}{Q_1} = \frac{1}{\omega C_1 Q_1}$$
+        
+- **Step 2: Second Measurement (Unknown Inserted)**
+    
+    - The shorting strap is removed, placing $Z_S$ in series.
+        
+    - The circuit is retuned to resonance by adjusting the capacitor to $C_2$, recording the new quality factor $Q_2$:
+        
+        $$X_S + X_L = X_{C2}$$
+        
+        $$R_2 = \frac{X_{C2}}{Q_2} = \frac{1}{\omega C_2 Q_2}$$
+        
+- **Step 3: Derivation of Unknown Reactance ($X_S$)**
+    
+    - Substitute $X_L = \frac{1}{\omega C_1}$ and $X_{C2} = \frac{1}{\omega C_2}$:
+        
+        $$X_S = X_{C2} - X_L = \frac{1}{\omega C_2} - \frac{1}{\omega C_1}$$
+        
+        $$X_S = \frac{C_1 - C_2}{\omega C_1 C_2}$$
+        
+    - _Nature of load:_ If $C_1 > C_2$, $X_S$ is **inductive** ($+j X_S$). If $C_1 < C_2$, $X_S$ is **capacitive** ($-j X_S$).
+        
+- **Step 4: Derivation of Unknown Resistance ($R_S$)**
+    
+    - Since the total resistance in step 2 is $R_2 = R_1 + R_S$:
+        
+        $$R_S = R_2 - R_1 = \frac{1}{\omega C_2 Q_2} - \frac{1}{\omega C_1 Q_1}$$
+        
+        $$R_S = \frac{C_1 Q_1 - C_2 Q_2}{\omega C_1 C_2 Q_1 Q_2}$$
+        
+- **Step 5: Derivation of Quality Factor ($Q_S$)**
+    
+    - Dividing reactance by resistance:
+        
+        $$Q_S = \frac{X_S}{R_S} = \frac{\frac{C_1 - C_2}{\omega C_1 C_2}}{\frac{C_1 Q_1 - C_2 Q_2}{\omega C_1 C_2 Q_1 Q_2}} = \frac{(C_1 - C_2) Q_1 Q_2}{C_1 Q_1 - C_2 Q_2}$$
+        
+- **Special Cases:**
+    
+    - **Pure Resistor:** If $C_1 = C_2$, reactance is zero:
+        
+        $$R_S = \frac{Q_1 - Q_2}{\omega C_1 Q_1 Q_2} = \frac{\Delta Q}{\omega C_1 Q_1 Q_2}$$
+        
+    - **Small Inductor ($X_S = \omega L_S$):**
+        
+        $$L_S = \frac{X_S}{\omega} = \frac{C_1 - C_2}{\omega^2 C_1 C_2}$$
+        
+    - **Large Capacitor ($X_S = \frac{1}{\omega C_S}$):**
+        
+        $$C_S = \frac{C_1 C_2}{C_2 - C_1}$$
+
+#### Measurement of Distributed Capacitance ($C_d$) source of error
+
+The distributed (self) capacitance $C_d$ of a coil causes measurement errors and must be determined via two-frequency resonance.
+
+- **Step 1: First Resonance**
+    
+    - The coil under test is tuned to resonance at frequency $f_1$ using capacitor value $C_1$:
+        
+        $$f_1 = \frac{1}{2\pi \sqrt{L(C_1 + C_d)}}$$
+        
+- **Step 2: Second Resonance**
+    
+    - The oscillator frequency is doubled ($f_2 = 2f_1$).
+        
+    - The circuit is returned to resonance by adjusting the capacitor to a smaller value $C_2$:
+        
+        $$f_2 = \frac{1}{2\pi \sqrt{L(C_2 + C_d)}}$$
+        
+- **Step 3: Mathematical Derivation of $C_d$**
+    
+    - Take the ratio $\frac{f_2}{f_1}$:
+        
+        $$\frac{f_2}{f_1} = \frac{\frac{1}{2\pi \sqrt{L(C_2 + C_d)}}}{\frac{1}{2\pi \sqrt{L(C_1 + C_d)}}} = \sqrt{\frac{C_1 + C_d}{C_2 + C_d}}$$
+        
+    - Since $f_2 = 2f_1$, substitute $\frac{f_2}{f_1} = 2$:
+        
+        $$2 = \sqrt{\frac{C_1 + C_d}{C_2 + C_d}}$$
+        
+    - Square both sides:
+        
+        $$4 = \frac{C_1 + C_d}{C_2 + C_d}$$
+        
+    - Cross-multiply and expand:
+        
+        $$4(C_2 + C_d) = C_1 + C_d$$
+        
+        $$4 C_2 + 4 C_d = C_1 + C_d$$
+        
+    - Group $C_d$ terms:
+        
+        $$4 C_d - C_d = C_1 - 4 C_2$$
+        
+        $$3 C_d = C_1 - 4 C_2$$
+        
+        $$C_d = \frac{C_1 - 4 C_2}{3}$$
