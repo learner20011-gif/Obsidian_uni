@@ -20,9 +20,9 @@
 ![[Pasted image 20261012210620.png|513]]
 ![[Pasted image 20261012232052.png]]
 ![[Pasted image 20261012232116.png]]
-![[inverting-comparator.gif|479]]
-
-
+![[Pasted image 20261013004517.png]]![[Pasted image 20261013004458.png]]
+![[Pasted image 20261013004450.png]]
+![[Pasted image 20261013004916.png]]
 
 
 
