@@ -302,7 +302,134 @@ $$D_{\text{em}} = \frac{G^2}{R}$$$$D = D_m + \frac{G^2}{R_{\text{total}}}$$
     *   Moving Coil $\to$ **Pressure Coil (PC)** across voltage supply with non-inductive resistance $R_p$.
 
 ---
+#### 1. Flux Linkages & Total Electrical Input Energy
 
+- **Definitions:**
+    
+      
+    - $i_1, i_2$ = instantaneous currents in fixed coil 1 and moving coil 2
+        
+          
+        
+    - $L_1, L_2$ = self-inductances of fixed and moving coils
+        
+          
+        
+    - $M$ = mutual inductance between the coils
+        
+          
+        
+- Total flux linkages of each coil:
+    
+      
+    
+    $$\lambda_1 = L_1 i_1 + M i_2$$
+    
+      
+    
+    $$\lambda_2 = L_2 i_2 + M i_1$$
+    
+      
+    
+- Induced electromotive forces:
+    
+      
+    
+    $$e_1 = \frac{d\lambda_1}{dt}, \quad e_2 = \frac{d\lambda_2}{dt}$$
+    
+      
+    
+- Differential electrical input energy supplied by sources:
+    
+      
+    
+    $$dW_e = e_1 i_1 \, dt + e_2 i_2 \, dt = i_1 \, d\lambda_1 + i_2 \, d\lambda_2$$
+    
+      
+    
+    $$dW_e = i_1 \, d(L_1 i_1 + M i_2) + i_2 \, d(L_2 i_2 + M i_1)$$
+    
+      
+    
+- Expanding differentials:
+    
+      
+    
+    $$dW_e = i_1 L_1 \, di_1 + i_1^2 \, dL_1 + i_1 i_2 \, dM + i_1 M \, di_2 + i_2 L_2 \, di_2 + i_2^2 \, dL_2 + i_1 i_2 \, dM + i_2 M \, di_1 \quad \text{--- (I)}$$
+    
+      
+    
+
+#### 2. Magnetic Stored Energy & Mechanical Work
+
+- Energy stored in the magnetic field of coupled coils:
+    
+      
+    
+    $$W = \frac{1}{2} L_1 i_1^2 + \frac{1}{2} L_2 i_2^2 + i_1 i_2 M$$
+    
+      
+    
+- Differential change in stored energy:
+    
+      
+    
+    $$dW = d\left(\frac{1}{2} L_1 i_1^2 + \frac{1}{2} L_2 i_2^2 + i_1 i_2 M\right)$$
+    
+      
+    
+    $$dW = i_1 L_1 \, di_1 + \frac{1}{2} i_1^2 \, dL_1 + i_2 L_2 \, di_2 + \frac{1}{2} i_2^2 \, dL_2 + i_1 M \, di_2 + i_2 M \, di_1 + i_1 i_2 \, dM \quad \text{--- (II)}$$
+    
+      
+    
+- Principle of conservation of energy:
+    
+      
+    
+    $$\text{Electrical Input Energy } (dW_e) = \text{Change in Stored Energy } (dW) + \text{Mechanical Work Done } (dW_m)$$
+    
+      
+    
+    $$dW_m = dW_e - dW$$
+    
+      
+    
+- Subtracting Equation (II) from Equation (I):
+    
+      
+    
+    $$dW_m = \frac{1}{2} i_1^2 \, dL_1 + \frac{1}{2} i_2^2 \, dL_2 + i_1 i_2 \, dM$$
+    
+      
+    
+- Since self-inductances $L_1$ and $L_2$ are geometrically constant ($dL_1 = 0$, $dL_2 = 0$):
+    
+      
+    
+    $$dW_m = i_1 i_2 \, dM$$
+    
+      
+    
+- Expressing mechanical work in terms of deflecting torque $T_i$ and angular displacement $d\theta$:
+    
+      
+    
+    $$dW_m = T_i \, d\theta$$
+    
+      
+    
+    $$T_i \, d\theta = i_1 i_2 \, dM$$
+    
+      
+    
+- Instantaneous deflecting torque:
+    
+      
+    
+    $$T_i = i_1 i_2 \frac{dM}{d\theta}$$
+    
+      
+    
 ### 6.2 Wattmeter Deflecting Torque Derivation
 *   Instantaneous currents:
     $$i_p(t) = \frac{v(t)}{R_p} = \frac{\sqrt{2} V \sin(\omega t)}{R_p} = \sqrt{2} I_p \sin(\omega t)$$
