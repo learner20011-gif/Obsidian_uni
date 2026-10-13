@@ -1206,18 +1206,10 @@
     
       
     - Torque on Coil A:
-        
-          
-        
-        $$T_A = K V I M_{\max} \cos\phi \sin\theta$$
-        
-          
-        
+    $$T_A = K V I M_{\max} \cos\phi \sin\theta$$
+     
     - Torque on Coil B:
-        
-          
-        
-        $$T_B = K V I M_{\max} \cos(90^\circ - \phi) \sin(90^\circ + \theta) = K V I M_{\max} \sin\phi \cos\theta$$
+    $$T_B = K V I M_{\max} \cos(90^\circ - \phi) \sin(90^\circ + \theta) = K V I M_{\max} \sin\phi \cos\theta$$
         
           
         

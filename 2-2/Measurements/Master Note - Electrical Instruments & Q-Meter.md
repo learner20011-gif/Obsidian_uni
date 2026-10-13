@@ -521,6 +521,15 @@ $$D_{\text{em}} = \frac{G^2}{R}$$$$D = D_m + \frac{G^2}{R_{\text{total}}}$$
     *   Coil $C_1$ connected with non-inductive resistor $R \implies I_1$ in phase with $V$.
     *   Coil $C_2$ connected with pure inductor $L \implies I_2$ lags $V$ by $90^\circ$.
 *   **Working Principle:**
+    * Torque on Coil A:
+    $$T_A = K V I M_{\max} \cos\phi \sin\theta$$
+     
+    - Torque on Coil B:
+    $$T_B = K V I M_{\max} \cos(90^\circ - \phi) \sin(90^\circ + \theta) = K V I M_{\max} \sin\phi \cos\theta$$
+        
+          
+        
+    - Here, $V$ is supply voltage, $I$ is circuit current, $\phi$ is the phase angle of the load, $\theta$ is the angle of pointer deflection, and $M_{\max}$ is the maximum mutual inductance.
     *   Torque from Coil 1: $T_1 = K V I \cos\phi \sin\theta$.
     *   Torque from Coil 2: $T_2 = K V I \sin\phi \cos\theta$.
     *   At equilibrium ($T_1 = T_2$):
