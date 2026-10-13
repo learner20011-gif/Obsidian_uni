@@ -138,7 +138,7 @@ $$
    $$
    E_o \approx \frac{E \cdot S \cdot \Delta R}{(R + S)^2}
    $$
-2. **Galvanometer Deflection ($\theta$):**
+2. ✅**Galvanometer Deflection ($\theta$):**
 
    $$
    \theta = S_v \cdot E_o = S_v \frac{E \cdot S \cdot \Delta R}{(R + S)^2}
@@ -150,7 +150,7 @@ $$
    $$
 
    Substitute balance ratio $\frac{R}{S} = \frac{P}{Q}$ and $\frac{S}{R} = \frac{Q}{P}$:
-   $$
+   ✅$$
    \mathbf{S_B = \frac{S_v E}{\frac{P}{Q} + \frac{Q}{P} + 2}}
    $$
 
