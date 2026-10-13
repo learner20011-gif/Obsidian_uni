@@ -535,7 +535,7 @@ Since $R_{\text{rem}} + R_x = R_{\text{loop}}$:
   $$
   \mathbf{R_x = \frac{Q \cdot R_{\text{loop}} - P \cdot S_2}{P + Q}}
   $$
-
+![[Pasted image 20261013193513.png]]
 ---
 
 ## 6. AC Bridges (Inductance, Capacitance & Frequency)
