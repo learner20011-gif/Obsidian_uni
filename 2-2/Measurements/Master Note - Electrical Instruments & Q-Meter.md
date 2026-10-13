@@ -86,7 +86,14 @@
 
 #### Tuning an Underdamped Galvanometer to Dead-Beat
 *   Total damping is sum of mechanical and electromagnetic damping:
-    $$D = D_m + \frac{G^2}{R_{\text{total}}}$$
+- Induced EMF: $e = G \frac{d\theta}{dt}$, where $G = NBA$ (galvanometer constant).
+- Induced current: $i = \frac{e}{R} = \frac{G}{R} \frac{d\theta}{dt}$, where $R$ is the total resistance of the closed circuit ($R = R_g + R_{\text{ext}}$).
+- Counter-torque (electromagnetic braking): $T_{\text{em}} = G i = \frac{G^2}{R} \frac{d\theta}{dt}$.
+Thus, the electromagnetic damping factor is:
+
+  
+
+$$D_{\text{em}} = \frac{G^2}{R}$$$$D = D_m + \frac{G^2}{R_{\text{total}}}$$
 *   For critical damping ($\zeta = 1$), set loop resistance to **Critical Damping Resistance (CDRX)**:
     $$R_{\text{critical}} = \frac{G^2}{2\sqrt{J K} - D_m}$$
 *   Adjust external shunt or series resistor until $R_{\text{total}} = R_{\text{critical}}$.

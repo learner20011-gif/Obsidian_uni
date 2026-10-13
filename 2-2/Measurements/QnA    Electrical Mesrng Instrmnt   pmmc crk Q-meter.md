@@ -4,21 +4,98 @@
 ### 1. Page 2, Q.2. (b): Suppose you are working with a gavanometer that has underdamped motion. How can you modify the instrument for critically damped motion if you cannot change the spring and inertia of the instrument? Provide mathematical reasoning.
 [watch this for galvanometer](https://youtu.be/7UCUGHBZXNQ?si=2C2TI95LoQr4VOpy)
 **Answer:**
-The dynamic behavior of a galvanometer is governed by its equation of motion, which balances the inertial, damping, and controlling torques against the deflecting torque: 
-$J \frac{d^2\theta}{dt^2} + D \frac{d\theta}{dt} + K\theta = Gi$
+#### Method of Modification
 
-Where:
-*   $J$ = moment of inertia of the moving system
-*   $D$ = total damping constant (air friction + electromagnetic damping)
-*   $K$ = control spring constant
-*   $G$ = displacement constant
+Connect an appropriate external resistance (known as the **Critical Damping External Resistance**, $R_{\text{CDER}}$) in parallel (shunt) across the galvanometer terminals.
 
-For the system to be underdamped, the damping constant is less than the critical value, mathematically represented by the discriminant of the characteristic equation being negative: $D < 2\sqrt{JK}$.
+  
 
-To modify the instrument to achieve critically damped motion, the condition must become exactly $D = 2\sqrt{JK}$. Since the problem states you cannot change the spring constant ($K$) or the inertia ($J$), the only parameter you can alter is the damping constant ($D$). 
+- Because the inertia $J$ and spring constant $C$ are fixed, critical damping is achieved by increasing the **electromagnetic damping** through the adjustment of the total closed-circuit resistance.
+    
+      
+    
 
-The total damping constant $D$ is primarily comprised of mechanical friction (which is negligible/fixed) and electromagnetic damping. Electromagnetic damping ($D_{em}$) is inversely proportional to the total resistance ($R$) of the galvanometer circuit. Therefore, to increase the overall damping constant $D$ up to the required critical value of $2\sqrt{JK}$, you must increase the electromagnetic damping. This is achieved by decreasing the total electrical resistance of the circuit, which can be done practically by connecting a suitable shunt resistance in parallel with the galvanometer. 
+#### Mathematical Reasoning
 
+The equation of motion for a moving-coil galvanometer is:
+
+  
+
+$$J \frac{d^2\theta}{dt^2} + D \frac{d\theta}{dt} + C\theta = 0$$
+
+- $J$: Moment of inertia of the moving system
+    
+      
+    
+- $C$: Restoring torsional spring constant
+    
+      
+    
+- $D$: Total damping coefficient
+    
+      
+    
+- $\theta$: Angular deflection
+    
+      
+    
+
+The total damping coefficient $D$ comprises mechanical damping ($D_m$) and electromagnetic damping ($D_{\text{em}}$):
+
+  
+
+$$D = D_m + D_{\text{em}}$$
+
+When the coil rotates with angular velocity $\frac{d\theta}{dt}$ in magnetic flux density $B$:
+
+  
+
+- Induced EMF: $e = G \frac{d\theta}{dt}$, where $G = NBA$ (galvanometer constant).
+    
+      
+    
+- Induced current: $i = \frac{e}{R} = \frac{G}{R} \frac{d\theta}{dt}$, where $R$ is the total resistance of the closed circuit ($R = R_g + R_{\text{ext}}$).
+    
+      
+    
+- Counter-torque (electromagnetic braking): $T_{\text{em}} = G i = \frac{G^2}{R} \frac{d\theta}{dt}$.
+    
+      
+    
+
+Thus, the electromagnetic damping factor is:
+
+  
+
+$$D_{\text{em}} = \frac{G^2}{R}$$
+
+#### Critical Damping Condition
+
+The characteristic equation is $J s^2 + D s + C = 0$. For critical damping, the discriminant must equal zero:
+
+  
+
+$$D_{\text{crit}} = 2\sqrt{JC}$$
+
+An underdamped galvanometer satisfies $D < 2\sqrt{JC}$. To reach critical damping:
+
+  
+
+$$D_m + \frac{G^2}{R_{\text{crit}}} = 2\sqrt{JC}$$
+
+Solving for the required total circuit resistance $R_{\text{crit}}$:
+
+  
+
+$$R_{\text{crit}} = \frac{G^2}{2\sqrt{JC} - D_m}$$
+
+Since the total resistance includes the galvanometer's internal resistance $R_g$ and the shunted external resistance $R_{\text{CDER}}$:
+
+  
+
+$$R_{\text{CDER}} = \frac{G^2}{2\sqrt{JC} - D_m} - R_g$$
+
+Decreasing the external resistance shunted across the coil increases the induced current, raising $D_{\text{em}}$ until $D = 2\sqrt{JC}$.
 *   **Reference in EEE_2211_ak_merged.pdf (Slide):** **Page 82** (*Underdamped galvanometer modification for critical damping*)
 *   **Reference in A. K. Sawhney Textbook:** Chapter 7, Sec 7.4 (Pages 152–155)
 
