@@ -835,10 +835,12 @@ $$\mathbf{\frac{f_y}{f_x} = \frac{\text{Number of Horizontal Tangencies } (n_h)}
 1.  **Step 1:** Work coil alone resonated at $C_1, Q_1$:
     $$\omega L = \frac{1}{\omega C_1}$$
 2.  **Step 2:** Unknown $Z_s$ inserted in series; retuned at $C_2, Q_2$:
-    $$\mathbf{X_s = \frac{1}{\omega C_2} - \frac{1}{\omega C_1} = \frac{C_1 - C_2}{\omega C_1 C_2}}$$
-    $$\mathbf{R_s = \frac{C_1}{C_2}\left(\frac{Q_1 - Q_2}{Q_1 Q_2 \omega C_1}\right)}$$
-    *(Inductive if $C_1 > C_2$; Capacitive if $C_2 > C_1$)*.
+    $$\mathbf{X_s = \frac{1}{\omega C_2} - \frac{1}{\omega C_1} = \frac{C_1 - C_2}{\omega C_1 C_2}}$$   *(Inductive if $C_1 > C_2$; Capacitive if $C_2 > C_1$)*.
 
+    **Derivation:**
+
+$$R_S = R_2 - R_1 = \frac{1}{\omega C_2 Q_2} - \frac{1}{\omega C_1 Q_1} = \frac{C_1 Q_1 - C_2 Q_2}{\omega C_1 C_2 Q_1 Q_2}$$
+ 
 ---
 
 ### 12.3 Distributed / Self-Capacitance ($C_d$) Measurement
