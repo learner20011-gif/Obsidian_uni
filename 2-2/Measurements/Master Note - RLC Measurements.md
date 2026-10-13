@@ -678,12 +678,17 @@ $$
 
 #### Dissipation Factor ($D$) Concept
 
-| Series Model                                  | Parallel Model                                                                              |                                                                             |
-| :-------------------------------------------- | :------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
-| ![[Pasted image 20260923010052.png]]                                              |                                                                                             | Dielectric loss creates phase shift angle$\delta$ from ideal $90^\circ$ |
-| $Z = r_s - \frac{j}{\omega C_s}$            | $D = \tan \delta = \frac{\text{Energy dissipated / cycle}}{\text{Energy stored / cycle}}$ |                                                                             |
-| $\mathbf{D = \tan \delta = \omega C_s r_s}$ | $Q = \frac{1}{D} = \frac{1}{\omega C_s r_s}$                                              |                                                                             |
+| Series Model                                | Parallel Model                                                                            |                                                                         |
+| :------------------------------------------ | :---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| ![[Pasted image 20260923010052.png]]        |                                                                                           | Dielectric loss creates phase shift angle$\delta$ from ideal $90^\circ$ |
+| $Z = r_s - \frac{j}{\omega C_s}$            | $D = \tan \delta = \frac{\text{Energy dissipated / cycle}}{\text{Energy stored / cycle}}$ |                                                                         |
+| $\mathbf{D = \tan \delta = \omega C_s r_s}$ | $Q = \frac{1}{D} = \frac{1}{\omega C_s r_s}$                                              |                                                                         |
+|                                             |                                                                                           |                                                                         |
+|                                             |                                                                                           |                                                                         |
+*   The total applied voltage ($V$) is the vector sum of $V_R$ and $V_C$.
+*   The angle between the total voltage $V$ and the ideal capacitive voltage $V_C$ is called the **loss angle, $\delta$**.
 
+$$D = \tan(\delta) = \frac{V_R}{V_C} = \frac{I \cdot R_s}{I / (\omega C_s)} = \omega R_s C_s$$
 ---
 
 #### Modified De Sauty's Bridge
@@ -691,14 +696,11 @@ $$
 ![[Pasted image 20260923011652.png]]
 
 * Internal dielectric losses represented by $r_1, r_2$. External series resistors $R_1, R_2$.
-* Balance:
-  $$
-  \mathbf{\frac{C_1}{C_2} = \frac{R_4}{R_3} = \frac{R_2 + r_2}{R_1 + r_1}}
-  $$
+
 * **Dissipation Factor Difference:**
-  $$
-  D_1 - D_2 = \omega C_1 r_1 - \omega C_2 r_2 = \mathbf{\omega C_1 \left( \frac{R_3}{R_4} R_2 - R_1 \right)}
-  $$
+  $$D_1 = \omega C_1 \left[ \frac{R_3}{R_4}(R_2 + r_2) - R_1 \right]$$
+$$D_1 - D_2 = \omega C_2 R_2 - \omega C_1 R_1$$
+  
 * **Why $D$ Cannot Be Accurately Determined:**
   * Yields only the **difference** $(D_1 - D_2)$; requires knowing standard capacitor's loss angle $\delta_2$ accurately.
   * Small errors in external large resistances $R_1, R_2$ overwhelm tiny internal resistances $r_1, r_2$.
