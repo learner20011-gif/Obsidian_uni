@@ -471,13 +471,13 @@ $$D_{\text{em}} = \frac{G^2}{R}$$$$D = D_m + \frac{G^2}{R_{\text{total}}}$$
 
 ![[Pasted image 20261012000256.jpg]]
 ![[Pasted image 20261012005958.png]]
-
+![[Pasted image 20261014021445.png]]
 ### 7.1 Core Components & Driving Torque
 *   **Shunt Magnet (Pressure Coil):** Highly inductive coil; flux $\Phi_p \propto V$ lags voltage by angle $\Delta$.
 *   **Series Magnet (Current Coil):** Few turns in series with load; flux $\Phi_s \propto I$ in phase with $I$.
 *   **Aluminium Disc:** Interacts with fluxes $\Phi_p$ and $\Phi_s$ to induce eddy currents $I_{ep}$ and $I_{es}$.
 *   **Driving Torque:**
-    $$T_d \propto \Phi_p \Phi_s \sin(\text{angle between fluxes}) = \Phi_p \Phi_s \sin(\Delta - \phi)$$
+    $$T_d \propto \Phi_1 \Phi_2 \frac{f}{Z} \sin\beta \cos\alpha$$$$T_d \propto \Phi_p \Phi_s \sin(\text{angle between fluxes}) = \Phi_p \Phi_s \sin(\Delta - \phi)$$
     $$\mathbf{T_d \propto V I \sin(\Delta - \phi)}$$
 
 ---
@@ -493,6 +493,7 @@ $$D_{\text{em}} = \frac{G^2}{R}$$$$D = D_m + \frac{G^2}{R_{\text{total}}}$$
 *   Permanent magnet induces eddy currents in rotating disc:
     $$\mathbf{T_b \propto N} \quad (\text{rotor speed } N)$$
 *   At steady speed: $T_d = T_b \implies N \propto P$.
+* $$K_4 N = K_3 V I \sin(\Delta - \phi)$$
 *   Total rotor revolutions over time $t$:
     $$\int N \, dt \propto \int P \, dt = \mathbf{\text{Total Energy Consumed}}$$
 
