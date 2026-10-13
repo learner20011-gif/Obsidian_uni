@@ -451,7 +451,7 @@ $$
   \frac{P + Q}{Q} = \frac{2L}{x}
   $$
 
-  $$
+  ✅$$
   \mathbf{x = \frac{Q}{P + Q} \cdot 2L}
   $$
 
@@ -483,12 +483,6 @@ Since $R_{\text{rem}} + R_x = R_{\text{loop}}$:
 
 * Battery connected to the second faulty core instead of earth. Equations remain identical.
 
-#### Modified Setup (Known Resistor $R_{\text{ext}}$ Replaces Sound Cable)
-
-* Balance condition:
-  $$
-  \frac{P}{Q} = \frac{R_{\text{ext}} + r(L - x)}{r x} \implies \mathbf{x = \frac{Q (R_{\text{ext}} + r L)}{r (P + Q)}}
-  $$
 
 ---
 
@@ -505,37 +499,20 @@ Since $R_{\text{rem}} + R_x = R_{\text{loop}}$:
 
 * **Step 1 (Switch $K \rightarrow 2$, Loop Resistance Test):**
   Battery grounded through switch at terminal $D$. Loop resistance $R_{\text{loop}}$ measured:
-  For $P = Q$:
 
-  $$
-  R_{\text{loop}} = S_1
+
+$$
+  \frac{P}{Q} = \frac{R_{\text{loop}}}{ S_1}
   $$
 * **Step 2 (Switch $K \rightarrow 1$, Fault Localization):**
   Battery grounded through earth fault. Bridge balanced at setting $S_2$:
 
-  $$
-  \frac{P}{Q} = \frac{R_{\text{loop}} - R_x}{R_x + S_2}
-  $$
-
-  For $P = Q$:
-  $$
-  R_{\text{loop}} - R_x = R_x + S_2 \implies 2 R_x = R_{\text{loop}} - S_2 = S_1 - S_2
-  $$
-
-  $$
-  \mathbf{R_x = \frac{S_1 - S_2}{2}}
-  $$
-* **Distance to Fault ($x$):**
-
-  $$
-  \mathbf{x = \frac{R_x}{r} = \frac{S_1 - S_2}{2 r}}
-  $$
-* **General Case ($P \neq Q$):**
+* ✅**General Case ($P \neq Q$):**
 
   $$
   \mathbf{R_x = \frac{Q \cdot R_{\text{loop}} - P \cdot S_2}{P + Q}}
   $$
-![[Pasted image 20261013193513.png]]
+
 ---
 
 ## 6. AC Bridges (Inductance, Capacitance & Frequency)
