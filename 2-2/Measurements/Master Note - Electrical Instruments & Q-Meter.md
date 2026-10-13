@@ -157,7 +157,7 @@ $$D_{\text{em}} = \frac{G^2}{R}$$$$D = D_m + \frac{G^2}{R_{\text{total}}}$$
 
 ### 3.1 Types & Construction
 *   **Attraction Type:** Oval-shaped soft iron disc pulled into coil where field is strongest.
-*   **Repulsion Type:** Two soft iron vanes placed inside field coil (one fixed, one attached to spindle); like polarities repel.
+*   moves in such a way so as to increase the flux of the electromagnet. RUET Bangladesh Attraction type moving iron instrument. ✓ This is because the soft iron vane tries to occupy a position of minimum reluctance.
 *   **Damping:** Air friction damping (eddy current damping avoided because permanent magnet would distort field).
 
 ---
