@@ -366,8 +366,8 @@ $$
 * **Hand-Driven DC Generator:** Permanent magnet, $100\ \text{V} - 2500\ \text{V}$; centrifugal clutch maintains constant speed.
 * **Permanent Magnet Moving System (Ratio Meter):**
   * No controlling spring; torque exerted entirely electrodynamically.
-  * **Control Coil (Pressure Coil B):** Connected in series with $R_2$ across generator terminals; produces clockwise torque towards $\infty$.
-  * **Deflecting Coil (Current Coil A):** Connected in series with $R_1$ and test terminals ($L$ and $E$); produces counter-clockwise torque towards $0$.
+  * **Control Coil (Pressure Coil B):** Connected in  series with $R_2$ and parallel across generator terminals; produces **counter clockwise torque towards $\infty$**.
+  * **Deflecting Coil (Current Coil A):** Connected in series with $R_1$ and test terminals ($L$ and $E$); produces **clockwise torque towards $0$**.
 * **Guard Terminal ($G$):** Intercepts surface leakage current over cable insulation; shunts it directly back to generator, bypassing Coil A.
 
 #### Working Principle & Equations
@@ -462,7 +462,15 @@ $$
 * Faulty cable resistance: $r_f\ (\Omega/\text{km})$. Sound cable resistance: $r_s\ (\Omega/\text{km})$.
 * Total loop resistance: $R_{\text{loop}} = (r_s + r_f) L$.
 * Resistance to fault: $R_x = r_f x$.
+$$\frac{P}{Q} = \frac{R_{\text{rem}}}{R_x}$$
 
+To express this in terms of the total loop resistance $R_{\text{loop}}$, apply the componendo rule (adding 1 to both sides):
+
+$$\frac{P}{Q} + 1 = \frac{R_{\text{rem}}}{R_x} + 1$$
+
+$$\frac{P + Q}{Q} = \frac{R_{\text{rem}} + R_x}{R_x}$$
+
+Since $R_{\text{rem}} + R_x = R_{\text{loop}}$:
   $$
   \frac{P + Q}{Q} = \frac{R_{\text{loop}}}{R_x} \implies R_x = \frac{Q}{P + Q} (r_s + r_f) L
   $$
