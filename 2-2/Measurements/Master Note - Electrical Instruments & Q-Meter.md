@@ -401,7 +401,7 @@ $$D_{\text{em}} = \frac{G^2}{R}$$$$D = D_m + \frac{G^2}{R_{\text{total}}}$$
 
 ---
 
-### 8.2 Electrodynamometer Frequency Meter (Weston Type)
+### 8.2 Electrical Resonance Type (Ferrodynamic)
 
 ![[Pasted image 20261012015142.jpg]]
 ![[Pasted image 20261012024030.png]]
