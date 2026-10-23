@@ -304,7 +304,7 @@ $$\cos\phi_1 = \frac{I_{1x}}{I_1} = \frac{45.4}{58.28} \approx \mathbf{0.779\tex
 ---
 
 ### 18. Page 23, Q.8: Sketch the phasor diagram of an ideal transformer with no-load conditions. [Figure Involved]
-
+![[Pasted image 20261023181304.png]]
 ![[Pasted image 20260908234257.png]]
 
 * **Ideal No-Load Features:**
@@ -336,7 +336,7 @@ $$\cos\phi_1 = \frac{I_{1x}}{I_1} = \frac{45.4}{58.28} \approx \mathbf{0.779\tex
 ---
 
 ### 20. Page 23, Q.14: Describe a practical transformer on load with no winding resistance and leakage flux. Also draw the phasor diagrams with resistive load, inductive load and capacitive load on those conditions. [Figure Involved]
-
+![[Pasted image 20260908231027.png]]
 * **Condition:** Ideal windings ($R_1=R_2=0$, $X_1=X_2=0$), but practical core ($I_0 \neq 0$).
 * **Equations:** $V_1 = -E_1$, $V_2 = E_2$, $\vec{I_1} = \vec{I_0} + \vec{I_2'}$.
 * **Load Phasor Responses:**
@@ -360,7 +360,7 @@ $$\cos\phi_1 = \frac{I_{1x}}{I_1} = \frac{45.4}{58.28} \approx \mathbf{0.779\tex
   1. Draw reference flux vector $\vec{\Phi}$.
   2. Draw $\vec{E_1}, \vec{E_2}$ lagging $\vec{\Phi}$ by $90^\circ$; draw $-\vec{E_1}$ opposite to $\vec{E_1}$.
   3. Set $\vec{V_2}$ and plot $\vec{I_2}$ based on load power factor angle $\phi_2$.
-  4. Add $\vec{I_2} R_2$ (parallel to $\vec{I_2}$) and $j \vec{I_2} X_2$ ($90^\circ$ leading $\vec{I_2}$) to $\vec{V_2}$ to obtain $\vec{E_2}$.
+  4. Add $\vec{I_2} R_2$ (**parallel to** $\vec{I_2}$) and $j \vec{I_2} X_2$ ($90^\circ$ leading $\vec{I_2}$) to $\vec{V_2}$ to obtain $\vec{E_2}$.
   5. Reflect $\vec{I_2}$ to primary as $\vec{I_2'}$; add $\vec{I_0}$ to get $\vec{I_1}$.
   6. Add $\vec{I_1} R_1$ and $j \vec{I_1} X_1$ to $-\vec{E_1}$ to obtain primary supply voltage $\vec{V_1}$.
 
