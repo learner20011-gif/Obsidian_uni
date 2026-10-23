@@ -732,7 +732,7 @@ $$\% \text{VR} = (1 \times 0.8) - (5 \times 0.6) = 0.8 - 3.0 = \mathbf{-2.2\%}$$
 ### **5. Short circuit and open circuit tests (Transformer-tests)**
 *(Reference Ranges: **Theraja Vol. II:** pp. 1136–1145 | **Chapman 5th Ed.:** pp. 91–101 | **Slides:** Slides 35–38, 45–54)*
 
-### 47. Page 7, Q.1(c): A 10 kVA, 1-φ, 50 Hz 400/200 V transformer gave the following test results: O.C. Test (LV side) 200 V 3.0 A 200 W. S.C. Test (HV side) 15 V 30 A 300 W. Calculate efficiency and regulation at full load, 0.8 p.f lagging.
+### ✅️47. Page 7, Q.1(c): A 10 kVA, 1-φ, 50 Hz 400/200 V transformer gave the following test results: O.C. Test (LV side) 200 V 3.0 A 200 W. S.C. Test (HV side) 15 V 30 A 300 W. Calculate efficiency and regulation at full load, 0.8 p.f lagging.
 
 **Given Data:**
 * Rating = 10 kVA, $V_1 = 400\text{ V}$ (HV), $V_2 = 200\text{ V}$ (LV), $f = 50\text{ Hz}$
