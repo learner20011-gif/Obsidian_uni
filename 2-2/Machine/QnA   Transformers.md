@@ -1232,7 +1232,7 @@ $$\eta_{\text{all-day}} = \left(\frac{320}{320 + 12}\right) \times 100\% = \left
 
 ---
 
-### 67. Page 28, Q.No.3: A single-phase transformer with a ratio of 400/100 takes a no load current of 5A at 0.25 power factor lagging. If the secondary supplies a current of 120 A at a p.f. of 0.8 lagging, determine the current taken by the primary.
+### 67. ✅Page 28, Q.No.3: A single-phase transformer with a ratio of 400/100 takes a no load current of 5A at 0.25 power factor lagging. If the secondary supplies a current of 120 A at a p.f. of 0.8 lagging, determine the current taken by the primary.
 
 **Given Data:**
 * $V_1/V_2 = 400/100 \implies K = 100/400 = 0.25$
