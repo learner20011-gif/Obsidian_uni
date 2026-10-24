@@ -1014,7 +1014,7 @@ $$\eta_{\max} = \left(\frac{8.265}{8.265 + 0.306}\right) \times 100\% = \left(\f
 
 ---
 
-### 58. Page 18, Q.3(c): Obtain the equivalent circuit of a 200/400 V, 50 Hz, 1-phase transformer from the following test data: O.C. Test: 200 V, 0.7 A, 70 W – on L.V. side S.C. Test: 15 V, 10 A, 85 W – on H.V. side Calculate the secondary voltage when delivering 5 kW at 0.8 pf. Lagging, the primary voltage being 200 V.
+### 58. Page 18, Q.3(c): Obtain the equivalent circuit of a 200/400 V, 50 Hz, 1-phase transformer from the following test data: O.C. Test: 200 V, 0.7 A, 70 W – on L.V. side S.C. Test: 15 V, 10 A, 85 W – on H.V. side ✅Calculate the secondary voltage when delivering 5 kW at 0.8 pf. Lagging, the primary voltage being 200 V.
 
 **Given Data:** 200/400 V, 50 Hz. $K = 400/200 = 2$.
 * OC (LV side): $V_0 = 200\text{ V}, I_0 = 0.7\text{ A}, W_0 = 70\text{ W}$
@@ -1038,7 +1038,29 @@ $$\eta_{\max} = \left(\frac{8.265}{8.265 + 0.306}\right) \times 100\% = \left(\f
   $$\Delta V_2 = I_2(R_{02}\cos\phi + X_{02}\sin\phi) = 15.625 \times (0.85 \times 0.8 + 1.236 \times 0.6) = 15.625 \times (0.68 + 0.7416) \approx 22.21\text{ V}$$
 * Secondary Terminal Voltage:
   $$V_2 = {}_0V_2 - \Delta V_2 = 400 - 22.21 = \mathbf{377.79\text{ V}}$$
+**Method B: Exact Quadratic Solution (Using Actual Terminal Voltage $V_2$ for $I_2 = \frac{P_{\text{out}}}{V_2 \cos\phi_2}$)**
 
+- **Express $I_2$ in terms of $V_2$:**
+    
+    $$I_2 = \frac{P_{\text{out}}}{V_2 \cos\phi_2} = \frac{5000}{0.8 V_2} = \frac{6250}{V_2}$$
+    
+- **Substitute $I_2$ into the Phasor Voltage Drop Equation:**
+    
+    $$E_2 = V_2 + I_2 (R_{02} \cos\phi_2 + X_{02} \sin\phi_2)$$
+    
+    $$400 = V_2 + \left(\frac{6250}{V_2}\right) (0.85 \times 0.8 + 1.2359 \times 0.6)$$
+    
+    $$400 = V_2 + \frac{6250 \times 1.42154}{V_2} = V_2 + \frac{8884.65}{V_2}$$
+    
+- **Form the Quadratic Equation (Multiply through by $V_2$):**
+    
+    $$V_2^2 - 400 V_2 + 8884.65 = 0$$
+    
+- **Solve using the Quadratic Formula ($V_2 = \frac{-b + \sqrt{b^2 - 4ac}}{2a}$):**
+    
+    $$V_2 = \frac{400 + \sqrt{(-400)^2 - 4(1)(8884.65)}}{2} = \frac{400 + \sqrt{160{,}000 - 35{,}538.6}}{2}$$
+    
+    $$V_2 = \frac{400 + \sqrt{124{,}461.4}}{2} = \frac{400 + 352.79}{2} = \mathbf{376.40\text{ V}}$$
 * **Reference in Theraja (Vol. II):** pp. 1139–1142
 * **Reference in Chapman (5th Ed.):** pp. 91–95
 * **Reference in Slide PDF:** Slides 37–38, 41–43
