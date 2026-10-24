@@ -18,7 +18,7 @@
 ![[Pasted image 20261024203401.png]]
 ![[Pasted image 20261024204228.png]]
 
-
+![[Pasted image 20261025005420.png]]
 
 * **Real Transformer Equations:**
   $$\vec{V_1} = -\vec{E_1} + \vec{I_1} R_1 + j \vec{I_1} X_1$$

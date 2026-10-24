@@ -2090,7 +2090,7 @@ $$\frac{P_A}{P_B} = \frac{I_A \cos\phi_A}{I_B \cos\phi_B}$$
 
 ---
 
-### 100. Page 9, Q.4(c): Two T-connected transformer are used to supply a 440 V, 33 kVA balanced load from a balanced 3- supply of 3300 V. Calculate (i) Voltage and current rating of each coil (ii) kVA ratting of the main and teaser transformer (iii) Find the position of neutral point in teaser winding.
+### 100. ❓Page 9, Q.4(c): Two T-connected transformer are used to supply a 440 V, 33 kVA balanced load from a balanced 3- supply of 3300 V. Calculate (i) Voltage and current rating of each coil (ii) kVA ratting of the main and teaser transformer (iii) Find the position of neutral point in teaser winding.
 
 **Given Data:** $V_{L1} = 3300\text{ V}$, $V_{L2} = 440\text{ V}$, Balanced load $= 33\text{ kVA}$.
 
@@ -2173,7 +2173,7 @@ $$\frac{P_A}{P_B} = \frac{I_A \cos\phi_A}{I_B \cos\phi_B}$$
 
 ---
 
-### 104. Page 12, Q.3(b): Explain how a third harmonic voltage affects a Y-Y transformer bank? Why is grounding the neutral of a Y-Y transformer bank desirable?
+### 104. ❓Page 12, Q.3(b): Explain how a third harmonic voltage affects a Y-Y transformer bank? Why is grounding the neutral of a Y-Y transformer bank desirable?
 
 * **Effects of Third Harmonic Voltages:**
   * Third-harmonic magnetizing currents are in-phase across all three limbs ($3 \times 120^\circ = 360^\circ \equiv 0^\circ$).
@@ -2258,7 +2258,7 @@ Two distinct connection schemes can transform balanced 3-phase power using only 
 
 ---
 
-### 109. Page 7, Q.3(b): How 3-φ, 4 wire connection can be obtained from scoot-connection? Explain with necessary circuit diagram. [Figure Involved]
+### ❓109. Page 7, Q.3(b): How 3-φ, 4 wire connection can be obtained from scoot-connection? Explain with necessary circuit diagram. [Figure Involved]
 
 * **Scott Connection Configuration:**
   * Uses two transformers: **Main Transformer** and **Teaser Transformer**.
@@ -2275,7 +2275,7 @@ Two distinct connection schemes can transform balanced 3-phase power using only 
 
 ---
 
-### 110. Page 11, Q.4(b) (lower): Show with connection diagram how 3-φ 4-wire connection can be achieved for T-connection. [Figure Involved]
+### 110. ❓Page 11, Q.4(b) (lower): Show with connection diagram how 3-φ 4-wire connection can be achieved for T-connection. [Figure Involved]
 
 * In a T-T connection, the neutral terminal $N$ is tapped at $\frac{1}{3}$ of the teaser winding length from the junction with the main transformer.
 * This neutral point $N$ provides equal star-line potentials ($V_{AN} = V_{BN} = V_{CN} = V_L/\sqrt{3}$), creating a completely symmetrical 3-phase 4-wire supply for mixed 3-phase industrial and 1-phase residential lighting loads.
@@ -2303,7 +2303,7 @@ Two distinct connection schemes can transform balanced 3-phase power using only 
 
 ---
 
-### 112. Page 12, Q.4(c): Two transformers connected in open – Δ, supply a 400 kVA balanced load operating at 0.866 p.f. (lagging). The load voltage is 440 V. What is the (i) kVA supplied by each transformer? (ii) kW supplied by each transformer?
+### 112. ✅❓Page 12, Q.4(c): Two transformers connected in open – Δ, supply a 400 kVA balanced load operating at 0.866 p.f. (lagging). The load voltage is 440 V. What is the (i) kVA supplied by each transformer? (ii) kW supplied by each transformer?
 
 **Given Data:**
 * Load kVA = 400 kVA, $\cos\theta = 0.866\text{ lagging} \implies \theta = 30^\circ$
@@ -2327,7 +2327,7 @@ Two distinct connection schemes can transform balanced 3-phase power using only 
 
 ---
 
-### 113. Page 12, Q.3(c): Two 20 kVA transformers are connected in open - Δ to supply 230 V balanced 3-φ load. (i) what is the total load that can be supplied without overloading either transformer? (ii) when the Δ is closed by the addition of a third 20 kVA transformer, what total load can now be supplied?
+### 113. ❓Page 12, Q.3(c): Two 20 kVA transformers are connected in open - Δ to supply 230 V balanced 3-φ load. (i) what is the total load that can be supplied without overloading either transformer? (ii) when the Δ is closed by the addition of a third 20 kVA transformer, what total load can now be supplied?
 
 **Part (i): Maximum Load in Open-Delta**
 $$S_{\text{V}} = \sqrt{3} \times S_{\text{unit}} = \sqrt{3} \times 20\text{ kVA} \approx \mathbf{34.64\text{ kVA}}$$
@@ -2341,7 +2341,7 @@ $$S_{\Delta} = 3 \times S_{\text{unit}} = 3 \times 20\text{ kVA} = \mathbf{60.00
 
 ---
 
-### 114. Page 12, Q.5(a): Explain with necessary diagram, How 3-Φ, 4-wire connection can be used in T-connection. [Figure Involved]
+### 114. ❓Page 12, Q.5(a): Explain with necessary diagram, How 3-Φ, 4-wire connection can be used in T-connection. [Figure Involved]
 
 * The primary and secondary windings are connected in T-configuration.
 * Tapping the teaser winding at $\frac{1}{3}$ height from the junction with the main transformer creates the neutral terminal $N$.
@@ -2364,7 +2364,7 @@ $$S_{\Delta} = 3 \times S_{\text{unit}} = 3 \times 20\text{ kVA} = \mathbf{60.00
 
 ---
 
-### 116. Page 44, Q.2(c): Two transformers are required for a Scott connection operating from a 400V,3-Φ supply for supplying two 1-Φ furnaces at 220V on the 2-Φ side. If the total output is 150kVA.Calculate the secondary to primary turn ratio and the winding currents of each transformer.
+### 116. ❓Page 44, Q.2(c): Two transformers are required for a Scott connection operating from a 400V,3-Φ supply for supplying two 1-Φ furnaces at 220V on the 2-Φ side. If the total output is 150kVA.Calculate the secondary to primary turn ratio and the winding currents of each transformer.
 
 **Given Data:**
 * 3-Phase supply: $V_{L1} = 400\text{ V}$
@@ -2396,7 +2396,7 @@ $$S_{\Delta} = 3 \times S_{\text{unit}} = 3 \times 20\text{ kVA} = \mathbf{60.00
 
 ---
 
-### 117. Page 45, Q.4(c): Two 25 kVA transformer are connected in open-Δ to supply a 220V balanced 3-Φ load. (i) What is the total load that can be supplied without overloading either transformer? (ii) When the Δ is closed by the addition of a third 25 kVA transformer, what total load can now be supplied?
+### 117. ❓Page 45, Q.4(c): Two 25 kVA transformer are connected in open-Δ to supply a 220V balanced 3-Φ load. (i) What is the total load that can be supplied without overloading either transformer? (ii) When the Δ is closed by the addition of a third 25 kVA transformer, what total load can now be supplied?
 
 **Part (i): Maximum Load in Open-Delta**
 $$S_{\text{V}} = \sqrt{3} \times 25\text{ kVA} \approx \mathbf{43.30\text{ kVA}}$$
