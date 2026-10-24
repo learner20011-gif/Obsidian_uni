@@ -244,7 +244,11 @@ $$\%\text{VR} = v_r \cos \phi \pm v_x \sin \phi$$
     
     $$\text{kVA}_{\max\text{-}\eta} = \text{Rated kVA} \times \sqrt{\frac{P_c}{I_{fl}^2 r_{e2}}} = \text{Rated kVA} \times \sqrt{\frac{\text{Core Loss}}{\text{Full-Load Copper Loss}}}$$
     
+**Fractional Load Multiplier ($x$):** If a transformer operates at a fraction $x$ of a reference load ($\text{kVA}_{\text{ref}}$):
 
+$$x = \frac{\text{Operating kVA}}{\text{Reference kVA}} = \frac{S}{S_{\text{ref}}}$$
+
+$$P_{cu}(x) = x^2 \times P_{cu(\text{ref})} = \left(\frac{S}{S_{\text{ref}}}\right)^2 \times P_{cu(\text{ref})}$$
 #### 4. Condition for Maximum Efficiency (With Variable Power Factor $\cos\theta_2$)
 
 - **Step 1 (Constant Current Setup):** If load current ($I_2$) is kept constant, both core loss ($P_c$) and copper loss ($P_{sc}$) are constant. Let total constant loss $C = P_c + P_{sc}$:

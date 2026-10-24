@@ -934,7 +934,7 @@ AC Supply (Rated V) ---> [ Variac ] ---> [ Wattmeter (W) ] ---> [ Ammeter (A) ] 
 
 ---
 
-### 55. Page 17, Q.4(c): Find ‘all-day’ efficiency of a transformer having maximum efficiency of 98% at 15kVA at unity p.f and loaded as follows: 12 Hrs – 2kW at 0.5 p.f lagging; 6 hrs – 12kW at 0.8 p.f lagging; 6 hrs – at no load.
+### 55. ✅Page 17, Q.4(c): Find ‘all-day’ efficiency of a transformer having maximum efficiency of 98% at 15kVA at unity p.f and loaded as follows: 12 Hrs – 2kW at 0.5 p.f lagging; 6 hrs – 12kW at 0.8 p.f lagging; 6 hrs – at no load.
 
 **Given Data:**
 * $\eta_{\max} = 98\%$ at $15\text{ kVA}$ and $\text{u.p.f.}$:
@@ -990,7 +990,7 @@ $$\eta_{\text{all-day}} = \left(\frac{96.0}{100.722}\right) \times 100\% \approx
 
 ---
 
-### 57. Page 18, Q.1(c): A 10 kVA, 2200/220 V, 50 Hz transformer is tested on open and short circuit tests. If the following readings are obtained, determine the values of maximum power and the loads at which they occur for unity pf. Open circuit test – high side open: v = 220 V, i = 1.5 A, w = 153 W; Short circuit test – low side shorted: v = 115 V, i = rated, w = 224 W.
+### 57. ✅Page 18, Q.1(c): A 10 kVA, 2200/220 V, 50 Hz transformer is tested on open and short circuit tests. If the following readings are obtained, determine the values of maximum power and the loads at which they occur for unity pf. Open circuit test – high side open: v = 220 V, i = 1.5 A, w = 153 W; Short circuit test – low side shorted: v = 115 V, i = rated, w = 224 W.
 
 **Given Data:**
 * Rating = 10 kVA, $\cos\phi = 1.0$
