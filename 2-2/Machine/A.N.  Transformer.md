@@ -90,7 +90,12 @@ $$\%\text{VR} = v_r \cos \phi \pm v_x \sin \phi$$
     _(Or directly from power and resistance: $X_0 = \frac{V_0}{\sqrt{I_0^2 - (W_0/V_0)^2}}$)_
     
       
-    
+    **Step 1: Shunt Branch Parameters from OC Test (on LV side)**
+* No-load power factor: $\cos\phi_0 = \frac{W_0}{V_0 I_0} = \frac{80}{120 \times 4.2} = \frac{80}{504} \approx 0.1587$
+* Core-loss current: $I_w = I_0 \cos\phi_0 = \frac{80}{120} \approx 0.667\text{ A}$
+* Magnetizing current: $I_m = \sqrt{I_0^2 - I_w^2} = \sqrt{(4.2)^2 - (0.667)^2} = \sqrt{17.64 - 0.445} \approx 4.147\text{ A}$
+* Core-loss resistance (LV): $R_{0(\text{LV})} = \frac{V_0}{I_w} = \frac{120}{0.667} \approx \mathbf{180\ \Omega}$
+* Magnetizing reactance (LV): $X_{0(\text{LV})} = \frac{V_0}{I_m} = \frac{120}{4.147} \approx \mathbf{28.94\ \Omega}$
 
 #### Short-Circuit (SC) Test Procedure
 
