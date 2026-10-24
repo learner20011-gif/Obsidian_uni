@@ -1769,8 +1769,8 @@ High Voltage Line 2 ---------+
   2. **Identical Polarity:** Connecting opposite polarities produces a dead short circuit, destroying windings.
   3. **Identical Phase Sequence & Zero Relative Phase Displacement (for 3-Phase):** Must belong to the same vector group.
 * **Desirable Conditions (For proportional load sharing):**
-  4. **Per-Unit Impedances Inversely Proportional to kVA Ratings:** Ensures transformers share total load in exact proportion to their capacities without overloading any unit.
-  5. **Identical $X/R$ Ratio:** Ensures operating power factors are identical, preventing circulating reactive currents.
+  1. The perunit leakage impedance softhetransformersbasedontheirownkVAratingsmust be equal.(same voltage regulation)
+  2. **Identical $X/R$ Ratio:** Ensures operating power factors are identical, preventing circulating reactive currents.
 
 * **Reference in Theraja (Vol. II):** pp. 1157–1159
 * **Reference in Chapman (5th Ed.):** pp. 123–125
@@ -1832,27 +1832,158 @@ High Voltage Line 2 ---------+
 
 ### 92. Page 19, Q.2(b): Two single-phase transformer A and B of equal voltage ratio are running in parallel and supply a load of 1000 A at 0.8 p.f. lagging. The equivalent impedance of the two transformers are (2 + j3) and (2.5 + j5) ohms, respectively. Calculate the current supplied by each transformer and the ratio of the kW output of the two transformers.
 
-**Given Data:**
-* Total current: $\vec{I} = 1000(0.8 - j0.6) = 800 - j600\text{ A}$
-* $\vec{Z}_A = 2 + j3\ \Omega$, $\vec{Z}_B = 2.5 + j5\ \Omega$
+#### Given Data
 
-**Step 1: Current Ratio**
-$$\frac{\vec{Z}_B}{\vec{Z}_A} = \frac{2.5 + j5}{2 + j3} = \frac{(2.5 + j5)(2 - j3)}{4 + 9} = \frac{5 - j7.5 + j10 + 15}{13} = \frac{20 + j2.5}{13} \approx 1.5385 + j0.1923$$
-$$\vec{I}_A = \vec{I}_B (1.5385 + j0.1923)$$
-$$\vec{I} = \vec{I}_A + \vec{I}_B = \vec{I}_B(2.5385 + j0.1923)$$
+- **Total load current ($I_L$):** $1000\text{ A}$
+    
+- **Load power factor ($\cos \phi_L$):** $0.8\text{ lagging}$
+    
+- **Equivalent impedance of Transformer A ($Z_A$):** $(2 + j3)\,\Omega$
+    
+- **Equivalent impedance of Transformer B ($Z_B$):** $(2.5 + j5)\,\Omega$
+    
+- **Voltage ratio:** Equal for both transformers ($E_A = E_B$)
+    
 
-**Step 2: Transformer Currents**
-* Current supplied by Transformer B:
-  $$\vec{I}_B = \frac{800 - j600}{2.5385 + j0.1923} \approx \mathbf{294.6 - j259.5\text{ A}}$$
-  $$I_B = \sqrt{(294.6)^2 + (259.5)^2} \approx \mathbf{392.6\text{ A}} \quad (\cos\phi_B = 0.75\text{ lag})$$
-* Current supplied by Transformer A:
-  $$\vec{I}_A = \vec{I} - \vec{I}_B = (800 - 294.6) - j(600 - 259.5) = \mathbf{505.4 - j340.5\text{ A}}$$
-  $$I_A = \sqrt{(505.4)^2 + (340.5)^2} \approx \mathbf{609.5\text{ A}} \quad (\cos\phi_A = 0.83\text{ lag})$$
+#### Governing Formulas
 
-**Step 3: Ratio of kW Outputs**
-* Real power is proportional to active (real) current components:
-  $$\frac{P_A}{P_B} = \frac{I_{Ax}}{I_{Bx}} = \frac{505.4}{294.6} \approx \mathbf{1.716 : 1}$$
+When two single-phase transformers with equal voltage ratios operate in parallel, the total load current divides inversely proportional to their equivalent impedances:
 
+$$\vec{I}_A = \vec{I}_L \times \frac{\vec{Z}_B}{\vec{Z}_A + \vec{Z}_B}$$
+
+$$\vec{I}_B = \vec{I}_L \times \frac{\vec{Z}_A}{\vec{Z}_A + \vec{Z}_B}$$
+
+The active real power ($\text{kW}$) delivered by each transformer connected to a common terminal voltage $V$ is:
+
+$$P = V \times I \times \cos\phi$$
+
+$$\frac{P_A}{P_B} = \frac{I_A \cos\phi_A}{I_B \cos\phi_B}$$
+
+#### Step 1: Impedance Calculations
+
+- **Sum of the impedances ($\vec{Z}_A + \vec{Z}_B$):**
+    
+    $$\vec{Z}_A + \vec{Z}_B = (2 + j3) + (2.5 + j5) = 4.5 + j8\,\Omega$$
+    
+- **Convert $\vec{Z}_A$ to polar form:**
+    
+    $$\vert{}\vec{Z}_A\vert{} = \sqrt{2^2 + 3^2} = \sqrt{4 + 9} = \sqrt{13} \approx 3.606\,\Omega$$
+    
+    $$\theta_A = \tan^{-1}\left(\frac{3}{2}\right) \approx 56.31^\circ$$
+    
+    $$\vec{Z}_A = 3.606 \angle 56.31^\circ\,\Omega$$
+    
+- **Convert $\vec{Z}_B$ to polar form:**
+    
+    $$\vert{}\vec{Z}_B\vert{} = \sqrt{2.5^2 + 5^2} = \sqrt{6.25 + 25} = \sqrt{31.25} \approx 5.590\,\Omega$$
+    
+    $$\theta_B = \tan^{-1}\left(\frac{5}{2.5}\right) = \tan^{-1}(2) \approx 63.43^\circ$$
+    
+    $$\vec{Z}_B = 5.590 \angle 63.43^\circ\,\Omega$$
+    
+- **Convert $(\vec{Z}_A + \vec{Z}_B)$ to polar form:**
+    
+    $$\vert{}\vec{Z}_A + \vec{Z}_B\vert{} = \sqrt{4.5^2 + 8^2} = \sqrt{20.25 + 64} = \sqrt{84.25} \approx 9.179\,\Omega$$
+    
+    $$\theta_{AB} = \tan^{-1}\left(\frac{8}{4.5}\right) \approx 60.64^\circ$$
+    
+    $$\vec{Z}_A + \vec{Z}_B = 9.179 \angle 60.64^\circ\,\Omega$$
+    
+
+#### Step 2: Load Current in Polar Form
+
+- The terminal voltage $\vec{V}$ is taken as the reference vector: $\vec{V} = V \angle 0^\circ$.
+    
+- Load phase angle:
+    
+    $$\phi_L = \cos^{-1}(0.8) \approx 36.87^\circ$$
+    
+- Since the power factor is lagging, the current angle is negative:
+    
+    $$\vec{I}_L = 1000 \angle -36.87^\circ\text{ A}$$
+    
+
+#### Step 3: Current Supplied by Transformer A ($\vec{I}_A$)
+
+- Substitute the polar values into the current sharing formula:
+    
+    $$\vec{I}_A = (1000 \angle -36.87^\circ) \times \frac{5.590 \angle 63.43^\circ}{9.179 \angle 60.64^\circ}$$
+    
+- Compute the magnitude:
+    
+    $$\vert{}\vec{I}_A\vert{} = 1000 \times \frac{5.590}{9.179} \approx 609.03\text{ A}$$
+    
+- Compute the phase angle:
+    
+    $$\theta_{I_A} = -36.87^\circ + 63.43^\circ - 60.64^\circ = -34.08^\circ$$
+    
+- Final phasor value for $\vec{I}_A$:
+    
+    $$\vec{I}_A = 609.03 \angle -34.08^\circ\text{ A}$$
+    
+- Operating power factor of Transformer A:
+    
+    $$\cos\phi_A = \cos(34.08^\circ) \approx 0.828\text{ lagging}$$
+    
+
+#### Step 4: Current Supplied by Transformer B ($\vec{I}_B$)
+
+- Substitute the polar values into the current sharing formula:
+    
+    $$\vec{I}_B = (1000 \angle -36.87^\circ) \times \frac{3.606 \angle 56.31^\circ}{9.179 \angle 60.64^\circ}$$
+    
+- Compute the magnitude:
+    
+    $$\vert{}\vec{I}_B\vert{} = 1000 \times \frac{3.606}{9.179} \approx 392.81\text{ A}$$
+    
+- Compute the phase angle:
+    
+    $$\theta_{I_B} = -36.87^\circ + 56.31^\circ - 60.64^\circ = -41.20^\circ$$
+    
+- Final phasor value for $\vec{I}_B$:
+    
+    $$\vec{I}_B = 392.81 \angle -41.20^\circ\text{ A}$$
+    
+- Operating power factor of Transformer B:
+    
+    $$\cos\phi_B = \cos(41.20^\circ) \approx 0.752\text{ lagging}$$
+    
+
+#### Step 5: Verification of Current Sharing
+
+- **Transformer A active component:**
+    
+    $$I_A \cos\phi_A = 609.03 \times \cos(34.08^\circ) = 504.45\text{ A}$$
+    
+- **Transformer B active component:**
+    
+    $$I_B \cos\phi_B = 392.81 \times \cos(41.20^\circ) = 295.55\text{ A}$$
+    
+- **Sum of active currents:**
+    
+    $$504.45\text{ A} + 295.55\text{ A} = 800\text{ A}$$
+    
+- Matches total load active current ($1000 \times 0.8 = 800\text{ A}$).
+    
+
+#### Step 6: Ratio of the kW Output
+
+- The terminal voltage $V$ is common to both transformers, so it cancels out:
+    
+    $$\frac{P_A}{P_B} = \frac{V \times I_A \cos\phi_A}{V \times I_B \cos\phi_B} = \frac{I_A \cos\phi_A}{I_B \cos\phi_B}$$
+    
+- Substitute the active current values:
+    
+    $$\frac{P_A}{P_B} = \frac{504.45}{295.55} \approx 1.707$$
+    
+
+#### Final Answers
+
+- **Current supplied by Transformer A ($I_A$):** **$609.03\text{ A}$** at **$0.828$ p.f. lagging** (or $609.03 \angle -34.08^\circ\text{ A}$)
+    
+- **Current supplied by Transformer B ($I_B$):** **$392.81\text{ A}$** at **$0.752$ p.f. lagging** (or $392.81 \angle -41.20^\circ\text{ A}$)
+    
+- **Ratio of kW output ($\frac{P_A}{P_B}$):** **$1.707 : 1$** (or Transformer A delivers approximately $1.71$ times the kW of Transformer B)
 * **Reference in Theraja (Vol. II):** pp. 1162–1164
 * **Reference in Chapman (5th Ed.):** pp. 127–128
 * **Reference in Slide PDF:** Slide 210

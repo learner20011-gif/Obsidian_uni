@@ -316,3 +316,16 @@ $S_{SE}$ (or $S_W$) is the inductive (transformed) power transfer:
         $$S_{\text{cond}} = k \cdot S_{IO}$$
         $$\text{Inductive Power} = (1 - K) S_{\text{auto}} = S_{\text{two}}$$
     $$\text{Conductive Power} = K \cdot S_{\text{auto}}$$
+#### Governing Formulas
+
+When two single-phase transformers with equal voltage ratios operate in parallel, the total load current divides inversely proportional to their equivalent impedances:
+
+$$\vec{I}_A = \vec{I}_L \times \frac{\vec{Z}_B}{\vec{Z}_A + \vec{Z}_B}$$
+
+$$\vec{I}_B = \vec{I}_L \times \frac{\vec{Z}_A}{\vec{Z}_A + \vec{Z}_B}$$
+
+The active real power ($\text{kW}$) delivered by each transformer connected to a common terminal voltage $V$ is:
+
+$$P = V \times I \times \cos\phi$$
+
+$$\frac{P_A}{P_B} = \frac{I_A \cos\phi_A}{I_B \cos\phi_B}$$
