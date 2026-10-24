@@ -198,3 +198,75 @@ $$\%\text{VR} = v_r \cos \phi \pm v_x \sin \phi$$
       
     
     $$R_{eq} = \vert{}Z_{SE}\vert{}\cos\theta, \quad X_{eq} = \vert{}Z_{SE}\vert{}\sin\theta$$
+    #### 1. Transformer Efficiency ($\eta$) Formula
+
+- **Basic Equation:** Efficiency is output power divided by input power (output + losses):
+    
+    $$\eta = \frac{\text{Output Power}}{\text{Input Power}} = \frac{V_2 I_2 \cos\theta_2}{V_2 I_2 \cos\theta_2 + P_c + I_2^2 r_{e2}}$$
+    
+- **Variables:**
+    
+    - $V_2 I_2 \cos\theta_2 =$ Output power
+        
+    - $P_c =$ Constant core (iron) loss
+        
+    - $I_2^2 r_{e2} =$ Variable copper (ohmic) loss
+        
+
+#### 2. Condition for Maximum Efficiency (With Variable Load Current $I_2$)
+
+- **Step 1 (Set up Efficiency Equation):** In the efficiency formula, core loss ($P_c$), secondary voltage ($V_2$), and power factor ($\cos\theta_2$) are constant, while load current ($I_2$) varies.
+    
+- **Step 2 (Differentiate with respect to $I_2$):** For maximum efficiency, set $\frac{d\eta}{dI_2} = 0$ using the quotient rule:
+    
+    $$\frac{d\eta}{dI_2} = \frac{(V_2 I_2 \cos\theta_2 + P_c + I_2^2 r_{e2})(V_2 \cos\theta_2) - (V_2 I_2 \cos\theta_2)(V_2 \cos\theta_2 + 2 I_2 r_{e2})}{(V_2 I_2 \cos\theta_2 + P_c + I_2^2 r_{e2})^2} = 0$$
+    
+- **Step 3 (Simplify Numerator = 0):** Multiply the denominator by zero and divide both terms by $V_2 \cos\theta_2$:
+    
+    $$(V_2 I_2 \cos\theta_2 + P_c + I_2^2 r_{e2}) = I_2 (V_2 \cos\theta_2 + 2 I_2 r_{e2})$$
+    
+    $$V_2 I_2 \cos\theta_2 + P_c + I_2^2 r_{e2} = V_2 I_2 \cos\theta_2 + 2 I_2^2 r_{e2}$$
+    
+- **Step 4 (Final Condition):** Cancel $V_2 I_2 \cos\theta_2$ and subtract $I_2^2 r_{e2}$ from both sides:
+    
+    $$I_2^2 r_{e2} = P_c$$
+    
+    (Rule: Maximum efficiency occurs when **Variable Copper Loss = Constant Core Loss**.)
+    
+
+#### 3. Load Current & kVA at Maximum Efficiency
+
+- **Load Current ($I_2$) at $\eta_{\max}$:** Solve $I_2^2 r_{e2} = P_c$ for $I_2$, and relate it to full-load current ($I_{fl}$):
+    
+    $$I_2 = \sqrt{\frac{P_c}{r_{e2}}} = I_{fl} \sqrt{\frac{P_c}{I_{fl}^2 r_{e2}}} = I_{fl} \sqrt{\frac{\text{Core Loss}}{\text{Full-Load Copper Loss}}}$$
+    
+- **kVA Load at $\eta_{\max}$:** Multiply both sides by $\frac{E_2}{1000}$:
+    
+    $$\text{kVA}_{\max\text{-}\eta} = \text{Rated kVA} \times \sqrt{\frac{P_c}{I_{fl}^2 r_{e2}}} = \text{Rated kVA} \times \sqrt{\frac{\text{Core Loss}}{\text{Full-Load Copper Loss}}}$$
+    
+
+#### 4. Condition for Maximum Efficiency (With Variable Power Factor $\cos\theta_2$)
+
+- **Step 1 (Constant Current Setup):** If load current ($I_2$) is kept constant, both core loss ($P_c$) and copper loss ($P_{sc}$) are constant. Let total constant loss $C = P_c + P_{sc}$:
+    
+    $$\eta = \frac{V_2 I_2 \cos\theta_2}{V_2 I_2 \cos\theta_2 + C}$$
+    
+- **Step 2 (Differentiate with respect to $\theta_2$):** For maximum efficiency, set $\frac{d\eta}{d\theta_2} = 0$:
+    
+    $$\frac{d\eta}{d\theta_2} = \frac{(V_2 I_2 \cos\theta_2 + C)(-V_2 I_2 \sin\theta_2) - (V_2 I_2 \cos\theta_2)(-V_2 I_2 \sin\theta_2)}{(V_2 I_2 \cos\theta_2 + C)^2} = 0$$
+    
+- **Step 3 (Simplify Numerator = 0):**
+    
+    $$-(V_2 I_2)^2 \sin\theta_2 \cos\theta_2 - C V_2 I_2 \sin\theta_2 + (V_2 I_2)^2 \sin\theta_2 \cos\theta_2 = 0$$
+    
+    $$C V_2 I_2 \sin\theta_2 = 0 \implies \sin\theta_2 = 0$$
+    
+- **Step 4 (Final Condition):** Since $\sin\theta_2 = 0$, the phase angle is $\theta_2 = 0^\circ$:
+    
+    $$\cos\theta_2 = 1 \quad (\text{Unity Power Factor})$$
+    
+- **Key Takeaways:**
+    
+    - The **load current ($I_2$)** at which $\eta_{\max}$ occurs does **not** depend on power factor (since $P_c$ and $r_{e2}$ don't change with p.f.).
+        
+    - Lowering the power factor reduces output power ($V_2 I_2 \cos\theta_2$), which lowers the overall efficiency curve.
