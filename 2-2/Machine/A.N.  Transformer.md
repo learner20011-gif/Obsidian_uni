@@ -59,3 +59,137 @@ $$\%\text{VR} = v_r \cos \phi \pm v_x \sin \phi$$
 - **How to recall:** Remember the word **"SHOL"** (pronounced like "Soul" or "Shoal") or **"SHOE"** (**SH**ort on High, **O**pen on Low).
 - **Current Handling:** The SC test requires circulating **rated full-load current** through the windings.
 - **Voltage Availability:** The OC test requires **rated voltage** to produce rated magnetic flux in the core.
+#### Open-Circuit (OC) Test Procedure
+
+- **Setup:** Apply full rated voltage to the low-voltage (LV) side and leave the high-voltage (HV) side open-circuited.
+    
+      
+    
+- **Measurements:** Record the open-circuit Voltmeter ($V_0$), Ammeter ($I_0$), and Wattmeter ($W_0$) readings.
+    
+      
+    
+- **Core Loss ($P_i$):**
+    
+      
+    
+    $$P_i = W_0$$
+    
+- **Core Resistance ($R_0$ or $R_C$):** Calculated directly from power and voltage (parallel branch):
+    
+      
+    
+    $$R_0 = \frac{V_0^2}{W_0}$$
+    
+- **Magnetizing Reactance ($X_0$ or $X_M$):** Found using the working current ($I_w$) and magnetizing current ($I_m$):
+    
+      
+    
+    $$X_0 = \frac{V_0}{I_m} \quad \text{where} \quad I_w = \frac{W_0}{V_0} \quad \text{and} \quad I_m = \sqrt{I_0^2 - I_w^2}$$
+    
+    _(Or directly from power and resistance: $X_0 = \frac{V_0}{\sqrt{I_0^2 - (W_0/V_0)^2}}$)_
+    
+      
+    
+
+#### Short-Circuit (SC) Test Procedure
+
+- **Setup:** Short-circuit the low-voltage (LV) terminals and apply a low variable voltage (2%–12% of rated voltage) to the high-voltage (HV) side until rated current flows.
+    
+      
+    
+- **Measurements:** Record the short-circuit Voltmeter ($V_{SC}$), Ammeter ($I_{SC}$), and Wattmeter ($W_{SC}$) readings.
+    
+      
+    
+- **Copper Loss ($P_{cu}$):**
+    
+      
+    
+    $$P_{cu} = W_{SC}$$
+    
+- **Equivalent Resistance ($R_{eq}$):** Calculated directly from power and current (series branch):
+    
+      
+    
+    $$R_{eq} = \frac{W_{SC}}{I_{SC}^2}$$
+    
+- **Equivalent Reactance ($X_{eq}$):** Found using the total series impedance ($Z_{SE}$) and resistance ($R_{eq}$):
+    
+      
+    
+    $$X_{eq} = \sqrt{Z_{SE}^2 - R_{eq}^2} \quad \text{where} \quad Z_{SE} = \frac{V_{SC}}{I_{SC}}$$
+#### Open-Circuit Test (OCT)
+
+- **Purpose:** Finds core loss resistance ($R_C$) and magnetizing reactance ($X_M$) connected in parallel. Usually tested on the low-voltage side.
+    
+      
+    
+- **Step 1 (Admittance Magnitude):**
+    
+      
+    
+    $$\vert{}Y_E\vert{} = \frac{I_{OC}}{V_{OC}}$$
+    
+      
+    
+- **Step 2 (Power Factor Angle):**
+    
+      
+    
+    $$\theta = \arccos\left(\frac{P_{OC}}{V_{OC} I_{OC}}\right)$$
+    
+      
+    
+- **Step 3 (Admittance in Rectangular Form):**
+    
+      
+    
+    $$Y_E = \vert{}Y_E\vert{} \angle -\theta = G_C - j B_M$$
+    
+      
+    
+- **Step 4 (Component Values):**
+    
+      
+    
+    $$R_C = \frac{1}{G_C}, \quad X_M = \frac{1}{B_M}$$
+    
+      
+    
+
+#### Short-Circuit Test (SCT)
+
+- **Purpose:** Finds total series winding resistance ($R_{eq}$) and leakage reactance ($X_{eq}$) connected in series. Usually tested on the high-voltage side.
+    
+      
+    
+- **Step 1 (Impedance Magnitude):**
+    
+      
+    
+    $$\vert{}Z_{SE}\vert{} = \frac{V_{SC}}{I_{SC}}$$
+    
+      
+    
+- **Step 2 (Power Factor Angle):**
+    
+      
+    
+    $$\theta = \arccos\left(\frac{P_{SC}}{V_{SC} I_{SC}}\right)$$
+    
+      
+    
+- **Step 3 (Impedance in Rectangular Form):**
+    
+      
+    
+    $$Z_{SE} = \vert{}Z_{SE}\vert{} \angle \theta = R_{eq} + j X_{eq}$$
+    
+      
+    
+- **Step 4 (Component Values):**
+    
+      
+    
+    $$R_{eq} = \vert{}Z_{SE}\vert{}\cos\theta, \quad X_{eq} = \vert{}Z_{SE}\vert{}\sin\theta$$
