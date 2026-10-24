@@ -1160,7 +1160,7 @@ $$\eta_{\max} = \left(\frac{8.265}{8.265 + 0.306}\right) \times 100\% = \left(\f
 
 ---
 
-### 64. Page 26, CT-04 Q.2: The following are the readings taken for the short circuit and open circuit test of a 10-kVA, 600/240V, and 50Hz transformer. SC: V = 22.5V, I = rated, W=200 W. O.C. V = 240V, I = 1.8 A, W = 65W Calculate the maximum efficiency at unity p..f load and at 0.8 lagging p.f. load.
+### 64. Page 26, CT-04 Q.2: The following are the readings taken for the short circuit and open circuit test of a 10-kVA, 600/240V, and 50Hz transformer. SC: V = 22.5V, I = rated, W=200 W. O.C. V = 240V, I = 1.8 A, W = 65W ✅Calculate the maximum efficiency at unity p..f load and at 0.8 lagging p.f. load.
 
 **Given Data:**
 * Rating = 10 kVA, $P_i = 65\text{ W}$, $P_{cu\text{(FL)}} = 200\text{ W}$
@@ -1168,7 +1168,7 @@ $$\eta_{\max} = \left(\frac{8.265}{8.265 + 0.306}\right) \times 100\% = \left(\f
 **Step 1: Fraction of Full Load for Max Efficiency ($x$)**
 $$x = \sqrt{\frac{P_i}{P_{cu\text{(FL)}}}} = \sqrt{\frac{65}{200}} = \sqrt{0.325} \approx \mathbf{0.5701}$$
 $$\text{Load kVA at } \eta_{\max} = 0.5701 \times 10\text{ kVA} = \mathbf{5.701\text{ kVA}}$$
-Total losses at $\eta_{\max}$: $P_{\text{loss}} = 2 \times P_i = 2 \times 65 = 130\text{ W} = 0.13\text{ kW}$.
+**Total losses at $\eta_{\max}$:** $P_{\text{loss}} = 2 \times P_i = 2 \times 65 = 130\text{ W} = 0.13\text{ kW}$.
 
 **Step 2: Maximum Efficiency at Unity Power Factor**
 * Output Power: $P_{\text{out}} = 5.701 \times 1.0 = 5.701\text{ kW}$
