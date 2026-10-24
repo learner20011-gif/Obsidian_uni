@@ -761,6 +761,34 @@ $$\eta = \left(\frac{8000}{8408.33}\right) \times 100\% = \mathbf{95.14\%}$$
   $$\Delta V_1 = I_{1\text{(FL)}} (R_{01} \cos\phi + X_{01} \sin\phi) = 25 \times (0.3333 \times 0.8 + 0.3727 \times 0.6) = 25 \times 0.4903 = 12.26\text{ V}$$
 * Voltage Regulation:
   $$\% \text{VR} = \left(\frac{12.26}{400}\right) \times 100\% = \mathbf{3.07\%}$$
+- **Impedances Referred to Secondary ($R_{02}, X_{02}$):** Moving from HV to LV means multiplying by $K^2 = 0.25$ (or dividing by $4$):
+    
+    - $R_{02} = R_{01} \times K^2 = 0.3333 \times 0.25 \approx 0.08333\ \Omega$
+        
+    - $X_{02} = X_{01} \times K^2 = 0.3727 \times 0.25 \approx 0.09318\ \Omega$
+        
+- **Secondary Voltage Drop ($\Delta V_2$):**
+    
+    $$\Delta V_2 = I_{2\text{(FL)}} (R_{02} \cos\phi + X_{02} \sin\phi) = 50 \times (0.08333 \times 0.8 + 0.09318 \times 0.6)$$
+    
+    $$\Delta V_2 = 50 \times (0.06666 + 0.05591) = 50 \times 0.12257 = \mathbf{6.13\text{ V}}$$
+    
+- **Percentage Voltage Regulation ($\%\text{VR}$) on Secondary Side:**
+    
+    $$\%\text{VR} = \left(\frac{\Delta V_2}{V_2}\right) \times 100\% = \left(\frac{6.13}{200}\right) \times 100\% = \mathbf{3.07\%}$$
+    
+
+#### 2. Algebraic Proof: Why Referring to Secondary is Not Required
+
+- **Primary vs. Secondary Relations:** By definition of transformer referral:
+    
+    $$I_2 = \frac{I_1}{K}, \quad R_{02} = K^2 R_{01}, \quad X_{02} = K^2 X_{01}, \quad V_2 = K V_1$$
+    
+- **Substituting into Secondary Regulation Formula:**
+    
+    $$\%\text{VR} = \frac{I_2 (R_{02} \cos\phi + X_{02} \sin\phi)}{V_2} \times 100\%$$
+    
+    $$\%\text{VR} = \frac{\left(\frac{I_1}{K}\right) (K^2 R_{01} \cos\phi + K^2 X_{01} \sin\phi)}{K V_1} \times 100\%$$
 
 * **Reference in Theraja (Vol. II):** pp. 1138–1142
 * **Reference in Chapman (5th Ed.):** pp. 91–94
