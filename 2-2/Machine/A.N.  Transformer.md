@@ -13,7 +13,7 @@
 ![[Pasted image 20261024014932.png]]
 ![[Pasted image 20261024023820.png]]
 ![[Pasted image 20261024172210.jpg]]
-
+![[Pasted image 20261024192854.jpg]]
 * **Real Transformer Equations:**
   $$\vec{V_1} = -\vec{E_1} + \vec{I_1} R_1 + j \vec{I_1} X_1$$
   $$\vec{V_2} = \vec{E_2} - \vec{I_2} R_2 - j \vec{I_2} X_2$$

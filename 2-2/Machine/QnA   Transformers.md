@@ -1481,17 +1481,17 @@ $$I_1 = \sqrt{(0.52425)^2 + (2.0187)^2} = \sqrt{0.2748 + 4.0751} = \sqrt{4.3499}
 
 ---
 
-### 80. Page 19, Q.4(a): Define the term autotransformer. A two winding 440/110 V transformer is to be connected as a step down transformer, (i) show all possible connections for accomplishing this, and (ii) give the actual high side and low side voltages as well as the voltage ratio for each connection. [Figure Involved]
+### 80. ❓Page 19, Q.4(a): Define the term autotransformer. A two winding 440/110 V transformer is to be connected as a step down transformer, (i) show all possible connections for accomplishing this, and (ii) give the actual high side and low side voltages as well as the voltage ratio for each connection. [Figure Involved]
 
 * **Definition:** A transformer having a single continuous winding tapped to provide two voltage levels, with part of the winding shared mutually.
 * **Possible Step-Down Connections (for 440/110 V two-winding unit):**
 
-| Connection Scheme | Polarity Setup | High-Side Voltage ($V_H$) | Low-Side Voltage ($V_L$) | Voltage Ratio ($V_H / V_L$) |
-|---|---|---|---|---|
-| **Scheme 1: Additive Series** | 440 V + 110 V in series; output across 110 V | **550 V** | **110 V** | $550/110 = \mathbf{5.00}$ |
-| **Scheme 2: Additive Intermediate** | 440 V + 110 V in series; output across 440 V | **550 V** | **440 V** | $550/440 = \mathbf{1.25}$ |
-| **Scheme 3: Subtractive Tapped** | Input across 440 V; output tapped across 110 V | **440 V** | **110 V** | $440/110 = \mathbf{4.00}$ |
-| **Scheme 4: Subtractive Opposing** | Input across 440 V; output across $(440 - 110)\text{ V}$ | **440 V** | **330 V** | $440/330 = \mathbf{1.33}$ |
+| Connection Scheme                   | Polarity Setup                                           | High-Side Voltage ($V_H$) | Low-Side Voltage ($V_L$) | Voltage Ratio ($V_H / V_L$) |
+| ----------------------------------- | -------------------------------------------------------- | ------------------------- | ------------------------ | --------------------------- |
+| **Scheme 1: Additive Series**       | 440 V + 110 V in series; output across 110 V             | **550 V**                 | **110 V**                | $550/110 = \mathbf{5.00}$   |
+| **Scheme 2: Additive Intermediate** | 440 V + 110 V in series; output across 440 V             | **550 V**                 | **440 V**                | $550/440 = \mathbf{1.25}$   |
+| **Scheme 3: Subtractive Tapped**    | Input across 440 V; output tapped across 110 V           | **440 V**                 | **110 V**                | $440/110 = \mathbf{4.00}$   |
+| **Scheme 4: Subtractive Opposing**  | Input across 440 V; output across $(440 - 110)\text{ V}$ | **440 V**                 | **330 V**                | $440/330 = \mathbf{1.33}$   |
 
 * **Reference in Theraja (Vol. II):** pp. 1148–1150
 * **Reference in Chapman (5th Ed.):** pp. 106–109
