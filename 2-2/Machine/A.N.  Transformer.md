@@ -12,8 +12,14 @@
 ![[Pasted image 20260909024726.png]]
 ![[Pasted image 20261024014932.png]]
 ![[Pasted image 20261024023820.png]]
-![[Pasted image 20261024172210.jpg]]
+![[Pasted image 20261024172210.jpg]]![[Pasted image 20261024195744.png|557]]
 ![[Pasted image 20261024192854.jpg]]
+
+![[Pasted image 20261024203401.png]]
+![[Pasted image 20261024204228.png]]
+
+
+
 * **Real Transformer Equations:**
   $$\vec{V_1} = -\vec{E_1} + \vec{I_1} R_1 + j \vec{I_1} X_1$$
   $$\vec{V_2} = \vec{E_2} - \vec{I_2} R_2 - j \vec{I_2} X_2$$
@@ -276,3 +282,37 @@ $$P_{cu}(x) = x^2 \times P_{cu(\text{ref})} = \left(\frac{S}{S_{\text{ref}}}\rig
     - The **load current ($I_2$)** at which $\eta_{\max}$ occurs does **not** depend on power factor (since $P_c$ and $r_{e2}$ don't change with p.f.).
         
     - Lowering the power factor reduces output power ($V_2 I_2 \cos\theta_2$), which lowers the overall efficiency curve.
+#### 2. Derivation of Inductive vs. Conductive Power Transfer
+$S_{SE}$ (or $S_W$) is the inductive (transformed) power transfer:
+ $S_{IO}$ (also written as $S_H$ or $S_L$ for high/low terminals) represents the **total input/output apparent power** handled by the autotransformer.
+- **Step 1: Identify components of total apparent power**
+    
+    - Total apparent power delivered:
+        
+        $$S_{IO} = V_H I_H = V_{SE} I_H + V_C I_H$$
+        
+- **Step 2: Determine transformed (inductive) power component**
+    
+    - The power transformed by magnetic coupling across the core is the rating of the physical winding:
+        
+        $$S_{\text{ind}} = V_{SE} I_{SE} = (V_H - V_L) I_H = S_{SE}$$
+        
+    - In fraction form relative to total power:
+        
+        $$\frac{S_{\text{ind}}}{S_{IO}} = \frac{V_H - V_L}{V_H} = 1 - \frac{V_L}{V_H} = 1 - k$$
+        
+        $$S_{\text{ind}} = (1 - k) S_{IO}$$
+        
+- **Step 3: Determine conducted (direct electrical) power component**
+    
+    - The remaining power flows directly via conduction without transformation:
+        
+        $$S_{\text{cond}} = S_{IO} - S_{\text{ind}} = V_H I_H - (V_H - V_L) I_H = V_L I_H$$
+        
+    - In terms of transformation ratio $k = \frac{V_L}{V_H}$:
+        
+        $$\frac{S_{\text{cond}}}{S_{IO}} = \frac{V_L}{V_H} = k$$
+        
+        $$S_{\text{cond}} = k \cdot S_{IO}$$
+        $$\text{Inductive Power} = (1 - K) S_{\text{auto}} = S_{\text{two}}$$
+    $$\text{Conductive Power} = K \cdot S_{\text{auto}}$$

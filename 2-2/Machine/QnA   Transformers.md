@@ -1449,11 +1449,6 @@ $$I_1 = \sqrt{(0.52425)^2 + (2.0187)^2} = \sqrt{0.2748 + 4.0751} = \sqrt{4.3499}
 ### 78. Page 18, Q.2(b): With the help of additive and subtracting polarity of transformer, show that KVA capacity of auto-transformer increases compared to two winding transformer with same voltage rating.
 
 * **Two-Winding Base Rating:** $S_{\text{two}} = V_1 I_1 = V_2 I_2$.
-* **Reconnection as Auto-Transformer:**
-  * **Additive Polarity (Series-Boost):** High voltage becomes $V_{\text{high}} = V_1 + V_2$.
-    $$S_{\text{auto}} = (V_1 + V_2) I_2 = V_1 I_2 + V_2 I_2 = \frac{V_1}{V_2}(V_2 I_2) + S_{\text{two}} = \left(1 + \frac{V_1}{V_2}\right) S_{\text{two}} > S_{\text{two}}$$
-  * **Subtractive Polarity:** High voltage is $V_1$; secondary is tapped at $V_2$:
-    $$S_{\text{auto}} = \frac{1}{1 - K} S_{\text{two}}$$
 * **Physical Reason for Increase:**
   * In a two-winding transformer, 100% of power is transferred **inductively** via magnetic flux.
   * In an auto-transformer, power is divided into **inductive power** and **conductive power** (directly conducted through the copper connection):
@@ -1467,6 +1462,141 @@ $$I_1 = \sqrt{(0.52425)^2 + (2.0187)^2} = \sqrt{0.2748 + 4.0751} = \sqrt{4.3499}
 
 ---
 
+### ✅Question (Example 1.38) A $20\text{ kVA}$, $2300/230\text{ V}$, two-winding transformer is to be used as an auto-transformer, with constant source voltage of $2300\text{ V}$. At full load of unity power factor, calculate the power output, power transformed, and power conducted. If the efficiency of the two-winding transformer at $0.6\text{ p.f.}$ is $96\%$, find the auto-transformer efficiency at the same power factor.
+
+  
+
+#### Given Data
+
+- **Two-winding transformer rating ($S_{\text{two}}$):** $20\text{ kVA}$
+    
+      
+    
+- **Primary rated voltage ($V_1$):** $2300\text{ V}$
+    
+      
+    
+- **Secondary rated voltage ($V_2$):** $230\text{ V}$
+    
+      
+    
+- **Supply voltage ($V_{\text{in}}$):** $2300\text{ V}$
+    
+      
+    
+- **Two-winding transformer efficiency ($\eta_{2w}$):** $96\% = 0.96$ at $\cos\phi = 0.6$
+    
+      
+    
+
+#### Step 1: Transformation Ratio ($K$) and Auto-Transformer Rating ($S_{\text{auto}}$)
+
+- To maximize the capacity, the secondary winding is connected in series addition with the primary winding:
+    
+      
+    - Low-voltage side:
+        
+          
+        
+        $$V_L = 2300\text{ V}$$
+        
+    - High-voltage side:
+        
+          
+        
+        $$V_H = 2300\text{ V} + 230\text{ V} = 2530\text{ V}$$
+        
+- The voltage ratio ($K$) is defined as:
+    
+      
+    
+    $$K = \frac{V_L}{V_H} = \frac{2300}{2530} = \frac{10}{11} \approx 0.9091$$
+    
+- Using the formula relating the two-winding rating to the auto-transformer rating:
+    
+      
+    
+    $$\text{Inductive Power} = (1 - K) S_{\text{auto}} = S_{\text{two}}$$
+    
+- Rearranging to find the auto-transformer apparent power rating ($S_{\text{auto}}$):
+    
+      
+    
+    $$S_{\text{auto}} = \frac{S_{\text{two}}}{1 - K}$$
+    
+    $$S_{\text{auto}} = \frac{20\text{ kVA}}{1 - \frac{10}{11}} = \frac{20}{\frac{1}{11}} = 20 \times 11 = 220\text{ kVA}$$
+    
+
+#### Step 2: Power Output at Unity Power Factor
+
+- At full load with unity power factor ($\cos\phi = 1.0$):
+    
+      
+    
+    $$P_{\text{out}} = S_{\text{auto}} \times \cos\phi$$
+    
+    $$P_{\text{out}} = 220\text{ kVA} \times 1.0 = \mathbf{220\text{ kW}}$$
+    
+
+#### Step 3: Power Transformed (Inductive Power)
+
+- Using the inductive power formula:
+    
+      
+    
+    $$\text{Inductive Power} = (1 - K) S_{\text{auto}} = S_{\text{two}}$$
+    
+    $$\text{Inductive Power} = \left(1 - \frac{10}{11}\right) \times 220\text{ kW} = \frac{1}{11} \times 220\text{ kW} = \mathbf{20\text{ kW}}$$
+    
+
+#### Step 4: Power Conducted (Conductive Power)
+
+- Using the conductive power formula:
+    
+      
+    
+    $$\text{Conductive Power} = K \cdot S_{\text{auto}}$$
+    
+    $$\text{Conductive Power} = \frac{10}{11} \times 220\text{ kW} = 10 \times 20\text{ kW} = \mathbf{200\text{ kW}}$$
+    
+
+#### Step 5: Auto-Transformer Efficiency at 0.6 Power Factor
+
+- **Losses in the Two-Winding Transformer ($P_{\text{loss}}$):**
+    
+      
+    - Output power of two-winding transformer at $0.6\text{ p.f.}$:
+        
+          
+        
+        $$P_{2w} = S_{\text{two}} \times \cos\phi = 20\text{ kVA} \times 0.6 = 12\text{ kW}$$
+        
+    - Input power of two-winding transformer:
+        
+          
+        
+        $$P_{\text{in}, 2w} = \frac{P_{2w}}{\eta_{2w}} = \frac{12\text{ kW}}{0.96} = 12.5\text{ kW}$$
+        
+    - Total losses:
+        
+          
+        
+        $$P_{\text{loss}} = P_{\text{in}, 2w} - P_{2w} = 12.5\text{ kW} - 12\text{ kW} = 0.5\text{ kW}$$
+        
+- **Auto-Transformer Output and Efficiency:**
+    
+      
+    - Power output of the auto-transformer at $0.6\text{ p.f.}$:
+        
+          
+        
+        $$P_{\text{out, auto}} = S_{\text{auto}} \times \cos\phi = 220\text{ kVA} \times 0.6 = 132\text{ kW}$$
+        
+    - Since the windings carry their rated currents and operate at rated voltages, the total internal losses remain unchanged ($P_{\text{loss}} = 0.5\text{ kW}$):
+        
+        $$\eta_{\text{auto}} = \frac{P_{\text{out, auto}}}{P_{\text{out, auto}} + P_{\text{loss}}} \times 100\%$$
+        
+        $$\eta_{\text{auto}} = \frac{132}{132 + 0.5} \times 100\% = \frac{132}{132.5} \times 100\% \approx \mathbf{99.62\%}$$
 ### 79. Page 18, Q.2(c): What should be the problem of personnel for using high voltage step-down auto-transformer, when transformation ratio K<<1.
 
 * When $K \ll 1$, the common winding comprises very few turns compared to the series section.
