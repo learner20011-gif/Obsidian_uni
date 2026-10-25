@@ -58,12 +58,51 @@
 ### 4. Page 18, Q.1(b): Prove that, v1/v2 = N1/N2 = I2/I1 where symbols have their usual meanings.
 
 **Proof:**
-1. **Voltage & Turns Ratio:**
-   * Instantaneous induced EMFs linked by mutual core flux $\Phi$:
-     $$e_1 = -N_1 \frac{d\Phi}{dt}, \quad e_2 = -N_2 \frac{d\Phi}{dt}$$
-   * Taking RMS values for an ideal transformer (zero winding resistance and zero leakage, so $V_1 = E_1$ and $V_2 = E_2$):
-     $$\frac{V_1}{V_2} = \frac{E_1}{E_2} = \frac{N_1}{N_2}$$
-2. **Current Ratio (MMF Balance):**
+#### 2. Derivation of Induced Electromotive Forces (Faraday's Law)
+
+- **Instantaneous induced EMF in primary winding:**
+    
+    $$e_1(t) = -N_1 \frac{d\phi(t)}{dt}$$
+    
+- **Instantaneous induced EMF in secondary winding:**
+    
+    $$e_2(t) = -N_2 \frac{d\phi(t)}{dt}$$
+    
+- **Ratio of instantaneous EMFs:**
+    
+    $$\frac{e_1(t)}{e_2(t)} = \frac{-N_1 \frac{d\phi(t)}{dt}}{-N_2 \frac{d\phi(t)}{dt}} = \frac{N_1}{N_2}$$
+    
+
+#### 3. Derivation for Sinusoidal AC Quantities (RMS Values)
+
+- **Sinusoidal mutual core flux:**
+    
+    $$\phi(t) = \phi_m \sin(\omega t)$$
+    
+- **Time derivative of flux:**
+    
+    $$\frac{d\phi(t)}{dt} = \omega \phi_m \cos(\omega t)$$
+    
+- **Primary induced EMF expression:**
+    
+    $$e_1(t) = -N_1 \omega \phi_m \cos(\omega t) = N_1 \omega \phi_m \sin\left(\omega t - \frac{\pi}{2}\right)$$
+    
+    $$E_{1,\text{max}} = N_1 \omega \phi_m = 2\pi f N_1 \phi_m$$
+    
+    $$E_1 = \frac{E_{1,\text{max}}}{\sqrt{2}} = \frac{2\pi}{\sqrt{2}} f N_1 \phi_m = 4.44 f N_1 \phi_m$$
+    
+- **Secondary induced EMF expression:**
+    
+    $$e_2(t) = -N_2 \omega \phi_m \cos(\omega t) = N_2 \omega \phi_m \sin\left(\omega t - \frac{\pi}{2}\right)$$
+    
+    $$E_{2,\text{max}} = N_2 \omega \phi_m = 2\pi f N_2 \phi_m$$
+    
+    $$E_2 = \frac{E_{2,\text{max}}}{\sqrt{2}} = \frac{2\pi}{\sqrt{2}} f N_2 \phi_m = 4.44 f N_2 \phi_m$$
+    
+- **Ratio of RMS induced EMFs:**
+    
+    $$\frac{E_1}{E_2} = \frac{4.44 f N_1 \phi_m}{4.44 f N_2 \phi_m} = \frac{N_1}{N_2}$$
+1. **Current Ratio (MMF Balance):**
    * An ideal transformer core has infinite permeability ($\mu \rightarrow \infty$), requiring zero net MMF to maintain flux:
      $$\mathcal{F}_{\text{net}} = N_1 I_1 - N_2 I_2 = 0 \implies N_1 I_1 = N_2 I_2$$
      $$\frac{I_2}{I_1} = \frac{N_1}{N_2}$$
