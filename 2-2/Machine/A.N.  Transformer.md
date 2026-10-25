@@ -19,7 +19,7 @@
 ![[Pasted image 20261024204228.png]]
 
 ![[Pasted image 20261025005420.png]]
-
+![[Pasted image 20261025143750.png]]
 * **Real Transformer Equations:**
   $$\vec{V_1} = -\vec{E_1} + \vec{I_1} R_1 + j \vec{I_1} X_1$$
   $$\vec{V_2} = \vec{E_2} - \vec{I_2} R_2 - j \vec{I_2} X_2$$
@@ -329,3 +329,114 @@ The active real power ($\text{kW}$) delivered by each transformer connected to a
 $$P = V \times I \times \cos\phi$$
 
 $$\frac{P_A}{P_B} = \frac{I_A \cos\phi_A}{I_B \cos\phi_B}$$
+
+
+#### Step 1: Main Transformer Primary Voltage ($V_{YB}$)
+
+- **Applied Line Voltage:**
+    
+      
+    
+    $$V_{\text{main}} = V_{YB} = V_L$$
+    
+- **Center Tap Division at Point $D$:**
+    
+      
+    
+    $$V_{YD} = V_{DB} = \frac{1}{2} V_{YB} = \frac{1}{2} V_L$$
+    
+
+#### Step 2: Teaser Transformer Primary Voltage ($V_{RD}$)
+
+- **Pythagorean Relation in Right Triangle $\Delta RDY$:**
+    
+      
+    
+    $$V_{RY}^2 = V_{YD}^2 + V_{RD}^2$$
+    
+- **Substitution:**
+    
+      
+    
+    $$V_L^2 = \left(\frac{1}{2} V_L\right)^2 + V_{RD}^2$$
+    
+- **Algebraic Simplification:**
+    
+      
+    
+    $$V_L^2 = \frac{1}{4} V_L^2 + V_{RD}^2$$
+    
+    $$V_{RD}^2 = V_L^2 - \frac{1}{4} V_L^2 = \frac{3}{4} V_L^2$$
+    
+- **Primary Voltage Magnitude:**
+    
+      
+    
+    $$V_{RD} = \sqrt{\frac{3}{4} V_L^2} = \frac{\sqrt{3}}{2} V_L \approx 0.866 \, V_L$$
+    
+
+#### Step 3: Phase Angle Orthogonality ($90^\circ$ Shift)
+
+- **Geometric Perpendicularity:**
+    
+      
+    
+    $$\angle RDY = \angle RDB = 90^\circ$$
+    
+- **Phasor Representation:**
+    
+      
+    
+    $$\vec{V}_{YB} = V_L \angle 0^\circ$$
+    
+    $$\vec{V}_{RD} = \left(\frac{\sqrt{3}}{2} V_L\right) \angle 90^\circ = j \frac{\sqrt{3}}{2} V_L$$
+    
+- **Orthogonal Relationship:**
+    
+      
+    
+    $$\vec{V}_{RD} \perp \vec{V}_{YB}$$
+    
+
+#### Step 4: Secondary Voltage Equalization (Turn-Ratio Adjustment)
+
+- **Main Secondary Voltage ($V_{2m}$):**
+    
+      
+    
+    $$V_{2m} = V_{YB} \left(\frac{N_S}{N_P}\right) = V_L \left(\frac{N_S}{N_P}\right)$$
+    
+- **Teaser Secondary Voltage with Uncompensated Turns ($N_P$):**
+    
+      
+    
+    $$V_{2t} = V_{RD} \left(\frac{N_S}{N_P}\right) = \left(\frac{\sqrt{3}}{2} V_L\right) \left(\frac{N_S}{N_P}\right) = \frac{\sqrt{3}}{2} V_{2m} \neq V_{2m}$$
+    
+- **Teaser Primary Turns Compensation ($N_{Pt}$):**
+    
+      
+    
+    $$N_{Pt} = \frac{\sqrt{3}}{2} N_P \approx 0.866 \, N_P$$
+    
+- **Compensated Teaser Secondary Voltage ($V_{2t}$):**
+    
+      
+    
+    $$V_{2t} = V_{RD} \left(\frac{N_S}{N_{Pt}}\right) = \left(\frac{\sqrt{3}}{2} V_L\right) \left(\frac{N_S}{\frac{\sqrt{3}}{2} N_P}\right) = V_L \left(\frac{N_S}{N_P}\right)$$
+    
+- **Final Balanced 2-Phase Conditions:**
+    
+    $$\vert{}V_{2t}\vert{} = \vert{}V_{2m}\vert{}$$
+    
+    $$\angle V_{2t} - \angle V_{2m} = 90^\circ$$
+  * Teaser primary has $86.6\%$ turns ($\frac{\sqrt{3}}{2} N_1$), connected between line $A$ and center-tap $D$.
+* **Deriving the 4th Wire (Neutral $N$):**
+  * A neutral point $N$ is located on the teaser winding at a distance of **one-third of total teaser turns up from tap $D$** (or two-thirds down from terminal $A$):
+    $$V_{AN} = \frac{2}{3} V_{\text{teaser}} = \frac{2}{3}\left(\frac{\sqrt{3}}{2} V_L\right) = \frac{V_L}{\sqrt{3}} = V_{\text{phase}}$$
+  * Bringing out a lead from $N$ provides a true balanced 4-wire neutral point for 3-phase 4-wire systems.
+  * In a T-T connection, the neutral terminal $N$ is tapped at $\frac{1}{3}$ of the teaser winding length from the junction with the main transformer.
+* This neutral point $N$ provides equal star-line potentials ($V_{AN} = V_{BN} = V_{CN} = V_L/\sqrt{3}= V_{ph}$),
+
+#### **The $\pm 30^\circ$ Phase Displacement:**
+
+- In open-delta banks supplying a balanced load with lagging angle $\theta$, the current through one transformer lags its voltage by $(\theta - 30^\circ)$, while through the other it lags by $(\theta + 30^\circ)$.
