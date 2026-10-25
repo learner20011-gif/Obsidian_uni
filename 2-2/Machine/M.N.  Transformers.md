@@ -294,14 +294,49 @@ $$P_i = P_h + P_e = A f + B f^2 \implies \mathbf{\frac{P_i}{f} = A + B f}$$
 
 ### Test Parameter Extraction Comparison
 
-| Feature                         | Open-Circuit (OC) Test                                                                                                                                                                                     | Short-Circuit (SC) Test                                                                                                                    |                                                                                                                                       |     |        |                                                                                                                           |
-| :------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
-| **Windings**                    | **LV side:** Energized at rated $V_0$<br>**HV side:** Open-circuited                                                                                                                                       | **HV side:** Energized at reduced $V_{sc}$ ($5\text{--}10\%$ rated)<br>**LV side:** Solid short                                            |                                                                                                                                       |     |        |                                                                                                                           |
-| **Target Quantity**             | Core iron loss ($P_i$) & Shunt parameters                                                                                                                                                                  | Full-load copper loss ($P_{cu}$) & Series parameters                                                                                       |                                                                                                                                       |     |        |                                                                                                                           |
-| **Meter Reading**               | $W_0 \approx P_i$ ($I_0^2 R_1 \approx 0$ negligible)                                                                                                                                                       | $W_{sc} \approx P_{cu}$ (Low $V_{sc} \implies P_i \approx 0$ negligible)                                                                   |                                                                                                                                       |     |        |                                                                                                                           |
-| **Why LV/HV chosen?**           | LV rated voltage easily handled in lab; HV has dangerous kV levels                                                                                                                                         | HV rated current is small $\implies$ lab meters/variacs won't overload                                                                     |                                                                                                                                       |     |        |                                                                                                                           |
-| **Calculations**                | $\cos\phi_0 = \frac{W_0}{V_0 I_0}$<br>$I_w = I_0 \cos\phi_0 = \frac{W_0}{V_0}$<br>$I_m = \sqrt{I_0^2 - I_w^2}$<br>$\mathbf{R_0 = \frac{V_0}{I_w} = \frac{V_0^2}{W_0}}$<br>$\mathbf{X_0 = \frac{V_0}{I_m}}$ | $\mathbf{R_{eq} = \frac{W_{sc}}{I_{sc}^2}}$<br>$\mathbf{Z_{eq} = \frac{V_{sc}}{I_{sc}}}$<br>$\mathbf{X_{eq} = \sqrt{Z_{eq}^2 - R_{eq}^2}}$ |                                                                                                                                       |     |        |                                                                                                                           |
-| **Admittance / Impedance Form** | $                                                                                                                                                                                                          | Y_E                                                                                                                                        | = \frac{I_0}{V_0}, \quad \theta = \arccos\left(\frac{W_0}{V_0 I_0}\right)$<br>$Y_E = G_c - j B_m$<br>$R_c = 1/G_c, \quad X_m = 1/B_m$ | $   | Z_{SE} | = \frac{V_{sc}}{I_{sc}}, \quad \theta = \arccos\left(\frac{W_{sc}}{V_{sc} I_{sc}}\right)$<br>$Z_{SE} = R_{eq} + j X_{eq}$ |
+| Feature | Open-Circuit (OC) Test | Short-Circuit (SC) Test |
+| :--- | :--- | :--- |
+| **Energized Side** | **LV side** (Rated $V_0$, rated $f$) | **HV side** (Reduced $V_{sc} \approx 5\text{--}10\% V_{\text{rated}}$) |
+| **Opposite Side** | **HV side** left open-circuit | **LV side** solidly short-circuited |
+| **Target Loss** | Core iron loss ($P_i$) | Full-load copper loss ($P_{cu}$) |
+| **Meter Reading** | $W_0 \approx P_i$ ($I_0^2 R_1 \approx 0$ negligible) | $W_{sc} \approx P_{cu}$ ($P_i \approx 0$ negligible due to low $V_{sc}$) |
+| **Why Side Chosen?** | LV voltage safe & standard in lab; HV has dangerous kV | HV rated current is small; won't overload lab meters/variacs |
+| **Extracted Model** | Shunt exciting branch ($R_0 \parallel X_0$ or $G_c \parallel B_m$) | Series branch ($R_{eq} + j X_{eq}$) |
+
+---
+
+#### 1. Shunt Parameter Calculations (from OC Test on LV)
+
+* **Step 1 — No-Load PF:**
+  $$\cos\phi_0 = \frac{W_0}{V_0 I_0} \implies \sin\phi_0 = \sqrt{1 - \cos^2\phi_0}$$
+
+* **Step 2 — Component Currents:**
+  $$I_w = I_0 \cos\phi_0 = \frac{W_0}{V_0} \quad (\text{Core loss component})$$
+  $$I_m = I_0 \sin\phi_0 = \sqrt{I_0^2 - I_w^2} \quad (\text{Magnetizing component})$$
+
+* **Step 3 — Core Resistances & Reactances (Parallel Branch):**
+  $$\mathbf{R_0 = \frac{V_0}{I_w} = \frac{V_0^2}{W_0}} \qquad \mathbf{X_0 = \frac{V_0}{I_m} = \frac{V_0}{\sqrt{I_0^2 - I_w^2}}}$$
+
+* **Alternative Admittance Method:**
+  $$\vert Y_E \vert = \frac{I_0}{V_0}, \quad \theta_0 = \arccos\left(\frac{W_0}{V_0 I_0}\right)$$
+  $$Y_E = \vert Y_E \vert \angle -\theta_0 = G_c - j B_m \implies \mathbf{R_c = \frac{1}{G_c}}, \quad \mathbf{X_m = \frac{1}{B_m}}$$
+
+---
+
+#### 2. Series Parameter Calculations (from SC Test on HV)
+
+* **Step 1 — Equivalent Resistance:**
+  $$\mathbf{R_{eq} = \frac{W_{sc}}{I_{sc}^2}}$$
+
+* **Step 2 — Equivalent Impedance Magnitude:**
+  $$\mathbf{Z_{eq} = \frac{V_{sc}}{I_{sc}}}$$
+
+* **Step 3 — Equivalent Leakage Reactance:**
+  $$\mathbf{X_{eq} = \sqrt{Z_{eq}^2 - R_{eq}^2}}$$
+
+* **Alternative Impedance Method:**
+  $$\theta_{sc} = \arccos\left(\frac{W_{sc}}{V_{sc} I_{sc}}\right)$$
+  $$Z_{SE} = \vert Z_{SE} \vert \angle \theta_{sc} = R_{eq} + j X_{eq} \implies \mathbf{R_{eq} = \vert Z_{SE} \vert \cos\theta_{sc}}, \quad \mathbf{X_{eq} = \vert Z_{SE} \vert \sin\theta_{sc}}$$
 
 ---
 
