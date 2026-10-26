@@ -17,7 +17,7 @@
 
 ![[Introductions-to-DC-Machines20.jpg]]
 
-
+![[Copied_Item_1793051782353.png]]
 
 #### Core Conceptual Differences
 
