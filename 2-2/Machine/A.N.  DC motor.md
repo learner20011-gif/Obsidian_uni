@@ -1,6 +1,6 @@
 ![[Pasted image 20261026110057.png]]
 
-
+![[Pasted image 20261026121217.png]]
 
 
 
@@ -157,3 +157,30 @@ $$\text{Mechanical Input } (T_{\text{shaft}} \cdot \omega) \to \text{Electrical 
       
     
 - **Second Finger:** Induced **C**urrent ($\vec{I}$)
+
+
+#### 5. Total Resultant Back-EMF ($E_b$)
+    $$E_b = (\text{Conductors in series per path}) \times (\text{Average EMF per conductor})$$
+    
+    $$E_b = \left(\frac{Z}{A}\right) \times \left(\frac{P \Phi N}{60}\right)$$
+    
+    $$E_b = \frac{P \Phi Z N}{60 A}$$
+    
+
+#### Formulation in Terms of Angular Velocity ($\omega_m$)
+
+- In dynamic drive control and electromechanical analysis, speed is expressed in mechanical radians per second ($\omega_m$):
+    
+    $$\omega_m = \frac{2 \pi N}{60} \implies N = \frac{60 \, \omega_m}{2 \pi}$$
+    
+- Substituting this relationship into the Back-EMF expression:
+    
+    $$E_b = \frac{P \Phi Z}{60 A} \left(\frac{60 \, \omega_m}{2 \pi}\right) = \left(\frac{P Z}{2 \pi A}\right) \Phi \, \omega_m$$
+    
+- Defining the constant machine design parameter $K_a$:
+    
+    $$K_a = \frac{P Z}{2 \pi A}$$
+    
+- The compact electromechanical Back-EMF relation becomes:
+    
+    $$E_b = K_a \Phi \, \omega_m$$
