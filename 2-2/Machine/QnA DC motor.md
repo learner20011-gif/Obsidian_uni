@@ -459,7 +459,7 @@ $$T_{\text{dev}} = \frac{P_{\text{dev}}}{\omega} = \frac{4347.8}{186} = \mathbf{
 
 ---
 
-### 23. Page 10, Q.7(d): A 400V, 25 hp, 450 rpm dc shunt motor is braked by plugging when running on full load. Determine the baking resistance necessary if the maximum braking current is not to exceed twice the full load current. Determine also the maximum braking torque when the motor is just reaching zero speed. The efficiency of the motor is 74.6% and the armature resistance is 0.2 Ω.
+### 23. ✅Page 10, Q.7(d): A 400V, 25 hp, 450 rpm dc shunt motor is braked by plugging when running on full load. Determine the braking resistance necessary if the maximum braking current is not to exceed twice the full load current. Determine also the maximum braking torque when the motor is just reaching zero speed. The efficiency of the motor is 74.6% and the armature resistance is 0.2 Ω.
 
 **Given Data:**
 * $V = 400\text{ V}$, $P_{\text{out}} = 25\text{ hp} = 25 \times 746 = 18650\text{ W}$, $N = 450\text{ rpm}$.
@@ -504,8 +504,7 @@ $$E_b = V - I_{\text{FL}} R_a = 400 - (62.5 \times 0.2) = 400 - 12.5 = 387.5\tex
 * **Differential Compound Motor:** Series field opposes shunt field, so $\Phi$ drops with load, resulting in lowest torque.
 
 ![[Pasted image 20260729015156.png]]
-![[Pasted image 20260729023239.png]]
-![[Screenshot_20260729-111713_WPS Office.png]]
+![[Pasted image 20261026134258.png]]
 ![[Pasted image 20260729030609.png]]
 ![[Pasted image 20260729013256.png]]
 

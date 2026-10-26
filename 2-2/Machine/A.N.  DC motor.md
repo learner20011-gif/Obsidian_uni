@@ -4,6 +4,13 @@
 
 
 
+![[Pasted image 20260729015156.png]]
+![[Pasted image 20261026134333.png]]
+
+![[Pasted image 20260729030609.png]]
+![[Pasted image 20260729013256.png]]
+
+
 
 #### Core Conceptual Differences
 
@@ -184,3 +191,31 @@ $$\text{Mechanical Input } (T_{\text{shaft}} \cdot \omega) \to \text{Electrical 
 - The compact electromechanical Back-EMF relation becomes:
     
     $$E_b = K_a \Phi \, \omega_m$$
+#### Factors Controlling Motor Speed
+
+- **Governing Formula:**
+    
+    $$N = \frac{V - I_a R_a}{Z\Phi}\left(\frac{A}{P}\right) = K \frac{V - I_a R_a}{\Phi} \propto \frac{E_b}{\Phi} \quad (\text{r.p.s.})$$
+    
+    _(where constant $K = \frac{A}{ZP}$ and back-EMF $E_b = V - I_a R_a$)_
+    
+
+#### 3 Ways to Control Speed
+
+1. **Flux ($\Phi$) Control:**
+    
+    - $N \propto \frac{1}{\Phi}$
+        
+    - Vary field current via field rheostat (controls speed above rated speed).
+        
+2. **Armature Resistance ($R_a$) Control:**
+    
+    - $N \propto (V - I_a R_a)$
+        
+    - Add external resistance in series with armature (controls speed below rated speed).
+        
+3. **Terminal Voltage ($V$) Control:**
+    
+    - $N \propto V$
+        
+    - Vary input supply voltage (e.g., Ward-Leonard system).
