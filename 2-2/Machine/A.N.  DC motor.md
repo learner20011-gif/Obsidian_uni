@@ -2,7 +2,7 @@
 
 ![[Pasted image 20261026121217.png]]
 
-
+![[Working_Principles_of_a_DC_Motor.webp]]
 
 ![[Pasted image 20260729015156.png]]![[compound_iqim6l.webp|700]]
 ![[Pasted image 20261026134333.png|700]]
