@@ -370,7 +370,7 @@ $$P_m = P_{\text{in}} - P_f - P_a = 4896 - 285.15 - 262.06 = \mathbf{4348.79\tex
 
 ---
 
-### 19. Page 15, Q.3(c): A 220 V, dc shunt motor having an armature resistance of 0.2 Ω, and a field resistance of 110 Ω takes 4 A of line current while running at 1200 rpm on no load. On load, the input to the motor is 15 kW; calculate the speed and the developed torque.
+### 19. ✅Page 15, Q.3(c): A 220 V, dc shunt motor having an armature resistance of 0.2 Ω, and a field resistance of 110 Ω takes 4 A of line current while running at 1200 rpm on no load. On load, the input to the motor is 15 kW; calculate the speed and the developed torque.
 
 **Given Data:**
 * $V = 220\text{ V}$, $R_a = 0.2\,\Omega$, $R_f = 110\,\Omega$.
