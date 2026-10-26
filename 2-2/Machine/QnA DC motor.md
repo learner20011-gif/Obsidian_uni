@@ -962,7 +962,7 @@ Speed (N)
 
 ---
 
-### 52. Page 6, Q.80: Explain how the speed of dc motor can be controlled by using thyristor.
+### 52. ❓Page 6, Q.80: Explain how the speed of dc motor can be controlled by using thyristor.
 
 **Operation:**
 * **Thyristor Phase-Controlled Converter:** Connects between AC mains and the DC motor armature.
@@ -1032,7 +1032,7 @@ Speed (N)
 
 ---
 
-### 56. Page 15, Q.4(c): A 250 V dc shunt motor has armature resistance of 0.25 Ω. It takes an armature current of 50 A while running with a load at 750 rpm. To change the speed of the motor, the main field flux is reduced by 10% by changing the motor shunt field resistance. What will be the new speed of the motor?
+### 56. ✅Page 15, Q.4(c): A 250 V dc shunt motor has armature resistance of 0.25 Ω. It takes an armature current of 50 A while running with a load at 750 rpm. To change the speed of the motor, the main field flux is reduced by 10% by changing the motor shunt field resistance. What will be the new speed of the motor?
 
 **Given Data:**
 * $V = 250\text{ V}$, $R_a = 0.25\,\Omega$, $I_{a1} = 50\text{ A}$, $N_1 = 750\text{ rpm}$.

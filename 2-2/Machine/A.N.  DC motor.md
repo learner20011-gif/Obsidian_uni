@@ -6,11 +6,10 @@
 
 ![[Pasted image 20260729015156.png]]![[compound_iqim6l.webp|700]]
 ![[Pasted image 20261026134333.png|700]]
-
 ![[Pasted image 20260729030609.png]]
 ![[Pasted image 20260729013256.png]]
 ![[Pasted image 20261026154346.png]]
-
+![[Pasted image 20261026183323.png]]
 
 #### Core Conceptual Differences
 
