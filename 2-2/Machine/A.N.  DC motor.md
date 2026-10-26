@@ -13,6 +13,12 @@
 ![[Pasted image 20261026193118.png]]![[Pasted image 20260921081553.jpg]]
 ![[Pasted image 20260729092319.png]]
 ![[Pasted image 20260729092231.png|480]]
+
+
+
+
+
+
 #### Core Conceptual Differences
 
 |**Parameter**|**Electric Motor**|**Electric Generator**|
