@@ -1,3 +1,7 @@
+---
+share_link: https://share.note.sx/gqkw3jdg
+share_updated: 2026-10-26T23:01:51+06:00
+---
 
 ## 📌 Common Symbols & Abbreviations
 
