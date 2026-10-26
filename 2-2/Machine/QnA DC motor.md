@@ -1227,7 +1227,7 @@ $$N_2 = 750 \times \left(\frac{236.11}{237.5}\right) \times \left(\frac{1}{0.90}
 
 ![[Pasted image 20260729090917.png]]
 ![[Pasted image 20260729092319.png]]
-![[Pasted image 20260729092231.png]]
+![[Pasted image 20260729092231.png|480]]
 
 * **Reference in Mam Slide:** 268, 270, 272
 * **Reference in Firoz Note:** 114, 115

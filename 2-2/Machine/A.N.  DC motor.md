@@ -9,8 +9,10 @@
 ![[Pasted image 20260729030609.png]]
 ![[Pasted image 20260729013256.png]]
 ![[Pasted image 20261026154346.png]]
-![[Pasted image 20261026183323.png]]![Circuit Diagram for 3-Point Starter|595](attachments/fig5_1_circuit_3point_starter.png)![[Three-Point-Starter.-3-Point-Starter.webp]]![[Pasted image 20260729083801.jpg]]
+![[Pasted image 20261026183323.png]]![[Pasted image 20260729083801.jpg]]![[Pasted image 20261026195752.png]]![Circuit Diagram for 3-Point Starter|595](attachments/fig5_1_circuit_3point_starter.png)![[Three-Point-Starter.-3-Point-Starter.webp]]![[Pasted image 20260729083801.jpg]]
 ![[Pasted image 20261026193118.png]]![[Pasted image 20260921081553.jpg]]
+![[Pasted image 20260729092319.png]]
+![[Pasted image 20260729092231.png|480]]
 #### Core Conceptual Differences
 
 |**Parameter**|**Electric Motor**|**Electric Generator**|
