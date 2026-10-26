@@ -5,7 +5,7 @@
 
 
 ![[Pasted image 20260729015156.png]]
-![[Pasted image 20261026134333.png]]
+![[Pasted image 20261026134333.png|700]]
 
 ![[Pasted image 20260729030609.png]]
 ![[Pasted image 20260729013256.png]]
@@ -219,3 +219,10 @@ $$\text{Mechanical Input } (T_{\text{shaft}} \cdot \omega) \to \text{Electrical 
     - $N \propto V$
         
     - Vary input supply voltage (e.g., Ward-Leonard system).
+
+#### E and Torque
+
+ $E_b = K\Phi\omega$    
+$T_a = K\Phi I_a$
+$$K = \frac{P \cdot Z}{2\pi \cdot A}$$
+
