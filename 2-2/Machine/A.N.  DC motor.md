@@ -4,7 +4,7 @@
 
 
 
-![[Pasted image 20260729015156.png]]
+![[Pasted image 20260729015156.png]]![[compound_iqim6l.webp|700]]
 ![[Pasted image 20261026134333.png|700]]
 
 ![[Pasted image 20260729030609.png]]
