@@ -9,7 +9,7 @@
 
 ![[Pasted image 20260729030609.png]]
 ![[Pasted image 20260729013256.png]]
-
+![[Pasted image 20261026154346.png]]
 
 
 #### Core Conceptual Differences
@@ -226,3 +226,42 @@ $$\text{Mechanical Input } (T_{\text{shaft}} \cdot \omega) \to \text{Electrical 
 $T_a = K\Phi I_a$
 $$K = \frac{P \cdot Z}{2\pi \cdot A}$$
 
+#### Terminal Characteristic of a Shunt DC Motor
+
+1. **Armature loop equation:**
+    
+    $$V_T = E_A + I_A R_A$$
+    
+2. **Substitute induced voltage ($E_A = K\phi\omega$):**
+    
+    $$V_T = K\phi\omega + I_A R_A$$
+    
+3. **Substitute armature current ($I_A = \frac{\tau_{\text{ind}}}{K\phi}$):**
+    
+    $$V_T = K\phi\omega + \frac{\tau_{\text{ind}}}{K\phi} R_A$$
+    
+4. **Solve for motor speed ($\omega$):**
+    
+    $$\omega = \frac{V_T}{K\phi} - \frac{R_A}{(K\phi)^2} \tau_{\text{ind}}$$
+
+#### Terminal Characteristic of a Series DC Motor
+
+1. **Kirchhoff's voltage law (KVL):**
+    
+    $$V_T = E_A + I_A (R_A + R_S)$$
+    
+2. **Flux & torque relation (assuming linear core, $\phi = c I_A$):**
+    
+    $$\tau_{\text{ind}} = K\phi I_A = Kc I_A^2 \implies I_A = \sqrt{\frac{\tau_{\text{ind}}}{Kc}}$$
+    
+3. **Substitute induced voltage ($E_A = K\phi\omega = Kc I_A \omega$):**
+    
+    $$V_T = Kc I_A \omega + I_A (R_A + R_S)$$
+    
+4. **Substitute armature current ($I_A = \sqrt{\frac{\tau_{\text{ind}}}{Kc}}$):**
+    
+    $$V_T = \sqrt{Kc\,\tau_{\text{ind}}}\,\omega + \frac{R_A + R_S}{\sqrt{Kc}}\sqrt{\tau_{\text{ind}}}$$
+    
+5. **Solve for motor speed ($\omega$):**
+    
+    $$\omega = \frac{V_T}{\sqrt{Kc}} \frac{1}{\sqrt{\tau_{\text{ind}}}} - \frac{R_A + R_S}{Kc}$$
