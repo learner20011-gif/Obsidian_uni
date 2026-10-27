@@ -118,8 +118,8 @@ $$I_{\text{dc}} = \frac{V_{\text{dc}}}{R_1} \gg I_{\text{rated}}$$
 $$\vec{I_0} = \vec{I_w} + \vec{I_m} = I_0 \cos\phi_0 + j I_0 \sin\phi_0$$
 $$I_0 = \sqrt{I_w^2 + I_m^2}, \quad \text{No-load PF: } \cos\phi_0 = \frac{I_w}{I_0} \approx 0.1\text{--}0.25\text{ lag}$$
 
-| Ideal XFR No-Load | Practical XFR No-Load & Hysteresis |
-| :---: | :---: |
+|                Ideal XFR No-Load                 |        Practical XFR No-Load & Hysteresis        |
+| :----------------------------------------------: | :----------------------------------------------: |
 | ![[attachments/Pasted image 20261023181304.png]] | ![[attachments/Pasted image 20260908234257.png]] |
 
 ---
