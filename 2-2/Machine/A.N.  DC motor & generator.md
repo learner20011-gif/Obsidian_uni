@@ -1,4 +1,4 @@
-![[Pasted image 20261026110057.png]]![[Pasted image 20261027163027.png]]
+![[Pasted image 20261026110057.png]]![[Pasted image 20260715001457.png]]![[Pasted image 20261027163027.png]]
   ![[Pasted image 20260715021010.png]]
   ![[Pasted image 20260715021142.png]]![[Pasted image 20260715024155.png]]![[Pasted image 20261027164333.png|635]]![[Pasted image 20260921070011.png]]![[Pasted image 20261027164403.png|636]]![[Pasted image 20260921072920.jpg]]  ![[Pasted image 20260715021424.png|628]]![[Pasted image 20260715024337.png|619]]![[Pasted image 20261027164643.png]]![[Pasted image 20260921073646.jpg]]![[Pasted image 20261027165607.png|621]]![[Pasted image 20260715035244.png|646]]![[Pasted image 20260921071012.jpg]]
 ![[Pasted image 20261026121217.png]]
@@ -23,7 +23,7 @@
 ![[Pasted image 20261027134722.jpg|540]]![[Pasted image 20261027135344.png]]
 ![[Pasted image 20261027134931.jpg]]![[Pasted image 20261027141908.jpg|679]]![[Pasted image 20261027141328.png]]
 ![[Pasted image 20261027140456.png|651]]![[Pasted image 20261027143726.png]]
-![[Pasted image 20261027141022.png|552]]![[Pasted image 20261027153722.png|552]]![[Pasted image 20261027154818.png|571]]![[Pasted image 20261027185116.png]]
+![[Pasted image 20261027141022.png|552]]![[Pasted image 20261027153722.png|552]]![[Pasted image 20261027154818.png|571]]![[Pasted image 20261027185116.png]]![[Parallel-Operation-of-DC-Shunt-Generator.webp]]![[Pasted image 20261027195423.png]]
 #### Core Conceptual Differences
 
 |**Parameter**|**Electric Motor**|**Electric Generator**|
