@@ -2,19 +2,19 @@
 
 | Symbol / Abbr | Meaning | Symbol / Abbr | Meaning |
 | :--- | :--- | :--- | :--- |
-| **DC** | Direct Current | **$\Phi$** | Magnetic flux per pole ($\text{Wb}$) |
-| **EMF / Back-EMF** | Electromotive Force / $E_b$ or $E_g$ | **$B$ / $B_{\max}$** | Flux density / Max flux density ($\text{T}$) |
+| **DC** | Direct Current | **$\Phi$** | Magnetic flux per pole ($	ext{Wb}$) |
+| **EMF / Back-EMF** | Electromotive Force / $E_b$ or $E_g$ | **$B$ / $B_{\max}$** | Flux density / Max flux density ($	ext{T}$) |
 | **MMF** | Magnetomotive Force ($AT$) | **$Z$** | Total armature conductors ($Z = 2C$) |
 | **MNA / GNA** | Magnetic / Geometric Neutral Axis | **$P$ / $A$** | Number of poles / Parallel current paths |
-| **OCC** | Open Circuit Characteristic | **$N$ / $\omega$** | Rotational speed ($\text{rpm}$) / ($\text{rad/s}$) |
-| **$V_t$ / $V_L$** | Terminal voltage / Line voltage | **$T$ / $T_e$** | Shaft torque / Developed torque ($\text{N}\cdot\text{m}$) |
-| **$I_a$ / $I_L$** | Armature current / Load current | **$k_a$ / $K$** | Machine design constant ($\frac{P Z}{2\pi A}$) |
+| **OCC** | Open Circuit Characteristic | **$N$ / $\omega$** | Rotational speed ($	ext{rpm}$) / ($	ext{rad/s}$) |
+| **$V_t$ / $V_L$** | Terminal voltage / Line voltage | **$T$ / $T_e$** | Shaft torque / Developed torque ($	ext{N}\cdot	ext{m}$) |
+| **$I_a$ / $I_L$** | Armature current / Load current | **$k_a$ / $K$** | Machine design constant ($rac{P Z}{2\pi A}$) |
 | **$I_f$ / $I_{sh}$ / $I_{se}$** | Field / Shunt field / Series field current | **$Y_P$ / $Y_S$** | Pole pitch / Coil span in slots |
 | **$R_a$ / $R_{sh}$ / $R_{se}$** | Armature / Shunt / Series resistance | **$Y_c$ / $Y_{\text{av}}$** | Commutator pitch / Average pitch |
 | **$R_d$ / $R_c$** | Diverter resistance / Critical resistance | **$Y_b$ / $Y_f$ / $Y_R$** | Back / Front / Resultant pitch |
-| **$N_c$** | Critical speed ($\text{rpm}$) | **$m$** | Plex of winding ($1 = \text{simplex}, 2 = \text{duplex}$) |
+| **$N_c$** | Critical speed ($	ext{rpm}$) | **$m$** | Plex of winding ($1 = \text{simplex}, 2 = \text{duplex}$) |
 | **VR / SR** | Voltage Regulation / Speed Regulation | **NVC / OLR** | No-Volt Coil / Overload Release |
-| **PMDC** | Permanent Magnet DC machine | **$P_m$ / $P_{\text{dev}}$** | Developed mechanical power ($\text{W}$) |
+| **PMDC** | Permanent Magnet DC machine | **$P_m$ / $P_{\text{dev}}$** | Developed mechanical power ($	ext{W}$) |
 
 ---
 
@@ -31,7 +31,7 @@
 * **Motor:** Electrical energy $\to$ Mechanical energy.
   * **Principle:** Lorentz force on current-carrying conductor in $\vec{B}$-field:
     $$F = B I L \sin\theta$$
-  * **Rule:** Fleming's **Left-Hand Rule** (Thumb = Force/Motion, Index = Field, Middle = Current).
+  * **Rule:** Fleming's **Left-Hand Rule** (Thumb = Motion/Force, Index = Field $\vec{B}$, Middle = Current $I$).
   * **Voltage Balance:** $V > E_b \implies V = E_b + I_a R_a$.
   * **Torque:** Driving torque (rotates rotor against mechanical load).
 
@@ -56,7 +56,7 @@
    * Mechanical protection + low-reluctance magnetic flux return path.
 
 2. **Poles & Field Coils:**
-   * **Pole Core & Shoe:** Laminated sheet steel. Shoes spread flux across air gap & support coils.
+   * **Pole Core & Shoe:** Laminated sheet steel. Shoes spread flux across air gap & support field coils.
    * **Field Winding:** Copper coils. Provides main working magnetic flux ($\Phi$).
 
 3. **Armature Core:**
@@ -118,33 +118,32 @@
 
 ---
 
-### Circuit Equations Comparison
+### Equivalent Circuit Schematics & Governing Equations
 
-```
-1. Separately Excited:
-   V_f = I_f * R_f
-   Generator: V_t = E_a - I_a*R_a
-   Motor:     V_t = E_a + I_a*R_a
+![[Pasted image 20260715021010.png]]
 
-2. Shunt Machine:
-   I_sh = V_t / R_sh
-   Generator: I_a = I_L + I_sh   |   V_t = E_g - I_a*R_a
-   Motor:     I_a = I_L - I_sh   |   V_t = E_b + I_a*R_a
+* **Shunt Machine Circuit:**
+  * $I_{sh} = \frac{V_t}{R_{sh}}$
+  * Generator: $I_a = I_L + I_{sh} \quad | \quad V_t = E_g - I_a R_a$
+  * Motor: $I_a = I_L - I_{sh} \quad | \quad V_t = E_b + I_a R_a$
 
-3. Series Machine:
-   I_a = I_se = I_L
-   Generator: V_t = E_g - I_a*(R_a + R_se)
-   Motor:     V_t = E_b + I_a*(R_a + R_se)
+![[Pasted image 20260715021142.png]]
 
-4. Long-Shunt Compound:
-   I_sh = V_t / R_sh
-   Generator: I_a = I_L + I_sh   |   V_t = E_g - I_a*(R_a + R_se)
-   Motor:     I_a = I_L - I_sh   |   V_t = E_b + I_a*(R_a + R_se)
+* **Series Machine Circuit:**
+  * $I_a = I_{se} = I_L$
+  * Generator: $V_t = E_g - I_a(R_a + R_{se})$
+  * Motor: $V_t = E_b + I_a(R_a + R_{se})$
 
-5. Short-Shunt Compound:
-   Generator: V_sh = V_t + I_L*R_se  |  I_sh = V_sh / R_sh  |  I_a = I_L + I_sh  |  V_t = E_g - I_a*R_a - I_L*R_se
-   Motor:     V_sh = V_t - I_L*R_se  |  I_sh = V_sh / R_sh  |  I_a = I_L - I_sh  |  V_t = E_b + I_a*R_a + I_L*R_se
-```
+![[Pasted image 20260715024155.png]]
+
+* **Compound Machine Circuit:**
+  * **Long Shunt:**
+    $$I_{sh} = \frac{V_t}{R_{sh}}$$
+    $$\text{Gen: } I_a = I_L + I_{sh}, \quad V_t = E_g - I_a(R_a + R_{se})$$
+    $$\text{Mot: } I_a = I_L - I_{sh}, \quad V_t = E_b + I_a(R_a + R_{se})$$
+  * **Short Shunt:**
+    $$\text{Gen: } V_{sh} = V_t + I_L R_{se}, \quad I_{sh} = \frac{V_{sh}}{R_{sh}}, \quad I_a = I_L + I_{sh}, \quad V_t = E_g - I_a R_a - I_L R_{se}$$
+    $$\text{Mot: } V_{sh} = V_t - I_L R_{se}, \quad I_{sh} = \frac{V_{sh}}{R_{sh}}, \quad I_a = I_L - I_{sh}, \quad V_t = E_b + I_a R_a + I_L R_{se}$$
 
 ---
 
@@ -246,8 +245,6 @@
 
 ### Lap vs. Wave Winding Comparison
 
-![[Introductions-to-DC-Machines20.jpg]]
-
 ![[Armature-Windings-of-DC-Generator-Lap-Wave-pptx-5-2048.webp]]
 
 ![[simplex-duplex.webp]]
@@ -268,9 +265,9 @@
 
 ![[Pasted image 20261027122917.jpg|314]]
 
-![[Copied_Item_1793051782353.png|607]]
-
 ![[Pasted image 20261027124521.png]]
+
+![[Pasted image 20261027130713.png|622]]
 
 * **Pole Pitch ($Y_P$):**
   $$Y_P = \frac{S}{P}\quad (\text{slots/pole}) = \frac{Z}{P}\quad (\text{conductors/pole})$$
@@ -292,20 +289,32 @@
 * **Pitch / Chording Factor ($k_p$):**
   $$k_p = \cos\left(\frac{\alpha}{2}\right) \quad (\alpha = \text{chording angle})$$
 
-![[Pasted image 20261027123925.png]]
-
-![[Pasted image 20261027124147.png|611]]
-
-![[Pasted image 20261027130713.png|622]]
-
 ---
 
-### Equalizer Rings & Frog-Leg Winding
+### Lap Winding Progression & Equalizer Rings
+
+![[Pasted image 20261027123925.png]]
+
+![[Copied_Item_1793051120342.png]]
+
+![[Introductions-to-DC-Machines20.jpg]]
+
+* **Lap Winding Progression:**
+  * Progressive: $Y_b > Y_f \implies Y_c = +1$
+  * Retrogressive: $Y_b < Y_f \implies Y_c = -1$
 
 * **Equalizer Rings:**
   * Low-resistance copper jumpers connecting points intended to be at equipotential in Lap windings.
   * **Why Needed in Lap ($A = P$):** Slight air gap eccentricity or bearing wear causes unequal path flux $\implies$ unequal induced EMFs $\implies$ large circulating currents flow through brushes $\implies$ severe sparking and overheating. Equalizers bypass brushes.
   * **Why NOT in Wave ($A = 2$):** Both paths pass through coils distributed under all poles equally $\implies$ magnetic imbalances cancel naturally.
+
+---
+
+### Wave Winding Progression & Pitch Relations
+
+![[Pasted image 20261027124147.png|611]]
+
+![[Copied_Item_1793051782353.png|607]]
 
 * **Frog-Leg Winding:**
   * Composite winding: combines **simplex lap** and **multiplex wave** in the identical slots.
@@ -345,8 +354,6 @@
 
 ![[Pasted image 20261027134931.jpg]]
 
-![[Pasted image 20260715003637.png]]
-
 * **Definition:** Distortion and weakening of main field flux ($\Phi$) caused by armature magnetic field.
 
 * **Core Mechanisms & Effects:**
@@ -365,11 +372,25 @@
 
 ---
 
+### Spatial MMF Waveforms & Saturation
+
+![[Pasted image 20261027141908.jpg|679]]
+
+![[Pasted image 20261027141328.png]]
+
+* Armature MMF is triangular; main field MMF is rectangular.
+* Combined flux density waveform exhibits sharp peak at one pole edge and severe dip at other edge.
+* Iron saturation clips peak $\implies$ net average flux per pole drops.
+
+---
+
 ### Neutralizing Armature Reaction
 
 ![[Pasted image 20261027140456.png|651]]
 
-![[Pasted image 20261027141328.png]]
+![[Pasted image 20260715003637.png]]
+
+![[Pasted image 20261027143726.png]]
 
 1. **Compensating Windings:**
    * Embedded in slots in the **main pole shoes**, connected in **series with the armature**.
@@ -385,7 +406,9 @@
    * Increasing air gap at pole tips increases magnetic reluctance $\implies$ prevents flux crowding.
 
 4. **Brush Shift:**
-   * Shift brushes to match new MNA (only works for one fixed load; introduces direct demagnetizing MMF band $2\theta_m$).
+   * Shift brushes by electrical angle $\theta_m$ to match new MNA (only works for one fixed load).
+   * Generates a direct **demagnetizing band** of $2\theta_m$ conductors that weakens main field flux:
+     $$AT_d = Z I_c \left(\frac{2\theta_m}{360^\circ}\right)$$
 
 ---
 
@@ -393,9 +416,9 @@
 
 ### Commutation Mechanism & The $L di/dt$ Problem
 
-![[Pasted image 20261027141908.jpg|679]]
+![[Pasted image 20261027153722.png|552]]
 
-![[Pasted image 20261027143726.png]]
+![[Pasted image 20261027154818.png|571]]
 
 * **Definition:** Reversal of current in an armature coil from $+I_c \to -I_c$ during the brief time interval ($T_c$) it is short-circuited by a brush.
 * **The $L di/dt$ Reactance Voltage Problem:**
@@ -425,15 +448,15 @@
 
 ---
 
-## 6. Voltage Build-Up in Self-Excited Generators
+## 6. Voltage Build-Up in Self-Excited Generators & OCC
 
-### Physics of Voltage Build-Up
+### Physics of Voltage Build-Up & OCC Curve
+
+![[Pasted image 20261027164333.png|635]]
+
+![[Pasted image 20260715010455.png|700]]
 
 ![[Pasted image 20260715035244.png|646]]
-
-![[Pasted image 20261027153722.png|552]]
-
-![[Pasted image 20261027154818.png|571]]
 
 * **Residual Magnetism ($\Phi_{\text{res}}$):**
   * Hysteresis leaves remnant flux $\implies$ induces seed voltage $E_{\text{res}} \approx 2\text{--}12\text{ V}$ at $I_f = 0$.
@@ -455,6 +478,10 @@
 ---
 
 ### Critical Resistance ($R_c$) & Critical Speed ($N_c$)
+
+![[Pasted image 20260921071012.jpg]]
+
+![[Pasted image 20260921070011.png]]
 
 * **Critical Resistance ($R_c$):**
   * Maximum field resistance at which the generator will build up voltage.
@@ -483,19 +510,47 @@
 
 ## 7. DC Generator Characteristics & Voltage Regulation
 
-### External Characteristics Comparison ($V_t$ vs. $I_L$)
+### Internal vs. External Characteristics
 
-![[Pasted image 20260715010455.png|700]]
+![[Pasted image 20260921072920.jpg]]
 
-![[Pasted image 20260715021010.png]]
+* **Internal Characteristic:** Induced EMF under load ($E_g$ vs. $I_a$).
+  * Drops below OCC due to **armature reaction demagnetization**.
+* **External Characteristic:** Terminal voltage available to load ($V_t$ vs. $I_L$).
+  * Drops below internal characteristic due to **ohmic voltage drop ($I_a R_a$)**.
+
+---
+
+### Shunt Generator Load Characteristics
+
+![[Pasted image 20261027164403.png|636]]
 
 ![[Pasted image 20260715015707.png|627]]
 
-![[Pasted image 20260715021142.png]]
+![[Pasted image 20260921073646.jpg]]
+
+* **Voltage Drops under Load:**
+  1. Armature resistance drop ($I_a R_a$).
+  2. Armature reaction flux weakening.
+  3. Reduction in shunt field current ($I_{sh} = V_t / R_{sh}$) as $V_t$ drops.
+* **Breakdown Characteristic (Knee Point):**
+  * Beyond point $P$ (breakdown point), further load reduction in resistance causes rapid compounding collapse of field current.
+  * Curve folds back to point $Q$ (short-circuit current limited only by residual voltage: $I_{\text{sc}} = E_{\text{res}} / R_a$).
+
+---
+
+### Series Generator Characteristics
 
 ![[Pasted image 20260715021424.png|628]]
 
-![[Pasted image 20260715024155.png]]
+![[Pasted image 20260715025820.png]]
+
+* Since field is in series ($I_{se} = I_a = I_L$), flux increases directly with load current.
+* Curve starts near zero, rises steeply as field strengthens, peaks, then droops past knee due to magnetic saturation and $I_a(R_a + R_{se})$ drops.
+
+---
+
+### Compound Generator Characteristics & Diverter Resistor
 
 ![[Pasted image 20260715024337.png|619]]
 
@@ -503,11 +558,30 @@
 
 ![[Pasted image 20260715024741.png|395]]
 
+![[Pasted image 20261027164643.png]]
+
+![[Pasted image 20261027185116.png]]
+
+* **Cumulative Compounding Degrees:**
+  * **Over-Compound:** $V_{\text{FL}} > V_{\text{NL}}$ (Series MMF dominates, compensates line drops).
+  * **Flat-Compound:** $V_{\text{FL}} = V_{\text{NL}}$ (Constant voltage output).
+  * **Under-Compound:** $V_{\text{FL}} < V_{\text{NL}}$ (Partial compensation).
+* **Differential Compounding:**
+  * Series field opposes shunt field ($F_{\text{net}} = N_F I_F - N_{SE} I_A$).
+  * Terminal voltage collapses rapidly with load $\implies$ ideal for arc welding.
+* **Series Field Diverter Resistor ($R_d$):**
+  * Diverter in parallel with series field diverts excess series current:
+    $$\mathbf{R_d = \frac{I_{se} R_{se}}{I_d}} \quad (I_d = I_a - I_{se})$$
+
+---
+
+### Comparison of All DC Generators
+
+![[Pasted image 20261027165607.png|621]]
+
 ![[Pasted image 20260715025633.png]]
 
 ![[Pasted image 20260715025654.png]]
-
-![[Pasted image 20260715025820.png]]
 
 | Generator Type | External Curve Behavior | Physical Reason |
 | :--- | :--- | :--- |
@@ -519,41 +593,15 @@
 | **Differential Compound**| Plummets steeply to zero | Series flux opposes shunt flux ($\Phi = \Phi_{sh} - \Phi_{se}$) |
 | **Series Generator**| Starts near 0, rises steeply, droops past knee | Field in series ($I_{se} = I_L$); saturates at high load |
 
-* **Why $V_t$ drops even above the knee of OCC:**
-  1. Ohmic drop $I_a R_a$.
-  2. Localized saturation at trailing pole tips reduces net flux per pole ($\Phi$).
-  3. Lower $V_t$ weakens shunt excitation ($I_{sh} \downarrow$).
-
----
-
-### Voltage Regulation & Compounding Control
-
 * **Voltage Regulation Formula:**
   $$\mathbf{\%\,\text{VR} = \frac{V_{\text{NL}} - V_{\text{FL}}}{V_{\text{FL}}} \times 100\%}$$
 
-* **Desirability of Small %VR:**
-  * General power/lighting: Minimum VR ($\approx 0\%$, Flat compound) ideal $\implies$ constant consumer voltage without rheostat adjustments.
-  * **Negative %VR ($V_{\text{FL}} > V_{\text{NL}}$):** Over-compounded generators $\implies$ cancels line resistance drop ($I R_{\text{line}}$) over long transmission feeders.
-  * **High Positive %VR (Steep Collapse):** Differential compound $\implies$ arc welding (limits short-circuit current during electrode contact).
-
-* **Series Field Diverter Resistor ($R_d$):**
-  * Variable resistor in parallel with series field winding to tune compounding level.
-  * **Calculation Steps:**
-    1. Additional MMF required: $\Delta AT = \Delta I_{sh} \times N_{sh}$.
-    2. Required series current: $I_{se} = \frac{\Delta AT}{N_{se}}$.
-    3. Diverter current: $I_d = I_a - I_{se}$.
-    4. Diverter resistance:
-       $$I_d R_d = I_{se} R_{se} \implies \mathbf{R_d = \frac{I_{se} R_{se}}{I_d}}$$
-
----
-
-### Applications Summary of DC Generators
-
-* **Shunt:** Battery charging, ordinary DC lighting, exciter for synchronous alternators.
-* **Series:** Line voltage boosters in DC transmission, constant-current arc lamps.
-* **Cumulative Compound:** Long-distance distribution feeders (Over), industrial loads / commercial plants (Flat).
-* **Differential Compound:** Electric arc welding (inherent current limiter).
-* **Separately Excited:** Testing laboratories, Ward-Leonard wide-range speed drives.
+* **Applications Summary of DC Generators:**
+  * **Shunt:** Battery charging, ordinary DC lighting, exciter for synchronous alternators.
+  * **Series:** Line voltage boosters in DC transmission, constant-current arc lamps.
+  * **Cumulative Compound:** Long-distance distribution feeders (Over), industrial loads / commercial plants (Flat).
+  * **Differential Compound:** Electric arc welding (inherent current limiter).
+  * **Separately Excited:** Testing laboratories, Ward-Leonard wide-range speed drives.
 
 ---
 
@@ -562,8 +610,6 @@
 ### Shunt Generators (Inherently Stable)
 
 ![[Parallel-Operation-of-DC-Shunt-Generator.webp]]
-
-![[Pasted image 20261027185116.png]]
 
 * **Incoming Generator Setting:**
   * Voltage set **$1\text{--}2\text{ V}$ higher** than busbar voltage before closing breaker.
@@ -600,8 +646,6 @@
 
 ### Motor Speed Formula & Control Variables
 
-![[Pasted image 20260921070011.png]]
-
 * **Governing Speed Equation:**
   $$\mathbf{N = \frac{V - I_a R_a}{k_a \Phi} \propto \frac{E_b}{\Phi}\quad (\text{rpm})} \quad \Longleftrightarrow \quad \mathbf{\omega = \frac{V - I_a R_a}{k_a \Phi}\quad (\text{rad/s})}$$
 
@@ -614,14 +658,20 @@
 
 ### Terminal Characteristics Derivations
 
-#### 1. DC Shunt Motor ($\omega$ vs. $\tau_{\text{ind}}$)
+#### 1. DC Shunt Motor ($\omega$ vs. $	au_{	ext{ind}}$)
+
+![[Pasted image 20260729013256.png]]
+
 * Armature KVL: $V_T = E_b + I_a R_a$.
 * Substitute $E_b = k_a \Phi \omega$ and $I_a = \frac{\tau_{\text{ind}}}{k_a \Phi}$:
   $$V_T = k_a \Phi \omega + \left(\frac{\tau_{\text{ind}}}{k_a \Phi}\right) R_a$$
   $$\mathbf{\omega = \frac{V_T}{k_a \Phi} - \frac{R_a}{(k_a \Phi)^2} \tau_{\text{ind}}}$$
 * **Curve:** Linear, slightly drooping straight line (3–5% drop from no-load to full-load $\implies$ practically constant speed).
 
-#### 2. DC Series Motor ($\omega$ vs. $\tau_{\text{ind}}$)
+#### 2. DC Series Motor ($\omega$ vs. $	au_{	ext{ind}}$)
+
+![[Pasted image 20261026154346.png]]
+
 * Armature KVL: $V_T = E_b + I_a (R_a + R_{se})$.
 * Flux proportional to current before saturation: $\Phi = c I_a$.
 * Torque: $\tau_{\text{ind}} = k_a \Phi I_a = k_a c I_a^2 \implies I_a = \sqrt{\frac{\tau_{\text{ind}}}{k_a c}}$.
@@ -634,21 +684,13 @@
 
 ### Motor Operating Characteristics Comparison
 
-![[Pasted image 20260729015156.png]]
-
 ![[Pasted image 20261026134333.png|700]]
-
-![[Pasted image 20260729013256.png]]
-
-![[Pasted image 20261027164333.png|635]]
 
 ![[Pasted image 20260729030609.png]]
 
-![[Pasted image 20261027164403.png|636]]
-
-![[Pasted image 20261027164643.png]]
-
 ![[Pasted image 20261026134258.png]]
+
+![[Pasted image 20260729015156.png]]
 
 | Motor Type | Torque vs. Current ($T\text{-}I_a$) | Speed vs. Current ($N\text{-}I_a$) | Speed vs. Torque ($N\text{-}T$) | Primary Applications |
 | :--- | :--- | :--- | :--- | :--- |
@@ -673,12 +715,6 @@
 
 ### Speed Control Zones & Methods
 
-![[Pasted image 20260921072920.jpg]]
-
-![[Pasted image 20260921073646.jpg]]
-
-![[Pasted image 20261026154346.png]]
-
 * **Base Speed:** Rated operating speed at rated voltage, rated field current, and rated full load.
 
 * **Below Base Speed (Armature Voltage Control):**
@@ -701,7 +737,7 @@
 
 ### Ward-Leonard System & Solid-State Thyristor Control
 
-![[Pasted image 20261027165607.png|621]]
+![[Pasted image 20261026183323.png]]
 
 * **Ward-Leonard Drive:**
   * AC motor drives variable-voltage DC generator; generator feeds main DC motor armature.
@@ -718,8 +754,6 @@
 ---
 
 ### Electric Braking Methods
-
-![[Pasted image 20261026183323.png]]
 
 | Feature | Electric Braking | Mechanical Braking |
 | :--- | :--- | :--- |
@@ -764,48 +798,71 @@
 
 ---
 
-### Starter Types & Schematics
+### 2-Point Starter (For Series Motors)
 
-![[Pasted image 20260729092319.png]]
+![[Pasted image 20261026195752.png]]
 
-![[Pasted image 20260729092231.png|480]]
+![[Pasted image 20260729090917.png]]
+
+* Used exclusively for DC series motors.
+* Armature and series field in series with starting resistor steps.
+* No-load / No-volt release coil protects motor from running away if load drops to zero.
+
+---
+
+### 3-Point Starter (For Shunt & Compound Motors)
 
 ![[Pasted image 20260729083801.jpg]]
 
 ![[Pasted image 20260729084236.png]]
 
-![[Three-Point-Starter.-3-Point-Starter.webp]]
-
-![[Pasted image 20260921071012.jpg]]
-
-![[Pasted image 20261026195752.png]]
-
 ![Circuit Diagram for 3-Point Starter|595](attachments/fig5_1_circuit_3point_starter.png)
 
-![[Pasted image 20260729085814.jpg]]
+![[Three-Point-Starter.-3-Point-Starter.webp]]
 
-![[Pasted image 20260921081553.jpg]]
+* **Terminals:** Line ($L$), Armature ($A$), Field ($F$).
+* **Operation:**
+  * Brass arc directly connects shunt field across supply on step 1 $\implies$ guarantees **100% full field flux** at startup.
+  * Maximum starting torque with safe low starting current.
+* **Critical Drawback of 3-Point Starter:**
+  * **No-Volt Coil (NVC)** is connected in **series with the shunt field winding**.
+  * When applying **field weakening speed control** (above base speed), field rheostat reduces $I_f$.
+  * Weakened current reduces NVC electromagnetic pull below spring tension $\implies$ **handle trips back to OFF unexpectedly**.
+
+---
+
+### 4-Point Starter (Overcoming 3-Point Drawback)
 
 ![[Pasted image 20261026193118.png]]
 
-* **2-Point Starter:** Used exclusively for DC series motors.
-* **3-Point Starter:**
-  * Terminals: Line ($L$), Armature ($A$), Field ($F$).
-  * Shunt field connects to brass arc directly across supply $\implies$ guarantees **100% full field flux** at startup.
-  * Maximum starting torque with low speed.
-  * **Drawback:** **No-Volt Coil (NVC)** is in series with shunt field. Field weakening speed control drops $I_f \implies$ NVC releases handle to OFF!
-* **4-Point Starter:**
-  * Solves 3-point drawback: NVC placed in an **independent 4th branch ($N$)** with a protective series resistor across the line.
-  * NVC current is constant regardless of field rheostat adjustments.
-  * Limitation: Does not trip if field circuit accidentally opens internally.
+![[Pasted image 20260921081553.jpg]]
+
+![[Pasted image 20260729085814.jpg]]
+
+* **Solves 3-Point Drawback:**
+  * NVC is taken out of the field circuit and placed in an **independent 4th circuit branch ($N$)** with a protective current-limiting resistor across the line.
+  * Current through NVC is completely independent of field rheostat adjustments $\implies$ wide-range field weakening speed control without tripping.
+* **Limitation:** Does not provide open-field runaway protection if field circuit accidentally breaks internally.
+
+---
+
+### Automatic Starters
+
+![[Pasted image 20260729092231.png|480]]
+
+![[Pasted image 20260729092319.png]]
+
+1. **Counter-EMF Automatic Starter:**
+   * Relay coils connected across armature sense rising $E_b$.
+   * As motor accelerates, rising $E_b$ pulls in contactors sequentially to short out starting resistance steps.
+2. **Definite-Time Automatic Starter:**
+   * Uses time-delay relays (dashpot or electronic timers) to cut out resistor steps at fixed pre-set time intervals regardless of motor load.
 
 ---
 
 ## 12. Losses, Power Flow & Maximum Efficiency
 
 ### Classification of Losses
-
-![[Copied_Item_1793051120342.png]]
 
 1. **Copper Losses ($I^2R$):**
    * Armature loss: $I_a^2 R_a$ (variable with load, 30–40% total loss).
