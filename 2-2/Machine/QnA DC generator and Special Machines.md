@@ -1082,7 +1082,7 @@ $$I_{se} = \frac{\Delta AT}{N_{se}} = \frac{920}{7.5} = 122.67\text{ A}$$
 
 ***
 
-### 70. Page 10, Q.8(d): A long shunt compound generator has a shunt field winding of 1000 turns/pole and series field winding of 4 turns/pole and resistance of 0.05 $\Omega$. In order to obtain the rated voltage both at no-load and full-load for operation as shunt generator, it is necessary to increase field current by 0.2 A. The full load armature current of compound generator is 80 A. Calculate the driver [diverter] resistance connected in parallel with series field to obtain flat compound operation.
+### 70. ✅Page 10, Q.8(d): A long shunt compound generator has a shunt field winding of 1000 turns/pole and series field winding of 4 turns/pole and resistance of 0.05 $\Omega$. In order to obtain the rated voltage both at no-load and full-load for operation as shunt generator, it is necessary to increase field current by 0.2 A. The full load armature current of compound generator is 80 A. Calculate the driver [diverter] resistance connected in parallel with series field to obtain flat compound operation.
 
 **Given Data:**
 * $N_{sh} = 1000\text{ turns/pole}$
