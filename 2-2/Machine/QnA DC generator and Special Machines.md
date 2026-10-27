@@ -587,8 +587,7 @@ When brushes are advanced by forward angle $\theta_m$ to align with the new MNA:
 
 ### 40. Page 3, Q.31: Draw and explain the no-load (generated emf at no load versus field current) and load (generated emf at on load versus armature current) characteristics of DC shunt, series and compound generators. [Figure Involved]
 
-![[Pasted image 20260715010455.png]]
-
+![[Pasted image 20260715010455.png|700]]
 #### 1. No-Load Magnetization Characteristic ($E_0$ vs. $I_f$)
 * Common to all DC generators when run at constant rated speed with armature open.
 * Starts at a non-zero voltage ($E_{\text{res}}$) due to **residual magnetism**.
@@ -599,7 +598,7 @@ When brushes are advanced by forward angle $\theta_m$ to align with the new MNA:
 
 * **Shunt Generator:**
   ![[Pasted image 20260715021010.png]]
-  ![[Pasted image 20260715015707.png]]
+  ![[Pasted image 20260715015707.png|627]]
   * Voltage drops slightly as load increases due to:
     1. Armature resistance drop ($I_a R_a$).
     2. Armature reaction demagnetization.
@@ -619,8 +618,8 @@ When brushes are advanced by forward angle $\theta_m$ to align with the new MNA:
     * *Flat-compounded:* Full-load voltage = No-load voltage.
     * *Under-compounded:* Full-load voltage < No-load voltage.
   * **Differential Compound:** Series flux opposes shunt flux ($\Phi = \Phi_{sh} - \Phi_{se}$).
-    ![[Pasted image 20260715024213.png]]
-    ![[Pasted image 20260715024741.png]]
+    ![[Pasted image 20260715024213.png|251]]
+    ![[Pasted image 20260715024741.png|395]]
     * Voltage drops drastically as load current increases; acts as a self-limiting constant-current source.
 
 * **Figure involved:** Yes (Curves embedded above).
