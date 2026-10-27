@@ -22,7 +22,7 @@
 ![[Pasted image 20261027134722.jpg|540]]![[Pasted image 20261027135344.png]]
 ![[Pasted image 20261027134931.jpg]]![[Pasted image 20261027141908.jpg|679]]![[Pasted image 20261027141328.png]]
 ![[Pasted image 20261027140456.png|651]]![[Pasted image 20261027143726.png]]
-![[Pasted image 20261027141022.png]]
+![[Pasted image 20261027141022.png|552]]![[Pasted image 20261027153722.png|552]]![[Pasted image 20261027154818.png]]
 #### Core Conceptual Differences
 
 |**Parameter**|**Electric Motor**|**Electric Generator**|

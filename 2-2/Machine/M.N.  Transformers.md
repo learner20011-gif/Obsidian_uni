@@ -213,7 +213,7 @@ $$X_1' = K^2 X_1 \quad \text{and} \quad X_2' = \frac{X_2}{K^2} = a^2 X_2$$
 
 ### Equivalent Circuit Diagrams
 ![[attachments/Pasted image 20261023190508.png]]
-
+![[Pasted image 20261027160131.png]]
 * **Approximate Phasor Model:**
 ![[attachments/Pasted image 20261024014932.png]]
 
