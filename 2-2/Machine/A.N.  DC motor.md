@@ -16,9 +16,13 @@
 ![[Copied_Item_1793051120342.png]]
 
 ![[Introductions-to-DC-Machines20.jpg]]
-
-![[Copied_Item_1793051782353.png]]
-
+![[Pasted image 20261027123925.png]]![[simplex-duplex.webp]]
+![[Copied_Item_1793051782353.png|607]]
+![[Pasted image 20261027122917.jpg|314]]![[Pasted image 20261027124147.png|611]]![[Pasted image 20261027130713.png|622]]![[Armature-Windings-of-DC-Generator-Lap-Wave-pptx-5-2048.webp]]![[Pasted image 20261027124521.png]]
+![[Pasted image 20261027134722.jpg|540]]![[Pasted image 20261027135344.png]]
+![[Pasted image 20261027134931.jpg]]![[Pasted image 20261027141908.jpg|679]]![[Pasted image 20261027141328.png]]
+![[Pasted image 20261027140456.png]]
+![[Pasted image 20261027141022.png]]
 #### Core Conceptual Differences
 
 |**Parameter**|**Electric Motor**|**Electric Generator**|
@@ -272,3 +276,128 @@ $$K = \frac{P \cdot Z}{2\pi \cdot A}$$
 5. **Solve for motor speed ($\omega$):**
     
     $$\omega = \frac{V_T}{\sqrt{Kc}} \frac{1}{\sqrt{\tau_{\text{ind}}}} - \frac{R_A + R_S}{Kc}$$
+
+#### Current Paths in Frog-Leg Winding
+
+- **Formula:**
+    
+
+$$a = 2 P m_{\text{lap}}$$
+
+- **Parameters:**
+    
+    - $a$ = number of parallel current paths
+        
+    - $P$ = number of poles
+        
+    - $m_{\text{lap}}$ = plex of the lap winding
+
+
+
+#### Wave Winding Prerequisite Concepts & Formulas
+
+- **Core Variables:**
+    
+      
+    - $S$ = Number of slots
+        
+          
+        
+    - $P$ = Number of poles
+        
+          
+        
+    - $C$ = Number of coils / commutator segments ($C = S$ for 2 coil sides per slot)
+        
+          
+        
+    - $Z$ = Total number of coil sides / elements ($Z = 2C$)
+        
+          
+        
+    - $m$ = Plex of winding (Simplex = $1$, Duplex = $2$, Triplex = $3$)
+        
+          
+        
+
+#### 1. Slot & Commutator Pitches (Chapman / Kosow Notation)
+
+- **Pole Pitch ($Y_P$):** Distance between adjacent poles in slots.
+    
+      
+    
+
+$$Y_P = \frac{S}{P}$$
+
+- **Coil Span / Back Pitch in Slots ($Y_S$):** Number of slots spanned by one coil (rounded down to an integer for fractional-pitch to save copper and improve commutation).
+    
+      
+    
+
+$$Y_S = \lfloor Y_P \rfloor \quad (\text{nearest integer } \le Y_P)$$
+
+- **Commutator Pitch ($Y_C$):** Distance (in commutator segments) between the two ends of a coil connected to the commutator. **Must be an integer.**
+    
+      
+    
+
+$$Y_C = \frac{2(C \pm m)}{P}$$
+
+$+m$: Progressive winding (moves forward after 1 loop around the armature).
+
+  
+
+$-m$: Retrogressive winding (moves backward after 1 loop).
+
+  
+
+#### 2. Element / Coil-Side Pitches (Standard Winding Rules)
+
+- **Back Pitch ($Y_b$):** Distance (in coil sides) spanned at the back of the armature. **Must be an odd integer** (connects a top odd-numbered side to a bottom even-numbered side).
+    
+      
+    
+
+$$Y_b = 2Y_S + 1 \approx \frac{Z}{P}$$
+
+- **Front Pitch ($Y_f$):** Distance (in coil sides) spanned at the commutator end from the end of one coil to the start of the next. **Must be an odd integer.**
+    
+      
+    
+- **Resultant Pitch ($Y_R$):** Distance (in coil sides) between the beginnings of two consecutive coils in the winding sequence.
+    
+      
+    
+
+$$Y_R = Y_b + Y_f = 2Y_C \quad \text{(for Wave Winding)}$$
+
+_(Note: For Lap Winding, $Y_R = Y_b - Y_f = \pm 2m$)_
+
+  
+
+- **Average Pitch ($Y_{\text{av}}$):** Must equal the commutator pitch ($Y_C$).
+    
+      
+    
+
+$$Y_{\text{av}} = \frac{Y_b + Y_f}{2} = \frac{C \pm m}{P/2} = Y_C$$
+
+#### 3. Parallel Current Paths ($a$)
+
+- **Wave Winding:** $a = 2m$
+    
+      
+    
+- **Lap Winding:** $a = mP$
+    
+      
+    
+- **Frog-Leg Winding:** $a = 2 P m_{\text{lap}}$
+
+
+
+*  Flux ($\Phi$) = $600\text{ kilolines} = 600 \times 10^3 \times 10^{-8}\text{ Wb} = 0.006\text{ Wb}$
+* **Basic relation:**
+    
+
+$$1\text{ line (Maxwell)} = 10^{-8}\text{ Wb}$$

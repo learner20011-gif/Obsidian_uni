@@ -184,7 +184,20 @@ The two standard types of armature windings are **Lap Winding** and **Wave Windi
   * A composite winding combining a **simplex lap winding** and a **multiplex wave winding** in the same armature slots, connected to the same commutator.
   * The wave winding acts as an internal, distributed equalizer network for the lap winding.
   * **Advantage:** Completely eliminates the need for external equalizer rings while retaining high current capacity and sparkless commutation.
+#### Current Paths in Frog-Leg Winding
 
+- **Formula:**
+    
+
+$$a = 2 P m_{\text{lap}}$$
+
+- **Parameters:**
+    
+    - $a$ = number of parallel current paths
+        
+    - $P$ = number of poles
+        
+    - $m_{\text{lap}}$ = plex of the lap winding
 * **Figure involved:** None.
 * **Related Topics:** Mam Slide: 120 | Firoz Note: Page 149 | Rosenblatt: Section 3-16, Pages 28-29 | Theraja Vol II: PDF Page 50
 
@@ -192,7 +205,7 @@ The two standard types of armature windings are **Lap Winding** and **Wave Windi
 
 ### 15. Page 4, Q.39: What are equalizers? Why are they needed on lap-wound machine but not on a wave-wound machine?
 
-* **Equalizer Rings:** Low-resistance copper conductors connecting points in an armature winding that are at equal potential.
+* **Equalizer Rings:** Low-resistance copper conductors connecting points in an armature winding that are intended to be at equal potential.
 * **Why Needed in Lap Winding ($A = P$):**
   * Minor variations in air-gap reluctance, bearing wear, or pole strengths induce unequal EMFs across the parallel paths.
   * This voltage imbalance drives large **circulating currents** through brushes, causing heavy sparking, commutator pitting, and core overheating. Equalizer rings bypass the brushes and equalize potential.
@@ -205,7 +218,7 @@ The two standard types of armature windings are **Lap Winding** and **Wave Windi
 
 ***
 
-### 16. Page 7, Q.4(c): Determine all the pitches for a duplex wave winding that is to be mounted on an armature with 139 slots that is to be installed in a dynamo with 6 poles.
+### 16. ✅Page 7, Q.4(c): Determine all the pitches for a duplex wave winding that is to be mounted on an armature with 139 slots that is to be installed in a dynamo with 6 poles.
 
 **Given Data:**
 * Winding type: Duplex wave winding ($m = 2$)
@@ -395,9 +408,9 @@ $$E = \frac{0.0025 \times 2500 \times 1200}{60} = 0.0025 \times 2500 \times 20 =
 
 ### 27. Page 4, Q.41: How does the armature reaction affect the performance of a dc machine? How do we avoid its effect in a dc machine?
 
-![[Pasted image 20260714231849.png]]
 
-![[Pasted image 20260715002834.png]]
+
+
 
 * **Definition:** The distorting and weakening effect of armature MMF on the main field magnetic flux.
 * **Effects on Performance:**
