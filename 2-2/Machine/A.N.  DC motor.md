@@ -21,7 +21,7 @@
 ![[Pasted image 20261027122917.jpg|314]]![[Pasted image 20261027124147.png|611]]![[Pasted image 20261027130713.png|622]]![[Armature-Windings-of-DC-Generator-Lap-Wave-pptx-5-2048.webp]]![[Pasted image 20261027124521.png]]
 ![[Pasted image 20261027134722.jpg|540]]![[Pasted image 20261027135344.png]]
 ![[Pasted image 20261027134931.jpg]]![[Pasted image 20261027141908.jpg|679]]![[Pasted image 20261027141328.png]]
-![[Pasted image 20261027140456.png]]
+![[Pasted image 20261027140456.png|651]]![[Pasted image 20261027143726.png]]
 ![[Pasted image 20261027141022.png]]
 #### Core Conceptual Differences
 
