@@ -433,11 +433,8 @@ $$E = \frac{0.0025 \times 2500 \times 1200}{60} = 0.0025 \times 2500 \times 20 =
 ![[Pasted image 20260715003637.png]]
 
 When brushes are advanced by forward angle $\theta_m$ to align with the new MNA:
-1. **Armature Conductors Divide into Two Groups:**
-   * **Demagnetizing Conductors:** Contained within a total angle of $2\theta_m$ at both top and bottom axes. Their MMF acts in direct opposition ($180^\circ$) to the main pole field MMF:
-     $$\text{Demagnetizing Ampere-Turns/pole: } AT_d = Z I_c \left(\frac{\theta_m}{360^\circ}\right)$$
-   * **Cross-Magnetizing Conductors:** Contained within $(180^\circ - 2\theta_m)$. Their MMF acts at $90^\circ$ to distort the main field.
-2. **Net Effect on Main Flux:**
+
+1. **Net Effect on Main Flux:**
    * Direct demagnetization occurs, actively reducing the main field flux ($\Phi$).
    * As a result, the generated voltage drops with increased load current.
 
