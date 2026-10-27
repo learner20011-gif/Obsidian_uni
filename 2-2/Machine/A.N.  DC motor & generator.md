@@ -1,6 +1,6 @@
 ![[Pasted image 20261026110057.png]]![[Pasted image 20261027163027.png]]
   ![[Pasted image 20260715021010.png]]
-  ![[Pasted image 20260715021142.png]]![[Pasted image 20260715024155.png]]![[Pasted image 20261027164333.png|635]]![[Pasted image 20260921070011.png]]![[Pasted image 20261027164403.png|636]]![[Pasted image 20260921072920.jpg]]  ![[Pasted image 20260715021424.png|628]]![[Pasted image 20260715024337.png|619]]![[Pasted image 20261027164643.png]]![[Pasted image 20260921073646.jpg]]![[Pasted image 20261027165607.png]]
+  ![[Pasted image 20260715021142.png]]![[Pasted image 20260715024155.png]]![[Pasted image 20261027164333.png|635]]![[Pasted image 20260921070011.png]]![[Pasted image 20261027164403.png|636]]![[Pasted image 20260921072920.jpg]]  ![[Pasted image 20260715021424.png|628]]![[Pasted image 20260715024337.png|619]]![[Pasted image 20261027164643.png]]![[Pasted image 20260921073646.jpg]]![[Pasted image 20261027165607.png|621]]![[Pasted image 20260715035244.png]]
 ![[Pasted image 20261026121217.png]]
 
 ![[Working_Principles_of_a_DC_Motor.webp]]
