@@ -1300,7 +1300,7 @@ $$E_g = V_t + I_a R_a = 250 + (194.167 \times 0.02) = 250 + 3.883 = \mathbf{253.
 * To transfer load from Gen 1 to Gen 2:
   1. Strengthen Gen 2 field rheostat (raises induced EMF $E_{a2}$), increasing its share of load current.
   2. Simultaneously weaken Gen 1 field rheostat (lowers $E_{a1}$), decreasing its current.
-  3. Maintain constant busbar voltage throughout the adjustment.
+  3. **Maintain constant busbar voltage** throughout the adjustment.
   4. Continue until Gen 1 delivers zero current, then safely open CB1 to remove Gen 1 from service.
 
 * **Figure involved:** None.
