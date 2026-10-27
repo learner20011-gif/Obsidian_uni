@@ -402,3 +402,22 @@ $$Y_{\text{av}} = \frac{Y_b + Y_f}{2} = \frac{C \pm m}{P/2} = Y_C$$
     
 
 $$1\text{ line (Maxwell)} = 10^{-8}\text{ Wb}$$
+
+#### Leading vs. Trailing Pole Tips
+
+- **Definitions (based on rotation direction):**
+    
+    - **Leading Pole Tip:** The edge of the pole shoe that an armature conductor **enters or meets first** as it rotates.
+        
+    - **Trailing Pole Tip:** The edge of the pole shoe that the conductor **leaves last** as it passes by.
+        
+
+#### What Happens in a DC Generator vs. DC Motor
+
+- **In a DC Generator:**
+    
+    - Armature flux aids main flux at the **trailing tip** $\rightarrow$ Trailing tip becomes **saturated** (cannot gain much extra flux).
+        
+    - Armature flux opposes main flux at the **leading tip** $\rightarrow$ Leading tip is heavily **weakened / demagnetized**.
+        
+    - **Net Effect:** Flux lost at the leading tip $>$ Flux gained at the saturated trailing tip $\implies$ **Net flux per pole ($\Phi$) drops**, lowering induced voltage ($E_A$).
