@@ -658,7 +658,7 @@
 
 ### Terminal Characteristics Derivations
 
-#### 1. DC Shunt Motor ($\omega$ vs. $	au_{	ext{ind}}$)
+#### 1. DC Shunt Motor ($\omega$ vs. $au_{	ext{ind}}$)
 
 ![[Pasted image 20260729013256.png]]
 
