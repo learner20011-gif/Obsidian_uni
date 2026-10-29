@@ -1,6 +1,3 @@
-# QnA: Sub-System Design Processes, Layout and Computational Element
-
----
 
 ### **Problems in Large VLSI Systems**
 
@@ -90,33 +87,46 @@
 
 #### 5., 7., 8., 9., 10., 11., 12., 13., 14. & 15. "Design/draw a 4-bit and 4x4 barrel shifter... Why barrel shifter is preferred over crossbar switch?" (Pages 3, 5, 10, 12, 19, 23, 27, 28)
 
+![[attachments/Pasted image 20261029170637.png]]
+
 **Answer:**
 - **Operating Principle of 4x4 Barrel Shifter:**
-  - Consists of a 2D cross-bar array of 4 horizontal input lines ($In_0 - In_3$) and 4 vertical output lines ($Out_0 - Out_3$).
+  - Consists of a 2D cross-bar matrix of 4 horizontal input data lines ($In_3, In_2, In_1, In_0$) and 4 vertical output data lines ($Out_3, Out_2, Out_1, Out_0$).
   - At diagonal grid crossings, single MOS pass-transistors connect inputs to outputs.
-  - Four shift control lines ($S_0, S_1, S_2, S_3$) run diagonally.
-  - **Only one shift line is activated HIGH at any time:**
-    - $S_0 = 1 \implies$ Zero shift (Output = Input).
-    - $S_1 = 1 \implies$ Shift left by 1 bit (rotate).
-    - $S_2 = 1 \implies$ Shift left by 2 bits.
-    - $S_3 = 1 \implies$ Shift left by 3 bits.
-- **Key Examples:**
-  - *Example 1: Initial bits 0110, Shifted bits 1001:*
-    - Initial: $(I_3, I_2, I_1, I_0) = 0110$.
-    - Shifted: $(O_3, O_2, O_1, O_0) = 1001$.
-    - This is a 1-bit rotate left: $S_1$ is activated.
-  - *Example 2: Input ACDB $\to$ Output BACD:*
-    - Rotate right by 1 (or rotate left by 3 bits): $S_3$ is activated.
-  - *Example 3: 2-bit left shift:*
-    - Activate line $S_2$: $Out_0 \gets In_2$, $Out_1 \gets In_3$, $Out_2 \gets In_0$, $Out_3 \gets In_1$.
+  - Four shift control lines ($sh_0, sh_1, sh_2, sh_3$) run diagonally.
+  - **Only one shift control line is activated HIGH at any given time ($O(1)$ single-transistor propagation delay):**
+    - $sh_0 = 1 \implies$ Zero shift (Output = Input): $Out_i = In_i$.
+    - $sh_1 = 1 \implies$ 1-bit circular shift: $Out_3 \gets In_2,\; Out_2 \gets In_1,\; Out_1 \gets In_0,\; Out_0 \gets In_3$.
+    - $sh_2 = 1 \implies$ 2-bit circular shift: $Out_3 \gets In_1,\; Out_2 \gets In_0,\; Out_1 \gets In_3,\; Out_0 \gets In_2$.
+    - $sh_3 = 1 \implies$ 3-bit circular shift (or 1-bit right circular shift): $Out_3 \gets In_0,\; Out_2 \gets In_3,\; Out_1 \gets In_2,\; Out_0 \gets In_1$.
+
+- **Exam-Specific Case Solutions:**
+  1. **Case: Initial Bits `0110`, Shifted Bits `1001` (Page 5, Q.5(b) - Figure Involved):**
+     - Initial bit vector: $(In_3, In_2, In_1, In_0) = (0, 1, 1, 0)$.
+     - Desired shifted vector: $(Out_3, Out_2, Out_1, Out_0) = (1, 0, 0, 1)$.
+     - Mapping analysis:
+       $$Out_3 = 1 = In_1, \quad Out_2 = 0 = In_0, \quad Out_1 = 0 = In_3, \quad Out_0 = 1 = In_2$$
+     - This is a **2-bit circular shift (rotate by 2 bits)**:
+       $$\mathbf{sh_2 = 1 \quad (\text{with } sh_0 = sh_1 = sh_3 = 0)}$$
+  2. **Case: Initial Bits `1101`, Shifted Bits `0111` (Page 27, CT-03, Q.3):**
+     - Initial: $(In_3, In_2, In_1, In_0) = (1, 1, 0, 1)$.
+     - Desired shifted vector: $(Out_3, Out_2, Out_1, Out_0) = (0, 1, 1, 1)$.
+     - Mapping: $Out_3 = In_1 (0)$, $Out_2 = In_0 (1)$, $Out_1 = In_3 (1)$, $Out_0 = In_2 (1)$.
+     - This is identically obtained by activating **$sh_2 = 1$**.
+  3. **Case: Input `ACDB` $\to$ Output `BACD` (Page 28, CT-03, Q.1):**
+     - Input: $(In_3, In_2, In_1, In_0) = (A, C, D, B)$.
+     - Output: $(Out_3, Out_2, Out_1, Out_0) = (B, A, C, D)$.
+     - Mapping: $Out_3 = In_0 (B)$, $Out_2 = In_3 (A)$, $Out_1 = In_2 (C)$, $Out_0 = In_1 (D)$.
+     - This is a 1-bit circular right shift (or 3-bit circular left shift): activated by **$sh_3 = 1$** (or $sh_1$ right-shift line).
+
 - **Why Barrel Shifter is Preferred Over Crossbar Switch:**
 
 | Metric | Crossbar Switch | Barrel Shifter |
 | :--- | :--- | :--- |
-| **Switch Count** | $N^2$ switches | $N \times N$ matrix but only $N$ lines active |
-| **Propagation Delay** | Multi-stage delay ($O(N)$ or $O(N^2)$) | **Single transistor delay ($O(1)$)** |
-| **Control Complexity** | Requires $N^2$ separate control lines | Requires only $N$ decoded shift lines |
-| **Layout Regularity** | Low, irregular cross-wiring | Extremely high, compact repetitive cell |
+| **Switch Count** | $N^2$ switches | $N \times N$ matrix with only $N$ pass switches active |
+| **Propagation Delay** | Multi-stage cascading delay ($O(N)$ or $O(N^2)$) | **Single MOS transistor delay ($O(1)$)** |
+| **Control Complexity** | Requires $N^2$ independent control lines | Requires only $N$ decoded shift control lines |
+| **Layout Regularity** | Low, irregular cross-wiring | Extremely high, compact standard repetitive cell |
 
 ---
 
@@ -232,6 +242,8 @@
 
 #### 50., 51., 52. & 53. "If max carrier drift velocity is $1 \times 10^7$ cm/s and depletion width is $10^{-1}\,\mu$m. Calculate transit time ($\tau$) and mobility. Inverter pair delay." (Pages 2, 16, 27)
 
+![[attachments/Pasted image 20261029165902.png]]
+
 **Answer:**
 1. **Transit Time ($\tau$) Calculation:**
    - Formula:
@@ -244,12 +256,17 @@
 
 2. **Mobility ($\mu$) Per Unit Electric Field:**
    - Velocity $v_d = \mu E \implies \mu = \frac{v_d}{E}$.
-   - Electric field $E = \frac{V}{L}$. Mobility $\mu$ per unit electric field is $\frac{v_d}{E^2}$ or effective mobility $\mu = \frac{v_d}{E}$.
+   - Electric field $E = \frac{V}{L}$. Effective mobility $\mu = \frac{v_d}{E}$.
 
-3. **Pair Delay in Terms of $\tau$:**
-   - For an nMOS inverter pair with 4:1 pull-up/pull-down ratio:
-     $$\tau_{pair} = (1 + 4)\tau = 5\tau$$
-   - If $\tau = 0.1\text{ ns}$, $\tau_{pair} = 0.5\text{ ns}$.
+3. **Inverter Pair Delay Calculation (Page 16, Q.3(a) & Q.4(b) - from Figure):**
+   - Transistor dimensions:
+     - Pull-up transistors: $L:W = 1:1 \implies R_{pu} = 1\,R_s$
+     - Pull-down transistors: $L:W = 1:4 \implies R_{pd} = 0.25\,R_s$; Gate capacitance $C_g = 4\Box C_g$.
+   - Inter-stage load capacitance: $C_{out1} = 4\Box C_g$ (gate of Stage 2 pull-down), and load $C_{out2} = 4\Box C_g$.
+   - **Pair Delay:**
+     $$\tau_{pair} = \tau_{pd1} + \tau_{pu2} = (0.25\,R_s \times 4\Box C_g) + (1\,R_s \times 4\Box C_g) = 1\tau + 4\tau = \mathbf{5\tau}$$
+   - With textbook standard transit time $\tau = 0.1\text{ ns}$:
+     $$\tau_{pair} = 5 \times 0.1\text{ ns} = \mathbf{0.5\text{ ns}}$$
 
 ---
 

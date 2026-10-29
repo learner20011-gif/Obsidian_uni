@@ -282,19 +282,90 @@ end dataflow;
 ### **FPGA (Field Programmable Gate Array)**
 
 ![[attachments/fpga_architecture.png]]
+![[attachments/fpga_2x2_config.png]]
 
-#### 24. & 25. "Determine the configuration bits of the following circuit. Assume, you have a 2×2 FPGA. / Determine the configuration bits in Fig.8.3 with I/O constraints." (Page 3, Q.8(a); Page 5, Q.8(c))
+#### 24. "Determine the configuration bits of the following circuit. Assume, you have a 2×2 FPGA. [figure Involved]" (Page 3, Q.8(a))
+
+![[attachments/Pasted image 20261029171103.png]]
 
 **Answer:**
-- **Configuration Bits in an FPGA:**
-  1. **LUT Truth Table Bits:** For a $k$-input Look-Up Table (LUT), $2^k$ SRAM configuration bits store the output column of the truth table.
-     - *Example:* A 2-input LUT implementing $Y = A \cdot B$ has configuration bits `0, 0, 0, 1` (stored in SRAM cells 00, 01, 10, 11).
-  2. **Interconnect Switch Matrix Bits:** SRAM pass-transistors or multiplexer select bits programmed to connect vertical routing channels to horizontal channels.
-  3. **I/O Block (IOB) Bits:** Programmed to configure pad direction (Input, Output, or Tristate) and drive strength.
-- **2x2 FPGA Programming Method:**
-  - Identify the target logic function for each of the 4 Configurable Logic Blocks (CLBs).
-  - Fill the 4-bit truth table entries for each CLB's 2-input LUT.
-  - Set switch box pass-transistor bits (1 = closed switch, 0 = open) to route inputs from chip boundary pins to CLB inputs, and CLB outputs to designated output pins.
+- **Circuit Analysis:**
+  - **Stage 1 (Upper Branch):** 2-input XNOR gate (inputs $A, B$) followed by a D Flip-Flop clocked by `CLK`.
+    $$Q_1 = \text{DFF}(\overline{A \oplus B})$$
+  - **Stage 2 (Lower Branch):** 2-input XOR gate (inputs $C, D$) without flip-flop (pure combinational).
+    $$X_2 = C \oplus D$$
+  - **Stage 3 (Output):** 2-input AND gate taking $Q_1$ and $X_2$, followed by a D Flip-Flop clocked by `CLK`.
+    $$\text{Output} = \text{DFF}(Q_1 \cdot X_2) = \text{DFF}\Big(\text{DFF}(\overline{A \oplus B}) \cdot (C \oplus D)\Big)$$
+
+- **CLB Model Structure:**
+  - In a standard $2 \times 2$ FPGA architecture, each Configurable Logic Block (CLB) comprises:
+    1. A **2-input Look-Up Table (LUT)** configured by 4 SRAM bits $[m_0, m_1, m_2, m_3]$ for input combinations `(00, 01, 10, 11)`.
+    2. A **D Flip-Flop (D-FF)** for sequential operations.
+    3. A **2:1 Output MUX** controlled by 1 bit $M$:
+       - $M = 0 \implies$ Combinational output (LUT output bypasses D-FF).
+       - $M = 1 \implies$ Registered output ($Q$ of D-FF selected).
+
+- **Mapping into 2x2 FPGA & Configuration Bits:**
+
+| CLB Block | Inputs | Implemented Logic | LUT Truth Table `(00, 01, 10, 11)` | LUT Bits $[m_0 m_1 m_2 m_3]$ | MUX Bit ($M$) | Total Bits |
+| :--- | :---: | :--- | :---: | :---: | :---: | :---: |
+| **$\text{CLB}_{00}$ (Top-Left)** | $A, B$ | $A \text{ XNOR } B + \text{D-FF}$ | $1, 0, 0, 1$ | **`1 0 0 1`** | **`1`** (Registered) | `1001 1` |
+| **$\text{CLB}_{10}$ (Bottom-Left)** | $C, D$ | $C \text{ XOR } D$ (Comb) | $0, 1, 1, 0$ | **`0 1 1 0`** | **`0`** (Bypass) | `0110 0` |
+| **$\text{CLB}_{01}$ (Top-Right)** | $Q_1, X_2$ | $Q_1 \cdot X_2 + \text{D-FF}$ | $0, 0, 0, 1$ | **`0 0 0 1`** | **`1`** (Registered) | `0001 1` |
+| **$\text{CLB}_{11}$ (Bottom-Right)**| — | Unused | $0, 0, 0, 0$ | **`0 0 0 0`** | **`0`** | `0000 0` |
+
+- **IOB and Routing Bits:**
+  - IOBs at perimeter: Inputs $A, B, C, D$ and `CLK` configured as Input buffers ($0$); `Output` configured as Output buffer ($1$).
+  - Switch boxes (SBs) programmed to route $A, B \to \text{CLB}_{00}$, $C, D \to \text{CLB}_{10}$, and route $\text{CLB}_{00}, \text{CLB}_{10}$ outputs to $\text{CLB}_{01}$.
+
+---
+
+#### 25. "Determine the configuration bits in Fig.8.3 in a 2×2 FPGA with I/O constrains as shown. Assume 2-input LUTs in each CLB. [figure Involved]" (Page 5, Q.8(c))
+
+![[attachments/Pasted image 20261029171050.png]]
+
+**Answer:**
+- **Circuit Analysis (Fig. 8.3):**
+  - **Stage 1:** 2-input AND gate receiving `Input 1` and `Input 2`, driving a D Flip-Flop:
+    $$Q_1 = \text{DFF}(\text{Input 1} \cdot \text{Input 2})$$
+  - **Stage 2:** 2-input XOR gate receiving $Q_1$ and `Input 3`, driving the final combinational `Output`:
+    $$\text{Output} = Q_1 \oplus \text{Input 3} = \text{DFF}(\text{Input 1} \cdot \text{Input 2}) \oplus \text{Input 3}$$
+
+- **I/O Constraints & Placement Mapping:**
+  - As constrained by Fig. 8.3:
+    - `Input 1` and `Input 2` enter on the top-left boundary $\implies$ connect directly to **$\text{CLB}_{00}$** (Top-Left).
+    - `Input 3` enters on the bottom-left boundary $\implies$ routes via horizontal channel to **$\text{CLB}_{01}$** (Top-Right).
+    - `Output` exits at the right boundary $\implies$ driven by **$\text{CLB}_{01}$**.
+
+- **CLB Configuration Bits Determination:**
+
+1. **$\text{CLB}_{00}$ (Top-Left CLB):**
+   - **Inputs:** `Input 1`, `Input 2`.
+   - **LUT Function:** AND logic: $f_1 = \text{In}_1 \cdot \text{In}_2$.
+     - `(0, 0) -> 0`, `(0, 1) -> 0`, `(1, 0) -> 0`, `(1, 1) -> 1`.
+     - **LUT Configuration Bits:** **`0 0 0 1`**
+   - **Output MUX Select Bit:** Must select the registered output of the D Flip-Flop:
+     - **MUX Bit:** **`1`** (Registered D-FF path)
+
+2. **$\text{CLB}_{01}$ (Top-Right CLB):**
+   - **Inputs:** $Q_1$ (from $\text{CLB}_{00}$) and `Input 3`.
+   - **LUT Function:** XOR logic: $f_2 = Q_1 \oplus \text{Input 3}$.
+     - `(0, 0) -> 0`, `(0, 1) -> 1`, `(1, 0) -> 1`, `(1, 1) -> 0`.
+     - **LUT Configuration Bits:** **`0 1 1 0`**
+   - **Output MUX Select Bit:** Final output is combinational (no flip-flop):
+     - **MUX Bit:** **`0`** (Bypass D-FF path)
+
+3. **$\text{CLB}_{10}$ and $\text{CLB}_{11}$ (Bottom Row CLBs):**
+   - Unused for logic processing:
+     - **LUT Configuration Bits:** **`0 0 0 0`**
+     - **MUX Bit:** **`0`**
+   - *(Note: If `Input 3` is routed through $\text{CLB}_{10}$ configured as a feed-through buffer for $In_3$, its LUT bits would be `1 0 1 0` with MUX bit `0`.)*
+
+- **Summary of Configuration Bits for 2x2 FPGA (Fig. 8.3):**
+  - **$\text{CLB}_{00}$ (AND + D-FF):** `[0, 0, 0, 1]` | `MUX = 1`
+  - **$\text{CLB}_{01}$ (XOR Comb):** `[0, 1, 1, 0]` | `MUX = 0`
+  - **$\text{CLB}_{10}$ (Unused / Channel):** `[0, 0, 0, 0]` | `MUX = 0`
+  - **$\text{CLB}_{11}$ (Unused):** `[0, 0, 0, 0]` | `MUX = 0`
 
 ---
 
