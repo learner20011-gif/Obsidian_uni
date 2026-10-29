@@ -8,7 +8,7 @@
 4. "Draw the two bus and three bus basic structures with necessary explanations." (Page 6, Q.4(c))
 
 ### **4-bit shifter design**
-5. "Design a 4-bit barrel shifter for the below case: Initials bits 0110, Shifted bits 1001. Why barrel shifter is preferred over crossbar switch? [figure Involved]" (Page 5, Q.5(b))
+5. "Design a 4-bit barrel shifter for the below case: Initials bits 0110, Shifted bits 1001. ![[Pasted image 20261029170637.png]]Why barrel shifter is preferred over crossbar switch? [figure Involved]" (Page 5, Q.5(b))
 6. "Briefly describe the design of a 4-bit shifter." (Page 10, Q.7(b))
 
 ### **4x4 barrel shifter**

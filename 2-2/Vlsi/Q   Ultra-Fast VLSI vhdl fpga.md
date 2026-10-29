@@ -39,6 +39,6 @@ Based on the provided document, here are the full-text questions related to your
 ### **FPGA**
 
 **Internal architecture, Programming languages & Applications**
-24. "Determine the configuration bits of the following circuit. Assume, you have a 2×2 FPGA. [figure Involved]" (Page 3, Q.8(a))
-25. "Determine the configuration bits in Fig.8.3 in a 2×2 FPGA with I/O constrains as shown. Assume 2-input LUTs in each CLB. [figure Involved]" (Page 5, Q.8(c))
+24. "Determine the configuration bits of the following circuit. Assume, you have a 2×2 FPGA.![[Pasted image 20261029171103.png]] [figure Involved]" (Page 3, Q.8(a))
+25. "Determine the configuration bits in Fig.8.3 in a 2×2 FPGA with I/O constrains as shown. Assume 2-input LUTs in each CLB. ![[Pasted image 20261029171050.png]][figure Involved]" (Page 5, Q.8(c))
 26. "What is FPGA? Draw and explain the basic structure of FPGA." (Page 13, Q.8(a))
