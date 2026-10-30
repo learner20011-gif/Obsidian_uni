@@ -4,7 +4,7 @@
 ![[Pasted image 20261030181357.png]]
 ![[This circuit is a pass-transistor Full Adder.png]]
 ![[Pasted image 20261030202149.png|661]]
-
+![[Pasted image 20261030204115.png]]
 
 
 #### 1. Requirements for a 4-Bit Shifter
@@ -185,3 +185,61 @@ $$-B = \overline{B} + 1$$
     
 
 $$Sum = A + \overline{B} + C_{in} = A + \overline{B} + 1 = A - B$$
+
+
+#### **Figure 8.12 shows how a 4-bit adder is modified into a complete 4-bit Arithmetic Logic Unit (ALU)** using simple switches instead of building separate logic circuits.
+
+  
+
+- **4 Adder Elements:**
+    
+      
+    - Four 1-bit full-adder blocks are stacked together, one for each bit position ($0$ to $3$).
+        
+          
+        
+- **Input Conditioning on $B$:**
+    
+      
+    - Each $B$ input passes through an inverter with a switch.
+        
+          
+        
+    - This allows the circuit to feed either the original bit $B$ (for addition and logic) or the inverted bit $\overline{B}$ (for two's complement subtraction).
+        
+          
+        
+- **Carry-Line Switching:**
+    
+      
+    - Switches are placed along the carry path between the adder blocks.
+        
+          
+        
+    - **In Arithmetic Mode:** The switches connect the carry lines together, letting carries ripple from one stage to the next for normal multi-bit addition or subtraction.
+        
+          
+        
+    - **In Logic Mode:** The switches isolate the carry lines and force them to fixed values ($0$ or $1$) so that each cell independently computes logic functions.
+        
+          
+        
+- **Output Selection Switches:**
+    
+      
+    - Switches on the outputs allow the ALU to pick either the sum line ($S_k$) or the carry line ($C_k$) as the final result bit:
+        
+          
+        - **Sum Output ($S_k$):** Delivers Addition, Subtraction, **XOR** (when carry is held at $0$), or **XNOR** (when carry is held at $1$).
+            
+              
+            
+        - **Carry Output ($C_k$):** Delivers **AND** (when carry is held at $0$) or **OR** (when carry is held at $1$).
+    - **Arithmetic Reason ($A - B$):**
+    
+    - Subtraction is defined in hardware as $A - B$.
+        
+    - In two's complement arithmetic:
+        
+
+$$A - B = A + \overline{B} + 1$$
