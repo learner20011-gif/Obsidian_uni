@@ -5,8 +5,8 @@
 ![[This circuit is a pass-transistor Full Adder.png]]
 ![[Pasted image 20261030202149.png|661]]
 ![[Pasted image 20261030204115.png]]
-
-
+![[Pasted image 20261030215042.png]]
+![[Pasted image 20261030215823.png]]
 #### 1. Requirements for a 4-Bit Shifter
 
 - **Purpose:** Shifts data left or right by 0 to 3 places, often wrapping around from one end to the other.
