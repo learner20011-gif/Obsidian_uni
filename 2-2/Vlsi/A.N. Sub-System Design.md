@@ -70,3 +70,4 @@
 $$\text{Regularity} = \frac{\text{Total number of transistors on chip}}{\text{Number of transistor circuits designed in detail}}$$
 
 - **Example:** In a $4 \times 4$ barrel shifter, there are 16 transistors made by repeating just 1 basic cell design, giving a regularity of $\frac{16}{1} = 16$.
+
