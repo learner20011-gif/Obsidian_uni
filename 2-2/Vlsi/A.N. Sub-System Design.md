@@ -71,3 +71,113 @@ $$\text{Regularity} = \frac{\text{Total number of transistors on chip}}{\text{Nu
 
 - **Example:** In a $4 \times 4$ barrel shifter, there are 16 transistors made by repeating just 1 basic cell design, giving a regularity of $\frac{16}{1} = 16$.
 
+#### 1. XOR Operation
+
+- **Full Adder Sum:**
+    
+      
+    
+
+$$Sum = A \oplus B \oplus C_{in} \text{[cite: 5]}$$
+
+- **Evaluation with $C_{in} = 0$:**
+    
+      
+    
+
+$$Sum = A \oplus B \oplus 0 = A \oplus B$$
+
+#### 2. XNOR Operation
+
+- **Full Adder Sum:**
+    
+      
+    
+
+$$Sum = A \oplus B \oplus C_{in} \text{[cite: 5]}$$
+
+- **Evaluation with $C_{in} = 1$:**
+    
+      
+    
+
+$$Sum = A \oplus B \oplus 1 = (A \oplus B) \cdot 0 + \overline{(A \oplus B)} \cdot 1 = \overline{A \oplus B}$$
+
+#### 3. AND Operation
+
+- **Full Adder Carry-Out:**
+    
+      
+    
+
+$$C_{out} = A \cdot B + C_{in} \cdot (A \oplus B) \text{[cite: 5, 6]}$$
+
+- **Evaluation with $C_{in} = 0$:**
+    
+      
+    
+
+$$C_{out} = A \cdot B + 0 \cdot (A \oplus B) = A \cdot B$$
+
+#### 4. OR Operation
+
+- **Full Adder Carry-Out:**
+    
+      
+    
+
+$$C_{out} = A \cdot B + C_{in} \cdot (A \oplus B) \text{[cite: 5, 6]}$$
+
+- **Evaluation with $C_{in} = 1$:**
+    
+      
+    
+
+$$C_{out} = A \cdot B + 1 \cdot (A \oplus B)$$
+
+$$C_{out} = A B + (A \overline{B} + \overline{A} B)$$
+
+$$C_{out} = A(B + \overline{B}) + \overline{A} B = A + \overline{A} B = A + B$$
+
+#### 5. Binary Addition
+
+- **Condition:** Set $C_{in} = 0$ with operands $A$ and $B$.
+    
+      
+    
+- **Equations for bit $k$:**
+    
+      
+    
+
+$$S_k = A_k \oplus B_k \oplus C_{k-1} \text{[cite: 5]}$$
+
+$$C_k = A_k B_k + C_{k-1}(A_k \oplus B_k) \text{[cite: 5, 6]}$$
+
+- **Result:**
+    
+      
+    
+
+$$\text{Result} = A + B$$
+
+#### 6. Binary Subtraction (Two's Complement)
+
+- **Identity:** Subtracting $B$ is equivalent to adding its two's complement:
+    
+      
+    
+
+$$A - B = A + (-B)$$
+
+- **Two's Complement Formulation:**
+    
+      
+    
+
+$$-B = \overline{B} + 1$$
+
+- **Hardware Mapping:** Invert input $B$ to obtain $\overline{B}$, and set initial carry-in $C_{in} = 1$:
+    
+
+$$Sum = A + \overline{B} + C_{in} = A + \overline{B} + 1 = A - B$$
