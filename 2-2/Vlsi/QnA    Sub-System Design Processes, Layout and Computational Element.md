@@ -83,7 +83,7 @@
 
 ### **4-Bit Shifter & 4x4 Barrel Shifter**
 
-![[attachments/barrel_shifter_4x4.png]]
+
 
 #### 5., 7., 8., 9., 10., 11., 12., 13., 14. & 15. "Design/draw a 4-bit and 4x4 barrel shifter... Why barrel shifter is preferred over crossbar switch?" (Pages 3, 5, 10, 12, 19, 23, 27, 28)
 
@@ -93,7 +93,7 @@
 - **Operating Principle of 4x4 Barrel Shifter:**
   - Consists of a 2D cross-bar matrix of 4 horizontal input data lines ($In_3, In_2, In_1, In_0$) and 4 vertical output data lines ($Out_3, Out_2, Out_1, Out_0$).
   - At diagonal grid crossings, single MOS pass-transistors connect inputs to outputs.
-  - Four shift control lines ($sh_0, sh_1, sh_2, sh_3$) run diagonally.
+  - Four shift control lines ($sh_0, sh_1, sh_2, sh_3$) 
   - **Only one shift control line is activated HIGH at any given time ($O(1)$ single-transistor propagation delay):**
     - $sh_0 = 1 \implies$ Zero shift (Output = Input): $Out_i = In_i$.
     - $sh_1 = 1 \implies$ 1-bit circular shift: $Out_3 \gets In_2,\; Out_2 \gets In_1,\; Out_1 \gets In_0,\; Out_0 \gets In_3$.
@@ -121,12 +121,12 @@
 
 - **Why Barrel Shifter is Preferred Over Crossbar Switch:**
 
-| Metric | Crossbar Switch | Barrel Shifter |
-| :--- | :--- | :--- |
-| **Switch Count** | $N^2$ switches | $N \times N$ matrix with only $N$ pass switches active |
-| **Propagation Delay** | Multi-stage cascading delay ($O(N)$ or $O(N^2)$) | **Single MOS transistor delay ($O(1)$)** |
-| **Control Complexity** | Requires $N^2$ independent control lines | Requires only $N$ decoded shift control lines |
-| **Layout Regularity** | Low, irregular cross-wiring | Extremely high, compact standard repetitive cell |
+| Metric                 | Crossbar Switch                                  | Barrel Shifter                                         |
+| :--------------------- | :----------------------------------------------- | :----------------------------------------------------- |
+| **Switch Count**       | $N^2$ switches                                   | $N \times N$ matrix with only $N$ pass switches active |
+| **Propagation Delay**  | Multi-stage cascading delay ($O(N)$ or $O(N^2)$) | **Single MOS transistor delay ($O(1)$)**               |
+| **Control Complexity** | Requires $N^2$ independent control lines         | Requires only $N$ decoded shift control lines          |
+| **Layout Regularity**  | Low, irregular cross-wiring                      | Extremely high, compact standard repetitive cell       |
 
 ---
 
