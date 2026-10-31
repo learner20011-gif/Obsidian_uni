@@ -6,7 +6,7 @@
 ![[Pasted image 20261030202149.png|661]]
 ![[Pasted image 20261030204115.png]]
 ![[Pasted image 20261030215042.png]]
-![[Pasted image 20261030215823.png|626]]![[Pasted image 20261030222543.png|641]]![[Pasted image 20261031002811.png|642]]![[Pasted image 20261031010923.png|537]]![[Pasted image 20261031013206.png|605]]![[Pasted image 20261031123708.png|650]]![[Pasted image 20261031132224.png|599]]![[Pasted image 20261031132238.png|634]]![[Pasted image 20261031132423.png|471]]![[Pasted image 20261031181349.png|521]]![[Pasted image 20261031181402.png|516]]![[Pasted image 20261031181842.png|506]]![[Pasted image 20261031182128.png|522]]![[Pasted image 20261031182200.png]]
+![[Pasted image 20261030215823.png|626]]![[Pasted image 20261030222543.png|641]]![[Pasted image 20261031002811.png|642]]![[Pasted image 20261031010923.png|537]]![[Pasted image 20261031013206.png|605]]![[Pasted image 20261031123708.png|650]]![[Pasted image 20261031132224.png|599]]![[Pasted image 20261031132238.png|634]]![[Pasted image 20261031132423.png|471]]![[Pasted image 20261031181349.png|521]]![[Pasted image 20261031181402.png|516]]![[Pasted image 20261031181842.png|506]]![[Pasted image 20261031182128.png|522]]![[Pasted image 20261031182200.png|520]]![[Pasted image 20261031190946.png|486]]![[Pasted image 20261031191126.png|491]]![[Pasted image 20261031191221.png|492]]
 #### 1. Requirements for a 4-Bit Shifter
 
 - **Purpose:** Shifts data left or right by 0 to 3 places, often wrapping around from one end to the other.
@@ -313,3 +313,50 @@ $C_i = D_i = 0$: Indicates both bits are equal ($A = B$).
   
 
 - **Priority logic:** If an earlier stage already found an inequality ($C_{i+1} = 1$ or $D_{i+1} = 1$), that result carries straight through; current bits are only evaluated if all higher bits were equal.
+
+#### 3-Transistor (3T) Dynamic RAM Cell
+
+- **Circuit Structure:** Uses three transistors: $T_1$ for writing, $T_2$ for storing the charge on its gate capacitance, and $T_3$ for reading.
+    
+- **Write Operation:**
+    
+    - **Writing '1':** Set the Write Line to high; $T_1$ turns on and transfers a high voltage to charge the gate of $T_2$.
+        
+    - **Writing '0':** Set the Write Line to high with low input data; $T_1$ drains the stored charge from $T_2$'s gate to ground.
+        
+- **Read Operation:**
+    
+    - The read bit-line is first precharged high.
+        
+    - Setting the Read Line to high turns on $T_3$.
+        
+    - If a '1' was stored, $T_2$ is conductive and pulls the bit-line low (giving an inverted output). If a '0' was stored, $T_2$ stays off and the bit-line remains high.
+        
+- **Key Traits:**
+    
+    - **Area:** Needs far less silicon area than a conventional 6-transistor SRAM cell.
+        
+    - **Power:** Consumes no static DC power; energy is spent only during read/write switching.
+        
+    - **Volatility:** Requires periodic refresh cycles because gate charge gradually leaks away.
+        
+
+#### 1-Transistor (1T) Dynamic RAM Cell
+
+- **Circuit Structure:** Consists of only a single access transistor and a dedicated storage capacitor ($C_s$).
+    
+- **Write Operation:** The word-line turns the transistor on, allowing the bit-line to charge or discharge $C_s$ directly.
+    
+- **Read Operation:**
+    
+    - The bit-line is precharged to an intermediate voltage.
+        
+    - Turning on the access transistor connects $C_s$ to the bit-line, causing charge sharing.
+        
+    - A sensitive sense amplifier detects the tiny resulting voltage shift. Reading destroys the stored charge, requiring immediate rewriting.
+        
+- **Key Traits:**
+    
+    - **Area:** The most compact RAM cell design possible, making it the standard for high-density computer memory.
+        
+    - **Volatility:** Very sensitive to leakage; requires frequent refresh cycles to preserve data.
