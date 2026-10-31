@@ -6,7 +6,7 @@
 ![[Pasted image 20261030202149.png|661]]
 ![[Pasted image 20261030204115.png]]
 ![[Pasted image 20261030215042.png]]
-![[Pasted image 20261030215823.png|626]]![[Pasted image 20261030222543.png|641]]![[Pasted image 20261031002811.png|642]]![[Pasted image 20261031010923.png|537]]![[Pasted image 20261031013206.png|605]]![[Pasted image 20261031123708.png|650]]![[Pasted image 20261031132224.png|599]]![[Pasted image 20261031132238.png|634]]![[Pasted image 20261031132423.png|631]]
+![[Pasted image 20261030215823.png|626]]![[Pasted image 20261030222543.png|641]]![[Pasted image 20261031002811.png|642]]![[Pasted image 20261031010923.png|537]]![[Pasted image 20261031013206.png|605]]![[Pasted image 20261031123708.png|650]]![[Pasted image 20261031132224.png|599]]![[Pasted image 20261031132238.png|634]]![[Pasted image 20261031132423.png|471]]![[Pasted image 20261031181349.png|521]]![[Pasted image 20261031181402.png|516]]![[Pasted image 20261031181842.png|506]]![[Pasted image 20261031182128.png|522]]![[Pasted image 20261031182200.png]]
 #### 1. Requirements for a 4-Bit Shifter
 
 - **Purpose:** Shifts data left or right by 0 to 3 places, often wrapping around from one end to the other.
@@ -243,3 +243,73 @@ $$Sum = A + \overline{B} + C_{in} = A + \overline{B} + 1 = A - B$$
         
 
 $$A - B = A + \overline{B} + 1$$
+
+#### Inverting Dynamic Storage Cell
+
+- **How it works:** A clock signal ($\phi$) opens a switch (an nMOS pass transistor or CMOS transmission gate) to pass input data, which charges the gate capacitance ($C_g$) of an inverter.
+    
+      
+    
+- **Storage mechanism:** The charge trapped on the gate capacitor temporarily holds the voltage, keeping the inverted output ($\overline{V_{in}}$) stable until charge leakage occurs.
+    
+      
+    
+- **Transistor count:** Requires **3 transistors** in nMOS (1 pass switch + 2 in the inverter) and **4 transistors** in CMOS (2 for the transmission gate + 2 for the inverter).
+    
+      
+    
+
+#### Non-Inverting Dynamic Storage Cell
+
+- **How it works:** Cascades two inverting stages back-to-back using a two-phase non-overlapping clock ($\phi_1$ and $\phi_2$).
+    
+      
+    
+- **Step 1 ($\phi_1$):** Input data charges the first capacitor ($C_{g1}$), and the first inverter flips the signal.
+    
+      
+    
+- **Step 2 ($\phi_2$):** The inverted signal passes to the second stage, charging capacitor ($C_{g2}$); the second inverter flips it back to its original (uncomplemented) form.
+    
+      
+    
+
+#### 4-Bit Dynamic Shift Register (nMOS)
+
+- **Architecture:** Formed by linking four non-inverting cells (Bit 3 down to Bit 0) in series.
+    
+      
+    
+- **Data movement:** Alternating clock pulses ($\phi_1$ and $\phi_2$) move data stage by stage to the right without collisions.
+    
+      
+    
+- **Timing:** Data is clocked into the first half of a bit during $\phi_1$ and transferred to the second half during $\phi_2$, taking one full clock cycle per single-bit shift.
+    
+      
+    
+
+#### N-Bit CMOS Magnitude Comparator
+
+- **Architecture:** An iterative chain of identical 1-bit comparator blocks comparing bits from most significant (MSB) to least significant (LSB).
+    
+      
+    
+- **Inputs & Outputs:** Each cell takes bit inputs $A_i, B_i$ along with results from the previous higher-order stage ($C_{i+1}, D_{i+1}$), producing updated status outputs ($C_i, D_i$):
+    
+      
+    
+
+$C_i = 1$: Indicates $A > B$.
+
+  
+
+$D_i = 1$: Indicates $A < B$.
+
+  
+
+$C_i = D_i = 0$: Indicates both bits are equal ($A = B$).
+
+  
+
+- **Priority logic:** If an earlier stage already found an inequality ($C_{i+1} = 1$ or $D_{i+1} = 1$), that result carries straight through; current bits are only evaluated if all higher bits were equal.
