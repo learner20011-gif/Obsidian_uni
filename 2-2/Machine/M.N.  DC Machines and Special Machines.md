@@ -295,9 +295,9 @@
 
 ![[Pasted image 20261027123925.png]]
 
-![[Copied_Item_1793051120342.png]]
+![[Copied_Item_1793051120342 1.png]]
 
-![[Introductions-to-DC-Machines20.jpg]]
+![[2-2/Machine/attachments/Introductions-to-DC-Machines20 1.jpg]]
 
 * **Lap Winding Progression:**
   * Progressive: $Y_b > Y_f \implies Y_c = +1$
@@ -314,7 +314,7 @@
 
 ![[Pasted image 20261027124147.png|611]]
 
-![[Copied_Item_1793051782353.png|607]]
+![[Copied_Item_1793051782353 1.png|607]]
 
 * **Frog-Leg Winding:**
   * Composite winding: combines **simplex lap** and **multiplex wave** in the identical slots.
