@@ -1,1 +1,1 @@
-![[Pasted image 20261102000924.png|499]]![[Pasted image 20261102001105.png|503]]
+![[Pasted image 20261102000924.png|499]]![[Pasted image 20261102001105.png|503]]![[Pasted image 20261102010909.png]]![[Pasted image 20261102005917.png]]![[Pasted image 20261102005939.png]]![[Pasted image 20261102005954.png]]![[Pasted image 20261102010049.png]]![[Pasted image 20261102010144.png]]
