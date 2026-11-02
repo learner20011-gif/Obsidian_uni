@@ -1,9 +1,9 @@
 ![[Pasted image 20261102140032.png|318]]
 ![[Pasted image 20261102135722.png]]
 
-
-
-
+![[Pasted image 20261102142254.png]]
+![[Pasted image 20261102144632.png]]
+![[Pasted image 20261102144641.png]]
 #### Sheet Resistance ($R_s$) Concept and Formula
 
 - **The Basic Idea**: Every layer in an integrated circuit (metal, polysilicon, diffusion) resists the flow of electric current.
@@ -103,4 +103,114 @@ $$t_{rise} \approx 4\tau$$
     
 
 $$t_{pair} = t_{rise} + t_{fall} = 4\tau + 1\tau = 5\tau$$
+#### Transit Time vs. $\tau$ and Practical Delays
 
+- **Transit Time ($\tau_{sd}$)**: Time taken by electrons to cross from source to drain:
+    
+
+$$\tau_{sd} = \frac{L^2}{\mu V_{ds}}$$
+
+- **Calculation for $5\ \mu\text{m}$**:
+    
+    - Using average $V_{ds} = 3\ \text{V}$, electron mobility $\mu = 650\ \text{cm}^2/\text{V}\cdot\text{s}$, and $L = 5\ \mu\text{m}$:
+        
+
+$$\tau_{sd} = \frac{25 \times 10^{-8}\ \text{cm}^2}{650 \times 3} \approx 0.13\ \text{ns}$$
+
+- This matches closely with $\tau \approx 0.1\ \text{ns}$
+#### nMOS Inverter Delays
+
+- **Resistances in a 4:1 Inverter**:
+    
+    - Pull-down transistor ($Z_{pd} = 1$): $R_{pd} = 1 R_s = 10\ \text{k}\Omega$.
+        
+    - Pull-up transistor ($Z_{pu} = 4$): $R_{pu} = 4 R_s = 40\ \text{k}\Omega$.
+        
+- **Asymmetric Switching**:
+    
+    - Output falling ($1 \to 0$): Discharges through pull-down $\to \text{delay} = 1\tau$.
+        
+    - Output rising ($0 \to 1$): Charges through pull-up $\to \text{delay} = 4\tau$.
+        
+- **Inverter Pair Delay**:
+    
+    - Passing a signal through two inverters covers both one rise and one fall:
+        
+
+$$\tau_d = \left(1 + \frac{Z_{pu}}{Z_{pd}}\right)\tau = (1 + 4)\tau = 5\tau$$
+
+#### Figure 4.7: nMOS Inverter Pair Delay
+
+- **The Setup**: Figure 4.7 shows two cascaded 4:1 nMOS inverters driving each other.
+    
+- **Load Capacitance**: Each inverter stage drives the gate of the next stage, which has a load capacitance of $1\Box C_g$.
+    
+- **Asymmetric Single Stage Delay**:
+    
+    - **Falling output ($1 \to 0$)**: The load discharges through the minimum pull-down transistor ($1 R_s$), taking $1\tau$.
+        
+    - **Rising output ($0 \to 1$)**: The load charges through the longer pull-up transistor ($4 R_s$), taking $4\tau$.
+        
+- **Total Pair Delay ($5\tau$)**:
+    
+    - A signal passing through two consecutive inverters always undergoes exactly one fall and one rise, regardless of whether the input starts high or low.
+        
+    - Total pair delay formula:
+        
+
+$$\tau_d = \left(1 + \frac{Z_{pu}}{Z_{pd}}\right)\tau = 1\tau + 4\tau = 5\tau$$
+
+#### Figure 4.8: Minimum Size CMOS Inverter Pair Delay
+
+- **The Setup**: Figure 4.8 shows two cascaded minimum-size CMOS inverters.
+    
+- **Double Load Capacitance ($2\Box C_g$)**:
+    
+    - Each CMOS input connects to both an n-transistor gate and a p-transistor gate.
+        
+    - The input capacitance is twice that of an nMOS inverter: $C_{in} = 1\Box C_g + 1\Box C_g = 2\Box C_g$.
+        
+- **Resistance Difference**:
+    
+    - **n-transistor**: Resistance is $1 R_s = 10\ \text{k}\Omega$.
+        
+    - **p-transistor**: Holes have lower mobility than electrons, so a minimum-size p-device has a higher resistance of $2.5 R_s = 25\ \text{k}\Omega$.
+        
+- **Single Stage Delays**:
+    
+    - **Fall time ($t_f$)**: The $2\Box C_g$ load discharges through the n-channel transistor ($1 R_s$), giving:
+        
+
+$$t_f = 1 R_s \times 2\Box C_g = 2\tau$$
+
+- **Rise time ($t_r$)**: The $2\Box C_g$ load charges through the p-channel transistor ($2.5 R_s$), giving:
+    
+
+$$t_r = 2.5 R_s \times 2\Box C_g = 5\tau$$
+
+- **Total Pair Delay ($7\tau$)**:
+    
+    - Passing through the pair causes one fall ($2\tau$) and one rise ($5\tau$).
+        
+    - Total CMOS pair delay:
+        
+
+$$\text{Pair Delay} = 2\tau + 5\tau = 7\tau$$
+
+#### CMOS Inverter Delays and Sizing
+
+- **Input Capacitance**:
+    
+    - A CMOS gate connects to both an nMOS and a pMOS transistor gate.
+        
+    - Total input capacitance is double: $C_{in} = 2 \Box C_g$.
+        
+- **Resistance Asymmetry**:
+    
+    - Holes move slower than electrons, so a minimum-size pMOS has about $2.5\times$ higher resistance ($25\ \text{k}\Omega$) than an nMOS ($10\ \text{k}\Omega$).
+        
+- **Making Delays Symmetrical**:
+    
+    - **Fix**: Make the pMOS channel 2 to 3 times wider ($W_p \approx 2.5 W_n$).
+        
+    - **Trade-off**: Lower resistance balances rise/fall speeds, but increases gate capacitance. It still improves overall speed because external wiring capacitance stays fixed
