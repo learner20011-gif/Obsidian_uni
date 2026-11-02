@@ -214,3 +214,28 @@ $$\text{Pair Delay} = 2\tau + 5\tau = 7\tau$$
     - **Fix**: Make the pMOS channel 2 to 3 times wider ($W_p \approx 2.5 W_n$).
         
     - **Trade-off**: Lower resistance balances rise/fall speeds, but increases gate capacitance. It still improves overall speed because external wiring capacitance stays fixed
+- #### What is a Silicide?
+
+- **Definition**: A silicide is a compound made by placing a layer of metal onto polysilicon and heating them together (a process called sintering).
+    
+- **Why It Is Used**: As chip features shrink, regular polysilicon causes high sheet resistance and slow $RC$ signal delay. Silicide is used as a faster replacement.
+    
+
+#### Sheet Resistance Comparison
+
+- **Polysilicon**: High resistance, typically $R_s = 15\text{ to }100\ \Omega/\Box$.
+    
+- **Silicide**: Much lower resistance, around $R_s = 2\text{ to }4\ \Omega/\Box$.
+    
+- **Benefit**: Lower sheet resistance means faster circuit speed and much smaller delay.
+    
+- **Drawback**: Making silicides requires extra fabrication steps, which increases manufacturing cost and complexity.
+    
+
+#### Methods of Deposition
+
+- **Sputtering or Evaporation**: Direct deposition of metal onto the polysilicon surface before heating.
+    
+- **Co-sputtering**: Sputtering both metal and silicon together over the polysilicon layer.
+    
+- **Co-evaporating**: Evaporating both pure elements at the same time onto the wafer.
