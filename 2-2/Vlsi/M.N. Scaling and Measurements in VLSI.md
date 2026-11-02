@@ -2,28 +2,116 @@
 ---
 ## 2A. Inverter Delay, Pull-Up/Pull-Down Ratio & Power Dissipation
 ### 1. Pull-Up to Pull-Down Ratio ($Z_{pu} / Z_{pd}$)
+![[Pasted image 20261102210244.png|370]]
 #### Case I: nMOS Inverter Driven Directly by Another nMOS Inverter
-- **Objective:** Symmetrical switching threshold $V_{inv} = 0.5 V_{DD}$.
-- **Condition:** At $V_{in} = V_{inv} = 0.5 V_{DD}$:
-  - Pull-down nMOS is in **Saturation** ($V_{gs} = 0.5 V_{DD}$, $V_{ds} \ge V_{gs} - V_t$).
-  - Pull-up Depletion nMOS is in **Linear region** ($V_{gs} = 0$, $V_{ds} = V_{DD} - V_{out} = 0.5 V_{DD}$).
-- **Current Equations:**
-  $$I_{ds,pd} = \frac{1}{2} \mu_n C_{ox} \left(\frac{W_{pd}}{L_{pd}}\right) (V_{inv} - V_{tn})^2$$
-  $$I_{ds,pu} = \mu_n C_{ox} \left(\frac{W_{pu}}{L_{pu}}\right) \left[ (-V_{td})V_{ds} - \frac{V_{ds}^2}{2} \right]$$
-- **Typical values:** $V_{tn} \approx 0.2 V_{DD}$, $V_{td} \approx -0.6 V_{DD}$, $V_{inv} = 0.5 V_{DD}$:
-  $$\frac{1}{2}\left(\frac{1}{Z_{pd}}\right)(0.5 - 0.2)^2 = \left(\frac{1}{Z_{pu}}\right)\left[(0.6)(0.5) - \frac{(0.5)^2}{2}\right]$$
-  $$\frac{1}{2 Z_{pd}}(0.09) = \frac{1}{Z_{pu}}(0.30 - 0.125) = \frac{1}{Z_{pu}}(0.175)$$
-  $$\frac{Z_{pu}}{Z_{pd}} = \frac{2 \times 0.175}{0.09} \approx 3.88 \approx \mathbf{4:1}$$
+![[Pasted image 20261102210349.png]]
+- **General Saturation Current:**
+    
+
+$$I_{ds} = K \frac{W}{L} \frac{(V_{gs} - V_t)^2}{2}$$
+
+- **Depletion Pull-Up ($V_{gs} = 0$):**
+    
+
+$$I_{ds} = K \frac{W_{p.u.}}{L_{p.u.}} \frac{(-V_{td})^2}{2}$$
+
+- **Enhancement Pull-Down ($V_{gs} = V_{inv}$):**
+    
+
+$$I_{ds} = K \frac{W_{p.d.}}{L_{p.d.}} \frac{(V_{inv} - V_t)^2}{2}$$
+
+- **Equate Currents ($I_{p.u.} = I_{p.d.}$):**
+    
+
+$$\frac{W_{p.d.}}{L_{p.d.}} (V_{inv} - V_t)^2 = \frac{W_{p.u.}}{L_{p.u.}} (-V_{td})^2$$
+
+- **Substitute Aspect Ratios ($Z = \frac{L}{W}$):**
+    
+
+$$\frac{1}{Z_{p.d.}} (V_{inv} - V_t)^2 = \frac{1}{Z_{p.u.}} (-V_{td})^2$$
+
+- **Take Square Root:**
+    
+
+$$V_{inv} - V_t = \frac{-V_{td}}{\sqrt{Z_{p.u.} / Z_{p.d.}}}$$
+
+- **Rearrange for $V_{inv}$:**
+    
+
+$$V_{inv} = V_t - \frac{V_{td}}{\sqrt{Z_{p.u.} / Z_{p.d.}}}$$
+
+- **Substitute Standard Values ($V_t = 0.2 V_{DD}$, $V_{td} = -0.6 V_{DD}$, $V_{inv} = 0.5 V_{DD}$):**
+    
+
+$$0.5 = 0.2 + \frac{0.6}{\sqrt{Z_{p.u.} / Z_{p.d.}}}$$
+
+$$0.3 = \frac{0.6}{\sqrt{Z_{p.u.} / Z_{p.d.}}}$$
+
+$$\sqrt{\frac{Z_{p.u.}}{Z_{p.d.}}} = \frac{0.6}{0.3} = 2$$
+
+- **Final Ratio:**
+    
+
+$$\frac{Z_{p.u.}}{Z_{p.d.}} = 2^2 = \frac{4}{1}$$
 $$\mathbf{\frac{Z_{pu}}{Z_{pd}} = \frac{L_{pu}/W_{pu}}{L_{pd}/W_{pd}} = 4:1} \quad (\text{Direct Inverter Drive})$$
 ---
 #### Case II: nMOS Inverter Driven Through One or More Pass Transistors
-- **The Issue:** Pass transistor degrades input high voltage by $V_{tn}$:
-  $$V_{in} = V_{DD} - V_{tn}$$
-- **Result:** Pull-down transistor has reduced gate overdrive $(V_{gs} - V_{tn}) = (V_{DD} - 2 V_{tn})$.
-- **Remedy:** Pull-down must be twice as conductive to pull output low:
-$$\mathbf{\frac{Z_{pu}}{Z_{pd}} = 8:1} \quad (\text{Pass Transistor Drive})$$
+![[Pasted image 20261102205256.png]]
+
+- **Input Voltages:**
+    
+    - Inverter 1: $V_{in1} = V_{DD}$
+        
+    - Inverter 2: $V_{in2} = V_{DD} - V_{tp}$
+        
+- **Pull-Down Resistance (Linear Region):**
+    
+- Inverter 1:
+        
+
+$$R_1 \approx \frac{1}{K} Z_{p.d.1} \left(\frac{1}{V_{DD} - V_t}\right)$$
+
+- Inverter 2:
+    
+
+$$R_2 \approx \frac{1}{K} Z_{p.d.2} \left(\frac{1}{V_{DD} - V_{tp} - V_t}\right)$$
+
+- **Pull-Up Current (Saturation Region):**
+    
+
+$$I_1 = K \frac{1}{Z_{p.u.1}} \frac{(-V_{td})^2}{2}$$
+
+$$I_2 = K \frac{1}{Z_{p.u.2}} \frac{(-V_{td})^2}{2}$$
+
+- **Output Voltages ($V_{out} = I \cdot R$):**
+    
+
+$$V_{out1} = I_1 R_1 = \frac{Z_{p.d.1}}{Z_{p.u.1}} \left(\frac{1}{V_{DD} - V_t}\right) \frac{(-V_{td})^2}{2}$$
+
+$$V_{out2} = I_2 R_2 = \frac{Z_{p.d.2}}{Z_{p.u.2}} \left(\frac{1}{V_{DD} - V_{tp} - V_t}\right) \frac{(-V_{td})^2}{2}$$
+
+- **Equate Output Voltages ($V_{out1} = V_{out2}$):**
+    
+
+$$\frac{Z_{p.d.1}}{Z_{p.u.1} (V_{DD} - V_t)} = \frac{Z_{p.d.2}}{Z_{p.u.2} (V_{DD} - V_{tp} - V_t)}$$
+
+- **Rearrange for the Second Inverter Ratio:**
+    
+
+$$\frac{Z_{p.u.2}}{Z_{p.d.2}} = \frac{Z_{p.u.1}}{Z_{p.d.1}} \frac{(V_{DD} - V_t)}{(V_{DD} - V_{tp} - V_t)}$$
+
+- **Substitute Standard Values ($V_t = 0.2 V_{DD}$, $V_{tp} = 0.3 V_{DD}$, $\frac{Z_{p.u.1}}{Z_{p.d.1}} = 4$):**
+    
+
+$$\frac{V_{DD} - 0.2 V_{DD}}{V_{DD} - 0.3 V_{DD} - 0.2 V_{DD}} = \frac{0.8 V_{DD}}{0.5 V_{DD}} = 1.6 \approx 2$$
+
+- **Final Ratio:**
+    
+
+$$\frac{Z_{p.u.2}}{Z_{p.d.2}} = 2 \times \frac{Z_{p.u.1}}{Z_{p.d.1}} = 2 \times 4 = \frac{8}{1}$$
 ---
 #### Case III: Pseudo-nMOS Inverter Ratio
+![[Pasted image 20261102212220.png]]
 - **Structure:** pMOS pull-up with gate permanently tied to $GND$ ($V_{gs} = -V_{DD}$); nMOS pull-down.
 - **Mobility Difference:** $\mu_n \approx 2.5 \mu_p \to$ pMOS delivers less current per square than nMOS.
 - **Ratio:** To ensure low $V_{OL} \le 0.1 V_{DD}$:
