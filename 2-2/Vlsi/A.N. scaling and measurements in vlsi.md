@@ -239,3 +239,154 @@ $$\text{Pair Delay} = 2\tau + 5\tau = 7\tau$$
 - **Co-sputtering**: Sputtering both metal and silicon together over the polysilicon layer.
     
 - **Co-evaporating**: Evaporating both pure elements at the same time onto the wafer.
+
+#### 5.2.1 Gate Area ($A_g$)
+
+- **Formula:** $A_g = L \times W$
+    
+      
+    
+- **Scaling:** Both $L$ and $W$ scale by $1/\alpha$ $\rightarrow$ Scaled by $\mathbf{1/\alpha^2}$
+    
+      
+    
+
+#### 5.2.2 Gate Capacitance Per Unit Area ($C_0$ or $C_{ox}$)
+
+- **Formula:** $C_0 = \frac{\varepsilon_{ox}}{D}$
+    
+      
+    
+- **Scaling:** Oxide thickness $D$ scales by $1/\beta$ $\rightarrow$ Scaled by $\mathbf{\beta}$
+    
+      
+    
+
+#### 5.2.3 Gate Capacitance ($C_g$)
+
+- **Formula:** $C_g = C_0 L W$
+    
+      
+    
+- **Scaling:** Scaled by $\beta \times \left(\frac{1}{\alpha^2}\right) = \mathbf{\frac{\beta}{\alpha^2}}$
+    
+      
+    
+
+#### 5.2.4 Parasitic Capacitance ($C_x$)
+
+- **Formula:** $C_x \propto \frac{A_x}{d}$
+    
+      
+    
+- **Scaling:** Depletion area $A_x$ scales by $1/\alpha^2$ and depletion width $d$ scales by $1/\alpha$ $\rightarrow$ Scaled by $\mathbf{1/\alpha}$
+    
+      
+    
+
+#### 5.2.5 Carrier Density in Channel ($Q_{on}$)
+
+- **Formula:** $Q_{on} = C_0 \cdot V_{gs}$
+    
+      
+    
+- **Scaling:** $C_0$ scales by $\beta$, $V_{gs}$ scales by $1/\beta$ $\rightarrow$ Scaled by $\mathbf{1}$ (unchanged)
+    
+      
+    
+
+#### 5.2.6 Channel Resistance ($R_{on}$)
+
+- **Formula:** $R_{on} = \frac{L}{W} \frac{1}{Q_{on} \mu}$
+    
+      
+    
+- **Scaling:** Geometric ratio $\frac{L}{W}$ and carrier density $Q_{on}$ scale by $1$ $\rightarrow$ Scaled by $\mathbf{1}$ (unchanged)
+    
+      
+    
+
+#### 5.2.7 Gate Delay ($T_d$)
+
+- **Formula:** $T_d \propto R_{on} \cdot C_g$
+    
+      
+    
+- **Scaling:** Scaled by $1 \times \frac{\beta}{\alpha^2} = \mathbf{\frac{\beta}{\alpha^2}}$
+    
+      
+    
+
+#### 5.2.8 Maximum Operating Frequency ($f_0$)
+
+- **Formula:** $f_0 \propto \frac{1}{T_d}$
+    
+      
+    
+- **Scaling:** Inversely proportional to gate delay $\rightarrow$ Scaled by $\mathbf{\frac{\alpha^2}{\beta}}$
+    
+      
+    
+
+#### 5.2.9 Saturation Current ($I_{dss}$)
+
+- **Formula:** $I_{dss} = \frac{C_0 \mu}{2} \frac{W}{L} (V_{gs} - V_t)^2$
+    
+      
+    
+- **Scaling:** Voltages scale by $1/\beta$ and $C_0$ scales by $\beta$ $\rightarrow$ Scaled by $\beta \left(\frac{1}{\beta}\right)^2 = \mathbf{1/\beta}$
+    
+      
+    
+
+#### 5.2.10 Current Density ($J$)
+
+- **Formula:** $J = \frac{I_{dss}}{A}$
+    
+      
+    
+- **Scaling:** Channel cross-section $A$ scales by $1/\alpha^2$ $\rightarrow$ Scaled by $\frac{1/\beta}{1/\alpha^2} = \mathbf{\frac{\alpha^2}{\beta}}$
+    
+      
+    
+
+#### 5.2.11 Switching Energy Per Gate ($E_g$)
+
+- **Formula:** $E_g = \frac{1}{2} C_g (V_{DD})^2$
+    
+      
+    
+- **Scaling:** Scaled by $\left(\frac{\beta}{\alpha^2}\right) \left(\frac{1}{\beta^2}\right) = \mathbf{\frac{1}{\alpha^2 \beta}}$
+    
+      
+    
+
+#### 5.2.12 Power Dissipation Per Gate ($P_g$)
+
+- **Formula:** $P_g = P_{gs} + P_{gd}$ (static + dynamic power)
+    
+      
+    
+- **Scaling:** Both static and dynamic components scale identically $\rightarrow$ Scaled by $\mathbf{1/\beta^2}$
+    
+      
+    
+
+#### 5.2.13 Power Dissipation Per Unit Area ($P_a$)
+
+- **Formula:** $P_a = \frac{P_g}{A_g}$
+    
+      
+    
+- **Scaling:** Scaled by $\frac{1/\beta^2}{1/\alpha^2} = \mathbf{\frac{\alpha^2}{\beta^2}}$
+    
+      
+    
+
+#### 5.2.14 Power-Speed Product ($P_T$)
+
+- **Formula:** $P_T = P_g \cdot T_d$
+    
+      
+    
+- **Scaling:** Scaled by $\left(\frac{1}{\beta^2}\right) \left(\frac{\beta}{\alpha^2}\right) = \mathbf{\frac{1}{\alpha^2 \beta}}$
