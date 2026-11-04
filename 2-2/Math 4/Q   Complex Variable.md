@@ -1,33 +1,8 @@
 
 
 
-- **Page 1:** Q5, Q25, Q26, Q51, Q74
-- **Page 2:** Q6, Q55
-- **Page 3:** Q72
-- **Page 4:** Q45(i), Q67(i)
-- **Page 5:** Q41, Q44, Q65(iii), Q66
-- **Page 6:** Q45(ii), Q67(ii)
-- **Page 7:** Q154
-- **Page 8:** Q113, Q121
-- **Page 9 & 10:** Q140, Q183
-- **Page 10, 11 & 12:** Q134, Q169, Q186
-- **Page 13:** Q155
-- **Page 14 & 15:** Q179, Q197
-- **Page 16:** Q153, Q192
-- **Page 17:** Q137, Q151, Q168, Q185
-- **Page 22:** Q152, Q172, Q173, Q189, Q190
-- **Page 26:** Q156, Q157
-- **Page 27:** Q215
-
-Q5, Q6, Q25, Q26, Q41, Q44, Q45, Q51, Q55, Q65, Q66, Q67, Q72, Q74, Q113, Q121, Q134, Q137, Q140, Q151, Q152, Q153, Q154, Q155, Q156, Q157, Q168, Q169, Q172, Q173, Q179, Q183, Q185, Q186, Q189, Q190, Q192, Q197, Q215
 
 
-
-
-
-# Complex Variable - Comprehensive Question Bank (Aggregated by Topic)
-
-This document aggregates all Complex Variable questions across all sources (PDF Exam Papers/Class Tests, Firoz Note, and Feruj Sheet/Slides) organized strictly by topic.
 
 ---
 
