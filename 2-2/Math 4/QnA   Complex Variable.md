@@ -4684,9 +4684,33 @@ Therefore, **$v(x,y) = x^2 - y^2 + 2y + C$**.
 
 3. **In terms of $z$:**
    $$f(z) = u + iv = 2x - 2xy + i(x^2 - y^2 + 2y + C) = i(x^2 - y^2 + 2ixy) + 2(x + iy) + iC = iz^2 + 2z + iC$$
+$f(z) = iz^2 + 2z + C'$.
 
 **Answer:** $v = x^2 - y^2 + 2y + C$; $f(z) = iz^2 + 2z + C'$.
+#### Alternative Method: Milne-Thomson Method
 
+You do not need to guess algebraic groupings to find $f(z)$ in terms of $z$. The standard and faster approach is the **Milne-Thomson Method**:
+
+- **Formula:**
+    
+
+$$f'(z) = \frac{\partial u}{\partial x}(z, 0) - i\frac{\partial u}{\partial y}(z, 0)$$
+
+- **Evaluate the partial derivatives at $(x, y) = (z, 0)$:**
+    
+    - $\frac{\partial u}{\partial x} = 2 - 2y \implies \frac{\partial u}{\partial x}(z, 0) = 2 - 2(0) = 2$
+        
+    - $\frac{\partial u}{\partial y} = -2x \implies \frac{\partial u}{\partial y}(z, 0) = -2z$
+        
+- **Form $f'(z)$:**
+    
+
+$$f'(z) = 2 - i(-2z) = 2 + 2iz$$
+
+- **Integrate with respect to $z$:**
+    
+
+$$f(z) = \int (2 + 2iz) \, dz = 2z + i z^2 + C' = iz^2 + 2z + C'$$
 ***
 
 ### Q136. Pg 1, Q2(c): In a two dimensional flow, the stream function is $\psi = \tan^{-1}(y/x)$. Find the velocity potential $\phi$ if $f(z) = \phi(x,y) + i\psi(x,y)$ is analytic.
