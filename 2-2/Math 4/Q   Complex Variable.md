@@ -1,9 +1,4 @@
 
-
-
-
-
-
 ---
 
 ## 1. Complex Number System

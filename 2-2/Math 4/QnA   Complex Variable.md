@@ -3,7 +3,6 @@ Here are the detailed solutions for the first four questions from the provided d
 
 ***
 
-# Complex Variable - Comprehensive Question Bank (Aggregated by Topic)
 
 ## 1. Complex Number System
 
@@ -4642,6 +4641,8 @@ $$\lim_{(x,y)\to(0,0)} u(x,y) = 0$$
 > 6. Derivable means differentiable at a point. Analytic requires differentiability throughout an entire neighborhood.
 By definition, a singularity is a point where $f(z)$ fails to be analytic
 
+$$\int_C f(z)dz = \int_C (u + iv)(dx + idy) = \int_C (u dx - v dy) + i \int_C (v dx + u dy)$$
+It is defined as a line integral of the complex function along a oriented piecewise smooth curve $C$.
 ### Source: PDF Extraction
 
 ### Q134. ✅Pg 1, Q2(a): Show that $f(z) = |z|^2$ is differentiable at $z=0$ but not analytic at $z=0$.
