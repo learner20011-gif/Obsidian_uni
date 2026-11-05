@@ -4639,11 +4639,12 @@ $$\lim_{(x,y)\to(0,0)} u(x,y) = 0$$
 >    - Given $v(x,y)$: $f'(z) = v_y(z, 0) + i v_x(z, 0) \implies f(z) = \int f'(z) dz + C$.
 > 5. **Orthogonal Trajectories**:
 >    The curves $u(x,y) = c_1$ and $v(x,y) = c_2$ are mutually orthogonal because $\nabla u \cdot \nabla v = u_x v_x + u_y v_y = u_x(-u_y) + u_y(u_x) = 0$.
-
+> 6. Derivable means differentiable at a point. Analytic requires differentiability throughout an entire neighborhood.
+By definition, a singularity is a point where $f(z)$ fails to be analytic
 
 ### Source: PDF Extraction
 
-### Q134. ❓Pg 1, Q2(a): Show that $f(z) = |z|^2$ is differentiable at $z=0$ but not analytic at $z=0$.
+### Q134. ✅Pg 1, Q2(a): Show that $f(z) = |z|^2$ is differentiable at $z=0$ but not analytic at $z=0$.
 
 **Solution:**
 1. **Differentiability at $z = 0$:**
@@ -4777,7 +4778,7 @@ Hence, both $u$ and $v$ satisfy Laplace's equation $\nabla^2 \phi = 0$. **(Prove
 
 ***
 
-### Q139. ❓Pg 2, Q2(c): Define analytic function. Show that $\frac{d}{dz}(\bar{z})$ does not exists anywhere.
+### Q139. ✅Pg 2, Q2(c): Define analytic function. Show that $\frac{d}{dz}(\bar{z})$ does not exists anywhere.
 
 **Solution:**
 1. **Definition of Analytic Function:**
