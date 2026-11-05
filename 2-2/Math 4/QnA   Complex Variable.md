@@ -7664,7 +7664,7 @@ $$= 10 - \frac{8}{3}i$$
 
 Here are the detailed solutions for the next four questions (Q217 to Q220).
 
-### Q217. Prblm-4.1.2: Evaluate $\int_{(0,3)}^{(2,4)}(2y+x^2)dx+(3x-y)dy$ i) Along parabola $x=2t$, $y=t^2+3$ ii) Straight line from $(0,3)$ to $(2,3)$ then $(2,3)$ to $(2,4)$
+### Q217. ✅Prblm-4.1.2: Evaluate $\int_{(0,3)}^{(2,4)}(2y+x^2)dx+(3x-y)dy$ i) Along parabola $x=2t$, $y=t^2+3$ ii) Straight line from $(0,3)$ to $(2,3)$ then $(2,3)$ to $(2,4)$
 
 **Solution:**
 
@@ -7779,76 +7779,104 @@ Imaginary: $i(-\frac{1}{2} + \frac{1}{3}) = i(-\frac{3}{6} + \frac{2}{6}) = -i\f
 ### Q219. Prblm 4.1.4: Evaluate from $(1,2)$ to $(2,8)$ $\int_C (x^2-iy^2)dz$ i) $y=2x^2$ ii) Straight line from $(1,2)$ to $(2,8)$
 
 **Solution:**
+Given integral:
 
-We evaluate $\int_C f(z)dz$ where $f(z) = x^2 - iy^2$ and $dz = dx + idy$.
-Substitute these to get the working integral form:
-$$I = \int_C (x^2 - iy^2)(dx + i dy)$$
-$$I = \int_C (x^2 dx + ix^2 dy - iy^2 dx - i^2 y^2 dy)$$
-$$I = \int_C (x^2 + y^2)dx + i(x^2 - y^2)dy$$
+$$I = \int_C (x^2 - iy^2)\,dz = \int_C (x^2 - iy^2)(dx + i\,dy)$$
 
-**Part (i): Along the parabola $y = 2x^2$**
+Expanding the differential product:
 
-**Step 1: Parameterize the path.**
-Let $x$ be the parameter, going from $1$ to $2$.
-Substitute $y = 2x^2$.
-Differentiate to find $dy$: $dy = 4x dx$.
+$$(x^2 - iy^2)(dx + i\,dy) = x^2\,dx + ix^2\,dy - iy^2\,dx - i^2y^2\,dy$$
 
-**Step 2: Substitute into the integral.**
-$$I_1 = \int_1^2 \left( x^2 + (2x^2)^2 \right) dx + i \left( x^2 - (2x^2)^2 \right) (4x dx)$$
-$$I_1 = \int_1^2 (x^2 + 4x^4) dx + i (x^2 - 4x^4) 4x dx$$
-$$I_1 = \int_1^2 (x^2 + 4x^4) dx + i \int_1^2 (4x^3 - 16x^5) dx$$
+$$= (x^2\,dx + y^2\,dy) + i(x^2\,dy - y^2\,dx)$$
 
-**Step 3: Evaluate the integrals.**
-Real part:
-$$Re(I_1) = \left[ \frac{x^3}{3} + \frac{4x^5}{5} \right]_1^2 = \left( \frac{8}{3} + \frac{4(32)}{5} \right) - \left( \frac{1}{3} + \frac{4}{5} \right)$$
-$$= \left( \frac{8}{3} + \frac{128}{5} \right) - \left( \frac{1}{3} + \frac{4}{5} \right) = \frac{7}{3} + \frac{124}{5} = \frac{35 + 372}{15} = \frac{407}{15}$$
+#### i) Along the parabola $y = 2x^2$ from $(1,2)$ to $(2,8)$
 
-Imaginary part:
-$$Im(I_1) = \left[ x^4 - \frac{16x^6}{6} \right]_1^2 = \left[ x^4 - \frac{8x^6}{3} \right]_1^2$$
-$$= \left( 16 - \frac{8(64)}{3} \right) - \left( 1 - \frac{8}{3} \right) = \left( 16 - \frac{512}{3} \right) - \left( 1 - \frac{8}{3} \right) = 15 - \frac{504}{3} = 15 - 168 = -153$$
+- Parameterization:
+    
 
-**Answer (i): $\frac{407}{15} - 153i$**
+$$y = 2x^2 \implies dy = 4x\,dx, \quad x \in [1, 2]$$
 
----
-**Part (ii): Along the straight line from $(1,2)$ to $(2,8)$**
+- Substitute $y$ and $dy$:
+    
 
-**Step 1: Find the equation of the line.**
-Slope $m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{8 - 2}{2 - 1} = 6$.
-Point-slope form: $y - 2 = 6(x - 1) \implies y = 6x - 6 + 2 \implies y = 6x - 4$.
+$$x^2 - iy^2 = x^2 - i(2x^2)^2 = x^2 - 4ix^4$$
 
-**Step 2: Parameterize.**
-Let $x$ be the parameter, from $1$ to $2$.
-Substitute $y = 6x - 4$.
-Differentiate to find $dy$: $dy = 6 dx$.
+$$dz = dx + i\,dy = (1 + 4ix)\,dx$$
 
-**Step 3: Substitute into the integral.**
-$dz = dx + i(6 dx) = (1+6i)dx$.
-$$I_2 = \int_1^2 [x^2 - i(6x-4)^2] (1+6i) dx$$
-We can pull out the constant $(1+6i)$:
-$$I_2 = (1+6i) \int_1^2 [x^2 - i(36x^2 - 48x + 16)] dx$$
-$$I_2 = (1+6i) \int_1^2 [(1 - 36i)x^2 + 48ix - 16i] dx$$
+- Integrand:
+    
 
-**Step 4: Evaluate the integral.**
-$$= (1+6i) \left[ (1 - 36i)\frac{x^3}{3} + 48i\frac{x^2}{2} - 16ix \right]_1^2$$
-$$= (1+6i) \left[ (1 - 36i)\frac{x^3}{3} + 24ix^2 - 16ix \right]_1^2$$
-Substitute limits (evaluating $F(2) - F(1)$):
-$x^3/3 \implies 8/3 - 1/3 = 7/3$
-$x^2 \implies 4 - 1 = 3$
-$x \implies 2 - 1 = 1$
-$$= (1+6i) \left[ (1 - 36i)\left(\frac{7}{3}\right) + 24i(3) - 16i(1) \right]$$
-$$= (1+6i) \left[ \frac{7}{3} - 84i + 72i - 16i \right]$$
-$$= (1+6i) \left[ \frac{7}{3} - 28i \right]$$
+$$(x^2 - 4ix^4)(1 + 4ix) = x^2 + 4ix^3 - 4ix^4 - 16i^2x^5$$
 
-**Step 5: Perform the multiplication.**
-$$= 1(\frac{7}{3}) + 1(-28i) + 6i(\frac{7}{3}) + 6i(-28i)$$
-$$= \frac{7}{3} - 28i + 14i - 168i^2$$
-$$= \frac{7}{3} - 14i + 168$$
-$$= \frac{504}{3} + \frac{7}{3} - 14i = \frac{511}{3} - 14i$$
+$$= (x^2 + 16x^5) + i(4x^3 - 4x^4)$$
 
-**Answer (ii): $\frac{511}{3} - 14i$**
+- Integration with respect to $x$:
+    
 
-***
+$$I = \int_{1}^{2} (x^2 + 16x^5)\,dx + i \int_{1}^{2} (4x^3 - 4x^4)\,dx$$
 
+- Real part:
+    
+
+$$\int_{1}^{2} (x^2 + 16x^5)\,dx = \left[ \frac{x^3}{3} + \frac{8x^6}{3} \right]_{1}^{2} = \left(\frac{8}{3} + \frac{512}{3}\right) - \left(\frac{1}{3} + \frac{8}{3}\right) = \frac{520}{3} - \frac{9}{3} = \frac{511}{3}$$
+
+- Imaginary part:
+    
+
+$$\int_{1}^{2} (4x^3 - 4x^4)\,dx = \left[ x^4 - \frac{4x^5}{5} \right]_{1}^{2} = \left(16 - \frac{128}{5}\right) - \left(1 - \frac{4}{5}\right) = -\frac{48}{5} - \frac{1}{5} = -\frac{49}{5}$$
+
+- Result for (i):
+    
+
+$$I = \frac{511}{3} - i\frac{49}{5}$$
+
+#### ii) Along the straight line from $(1,2)$ to $(2,8)$
+
+- Equation of the line:
+    
+
+$$m = \frac{8 - 2}{2 - 1} = 6 \implies y - 2 = 6(x - 1) \implies y = 6x - 4, \quad x \in [1, 2]$$
+
+$$dy = 6\,dx$$
+
+- Substitute into $dz$:
+    
+
+$$dz = dx + 6i\,dx = (1 + 6i)\,dx$$
+
+- Integrand:
+    
+
+$$\big(x^2 - i(6x - 4)^2\big)(1 + 6i) = \big(x^2 - i(36x^2 - 48x + 16)\big)(1 + 6i)$$
+
+$$= x^2 + 6ix^2 - i(36x^2 - 48x + 16) - 6i^2(36x^2 - 48x + 16)$$
+
+$$= \big[x^2 + 6(36x^2 - 48x + 16)\big] + i\big[6x^2 - (36x^2 - 48x + 16)\big]$$
+
+$$= (217x^2 - 288x + 96) + i(-30x^2 + 48x - 16)$$
+
+- Real part:
+    
+
+$$\int_{1}^{2} (217x^2 - 288x + 96)\,dx = \left[ \frac{217x^3}{3} - 144x^2 + 96x \right]_{1}^{2}$$
+
+$$= \left(\frac{1736}{3} - 576 + 192\right) - \left(\frac{217}{3} - 144 + 96\right)$$
+
+$$= \left(\frac{1736}{3} - 384\right) - \left(\frac{217}{3} - 48\right) = \frac{1519}{3} - 336 = \frac{1519 - 1008}{3} = \frac{511}{3}$$
+
+- Imaginary part:
+    
+
+$$\int_{1}^{2} (-30x^2 + 48x - 16)\,dx = \left[ -10x^3 + 24x^2 - 16x \right]_{1}^{2}$$
+
+$$= \big(-10(8) + 24(4) - 16(2)\big) - \big(-10(1) + 24(1) - 16(1)\big)$$
+
+$$= (-80 + 96 - 32) - (-10 + 24 - 16) = -16 - (-2) = -14$$
+
+- Result for (ii):
+    
+
+$$I = \frac{511}{3} - 14i$$
 ### Q220. Prblm 4.1.5: $\int(z^2+3z)dz$ from $(2,0)$ to $(2,1)$ and $(2,1)$ to $(2,2)$
 
 *(Note: The integration path described is a single continuous vertical line segment from $(2,0)$ up to $(2,2)$. The intermediate point $(2,1)$ just splits it into two collinear segments, which is mathematically identical to integrating straight from start to finish. We will evaluate it as a single line segment for efficiency).*
@@ -7858,26 +7886,6 @@ $$= \frac{504}{3} + \frac{7}{3} - 14i = \frac{511}{3} - 14i$$
 We need to evaluate the complex integral $\int_C f(z) dz$ where $f(z) = z^2 + 3z$.
 Because $f(z)$ is an analytic polynomial function (entire), its line integral is path-independent. We can evaluate it either by parameterizing the path, or much simpler, by using the Fundamental Theorem of Calculus (finding the antiderivative). Let's do it using the antiderivative for elegance, and then verify with path parameterization.
 
-**Method 1: Fundamental Theorem of Calculus**
-Since $f(z) = z^2 + 3z$ is analytic, it has an exact complex antiderivative $F(z) = \frac{z^3}{3} + \frac{3z^2}{2}$.
-The integral from $z_1$ to $z_2$ is simply $F(z_2) - F(z_1)$.
-
-*   Start point: $(2,0) \implies z_1 = 2 + 0i = 2$.
-*   End point: $(2,2) \implies z_2 = 2 + 2i$.
-
-Evaluate $F(z_2)$:
-$$F(2+2i) = \frac{(2+2i)^3}{3} + \frac{3(2+2i)^2}{2}$$
-Expand $(2+2i)^2 = 4 + 8i + 4i^2 = 4 + 8i - 4 = 8i$.
-Expand $(2+2i)^3 = (2+2i)(8i) = 16i + 16i^2 = -16 + 16i$.
-$$F(2+2i) = \frac{-16 + 16i}{3} + \frac{3(8i)}{2} = -\frac{16}{3} + i\frac{16}{3} + 12i = -\frac{16}{3} + i\frac{16+36}{3} = -\frac{16}{3} + \frac{52}{3}i$$
-
-Evaluate $F(z_1)$:
-$$F(2) = \frac{2^3}{3} + \frac{3(2^2)}{2} = \frac{8}{3} + \frac{12}{2} = \frac{8}{3} + 6 = \frac{8+18}{3} = \frac{26}{3}$$
-
-Subtract:
-$$I = F(2+2i) - F(2) = \left( -\frac{16}{3} + \frac{52}{3}i \right) - \frac{26}{3} = -\frac{42}{3} + \frac{52}{3}i = -14 + \frac{52}{3}i$$
-
----
 **Method 2: Path Parameterization (as requested by typical textbook problems)**
 The path is a vertical line from $(2,0)$ to $(2,2)$.
 *   Path condition: $x = 2$ is constant. Therefore $dx = 0$.
