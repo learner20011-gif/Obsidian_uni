@@ -4643,7 +4643,7 @@ $$\lim_{(x,y)\to(0,0)} u(x,y) = 0$$
 
 ### Source: PDF Extraction
 
-### Q134. Pg 1, Q2(a): Show that $f(z) = |z|^2$ is differentiable at $z=0$ but not analytic at $z=0$.
+### Q134. ❓Pg 1, Q2(a): Show that $f(z) = |z|^2$ is differentiable at $z=0$ but not analytic at $z=0$.
 
 **Solution:**
 1. **Differentiability at $z = 0$:**
@@ -4713,7 +4713,7 @@ $$f'(z) = 2 - i(-2z) = 2 + 2iz$$
 $$f(z) = \int (2 + 2iz) \, dz = 2z + i z^2 + C' = iz^2 + 2z + C'$$
 ***
 
-### Q136. Pg 1, Q2(c): In a two dimensional flow, the stream function is $\psi = \tan^{-1}(y/x)$. Find the velocity potential $\phi$ if $f(z) = \phi(x,y) + i\psi(x,y)$ is analytic.
+### Q136. ✅Pg 1, Q2(c): In a two dimensional flow, the stream function is $\psi = \tan^{-1}(y/x)$. Find the velocity potential $\phi$ if $f(z) = \phi(x,y) + i\psi(x,y)$ is analytic.
 
 **Solution:**
 Here $\psi = v = \tan^{-1}(y/x)$. We need to find $\phi = u$.
@@ -4777,7 +4777,7 @@ Hence, both $u$ and $v$ satisfy Laplace's equation $\nabla^2 \phi = 0$. **(Prove
 
 ***
 
-### Q139. Pg 2, Q2(c): Define analytic function. Show that $\frac{d}{dz}(\bar{z})$ does not exists anywhere.
+### Q139. ❓Pg 2, Q2(c): Define analytic function. Show that $\frac{d}{dz}(\bar{z})$ does not exists anywhere.
 
 **Solution:**
 1. **Definition of Analytic Function:**
