@@ -4730,7 +4730,7 @@ Here $\psi = v = \tan^{-1}(y/x)$. We need to find $\phi = u$.
 
 ***
 
-### Q137. Pg 2, Q2(a): Prove that the real and imaginary parts of an analytic function satisfy Laplace's equation.
+### Q137. Pg 2, Q2(a): ✅Prove that the real and imaginary parts of an analytic function satisfy Laplace's equation.
 
 **Proof:**
 Let $f(z) = u(x,y) + iv(x,y)$ be an analytic function.
@@ -4798,7 +4798,7 @@ Hence, both $u$ and $v$ satisfy Laplace's equation $\nabla^2 \phi = 0$. **(Prove
 
 ***
 
-### Q140. Pg 4, Q2(a): State and prove necessary and sufficient condition for Cauchy-Riemann equations.
+### Q140. ✅Pg 4, Q2(a): State and prove necessary and sufficient condition for Cauchy-Riemann equations.
 
 **Statement:**
 * **Necessary Condition:** If $f(z) = u(x,y) + iv(x,y)$ is differentiable at a point $z = x+iy$, then the partial derivatives $u_x, u_y, v_x, v_y$ exist and satisfy:
