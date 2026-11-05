@@ -7559,7 +7559,7 @@ Therefore, it represents a circle (if $P \neq 0$) or a straight line (if $P = 0$
 
 ### Source: PDF Extraction
 
-### Q214. Pg 6, Q3(c): Evaluate $\oint_c |z|^2 dz$ around the square with vertices at $(0, 0), (1, 0), (1, 1)$, and $(0, 1)$.
+### Q214. ✅Pg 6, Q3(c): Evaluate $\oint_c |z|^2 dz$ around the square with vertices at $(0, 0), (1, 0), (1, 1)$, and $(0, 1)$.
 
 **Solution:**
 Here $f(z) = |z|^2 = x^2 + y^2$, and $dz = dx + i dy$.
@@ -7611,7 +7611,7 @@ This proves **Cauchy's Theorem**: $\oint_C f(z) dz = 0$.
 
 ### Source: Firoz Note
 
-### Q216. Prblm 4.1.1: Evaluate $\int_C \overline{z} dz$ from $z=0$ to $z=4+2i$ along the curve C given by $z=t^2+it$
+### Q216. ✅Prblm 4.1.1: Evaluate $\int_C \overline{z} dz$ from $z=0$ to $z=4+2i$ along the curve C given by $z=t^2+it$
 
 **Solution:**
 
