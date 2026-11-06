@@ -8779,7 +8779,7 @@ Here are the detailed solutions for the next four questions (Q241 to Q244).
 
 ### Source: PDF Extraction
 
-### Q241. Pg 2, Q3(b): State and prove Cauchy's integral formula.
+### Q241. ❓Pg 2, Q3(b): State and prove Cauchy's integral formula.
 
 **Statement:**
 If $f(z)$ is analytic everywhere inside and on a simple closed contour $C$, and $a$ is any interior point inside $C$, then:
@@ -8803,7 +8803,7 @@ $$f(a) = \frac{1}{2\pi i} \oint_C \frac{f(z)}{z - a} dz$$
 
 ***
 
-### Q242. Pg 2, Q3(c): Evaluate $\oint_c \frac{e^z}{(z^2+\pi^2)^2} dz$ where c is the circle $|z|=4$.
+### Q242. ✅Pg 2, Q3(c): Evaluate $\oint_c \frac{e^z}{(z^2+\pi^2)^2} dz$ where c is the circle $|z|=4$.
 
 **Solution:**
 Poles are roots of $(z^2 + \pi^2)^2 = 0 \implies z = \pm i\pi$.
