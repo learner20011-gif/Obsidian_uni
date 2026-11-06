@@ -11818,32 +11818,90 @@ In set notation, the region of analyticity is:
 
 ### Source: PDF Extraction
 
-### Q312. Pg 1, Q3(a): State and prove Cauchy's Residue theorem for a pole of order m at $z=a$ inside simple closed curve C.
+### Q312.✅ Pg 1, Q3(a): State and prove Cauchy's Residue theorem for a pole of order m at $z=a$ inside simple closed curve C.
 
-**Statement:**
-If $F(z)$ is analytic inside and on a simple closed contour $C$ except at a pole $z = a$ of order $m$ inside $C$, then:
-$$\oint_C F(z) dz = 2\pi i \left[\frac{1}{(m-1)!} \lim_{z \to a} \frac{d^{m-1}}{dz^{m-1}}\{(z - a)^m F(z)\}\right] = 2\pi i \text{Res}(F, a)$$
+#### Statement
 
-**Proof:**
-1. Since $z = a$ is a pole of order $m$, $F(z)$ has a Laurent series valid in $0 < |z - a| < R$:
-   $$F(z) = \frac{b_m}{(z-a)^m} + \dots + \frac{b_2}{(z-a)^2} + \frac{b_1}{z-a} + \sum_{n=0}^\infty a_n (z-a)^n$$
-2. Let $C_0$ be a small circle $|z-a| = \rho$ inside $C$. By Cauchy's deformation:
-   $$\oint_C F(z) dz = \oint_{C_0} F(z) dz$$
-3. Integrating term by term using the standard result $\oint_{C_0} (z-a)^k dz = \begin{cases} 2\pi i, & k = -1 \\ 0, & k \neq -1 \end{cases}$:
-   $$\oint_{C_0} F(z) dz = b_1 (2\pi i) = 2\pi i \text{Res}(F, a) \quad \text{--- (1)}$$
-4. Now, to express $b_1$ in derivative form, multiply $F(z)$ by $(z-a)^m$:
-   $$\Phi(z) = (z-a)^m F(z) = b_m + b_{m-1}(z-a) + \dots + b_1(z-a)^{m-1} + \sum_{n=0}^\infty a_n (z-a)^{m+n}$$
-5. Differentiating $(m-1)$ times with respect to $z$:
-   $$\frac{d^{m-1}}{dz^{m-1}}\Phi(z) = (m-1)! b_1 + \text{terms containing } (z-a)$$
-6. Taking the limit as $z \to a$:
-   $$\lim_{z \to a} \frac{d^{m-1}}{dz^{m-1}}[(z-a)^m F(z)] = (m-1)! b_1 \implies b_1 = \frac{1}{(m-1)!} \lim_{z \to a} \frac{d^{m-1}}{dz^{m-1}}[(z-a)^m F(z)]$$
-7. Substituting $b_1$ into (1):
-   $$\oint_C F(z) dz = 2\pi i \left[\frac{1}{(m-1)!} \lim_{z \to a} \frac{d^{m-1}}{dz^{m-1}}\{(z-a)^m F(z)\}\right]$$
+Let $f(z)$ be analytic inside and on a positively oriented simple closed contour $C$, except at a point $z = a$ inside $C$ which is a pole of order $m$. Then:
+
+  
+
+$$\oint_C f(z) \, dz = 2\pi i \, \text{Res}(f, a)$$
+
+where the residue is given by:
+
+  
+
+$$\text{Res}(f, a) = \frac{1}{(m - 1)!} \lim_{z \to a} \frac{d^{m-1}}{dz^{m-1}} \left[ (z - a)^m f(z) \right]$$
+
+#### Step 1: Representation of Pole of Order $m$
+
+- Since $z = a$ is a pole of order $m$, $f(z)$ can be expressed as:
+    
+      
+    
+
+$$f(z) = \frac{\phi(z)}{(z - a)^m}$$
+
+- Here, $\phi(z) = (z - a)^m f(z)$ is analytic inside and on $C$, with $\phi(a) \neq 0$.
+    
+      
+    
+
+#### Step 2: Generalized Cauchy Integral Formula
+
+- Cauchy's Integral Formula for the $n$-th derivative of an analytic function $\phi(z)$ states:
+    
+      
+    
+
+$$\phi^{(n)}(a) = \frac{n!}{2\pi i} \oint_C \frac{\phi(z)}{(z - a)^{n+1}} \, dz$$
+
+- Rearranging for the contour integral:
+    
+      
+    
+
+$$\oint_C \frac{\phi(z)}{(z - a)^{n+1}} \, dz = \frac{2\pi i}{n!} \phi^{(n)}(a)$$
+
+#### Step 3: Setting the Order $n + 1 = m$
+
+- Let $n + 1 = m \implies n = m - 1$:
+    
+      
+    
+
+$$\oint_C \frac{\phi(z)}{(z - a)^m} \, dz = \frac{2\pi i}{(m - 1)!} \phi^{(m-1)}(a)$$
+
+- Substituting $f(z) = \frac{\phi(z)}{(z - a)^m}$:
+    
+      
+    
+
+$$\oint_C f(z) \, dz = \frac{2\pi i}{(m - 1)!} \left. \frac{d^{m-1}}{dz^{m-1}} \phi(z) \right\vert{}_{z=a}$$
+
+#### Step 4: Relation to the Residue
+
+- Substitute $\phi(z) = (z - a)^m f(z)$:
+    
+      
+    
+
+$$\oint_C f(z) \, dz = 2\pi i \cdot \left[ \frac{1}{(m - 1)!} \lim_{z \to a} \frac{d^{m-1}}{dz^{m-1}} \left( (z - a)^m f(z) \right) \right]$$
+
+- By definition of the residue at a pole of order $m$:
+    
+
+$$\text{Res}(f, a) = \frac{1}{(m - 1)!} \lim_{z \to a} \frac{d^{m-1}}{dz^{m-1}} \left[ (z - a)^m f(z) \right]$$
+
+#### Step 5: Final Conclusion
+
+$$\oint_C f(z) \, dz = 2\pi i \, \text{Res}(f, a)$$
 **(Proved)**
 
 ***
 
-### Q313. Pg 1, Q3(b): Evalute $\oint_C \frac{z^2-2z}{(z+1)^2(z^2+4)} dz$ Where C is the circle $|z|=3$
+### Q313. ✅Pg 1, Q3(b): Evalute $\oint_C \frac{z^2-2z}{(z+1)^2(z^2+4)} dz$ Where C is the circle $|z|=3$
 
 **Solution:**
 Poles of $f(z) = \frac{z^2-2z}{(z+1)^2(z^2+4)}$:
