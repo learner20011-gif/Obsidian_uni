@@ -8870,7 +8870,7 @@ Pole is at $z = -3$ of order 4.
 
 ***
 
-### Q245. Pg 13, CT-04, 4.(b): Evaluate $\oint_C \frac{3z^2+z}{z^2-1} dz$ where C is the circle $|z-1|=1$
+### Q245. ✅Pg 13, CT-04, 4.(b): Evaluate $\oint_C \frac{3z^2+z}{z^2-1} dz$ where C is the circle $|z-1|=1$
 
 **Solution:**
 Poles: $z^2 - 1 = 0 \implies z = 1, z = -1$.
@@ -8905,7 +8905,7 @@ $$\oint_C \frac{z^2+1}{z^2-1} dz = 2\pi i(1) = 2\pi i$$
 
 ***
 
-### Q247. Pg 15, CT-04, 3.(b): Evaluate $\oint_C \frac{z^2}{(z-1)(z+2)^2} dz$ where C is the circle $|z|=3$
+### Q247. ✅Pg 15, CT-04, 3.(b): Evaluate $\oint_C \frac{z^2}{(z-1)(z+2)^2} dz$ where C is the circle $|z|=3$
 
 **Solution:**
 Poles:
@@ -8942,7 +8942,111 @@ along a curve $C$ connecting initial point $a$ to final point $b$.
 ---
 
 #### **Solution:**
+#### Prerequisites (Cauchy-Goursat Theorem & Antiderivative)
 
+- **Cauchy-Goursat Theorem**: If a function $f(z)$ is analytic everywhere inside and on a simple closed curve $C$, then:
+    
+      
+    
+
+$$\oint_C f(z) \, dz = 0$$
+
+- **Fundamental Theorem of Complex Integration**: If $f(z)$ has a continuous antiderivative $F(z)$ (where $F'(z) = f(z)$) in a domain containing $C$, and $C$ starts at $z_a$ and ends at $z_b$:
+    
+      
+    
+
+$$\int_C f(z) \, dz = F(z_b) - F(z_a)$$
+
+- For any closed curve, the initial point and terminal point coincide ($z_b = z_a$):
+    
+      
+    
+
+$$\oint_C f(z) \, dz = F(z_a) - F(z_a) = 0$$
+
+#### Proof of (i): $\oint_C dz = 0$
+
+- Let the integrand be $f(z) = 1$.
+    
+      
+    
+- The function $f(z) = 1$ is analytic everywhere in the complex plane (an entire function).
+    
+      
+    
+- Find the antiderivative:
+    
+      
+    
+
+$$F(z) = \int 1 \, dz = z$$
+
+- Evaluate along the closed curve $C$ with arbitrary starting/ending point $z_a$:
+    
+      
+    
+
+$$\oint_C dz = \left[ z \right]_{z_a}^{z_a} = z_a - z_a = 0$$
+
+#### Proof of (ii): $\oint_C z \, dz = 0$
+
+- Let the integrand be $f(z) = z$.
+    
+      
+    
+- The function $f(z) = z$ is analytic everywhere in the complex plane (a polynomial function).
+    
+      
+    
+- Find the antiderivative:
+    
+      
+    
+
+$$F(z) = \int z \, dz = \frac{z^2}{2}$$
+
+- Evaluate along the closed curve $C$ with arbitrary starting/ending point $z_a$:
+    
+      
+    
+
+$$\oint_C z \, dz = \left[ \frac{z^2}{2} \right]_{z_a}^{z_a} = \frac{z_a^2}{2} - \frac{z_a^2}{2} = 0$$
+
+#### Proof of (iii): $\oint_C (z - z_0) \, dz = 0$
+
+- **Method 1: Splitting the integral using parts (i) and (ii)**
+    
+      
+    
+
+$$\oint_C (z - z_0) \, dz = \oint_C z \, dz - z_0 \oint_C dz$$
+
+- From part (ii): $\oint_C z \, dz = 0$
+    
+      
+    
+- From part (i): $\oint_C dz = 0$
+    
+      
+    
+
+$$\oint_C (z - z_0) \, dz = 0 - z_0(0) = 0$$
+
+- **Method 2: Using the antiderivative directly**
+    
+      
+    - The antiderivative of $f(z) = z - z_0$ is:
+        
+          
+        
+
+$$F(z) = \int (z - z_0) \, dz = \frac{(z - z_0)^2}{2}$$
+
+- Evaluate along the closed curve $C$ from $z_a$ to $z_a$:
+    
+
+$$\oint_C (z - z_0) \, dz = \left[ \frac{(z - z_0)^2}{2} \right]_{z_a}^{z_a} = \frac{(z_a - z_0)^2}{2} - \frac{(z_a - z_0)^2}{2} = 0$$
 **Definition:**
 Let $C$ be a smooth curve with initial point $z_0 = a$ and terminal point $z_n = b$. Subdivide $C$ by points $z_0, z_1, z_2, \dots, z_n$.
 The contour integral is defined as the limit of the Riemann sum:
