@@ -12395,12 +12395,22 @@ $$I = 0$$
 > 3. **Fourier Integrals $\int_{-\infty}^\infty f(x)\cos(mx) dx$**:
 >    Consider $\oint_C f(z) e^{imz} dz$. Then:
 >    $$\int_{-\infty}^\infty f(x)\cos(mx) dx = \text{Re}\left[2\pi i \sum \text{Res}(f(z)e^{imz}, \text{Im}(z)>0)\right]$$
->    Jordan's Lemma ensures the semicircular arc integral vanishes as $R \to \infty$.
+>    Jordan's Lemma ensures the semicircular arc integral vanishes as $R \to \infty$
+> 
+1. - The line segment along the real axis from $-R$ to $R$:
+        
+
+$$L_R = \{ z = x \in \mathbb{R} : -R \le x \le R \}$$
+
+- The upper semi-circular arc of radius $R > a$:
+    
+
+$$\Gamma_R = \{ z = R e^{i\theta} : 0 \le \theta \le \pi \}$$.poles in the upper half-plane ($\text{Im}(z) > 0$)
 
 
 ### Source: PDF Extraction
 
-### Q327. Pg 1, Q4(i): Evaluate $\int_0^\infty \frac{1}{x^4+a^4} dx$
+### Q327. ✅Pg 1, Q4(i): Evaluate $\int_0^\infty \frac{1}{x^4+a^4} dx$
 
 **Solution:**
 Since the integrand is even:
@@ -12411,12 +12421,20 @@ Consider $f(z) = \frac{1}{z^4+a^4}$ integrated over a closed contour consisting 
    $z^4 = -a^4 = a^4 e^{i(\pi + 2k\pi)} \implies z_k = a e^{i(\pi + 2k\pi)/4}$ for $k = 0, 1$:
    * $z_0 = a e^{i\pi/4} = a\left(\frac{1+i}{\sqrt{2}}\right)$
    * $z_1 = a e^{i 3\pi/4} = a\left(\frac{-1+i}{\sqrt{2}}\right)$
+- - The line segment along the real axis from $-R$ to $R$:
+        
 
-2. **Residues at simple poles using $\frac{P(z)}{Q'(z)} = \frac{1}{4z^3} = \frac{z}{4z^4} = -\frac{z}{4a^4}$:**
+$$L_R = \{ z = x \in \mathbb{R} : -R \le x \le R \}$$
+
+- The upper semi-circular arc of radius $R > a$:
+    
+
+$$\Gamma_R = \{ z = R e^{i\theta} : 0 \le \theta \le \pi \}$$
+1. **Residues at simple poles using $\frac{P(z)}{Q'(z)} = \frac{1}{4z^3} = \frac{z}{4z^4} = -\frac{z}{4a^4}$:**
    $$\text{Res}(f, z_0) = -\frac{z_0}{4a^4}, \qquad \text{Res}(f, z_1) = -\frac{z_1}{4a^4}$$
    $$\sum \text{Res} = -\frac{z_0 + z_1}{4a^4} = -\frac{a}{4a^4}\left(\frac{1+i}{\sqrt{2}} + \frac{-1+i}{\sqrt{2}}\right) = -\frac{1}{4a^3}\left(\frac{2i}{\sqrt{2}}\right) = -\frac{i\sqrt{2}}{4a^3}$$
 
-3. **Evaluate the integral:**
+2. **Evaluate the integral:**
    $$\int_{-\infty}^\infty \frac{dx}{x^4+a^4} = 2\pi i \left(-\frac{i\sqrt{2}}{4a^3}\right) = \frac{2\sqrt{2}\pi}{4a^3} = \frac{\pi}{\sqrt{2}a^3}$$
    $$I = \frac{1}{2}\left(\frac{\pi}{\sqrt{2}a^3}\right) = \frac{\pi}{2\sqrt{2}a^3}$$
 
@@ -12539,7 +12557,7 @@ Consider $f(z) = \frac{e^{imz}}{(z^2+1)^2} = \frac{e^{imz}}{(z-i)^2(z+i)^2}$.
 
 ### Source: Feruj Sheet & Slides
 
-### Q334. Example: Evaluate the Cauchy principal value of $\int_{-\infty}^{\infty}\frac{dx}{(x^{2}+1)(x^{2}+9)}$
+### Q334.✅ Example: Evaluate the Cauchy principal value of $\int_{-\infty}^{\infty}\frac{dx}{(x^{2}+1)(x^{2}+9)}$
 
 **Solution:**
 
