@@ -337,6 +337,14 @@ The 4 primary graphs are:
 >    - Minimum when $A = \bar{x}$ (where $S = \sigma$).
 > 4. **Standard Deviation of First $n$ Natural Numbers**:
 >    $$\sigma = \sqrt{\frac{n^2 - 1}{12}}$$
+> 
+##### 3. Sample Standard Deviation ($s$)
+
+$$s = \sqrt{\frac{\sum (x - \bar{x})^2}{n - 1}}$$
+
+##### 4. Population Standard Deviation ($\sigma$)
+
+$$\sigma = \sqrt{\frac{\sum (x - \bar{x})^2}{n}}$$
 
 ---
 
@@ -456,16 +464,6 @@ $N = 10$. Midpoints $x$: $3, 5, 7, 9$.
 | People | 3 | 61 | 132 | 153 | 140 | 51 | 2 |
 
 **Solution:**
-Let $A = 55, h = 10, u = \frac{x - 55}{10}$.
-$N = 3 + 61 + 132 + 153 + 140 + 51 + 2 = 542$.
-* $u$: $-3, -2, -1, 0, 1, 2, 3$
-* $\sum fu = 3(-3) + 61(-2) + 132(-1) + 153(0) + 140(1) + 51(2) + 2(3) = -9 - 122 - 132 + 0 + 140 + 102 + 6 = -15$
-* $\sum fu^2 = 3(9) + 61(4) + 132(1) + 153(0) + 140(1) + 51(4) + 2(9) = 27 + 244 + 132 + 0 + 140 + 204 + 18 = 765$
-
-1. **Mean:**
-   $$\bar{x} = 55 + \left(\frac{-15}{542}\right)10 = 55 - 0.277 = 54.723 \text{ years}$$
-2. **Standard Deviation:**
-   $$\sigma = 10 \sqrt{\frac{765}{542} - \left(\frac{-15}{542}\right)^2} = 10 \sqrt{1.4114 - 0.0008} = 10 \sqrt{1.4106} \approx 11.877 \text{ years}$$
 
 **Answer:** Mean $= \mathbf{54.72\text{ years}}$, $\text{S.D.} = \mathbf{11.88\text{ years}}$.
 
