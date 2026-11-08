@@ -1,10 +1,6 @@
 
 
 
-### 🏷️ Origin & Problem Identifier Legend
-To help distinguish original foundational note material from newly integrated exam and lecture problems:
-- 📌 **`[ORIGINAL NOTE]`**: 27 foundational questions, theorems, and problems originally present in this document.
-- 🆕 **`[NEW — FROM Q-BANK]`**: 53 newly added problems, proofs, theorems, and exam questions integrated from `Q    statistical Analysis and Probability.md` and `Q    Statistical Properties of Random Variable, Vector and Matrix.md`.
 
 ---
 
