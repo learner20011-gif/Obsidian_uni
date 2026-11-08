@@ -342,26 +342,41 @@ The 4 primary graphs are:
 
 ### Solutions: Past Exam Papers & Class Tests
 
-#### Q20. Pg 1, Q.5(b) & Q21. Pg 4, Q.5(b): Calculate standard deviation and coefficient of variation:
+#### Q20. ✅Pg 1, Q.5(b) & Q21. Pg 4, Q.5(b): Calculate standard deviation and coefficient of variation:
 | Weight (kg) | 30-40 | 40-50 | 50-60 | 60-70 | 70-80 | 80-90 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Frequency | 18 | 37 | 45 | 27 | 15 | 8 |
 
 **Solution:**
-Let $u = \frac{x - 55}{10}$. Class width $h = 10$.
-$N = 18 + 37 + 45 + 27 + 15 + 8 = 150$.
-* Midpoints $x$: $35, 45, 55, 65, 75, 85$
-* $u$: $-2, -1, 0, 1, 2, 3$
-* $\sum fu = 18(-2) + 37(-1) + 45(0) + 27(1) + 15(2) + 8(3) = -36 - 37 + 0 + 27 + 30 + 24 = 8$
-* $\sum fu^2 = 18(4) + 37(1) + 45(0) + 27(1) + 15(4) + 8(9) = 72 + 37 + 0 + 27 + 60 + 72 = 268$
+##### 1. Calculation Table
 
-1. **Mean:**
-   $$\bar{x} = A + \left(\frac{\sum fu}{N}\right)h = 55 + \left(\frac{8}{150}\right)10 = 55 + 0.533 = 55.533 \text{ kg}$$
-2. **Standard Deviation:**
-   $$\sigma = h \sqrt{\frac{\sum fu^2}{N} - \left(\frac{\sum fu}{N}\right)^2} = 10 \sqrt{\frac{268}{150} - \left(\frac{8}{150}\right)^2} = 10 \sqrt{1.7867 - 0.0028} = 10 \sqrt{1.7839} = 10(1.3356) = 13.36 \text{ kg}$$
-3. **Coefficient of Variation (C.V.):**
-   $$\text{C.V.} = \frac{\sigma}{\bar{x}} \times 100\% = \frac{13.36}{55.533} \times 100\% \approx 24.06\%$$
+|**Weight (kg)**|**x**|**f**|**fx**|**fx2**|
+|---|---|---|---|---|
+|30–40|35|18|630|22,050|
+|40–50|45|37|1,665|74,925|
+|50–60|55|45|2,475|136,125|
+|60–70|65|27|1,755|114,075|
+|70–80|75|15|1,125|84,375|
+|80–90|85|8|680|57,800|
+|**Total**|—|**$N = 150$**|**$\sum fx = 8,330$**|**$\sum fx^2 = 489,350$**|
 
+##### 2. Mean ($\bar{x}$)
+
+$$\bar{x} = \frac{\sum fx}{N} = \frac{8,330}{150} = 55.533 \text{ kg}$$
+
+##### 3. Standard Deviation ($\sigma$)
+
+$$\sigma = \sqrt{\frac{\sum fx^2}{N} - \bar{x}^2}$$
+
+$$\sigma = \sqrt{\frac{489,350}{150} - (55.533)^2}$$
+
+$$\sigma = \sqrt{3,262.333 - 3,083.951} = \sqrt{178.382} \approx 13.36 \text{ kg}$$
+
+##### 4. Coefficient of Variation (C.V.)
+
+$$\text{C.V.} = \left(\frac{\sigma}{\bar{x}}\right) \times 100\%$$
+
+$$\text{C.V.} = \left(\frac{13.36}{55.533}\right) \times 100\% \approx 24.06\%$$
 **Answer:** $\sigma = \mathbf{13.36\text{ kg}}$, $\text{C.V.} = \mathbf{24.06\%}$.
 
 ***
