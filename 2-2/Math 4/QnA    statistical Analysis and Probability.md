@@ -44,7 +44,7 @@
 
 ### Solutions: Past Exam Papers & Class Tests
 
-#### Q1. Pg 1, Q.5(a): For any $n$ non zero observations prove that A.M. $\ge$ G.M. $\ge$ H.M.
+#### Q1. ✅Pg 1, Q.5(a): For any $n$ non zero observations prove that A.M. $\ge$ G.M. $\ge$ H.M.
 
 **Proof:**
 1. **For two positive numbers $a$ and $b$:**
