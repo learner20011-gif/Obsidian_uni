@@ -285,7 +285,7 @@ When events can occur simultaneously:
 
 ---
 
-### Theorem 2.2: Proof of the Additive Law of Probability
+### ✅Theorem 2.2: Proof of the Additive Law of Probability
 *(Ref: Question Bank Q.62, Q.73, Q.76, Q.77, Q.78 | Pg 1, Q.6(a), Pg 20 Class Test-2 Q1, MHU Sheet Theorems 1, 2, 3)*  
 > 🏷️ **Identifier:** 🆕 `[NEW — FROM Q-BANK]` *(Added from Past Papers / Lecture Sheet)*
 **State and prove the Additive Law of Probability for:**
@@ -347,7 +347,7 @@ $$P\left(\bigcup_{i=1}^n A_i\right) = \sum_{i=1}^n P(A_i) - \sum_{1 \le i < j \l
 
 ---
 
-### Problem 2.3: Two Unbiased Dice Tossed (Sum 8 or Both Even)
+### ✅Problem 2.3: Two Unbiased Dice Tossed (Sum 8 or Both Even)
 *(Ref: Note Problem 2.2)*  
 > 🏷️ **Identifier:** 📌 `[ORIGINAL NOTE]` *(Formerly Problem 2.2)*
 **Problem Statement:**  
