@@ -620,6 +620,7 @@ $\text{Mean} = \mathbf{32.0}$, $\text{Median} = \mathbf{32.61}$, $\text{S.D.} = 
 >      - $\gamma_1 > 0 \implies$ **Positively skewed** (right tail longer, $\text{Mean} > \text{Median} > \text{Mode}$).
 >      - $\gamma_1 = 0 \implies$ **Symmetric** (bell-shaped, $\text{Mean} = \text{Median} = \text{Mode}$).
 >      - $\gamma_1 < 0 \implies$ **Negatively skewed** (left tail longer, $\text{Mean} < \text{Median} < \text{Mode}$).
+>      - ![[Pasted image 20261109022403.png]]
 > 4. **Measures of Kurtosis (Peakedness)**:
 >    - **Moment Coefficient of Kurtosis**:
 >      $$\beta_2 = \frac{\mu_4}{\mu_2^2}, \qquad \gamma_2 = \beta_2 - 3$$
@@ -627,6 +628,8 @@ $\text{Mean} = \mathbf{32.0}$, $\text{Median} = \mathbf{32.61}$, $\text{S.D.} = 
 >      - $\beta_2 = 3 \quad (\gamma_2 = 0) \implies$ **Mesokurtic** (Normal bell shape).
 >      - $\beta_2 > 3 \quad (\gamma_2 > 0) \implies$ **Leptokurtic** (sharply peaked, heavier tails).
 >      - $\beta_2 < 3 \quad (\gamma_2 < 0) \implies$ **Platykurtic** (flat-topped, lighter tails).
+>      - ![[Pasted image 20261109023222.png]]
+>  - 
 >    - **Fundamental Inequality**: For any distribution, $\beta_2 > \beta_1 + 1$.
 
 ---
@@ -647,27 +650,71 @@ $\text{Mean} = \mathbf{32.0}$, $\text{Median} = \mathbf{32.61}$, $\text{S.D.} = 
 - Modal class is $8 - 12$ ($f_1 = 18, f_0 = 12, f_2 = 7$):
   $$\text{Mode} = 8 + \frac{18 - 12}{2(18) - 12 - 7} \times 4 = 8 + \frac{6}{17} \times 4 \approx \mathbf{9.41}$$
 
-**Step 2: Moments using step-deviation**
-Let $u_i = \frac{x_i - 10}{4}$, where midpoints $x_i = 2, 6, 10, 14, 18, 22, 26 \implies u_i = -2, -1, 0, 1, 2, 3, 4$:
-- $\sum f_i u_i = 10(-2) + 12(-1) + 18(0) + 7(1) + 5(2) + 8(3) + 4(4) = -20 - 12 + 0 + 7 + 10 + 24 + 16 = 25$
-- $\sum f_i u_i^2 = 10(4) + 12(1) + 0 + 7(1) + 5(4) + 8(9) + 4(16) = 40 + 12 + 7 + 20 + 72 + 64 = 215$
-- $\sum f_i u_i^3 = 10(-8) + 12(-1) + 0 + 7(1) + 5(8) + 8(27) + 4(64) = -80 - 12 + 7 + 40 + 216 + 256 = 427$
-- $\sum f_i u_i^4 = 10(16) + 12(1) + 0 + 7(1) + 5(16) + 8(81) + 4(256) = 160 + 12 + 7 + 80 + 648 + 1024 = 1931$
+##### 1. Calculation Table
 
-Moments of $u$:
-- $\nu_1' = \frac{25}{64} \approx 0.3906$
-- $\nu_2 = \frac{215}{64} - (0.3906)^2 = 3.3594 - 0.1526 = 3.2068$
-- $\nu_3 = \nu_3' - 3\nu_2'\nu_1' + 2(\nu_1')^3 = \frac{427}{64} - 3(3.3594)(0.3906) + 2(0.3906)^3 = 6.6719 - 3.9366 + 0.1192 = 2.8545$
-- $\nu_4 = \nu_4' - 4\nu_3'\nu_1' + 6\nu_2'(\nu_1')^2 - 3(\nu_1')^4 = 30.1719 - 4(6.6719)(0.3906) + 6(3.3594)(0.1526) - 3(0.0233) = 30.1719 - 10.4242 + 3.0759 - 0.0699 = 22.7537$
+$$\mu_r' = \frac{\sum f x^r}{N}$$
 
-**Step 3: Coefficients of Skewness and Kurtosis**
-Scale factor cancels out in coefficients:
-$$\beta_1 = \frac{\mu_3^2}{\mu_2^3} = \frac{\nu_3^2}{\nu_2^3} = \frac{(2.8545)^2}{(3.2068)^3} = \frac{8.1482}{32.9774} \approx \mathbf{0.247} \quad (\text{Positively skewed})$$
-$$\beta_2 = \frac{\mu_4}{\mu_2^2} = \frac{\nu_4}{\nu_2^2} = \frac{22.7537}{(3.2068)^2} = \frac{22.7537}{10.2836} \approx \mathbf{2.21} \quad (\text{Platykurtic, since } \beta_2 < 3)$$
+|**Class**|**Midpoint (x)**|**f**|**fx**|**fx2**|**fx3**|**fx4**|
+|---|---|---|---|---|---|---|
+|0–4|2|10|20|40|80|160|
+|4–8|6|12|72|432|2,592|15,552|
+|8–12|10|18|180|1,800|18,000|180,000|
+|12–16|14|7|98|1,372|19,208|268,912|
+|16–20|18|5|90|1,620|29,160|524,880|
+|20–24|22|8|176|3,872|85,184|1,874,048|
+|24–28|26|4|104|2,704|70,304|1,827,904|
+|**Total**|—|**$N = 64$**|**$\sum fx = 740$**|**$\sum fx^2 = 11,840$**|**$\sum fx^3 = 224,528$**|**$\sum fx^4 = 4,691,456$**|
 
+##### 2. Raw Moments About Origin ($\mu_r'$)
+
+$\mu_1'$ (Mean $\bar{x}$):
+
+$$\mu_1' = \frac{740}{64} = 11.5625$$
+
+$\mu_2'$:
+
+$$\mu_2' = \frac{11,840}{64} = 185.0$$
+
+$\mu_3'$:
+
+$$\mu_3' = \frac{224,528}{64} = 3,508.25$$
+
+$\mu_4'$:
+
+$$\mu_4' = \frac{4,691,456}{64} = 73,304.0$$
+
+##### 3. Central Moments ($\mu_r$)
+
+$\mu_2$ (Variance):
+
+$$\mu_2 = \mu_2' - (\mu_1')^2 = 185 - (11.5625)^2 = \mathbf{51.309}$$
+
+$\mu_3$:
+
+$$\mu_3 = \mu_3' - 3\mu_2'\mu_1' + 2(\mu_1')^3$$
+
+$$\mu_3 = 3,508.25 - 3(185)(11.5625) + 2(11.5625)^3 \approx \mathbf{182.676}$$
+
+$\mu_4$:
+
+$$\mu_4 = \mu_4' - 4\mu_3'\mu_1' + 6\mu_2'(\mu_1')^2 - 3(\mu_1')^4$$
+
+$$\mu_4 = 73,304 - 4(3,508.25)(11.5625) + 6(185)(11.5625)^2 - 3(11.5625)^4 \approx \mathbf{5,824.722}$$
+
+##### 4. Skewness ($\beta_1$) and Kurtosis ($\beta_2$)
+
+- **Moment Coefficient of Skewness:**
+    
+
+$$\beta_1 = \frac{\mu_3^2}{\mu_2^3} = \frac{(182.676)^2}{(51.309)^3} = \frac{33,370.62}{135,071.59} \approx \mathbf{0.247}$$
+
+- **Moment Coefficient of Kurtosis:**
+    
+
+$$\beta_2 = \frac{\mu_4}{\mu_2^2} = \frac{5,824.722}{(51.309)^2} = \frac{5,824.722}{2,632.572} \approx \mathbf{2.213}$$
 ***
 
-#### Q42. Pg 4, Q.6(a): What is Kurtosis? Find Skewness for the Given Distribution
+#### Q42. ✅Pg 4, Q.6(a): What is Kurtosis? Find Skewness for the Given Distribution
 
 **Definition of Kurtosis:**
 Kurtosis measures the degree of peakedness or flatness of a unimodal frequency curve relative to a normal distribution. Measured by $\beta_2 = \frac{\mu_4}{\mu_2^2}$.
@@ -691,38 +738,78 @@ The distribution is perfectly **symmetric**, hence the coefficient of skewness i
 
 ***
 
-#### Q43. Pg 6, Q.5(a): First Four Moments About (i) Origin, (ii) Mean; S.D., Skewness, Kurtosis
+#### Q43. ✅Pg 6, Q.5(a): First Four Moments About (i) Origin, (ii) Mean; S.D., Skewness, Kurtosis
 
 **Data:**
 | Class | 0-5 | 5-10 | 10-15 | 15-20 | 20-25 | Total |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | Midpoint ($x$) | 2.5 | 7.5 | 12.5 | 17.5 | 22.5 | - |
 | $f$ | 10 | 11 | 16 | 7 | 3 | $N=47$ |
+##### 1. Calculation Table (Normal Direct Method)
 
-Let $u_i = \frac{x_i - 12.5}{5} \implies u_i \in \{-2, -1, 0, 1, 2\}$:
-- $\sum f u = 10(-2) + 11(-1) + 16(0) + 7(1) + 3(2) = -20 - 11 + 7 + 6 = -18$
-- $\sum f u^2 = 10(4) + 11(1) + 0 + 7(1) + 3(4) = 40 + 11 + 7 + 12 = 70$
-- $\sum f u^3 = 10(-8) + 11(-1) + 0 + 7(1) + 3(8) = -80 - 11 + 7 + 24 = -60$
-- $\sum f u^4 = 10(16) + 11(1) + 0 + 7(1) + 3(16) = 160 + 11 + 7 + 48 = 226$
+|**Class**|**Midpoint (x)**|**f**|**fx**|**fx2**|**fx3**|**fx4**|
+|---|---|---|---|---|---|---|
+|1.5–2.5|2|1|2|4|8|16|
+|2.5–3.5|3|3|9|27|81|243|
+|3.5–4.5|4|7|28|112|448|1,792|
+|4.5–5.5|5|3|15|75|375|1,875|
+|5.5–6.5|6|1|6|36|216|1,296|
+|**Total**|—|**$N = 15$**|**$\sum fx = 60$**|**$\sum fx^2 = 254$**|**$\sum fx^3 = 1,128$**|**$\sum fx^4 = 5,222$**|
 
-**1. Central Moments ($\mu_r$):**
-- $\nu_1' = \frac{-18}{47} \approx -0.3830$
-- $\nu_2 = \frac{70}{47} - (-0.3830)^2 = 1.4894 - 0.1467 = 1.3427 \implies \mu_2 = 5^2 \times 1.3427 = \mathbf{33.567}$
-- $\nu_3 = \frac{-60}{47} - 3(1.4894)(-0.3830) + 2(-0.3830)^3 = -1.2766 + 1.7113 - 0.1124 = 0.3223 \implies \mu_3 = 5^3 \times 0.3223 = \mathbf{40.29}$
-- $\nu_4 = \frac{226}{47} - 4\left(\frac{-60}{47}\right)(-0.3830) + 6(1.4894)(0.1467) - 3(-0.3830)^4 = 4.8085 - 1.9558 + 1.3109 - 0.0646 = 4.0990 \implies \mu_4 = 5^4 \times 4.0990 = \mathbf{2561.88}$
-- $\mu_1 = \mathbf{0}$.
+##### 2. First Four Moments About Origin ($\mu_r' = \frac{\sum fx^r}{N}$)
 
-**2. Moments about Origin ($\mu_r'$):**
-- $\bar{x} = 12.5 + 5(-0.3830) = \mathbf{10.585} = \mu_1'$
-- $\mu_2' = \mu_2 + (\mu_1')^2 = 33.567 + (10.585)^2 = 33.567 + 112.042 = \mathbf{145.61}$
-- $\mu_3' = \mu_3 + 3\mu_2\bar{x} + \bar{x}^3 = 40.29 + 3(33.567)(10.585) + (10.585)^3 = 40.29 + 1065.89 + 1185.97 = \mathbf{2292.15}$
-- $\mu_4' = \mu_4 + 4\mu_3\bar{x} + 6\mu_2\bar{x}^2 + \bar{x}^4 \approx \mathbf{38927.8}$
+$\mu_1'$ (Mean $\bar{x}$):
 
-**3. Standard Deviation, Skewness & Kurtosis:**
-- $\sigma = \sqrt{\mu_2} = \sqrt{33.567} \approx \mathbf{5.79}$
-- $\beta_1 = \frac{\mu_3^2}{\mu_2^3} = \frac{(40.29)^2}{(33.567)^3} = \frac{1623.28}{37821.5} \approx \mathbf{0.0429} \implies \gamma_1 = \mathbf{+0.207}$ (Slightly positively skewed)
-- $\beta_2 = \frac{\mu_4}{\mu_2^2} = \frac{2561.88}{(33.567)^2} = \frac{2561.88}{1126.74} \approx \mathbf{2.27}$ (Platykurtic)
+$$\mu_1' = \frac{60}{15} = \mathbf{4}$$
 
+$\mu_2'$:
+
+$$\mu_2' = \frac{254}{15} \approx \mathbf{16.933}$$
+
+$\mu_3'$:
+
+$$\mu_3' = \frac{1,128}{15} = \mathbf{75.2}$$
+
+$\mu_4'$:
+
+$$\mu_4' = \frac{5,222}{15} \approx \mathbf{348.133}$$
+
+##### 3. First Four Moments About Mean ($\mu_r$)
+
+$\mu_1$:
+
+$$\mu_1 = \mathbf{0}$$
+
+$\mu_2$ (Variance):
+
+$$\mu_2 = \mu_2' - (\mu_1')^2 = \frac{254}{15} - 4^2 = \frac{14}{15} \approx \mathbf{0.933}$$
+
+$\mu_3$:
+
+$$\mu_3 = \mu_3' - 3\mu_2'\mu_1' + 2(\mu_1')^3 = 75.2 - 3\left(\frac{254}{15}\right)(4) + 2(4)^3 = 75.2 - 203.2 + 128 = \mathbf{0}$$
+
+$\mu_4$:
+
+$$\mu_4 = \mu_4' - 4\mu_3'\mu_1' + 6\mu_2'(\mu_1')^2 - 3(\mu_1')^4$$
+
+$$\mu_4 = 348.133 - 4(75.2)(4) + 6(16.933)(16) - 3(256) = \frac{38}{15} \approx \mathbf{2.533}$$
+
+##### 4. Standard Deviation, Skewness, and Kurtosis
+
+- **Standard Deviation ($\sigma$):**
+    
+
+$$\sigma = \sqrt{\mu_2} = \sqrt{\frac{14}{15}} \approx \mathbf{0.966}$$
+
+- **Skewness ($\beta_1$):**
+    
+
+$$\beta_1 = \frac{\mu_3^2}{\mu_2^3} = \frac{0^2}{(0.933)^3} = \mathbf{0} \quad (\text{Symmetric})$$
+
+- **Kurtosis ($\beta_2$):**
+    
+
+$$\beta_2 = \frac{\mu_4}{\mu_2^2} = \frac{38 / 15}{(14 / 15)^2} = \frac{38 \times 15}{196} = \frac{570}{196} \approx \mathbf{2.91} \quad (\text{Platykurtic})$$
 ***
 
 #### Q44. Pg 12, CT-02, Q.1: Relation Between Central Moments ($\mu$) and Raw Moments ($\mu'$) with respect to $A$
