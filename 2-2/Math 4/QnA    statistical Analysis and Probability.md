@@ -40,6 +40,10 @@
 >    $$\bar{x}_w = \frac{\sum w_i x_i}{\sum w_i}$$
 >    For the first $n$ natural numbers weighted by themselves ($x_i = i, w_i = i$): $\bar{x}_w = \frac{\sum i^2}{\sum i} = \frac{2n+1}{3}$.
 
+- General formula:
+    
+
+$$Q_k = L + \left[\frac{\frac{k \cdot N}{4} - F_c}{f}\right] \times h$$
 ---
 
 ### Solutions: Past Exam Papers & Class Tests
@@ -631,7 +635,10 @@ $\text{Mean} = \mathbf{32.0}$, $\text{Median} = \mathbf{32.61}$, $\text{S.D.} = 
 >      - ![[Pasted image 20261109023222.png]]
 >  - 
 >    - **Fundamental Inequality**: For any distribution, $\beta_2 > \beta_1 + 1$.
+- General formula:
+    
 
+$$Q_k = L + \left[\frac{\frac{k \cdot N}{4} - F_c}{f}\right] \times h$$
 ---
 
 ### Solutions: Past Exam Papers & Class Tests
@@ -892,7 +899,7 @@ $$\beta_2 = \frac{\mu_4}{\mu_2^2} = \frac{110.8032}{(8.16)^2} = \frac{110.8032}{
 
 ***
 
-#### Q48. Pg 16, CT 03, Q.1: Calculate Skewness for Monthly Income
+#### Q48. ✅Pg 16, CT 03, Q.1: Calculate Skewness for Monthly Income
 
 **Data:**
 | Income | 40-50 | 50-60 | 60-70 | 70-80 | 80-90 | Total |
@@ -934,7 +941,7 @@ $$\beta_2 = \frac{\mu_4}{\mu_2^2} = \frac{110.8032}{(8.16)^2} = \frac{110.8032}{
 
 ***
 
-#### Q51. Pg 21, Class Test-1, Q2: Calculate Quartile Coefficient of Skewness
+#### Q51. ✅Pg 21, Class Test-1, Q2: Calculate Quartile Coefficient of Skewness
 
 **Data:**
 | Class | 3-7 | 8-12 | 13-17 | 18-22 | 23-27 | 28-32 | 33-37 | 38-42 | Total |
@@ -943,17 +950,65 @@ $$\beta_2 = \frac{\mu_4}{\mu_2^2} = \frac{110.8032}{(8.16)^2} = \frac{110.8032}{
 | $f$ | 2 | 108 | 580 | 175 | 80 | 32 | 18 | 5 | $N=1000$ |
 | $F_c$ | 2 | 110 | 690 | 865 | 945 | 977 | 995 | 1000 | - |
 
-**Step 1: Quartiles**
-- $Q_1$ position: $\frac{N}{4} = 250 \implies$ Class $12.5 - 17.5$ ($L=12.5, F_c=110, f=580, h=5$):
-  $$Q_1 = 12.5 + \frac{250 - 110}{580} \times 5 = 12.5 + \frac{140}{116} \approx \mathbf{13.71}$$
-- $M$ position: $\frac{N}{2} = 500 \implies$ Class $12.5 - 17.5$ ($L=12.5, F_c=110, f=580, h=5$):
-  $$M = 12.5 + \frac{500 - 110}{580} \times 5 = 12.5 + \frac{390}{116} \approx \mathbf{15.86}$$
-- $Q_3$ position: $\frac{3N}{4} = 750 \implies$ Class $17.5 - 22.5$ ($L=17.5, F_c=690, f=175, h=5$):
-  $$Q_3 = 17.5 + \frac{750 - 690}{175} \times 5 = 17.5 + \frac{60}{35} \approx \mathbf{19.21}$$
+##### 1. Cumulative Frequency Table
 
-**Step 2: Bowley's Skewness**
-$$S_q = \frac{Q_3 + Q_1 - 2M}{Q_3 - Q_1} = \frac{19.21 + 13.71 - 2(15.86)}{19.21 - 13.71} = \frac{32.92 - 31.72}{5.50} = \frac{1.20}{5.50} \approx \mathbf{+0.218}$$
+|**Class**|**Boundaries**|**f**|**Cumulative Frequency (Fc​)**|
+|---|---|---|---|
+|3–7|2.5–7.5|2|2|
+|8–12|7.5–12.5|108|110|
+|13–17|**12.5–17.5**|**580**|**690**|
+|18–22|**17.5–22.5**|**175**|**865**|
+|23–27|22.5–27.5|80|945|
+|28–32|27.5–32.5|32|977|
+|33–37|32.5–37.5|18|995|
+|38–42|37.5–42.5|5|1,000|
+|**Total**|—|**$N = 1,000$**|—|
 
+- General formula:
+    
+
+$$Q_k = L + \left[\frac{\frac{k \cdot N}{4} - F_c}{f}\right] \times h$$
+
+##### 2. First Quartile ($Q_1$)
+
+- **Position:** $\frac{N}{4} = \frac{1,000}{4} = 250 \implies$ Class: $12.5 - 17.5$
+    
+- **Parameters:** $L = 12.5$, $F_c = 110$, $f = 580$, $h = 5$
+    
+
+$$Q_1 = 12.5 + \left[\frac{250 - 110}{580}\right] \times 5 = 12.5 + \frac{140}{116} \approx \mathbf{13.71}$$
+
+##### 3. Median ($M$ or $Q_2$)
+
+- **Position:** $\frac{N}{2} = \frac{1,000}{2} = 500 \implies$ Class: $12.5 - 17.5$
+    
+- **Parameters:** $L = 12.5$, $F_c = 110$, $f = 580$, $h = 5$
+    
+
+$$M = 12.5 + \left[\frac{500 - 110}{580}\right] \times 5 = 12.5 + \frac{390}{116} \approx \mathbf{15.86}$$
+
+##### 4. Third Quartile ($Q_3$)
+
+- **Position:** $\frac{3N}{4} = \frac{3 \times 1,000}{4} = 750 \implies$ Class: $17.5 - 22.5$
+    
+- **Parameters:** $L = 17.5$, $F_c = 690$, $f = 175$, $h = 5$
+    
+
+$$Q_3 = 17.5 + \left[\frac{750 - 690}{175}\right] \times 5 = 17.5 + \frac{60}{35} \approx \mathbf{19.21}$$
+
+##### 5. Bowley's Quartile Coefficient of Skewness ($S_q$)
+
+- **Formula:**
+    
+
+$$S_q = \frac{Q_3 + Q_1 - 2M}{Q_3 - Q_1}$$
+
+- **Calculation:**
+    
+
+$$S_q = \frac{19.21 + 13.71 - 2(15.86)}{19.21 - 13.71} = \frac{32.92 - 31.72}{5.50} = \frac{1.20}{5.50} \approx \mathbf{+0.218}$$
+
+> **Conclusion:** $S_q > 0 \implies$ The distribution is **positively skewed**.
 ---
 
 ### Solutions: MHU Lecture Sheet (EEE/Math-2201)
