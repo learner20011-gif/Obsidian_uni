@@ -1,8 +1,4 @@
-# Statistical Properties of Random Variable, Vector and Matrix - Comprehensive Question Bank
 
-This document compiles all questions from **Past Exam Papers / Class Tests** and the **MHU Lecture Sheet (EEE/Math-2201)**, organized strictly according to the syllabus topics for Random Variables, Vectors, Matrices, Joint Distributions, Hypothesis Testing, and Regression.
-
-*(Note: Topics from the syllabus outline that have no questions in either past papers or the lecture sheet are explicitly marked.)*
 
 ***
 

@@ -1,10 +1,4 @@
-# Probability and Probability Distributions — Comprehensive Q&A and Solutions
 
-> **Course:** Math-2201 / Math 4 (Statistical Analysis and Probability)  
-> **Source Materials:** Class Lecture Notes, Homework Exercises, Class Tests, and Semester Final Exam Papers (Prof. MHU / Department of Mathematics, RUET)  
-> **Scope:** Fundamental Probability Concepts, Combinatorial Probability, Laws of Probability, Bayes' Theorem, Discrete & Continuous Random Variables, Probability Mass Functions (PMF), Probability Density Functions (PDF), Cumulative Distribution Functions (CDF), Expectation & Raw/Central Moments, Moment Generating Functions (MGF), Joint/Marginal/Conditional Distributions, and Theoretical Distributions (Binomial, Poisson, and Normal Distributions).
-
----
 
 
 ### 🏷️ Origin & Problem Identifier Legend
