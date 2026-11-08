@@ -497,7 +497,7 @@ Since $d^2 \ge 0$, $S \ge \sigma$. Root mean square deviation is minimum and equ
 
 ***
 
-#### Q31. MHU Sheet, Question-3: Prove variance of first $n$ natural numbers is $\frac{n^2-1}{12}$.
+#### Q31. ✅MHU Sheet, Question-3: Prove variance of first $n$ natural numbers is $\frac{n^2-1}{12}$.
 
 **Proof:**
 For numbers $1, 2, 3, \dots, n$:
