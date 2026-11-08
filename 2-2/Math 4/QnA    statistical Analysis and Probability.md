@@ -469,7 +469,7 @@ $N = 10$. Midpoints $x$: $3, 5, 7, 9$.
 
 ***
 
-#### Q28. Pg 20, Class Test-1, Q1: Determine the relation between standard deviation and root mean square deviation.
+#### Q28. Pg 20, ✅Class Test-1, Q1: Determine the relation between standard deviation and root mean square deviation.
 
 **Solution:**
 Let $S = \sqrt{\frac{\sum f_i(x_i - A)^2}{N}}$ and $\sigma = \sqrt{\frac{\sum f_i(x_i - \bar{x})^2}{N}}$.
