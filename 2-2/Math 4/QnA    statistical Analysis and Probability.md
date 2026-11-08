@@ -94,12 +94,12 @@
 
 **Solution:**
 1. **Definition of Mode:** The value in a dataset that occurs with the greatest frequency.
-2. **Graphical Representation:** On a **histogram**, the mode is located within the tallest bar. Diagonal lines are drawn from the top corners of the modal bar to the adjacent top corners of neighboring bars; their intersection projected onto the horizontal axis gives the mode.
+2. **Graphical Representation:** On a **histogram**, the mode is located within the tallest bar. Diagonal lines are drawn from the top corners of the modal bar to the adjacent top corners of neighboring bars; their intersection projected onto the horizontal axis gives the mode.![[Pasted image 20261108235234.jpg]]![[Pasted image 20261108235239.jpg]]
 3. **Proof for Two Numbers:** *(See Step 1 of Q1).*
 
 ***
 
-#### Q5. Pg 12, CT-01, Q.2: Find missing frequencies for table (Median = 45, Total = 120):
+#### Q5. ✅Pg 12, CT-01, Q.2: Find missing frequencies for table (Median = 45, Total = 120):
 | Class | 10-20 | 20-30 | 30-40 | 40-50 | 50-60 | 60-70 | 70-80 | Total |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Frequency | 5 | 15 | $f_1$ | 30 | 25 | $f_2$ | 5 | 120 |
