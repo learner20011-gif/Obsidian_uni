@@ -608,7 +608,7 @@ $$\mathbf{\text{Ans: (i) } \frac{16}{81} \approx 0.1975, \quad \text{(ii) } \fra
 
 ---
 
-### Problem 3.4: Tulip Bulbs Selection With and Without Replacement
+### ✅Problem 3.4: Tulip Bulbs Selection With and Without Replacement
 *(Ref: Question Bank Q.65 | Pg 4, Q.6(b))*  
 > 🏷️ **Identifier:** 🆕 `[NEW — FROM Q-BANK]` *(Added from Past Papers / Lecture Sheet)*
 **Problem Statement:**  
