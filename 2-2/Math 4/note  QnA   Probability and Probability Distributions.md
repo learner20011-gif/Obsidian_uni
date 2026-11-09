@@ -577,7 +577,7 @@ $$P(A_1 \cap A_2 \cap \dots \cap A_n) = P(A_1) \cdot P(A_2 | A_1) \cdot P(A_3 | 
 
 ---
 
-### Problem 3.3: Successive Ball Drawing (With and Without Replacement)
+### ✅Problem 3.3: Successive Ball Drawing (With and Without Replacement)
 *(Ref: Note Problem 3.2)*  
 > 🏷️ **Identifier:** 📌 `[ORIGINAL NOTE]` *(Formerly Problem 3.2)*
 **Problem Statement:**  
