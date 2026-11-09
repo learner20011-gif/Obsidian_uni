@@ -850,7 +850,7 @@ $$\mathbf{\text{Ans: (1) } \frac{14}{285}, \quad \text{(2) } \frac{23}{57}, \qua
 
 ---
 
-### Problem 3.9: Green & Red Dice Sample Space & Event Algebra
+### ✅Problem 3.9: Green & Red Dice Sample Space & Event Algebra
 *(Ref: Question Bank Q.80, Q.83 | MHU Sheet Lec 7-10, Problem-1 & Problem-4)*  
 > 🏷️ **Identifier:** 🆕 `[NEW — FROM Q-BANK]` *(Added from Past Papers / Lecture Sheet)*
 **Problem Statement:**  
