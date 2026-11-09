@@ -964,7 +964,7 @@ $$P(B_i | A) = \frac{P(B_i) \cdot P(A | B_i)}{\sum_{k=1}^n P(B_k) \cdot P(A | B_
 
 ---
 
-### Problem 4.2: Two Identical Boxes (White and Red Balls)
+### ✅Problem 4.2: Two Identical Boxes (White and Red Balls)
 *(Ref: Note Problem 4.2)*  
 > 🏷️ **Identifier:** 📌 `[ORIGINAL NOTE]` *(Foundational Partition Problem)*
 **Problem Statement:**  

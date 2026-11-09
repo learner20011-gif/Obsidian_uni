@@ -1,10 +1,3 @@
-# Statistical Properties of Random Variable, Vector and Matrix — Solutions & QnA
-
-> **Course:** Math-2201 / Math 4  
-> **Source Materials:** Past Exam Papers, Class Tests, and MHU Lecture Sheets (EEE/Math-2201, RUET)  
-> **Structure:** Organized by syllabus sub-topics, each preceded by an **easy, concise core concepts and formulas summary**, followed by step-by-step mathematical solutions.
-
-***
 
 ## 1. PDF, CDF and MGF of Continuous and Discrete Random Variables
 

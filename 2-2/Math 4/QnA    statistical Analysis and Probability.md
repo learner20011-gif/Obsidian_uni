@@ -1,10 +1,3 @@
-# Statistical Analysis and Probability — Solutions & QnA
-
-> **Course:** Math-2201 / Math 4 (Statistical Analysis and Probability)  
-> **Source Materials:** Past Exam Papers, Class Tests, and MHU Lecture Sheets (EEE/Math-2201, RUET)  
-> **Structure:** Organized strictly by syllabus sub-topics, each preceded by an **easy, concise core concepts and formulas summary**, followed by step-by-step mathematical solutions.
-
-***
 
 ## 1. Review of Mean, Median, Mode and Other Measures of Central Tendency
 
