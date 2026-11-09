@@ -3058,9 +3058,9 @@ Standardize using $Z = \frac{X - 12}{4}$:
 
 - **(i) $P(X \ge 20)$:**
   $$Z = \frac{20 - 12}{4} = \frac{8}{4} = 2.0$$
-  $$P(X \ge 20) = P(Z \ge 2.0) = 0.5 - P(0 \le Z \le 2.0)$$
-  Using standard normal tables, $P(0 \le Z \le 2.0) = 0.4772$:
-  $$P(X \ge 20) = 0.5 - 0.4772 = \mathbf{0.0228} \quad (2.28\%)$$
+  $$P(X \ge 20) = P(Z \ge 2.0)$$
+  Using standard normal tables, 
+  $$P(X \ge 20) = \mathbf{0.0228} \quad (2.28\%)$$
 
 - **(ii) $P(X \le 20)$:**
   $$P(X \le 20) = 1 - P(X \ge 20) = 1 - 0.0228 = \mathbf{0.9772} \quad (97.72\%)$$
