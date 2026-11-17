@@ -397,3 +397,160 @@ Tracing the same input sequence `01110010011` through the **reduced table** of P
 
 **Output sequence:** **`01000111010`** — exact same output sequence as Problem 6-14!
 
+Here are the next 5 problems (**6-16 to 6-20**) from pages 225–226, with full questions and complete, easy-to-follow answers.
+
+---
+
+### **Problem 6-16**
+**Question:**
+Substitute binary assignment 2 of Table 6-5 to the states in Table 6-4 and obtain the binary state table. Repeat with binary assignment 3.
+
+**Easy Answer:**
+From Table 6-5 (page 203):
+* **Assignment 2:** $a=000,\; b=010,\; c=011,\; d=101,\; e=111$
+* **Assignment 3:** $a=000,\; b=100,\; c=010,\; d=101,\; e=011$
+
+Replacing each letter in Table 6-4 (page 201):
+
+**Binary State Table (Assignment 2):**
+
+| Present State | Next State ($x=0$) | Next State ($x=1$) | Output ($x=0$) | Output ($x=1$) |
+| :---: | :---: | :---: | :---: | :---: |
+| 000 | 000 | 010 | 0 | 0 |
+| 010 | 011 | 101 | 0 | 0 |
+| 011 | 000 | 101 | 0 | 0 |
+| 101 | 111 | 101 | 0 | 1 |
+| 111 | 000 | 101 | 0 | 1 |
+
+**Binary State Table (Assignment 3):**
+
+| Present State | Next State ($x=0$) | Next State ($x=1$) | Output ($x=0$) | Output ($x=1$) |
+| :---: | :---: | :---: | :---: | :---: |
+| 000 | 000 | 100 | 0 | 0 |
+| 100 | 010 | 101 | 0 | 0 |
+| 010 | 000 | 101 | 0 | 0 |
+| 101 | 011 | 101 | 0 | 1 |
+| 011 | 000 | 101 | 0 | 1 |
+
+---
+
+### **Problem 6-17**
+**Question:**
+Obtain the excitation table of the $JK'$ flip-flop described in problem 6-4.
+
+**Easy Answer:**
+From Problem 6-4, the characteristic equation is $Q(t+1) = JQ' + K'Q$:
+* $0 \to 0$: works for $(J=0, K'=0)$ and $(J=0, K'=1)$ $\implies J=0, K'=X$
+* $0 \to 1$: works for $(J=1, K'=0)$ and $(J=1, K'=1)$ $\implies J=1, K'=X$
+* $1 \to 0$: works for $(J=0, K'=0)$ and $(J=1, K'=0)$ $\implies J=X, K'=0$
+* $1 \to 1$: works for $(J=0, K'=1)$ and $(J=1, K'=1)$ $\implies J=X, K'=1$
+
+**Excitation Table:**
+
+| $Q(t)$ | $Q(t+1)$ | $J$ | $K'$ |
+| :---: | :---: | :---: | :---: |
+| 0 | 0 | 0 | $X$ |
+| 0 | 1 | 1 | $X$ |
+| 1 | 0 | $X$ | 0 |
+| 1 | 1 | $X$ | 1 |
+
+---
+
+### **Problem 6-18**
+**Question:**
+Obtain the excitation table of the set-dominate flip-flop described in problem 6-5.
+
+**Easy Answer:**
+From Problem 6-5, $S=1, R=1$ sets $Q(t+1) = 1$:
+* $0 \to 0$: works for $(0,0)$ or $(0,1)$ $\implies S=0, R=X$
+* $0 \to 1$: works for $(1,0)$ or $(1,1)$ $\implies S=1, R=X$
+* $1 \to 0$: only works for $(0,1)$ $\implies S=0, R=1$
+* $1 \to 1$: works for $(0,0)$, $(1,0)$, or $(1,1)$ — i.e., **any input except $(0,1)$**, written as $S=X, R=0$ (or $S=1, R=X$)
+
+**Excitation Table:**
+
+| $Q(t)$ | $Q(t+1)$ | $S$ | $R$ |
+| :---: | :---: | :---: | :---: |
+| 0 | 0 | 0 | $X$ |
+| 0 | 1 | 1 | $X$ |
+| 1 | 0 | 0 | 1 |
+| 1 | 1 | $X$ *(or 1)* | $0$ *(or X)* |
+
+*(Note: For $1 \to 1$, any combination satisfying $S + R' = 1$ works.)*
+
+---
+
+### **Problem 6-19**
+**Question:**
+A sequential circuit has one input and one output. The state diagram is shown in Fig. P6-20. Design the sequential circuit with (a) *T* flip-flops, (b) *RS* flip-flops, and (c) *JK* flip-flops.
+
+**Easy Answer:**
+Let the 3 flip-flops be $A, B, C$ and the input be $x$. The unused states `101`, `110`, and `111` (minterms $10, 11, 12, 13, 14, 15$) are **don't-care ($X$)** conditions.
+
+**State & Excitation Table (from Fig. P6-20):**
+
+| Present $ABC$ | Input $x$ | Next $ABC$ | Output $y$ | **(a) $T_A\;T_B\;T_C$** | **(b) $S_A R_A\;\; S_B R_B\;\; S_C R_C$** | **(c) $J_A K_A\;\; J_B K_B\;\; J_C K_C$** |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 000 | 0 | 000 | 0 | 0 0 0 | $0X\;\; 0X\;\; 0X$ | $0X\;\; 0X\;\; 0X$ |
+| 000 | 1 | 011 | 1 | 0 1 1 | $0X\;\; 10\;\; 10$ | $0X\;\; 1X\;\; 1X$ |
+| 001 | 0 | 001 | 0 | 0 0 0 | $0X\;\; 0X\;\; X0$ | $0X\;\; 0X\;\; X0$ |
+| 001 | 1 | 100 | 1 | 1 0 1 | $10\;\; 0X\;\; 01$ | $1X\;\; 0X\;\; X1$ |
+| 010 | 0 | 010 | 0 | 0 0 0 | $0X\;\; X0\;\; 0X$ | $0X\;\; X0\;\; 0X$ |
+| 010 | 1 | 011 | 1 | 0 0 1 | $0X\;\; X0\;\; 10$ | $0X\;\; X0\;\; 1X$ |
+| 011 | 0 | 001 | 0 | 0 1 0 | $0X\;\; 01\;\; X0$ | $0X\;\; X1\;\; X0$ |
+| 011 | 1 | 100 | 0 | 1 1 1 | $10\;\; 01\;\; 01$ | $1X\;\; X1\;\; X1$ |
+| 100 | 0 | 010 | 0 | 1 1 0 | $01\;\; 10\;\; 0X$ | $X1\;\; 1X\;\; 0X$ |
+| 100 | 1 | 000 | 1 | 1 0 0 | $01\;\; 0X\;\; 0X$ | $X1\;\; 0X\;\; 0X$ |
+
+**Output Function (same for all 3 designs):**
+$$y = B'x + C'x$$
+
+**Simplified Flip-Flop Input Functions (using K-maps with minterms $10\text{–}15 = X$):**
+
+**(a) Using *T* flip-flops:**
+* $T_A = A + Cx$
+* $T_B = BC + Ax' + A'B'C'x$
+* $T_C = A'x$
+
+**(b) Using *RS* flip-flops:**
+* $S_A = Cx, \qquad R_A = A$
+* $S_B = A'C'x + Ax', \qquad R_B = C$
+* $S_C = A'C'x, \qquad R_C = Cx$
+
+**(c) Using *JK* flip-flops:**
+* $J_A = Cx, \qquad K_A = 1$
+* $J_B = A'C'x + Ax', \qquad K_B = C$
+* $J_C = A'x, \qquad K_C = x$
+
+*(The logic diagram for each case is drawn directly from its equations using 3 flip-flops $A, B, C$ sharing clock $CP$.)*
+
+---
+
+### **Problem 6-20**
+**Question:**
+Design the circuit of a 4-bit register that converts the binary number stored in the register to its 2's complement value when input $x = 1$. The flip-flops of the register are of the *RST* type. This flip-flop has three inputs: two inputs have *RS* capabilities and one has a *T* capability. The *RS* inputs are used to transfer the 4-bit number when an input $y = 1$. Use the *T* input for the conversion.
+
+**Easy Answer:**
+Let the 4 *RST* flip-flops be $A_3, A_2, A_1, A_0$ ($A_0$ = LSB, $A_3$ = MSB), with external 4-bit data inputs $I_3, I_2, I_1, I_0$ and common clock $CP$.
+
+**1. Parallel Load ($RS$ inputs, controlled by $y$):**
+When $y = 1$, $S_i = I_i$ and $R_i = I_i'$; when $y = 0$, $S_i = R_i = 0$.
+For each flip-flop $i = 0, 1, 2, 3$:
+$$S_i = y \cdot I_i, \qquad R_i = y \cdot I_i'$$
+
+**2. 2's Complement Conversion ($T$ inputs, controlled by $x$):**
+Rule for 2's complement: starting from the LSB, leave all trailing `0`s and the first `1` unchanged, and **complement (toggle) every bit to the left of the first `1`**.
+* **$T_0 = 0$** *(LSB never changes in 2's complement)*
+* **$T_1 = x \cdot A_0$** *(toggle $A_1$ if $A_0 = 1$)*
+* **$T_2 = x \cdot (A_0 + A_1)$** *(toggle $A_2$ if $A_0$ or $A_1$ is $1$)*
+* **$T_3 = x \cdot (A_0 + A_1 + A_2)$** *(toggle $A_3$ if $A_0, A_1,$ or $A_2$ is $1$)*
+
+**Logic Diagram Connections:**
+* **4 *RST* flip-flops** ($A_3, A_2, A_1, A_0$) all clocked by $CP$.
+* **For each bit $i$:** 1 inverter ($I_i'$) and 2 AND gates for $S_i = y I_i$ and $R_i = y I_i'$.
+* **For the $T$ inputs:**
+  * $T_0$ connected to logic `0`.
+  * $T_1 = x A_0$ (one 2-input AND gate).
+  * $T_2 = x(A_0 + A_1)$ (one 2-input OR gate $\to$ one 2-input AND gate with $x$).
+  * $T_3 = x(A_0 + A_1 + A_2)$ (OR $(A_0 + A_1)$ with $A_2$ $\to$ one 2-input AND gate with $x$).
+
