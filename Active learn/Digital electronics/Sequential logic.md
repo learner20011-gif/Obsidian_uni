@@ -267,3 +267,133 @@ Recall for a $T$ flip-flop: $Q(t+1) = Q \oplus T$ (toggles if $T=1$, no change i
 **Function of the circuit:**
 It is a **modulo-3 (divide-by-3) counter** that repeatedly cycles through the 3 states **`00` $\rightarrow$ `10` $\rightarrow$ `11` $\rightarrow$ `00`** (and automatically enters the cycle if it ever starts in `01`).
 
+Here are the next 5 problems (**6-11 to 6-15**) from page 225, with full questions and complete, easy-to-follow answers.
+
+---
+
+### **Problem 6-11**
+**Question:**
+A sequential circuit has four flip-flops $A, B, C, D$ and an input $x$. It is described by the following state equations:
+$$A(t+1) = (CD' + C'D)x + (CD + C'D')x'$$
+$$B(t+1) = A$$
+$$C(t+1) = B$$
+$$D(t+1) = C$$
+(a) Obtain the sequence of states when $x = 1$, starting from state $ABCD = 0001$.
+(b) Obtain the sequence of states when $x = 0$, starting from state $ABCD = 0000$.
+
+**Easy Answer:**
+Notice that $B, C, D$ simply shift right each clock pulse ($A \to B \to C \to D$), while:
+* When **$x = 1$**: $A(t+1) = CD' + C'D = C \oplus D$ (1 if $C \neq D$, 0 if $C = D$)
+* When **$x = 0$**: $A(t+1) = CD + C'D' = (C \oplus D)'$ (1 if $C = D$, 0 if $C \neq D$)
+
+**(a) Sequence when $x = 1$, starting from `0001`:**
+$$0001 \to 1000 \to 0100 \to 0010 \to 1001 \to 1100 \to 0110 \to 1011 \to 0101 \to 1010 \to 1101 \to 1110 \to 1111 \to 0111 \to 0011 \to 0001 \text{ (repeats)}$$
+
+**(b) Sequence when $x = 0$, starting from `0000`:**
+$$0000 \to 1000 \to 1100 \to 1110 \to 0111 \to 1011 \to 1101 \to 0110 \to 0011 \to 1001 \to 0100 \to 1010 \to 0101 \to 0010 \to 0001 \to 0000 \text{ (repeats)}$$
+
+---
+
+### **Problem 6-12**
+**Question:**
+A sequential circuit has two flip-flops ($A$ and $B$), two inputs ($x$ and $y$) and an output ($z$). The flip-flop input functions and the circuit output function are as follows:
+$$JA = xB + y'B' \qquad KA = xy'B'$$
+$$JB = xA' \qquad KB = xy' + A$$
+$$z = xyA + x'y'B$$
+Obtain the logic diagram, state table, state diagram, and state equations.
+
+**Easy Answer:**
+
+**1. Logic Diagram:**
+Use two clocked *JK* flip-flops ($A$ and $B$, sharing clock $CP$) and inverters for $x'$ and $y'$ ($A'$ and $B'$ come from the flip-flop $Q'$ outputs):
+* **$JA$:** two 2-input AND gates ($x \cdot B$ and $y' \cdot B'$) $\to$ 2-input OR gate $\to J_A$
+* **$KA$:** one 3-input AND gate ($x \cdot y' \cdot B'$) $\to K_A$
+* **$JB$:** one 2-input AND gate ($x \cdot A'$) $\to J_B$
+* **$KB$:** one 2-input AND gate ($x \cdot y'$) $\to$ 2-input OR gate (with $A$) $\to K_B$
+* **$z$:** two 3-input AND gates ($x \cdot y \cdot A$ and $x' \cdot y' \cdot B$) $\to$ 2-input OR gate $\to z$
+
+**2. State Equations:**
+Using $Q(t+1) = JQ' + K'Q$:
+* **For $A$:**
+  $$A(t+1) = (xB + y'B')A' + (xy'B')'A = xA'B + y'A'B' + (x' + y + B)A$$
+  Since $x'A + xB$ already covers $xA'B$ and $AB$:
+  $$A(t+1) = x'A + yA + xB + y'A'B'$$
+* **For $B$:**
+  $$B(t+1) = (xA')B' + (xy' + A)'B = xA'B' + (x' + y)A'B = xA'B' + x'A'B + yA'B$$
+
+**3. State Table:**
+
+| Present State $AB$ | Next State ($xy=00$) | Next State ($xy=01$) | Next State ($xy=10$) | Next State ($xy=11$) | Output $z$ ($00$) | Output $z$ ($01$) | Output $z$ ($10$) | Output $z$ ($11$) |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **00** | 10 | 00 | 11 | 01 | 0 | 0 | 0 | 0 |
+| **01** | 01 | 01 | 10 | 11 | 1 | 0 | 0 | 0 |
+| **10** | 10 | 10 | 00 | 10 | 0 | 0 | 0 | 1 |
+| **11** | 10 | 10 | 10 | 10 | 1 | 0 | 0 | 1 |
+
+**4. State Diagram** *(edges labeled `xy/z`)*:
+* Four state circles: **`00`**, **`01`**, **`10`**, **`11`**.
+* From **`00`**: `00/0` $\to$ `10`, `01/0` $\to$ `00` (self), `10/0` $\to$ `11`, `11/0` $\to$ `01`
+* From **`01`**: `00/1, 01/0` $\to$ `01` (self), `10/0` $\to$ `10`, `11/0` $\to$ `11`
+* From **`10`**: `00/0, 01/0, 11/1` $\to$ `10` (self), `10/0` $\to$ `00`
+* From **`11`**: `00/1, 01/0, 10/0, 11/1` $\to$ `10`
+
+---
+
+### **Problem 6-13**
+**Question:**
+Reduce the number of states in the following state table and tabulate the reduced state table.
+*(Table with states $a$ through $h$, inputs $x=0,1$, outputs $0/1$.)*
+
+**Easy Answer:**
+Find pairs of states that have the **same next states** and **same outputs** for both $x=0$ and $x=1$:
+
+1. **$b$ and $e$** both go to $(d, c)$ with outputs $(0, 0)$ $\implies$ **$b = e$** (remove $e$, replace $e$ with $b$).
+2. **$d$ and $h$** both go to $(g, a)$ with outputs $(1, 0)$ $\implies$ **$d = h$** (remove $h$, replace $h$ with $d$).
+3. After replacing $e \to b$ and $h \to d$, **$a$ and $c$** both go to $(f, b)$ with outputs $(0, 0)$ $\implies$ **$a = c$** (remove $c$, replace $c$ with $a$).
+
+No other states are equivalent (all remaining pairs differ in outputs or next-state outputs).
+
+**Reduced State Table (5 states):**
+
+| Present state | Next state ($x=0$) | Next state ($x=1$) | Output ($x=0$) | Output ($x=1$) |
+| :---: | :---: | :---: | :---: | :---: |
+| $a$ | $f$ | $b$ | 0 | 0 |
+| $b$ | $d$ | $a$ | 0 | 0 |
+| $d$ | $g$ | $a$ | 1 | 0 |
+| $f$ | $f$ | $b$ | 1 | 1 |
+| $g$ | $g$ | $d$ | 0 | 1 |
+
+---
+
+### **Problem 6-14**
+**Question:**
+Starting from state $a$ of the state table in problem 6-14 *(book typo for 6-13)*, find the output sequence generated with an input sequence `01110010011`.
+
+**Easy Answer:**
+Tracing through the **original table** of Problem 6-13:
+
+| Step | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | Next |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **State** | $a$ | $f$ | $b$ | $c$ | $e$ | $d$ | $g$ | $h$ | $g$ | $g$ | $h$ | $a$ |
+| **Input ($x$)** | 0 | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | |
+| **Output** | **0** | **1** | **0** | **0** | **0** | **1** | **1** | **1** | **0** | **1** | **0** | |
+
+**Output sequence:** **`01000111010`**
+
+---
+
+### **Problem 6-15**
+**Question:**
+Repeat problem 6-15 *(book typo for 6-14)* using the reduced table of problem 6-14 *(6-13)*. Show that the same output sequence is obtained.
+
+**Easy Answer:**
+Tracing the same input sequence `01110010011` through the **reduced table** of Problem 6-13:
+
+| Step | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | Next |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **State** | $a$ | $f$ | $b$ | $a$ | $b$ | $d$ | $g$ | $d$ | $g$ | $g$ | $d$ | $a$ |
+| **Input ($x$)** | 0 | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | |
+| **Output** | **0** | **1** | **0** | **0** | **0** | **1** | **1** | **1** | **0** | **1** | **0** | |
+
+**Output sequence:** **`01000111010`** — exact same output sequence as Problem 6-14!
+
