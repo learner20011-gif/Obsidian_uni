@@ -1,4 +1,4 @@
-Here are the first 5 problems from the **Problems** section at the end of Chapter 6 (page 223), along with short, easy-to-follow answers.
+Here are the first 5 problems from the **Problems** section at the end of Chapter 6 (page 223),0
 
 ---
 
@@ -718,5 +718,128 @@ $$C(t+1) = (x'B + yAB')(C' + C) = (x'B + yAB')C' + (x'B + yAB')C$$
 * **$K_C = (x'B + yAB')' = xB + y'B' + A'B'$**
 
 *(The circuit is implemented with 3 *JK* flip-flops $A, B, C$ sharing $CP$, with their $J$ and $K$ inputs driven by these Boolean functions.)*
+
+Here are the next 5 problems (**6-26 to 6-30**) from page 226, with full questions and complete, easy-to-follow answers.
+
+---
+
+### **Problem 6-26**
+**Question:**
+(a) Derive the state equations for the sequential circuit specified by Table 6-6, Section 6-5. List the don't-care terms.
+(b) Derive the flip-flop input functions from the state equations (and don't-care terms) using the method outlined in Example 6-5. Use *JK* flip-flops.
+
+**Easy Answer:**
+
+**(a) Don't-care terms and State Equations:**
+From Table 6-6 (page 203), the 3 unused states are `000`, `110`, and `111`. With $x \in \{0, 1\}$, the 6 don't-care minterms ($ABCx$) are:
+$$d(A, B, C, x) = \sum(0, 1, 12, 13, 14, 15) = A'B'C' + AB$$
+
+From the next-state columns of Table 6-6 (with the don't-care minterms above):
+* $A(t+1) = \sum(5, 7, 8, 9, 11) + d = \mathbf{Bx + AC' + Ax}$
+* $B(t+1) = \sum(3, 4) + d = \mathbf{A'B'x + BC'x'}$
+* $C(t+1) = \sum(2, 4, 6, 8, 10) + d = \mathbf{x'}$
+* *(Output: $y = \sum(9, 11) + d = Ax$)*
+
+**(b) *JK* Flip-Flop Input Functions (matching $Q(t+1) = (J)Q' + (K')Q$):**
+
+1. **Flip-flop $A$:**
+   $$A(t+1) = Bx(A' + A) + (C' + x)A = (Bx)A' + (C' + x)A$$
+   * $J_A = Bx$, $\quad K_A = (C' + x)' = Cx'$
+   * Don't-cares $d = (B'C')A' + (B)A$ do not simplify $Bx$ or $Cx'$ further:
+     $$\mathbf{J_A = Bx, \qquad K_A = Cx'}$$
+
+2. **Flip-flop $B$:**
+   $$B(t+1) = (A'x)B' + (C'x')B$$
+   * $J_B = A'x$, $\quad K_B = (C'x')' = C + x$
+   * Don't-cares $d = (A'C')B' + (A)B$ do not simplify $A'x$ or $C + x$ further:
+     $$\mathbf{J_B = A'x, \qquad K_B = C + x}$$
+
+3. **Flip-flop $C$:**
+   $$C(t+1) = x'(C' + C) = (x')C' + (x')C$$
+   * $$\mathbf{J_C = x', \qquad K_C = x}$$
+
+---
+
+### **Problem 6-27**
+**Question:**
+Differentiate between sequential circuit and combinational circuit.
+
+**Easy Answer:**
+
+| Feature | Combinational Circuit | Sequential Circuit |
+| :--- | :--- | :--- |
+| **Output depends on** | Present inputs **only** | Present inputs **and** present state (past history) |
+| **Memory elements** | **None** | **Contains** memory elements (flip-flops) |
+| **Feedback path** | **No** feedback | **Has** feedback from memory outputs to logic inputs |
+| **Clock signal** | Not required | Required (for synchronous circuits) |
+| **Examples** | Adders, multiplexers, decoders | Flip-flops, counters, shift registers |
+
+---
+
+### **Problem 6-28**
+**Question:**
+What is the problem found in *RS* flip-flop? Explain how it is solved in *JK* flip-flop.
+
+**Easy Answer:**
+* **Problem in *RS* flip-flop:** When both **$S = 1$ and $R = 1$** at the same time, the flip-flop enters an **invalid / undefined state** (both $Q$ and $Q'$ become $0$ in a NOR latch), and after the clock pulse ends, the next state becomes **indeterminate**.
+* **How *JK* flip-flop solves it:** Feedback paths are added from $Q'$ to the $J$ input gate and from $Q$ to the $K$ input gate ($J \cdot CP \cdot Q'$ and $K \cdot CP \cdot Q$).
+  * When $J = 1$ and $K = 1$, only **one** input gate is enabled (the one connected to the output that is currently `1`):
+    * If $Q = 1, Q' = 0$: only the $K$ gate passes the pulse $\implies Q$ clears to `0`.
+    * If $Q = 0, Q' = 1$: only the $J$ gate passes the pulse $\implies Q$ sets to `1`.
+  * Thus, $J = K = 1$ cleanly **toggles** (complements) the state instead of becoming indeterminate.
+
+---
+
+### **Problem 6-29**
+**Question:**
+What is the necessity of master-slave flip-flop? Explain working of *D* master-slave flip-flop. Realize with all NOR gates.
+
+**Easy Answer:**
+
+**1. Necessity:**
+In a simple level-triggered flip-flop, outputs can change *while the clock pulse is still HIGH* ($CP=1$). If inputs change or outputs feed back during that time, **unwanted multiple transitions (instability/race)** occur. A master-slave flip-flop isolates input and output so the output changes **only once per clock pulse** (on the falling edge).
+
+**2. Working of *D* Master-Slave Flip-Flop:**
+* It consists of a **Master** *D* latch (enabled when $CP = 1$) followed by a **Slave** *RS* latch (enabled when $CP = 0$).
+* **When $CP = 1$:** Master tracks $D$ ($Y = D$), while Slave is disabled ($CP' = 0$) so $Q$ stays unchanged.
+* **When $CP$ drops to $0$:** Master locks in the value of $Y$, and Slave is enabled ($CP' = 1$), passing $Y$ to output $Q$ ($Q = D$).
+
+**3. Realization with All NOR Gates (10 NOR gates):**
+* **Inverters:**
+  * **NOR 1:** inputs = $CP, CP \to CP'$
+  * **NOR 2:** inputs = $D, D \to D'$
+* **Master Stage:**
+  * **NOR 3** ($S_M$): inputs = $D', CP'$
+  * **NOR 4** ($R_M$): inputs = $D, CP'$
+  * **NOR 5** ($Y$): inputs = (NOR 4), $Y'$
+  * **NOR 6** ($Y'$): inputs = (NOR 3), $Y$
+* **Slave Stage:**
+  * **NOR 7** ($S_S$): inputs = $Y', CP$
+  * **NOR 8** ($R_S$): inputs = $Y, CP$
+  * **NOR 9** (**$Q$**): inputs = (NOR 8), $Q'$
+  * **NOR 10** (**$Q'$**): inputs = (NOR 7), $Q$
+
+---
+
+### **Problem 6-30**
+**Question:**
+Convert *T* flip-flop to *D* flip-flop.
+
+**Easy Answer:**
+To make a *T* flip-flop behave like a *D* flip-flop ($Q_{n+1} = D$), find the required $T$ input using $T = Q_n \oplus Q_{n+1}$:
+
+| $D$ | Present $Q_n$ | Required $Q_{n+1}$ | $T$ |
+| :---: | :---: | :---: | :---: |
+| 0 | 0 | 0 | **0** |
+| 0 | 1 | 0 | **1** |
+| 1 | 0 | 1 | **1** |
+| 1 | 1 | 1 | **0** |
+
+**Boolean Equation:**
+$$T = D'Q_n + DQ_n' = D \oplus Q_n$$
+
+**Circuit:** Connect an **XOR gate** with inputs $D$ and $Q_n$ (the flip-flop output), and feed its output into the **$T$ input** of the *T* flip-flop (clocked by $CP$).
+
+
 
 
