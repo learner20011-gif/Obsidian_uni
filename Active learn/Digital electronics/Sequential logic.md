@@ -554,3 +554,169 @@ Rule for 2's complement: starting from the LSB, leave all trailing `0`s and the 
   * $T_2 = x(A_0 + A_1)$ (one 2-input OR gate $\to$ one 2-input AND gate with $x$).
   * $T_3 = x(A_0 + A_1 + A_2)$ (OR $(A_0 + A_1)$ with $A_2$ $\to$ one 2-input AND gate with $x$).
 
+Here are the next 5 problems (**6-21 to 6-25**) from pages 225–226, with full questions and complete, easy-to-follow answers.
+
+---
+
+### **Problem 6-21**
+**Question:**
+Repeat Example 6-1 with binary assignment 3 of Table 6-5. Use *JK* flip-flops.
+
+**Easy Answer:**
+From Assignment 3 (Problem 6-16): $a=000,\; b=100,\; c=010,\; d=101,\; e=011$.
+The unused states are `001`, `110`, and `111`, which give 6 don't-care minterms: **2, 3, 12, 13, 14, 15**.
+
+**Excitation Table:**
+
+| Present $ABC$ | Input $x$ | Next $ABC$ | $J_A K_A$ | $J_B K_B$ | $J_C K_C$ | Output $y$ |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 000 | 0 | 000 | $0X$ | $0X$ | $0X$ | 0 |
+| 000 | 1 | 100 | $1X$ | $0X$ | $0X$ | 0 |
+| 010 | 0 | 000 | $0X$ | $X1$ | $0X$ | 0 |
+| 010 | 1 | 101 | $1X$ | $X1$ | $1X$ | 0 |
+| 011 | 0 | 000 | $0X$ | $X1$ | $X1$ | 0 |
+| 011 | 1 | 101 | $1X$ | $X1$ | $X0$ | 0 |
+| 100 | 0 | 010 | $X1$ | $1X$ | $0X$ | 0 |
+| 100 | 1 | 101 | $X0$ | $0X$ | $1X$ | 1 |
+| 101 | 0 | 011 | $X1$ | $1X$ | $X0$ | 0 |
+| 101 | 1 | 101 | $X0$ | $0X$ | $X0$ | 1 |
+
+**Simplified Flip-Flop Input & Output Functions (via K-maps with minterms 2, 3, 12–15 = $X$):**
+* $J_A = x, \qquad K_A = x'$
+* $J_B = Ax', \qquad K_B = 1$
+* $J_C = (A + B)x, \qquad K_C = A'x'$ *(or $Bx'$)*
+* $y = Ax$
+
+*(Logic diagram uses 3 *JK* flip-flops $A, B, C$ sharing $CP$, driven by the gates above.)*
+
+---
+
+### **Problem 6-22**
+**Question:**
+Design a BCD counter with *JK* flip-flops.
+
+**Easy Answer:**
+A BCD counter counts from `0000` (0) to `1001` (9) and returns to `0000`. States `1010`–`1111` (minterms **10–15**) are unused don't-care ($X$) conditions.
+
+**Excitation Table:**
+
+| Present $ABCD$ | Next $ABCD$ | $J_A K_A$ | $J_B K_B$ | $J_C K_C$ | $J_D K_D$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 0000 | 0001 | $0X$ | $0X$ | $0X$ | $1X$ |
+| 0001 | 0010 | $0X$ | $0X$ | $1X$ | $X1$ |
+| 0010 | 0011 | $0X$ | $0X$ | $X0$ | $1X$ |
+| 0011 | 0100 | $0X$ | $1X$ | $X1$ | $X1$ |
+| 0100 | 0101 | $0X$ | $X0$ | $0X$ | $1X$ |
+| 0101 | 0110 | $0X$ | $X0$ | $1X$ | $X1$ |
+| 0110 | 0111 | $0X$ | $X0$ | $X0$ | $1X$ |
+| 0111 | 1000 | $1X$ | $X1$ | $X1$ | $X1$ |
+| 1000 | 1001 | $X0$ | $0X$ | $0X$ | $1X$ |
+| 1001 | 0000 | $X1$ | $0X$ | $0X$ | $X1$ |
+
+**Simplified Input Functions (via K-maps with minterms 10–15 = $X$):**
+* $J_A = BCD, \qquad K_A = D$
+* $J_B = CD, \qquad K_B = CD$
+* $J_C = A'D, \qquad K_C = D$
+* $J_D = 1, \qquad K_D = 1$
+
+---
+
+### **Problem 6-23**
+**Question:**
+Design a counter that counts the decimal digits according to the 2, 4, 2, 1 code (Table 1-2). Use *T* flip-flops.
+
+**Easy Answer:**
+In Table 1-2, the 2, 4, 2, 1 code for digits 0–9 is `0000, 0001, 0010, 0011, 0100, 1011, 1100, 1101, 1110, 1111`. The 6 unused states (`0101`–`1010`, minterms **5–10**) are don't-cares ($X$).
+
+**Excitation Table:**
+
+| Digit | Present $ABCD$ | Next $ABCD$ | $T_A$ | $T_B$ | $T_C$ | $T_D$ |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 0 | 0000 | 0001 | 0 | 0 | 0 | 1 |
+| 1 | 0001 | 0010 | 0 | 0 | 1 | 1 |
+| 2 | 0010 | 0011 | 0 | 0 | 0 | 1 |
+| 3 | 0011 | 0100 | 0 | 1 | 1 | 1 |
+| 4 | 0100 | 1011 | 1 | 1 | 1 | 1 |
+| 5 | 1011 | 1100 | 0 | 1 | 1 | 1 |
+| 6 | 1100 | 1101 | 0 | 0 | 0 | 1 |
+| 7 | 1101 | 1110 | 0 | 0 | 1 | 1 |
+| 8 | 1110 | 1111 | 0 | 0 | 0 | 1 |
+| 9 | 1111 | 0000 | 1 | 1 | 1 | 1 |
+
+**Simplified Input Functions (via K-maps with minterms 5–10 = $X$):**
+* $T_A = BCD + A'B$
+* $T_B = CD + A'B$
+* $T_C = D + A'B$
+* $T_D = 1$
+
+---
+
+### **Problem 6-24**
+**Question:**
+Verify the circuit obtained in Example 6-5 by using the excitation table method.
+
+**Easy Answer:**
+Using the state equations of Example 6-5:
+* $A(t+1) = A'B'CD + A'B'C + ACD + AC'D' = A'B'C + A(CD + C'D')$
+* $B(t+1) = A'C + CD' + A'BC = A'C + CD'$
+* $C(t+1) = B$
+* $D(t+1) = D'$
+
+**16-Row Excitation Table:**
+
+| $ABCD$ | Next $ABCD$ | $J_A K_A$ | $J_B K_B$ | $J_C K_C$ | $J_D K_D$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 0000 | 0001 | $0X$ | $0X$ | $0X$ | $1X$ |
+| 0001 | 0000 | $0X$ | $0X$ | $0X$ | $X1$ |
+| 0010 | 1101 | $1X$ | $1X$ | $X1$ | $1X$ |
+| 0011 | 1100 | $1X$ | $1X$ | $X1$ | $X1$ |
+| 0100 | 0011 | $0X$ | $X1$ | $1X$ | $1X$ |
+| 0101 | 0010 | $0X$ | $X1$ | $1X$ | $X1$ |
+| 0110 | 0111 | $0X$ | $X0$ | $X0$ | $1X$ |
+| 0111 | 0110 | $0X$ | $X0$ | $X0$ | $X1$ |
+| 1000 | 1001 | $X0$ | $0X$ | $0X$ | $1X$ |
+| 1001 | 0000 | $X1$ | $0X$ | $0X$ | $X1$ |
+| 1010 | 0101 | $X1$ | $1X$ | $X1$ | $1X$ |
+| 1011 | 1000 | $X0$ | $0X$ | $X1$ | $X1$ |
+| 1100 | 1011 | $X0$ | $X1$ | $1X$ | $1X$ |
+| 1101 | 0010 | $X1$ | $X1$ | $1X$ | $X1$ |
+| 1110 | 0111 | $X1$ | $X0$ | $X0$ | $1X$ |
+| 1111 | 1010 | $X0$ | $X1$ | $X0$ | $X1$ |
+
+**K-map Results & Verification:**
+* $J_A = B'C, \quad K_A = CD' + C'D$ *(matches Example 6-5)*
+* $J_B = A'C + CD'$ *(matches Example 6-5)*
+* **$K_B = C' + AD$** *(Note: Example 6-5 has a typo $K_B = AC' + AD$, which fails for states `0100` and `0101` because $(A'C')B$ was written instead of $(A'C)B$ in its derivation!)*
+* $J_C = B, \quad K_C = B'$ *(matches Example 6-5)*
+* $J_D = 1, \quad K_D = 1$ *(matches Example 6-5)*
+
+---
+
+### **Problem 6-25**
+**Question:**
+Design the sequential circuit described by the following state equations. Use *JK* flip-flops.
+$$A(t+1) = xAB + yA'C + xy$$
+$$B(t+1) = xAC + y'BC'$$
+$$C(t+1) = x'B + yAB'$$
+
+**Easy Answer:**
+Match each state equation to the *JK* characteristic equation $Q(t+1) = (J)Q' + (K')Q$:
+
+**1. Flip-flop $A$:**
+$$A(t+1) = xAB + yA'C + xy(A' + A) = (yC + xy)A' + (xB + xy)A$$
+* **$J_A = yC + xy$**
+* **$K_A = (xB + xy)' = x' + B'y'$**
+
+**2. Flip-flop $B$:**
+$$B(t+1) = xAC(B' + B) + y'BC' = (xAC)B' + (xAC + y'C')B$$
+* **$J_B = xAC$**
+* **$K_B = (xAC + y'C')' = yC' + x'C + A'C$**
+
+**3. Flip-flop $C$:**
+$$C(t+1) = (x'B + yAB')(C' + C) = (x'B + yAB')C' + (x'B + yAB')C$$
+* **$J_C = x'B + yAB'$**
+* **$K_C = (x'B + yAB')' = xB + y'B' + A'B'$**
+
+*(The circuit is implemented with 3 *JK* flip-flops $A, B, C$ sharing $CP$, with their $J$ and $K$ inputs driven by these Boolean functions.)*
+
+
