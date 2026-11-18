@@ -843,3 +843,233 @@ $$T = D'Q_n + DQ_n' = D \oplus Q_n$$
 
 
 
+
+
+Here are the next 5 problems (**6-31 to 6-35**) from page 226, with full questions and complete, easy-to-follow answers.
+
+---
+
+### **Problem 6-31**
+**Question:**
+With help of *JK* flip-flop design a counter which counts following binary sequence 2, 3, 1, 7, 4, 0 and repeat.
+
+**Easy Answer:**
+3-bit counter ($A, B, C$). Unused states `101` (5) and `110` (6) are don't-cares ($X$).
+
+**Excitation Table:**
+
+| Present $ABC$ | Next $ABC$ | $J_A K_A$ | $J_B K_B$ | $J_C K_C$ |
+| :---: | :---: | :---: | :---: | :---: |
+| 010 (2) | 011 (3) | $0X$ | $X0$ | $1X$ |
+| 011 (3) | 001 (1) | $0X$ | $X1$ | $X0$ |
+| 001 (1) | 111 (7) | $1X$ | $1X$ | $X0$ |
+| 111 (7) | 100 (4) | $X0$ | $X1$ | $X1$ |
+| 100 (4) | 000 (0) | $X1$ | $0X$ | $0X$ |
+| 000 (0) | 010 (2) | $0X$ | $1X$ | $0X$ |
+
+**Simplified Input Functions (via K-maps with minterms 5, 6 = $X$):**
+* $J_A = B'C, \qquad K_A = C'$ *(or $B'$)*
+* $J_B = A', \qquad K_B = C$
+* $J_C = B, \qquad K_C = A$
+
+---
+
+### **Problem 6-32**
+**Question:**
+With help of *RS* flip-flop design a counter which counts following binary sequence 1, 3, 5, 7, 9 and repeat.
+
+**Easy Answer:**
+4-bit counter ($A, B, C, D$). Unused states (`0, 2, 4, 6, 8, 10–15`) are don't-cares ($X$).
+
+**Excitation Table:**
+
+| Present $ABCD$ | Next $ABCD$ | $S_A R_A$ | $S_B R_B$ | $S_C R_C$ | $S_D R_D$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 0001 (1) | 0011 (3) | $0X$ | $0X$ | $10$ | $X0$ |
+| 0011 (3) | 0101 (5) | $0X$ | $10$ | $01$ | $X0$ |
+| 0101 (5) | 0111 (7) | $0X$ | $X0$ | $10$ | $X0$ |
+| 0111 (7) | 1001 (9) | $10$ | $01$ | $01$ | $X0$ |
+| 1001 (9) | 0001 (1) | $01$ | $0X$ | $0X$ | $X0$ |
+
+**Simplified Input Functions (via K-maps with unused states = $X$):**
+* $S_A = BC, \qquad R_A = A$
+* $S_B = B'C, \qquad R_B = BC$
+* $S_C = A'C', \qquad R_C = C$
+* $S_D = 1$ *(or $0$; using $1$ forces $D=1$ even from an even state)*, $\qquad R_D = 0$
+
+---
+
+### **Problem 6-33**
+**Question:**
+With help of *T* flip-flop design a counter which counts following binary sequence 0, 2, 4, 6, 8 and repeat.
+
+**Easy Answer:**
+4-bit counter ($A, B, C, D$). Unused states (`1, 3, 5, 7, 9, 10–15`) are don't-cares ($X$).
+
+**Excitation Table:**
+
+| Present $ABCD$ | Next $ABCD$ | $T_A$ | $T_B$ | $T_C$ | $T_D$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 0000 (0) | 0010 (2) | 0 | 0 | 1 | 0 |
+| 0010 (2) | 0100 (4) | 0 | 1 | 1 | 0 |
+| 0100 (4) | 0110 (6) | 0 | 0 | 1 | 0 |
+| 0110 (6) | 1000 (8) | 1 | 1 | 1 | 0 |
+| 1000 (8) | 0000 (0) | 1 | 0 | 0 | 0 |
+
+**Simplified Input Functions (via K-maps with unused states = $X$):**
+* $T_A = A + BC$
+* $T_B = C$
+* $T_C = A'$
+* $T_D = 0$ *(or $T_D = D$ so any odd state clears $D$ to $0$)*
+
+---
+
+### **Problem 6-34**
+**Question:**
+With help of *D* flip-flop design a counter which counts following binary sequence 1, 2, 6, 4, 3 and repeat.
+
+**Easy Answer:**
+3-bit counter ($A, B, C$). Unused states `000` (0), `101` (5), and `111` (7) are don't-cares ($X$). For *D* flip-flops, the $D$ inputs equal the next state ($D_A = A^+, D_B = B^+, D_C = C^+$).
+
+**Excitation Table:**
+
+| Present $ABC$ | Next $ABC$ | $D_A$ | $D_B$ | $D_C$ |
+| :---: | :---: | :---: | :---: | :---: |
+| 001 (1) | 010 (2) | 0 | 1 | 0 |
+| 010 (2) | 110 (6) | 1 | 1 | 0 |
+| 110 (6) | 100 (4) | 1 | 0 | 0 |
+| 100 (4) | 011 (3) | 0 | 1 | 1 |
+| 011 (3) | 001 (1) | 0 | 0 | 1 |
+
+**Simplified Input Functions (via K-maps with minterms 0, 5, 7 = $X$):**
+* $D_A = BC'$
+* $D_B = B' + A'C'$
+* $D_C = BC + AB'$ *(or $BC + B'C'$)*
+
+---
+
+### **Problem 6-35**
+**Question:**
+What is lock out in a counter? How it can be avoided?
+
+**Easy Answer:**
+* **What is Lockout:**
+  When a counter has unused (invalid) states and accidentally enters one (due to power-up or noise), **lockout** occurs if the counter gets stuck in that state or keeps circulating only among unused states—never returning to the valid count sequence.
+* **How to Avoid It:**
+  1. **Self-starting design:** Analyze the next states of all unused states after designing the circuit. If any unused state causes a loop among invalid states, **redesign** by assigning a **valid next state** (such as `000...0`) to that unused state instead of treating it as a don't-care.
+  2. **Master Reset:** Include an asynchronous **Clear / Preset** input to initialize the counter into a valid starting state on power-up.
+Here are the remaining 3 problems (**6-36 to 6-38**) from page 226, with full questions and complete, easy-to-follow answers.
+
+---
+
+### **Problem 6-36**
+**Question:**
+Bring out the differences between edge triggered and level triggered flip-flop.
+
+**Easy Answer:**
+
+| Feature | Level-Triggered Flip-Flop (Latch) | Edge-Triggered Flip-Flop |
+| :--- | :--- | :--- |
+| **When it responds** | During the **entire time** clock is at a HIGH (1) or LOW (0) level | **Only at the instant** of a clock transition ($0\to 1$ or $1\to 0$) |
+| **Input changes while clock is active** | Output changes immediately (**transparent**) | Input changes after the edge are **ignored/locked out** |
+| **Race-around / multiple transitions** | Can suffer from instability if clock pulse is too wide | **Eliminates** race-around (changes only once per clock) |
+| **Timing sensitivity** | Sensitive to clock **pulse width** | Governed by **setup time** and **hold time** |
+| **Common uses** | Temporary storage / gated latches | Synchronous counters, shift registers, state machines |
+
+---
+
+### **Problem 6-37**
+**Question:**
+Design a counter with *JK* flip-flop which counts binary sequence of 7, 4, 2, 1, 5….. . Is there a chance of lockout? Explain why. How can you improve that? Explain with your design.
+
+**Easy Answer:**
+3-bit counter ($A, B, C$). Valid sequence: `111` (7) $\to$ `100` (4) $\to$ `010` (2) $\to$ `001` (1) $\to$ `101` (5) $\to$ `111` (7).
+Unused states are `000` (0), `011` (3), and `110` (6) $\implies$ initially don't-cares ($X$).
+
+**1. Excitation Table & Initial Minimal Design:**
+
+| Present $ABC$ | Next $ABC$ | $J_A K_A$ | $J_B K_B$ | $J_C K_C$ |
+| :---: | :---: | :---: | :---: | :---: |
+| 111 (7) | 100 (4) | $X0$ | $X1$ | $X1$ |
+| 100 (4) | 010 (2) | $X1$ | $1X$ | $0X$ |
+| 010 (2) | 001 (1) | $0X$ | $X1$ | $1X$ |
+| 001 (1) | 101 (5) | $1X$ | $0X$ | $X0$ |
+| 101 (5) | 111 (7) | $X0$ | $1X$ | $X0$ |
+
+Using K-maps with `0, 3, 6` as don't-cares ($X$):
+* $J_A = C, \qquad K_A = C'$
+* $J_B = A, \qquad K_B = 1$
+* $J_C = B, \qquad K_C = B$
+
+**2. Is there a chance of lockout? Why?**
+**Yes!** Checking the unused states with the equations above:
+* `011` (3) $\to$ `100` (4, valid)
+* `110` (6) $\to$ `001` (1, valid)
+* **`000` (0) $\to$ `000` (0) — LOCKOUT!**
+
+Because unused state `000` was left as a don't-care, the simplified equations caused `000` to loop back onto itself forever if the counter ever powers up in `000`.
+
+**3. How to Improve It (Self-Starting Design):**
+Assign a **valid next state** to `000` instead of leaving it as a don't-care.
+For example, force `000` $\to$ `001` (state 1) by requiring $J_C = 1$ at `000` (so $J_C$ covers `000` and `010`):
+* **Improved $J_C = A'$** *(replacing $J_C = B$)*
+* Keep all other equations the same: $J_A = C,\; K_A = C',\; J_B = A,\; K_B = 1,\; K_C = B$.
+
+**Verification of Unused States after Fix:**
+* `000` $\to$ `001` (1, enters valid sequence in 1 clock)
+* `011` $\to$ `100` (4, enters valid sequence in 1 clock)
+* `110` $\to$ `000` $\to$ `001` (1, enters valid sequence in 2 clocks)
+
+*(Alternatively, setting $J_A = B'$ forces `000` $\to$ `100` directly, which also eliminates lockout.)*
+
+---
+
+### **Problem 6-38**
+**Question:**
+Explain up-down counter which counts decimal digits according to 84-2-1 with *JK* flip-flop. Use one control bit for up and down counter.
+
+**Easy Answer:**
+In the **8, 4, -2, -1** weighted code ($A=8, B=4, C=-2, D=-1$), the decimal digits `0`–`9` are:
+* `0`=`0000`, `1`=`0111`, `2`=`0110`, `3`=`0101`, `4`=`0100`,
+* `5`=`1011`, `6`=`1010`, `7`=`1001`, `8`=`1000`, `9`=`1111`.
+
+Unused 4-bit states (don't-cares $X$): `0001` (1), `0010` (2), `0011` (3), `1100` (12), `1101` (13), `1110` (14).
+
+Let the control bit be **$M$**:
+* **$M = 0$ (Up):** `0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 0`
+* **$M = 1$ (Down):** `0 -> 9 -> 8 -> 7 -> 6 -> 5 -> 4 -> 3 -> 2 -> 1 -> 0`
+
+**Excitation Table:**
+
+| $M$ | Present Digit ($ABCD$) | Next Digit ($ABCD$) | $J_A K_A$ | $J_B K_B$ | $J_C K_C$ | $J_D K_D$ |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 0 | 0 (`0000`) | 1 (`0111`) | $0X$ | $1X$ | $1X$ | $1X$ |
+| 0 | 1 (`0111`) | 2 (`0110`) | $0X$ | $X0$ | $X0$ | $X1$ |
+| 0 | 2 (`0110`) | 3 (`0101`) | $0X$ | $X0$ | $X1$ | $1X$ |
+| 0 | 3 (`0101`) | 4 (`0100`) | $0X$ | $X0$ | $0X$ | $X1$ |
+| 0 | 4 (`0100`) | 5 (`1011`) | $1X$ | $X1$ | $1X$ | $1X$ |
+| 0 | 5 (`1011`) | 6 (`1010`) | $X0$ | $0X$ | $X0$ | $X1$ |
+| 0 | 6 (`1010`) | 7 (`1001`) | $X0$ | $0X$ | $X1$ | $1X$ |
+| 0 | 7 (`1001`) | 8 (`1000`) | $X0$ | $0X$ | $0X$ | $X1$ |
+| 0 | 8 (`1000`) | 9 (`1111`) | $X0$ | $1X$ | $1X$ | $1X$ |
+| 0 | 9 (`1111`) | 0 (`0000`) | $X1$ | $X1$ | $X1$ | $X1$ |
+| 1 | 0 (`0000`) | 9 (`1111`) | $1X$ | $1X$ | $1X$ | $1X$ |
+| 1 | 1 (`0111`) | 0 (`0000`) | $0X$ | $X1$ | $X1$ | $X1$ |
+| 1 | 2 (`0110`) | 1 (`0111`) | $0X$ | $X0$ | $X0$ | $1X$ |
+| 1 | 3 (`0101`) | 2 (`0110`) | $0X$ | $X0$ | $1X$ | $X1$ |
+| 1 | 4 (`0100`) | 3 (`0101`) | $0X$ | $X0$ | $0X$ | $1X$ |
+| 1 | 5 (`1011`) | 4 (`0100`) | $X1$ | $1X$ | $X1$ | $X1$ |
+| 1 | 6 (`1010`) | 5 (`1011`) | $X0$ | $0X$ | $X0$ | $1X$ |
+| 1 | 7 (`1001`) | 6 (`1010`) | $X0$ | $0X$ | $1X$ | $X1$ |
+| 1 | 8 (`1000`) | 7 (`1001`) | $X0$ | $0X$ | $0X$ | $1X$ |
+| 1 | 9 (`1111`) | 8 (`1000`) | $X0$ | $X1$ | $X1$ | $X1$ |
+
+**Simplified *JK* Input Functions (via 5-variable K-maps with unused states = $X$):**
+* $J_A = M'BC'D' + MB', \qquad K_A = M'B + MB'CD$
+* $J_B = M'C'D' + MA' + MCD, \qquad K_B = M'C'D' + M'A + MCD$
+* $J_C = M'D' + MD + MA'B', \qquad K_C = M'D' + MD + M'AB$
+* $J_D = 1, \qquad K_D = 1$
+
+**How it works:**
+Four *JK* flip-flops ($A, B, C, D$) share a common clock $CP$. Flip-flop $D$ always toggles ($J_D=K_D=1$). Setting $M=0$ routes the upper-count combinational logic to $J_A\text{–}K_C$ to increment in 84-2-1 order, while setting $M=1$ enables the down-count logic to decrement in 84-2-1 order.
+
