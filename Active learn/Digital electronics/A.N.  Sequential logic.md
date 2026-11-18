@@ -4,7 +4,7 @@
 
 ![[images (1).jpg]]
 ![[Screenshot_20261118-093733_Aves.png]]
-
+![[Types-of-flip-flop-and-their-working-1210x642.webp]]
 
 
 D Latch vs D Flip Flop
