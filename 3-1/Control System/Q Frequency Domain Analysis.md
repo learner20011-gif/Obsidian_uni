@@ -64,7 +64,9 @@
 
 25. **Page 46, Q.7(b) (RUET 2016 Odd Semester (SECTION-B)):** What is corner frequency? *(Exact duplicate also on: Page 7, Q.(43) (Handwritten Theory Questions List))*
 
-26. **Page 46, Q.7(c) (RUET 2016 Odd Semester (SECTION-B)):** Draw the bode diagram of the following system. Is this system stable or not? $$G(s) = \frac{4\left(1 + \frac{s}{2}\right)}{s(1+2s)\left[1 + 0.4\left(\frac{s}{8}ight) + \left(\frac{s}{8}ight)^2\right]}$$
+26. **Page 46, Q.7(c) (RUET 2016 Odd Semester (SECTION-B)):** Draw the bode diagram of the following system. Is this system stable or not? $$G(s) = \frac{4\left(1 + \frac{s}{2}\right)}{s(1+2s)\left[1 + 0.4\left(\frac{s}{8}
+ight) + \left(\frac{s}{8}
+ight)^2\right]}$$
 
 27. **Page 51, Q.8(a) (RUET 2014 3rd Year 6th Semester (SECTION-B)):** Draw the bode diagram for the following system and also determine (i) gain and phase cross over frequencies, (ii) the gain margin and phase margin, (iii) the stability of the system. $$G(s)H(s) = \frac{20(s+20)}{s(2s+1)(s^2+4s+2)}$$ [Note: numerator/constant term partially faded in scan]
 
