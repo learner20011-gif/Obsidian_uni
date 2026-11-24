@@ -1190,3 +1190,125 @@ yhat_test = bart_boston.predict(X_test.astype(np.float32))
 # Why: Shows that BART achieves competitive accuracy right alongside Random Forests and Boosting.
 print("BART Test MSE:", np.mean((y_test - yhat_test)**2))
 ```
+
+Here are **5 creative Q&A problems** covering the key Chapter 5 concepts that **Exercises 1–9 skipped**, so you have 100% mastery of the chapter.
+
+---
+
+### **Bonus Q1: Model Assessment vs. Model Selection (Figure 5.6)**
+**Question:**
+Suppose you run 10-fold CV on smoothing splines across different flexibility levels. You discover that your CV curve consistently **underestimates** the true test MSE by about 15% at every flexibility level. Is your CV curve useless for choosing the best model? Explain.
+
+**Answer:**
+* **No, it is still very useful!** It depends on your goal:
+  * **Model Assessment** (knowing the *exact* test error): Here, the 15% underestimate matters because the actual MSE value is off.
+  * **Model Selection** (choosing the *best flexibility level*): Here, we only care about the **location of the minimum point** on the curve, not its exact height. As shown in Figure 5.6 of the book, even when CV underestimates the true test MSE, its U-shape still hits its minimum at almost the exact same flexibility level as the true test MSE.
+
+---
+
+### **Bonus Q2: The LOOCV Shortcut & High-Leverage Points (Equation 5.2)**
+**Question:**
+For least squares linear regression, LOOCV has a famous shortcut that requires fitting the model only once:
+$$\text{CV}_{(n)} = \frac{1}{n} \sum_{i=1}^{n} \left(\frac{y_i - \hat{y}_i}{1 - h_i}\right)^2$$
+(a) Suppose observation $i$ has a residual of $y_i - \hat{y}_i = 2$ and a high leverage of $h_i = 0.9$. What value does it contribute inside the sum, compared to a normal point with $h_i = 0.1$ and the same residual?
+(b) Can we use this shortcut for Logistic Regression or KNN?
+
+**Answer:**
+* **(a) Effect of Leverage ($h_i$):**
+  * For the **high-leverage point** ($h_i = 0.9$): $\left(\frac{2}{1 - 0.9}\right)^2 = \left(\frac{2}{0.1}\right)^2 = 20^2 = \mathbf{400}$.
+  * For the **normal point** ($h_i = 0.1$): $\left(\frac{2}{1 - 0.1}\right)^2 = \left(\frac{2}{0.9}\right)^2 \approx \mathbf{4.94}$.
+  * **Why:** A high-leverage point pulls the regression line toward itself, making its ordinary residual look artificially small. Dividing by $(1 - h_i)$ inflates its error by the exact right amount to reflect what happens when that point is actually left out.
+* **(b) When it works:** **No.** The shortcut *only* holds for least squares linear or polynomial regression. For Logistic Regression, LDA, or KNN, you must refit the model $n$ times (or use $k$-fold CV).
+
+---
+
+### **Bonus Q3: When Bootstrap Disagrees with Standard SE Formulas (Section 5.3.3 Lab)**
+**Question:**
+In Exercise 6 (`Default` data), `sm.GLM()` and the Bootstrap gave nearly identical standard errors. Yet in the Chapter 5 Lab (`Auto` data: `mpg ~ horsepower`), the Bootstrap gave **larger** standard errors than `sm.OLS()` (`0.85` vs `0.72` for the intercept). Which one should you trust more, and why did they differ?
+
+**Answer:**
+* **Trust the Bootstrap more.**
+* **Why they differed:**
+  1. **Model Misspecification:** The true relationship between `mpg` and `horsepower` is **non-linear (curved)**. Because a straight line fits poorly, the residuals are inflated, distorting $\hat{\sigma}^2$ in the standard `sm.OLS()` formula.
+  2. **Fixed-$X$ Assumption:** Standard OLS formulas unrealistically assume the predictor values $x_i$ are fixed and all randomness comes from the error $\epsilon_i$.
+  3. **Bootstrap Advantage:** The bootstrap makes **none** of these assumptions—and when the lab switched to a quadratic model (which fits the data well), the `sm.OLS()` and bootstrap SEs matched closely again.
+
+---
+
+### **Bonus Q4: Bootstrapping Paired Observations (Section 5.2, Figure 5.11)**
+**Question:**
+You want to use the bootstrap to estimate the standard error of the correlation between $X$ (income) and $Y$ (balance). A classmate suggests sampling $n$ values from column $X$ with replacement, and *separately* sampling $n$ values from column $Y$ with replacement. What is wrong with this approach?
+
+**Answer:**
+* **It destroys the relationship between $X$ and $Y$!**
+* In the bootstrap, you must sample **entire rows (pairs $(X_i, Y_i)$)** together with replacement.
+* If you sample $X$ and $Y$ independently, you break the pairing between each person's income and their own balance—making the average correlation $\approx 0$ regardless of the true data.
+
+---
+
+### **Bonus Q5: KNN Flexibility & Avoiding "Data Leakage" (Figures 5.8 & Lab `clone()`)**
+**Question:**
+(a) In KNN classification, as $1/K$ increases (meaning $K$ gets smaller, e.g., $K = 1$), what happens to the **training error** vs. the **10-fold CV error**?
+(b) In the Chapter 5 Lab, `boot_OLS()` uses `clone(model_matrix).fit_transform(D_)` *inside* the bootstrap loop instead of transforming the full dataset once beforehand. Why is this good practice for both CV and the Bootstrap?
+
+**Answer:**
+* **(a) KNN Error Curves:**
+  * As $1/K$ increases (model becomes more flexible), **training error** drops steadily toward $0$ (at $K=1$, training error is $0$).
+  * **10-fold CV error** forms a **U-shape**: it drops at first as the model captures the pattern, then rises again when $K$ becomes too small (overfitting). Thus, CV—not training error—must be used to pick $K$.
+* **(b) Preventing Data Leakage:**
+  * If you compute derived features (like scaling, centering, or orthogonal `poly()` terms) on the *entire* dataset before splitting, information from the validation set/out-of-bag points "leaks" into the training set.
+  * Using `clone()` (or `Pipeline` in `sklearn`) ensures all transformations are fit **only on the resampled training data** inside each fold or bootstrap sample, giving an honest estimate of error and variability.
+Here are **5 more creative Q&A problems** that test deeper intuition, common traps, and subtle details from **Chapter 5**.
+
+---
+
+### **Bonus Q6: Why `ShuffleSplit` Standard Deviation Isn't a True SE (Lab `In [14]`, Page 220)**
+**Question:**
+In the lab, you run `ShuffleSplit(n_splits=10, test_size=0.5)` on the `Auto` dataset and get 10 validation MSEs with a mean of `23.80` and a standard deviation of `1.42`. Why does the textbook warn that `1.42` is **not** a valid estimate of the sampling variability (standard error) of the test score?
+
+**Answer:**
+* **Because the 10 splits overlap!**
+* Unlike independent samples from a population, the 10 training sets (and 10 validation sets) share many of the same observations, which introduces **positive correlation** between the 10 scores.
+* Therefore, `1.42` only measures the *Monte Carlo variation* (how much your estimate jiggles due to picking different random splits), **not** the true sampling variability of the test error.
+
+---
+
+### **Bonus Q7: "Free" Validation with Out-of-Bag (OOB) Observations (Connecting Q2 & CV)**
+**Question:**
+In Exercise 2, we proved that for large $n$, a single bootstrap sample contains only about **63.2%** of the original unique observations. What happens to the remaining **36.8%**, and how can we use them?
+
+**Answer:**
+* The remaining **~36.8%** of observations were never picked in that bootstrap sample—they are called **Out-of-Bag (OOB)** observations.
+* Because the model was **not** trained on those OOB points, you can test the fitted model on them to get a **"free" estimate of the test error** without needing a separate cross-validation loop! *(This is a core idea used in Random Forests in Chapter 8.)*
+
+---
+
+### **Bonus Q8: Why Must a Bootstrap Sample Have Size $n$?**
+**Question:**
+Your dataset has $n = 100$ observations. Why does the bootstrap require drawing **$100$** observations with replacement for every bootstrap sample, instead of drawing $50$ or $500$?
+
+**Answer:**
+* Because the **standard error (SE) depends on sample size $n$** (typically $\text{SE} \propto \frac{1}{\sqrt{n}}$).
+* The goal of the bootstrap is to emulate drawing a new dataset *of the same size* from the true population.
+* If you drew $500$ observations per bootstrap sample, your $\text{SE}_B$ would be artificially **too small** (overconfident); if you drew $50$, your $\text{SE}_B$ would be artificially **too large**.
+
+---
+
+### **Bonus Q9: When Does the Standard Bootstrap Fail?**
+**Question:**
+Suppose you are studying daily temperature or stock market returns over 100 consecutive days, where today's value strongly depends on yesterday's value. If you use the standard bootstrap (sampling individual days with replacement), why can your standard error estimate be wrong?
+
+**Answer:**
+* **Standard bootstrap assumes observations are independent.**
+* In time-series data, consecutive days are correlated. Sampling individual rows at random breaks the time-order and correlation structure between yesterday and today.
+* *(To fix this in practice, statisticians use a **block bootstrap**, which samples chunks of consecutive days together instead of single rows.)*
+
+---
+
+### **Bonus Q10: Choosing Between Models When the CV Curve is Flat (Figure 5.8)**
+**Question:**
+In Figure 5.8 (left) of the textbook, 10-fold CV error for polynomial logistic regression is `0.155` at degree 3, reaches its minimum of `0.153` at degree 4, and is `0.156` at degree 5. Why might a data scientist still choose **degree 3** over degree 4?
+
+**Answer:**
+* **Parsimony (simpler is better):** When two models have virtually identical CV error (within the noise of random fold splitting), the simpler, less flexible model (degree 3) is preferred because it is **less likely to overfit** new data and is easier to interpret.
+* *(In fact, Figure 5.7/5.8 shows that degree 3 actually had the lowest **true** test error of `0.160`!)*
