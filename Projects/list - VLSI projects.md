@@ -57,7 +57,7 @@ The table above maps each piece of your hardware kit to its highest-value engine
     
       
     
-- **Adder PPA Study:** Implement Ripple-Carry, Carry-Lookahead, Carry-Select, and Kogge-Stone prefix adders, tabulating area, critical path delay, and power on both Gowin FPGA and Sky130 ASIC.
+- **Adder PPA Study:** Implement Ripple-Carry, Carry-Lookahead, Carry-Select, and Kogge-Stone prefix adders, tabulating area, critical path delay, and power oAn both Gowin FPGA and Sky130 ASIC.
     
       
     
