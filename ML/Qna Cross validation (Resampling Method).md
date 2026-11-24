@@ -104,7 +104,47 @@ $$f''(\alpha) = 2\sigma_X^2 + 2\sigma_Y^2 - 4\sigma_{XY} = 2(\sigma_X^2 + \sigma
 Since variance is always $\ge 0$ (and $> 0$ as long as $X - Y$ isn't constant), $f''(\alpha) > 0$. This confirms that $\alpha$ gives the **minimum** variance.
 
 ---
+### Problem 1: Stock Portfolio (Independent Assets)
 
+* **Q:** You split money between Tech Stock $X$ (Variance $\sigma_X^2 = 16$) and Bond $Y$ (Variance $\sigma_Y^2 = 4$). They move completely independently ($\sigma_{XY} = 0$). What percentage ($\alpha$) should go into Tech Stock $X$ to minimize risk?
+* **A:** Plug the values into the formula:
+
+$$\alpha = \frac{4 - 0}{16 + 4 - 2(0)} = \frac{4}{20} = 0.20$$
+
+**Result:** Invest **20%** in Tech Stock $X$ and **80%** in Bond $Y$.
+
+---
+
+### Problem 2: Weather Hedge (Negative Covariance)
+
+* **Q:** An Umbrella Company ($X$, $\sigma_X^2 = 9$) and an Ice Cream Shop ($Y$, $\sigma_Y^2 = 9$) have opposite seasonal sales, giving a negative covariance ($\sigma_{XY} = -9$). Find the safest investment mix ($\alpha$).
+* **A:** Plug the values into the formula:
+
+$$\alpha = \frac{9 - (-9)}{9 + 9 - 2(-9)} = \frac{18}{36} = 0.50$$
+
+**Result:** Invest **50%** in each. Because they cancel each other out, your total risk drops to **zero**.
+
+---
+
+### Problem 3: Identical Risk, Positively Linked
+
+* **Q:** Two competing coffee shops ($X$ and $Y$) have the exact same risk ($\sigma_X^2 = 10, \sigma_Y^2 = 10$) and tend to rise and fall together ($\sigma_{XY} = 4$). How should you divide your money?
+* **A:** Plug the values into the formula:
+
+$$\alpha = \frac{10 - 4}{10 + 10 - 2(4)} = \frac{6}{12} = 0.50$$
+
+**Result:** Even when two assets move together, splitting **50/50** still lowers your overall risk compared to betting everything on just one shop.
+
+---
+
+### Problem 4: Real-World Commute Time
+
+* **Q:** Route $X$ (Highway) has a time variance of $25\text{ mins}^2$. Route $Y$ (City Streets) has a variance of $16\text{ mins}^2$. Traffic spills over between them ($\sigma_{XY} = 5$). If you split your weekly trips between both routes to keep your average arrival time as predictable as possible, what fraction ($\alpha$) of days should you take the Highway?
+* **A:** Plug the values into the formula:
+
+$$\alpha = \frac{16 - 5}{25 + 16 - 2(5)} = \frac{11}{31} \approx 0.355$$
+
+**Result:** Take the Highway **35.5%** of the time (about 2 days a week) and City Streets **64.5%** of the time.
 ### **Question 2: Probability of Being in a Bootstrap Sample**
 
 Suppose we draw a bootstrap sample of size $n$ (with replacement) from $n$ original observations.
