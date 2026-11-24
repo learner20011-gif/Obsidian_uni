@@ -252,6 +252,14 @@ from sklearn.model_selection import train_test_split
 
 Default = load_data('Default')
 ```
+* **Goal / Steps:** Bring in the tools we need and load the `Default` dataset.
+* **Line-by-line (What & Why):**
+  * `import numpy as np` — Brings in `numpy` for easy math (like finding averages).
+  * `import statsmodels.api as sm` — Brings in `statsmodels` to build our regression models.
+  * `from ISLP import load_data` — Brings in a helper to load the book's datasets.
+  * `from ISLP.models import ModelSpec as MS` — Picks which columns to use and turns text (like Yes/No) into numbers automatically.
+  * `from sklearn.model_selection import train_test_split` — Splits our data randomly into a study group (train) and a test group (valid).
+  * `Default = load_data('Default')` — Loads the credit card default table and names it `Default`.
 
 #### **(a) Fit logistic regression on the full data (`income` + `balance`)**
 ```python
@@ -260,6 +268,11 @@ y = (Default['default'] == 'Yes').astype(int)
 
 model = sm.GLM(y, X, family=sm.families.Binomial()).fit()
 ```
+* **Goal / Steps:** Pick `income` and `balance` as inputs (`X`), turn `'Yes'`/`'No'` into `1`/`0` (`y`), and train the model on all rows.
+* **Line-by-line (What & Why):**
+  * `X = MS(['income', 'balance']).fit_transform(Default)` — Grabs the `income` and `balance` columns (plus a starting baseline number). **Why:** The model needs clean number columns to learn from.
+  * `y = (Default['default'] == 'Yes').astype(int)` — Changes `'Yes'` to `1` and `'No'` to `0`. **Why:** Computers need numbers (`1` or `0`), not words, to do math.
+  * `model = sm.GLM(y, X, family=sm.families.Binomial()).fit()` — Trains a Yes/No prediction model (Logistic Regression) on the data. **Why:** `Binomial()` tells Python we are predicting a Yes/No outcome, not a regular number.
 
 #### **(b) Estimate test error using the validation set approach**
 ```python
@@ -284,6 +297,20 @@ def val_error(seed, predictors=['income', 'balance']):
 
 print("Validation Error (seed=0):", val_error(0))
 ```
+* **Goal / Steps:** Cut the data in half $\rightarrow$ teach the model on the first half $\rightarrow$ guess the answers on the second half $\rightarrow$ see how often it gets them wrong.
+* **Line-by-line (What & Why):**
+  * `def val_error(seed, predictors=['income', 'balance']):` — Makes a reusable recipe that takes a random `seed` number and a list of columns. **Why:** Saves us from copy-pasting the same code in parts (c) and (d).
+  * `train, valid = train_test_split(Default, test_size=0.5, random_state=seed)` — Randomly puts half the rows in `train` and half in `valid`. **Why:** Testing on rows the model has never seen shows how well it works in real life. Using `seed` lets us get the exact same split again if we want.
+  * `mm = MS(predictors)` — Sets up the rule for which columns to pick. **Why:** We want to set the rules on `train` and use the exact same rules on `valid`.
+  * `X_train = mm.fit_transform(train)` — Builds the input table from `train` only. **Why:** We must not peek at `valid` while setting up `train`.
+  * `y_train = (train['default'] == 'Yes').astype(int)` — Turns `'Yes'`/`'No'` in `train` into `1`/`0`.
+  * `fit = sm.GLM(y_train, X_train, family=sm.families.Binomial()).fit()` — Trains the model using `train` only. **Why:** The model should only learn from the training half.
+  * `X_valid = mm.transform(valid)` — Uses the same column rules on `valid`. **Why:** Makes sure `valid` has the exact same setup as `train`.
+  * `y_valid = (valid['default'] == 'Yes').astype(int)` — Turns the real answers in `valid` into `1`/`0` so we can check our guesses.
+  * `probs = fit.predict(X_valid)` — Asks the model for the chance (0% to 100%) that each person in `valid` will default. **Why:** This model gives a chance/probability first, not a direct Yes/No.
+  * `preds = (probs > 0.5).astype(int)` — If the chance is over 50% (`0.5`), guess `1` (Yes); otherwise guess `0` (No). **Why:** Turns the probability into a clear Yes/No guess.
+  * `return np.mean(preds != y_valid)` — Checks where our guess was wrong (`1` if wrong, `0` if right) and takes the average. **Why:** Gives the overall wrong-guess rate (error rate).
+  * `print("Validation Error (seed=0):", val_error(0))` — Runs the recipe with `seed=0` and shows the error.
 * **What happens:** The model typically achieves a low validation error rate around **2.5% – 2.9%**.
 
 #### **(c) Repeat 3 times with different random splits**
@@ -291,6 +318,10 @@ print("Validation Error (seed=0):", val_error(0))
 for s in [1, 2, 3]:
     print(f"Seed {s} Error:", val_error(s))
 ```
+* **Goal / Steps:** Run the same test 3 more times using different random splits (`1`, `2`, `3`).
+* **Line-by-line (What & Why):**
+  * `for s in [1, 2, 3]:` — Repeats the code for seeds `1`, `2`, and `3`. **Why:** Each seed shuffles and splits the data differently.
+  * `print(f"Seed {s} Error:", val_error(s))` — Prints the error for each split so we can see how much the score jumps around.
 * **Comment:** Each split gives a slightly different validation error rate (usually varying around **2.4% – 2.9%**). This shows a key drawback of the validation set approach: the estimated test error depends on which observations happen to land in the training vs. validation set.
 
 #### **(d) Add dummy variable for `student`**
@@ -299,6 +330,10 @@ for s in [1, 2, 3]:
 for s in [0, 1, 2, 3]:
     print(f"Seed {s} Error (with student):", val_error(s, ['income', 'balance', 'student']))
 ```
+* **Goal / Steps:** Run the exact same 4 splits (`0, 1, 2, 3`), but also give the model the `student` column.
+* **Line-by-line (What & Why):**
+  * `for s in [0, 1, 2, 3]:` — Uses the same 4 seeds as before. **Why:** Keeps the test fair so we can compare "with student" vs "without student".
+  * `print(..., val_error(s, ['income', 'balance', 'student']))` — Runs `val_error` with `'student'` added (`MS` turns `'Yes'`/`'No'` into `1`/`0` for us). **Why:** Checks if knowing whether someone is a student helps the model make fewer mistakes.
 * **Comment:** Including `student` produces nearly the exact same validation error rates (still around **2.5% – 2.9%**). It **does not** lead to a meaningful reduction in the test error rate.
 
 ---
@@ -315,6 +350,13 @@ y = (Default['default'] == 'Yes').astype(int)
 glm_fit = sm.GLM(y, X, family=sm.families.Binomial()).fit()
 print(summarize(glm_fit)[['coef', 'std err']])
 ```
+* **Goal / Steps:** Fit the model on all rows and print its weights and math-formula error margins (standard errors).
+* **Line-by-line (What & Why):**
+  * `from ISLP.models import summarize` — Brings in `summarize` to show the model's results in a neat table.
+  * `X = MS(['income', 'balance']).fit_transform(Default)` — Grabs `income` and `balance` (plus baseline).
+  * `y = (Default['default'] == 'Yes').astype(int)` — Turns `'Yes'`/`'No'` into `1`/`0`.
+  * `glm_fit = sm.GLM(y, X, family=sm.families.Binomial()).fit()` — Trains the Yes/No model on all the data. **Why:** When it finishes, Python automatically calculates the formula-based error margin (`std err`) for each weight.
+  * `print(summarize(glm_fit)[['coef', 'std err']])` — Shows just the weights (`coef`) and error margins (`std err`). **Why:** We want to compare these numbers with the bootstrap numbers next.
 * **What this gives:** `std err` outputs the standard formula-based standard errors for `income` and `balance` (typically around `4.99e-6` for `income` and `2.27e-4` for `balance`).
 
 #### **(b) Write `boot_fn()`**
@@ -326,6 +368,14 @@ def boot_fn(D, idx):
     fit = sm.GLM(y_, X_, family=sm.families.Binomial()).fit()
     return fit.params[['income', 'balance']]
 ```
+* **Goal / Steps:** Take a dataset `D` and a list of picked row numbers `idx`, build a new sample from those rows, train the model, and hand back the `income` and `balance` weights.
+* **Line-by-line (What & Why):**
+  * `def boot_fn(D, idx):` — Creates a helper function that takes the table `D` and a list of row numbers `idx`. **Why:** `boot_SE()` needs a function in this exact format.
+  * `D_ = D.loc[idx]` — Picks out the rows listed in `idx` (some rows can appear more than once). **Why:** This creates one bootstrap sample.
+  * `X_ = MS(['income', 'balance']).fit_transform(D_)` — Gets the `income` and `balance` columns from this sample.
+  * `y_ = (D_['default'] == 'Yes').astype(int)` — Turns `'Yes'`/`'No'` in this sample into `1`/`0`.
+  * `fit = sm.GLM(y_, X_, family=sm.families.Binomial()).fit()` — Trains the model on this sample. **Why:** Every random sample gives slightly different weights.
+  * `return fit.params[['income', 'balance']]` — Hands back just the two weights for `income` and `balance`. **Why:** The question only asks for the error margins of these two weights.
 
 #### **(c) Estimate standard errors using the bootstrap**
 Using the `boot_SE()` helper function from the Section 5.3 lab:
@@ -344,6 +394,19 @@ def boot_SE(func, D, n=None, B=1000, seed=0):
 boot_se = boot_SE(boot_fn, Default, B=1000, seed=0)
 print(boot_se)
 ```
+* **Goal / Steps:** Repeat `1,000` times: pick `n` random rows **with replacement** (allowing repeats) $\rightarrow$ run `boot_fn` to get the weights $\rightarrow$ measure how much those 1,000 weights spread out (standard error).
+* **Line-by-line (What & Why):**
+  * `def boot_SE(func, D, n=None, B=1000, seed=0):` — Sets up the bootstrap calculator.
+  * `rng = np.random.default_rng(seed)` — Sets a random number picker with a `seed` so we get the same answer every time.
+  * `first_, second_ = 0, 0` — Two running totals to add up the weights and the squared weights. **Why:** Lets us find the spread at the end without saving all 1,000 results in a huge list.
+  * `n = n or D.shape[0]` — Sets the sample size `n` to match the total number of rows in `D`. **Why:** A bootstrap sample is always the same size as the original table.
+  * `for _ in range(B):` — Repeats the loop `B` (1,000) times. **Why:** Doing it many times gives a steady, reliable answer.
+  * `idx = rng.choice(D.index, n, replace=True)` — Randomly picks `n` row numbers, putting each one back so it can be picked again (`replace=True`). **Why:** Picking with replacement is the main idea of the bootstrap.
+  * `value = func(D, idx)` — Runs `boot_fn` on those picked rows to get the two weights.
+  * `first_ += value` & `second_ += value**2` — Adds the weights and squared weights to the running totals. **Why:** Needed for the spread (standard deviation) formula on the next line.
+  * `return np.sqrt(second_ / B - (first_ / B)**2)` — Calculates how much the 1,000 weights bounce around (their standard deviation = bootstrap standard error).
+  * `boot_se = boot_SE(boot_fn, Default, B=1000, seed=0)` — Runs the bootstrap 1,000 times on `Default`.
+  * `print(boot_se)` — Shows the bootstrap error margins for `income` and `balance`.
 
 #### **(d) Comment on `sm.GLM()` vs. Bootstrap standard errors**
 * **Comparison:** The standard errors estimated by `sm.GLM()` and the bootstrap are **very close** to each other.
@@ -366,16 +429,23 @@ Weekly = load_data('Weekly')
 X = MS(['Lag1', 'Lag2']).fit_transform(Weekly)
 y = (Weekly['Direction'] == 'Up').astype(int)
 ```
+* **Goal / Steps:** Load the `Weekly` stock data, pick `Lag1` and `Lag2` as inputs, and turn `'Up'`/`'Down'` into `1`/`0`.
+* **Line-by-line (What & Why):**
+  * `Weekly = load_data('Weekly')` — Loads the `Weekly` stock market dataset.
+  * `X = MS(['Lag1', 'Lag2']).fit_transform(Weekly)` — Picks `Lag1` and `Lag2` (plus a baseline) as inputs.
+  * `y = (Weekly['Direction'] == 'Up').astype(int)` — Turns `'Up'` into `1` and `'Down'` into `0` so the model can work with numbers.
 
 #### **(a) Fit logistic regression on all observations**
 ```python
 model_all = sm.GLM(y, X, family=sm.families.Binomial()).fit()
 ```
+* **Line-by-line (What & Why):** Trains the Yes/No model using every single week in the table. **Why:** Gives us our starting full-data model.
 
 #### **(b) Fit logistic regression using all *but* the 1st observation**
 ```python
 model_minus_1 = sm.GLM(y.iloc[1:], X.iloc[1:], family=sm.families.Binomial()).fit()
 ```
+* **Line-by-line (What & Why):** `.iloc[1:]` means "start from row 1 and take everything after" (so it skips row `0`, the very 1st week). **Why:** Leaves out the 1st week so we can test our model on it honestly.
 
 #### **(c) Predict the 1st observation & check if correct**
 ```python
@@ -384,6 +454,12 @@ pred_1 = int(prob_1 > 0.5)
 is_correct = (pred_1 == y.iloc[0])
 print(f"Predicted: {pred_1}, Actual: {y.iloc[0]}, Correct: {is_correct}")
 ```
+* **Goal / Steps:** Guess the 1st week using the model from (b), turn the chance into `1` or `0`, and check if it matches what really happened.
+* **Line-by-line (What & Why):**
+  * `prob_1 = model_minus_1.predict(X.iloc[[0]]).iloc[0]` — Asks the model for the chance that week `0` goes `"Up"`. (`X.iloc[[0]]` keeps it in table shape for `.predict()`, and `.iloc[0]` grabs the single number).
+  * `pred_1 = int(prob_1 > 0.5)` — Guesses `1` (`Up`) if the chance is over 50%, otherwise `0` (`Down`).
+  * `is_correct = (pred_1 == y.iloc[0])` — Checks if our guess matches the real answer (`True` or `False`).
+  * `print(...)` — Shows our guess, the real answer, and whether we got it right.
 * **Result:** The model predicts `"Up"` ($P > 0.5$), while the actual direction is `"Down"` (`0`), so the first observation is **misclassified** (`False`).
 
 #### **(d) Write the LOOCV `for` loop for all $n$ observations**
@@ -406,12 +482,25 @@ for i in range(n):
     # iv. Record 1 if error, 0 if correct
     errors[i] = int(pred_i != y.iloc[i])
 ```
+* **Goal / Steps:** Make an empty scoreboard (`errors`) of `n` zeros $\rightarrow$ go through every week `i` one by one: hide week `i`, train on all other weeks, guess week `i`, and write `1` if wrong or `0` if right.
+* **Line-by-line (What & Why):**
+  * `n = len(Weekly)` — Counts how many weeks are in the table.
+  * `errors = np.zeros(n)` — Makes a list of `n` zeros to hold our `1` (wrong) or `0` (right) scores. **Why:** Easier and faster than growing a list step by step.
+  * `for i in range(n):` — Loops through every single week `i` from `0` to `n-1`. **Why:** LOOCV tests every single row once by leaving it out.
+  * `X_train = X.drop(index=X.index[i])` & `y_train = y.drop(index=y.index[i])` — Removes week `i` from `X` and `y`. **Why:** Trains the model on all the *other* weeks.
+  * `fit = sm.GLM(y_train, X_train, family=sm.families.Binomial()).fit()` — Trains the model without week `i`.
+  * `prob_i = fit.predict(X.iloc[[i]]).iloc[0]` — Gets the predicted chance of `"Up"` for the hidden week `i`.
+  * `pred_i = int(prob_i > 0.5)` — Turns the chance into `1` (`Up`) or `0` (`Down`).
+  * `errors[i] = int(pred_i != y.iloc[i])` — Writes `1` if our guess was wrong, or `0` if right, so we can average them next.
 
 #### **(e) Compute LOOCV test error & comment**
 ```python
 loocv_error = np.mean(errors)
 print("LOOCV Error Rate:", loocv_error)
 ```
+* **Line-by-line (What & Why):**
+  * `loocv_error = np.mean(errors)` — Takes the average of all the `1`s and `0`s in `errors`. **Why:** The average of `1`s and `0`s tells us what percent of weeks we guessed wrong.
+  * `print("LOOCV Error Rate:", loocv_error)` — Prints the final error rate (~0.45, or 45%).
 * **Comment:** The LOOCV error rate is around **45%** (`~0.450`). Since random guessing gives a 50% error rate, `Lag1` and `Lag2` provide only very weak predictive power for weekly market direction.
 
 ---
@@ -428,6 +517,12 @@ x = rng.normal(size=100)
 y = x - 2 * x**2 + rng.normal(size=100)
 df = pd.DataFrame({'X': x, 'Y': y})
 ```
+* **Goal / Steps:** Make 100 random `x` numbers, calculate `y = x - 2x^2 + noise`, and put them in a table.
+* **Line-by-line (What & Why):**
+  * `rng = np.random.default_rng(1)` — Picks random numbers using seed `1` so we get the same fake data every time.
+  * `x = rng.normal(size=100)` — Creates 100 random `x` values around `0` (bell-curve style).
+  * `y = x - 2 * x**2 + rng.normal(size=100)` — Builds a curved shape ($x - 2x^2$) and adds random noise. **Why:** Real-world data always has some random noise on top of the true pattern.
+  * `df = pd.DataFrame({'X': x, 'Y': y})` — Puts `x` and `y` into a clean table named `df` so the next tools can read it easily.
 * **$n$ and $p$:** $n = \mathbf{100}$ observations, and $p = \mathbf{1}$ predictor ($X$).
 * **Model equation:**
   $$Y = X - 2X^2 + \epsilon, \quad \text{where } \epsilon \sim \mathcal{N}(0, 1)$$
@@ -441,6 +536,11 @@ plt.xlabel('X')
 plt.ylabel('Y')
 plt.show()
 ```
+* **Goal / Steps:** Draw a dot plot of `X` vs `Y`.
+* **Line-by-line (What & Why):**
+  * `plt.scatter(df['X'], df['Y'])` — Draws a dot for every `(X, Y)` pair. **Why:** Lets us see with our own eyes that the data forms an upside-down U curve.
+  * `plt.xlabel('X')` / `plt.ylabel('Y')` — Names the bottom and side axes.
+  * `plt.show()` — Pops up the chart on screen.
 * **Observation:** The plot shows a clear **inverted U-shape** (a curved quadratic relationship), peaking near $X \approx 0.25$ and curving downward for both larger positive and negative values of $X$.
 
 #### **(c) Compute LOOCV errors for polynomial models (degrees 1–4)**
@@ -460,6 +560,18 @@ for d in range(1, 5):
 
 print("LOOCV MSE (degrees 1 to 4):", loocv_errors)
 ```
+* **Goal / Steps:** Test 4 curve powers (`d = 1, 2, 3, 4`): build the curve inputs $\rightarrow$ run automatic LOOCV (`cv = 100`) $\rightarrow$ save the average error for each power.
+* **Line-by-line (What & Why):**
+  * `from sklearn.model_selection import cross_validate` — Brings in `cross_validate` to run cross-validation automatically without writing a manual loop.
+  * `from ISLP.models import ModelSpec as MS, poly, sklearn_sm` — Brings in `poly` (to make $X, X^2, \dots, X^d$) and `sklearn_sm` (so `statsmodels` can plug into `cross_validate`).
+  * `rng_cv = np.random.default_rng(10)` — Makes a random seed (LOOCV doesn't actually use it, which we prove in part (d)).
+  * `loocv_errors = []` — Empty list to hold the error score for each of the 4 models.
+  * `for d in range(1, 5):` — Loops through powers `1, 2, 3, 4`.
+  * `X_poly = MS([poly('X', degree=d, raw=True)])` — Tells the model to use powers up to $X^d$ (`raw=True` keeps plain $X, X^2, \dots$). **Why:** Lets us test a straight line (`d=1`), a U-curve (`d=2`), and wigglier curves (`d=3, 4`).
+  * `model = sklearn_sm(sm.OLS, X_poly)` — Wraps `sm.OLS` (regular linear regression) so `cross_validate` knows how to run it.
+  * `cv_res = cross_validate(model, df, df['Y'], cv=len(df))` — Runs cross-validation with `cv=100` (the number of rows in `df`). **Why:** When `cv` equals the number of rows, it leaves out 1 row at a time (exact LOOCV).
+  * `loocv_errors.append(np.mean(cv_res['test_score']))` — Averages the 100 test errors and adds the result to our list.
+  * `print("LOOCV MSE (degrees 1 to 4):", loocv_errors)` — Prints the 4 error scores so we can see which curve fits best.
 
 #### **(d) Repeat (c) with a different random seed**
 * **Are the results the same?** **Yes, they are 100% identical.**
@@ -479,6 +591,13 @@ for d in range(1, 5):
     print(f"\n--- Degree {d} ---")
     print(summarize(fit_d)[['coef', 'p-value']])
 ```
+* **Goal / Steps:** Train each of the 4 curve models (`d = 1..4`) on all 100 rows and print each term's weight and p-value.
+* **Line-by-line (What & Why):**
+  * `for d in range(1, 5):` — Loops through powers 1 to 4.
+  * `X_d = MS([poly('X', degree=d, raw=True)]).fit_transform(df)` — Builds the input table with powers up to $X^d$.
+  * `fit_d = sm.OLS(df['Y'], X_d).fit()` — Fits regular regression on all 100 rows.
+  * `print(f"\n--- Degree {d} ---")` — Prints a clear title for each model.
+  * `print(summarize(fit_d)[['coef', 'p-value']])` — Shows each term's weight (`coef`) and `p-value`. **Why:** A tiny p-value (< 0.05) means that term really matters ($X$ and $X^2$), while a big p-value means it's just noise ($X^3$ and $X^4$).
 * **Observation:** Across all four models, the linear ($X$) and quadratic ($X^2$) terms are **highly statistically significant** (very small p-values), while the cubic ($X^3$) and quartic ($X^4$) terms are **not significant** (large p-values).
 * **Agreement:** This **agrees completely** with the LOOCV results—both methods confirm that the true underlying model is quadratic (degree 2) and adding higher-order terms is unnecessary.
 Here is the concise, organized solution (with ready-to-run Python code) for **Question 9** from **Section 5.4 (Applied Exercises)**. *(Note: Question 9 is the final question in Chapter 5's exercise section.)*
@@ -495,12 +614,18 @@ from ISLP import load_data
 Boston = load_data('Boston')
 medv = Boston['medv']
 ```
+* **Line-by-line (What & Why):**
+  * `Boston = load_data('Boston')` — Loads the Boston housing dataset.
+  * `medv = Boston['medv']` — Grabs just the `medv` column (home prices in $1,000s) so it's short and easy to use.
 
 #### **(a) Estimate the population mean ($\hat{\mu}$)**
 ```python
 mu_hat = medv.mean()
 print("Mean (mu_hat):", mu_hat)
 ```
+* **Line-by-line (What & Why):**
+  * `mu_hat = medv.mean()` — Finds the average home price. **Why:** The sample average is our best guess for the true overall average.
+  * `print("Mean (mu_hat):", mu_hat)` — Shows the average.
 * **Result:** $\hat{\mu} \approx \mathbf{22.53}$ (in $1,000s).
 
 #### **(b) Estimate the standard error of $\hat{\mu}$ using the formula**
@@ -508,6 +633,9 @@ print("Mean (mu_hat):", mu_hat)
 se_formula = medv.std() / np.sqrt(len(medv))
 print("Formula SE:", se_formula)
 ```
+* **Line-by-line (What & Why):**
+  * `se_formula = medv.std() / np.sqrt(len(medv))` — Divides the spread of prices (`std`) by the square root of how many homes we have (`len(medv)`). **Why:** Classic math formula for how much our average guess might be off.
+  * `print("Formula SE:", se_formula)` — Shows the formula error margin.
 * **Result:** $\text{SE}(\hat{\mu}) \approx \mathbf{0.409}$.
 * **Interpretation:** If we repeatedly took random samples of size 506 from the population, the sample mean $\hat{\mu}$ would typically differ from the true population mean $\mu$ by about **0.41** ($410) on average.
 
@@ -522,6 +650,14 @@ def boot_stat(data, stat_fn, B=1000, seed=0):
 se_boot = boot_stat(medv, np.mean)
 print("Bootstrap SE:", se_boot)
 ```
+* **Goal / Steps:** Repeat `1,000` times: pick `n` home prices **with replacement** (repeats allowed) and run `stat_fn` $\rightarrow$ measure how spread out those `1,000` answers are.
+* **Line-by-line (What & Why):**
+  * `def boot_stat(data, stat_fn, B=1000, seed=0):` — Makes a general bootstrap helper that works for **any** math function (`stat_fn`). **Why:** We can reuse this for the mean (c), median (f), and 10th percentile (h).
+  * `rng = np.random.default_rng(seed)` — Sets a random picker with a `seed` so we get the same result each time.
+  * `estimates = [stat_fn(rng.choice(data, size=len(data), replace=True)) for _ in range(B)]` — Runs `1,000` times: picks `len(data)` prices with replacement (`replace=True`) and calculates `stat_fn` on each batch. **Why:** Acts like taking 1,000 new surveys of homes.
+  * `return np.std(estimates, ddof=1)` — Measures how much the 1,000 answers bounce around (`ddof=1` divides by $B - 1$). **Why:** That spread is the bootstrap standard error.
+  * `se_boot = boot_stat(medv, np.mean)` — Runs the bootstrap using `np.mean` (average).
+  * `print("Bootstrap SE:", se_boot)` — Shows the bootstrap error margin to compare with part (b).
 * **Comparison:** The bootstrap SE ($\approx \mathbf{0.41}$) is **virtually identical** to the formula-based SE from part (b).
 
 #### **(d) 95% Confidence Interval for the mean of `medv`**
@@ -532,6 +668,10 @@ ci_formula = [mu_hat - 2 * se_formula, mu_hat + 2 * se_formula]
 print("Bootstrap 95% CI:", ci_boot)
 print("Formula 95% CI:  ", ci_formula)
 ```
+* **Line-by-line (What & Why):**
+  * `ci_boot = [mu_hat - 2 * se_boot, mu_hat + 2 * se_boot]` — Takes our average guess and goes 2 error margins down and 2 up. **Why:** Gives a 95% range where the true average likely sits.
+  * `ci_formula = [mu_hat - 2 * se_formula, mu_hat + 2 * se_formula]` — Does the exact same thing using the formula error margin so we can compare them.
+  * `print(...)` — Shows both ranges.
 * **Comparison:** Both intervals are nearly identical (around **[21.71, 23.35]**), because the bootstrap SE and formula SE are almost the same.
 
 #### **(e) Estimate the population median ($\hat{\mu}_{med}$)**
@@ -539,6 +679,9 @@ print("Formula 95% CI:  ", ci_formula)
 mu_med = medv.median()
 print("Median (mu_med):", mu_med)
 ```
+* **Line-by-line (What & Why):**
+  * `mu_med = medv.median()` — Finds the exact middle home price. **Why:** A few super expensive houses don't pull the median up like they do the average.
+  * `print("Median (mu_med):", mu_med)` — Shows the middle price.
 * **Result:** $\hat{\mu}_{med} \approx \mathbf{21.2}$.
 
 #### **(f) Bootstrap standard error of $\hat{\mu}_{med}$**
@@ -546,6 +689,9 @@ print("Median (mu_med):", mu_med)
 se_med_boot = boot_stat(medv, np.median)
 print("Bootstrap SE (median):", se_med_boot)
 ```
+* **Line-by-line (What & Why):**
+  * `se_med_boot = boot_stat(medv, np.median)` — Reuses `boot_stat` with `np.median`. **Why:** There is no easy math formula for the error margin of a median, so bootstrap is the easiest way to find it.
+  * `print("Bootstrap SE (median):", se_med_boot)` — Shows the median's bootstrap error margin.
 * **Findings:** The bootstrap SE of the median is small (around **0.38**), which is even slightly smaller than the SE of the mean. Even though there is no simple formula for the SE of a median, the bootstrap easily shows that our median estimate ($\approx 21.2$) is very precise.
 
 #### **(g) Estimate the 10th percentile ($\hat{\mu}_{0.1}$)**
@@ -553,6 +699,9 @@ print("Bootstrap SE (median):", se_med_boot)
 mu_01 = np.percentile(medv, 10)
 print("10th Percentile (mu_0.1):", mu_01)
 ```
+* **Line-by-line (What & Why):**
+  * `mu_01 = np.percentile(medv, 10)` — Finds the price where 10% of homes are cheaper and 90% are pricier. **Why:** Tells us what the lower-priced homes look like.
+  * `print("10th Percentile (mu_0.1):", mu_01)` — Shows the 10th percentile price.
 * **Result:** $\hat{\mu}_{0.1} \approx \mathbf{12.75}$.
 
 #### **(h) Bootstrap standard error of $\hat{\mu}_{0.1}$**
@@ -560,9 +709,484 @@ print("10th Percentile (mu_0.1):", mu_01)
 se_01_boot = boot_stat(medv, lambda x: np.percentile(x, 10))
 print("Bootstrap SE (10th percentile):", se_01_boot)
 ```
+* **Line-by-line (What & Why):**
+  * `se_01_boot = boot_stat(medv, lambda x: np.percentile(x, 10))` — Passes a quick mini-function (`lambda`) into `boot_stat`. **Why:** `np.percentile` needs two inputs (`data` and `10`), so `lambda` wraps it into a 1-input function for `boot_stat`. Again, bootstrap works easily even though there's no simple math formula for percentiles.
+  * `print("Bootstrap SE (10th percentile):", se_01_boot)` — Shows the 10th percentile's bootstrap error margin.
 * **Findings:** The bootstrap SE of the 10th percentile is around **0.50**. It is still relatively small compared to $\hat{\mu}_{0.1} \approx 12.75$, though slightly larger than the SE of the median—which makes sense because there are fewer data points in the lower tail of the distribution.
 
 ---
 
 That completes all the exercises in **Chapter 5 (Resampling Methods)**! Let me know if you'd like any further clarification or help with another chapter.
 
+
+### Lab: Cross-Validation and the Bootstrap
+```python
+# ==============================================================================
+# 0. SETUP & IMPORTS
+# ==============================================================================
+
+# Instruction: Silently download and install the textbook's custom Python package.
+# Algo: Package management (setup).
+# Why: Gives Kaggle access to the book's datasets (Carseats, Boston) and helper tools.
+!pip install -q ISLP
+
+# Instruction: Load NumPy and give it the short nickname 'np'.
+# Algo: Fast array and matrix math.
+# Why: Machine learning models process data as grids of numbers, not raw text.
+import numpy as np
+
+# Instruction: Load Pandas and give it the short nickname 'pd'.
+# Algo: Tabular data handling (rows and columns).
+# Why: Lets us easily view, sort, and clean spreadsheet-style datasets.
+import pandas as pd
+
+# Instruction: Load the subplot drawing tool from Matplotlib.
+# Algo: Data visualization.
+# Why: Allows us to draw decision trees and error curves to visually inspect models.
+from matplotlib.pyplot import subplots
+
+# Instruction: Load model selection tools (train/test splitting, cross-validation, grid search).
+# Algo: Resampling and model validation.
+# Why: Prevents overfitting by testing models on data they haven't seen during training.
+import sklearn.model_selection as skm
+
+# Instruction: Load the dataset loader and confusion table helper from ISLP.
+# Algo: Data loading and classification evaluation.
+# Why: Quickly imports textbook datasets and prints a neat grid of right vs. wrong guesses.
+from ISLP import load_data, confusion_table
+
+# Instruction: Load ModelSpec and nickname it 'MS'.
+# Algo: Design matrix preprocessing (one-hot encoding).
+# Why: Automatically turns text categories into 0/1 numbers that math models require.
+from ISLP.models import ModelSpec as MS
+
+# Instruction: Load Classification Tree (DTC), Regression Tree (DTR), and tree plotting tools.
+# Algo: Decision Trees (recursive binary splitting).
+# Why: Core algorithms for splitting data into if-then rules for categories or numbers.
+from sklearn.tree import (DecisionTreeClassifier as DTC,
+                          DecisionTreeRegressor as DTR,
+                          plot_tree,
+                          export_text)
+
+# Instruction: Load accuracy and log-loss scoring functions.
+# Algo: Classification error metrics.
+# Why: Measures what percentage of category predictions the model got right.
+from sklearn.metrics import accuracy_score, log_loss
+
+# Instruction: Load Random Forest (RF) and Gradient Boosting (GBR) regressors.
+# Algo: Ensemble learning (Bagging and Boosting).
+# Why: Combines hundreds of weak/noisy trees into one highly accurate prediction model.
+from sklearn.ensemble import (RandomForestRegressor as RF,
+                              GradientBoostingRegressor as GBR)
+
+# Instruction: Load Bayesian Additive Regression Trees (BART).
+# Algo: Bayesian MCMC tree ensemble.
+# Why: Combines boosting and random forests while estimating prediction uncertainty.
+from ISLP.bart import BART
+
+
+# ==============================================================================
+# 1. CLASSIFICATION TREES & PRUNING (Page 356)
+# ==============================================================================
+
+# Instruction: Load the Carseats store dataset into a table.
+# Algo: Data ingestion.
+# Why: Provides store features (Price, Advertising, ShelveLoc) to predict sales performance.
+Carseats = load_data('Carseats')
+
+# Instruction: Create a target list labeling Sales > 8 as "Yes" and <= 8 as "No".
+# Algo: Binary target discretization.
+# Why: Turns a continuous sales number into two classes so we can use a Classification Tree.
+High = np.where(Carseats.Sales > 8, "Yes", "No")
+
+# Instruction: Define a preprocessing blueprint using all columns except 'Sales' (and no intercept column).
+# Algo: Feature selection & encoding setup.
+# Why: Removes 'Sales' so the model doesn't cheat using the answer, and skips the intercept since trees don't need one.
+model = MS(Carseats.columns.drop('Sales'), intercept=False)
+
+# Instruction: Apply the blueprint to convert text columns (like ShelveLoc) into numeric dummy columns.
+# Algo: One-hot / dummy variable encoding.
+# Why: Decision tree math can only split on numbers, not words like "Good" or "Bad".
+D = model.fit_transform(Carseats)
+
+# Instruction: Save the list of column names for plotting later.
+# Algo: Metadata extraction.
+# Why: Lets the tree diagram show actual feature names instead of generic numbers like X[0].
+feature_names = list(D.columns)
+
+# Instruction: Convert the Pandas table into a pure NumPy number grid 'X'.
+# Algo: Array conversion.
+# Why: Scikit-learn algorithms run faster and cleaner on pure NumPy arrays.
+X = np.asarray(D)
+
+# Instruction: Randomly split X and High into 50% training data and 50% testing data.
+# Algo: Hold-out validation split (fixed seed=0 for reproducibility).
+# Why: Keeps half the data completely hidden so we can honestly grade the model at the end.
+(X_train, X_test, High_train, High_test) = skm.train_test_split(
+    X, High, test_size=0.5, random_state=0
+)
+
+# Instruction: Initialize a Classification Tree using 'entropy' to measure split quality.
+# Algo: Greedy recursive binary splitting (Information Gain / Deviance).
+# Why: Entropy tells the tree which split creates the purest groups of "Yes" and "No".
+clf = DTC(criterion='entropy', random_state=0)
+
+# Instruction: Grow the full unpruned classification tree on the training data.
+# Algo: Top-down tree induction.
+# Why: Learns all possible rules from the training set (though this full tree usually overfits).
+clf.fit(X_train, High_train)
+
+# Instruction: Calculate the sequence of pruning penalties (ccp_alphas) from a full tree down to a single root.
+# Algo: Cost-complexity pruning path (minimizing Error + alpha * Leaves).
+# Why: Generates candidate penalty values so we can test how much trimming gives the best accuracy.
+ccp_path = clf.cost_complexity_pruning_path(X_train, High_train)
+
+# Instruction: Set up a 10-fold cross-validation splitter that shuffles data reproducibly.
+# Algo: K-Fold Cross-Validation (K=10).
+# Why: Splits training data into 10 chunks so every chunk gets a turn acting as a mini-test set.
+kfold = skm.KFold(10, random_state=1, shuffle=True)
+
+# Instruction: Configure a grid search to test every ccp_alpha penalty across the 10 folds using accuracy.
+# Algo: Hyperparameter tuning via Cross-Validation.
+# Why: Finds the exact pruning penalty that prevents overfitting without touching the real test set.
+grid = skm.GridSearchCV(
+    clf,
+    {'ccp_alpha': ccp_path.ccp_alphas},
+    refit=True,
+    cv=kfold,
+    scoring='accuracy'
+)
+
+# Instruction: Run the 10-fold grid search on the training data and automatically retrain the winning tree.
+# Algo: Automated model selection and refitting.
+# Why: Executes all CV experiments and locks in the single best pruned tree.
+grid.fit(X_train, High_train)
+
+# Instruction: Print the highest average cross-validation accuracy found.
+# Algo: Cross-validation performance metric.
+# Why: Shows how well the winning pruned tree performed during internal validation.
+print("Best CV Accuracy:", grid.best_score_)
+
+# Instruction: Create a 12x12 inch blank figure canvas.
+# Algo: Plot initialization.
+# Why: Gives the tree diagram enough space so branch text doesn't overlap.
+ax = subplots(figsize=(12, 12))[1]
+
+# Instruction: Extract the single best pruned tree from the grid search.
+# Algo: Estimator extraction.
+# Why: Grabs the winning model so we can plot it and test it on unseen data.
+best_ = grid.best_estimator_
+
+# Instruction: Draw the pruned decision tree with feature names on the canvas.
+# Algo: Tree visualization.
+# Why: Lets humans inspect the exact if-then rules the model learned.
+plot_tree(best_, feature_names=feature_names, ax=ax)
+
+# Instruction: Predict "Yes"/"No" on the unseen test set and print the accuracy percentage.
+# Algo: Out-of-sample generalization evaluation.
+# Why: Measures true real-world performance on data the model has never seen.
+print("Test Accuracy:", accuracy_score(High_test, best_.predict(X_test)))
+
+# Instruction: Build a table comparing predicted labels against actual test labels.
+# Algo: Confusion matrix.
+# Why: Reveals whether errors come from false positives or false negatives.
+confusion = confusion_table(best_.predict(X_test), High_test)
+
+# Instruction: Display the confusion table.
+# Algo: Diagnostic output.
+# Why: Lets you read the exact counts of correct and incorrect guesses.
+print(confusion)
+
+
+# ==============================================================================
+# 2. REGRESSION TREES (Pages 357–358)
+# ==============================================================================
+
+# Instruction: Load the Boston neighborhood housing dataset.
+# Algo: Data ingestion.
+# Why: Provides neighborhood stats (crime, rooms, poverty) to predict continuous house prices ('medv').
+Boston = load_data("Boston")
+
+# Instruction: Set up preprocessing for all predictors except the target 'medv'.
+# Algo: Feature matrix definition.
+# Why: Separates input features from the house price we want to predict.
+model = MS(Boston.columns.drop('medv'), intercept=False)
+
+# Instruction: Transform predictors into a clean numeric table.
+# Algo: Feature matrix transformation.
+# Why: Ensures all inputs are properly formatted numbers.
+D = model.fit_transform(Boston)
+
+# Instruction: Save predictor column names for plotting.
+# Algo: Metadata extraction.
+# Why: Displays readable variable names inside the regression tree boxes.
+feature_names = list(D.columns)
+
+# Instruction: Convert predictors into a NumPy array 'X'.
+# Algo: Array conversion.
+# Why: Prepares data in the standard array format required by Scikit-Learn.
+X = np.asarray(D)
+
+# Instruction: Split data into 70% training and 30% testing neighborhoods.
+# Algo: Hold-out train/test split.
+# Why: Reserves 30% of neighborhoods to evaluate price prediction errors honestly.
+(X_train, X_test, y_train, y_test) = skm.train_test_split(
+    X, Boston['medv'], test_size=0.3, random_state=0
+)
+
+# Instruction: Initialize a Regression Tree limited to at most 3 levels deep.
+# Algo: Top-down greedy splitting minimizing Residual Sum of Squares (RSS).
+# Why: Predicts the average house price inside each box while staying shallow enough to read easily.
+reg = DTR(max_depth=3)
+
+# Instruction: Train the 3-level regression tree on the training neighborhoods.
+# Algo: Regression tree fitting.
+# Why: Learns the top 3 most important price-splitting rules.
+reg.fit(X_train, y_train)
+
+# Instruction: Create a 12x12 figure canvas.
+# Algo: Plot initialization.
+# Why: Provides room to display the regression tree clearly.
+ax = subplots(figsize=(12, 12))[1]
+
+# Instruction: Plot the 3-level regression tree.
+# Algo: Tree visualization.
+# Why: Shows which variables (like room count 'rm' or status 'lstat') drive house prices most.
+plot_tree(reg, feature_names=feature_names, ax=ax)
+
+# Instruction: Compute candidate pruning penalties (ccp_alphas) for the regression tree.
+# Algo: Cost-complexity pruning path (minimizing RSS + alpha * Leaves).
+# Why: Lists possible tree sizes so CV can test whether trimming branches lowers test error.
+ccp_path = reg.cost_complexity_pruning_path(X_train, y_train)
+
+# Instruction: Create a 5-fold cross-validation splitter.
+# Algo: K-Fold Cross-Validation (K=5).
+# Why: Divides training data into 5 parts to test each pruning penalty reliably.
+kfold = skm.KFold(5, shuffle=True, random_state=10)
+
+# Instruction: Set up grid search over ccp_alphas scored by negative Mean Squared Error.
+# Algo: Hyperparameter tuning via CV (maximizing -MSE = minimizing MSE).
+# Why: Picks the tree complexity that minimizes squared price prediction errors.
+grid = skm.GridSearchCV(
+    reg,
+    {'ccp_alpha': ccp_path.ccp_alphas},
+    refit=True,
+    cv=kfold,
+    scoring='neg_mean_squared_error'
+)
+
+# Instruction: Run the 5-fold CV grid search and refit the best regression tree.
+# Algo: Automated pruning selection.
+# Why: Finds and trains the optimal pruned regression tree.
+G = grid.fit(X_train, y_train)
+
+# Instruction: Extract the best pruned regression tree.
+# Algo: Estimator extraction.
+# Why: Grabs the winning tree for testing and visualization.
+best_ = grid.best_estimator_
+
+# Instruction: Predict test prices, square the errors, average them (MSE), and print the result.
+# Algo: Mean Squared Error (MSE) evaluation.
+# Why: Gives a single benchmark number (lower is better) to compare against Random Forests and Boosting.
+print("Pruned Regression Tree Test MSE:", np.mean((y_test - best_.predict(X_test))**2))
+
+# Instruction: Create another 12x12 figure canvas.
+# Algo: Plot initialization.
+# Why: Prepares space to draw the final pruned regression tree.
+ax = subplots(figsize=(12, 12))[1]
+
+# Instruction: Draw the optimal pruned regression tree.
+# Algo: Tree visualization.
+# Why: Lets us verify whether CV kept all branches or trimmed any away.
+plot_tree(G.best_estimator_, feature_names=feature_names, ax=ax)
+
+
+# ==============================================================================
+# 3. BAGGING & RANDOM FORESTS (Pages 358–360)
+# ==============================================================================
+
+# Instruction: Initialize a Random Forest using ALL features at every split (which equals Bagging).
+# Algo: Bootstrap Aggregation (Bagging) — 100 deep trees grown on bootstrap samples with m = p features.
+# Why: Single trees have high variance; averaging 100 trees dramatically stabilizes predictions.
+bag_boston = RF(max_features=X_train.shape[1], random_state=0)
+
+# Instruction: Train all 100 bagged trees on the training data.
+# Algo: Parallel ensemble training on random resamples with replacement.
+# Why: Builds 100 slightly different trees whose random errors cancel out when averaged.
+bag_boston.fit(X_train, y_train)
+
+# Instruction: Create an 8x8 square plot canvas.
+# Algo: Plot initialization.
+# Why: Gives a balanced square grid to compare predicted vs. actual prices.
+ax = subplots(figsize=(8, 8))[1]
+
+# Instruction: Average predictions across all 100 bagged trees for the test set.
+# Algo: Ensemble prediction averaging.
+# Why: Produces smooth, low-variance house price predictions.
+y_hat_bag = bag_boston.predict(X_test)
+
+# Instruction: Plot predicted prices (x-axis) against actual prices (y-axis).
+# Algo: Scatter plot diagnostic.
+# Why: Visually checks if points form a tight diagonal line (meaning accurate predictions).
+ax.scatter(y_hat_bag, y_test)
+
+# Instruction: Calculate and print the Test MSE for 100 bagged trees.
+# Algo: Mean Squared Error evaluation.
+# Why: Proves that bagging cuts error roughly in half compared to a single regression tree.
+print("Bagging (100 trees) Test MSE:", np.mean((y_test - y_hat_bag)**2))
+
+# Instruction: Rebuild and fit Bagging using 500 trees instead of 100.
+# Algo: Large-ensemble Bagging (n_estimators = 500).
+# Why: Shows that increasing the number of trees stabilizes predictions without overfitting.
+bag_boston = RF(max_features=X_train.shape[1], n_estimators=500, random_state=0).fit(X_train, y_train)
+
+# Instruction: Generate test predictions from the 500-tree bagged ensemble.
+# Algo: Ensemble averaging.
+# Why: Gets updated predictions to check if 500 trees beat 100 trees.
+y_hat_bag = bag_boston.predict(X_test)
+
+# Instruction: Print Test MSE for 500 bagged trees.
+# Algo: Mean Squared Error evaluation.
+# Why: Confirms error stays low and stable with more trees.
+print("Bagging (500 trees) Test MSE:", np.mean((y_test - y_hat_bag)**2))
+
+# Instruction: Fit a true Random Forest that only considers 6 random features at each split (m = 6).
+# Algo: Random Forest (decorrelated bootstrap trees with random feature subsampling m < p).
+# Why: Stops one dominant predictor from making all trees look identical, reducing variance even further.
+RF_boston = RF(max_features=6, random_state=0).fit(X_train, y_train)
+
+# Instruction: Predict test house prices using the Random Forest.
+# Algo: Decorrelated ensemble averaging.
+# Why: Evaluates whether decorrelating the trees improves test accuracy over plain bagging.
+y_hat_RF = RF_boston.predict(X_test)
+
+# Instruction: Print the Random Forest Test MSE.
+# Algo: Mean Squared Error evaluation.
+# Why: Demonstrates that Random Forests usually outperform both single trees and Bagging.
+print("Random Forest Test MSE:", np.mean((y_test - y_hat_RF)**2))
+
+# Instruction: Create a table pairing each predictor name with its Random Forest importance score.
+# Algo: Impurity-based Feature Importance (mean decrease in RSS across all trees).
+# Why: Quantifies how much each variable contributes to accurate price predictions.
+feature_imp = pd.DataFrame(
+    {'importance': RF_boston.feature_importances_},
+    index=feature_names
+)
+
+# Instruction: Sort and print predictors from most important to least important.
+# Algo: Ranked feature attribution.
+# Why: Identifies the key drivers of house prices (e.g., 'lstat' and 'rm') for human insight.
+print(feature_imp.sort_values(by='importance', ascending=False))
+
+
+# ==============================================================================
+# 4. BOOSTING (Pages 360–361)
+# ==============================================================================
+
+# Instruction: Initialize Gradient Boosting with 5,000 shallow trees (depth 3) and tiny step size 0.001.
+# Algo: Gradient Boosted Decision Trees (sequential residual fitting with shrinkage lambda = 0.001).
+# Why: Builds trees one after another where each tree slowly corrects the mistakes of previous trees.
+boost_boston = GBR(n_estimators=5000,
+                   learning_rate=0.001,
+                   max_depth=3,
+                   random_state=0)
+
+# Instruction: Sequentially train all 5,000 boosted trees on the training data.
+# Algo: Stagewise additive modeling.
+# Why: Gradually reduces bias and variance by taking 5,000 tiny, careful learning steps.
+boost_boston.fit(X_train, y_train)
+
+# Instruction: Create an empty array of zeros matching the length of training error history (5,000).
+# Algo: Array pre-allocation.
+# Why: Prepares storage to record test MSE at every single boosting step from tree 1 to 5,000.
+test_error = np.zeros_like(boost_boston.train_score_)
+
+# Instruction: Loop through predictions after tree 1, tree 2, ..., tree 5,000 and record test MSE at each step.
+# Algo: Staged ensemble evaluation.
+# Why: Lets us watch how test error drops as more trees are added (and check for overfitting).
+for idx, y_ in enumerate(boost_boston.staged_predict(X_test)):
+    test_error[idx] = np.mean((y_test - y_)**2)
+
+# Instruction: Create an index list [0, 1, 2, ..., 4999] for the x-axis.
+# Algo: Iteration indexing.
+# Why: Represents the number of trees on the horizontal axis of our learning curve plot.
+plot_idx = np.arange(boost_boston.train_score_.shape[0])
+
+# Instruction: Create an 8x8 plot canvas.
+# Algo: Plot initialization.
+# Why: Sets up a clean graph for comparing training vs. test error curves.
+ax = subplots(figsize=(8, 8))[1]
+
+# Instruction: Plot training error in blue ('b') across all 5,000 trees.
+# Algo: Learning curve visualization (in-sample error).
+# Why: Shows how steadily the model fits the training data.
+ax.plot(plot_idx, boost_boston.train_score_, 'b', label='Training')
+
+# Instruction: Plot test error in red ('r') across all 5,000 trees.
+# Algo: Generalization curve visualization (out-of-sample error).
+# Why: Shows whether test error keeps improving or starts rising (overfitting) at high tree counts.
+ax.plot(plot_idx, test_error, 'r', label='Test')
+
+# Instruction: Display the legend identifying the blue and red lines.
+# Algo: Plot annotation.
+# Why: Makes the chart readable so you know which curve is Training and which is Test.
+ax.legend()
+
+# Instruction: Predict final test prices using all 5,000 boosted trees.
+# Algo: Full boosted ensemble inference.
+# Why: Gets the final predictions to compute overall Test MSE.
+y_hat_boost = boost_boston.predict(X_test)
+
+# Instruction: Print Test MSE for slow-learning Boosting (learning_rate = 0.001).
+# Algo: Mean Squared Error evaluation.
+# Why: Benchmarks slow-shrinkage boosting against Random Forests.
+print("Boosting (lr=0.001) Test MSE:", np.mean((y_test - y_hat_boost)**2))
+
+# Instruction: Re-initialize Gradient Boosting with a much larger learning rate of 0.2.
+# Algo: Gradient Boosting with faster shrinkage (lambda = 0.2).
+# Why: Tests what happens when each tree fixes 20% of remaining errors instead of 0.1%.
+boost_boston = GBR(n_estimators=5000,
+                   learning_rate=0.2,
+                   max_depth=3,
+                   random_state=0)
+
+# Instruction: Train the fast-learning boosted model on the training set.
+# Algo: Stagewise additive modeling.
+# Why: Fits 5,000 trees with aggressive step sizes.
+boost_boston.fit(X_train, y_train)
+
+# Instruction: Predict test prices with the aggressive learning rate model.
+# Algo: Boosted ensemble inference.
+# Why: Generates predictions to compare against the slower learning rate.
+y_hat_boost = boost_boston.predict(X_test)
+
+# Instruction: Print Test MSE for fast-learning Boosting (learning_rate = 0.2).
+# Algo: Mean Squared Error evaluation.
+# Why: Shows how changing the learning rate knob impacts final accuracy (too fast can slightly overfit).
+print("Boosting (lr=0.2) Test MSE:", np.mean((y_test - y_hat_boost)**2))
+
+
+# ==============================================================================
+# 5. BAYESIAN ADDITIVE REGRESSION TREES — BART (Pages 361–362)
+# ==============================================================================
+
+# Instruction: Initialize BART, discarding the first 5 warmup rounds (burnin) and saving 15 posterior draws (ndraw).
+# Algo: Bayesian Additive Regression Trees via MCMC sampling (random tree perturbations on partial residuals).
+# Why: Combines Random Forests and Boosting in a Bayesian framework to get strong accuracy plus uncertainty estimates.
+bart_boston = BART(random_state=0, burnin=5, ndraw=15)
+
+# Instruction: Run the MCMC sampler on the training data to generate 15 posterior tree ensembles.
+# Algo: Bayesian posterior sampling (backfitting MCMC).
+# Why: Explores many plausible tree ensembles that explain the training data well.
+bart_boston.fit(X_train, y_train)
+
+# Instruction: Convert X_test to 32-bit floats and average predictions across the 15 saved BART ensembles.
+# Algo: Posterior predictive averaging.
+# Why: ISLP's BART implementation requires float32 arrays to compute fast final predictions.
+yhat_test = bart_boston.predict(X_test.astype(np.float32))
+
+# Instruction: Calculate and print the final BART Test MSE.
+# Algo: Mean Squared Error evaluation.
+# Why: Shows that BART achieves competitive accuracy right alongside Random Forests and Boosting.
+print("BART Test MSE:", np.mean((y_test - yhat_test)**2))
+```
